@@ -1,0 +1,29 @@
+{
+  "features": [
+    {
+      "name": "authentication",
+      "enabled": true,
+      "route": "/auth"
+    },
+    {
+      "name": "property_upload",
+      "enabled": true,
+      "route": "/upload"
+    },
+    {
+      "name": "property_feed",
+      "enabled": true,
+      "route": "/properties"
+    },
+    {
+      "name": "ai_estimator",
+      "enabled": false,
+      "route": "/ai-estimator"
+    },
+    {
+      "name": "contractor_marketplace",
+      "enabled": true,
+      "route": "/marketplace"
+    }
+  ]
+}

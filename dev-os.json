@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "GuavaCheck",
+    "mode": "development",
+    "framework": "nextjs"
+  },
+
+  "routes": [
+    { "path": "/", "page": "home" },
+    { "path": "/properties", "page": "properties" },
+    { "path": "/upload", "page": "upload" }
+  ],
+
+  "features": {
+    "auth": true,
+    "supabase": true,
+    "ai_estimator": false,
+    "marketplace": true
+  },
+
+  "ui": {
+    "theme": "light",
+    "layout": "default"
+  }
+}

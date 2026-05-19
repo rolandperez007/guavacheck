@@ -1,0 +1,39 @@
+"use client"
+
+import { useState } from "react"
+
+export default function Estimator() {
+
+  const [size, setSize] = useState("")
+  const [result, setResult] = useState(null)
+
+  const estimate = () => {
+    const cost = Number(size) * 50000
+    setResult(cost)
+  }
+
+  return (
+    <main style={{ padding: 30 }}>
+      <h1>AI Construction Estimator</h1>
+
+      <input
+        type="number"
+        placeholder="Enter size in sqm"
+        value={size}
+        onChange={(e) => setSize(e.target.value)}
+        style={{ padding: 10, marginTop: 20 }}
+      />
+
+      <button
+        onClick={estimate}
+        style={{ marginLeft: 10, padding: 10 }}
+      >
+        Estimate
+      </button>
+
+      {result && (
+        <h2>Estimated Cost: ₦{result.toLocaleString()}</h2>
+      )}
+    </main>
+  )
+}
