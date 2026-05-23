@@ -1,15 +1,7 @@
-
-
 {
   "compilerOptions": {
     "paths": {
       "@/*": ["./*"]
     }
   }
-}
-if (!process.env.OPENAI_API_KEY) {
-  return new Response(
-    JSON.stringify({ error: "Missing OPENAI_API_KEY" }),
-    { status: 500 }
-  );
 }
