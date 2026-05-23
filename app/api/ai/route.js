@@ -1,4 +1,5 @@
-import OpenAI from "openai";
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";import OpenAI from "openai";
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
