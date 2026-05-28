@@ -14,13 +14,16 @@ export default function MyProperties() {
       const { data: userData } = await supabase.auth.getUser()
       const user = userData.user
 
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("properties")
         .select("*")
         .eq("user_id", user?.id)
         .order("created_at", { ascending: false })
 
-      setProperties(data || [])
+      if (!error) {
+        setProperties(data || [])
+      }
+
     }
 
     fetchMyProperties()
@@ -36,14 +39,17 @@ export default function MyProperties() {
         <p>No properties uploaded yet</p>
       ) : (
         properties.map((item) => (
-          <div key={item.id} style={{
-            border: "1px solid #ddd",
-            marginBottom: 10,
-            padding: 10
-          }}>
+          <div
+            key={item.id}
+            style={{
+              border: "1px solid #ddd",
+              padding: 10,
+              marginBottom: 10
+            }}
+          >
             <h3>{item.title}</h3>
-            <p>{item.price}</p>
-            <p>{item.location}</p>
+            <p>Price: {item.price}</p>
+            <p>Location: {item.location}</p>
           </div>
         ))
       )}

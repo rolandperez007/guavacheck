@@ -1,18 +1,8 @@
-
-
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
   }
-}
-if (!process.env.OPENAI_API_KEY) {
-  return new Response(
-    JSON.stringify({ error: "Missing OPENAI_API_KEY" }),
-    { status: 500 }
-  );
-}
-export async function GET() {
-  return Response.json({ status: "AI disabled for deployment" });
 }
