@@ -1,0 +1,3 @@
+class AgentBase:
+    def run(self, *args, **kwargs):
+        raise NotImplementedError

@@ -1,0 +1,21 @@
+{
+  "app": "guavacheck",
+  "environment": "production",
+  "regions": ["global"],
+  "scaling": {
+    "autoScale": true,
+    "maxInstances": 50
+  },
+  "database": {
+    "provider": "supabase",
+    "replication": true
+  },
+  "ai": {
+    "enabled": true,
+    "mode": "hybrid"
+  },
+  "security": {
+    "kycRequired": true,
+    "amlEnabled": true
+  }
+}

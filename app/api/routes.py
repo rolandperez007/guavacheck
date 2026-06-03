@@ -1,3 +1,7 @@
-export async function GET() {
-  return Response.json({ ok: true })
-}
+from fastapi import APIRouter
+
+router = APIRouter()
+
+@router.get("/")
+def health():
+    return {"status": "Austin API running"}

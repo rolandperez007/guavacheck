@@ -55,6 +55,35 @@ export default function Home() {
       </section>
 
       {/* FEATURES */}
+<div>
+  <h3>📰 Blog & Insights</h3>
+  <p>AI generated property intelligence and market news.</p>
+</div>
+
+<div>
+  <h3>🌍 Community</h3>
+  <p>Connect with investors, buyers and professionals.</p>
+</div>
+
+<div>
+  <h3>💰 Mortgage Center</h3>
+  <p>Calculate affordability and financing options.</p>
+</div>
+
+<div>
+  <h3>📊 Investor Dashboard</h3>
+  <p>Track ROI, forecasts and opportunities.</p>
+</div>
+
+<div>
+  <h3>🚨 Distressed Deals</h3>
+  <p>Discover undervalued investment opportunities.</p>
+</div>
+
+<div>
+  <h3>👷 Contractor Marketplace</h3>
+  <p>Find trusted contractors and request bids.</p>
+</div>
       <section style={{
         padding: "80px 20px",
         textAlign: "center"

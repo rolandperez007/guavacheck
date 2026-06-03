@@ -64,3 +64,14 @@ export default function UploadProperty() {
     </main>
   )
 }
+async function uploadImage(file: File) {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch("/api/properties/upload", {
+    method: "POST",
+    body: formData,
+  });
+
+  return await res.json();
+}
