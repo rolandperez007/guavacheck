@@ -1,23 +1,13 @@
+from app.memory.preference_engine import PreferenceEngine
+
+
 class MemoryGraph:
 
-    def build_profile(self, memories):
-        profile = {
-            "locations": [],
-            "property_types": [],
-            "budgets": []
-        }
+    def __init__(self):
+        self.preference_engine = PreferenceEngine()
 
-        for memory in memories:
+    def analyze(self, memory_records):
 
-            text = memory.lower()
-
-            if "lekki" in text:
-                profile["locations"].append("Lekki")
-
-            if "duplex" in text:
-                profile["property_types"].append("Duplex")
-
-            if "apartment" in text:
-                profile["property_types"].append("Apartment")
-
-        return profile
+        return self.preference_engine.build_preferences(
+            memory_records
+        )
