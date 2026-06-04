@@ -1,67 +1,56 @@
 from app.services.supabase_service import SupabaseService
 from app.agents.tool_router import ToolRouter
-from app.core.memory_brain import MemoryBrain
+from app.memory.memory_graph import MemoryGraph
 
 
 class ListingAgent:
 
     def __init__(self):
         self.db = SupabaseService()
-        self.router = ToolRouter(tools={"listing": self.db})
-        self.memory = MemoryBrain()
+        self.router = ToolRouter(
+            tools={"listing": self.db}
+        )
+        self.memory = MemoryGraph()
 
-    async def run(self, query: str):
+    async def run(
+        self,
+        query: str,
+        user_id: str = "anonymous"
+    ):
 
-        user_id = "default_user"
+        # Store query in memory
+        self.memory.add(user_id, query)
 
-        # 🧠 1. Save memory (Supabase)
-        self.memory.remember_query(user_id, query)
+        # AI routing
+        route_info = self.router.route_full(query)
 
-        # 🧠 2. Get user preferences
-        prefs = self.memory.infer_preferences(user_id)
+        tool = route_info["tool"]
 
-        # ⚡ 3. AI-style tool routing
-        tool_decision = self.router.route(query, memory=self.memory.infer_preferences(user_id))
-        tool = tool_decision["tool"]
-
-        # 🏠 LISTING TOOL
         if tool == "listing":
 
             location = None
 
-            if query and "lekki" in query.lower():
+            if "lekki" in query.lower():
                 location = "Lekki"
 
-            properties = self.db.search_properties(location) or []
+            properties = (
+                self.db.search_properties(location)
+                or []
+            )
+
+            profile = self.memory.get_profile(user_id)
 
             return {
                 "tool": "listing",
-                "message": "Live properties retrieved",
+                "message": "AI routed listing engine",
+                "routing": route_info,
+                "user_profile": profile,
                 "count": len(properties),
-                "user_preferences": prefs,
-                "routing": tool_decision,
                 "results": properties
             }
 
-        # 💰 PRICING TOOL (placeholder)
-        elif tool == "pricing":
-            return {
-                "tool": "pricing",
-                "message": "Pricing tool not implemented yet",
-                "routing": tool_decision
-            }
-
-        # 📊 INSIGHT TOOL (placeholder)
-        elif tool == "insight":
-            return {
-                "tool": "insight",
-                "message": "Insight tool not implemented yet",
-                "routing": tool_decision
-            }
-
-        # ❌ FALLBACK
         return {
-            "tool": "fallback",
-            "message": "No matching tool found",
-            "routing": tool_decision
+            "tool": tool,
+            "message": "Tool executed (stub mode)",
+            "routing": route_info
         }

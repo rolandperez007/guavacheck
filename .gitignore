@@ -59,3 +59,41 @@ dump.rdb
 # Local databases
 *.sqlite
 *.db
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node
+node_modules/
+.next/
+
+# Env
+.env
+.env.local
+.env.production
+
+# Vercel
+.vercel/
+
+# Logs
+logs/
+*.log__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+venv/
+node_modules/
+.next/
+
+.env
+.env.local
+.env.production
+
+.vercel/
+
+logs/
+*.log

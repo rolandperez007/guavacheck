@@ -1,18 +1,27 @@
-# app/api/routes/austin.py
-
 from fastapi import APIRouter
-
+from pydantic import BaseModel
 from app.core.austin_engine import AustinEngine
-from app.models.request_models import AustinExecuteRequest
 
 router = APIRouter()
-
 engine = AustinEngine()
 
-@router.post("/austin/execute")
-async def execute(req: AustinExecuteRequest):
 
-    return await engine.execute(
-        req.input,
-        req.context
+class AustinRequest(BaseModel):
+    query: str
+    user_id: str | None = None
+
+
+@router.post("/execute")
+async def execute(req: AustinRequest):
+
+    result = await engine.execute(
+        query=req.query,
+        user_id=req.user_id
     )
+
+    return result
+
+
+@router.get("/")
+def health():
+    return {"status": "Austin running v2"}

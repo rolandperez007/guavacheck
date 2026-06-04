@@ -1,57 +1,36 @@
+from app.agents.swarm.swarm_coordinator_v2 import SwarmCoordinatorV2
 from app.agents.listing_agent import ListingAgent
-from app.services.supabase_service import SupabaseService
-from app.core.tool_router import ToolRouter
-class AustinEngine:
 
-    def __init__(self):
-        self.router = ToolRouter()
-        self.services = {
-            "supabase": SupabaseService()
-        }
-
-        self.agents = {
-            "listing": ListingAgent(self.services)
-        }
-
-    async def run(self, query: str):
-
-    # STEP 1: tool execution layer
-    tool_result = self.router.execute(query)
-
-    # STEP 2: keep compatibility layer (important for now)
-    return {
-        "query": query,
-        "tool_output": tool_result
-    }
-
-class AustinEngine:
-
-    def __init__(self):
-        self.last_call = 0
-
-    async def run(self, query: str):
-
-        if time.time() - self.last_call < 1:
-            return {"error": "Rate limit active"}
-
-        self.last_call = time.time()
-        from app.agents.listing_agent import ListingAgent
-from app.core.swarm_coordinator import SwarmCoordinator
-from app.services.supabase_service import SupabaseService
 
 class AustinEngine:
 
     def __init__(self):
 
-        services = {
-            "supabase": SupabaseService()
+        # core swarm brain
+        self.swarm = SwarmCoordinatorV2()
+
+        # listing brain (separate for retrieval)
+        self.listing_agent = ListingAgent()
+
+    async def execute(self, query: str, user_id: str = None):
+
+        # 1. Run listing retrieval
+        listing_result = await self.listing_agent.run(
+            query=query,
+            user_id=user_id
+        )
+
+        # 2. Run swarm intelligence
+        swarm_result = await self.swarm.run(query)
+
+        # 3. Merge intelligence layers
+        return {
+            "tool": "austin",
+            "query": query,
+            "listing": listing_result,
+            "swarm": swarm_result,
+            "decision_layer": {
+                "mode": "swarm_fusion",
+                "confidence": swarm_result.get("investment_score", 0)
+            }
         }
-
-        self.swarm = SwarmCoordinator({
-            "listing": ListingAgent(services),
-            # "pricing": PricingAgent(services),
-            # "insight": InsightAgent(services),
-        })
-
-    async def run(self, query: str):
-        return await self.swarm.run(query)
