@@ -7,21 +7,17 @@ class ListingAgent:
 
     def __init__(self):
         self.db = SupabaseService()
-        self.router = ToolRouter(
-            tools={"listing": self.db}
-        )
+        self.router = ToolRouter(tools={"listing": self.db})
         self.memory = MemoryGraph()
 
-    async def run(
-        self,
-        query: str,
-        user_id: str = "anonymous"
-    ):
+    async def run(self, query: str, user_id: str = None):
 
-        # Store query in memory
+        user_id = "default_user"
+
+        # memory write
         self.memory.add(user_id, query)
 
-        # AI routing
+        # AI routing (v2 brain)
         route_info = self.router.route_full(query)
 
         tool = route_info["tool"]
@@ -29,14 +25,10 @@ class ListingAgent:
         if tool == "listing":
 
             location = None
-
             if "lekki" in query.lower():
                 location = "Lekki"
 
-            properties = (
-                self.db.search_properties(location)
-                or []
-            )
+            properties = self.db.search_properties(location) or []
 
             profile = self.memory.get_profile(user_id)
 
