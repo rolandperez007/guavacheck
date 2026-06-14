@@ -1,0 +1,45 @@
+{
+  "project": {
+    "name": "GuavaCheck",
+    "mode": "development",
+    "framework": "Next.js",
+    "backend": "Supabase"
+  },
+
+  "tests": {
+    "node_installed": true,
+    "npm_installed": true,
+    "nextjs_running": true,
+    "supabase_connected": true,
+    "github_connected": true,
+    "copilot_active": true
+  },
+
+  "routes": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "name": "Properties",
+      "path": "/properties"
+    },
+    {
+      "name": "Upload",
+      "path": "/properties/upload"
+    },
+    {
+      "name": "AI Estimator",
+      "path": "/ai-estimator"
+    }
+  ],
+
+  "deployment": {
+    "local_url": "http://localhost:3000",
+    "production_domain": "https://guavacheck.com"
+  }
+}

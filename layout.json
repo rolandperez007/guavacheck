@@ -1,0 +1,9 @@
+{
+  "title": "GuavaCheck",
+  "description": "AI Real Estate Platform",
+  "lang": "en",
+  "wrap": {
+    "html": true,
+    "body": true
+  }
+}

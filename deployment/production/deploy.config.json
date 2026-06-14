@@ -1,0 +1,25 @@
+{
+  "environment": "production",
+  "domain": "guavacheck.com",
+  "hosting": {
+    "frontend": "vercel",
+    "backend": "aws",
+    "database": "supabase"
+  },
+  "regions": ["global"],
+  "scaling": {
+    "autoScaling": true,
+    "maxInstances": 100
+  },
+  "security": {
+    "https": true,
+    "kyc": true,
+    "aml": true,
+    "firewall": "enabled"
+  },
+  "ai": {
+    "mode": "production",
+    "rateLimit": true,
+    "auditLogs": true
+  }
+}

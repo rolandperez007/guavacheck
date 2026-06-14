@@ -1,0 +1,10 @@
+from supabase import create_client
+
+url = "https://gxrslgddffdslvmemtqa.supabase.co"
+key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4cnNsZ2RkZmZkc2x2bWVtdHFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5ODUwMTEsImV4cCI6MjA5MDU2MTAxMX0.hJ4w6e5TgkkkF3QuRcGpIwG0cyMMCj1xImzJ-J-Bz2M"
+
+supabase = create_client(url, key)
+
+res = supabase.table("properties").select("*").limit(1).execute()
+
+print(res)
