@@ -1,17 +1,15 @@
-from app.services.supabase_service import SupabaseService
+from app.services.database.supabase_service import SupabaseGateway
 
 
 class PropertyTools:
-
     def __init__(self):
-        self.db = SupabaseService()
+        self.db = SupabaseGateway()
 
     def search_properties(self, location=None, limit=20):
-
         import time
 
-def search_properties(self, location=None):
 
+def search_properties(self, location=None):
     try:
         query = self.db.client.table("properties").select("*")
 
@@ -26,12 +24,9 @@ def search_properties(self, location=None):
         print(f"[Austin DB ERROR] {e}")
         return []
 
-
     def get_property_by_id(self, property_id: str):
-
         result = (
-            self.db.client
-            .table("properties")
+            self.db.client.table("properties")
             .select("*")
             .eq("id", property_id)
             .single()
@@ -39,4 +34,3 @@ def search_properties(self, location=None):
         )
 
         return result.data
-        

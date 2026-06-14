@@ -1,99 +1,20 @@
-# Python
-venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-
-# Environment variables
-.env
-.env.local
-.env.production
-.env.development
-
-# Next.js
-.next/
-out/
-
-# Node
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Vercel
-.vercel/
-
-# Logs
-logs/
-*.log
-
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Testing
 .pytest_cache/
-
-# Coverage
+.mypy_cache/
+.ruff_cache/
 .coverage
-htmlcov/
-
-# Build artifacts
+.env
+venv/
+.idea/
+.vscode/
+node_modules/
+.next/
 dist/
 build/
-
-# Temporary files
-*.tmp
-*.temp
-
-# Austin cache
-app/cache/__pycache__/
-
-# Redis
-dump.rdb
-
-# Local databases
-*.sqlite
-*.db
-# Python
-venv/
+.vercel/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Node
-node_modules/
-.next/
-
-# Env
-.env
-.env.local
-.env.production
-
-# Vercel
-.vercel/
-
-# Logs
-logs/
-*.log__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-venv/
-node_modules/
-.next/
-
-.env
-.env.local
-.env.production
-
-.vercel/
-
-logs/
-*.log
+*.pycgep2_backup.bundle
+gep2_backup.bundle

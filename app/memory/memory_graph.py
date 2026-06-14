@@ -1,40 +1,16 @@
 class MemoryGraph:
-    """
-    Simple graph memory layer for Austin agents
-    Stores interactions + builds lightweight user profile graph
-    """
-
     def __init__(self):
         self.store = {}
 
-    # ✅ FIX: this replaces missing .add()
     def add(self, user_id: str, query: str):
-        if user_id not in self.store:
-            self.store[user_id] = {
-                "queries": [],
-                "locations": [],
-                "keywords": []
-            }
-
-        self.store[user_id]["queries"].append(query)
-
-        q = query.lower()
-
-        # simple extraction logic
-        if "lekki" in q:
-            self.store[user_id]["locations"].append("Lekki")
-
-        self.store[user_id]["keywords"].extend(q.split())
+        self.store.setdefault(user_id, [])
+        self.store[user_id].append(query)
 
     def get_profile(self, user_id: str):
-        data = self.store.get(user_id, {
-            "queries": [],
-            "locations": [],
-            "keywords": []
-        })
+        queries = self.store.get(user_id, [])
 
         return {
-            "total_queries": len(data["queries"]),
-            "locations": list(set(data["locations"])),
-            "keywords": list(set(data["keywords"]))[:20]
+            "total_queries": len(queries),
+            "locations": list({q for q in queries if isinstance(q, str)}),
+            "keywords": queries[-5:],
         }

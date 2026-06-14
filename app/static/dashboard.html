@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IronGate Security Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .trusted { border-left: 5px solid #22c55e; }
+        .normal { border-left: 5px solid #facc15; }
+        .risky { border-left: 5px solid #f97316; }
+        .blocked { border-left: 5px solid #ef4444; }
+    </style>
+</head>
+
+<body>
+<h2 style="padding:20px;">🧠 IronGate Live Security Dashboard</h2>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const grid = document.getElementById("grid");
+
+const ws = new WebSocket("ws://127.0.0.1:8000/ws/dashboard");
+
+ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+
+    grid.innerHTML = "";
+
+    data.forEach(user => {
+        const div = document.createElement("div");
+
+        const rep = user.reputation_score || 50;
+        let status = user.status_band;
+
+        div.className = "card " + status;
+
+        div.innerHTML = `
+            <h3>${user.user_id}</h3>
+            <p>Reputation: ${rep}</p>
+            <p>Requests/min: ${user.requests_last_min}</p>
+            <p>Status: ${status}</p>
+        `;
+
+        grid.appendChild(div);
+    });
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+The generate_ai_analysis function takes a PropertyVerificationInput object (containing property details like country, city, address, etc.) and a result dictionary (which holds verification information such as a confidence score, identified risks, and a market estimate). It constructs a detailed prompt using these inputs and sends it to the OpenAI gpt-3.5-turbo model.
+
+The output of generate_ai_analysis is a string of text containing an AI-generated analysis. This analysis is a professional real estate assessment that includes:
+
+    Risk analysis: An evaluation of potential issues or concerns related to the property.
+    Investment advice: Guidance on whether to proceed with an investment and what factors to consider.
+    Clear recommendation: A final conclusion or next step based on the AI's assessment.

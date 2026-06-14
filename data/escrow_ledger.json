@@ -1,0 +1,226 @@
+[
+  {
+    "event_id": "538c93f8-376f-49fe-a2ba-1b2c9d0b539f",
+    "event_type": "escrow_created",
+    "escrow_id": "ff87817b-ab9e-4ca1-bbcd-d7972a98d00a",
+    "payload": {
+      "escrow_id": "ff87817b-ab9e-4ca1-bbcd-d7972a98d00a",
+      "amount": 50000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 50000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T13:58:09.109347",
+      "updated_at": "2026-06-07T13:58:09.169916"
+    },
+    "timestamp": "2026-06-07T13:58:09.174917"
+  },
+  {
+    "event_id": "5e33cfb8-364c-4950-9a86-a684f7e356e4",
+    "event_type": "escrow_funded",
+    "escrow_id": "ff87817b-ab9e-4ca1-bbcd-d7972a98d00a",
+    "payload": {
+      "amount": 50000
+    },
+    "timestamp": "2026-06-07T13:58:09.220543"
+  },
+  {
+    "event_id": "946f9525-ee86-4856-b14d-94aa649586d3",
+    "event_type": "escrow_created",
+    "escrow_id": "dc5d1805-9412-4333-8a57-32e3e07f8bda",
+    "payload": {
+      "escrow_id": "dc5d1805-9412-4333-8a57-32e3e07f8bda",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:07:37.210461",
+      "updated_at": "2026-06-07T14:07:37.245861"
+    },
+    "timestamp": "2026-06-07T14:07:37.245861"
+  },
+  {
+    "event_id": "bf525d46-bd1f-4065-a0ff-dd49f024ab5e",
+    "event_type": "escrow_funded",
+    "escrow_id": "dc5d1805-9412-4333-8a57-32e3e07f8bda",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:07:37.269321"
+  },
+  {
+    "event_id": "2fbb9df7-152e-4614-b658-3709bf2ea813",
+    "event_type": "escrow_created",
+    "escrow_id": "d652c051-dd25-42cc-a88c-d6c21f6c7e14",
+    "payload": {
+      "escrow_id": "d652c051-dd25-42cc-a88c-d6c21f6c7e14",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:07:37.269321",
+      "updated_at": "2026-06-07T14:07:37.285244"
+    },
+    "timestamp": "2026-06-07T14:07:37.323150"
+  },
+  {
+    "event_id": "73c4ec6e-7677-41cc-b69b-7800964d3c5f",
+    "event_type": "escrow_funded",
+    "escrow_id": "d652c051-dd25-42cc-a88c-d6c21f6c7e14",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:07:37.359374"
+  },
+  {
+    "event_id": "ab2ab7db-2c03-4e08-ae99-90adf1ccb0eb",
+    "event_type": "escrow_created",
+    "escrow_id": "75e26456-6713-4ef1-8fa7-6ab89f873ad4",
+    "payload": {
+      "escrow_id": "75e26456-6713-4ef1-8fa7-6ab89f873ad4",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:17:04.615993",
+      "updated_at": "2026-06-07T14:17:04.641860"
+    },
+    "timestamp": "2026-06-07T14:17:04.675003"
+  },
+  {
+    "event_id": "546e117c-667d-4d19-b169-7f6d327a856c",
+    "event_type": "escrow_funded",
+    "escrow_id": "75e26456-6713-4ef1-8fa7-6ab89f873ad4",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:17:04.709820"
+  },
+  {
+    "event_id": "c8dadb97-5c33-477b-a661-2826dd5b3e46",
+    "event_type": "escrow_created",
+    "escrow_id": "44caa8a1-f722-4d00-83ed-92d03db87f42",
+    "payload": {
+      "escrow_id": "44caa8a1-f722-4d00-83ed-92d03db87f42",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:17:04.711820",
+      "updated_at": "2026-06-07T14:17:04.724326"
+    },
+    "timestamp": "2026-06-07T14:17:04.747706"
+  },
+  {
+    "event_id": "bb8de792-a4ff-427e-a45a-1338afb80dd1",
+    "event_type": "escrow_funded",
+    "escrow_id": "44caa8a1-f722-4d00-83ed-92d03db87f42",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:17:04.759707"
+  },
+  {
+    "event_id": "377a17a7-27e8-498c-a0c7-278505abacdf",
+    "event_type": "escrow_created",
+    "escrow_id": "5e492884-d555-44e2-8ac2-fe19f0941e16",
+    "payload": {
+      "escrow_id": "5e492884-d555-44e2-8ac2-fe19f0941e16",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:26:56.015539",
+      "updated_at": "2026-06-07T14:26:56.067605"
+    },
+    "timestamp": "2026-06-07T14:26:56.098871"
+  },
+  {
+    "event_id": "f359953f-e1ca-428d-8799-979244a3177c",
+    "event_type": "escrow_funded",
+    "escrow_id": "5e492884-d555-44e2-8ac2-fe19f0941e16",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:26:56.131891"
+  },
+  {
+    "event_id": "5e8efc2b-20d8-4b67-b9eb-331a1599ad8a",
+    "event_type": "escrow_created",
+    "escrow_id": "716a14d0-9186-44de-9b70-7e33bf336a25",
+    "payload": {
+      "escrow_id": "716a14d0-9186-44de-9b70-7e33bf336a25",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:26:56.133890",
+      "updated_at": "2026-06-07T14:26:56.159511"
+    },
+    "timestamp": "2026-06-07T14:26:56.204220"
+  },
+  {
+    "event_id": "1cfb8c16-bcb4-4b7f-a33a-46839f115379",
+    "event_type": "escrow_funded",
+    "escrow_id": "716a14d0-9186-44de-9b70-7e33bf336a25",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:26:56.229621"
+  },
+  {
+    "event_id": "402a6618-38b5-49c4-9890-6dd5bc1b50ac",
+    "event_type": "escrow_created",
+    "escrow_id": "bd1ce341-7dd9-444e-89d9-1c35db99a1a2",
+    "payload": {
+      "escrow_id": "bd1ce341-7dd9-444e-89d9-1c35db99a1a2",
+      "amount": 344000,
+      "currency": "USD",
+      "payer": "client",
+      "payee": "contractor",
+      "balance": 344000,
+      "released": 0,
+      "status": "funded",
+      "milestones": [],
+      "created_at": "2026-06-07T14:37:40.730166",
+      "updated_at": "2026-06-07T14:37:40.761409"
+    },
+    "timestamp": "2026-06-07T14:37:40.777026"
+  },
+  {
+    "event_id": "68dc87ac-6b7f-465d-9b51-57a04d75ee28",
+    "event_type": "escrow_funded",
+    "escrow_id": "bd1ce341-7dd9-444e-89d9-1c35db99a1a2",
+    "payload": {
+      "amount": 344000
+    },
+    "timestamp": "2026-06-07T14:37:40.804924"
+  }
+]

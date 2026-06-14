@@ -1,9 +1,9 @@
-from app.services.supabase_service import SupabaseService
+from app.services.database.supabase_service import SupabaseGateway
 
 class PropertyService:
 
     def __init__(self):
-        self.db = SupabaseService()
+        self.db = SupabaseGateway()
 
     def search_properties(self):
 

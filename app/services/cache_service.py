@@ -1,7 +1,7 @@
 import time
 
-class CacheService:
 
+class CacheService:
     def __init__(self):
         self.cache = {}
 
@@ -20,6 +20,7 @@ class CacheService:
     def set(self, key, value, ttl=60):
         self.cache[key] = (value, time.time() + ttl)
         cache_key = f"search:{location}"
+
 
 cached = self.cache.get(cache_key)
 if cached:

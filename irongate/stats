@@ -1,0 +1,11 @@
+{
+  "requests": 15421,
+  "allowed": 14988,
+  "warned": 387,
+  "blocked": 46,
+  "top_rules": [
+    "spam_pattern_rule",
+    "duplicate_request_rule",
+    "rate_limit_rule"
+  ]
+}

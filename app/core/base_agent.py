@@ -1,5 +1,4 @@
 class BaseAgent:
-
     def __init__(self, services=None):
         self.services = services or {}
 

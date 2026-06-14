@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Austin Web Chat</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #chat {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .msg {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 70%;
+    }
+
+    .user {
+      background: #2563eb;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background: #1e293b;
+      align-self: flex-start;
+    }
+
+    #inputArea {
+      display: flex;
+      padding: 10px;
+      background: #111827;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="chat"></div>
+
+<div id="inputArea">
+  <input id="msg" placeholder="Talk to Austin..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+  const chat = document.getElementById("chat");
+
+  // Connect to Austin WebSocket
+  const ws = new WebSocket("ws://127.0.0.1:8000/ws/austin");
+
+  ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+
+    const div = document.createElement("div");
+    div.classList.add("msg", "bot");
+
+    // handle different message types
+    if (data.type === "chunk") {
+      div.innerText = JSON.stringify(data.data, null, 2);
+    } else {
+      div.innerText = JSON.stringify(data, null, 2);
+    }
+
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  };
+
+  ws.onopen = () => {
+    console.log("Connected to Austin");
+  };
+
+  function sendMessage() {
+    const input = document.getElementById("msg");
+    const text = input.value;
+
+    if (!text) return;
+
+    // show user message
+    const div = document.createElement("div");
+    div.classList.add("msg", "user");
+    div.innerText = text;
+
+    chat.appendChild(div);
+
+    // send to backend
+    ws.send(text);
+
+    input.value = "";
+  }
+</script>
+
+</body>
+</html>

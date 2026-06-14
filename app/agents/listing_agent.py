@@ -1,48 +1,64 @@
-from app.services.supabase_service import SupabaseService
-from app.agents.tool_router import ToolRouter
-from app.memory.memory_graph import MemoryGraph
+from app.services.database.supabase_service import SupabaseGateway
 
 
 class ListingAgent:
-
     def __init__(self):
-        self.db = SupabaseService()
-        self.router = ToolRouter(tools={"listing": self.db})
-        self.memory = MemoryGraph()
+        self.db = SupabaseGateway()
 
-    async def run(self, query: str, user_id: str = None):
+    async def run(self, query: str, context=None):
+        """
+        Austin Listing Agent
 
-        user_id = "default_user"
+        Handles:
+        - property search
+        - location search
+        - listing retrieval
+        """
 
-        # memory write
-        self.memory.add(user_id, query)
-
-        # AI routing (v2 brain)
-        route_info = self.router.route_full(query)
-
-        tool = route_info["tool"]
-
-        if tool == "listing":
-
+        try:
             location = None
-            if "lekki" in query.lower():
-                location = "Lekki"
 
-            properties = self.db.search_properties(location) or []
+            if query:
+                query_lower = query.lower()
 
-            profile = self.memory.get_profile(user_id)
+                trigger_words = [
+                    "in ",
+                    "at ",
+                    "around ",
+                    "near ",
+                    "lekki",
+                    "ajah",
+                    "ikoyi",
+                    "vi",
+                    "victoria island",
+                    "chevron",
+                    "sangotedo",
+                    "ikate",
+                    "agungi",
+                    "osapa",
+                ]
+
+                for word in trigger_words:
+                    if word in query_lower:
+                        location = query
+                        break
+
+            properties = self.db.search_properties(location=location, context=context)
+
+            if properties is None:
+                properties = []
 
             return {
-                "tool": "listing",
-                "message": "AI routed listing engine",
-                "routing": route_info,
-                "user_profile": profile,
+                "success": True,
+                "agent": "listing",
                 "count": len(properties),
-                "results": properties
+                "results": properties,
             }
 
-        return {
-            "tool": tool,
-            "message": "Tool executed (stub mode)",
-            "routing": route_info
-        }
+        except Exception as e:
+            return {
+                "success": False,
+                "agent": "listing",
+                "error": str(e),
+                "results": [],
+            }

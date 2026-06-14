@@ -6,9 +6,7 @@ from app.agents.listing_agent import ListingAgent
 async def main():
     agent = ListingAgent()
 
-    result = await agent.run(
-        "show me properties in lekki"
-    )
+    result = await agent.run("show me properties in lekki")
 
     print(result)
 

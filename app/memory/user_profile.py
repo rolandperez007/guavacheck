@@ -1,12 +1,11 @@
 class UserProfile:
-
     def __init__(
         self,
         user_id,
         preferred_locations=None,
         property_types=None,
         budget_min=None,
-        budget_max=None
+        budget_max=None,
     ):
         self.user_id = user_id
 
@@ -27,5 +26,5 @@ class UserProfile:
             "budget_min": self.budget_min,
             "budget_max": self.budget_max,
             "saved_properties": self.saved_properties,
-            "viewed_properties": self.viewed_properties
+            "viewed_properties": self.viewed_properties,
         }

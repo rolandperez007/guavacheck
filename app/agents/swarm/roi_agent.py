@@ -5,7 +5,6 @@ class ROIAgent(AgentBase):
     name = "roi"
 
     async def run(self, query: str):
-
         q = query.lower()
 
         base_roi = 8.0
@@ -22,5 +21,5 @@ class ROIAgent(AgentBase):
         return {
             "agent": self.name,
             "roi_percent": round(base_roi, 2),
-            "confidence": 0.7
+            "confidence": 0.7,
         }

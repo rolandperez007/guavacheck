@@ -14,7 +14,4 @@ async def austin(query: str):
 
     swarm_result = swarm.run(query, result.get("routing"))
 
-    return {
-        "austin": result,
-        "swarm": swarm_result
-    }
+    return {"austin": result, "swarm": swarm_result}

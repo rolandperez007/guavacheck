@@ -9,9 +9,23 @@ class AustinBrainV2:
 
     def __init__(self):
         self.tools = {
-            "listing": ["buy", "rent", "property", "house", "apartment", "lekki", "land"],
+            "listing": [
+                "buy",
+                "rent",
+                "property",
+                "house",
+                "apartment",
+                "lekki",
+                "land",
+            ],
             "pricing": ["price", "cost", "valuation", "worth", "estimate"],
-            "mortgage": ["loan", "mortgage", "interest", "repayment", "monthly payment"],
+            "mortgage": [
+                "loan",
+                "mortgage",
+                "interest",
+                "repayment",
+                "monthly payment",
+            ],
             "roi": ["roi", "return", "investment", "profit", "yield"],
             "market": ["market", "trend", "demand", "area", "growth"],
         }
@@ -42,11 +56,11 @@ class AustinBrainV2:
             return {
                 "tool": "listing",
                 "confidence": 0.3,
-                "reason": "fallback default route"
+                "reason": "fallback default route",
             }
 
         return {
             "tool": best_tool,
             "confidence": round(best_score, 2),
-            "reason": "semantic match"
+            "reason": "semantic match",
         }

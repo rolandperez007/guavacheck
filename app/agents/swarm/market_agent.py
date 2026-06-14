@@ -5,7 +5,6 @@ class MarketAgent(AgentBase):
     name = "market"
 
     async def run(self, query: str):
-
         q = query.lower()
 
         demand = 50  # baseline score
@@ -26,5 +25,5 @@ class MarketAgent(AgentBase):
             "agent": self.name,
             "demand_score": min(demand, 100),
             "trend": "rising" if demand > 60 else "stable",
-            "confidence": 0.6
+            "confidence": 0.6,
         }

@@ -1,10 +1,8 @@
 class SwarmCoordinator:
-
     def __init__(self, agents):
         self.agents = agents
 
     async def run(self, query: str):
-
         tasks = []
 
         # parallel thinking
@@ -16,9 +14,10 @@ class SwarmCoordinator:
         return {
             "query": query,
             "agents_used": list(self.agents.keys()),
-            "results": results
+            "results": results,
         }
 
     async def _gather(self, tasks):
         import asyncio
+
         return await asyncio.gather(*tasks)

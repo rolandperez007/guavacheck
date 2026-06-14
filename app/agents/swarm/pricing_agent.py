@@ -5,7 +5,6 @@ class PricingAgent(AgentBase):
     name = "pricing"
 
     async def run(self, query: str):
-
         query_lower = query.lower()
 
         base_price = 100000000  # default fallback (₦100M)
@@ -26,5 +25,5 @@ class PricingAgent(AgentBase):
         return {
             "agent": self.name,
             "estimated_price": estimated_price,
-            "confidence": 0.65
+            "confidence": 0.65,
         }

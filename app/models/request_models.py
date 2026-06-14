@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
-class AustinExecuteRequest(BaseModel):
 
+class AustinExecuteRequest(BaseModel):
     input: str
 
     session_id: str

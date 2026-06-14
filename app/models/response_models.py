@@ -2,6 +2,7 @@
 
 from pydantic import BaseModel
 
+
 class AustinResponse(BaseModel):
     input: str
     intent: str

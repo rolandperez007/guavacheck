@@ -6,9 +6,7 @@ class PreferenceEngine:
         if user_id not in self.store:
             self.store[user_id] = []
 
-        self.store[user_id].append({
-            "query": query
-        })
+        self.store[user_id].append({"query": query})
 
     def build_profile(self, user_id):
         data = self.store.get(user_id, [])
@@ -24,18 +22,13 @@ class PreferenceEngine:
 
             keywords.extend(q.split())
 
-        return {
-            "locations": list(set(locations)),
-            "keywords": list(set(keywords))
-        }
+        return {"locations": list(set(locations)), "keywords": list(set(keywords))}
 
     def build_preferences(self, memory_records):
-
         locations = []
         keywords = []
 
         for row in memory_records:
-
             query = row.get("query", "").lower()
 
             if "lekki" in query:
@@ -50,7 +43,4 @@ class PreferenceEngine:
             if "detached" in query:
                 keywords.append("Detached")
 
-        return {
-            "locations": list(set(locations)),
-            "keywords": list(set(keywords))
-        }
+        return {"locations": list(set(locations)), "keywords": list(set(keywords))}

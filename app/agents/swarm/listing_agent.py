@@ -1,8 +1,9 @@
-from app.services.supabase_service import SupabaseService
+from app.services.database.supabase_service import SupabaseGateway
+
 
 class ListingSwarmAgent:
     def __init__(self):
-        self.db = SupabaseService()
+        self.db = SupabaseGateway()
 
     def run(self, location=None):
         return self.db.search_properties(location) or []
