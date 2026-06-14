@@ -18,3 +18,4 @@ build/
 __pycache__/
 *.pycgep2_backup.bundle
 gep2_backup.bundle
+backups/
