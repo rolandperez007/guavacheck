@@ -6,11 +6,8 @@ class AustinBrain:
         currency = parsed.get("financial", {}).get("currency", "USD")
         property_type = parsed.get("property_type")
 
-        score = 0.5  # base neutral score
+        score = 0.5
 
-        # -------------------------
-        # INTENT BOOSTS
-        # -------------------------
         if intent == "buy":
             score += 0.2
         elif intent == "analyze":
@@ -18,9 +15,6 @@ class AustinBrain:
         elif intent == "sell":
             score -= 0.1
 
-        # -------------------------
-        # LOCATION LOGIC (GLOBAL REAL ESTATE SIGNAL)
-        # -------------------------
         hot_markets = ["Lekki", "London", "Dubai", "New York", "Toronto"]
 
         if location:
@@ -29,26 +23,17 @@ class AustinBrain:
             else:
                 score += 0.05
 
-        # -------------------------
-        # PRICE LOGIC (AFFORDABILITY HEURISTIC)
-        # -------------------------
         if price:
             if price < 50_000:
                 score += 0.1
             elif price > 500_000_000:
                 score -= 0.1
 
-        # -------------------------
-        # PROPERTY TYPE LOGIC
-        # -------------------------
         if property_type == "luxury":
             score += 0.1
         elif property_type == "shared":
             score += 0.05
 
-        # -------------------------
-        # FINAL DECISION
-        # -------------------------
         if score >= 0.75:
             decision = "strong_buy"
         elif score >= 0.6:
@@ -58,4 +43,24 @@ class AustinBrain:
         else:
             decision = "avoid"
 
-        return {"decision": decision, "score": round(score, 2), "currency": currency}
+        return {
+            "decision": decision,
+            "score": round(score, 2),
+            "currency": currency
+        }
+
+    # IMPORTANT: FIXED INDENTATION HERE
+    def explain(self, result: dict, query: str):
+        decision = result["decision"]
+        score = result["score"]
+
+        if decision == "strong_buy":
+            return f"Strong investment signal 📈 (score {score}). High potential opportunity."
+
+        if decision == "buy":
+            return f"Good opportunity 👍 (score {score}). Worth considering."
+
+        if decision == "hold":
+            return f"Neutral market ⚖️ (score {score}). Wait for better signals."
+
+        return f"High risk ⚠️ (score {score}). Not recommended."

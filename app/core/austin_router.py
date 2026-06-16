@@ -1,4 +1,20 @@
 class AustinRouter:
+    class AustinRouter:
+
+    def should_use_gpt(self, query: str, analysis: dict):
+        score = analysis.get("score", 0)
+
+        # cheap path
+        if score < 0.3:
+            return False
+
+        # expensive path
+        if score > 0.7:
+            return True
+
+        # medium case
+        return len(query) > 50
+    
     def route(self, parsed: dict) -> dict:
         intent = parsed.get("intent", "general")
         asset = parsed.get("property_type")

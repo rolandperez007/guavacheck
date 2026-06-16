@@ -1,57 +1,80 @@
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.utils import get_openapi
 
-from app.middleware.irongate_middleware import irongate_guard
 from app.api.routes.austin import router as austin_router
 from app.api.ws.austin_ws import router as ws_router
 from app.core.health import router as health_router
-from app.api.routes.irongate import router as irongate_router
-from app.api.routes.dashboard import router as dashboard_router
-from app.api.ws.dashboard_ws import router as dashboard_ws
-from app.api.routes.irongate_dashboard import router as irongate_dashboard_router
-from app.api.routes.irongate_control import router as control_router
-
-app.include_router(control_router)
-from fastapi import WebSocket
-import asyncio
-from irongate.telemetry import get_recent
 
 
-@router.websocket("/control/live")
-async def live(ws: WebSocket):
-    await ws.accept()
-
-    last_count = 0
-
-    while True:
-        data = get_recent()
-
-        if len(data) != last_count:
-            await ws.send_json({"type": "update", "events": data})
-            last_count = len(data)
-
-        await asyncio.sleep(1)
+# -------------------------
+# CREATE APP FIRST
+# -------------------------
+app = FastAPI(
+    title="Austin V3",
+    version="0.1.0",
+    description="Austin AI API"
+)
 
 
-app.include_router(irongate_dashboard_router)
+# -------------------------
+# CUSTOM OPENAPI
+# -------------------------
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
 
-app = FastAPI(title="Austin V3")
+    schema = get_openapi(
+        title="Austin V3",
+        version="0.1.0",
+        description="Austin AI API",
+        routes=app.routes,
+    )
 
-# ✅ FUNCTION MIDDLEWARE (correct way)
-app.middleware("http")(irongate_guard)
+    schema["components"]["securitySchemes"] = {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "x-api-key"
+        }
+    }
 
-# routes
+    for path in schema["paths"]:
+        for method in schema["paths"][path]:
+            schema["paths"][path][method]["security"] = [
+                {"ApiKeyAuth": []}
+            ]
+
+    app.openapi_schema = schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi
+
+
+# -------------------------
+# MIDDLEWARE
+# -------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+# -------------------------
+# ROUTERS
+# -------------------------
 app.include_router(austin_router, prefix="/austin")
-app.include_router(irongate_router)
 app.include_router(ws_router)
 app.include_router(health_router)
-app.include_router(dashboard_router)
-app.include_router(dashboard_ws)
 
-# static files
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-# debug
-print("WS ROUTES:")
-for r in app.routes:
-    print(r)
+# -------------------------
+# STARTUP
+# -------------------------
+@app.on_event("startup")
+async def startup():
+    print("INFO: Austin V3 initialized successfully")

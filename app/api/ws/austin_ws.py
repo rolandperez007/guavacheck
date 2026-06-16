@@ -1,45 +1,126 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
-from app.core.austin_engine import AustinEngine
-from app.core.security.context import SecurityContext
-import traceback
+import json
+from fastapi import WebSocket, APIRouter
+
+from app.core.austin_parser import AustinParser
+from app.core.austin_brain import AustinBrain
+from app.core.austin_gpt_brain import AustinGPTBrain
+from app.services.ai_ratings import get_system_snapshot
+from app.core.austin_memory import AustinMemory
 
 router = APIRouter()
-engine = AustinEngine()
 
+parser = AustinParser()
+brain = AustinBrain()
+gpt = AustinGPTBrain()
+memory = AustinMemory()
 
 @router.websocket("/ws/austin")
 async def austin_socket(websocket: WebSocket):
     await websocket.accept()
 
-    await websocket.send_json(
-        {"type": "system", "status": "connected", "message": "Austin WebSocket active"}
-    )
+    while True:
+        raw = await websocket.receive_text()
 
-    try:
-        while True:
-            query = await websocket.receive_text()
+        try:
+            data = json.loads(raw)
+        except Exception:
+            data = {"query": raw, "user_id": "unknown"}
 
-            if not query or not query.strip():
-                await websocket.send_json(
-                    {"type": "error", "message": "Empty query received"}
-                )
-                continue
+        query = data.get("query", "")
 
-            context = SecurityContext(user_id="test-user", org_id="test-org")
+        # -----------------------------
+        # 1. THINKING
+        # -----------------------------
+        await websocket.send_json({
+            "type": "chunk",
+            "data": {
+                "type": "thinking",
+                "stage": "start",
+                "message": "Analyzing request..."
+            }
+        })
 
-            try:
-                async for chunk in engine.stream_execute(query, context):
-                    await websocket.send_json({"type": "chunk", "data": chunk})
+        # -----------------------------
+        # 2. PARSE INPUT
+        # -----------------------------
+        parsed = parser.parse(query)
 
-                await websocket.send_json({"type": "done"})
+        # -----------------------------
+        # 3. BRAIN ANALYSIS
+        # -----------------------------
+        analysis = brain.analyze(parsed)
 
-            except Exception as e:
-                await websocket.send_json({"type": "error", "message": str(e)})
-                traceback.print_exc()
+        # -----------------------------
+        # 4. GPT EXPLANATION
+        # -----------------------------
+        explanation = gpt.reason(query, analysis)
 
-    except WebSocketDisconnect:
-        print("Austin client disconnected")
+        # -----------------------------
+        # 5. DASHBOARD EVENT
+        # -----------------------------
+        event = {
+            "query": query,
+            "analysis": analysis,
+            "decision": analysis.get("decision"),
+            "score": analysis.get("score")
+        }
 
-    except Exception as e:
-        print("WebSocket fatal error:", e)
-        traceback.print_exc()
+        snapshot = get_system_snapshot()
+        snapshot["last_austin_event"] = event
+
+        # -----------------------------
+        # 6. SEND CONTEXT (optional)
+        # -----------------------------
+        await websocket.send_json({
+            "type": "chunk",
+            "data": {
+                "type": "context",
+                "data": {
+                    "query": query,
+                    "history": history[-5:],  # last 5 interactions
+                    "status": "processed"
+                }
+            }
+       })
+
+        # -----------------------------
+        # 7. SEND ANALYSIS
+        # -----------------------------
+        await websocket.send_json({
+            "type": "chunk",
+            "data": {
+                "type": "analysis",
+                "data": analysis
+            }
+        })
+
+        # -----------------------------
+        # 8. SEND RESPONSE (GPT)
+        # -----------------------------
+        await websocket.send_json({
+            "type": "chunk",
+            "data": {
+                "type": "response",
+                "message": explanation
+            }
+        })
+
+        # -----------------------------
+        # 9. DASHBOARD EVENT STREAM
+        # -----------------------------
+        await websocket.send_json({
+            "type": "chunk",
+            "data": {
+                "type": "dashboard_event",
+                "data": event
+            }
+        })
+        memory.save(user_id, event)
+        history = memory.get_history(user_id)
+        
+        # -----------------------------
+        # 10. DONE
+        # -----------------------------
+        await websocket.send_json({
+            "type": "done"
+        })
