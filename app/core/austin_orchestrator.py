@@ -1,6 +1,7 @@
 from app.core.austin_parser import AustinParser
 from app.core.austin_brain import AustinBrain
 from app.core.austin_ai_gateway import AustinAIGateway
+from app.core.austin_contract import AustinResponse
 
 
 class AustinOrchestrator:
@@ -16,16 +17,15 @@ class AustinOrchestrator:
         parsed = self.parser.parse(query)
         analysis = self.brain.analyze(parsed)
 
-        # decision layer
         if analysis.get("confidence", 0) < 0.4:
             response = self.gpt.reason(query, analysis)
         else:
             response = self.brain.reason(query, analysis)
 
-        return {
-            "user_id": user_id,
-            "query": query,
-            "parsed": parsed,
-            "analysis": analysis,
-            "response": response
-        }
+        return AustinResponse(
+            user_id=user_id,
+            query=query,
+            parsed=parsed,
+            analysis=analysis,
+            response=response
+        ).to_dict()

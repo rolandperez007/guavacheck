@@ -1,4 +1,4 @@
-from fastapi import Security, HTTPException
+from fastapi import Security, HTTPException, Depends
 from fastapi.security import APIKeyHeader
 
 API_SECRET = "dev-secret-change-this"
@@ -10,7 +10,3 @@ def verify_api_key(api_key: str = Security(api_key_header)):
         return api_key
 
     raise HTTPException(status_code=401, detail="Unauthorized")
-
-router = APIRouter(
-    dependencies=[Depends(verify_api_key)]
-)    
