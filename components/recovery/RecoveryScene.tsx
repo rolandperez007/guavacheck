@@ -15,7 +15,7 @@ export default function RecoveryScene() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="animate-bounce">
           <Image
-            src="/Updated 404.png"
+            src="/404.png"
             alt="GuavaCheck 404"
             width={520}
             height={520}
