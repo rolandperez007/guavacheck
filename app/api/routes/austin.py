@@ -1,26 +1,19 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from pydantic import BaseModel
-from app.core.austin_orchestrator import AustinOrchestrator
-from app.main import verify_api_key
 
-router = APIRouter(dependencies=[Depends(verify_api_key)])
+from app.core.austin_orchestrator import AustinOrchestrator
+
+router = APIRouter()
 
 orchestrator = AustinOrchestrator()
-
 
 class AustinRequest(BaseModel):
     user_id: str
     query: str
 
-
-@router.post("/execute")
+@router.post('/execute')
 def execute(req: AustinRequest):
-
-    result = orchestrator.run(
+    return orchestrator.run(
         user_id=req.user_id,
         query=req.query
     )
-
-    return result
-
-    
