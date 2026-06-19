@@ -36,7 +36,7 @@ export default function NotFound() {
         />
       </div>
 
-      {/* AI MESSAGE */}
+      {/* AI TEXT */}
       <div className="absolute bottom-28 w-full text-center">
         <p className="text-lg">
           🤖 {messages[index]}
