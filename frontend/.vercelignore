@@ -1,0 +1,26 @@
+node_modules
+.next
+.git
+.vercel
+out
+build
+dist
+coverage
+backups
+.env
+.env.local
+.env.production
+*.log
+*.map
+frontend/
+Add-Content frontend\.vercelignore "
+node_modules
+.next
+.git
+*.log
+backend
+venv
+sample_data
+*.csv
+*.ipynb
+"
