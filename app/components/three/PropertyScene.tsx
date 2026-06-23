@@ -72,3 +72,12 @@ export default function PropertyScene() {
 
   return <div ref={mountRef} />;
 }
+
+
+
+
+
+
+
+
+

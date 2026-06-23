@@ -34,3 +34,4 @@ export class DataNormalizer {
     return map[location] || { lat: 0, lng: 0 };
   }
 }
+

@@ -41,3 +41,4 @@ export class InvestorDashboardEngine {
     return enriched.sort((a, b) => b.combinedScore - a.combinedScore);
   }
 }
+

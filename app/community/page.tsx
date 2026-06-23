@@ -1,36 +1,56 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CommunityService } from "@/services/community/CommunityService";
+import { CommunityService } from "@/lib/services/CommunityService";
 
 export default function CommunityPage() {
-
   const [posts, setPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    async function loadPosts() {
+      try {
+        const data = await CommunityService.getPosts();
+        setPosts(data || []);
+      } catch (err) {
+        console.error("Failed to load posts:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-    CommunityService.getPosts()
-      .then(setPosts);
-
+    loadPosts();
   }, []);
 
   return (
-    <div className="p-6">
+    <main className="p-6">
+      <h1 className="text-2xl font-bold mb-4">
+        Community
+      </h1>
 
-      <h1>Community</h1>
-
-      {posts.map(post => (
-
-        <div key={post.id}>
-
-          <h2>{post.title}</h2>
-
-          <p>{post.excerpt}</p>
-
+      {loading ? (
+        <p>Loading posts...</p>
+      ) : (
+        <div className="space-y-4">
+          {posts.map((post, idx) => (
+            <div key={idx} className="border rounded-lg p-4">
+              <h2 className="font-semibold">
+                {post.title || "Untitled"}
+              </h2>
+              <p>{post.content || post.body}</p>
+            </div>
+          ))}
         </div>
-
-      ))}
-
-    </div>
+      )}
+    </main>
   );
 }
+
+
+
+
+
+
+
+
+

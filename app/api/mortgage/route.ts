@@ -11,3 +11,9 @@ totalPayment: +(m * n).toFixed(2),
 totalInterest: +((m * n) - principal).toFixed(2)
 })
 }
+
+
+
+
+
+

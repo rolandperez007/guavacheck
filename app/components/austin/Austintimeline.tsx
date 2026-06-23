@@ -40,3 +40,12 @@ export function AustinTimeline({ events }: { events: Event[] }) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+

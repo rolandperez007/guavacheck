@@ -1,12 +1,17 @@
-// app/page.tsx
-import AustinSidebar from "../components/AustinSidebar";
-import Dashboard from "../components/Dashboard";
+import AustinSidebar from "@/app/components/austin/AustinSidebar";
+import Dashboard from "@/app/components/dashboard/Dashboard";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div style={{ display: "flex" }}>
+    <main style={{ display: "flex" }}>
       <AustinSidebar />
       <Dashboard />
-    </div>
+    </main>
   );
 }
+
+
+
+
+
+

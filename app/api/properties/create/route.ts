@@ -1,12 +1,18 @@
-import { supabase } from "../../../../lib/supabase";;
+import { supabase } from "@/lib/supabase";
 
-export async function POST(req) {
+export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { title, location, price, status, user_id } = body;
+    const {
+      title,
+      location,
+      price,
+      status,
+      user_id,
+    } = body;
 
-    // strict validation
+    // 🔒 strict validation
     if (!title || !location) {
       return Response.json(
         { error: "title and location are required" },
@@ -28,7 +34,10 @@ export async function POST(req) {
       .select();
 
     if (error) {
-      return Response.json({ error: error.message }, { status: 500 });
+      return Response.json(
+        { error: error.message },
+        { status: 500 }
+      );
     }
 
     return Response.json(data);
@@ -39,5 +48,6 @@ export async function POST(req) {
     );
   }
 }
-import Property3DViewer from "@/components/Property3DViewer";
-<Property3DViewer />
+
+
+

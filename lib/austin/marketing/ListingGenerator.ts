@@ -70,3 +70,4 @@ export class ListingGenerator {
     return tags;
   }
 }
+

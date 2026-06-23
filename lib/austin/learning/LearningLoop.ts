@@ -32,7 +32,7 @@ export class LearningLoop {
 
     const analysis = this.analyzePerformance();
 
-    const suggestions = [];
+    const suggestions: string[] = [];
 
     if (analysis.successRate < 50) {
       suggestions.push("Increase negotiation aggressiveness");
@@ -50,3 +50,4 @@ export class LearningLoop {
     };
   }
 }
+

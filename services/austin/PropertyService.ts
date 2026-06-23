@@ -27,7 +27,7 @@ export class PropertyService {
   static async formatListings(properties: any[]) {
     return (properties || []).map(p => ({
       ...p,
-      formattedPrice: ₦
+      formattedPrice: `₦${p.price ?? 0}`
     }));
   }
 }

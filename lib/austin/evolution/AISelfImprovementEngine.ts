@@ -14,7 +14,7 @@ export class AISelfImprovementEngine {
   // 🧠 AI suggests improvements (does NOT apply them automatically)
   static analyzeSystem(metrics: any) {
 
-    const suggestions = [];
+    const suggestions: any[] = [];
 
     if (metrics.successRate < 50) {
       suggestions.push({
@@ -84,3 +84,4 @@ export class AISelfImprovementEngine {
     return this.proposals;
   }
 }
+

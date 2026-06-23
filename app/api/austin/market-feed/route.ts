@@ -1,7 +1,6 @@
 import { MarketplaceBrain } from "@/lib/austin/market/MarketplaceBrain";
 
 export async function GET() {
-
   const sampleProperties = [
     {
       id: "1",
@@ -12,7 +11,7 @@ export async function GET() {
       level: "luxury",
       region: "middle_east",
       currency: "AED",
-      investment: { score: 78 }
+      investment: { score: 78 },
     },
     {
       id: "2",
@@ -23,24 +22,38 @@ export async function GET() {
       level: "standard",
       region: "africa",
       currency: "NGN",
-      investment: { score: 65 }
-    }
+      investment: { score: 65 },
+    },
   ];
 
-  const feed = await MarketplaceBrain.processFeed(sampleProperties);
+  const feed =
+    (await MarketplaceBrain.processFeed(sampleProperties)) as any[];
 
   return Response.json({
     portfolioValue: 370000000,
-    activeDeals: feed.filter(f => f.decision === "PROCEED"),
-    opportunities: feed.map(f => ({
-      title: f.listing.headline,
-      roi: f.analysis?.economyScore || 0,
-      risk: f.negotiation?.probabilityOfClose < 50 ? "HIGH" : "MEDIUM"
+
+    activeDeals: feed.filter(
+      (f: any) => f?.decision === "PROCEED"
+    ),
+
+    opportunities: feed.map((f: any) => ({
+      title: f?.listing?.headline ?? "Untitled",
+      roi: f?.analysis?.economyScore ?? 0,
+      risk:
+        (f?.negotiation?.probabilityOfClose ?? 0) < 50
+          ? "HIGH"
+          : "MEDIUM",
     })),
+
     insights: [
       "Global property index active",
       "Autonomous deal engine running",
-      "Negotiation AI optimizing offers"
-    ]
+      "Negotiation AI optimizing offers",
+    ],
   });
 }
+
+
+
+
+

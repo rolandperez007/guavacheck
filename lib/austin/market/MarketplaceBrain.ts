@@ -1,6 +1,6 @@
 import { AustinAutonomousAgent } from "@/lib/austin/agent/AustinAutonomousAgent";
 import { ListingGenerator } from "@/lib/austin/marketing/ListingGenerator";
-import { CommunityEngine } from "@/lib/austin/community/CommunityEngine";
+import { CommunityEngine } from "@/lib/austin/marketing/CommunityEngine";
 
 export class MarketplaceBrain {
 
@@ -70,3 +70,4 @@ export class MarketplaceBrain {
     }
   }
 }
+

@@ -13,7 +13,10 @@ type Property = {
 };
 
 export default function EditPropertyPage() {
-  const { id } = useParams();
+  import { useParams } from "next/navigation";
+
+  const params = useParams();
+  const id = params?.id as string;
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);

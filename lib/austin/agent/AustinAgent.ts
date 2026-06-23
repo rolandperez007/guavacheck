@@ -42,7 +42,7 @@ export class AustinAgent {
 
   static generateRecommendations(prediction: any, compliance: any) {
 
-    const recs = [];
+    const recs: string[] = [];
 
     if (prediction.riskScore > 60) {
       recs.push("Negotiate price reduction before proceeding");
@@ -88,3 +88,4 @@ export class AustinAgent {
     };
   }
 }
+

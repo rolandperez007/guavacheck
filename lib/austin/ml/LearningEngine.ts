@@ -47,3 +47,4 @@ export class LearningEngine {
     return Math.max(0, 1 - avgError / 100000000);
   }
 }
+

@@ -7,10 +7,16 @@ export type PropertyInput = {
   length: number;
 };
 
-export function generateBuildingModel(input: PropertyInput) {
+export type ModelPart = {
+  type: "base" | "floor" | "roof";
+  position: [number, number, number];
+  scale: [number, number, number];
+};
+
+export function generateBuildingModel(input: PropertyInput): ModelPart[] {
   const { type, floors, width, length } = input;
 
-  const model: any[] = [];
+  const model: ModelPart[] = [];
 
   const baseHeight = 0.2;
 
@@ -42,4 +48,11 @@ export function generateBuildingModel(input: PropertyInput) {
   });
 
   return model;
+}
+
+/**
+ * Compatibility alias for frontend usage
+ */
+export function mapPropertyToModel(input: PropertyInput): ModelPart[] {
+  return generateBuildingModel(input);
 }

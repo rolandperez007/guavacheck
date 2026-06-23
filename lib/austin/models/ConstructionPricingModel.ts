@@ -31,60 +31,52 @@ export class ConstructionPricingModel {
     default: 1.0
   };
 
-  static 
-  calculate(input: {
-    sqm: number;
-    level: "basic" | "standard" | "luxury";
-    location?: string;
-    risk?: "low" | "medium" | "high";
-    currency?: string;
+    // -----------------------------
+  // CORE PRICING ENGINE
+  // -----------------------------
+
+  static calculateConstructionCost(input: {
+    area: number;
+    type?: string;
+    quality?: "low" | "standard" | "premium";
   }) {
+    const baseRate = {
+      low: 12000,
+      standard: 18000,
+      premium: 25000,
+    };
 
-    const sqm = input.sqm;
-    const level = input.level;
-    const location = (input.location || "default").toLowerCase();
+    const quality = input.quality || "standard";
 
-    const baseRate = this.baseRates.perSqm[level];
-    const locationMultiplier = this.locationIndex[location] || 1;
-    const riskMultiplier = this.riskIndex?.[input.risk || "low"] || 1;
-    const currency = input.currency || "NGN";
-    const currencyRate = this.currencyRates?.[currency] || 1;
+    const rate = baseRate[quality] || baseRate.standard;
 
-    const rawCost = sqm * baseRate * locationMultiplier * riskMultiplier;
-
-    const finalCost = rawCost * currencyRate;
+    const total = input.area * rate;
 
     return {
-      sqm,
-      level,
-      location,
-      risk: input.risk || "low",
-      currency,
-
-      breakdown: {
-        baseRate,
-        locationMultiplier,
-        riskMultiplier,
-        currencyRate
-      },
-
-      estimatedCost: Math.round(finalCost),
-
-      range: {
-        low: Math.round(finalCost * 0.9),
-        high: Math.round(finalCost * 1.15)
-      },
-
-      meta: {
-        model: "construction-pricing-v2-global",
-        confidence: 0.91
-      }
+      area: input.area,
+      quality,
+      ratePerSqm: rate,
+      totalCost: total,
+      currency: "NGN",
     };
   }
-;
+
+  static estimateMaterials(area: number) {
+    return {
+      cementBags: Math.ceil(area * 0.8),
+      blocks: Math.ceil(area * 12),
+      sandTons: Math.ceil(area * 0.5),
+      rodsKg: Math.ceil(area * 8),
+    };
   }
-}
 
+  static generateReport(input: any) {
+    const cost = this.calculateConstructionCost(input);
 
-
-
+    return {
+      summary: cost,
+      materials: this.estimateMaterials(input.area),
+      timestamp: new Date().toISOString(),
+    };
+  }
+}  

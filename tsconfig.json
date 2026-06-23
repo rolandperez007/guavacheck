@@ -17,28 +17,24 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
+  
     },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "hooks/**/*.ts",
-    "lib/**/*.ts",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
+  "next-env.d.ts",
+  "**/*.ts",
+  "**/*.tsx",
+  "types/**/*.d.ts",
+  ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

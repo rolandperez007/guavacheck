@@ -1,6 +1,6 @@
 import { PropertyEconomyEngine } from "@/lib/austin/economy/PropertyEconomyEngine";
 import { NegotiationEngine } from "@/lib/austin/negotiation/NegotiationEngine";
-import { EscrowEngine } from "@/lib/austin/finance/EscrowEngine";
+import { EscrowEngine } from "@/lib/austin/escrow/EscrowEngine";
 
 export class AustinAutonomousAgent {
 
@@ -67,3 +67,4 @@ export class AustinAutonomousAgent {
     };
   }
 }
+

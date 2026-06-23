@@ -78,3 +78,4 @@ export class EscrowEngine {
     return this.deals;
   }
 }
+
