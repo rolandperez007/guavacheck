@@ -1,5 +1,5 @@
-import AustinSidebar from "@/app/components/austin/AustinSidebar";
+import NotFoundPage from "./not-found";
 
 export default function Home() {
-  return <h1>Loading...</h1>;
+  return <NotFoundPage />;
 }
