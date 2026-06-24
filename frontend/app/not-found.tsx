@@ -21,7 +21,7 @@ export default function NotFound() {
       </h2>
 
       <img
-        src="/assets/404.png"
+        src="/404.png"
         alt="GuavaCheck Construction"
         style={{
           width: "100%",
