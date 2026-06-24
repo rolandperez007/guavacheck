@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 export default function AustinSidebar() {
@@ -47,5 +48,3 @@ export default function AustinSidebar() {
     </div>
   );
 }
-
-

@@ -19,4 +19,10 @@ __pycache__/
 *.pycgep2_backup.bundle
 gep2_backup.bundle
 backups/
+.env
+.env.local
+.env.production
+backups/
+*.zip
+
 .vercel

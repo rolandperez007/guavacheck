@@ -1,83 +1,47 @@
-import { LearningEngine } from "@/lib/austin/ml/LearningEngine";
 export class MarketForecastEngine {
-
   static history: any[] = [];
 
   static predict(property: any) {
+    const price = property?.price ?? 0;
+    const location = (property?.location ?? "").toLowerCase();
 
-    const price = property.price || 0;
-    const location = property.location || "unknown";
+    // simple risk scoring baseline
+    let riskScore = 0;
 
-    // 🧠 simplified predictive model (later replace with ML model)
-    const growthFactor = this.getGrowthFactor(location);
-    const demandScore = this.getDemandScore(property);
-    const riskScore = this.getRiskScore(property);
+    if (price > 200_000_000) riskScore += 30;
+    if (location.includes("lekki")) riskScore -= 10;
+    if (location.includes("ikorodu")) riskScore += 15;
 
-    const futureValue = price * (1 + growthFactor);
+    // clamp values safely
+    riskScore = Math.max(0, Math.min(100, riskScore));
 
-    const confidence = LearningEngine.adjustConfidence
-      Math.max(0.5, 1 - (riskScore / 100));
+    const confidence = 0.7;
 
-    const prediction = {
-      currentPrice: price,
-      predictedPrice: Math.round(futureValue),
-      growthRate: Math.round(growthFactor * 100),
-      demandScore,
+    let recommendation: "BUY" | "AVOID" | "HOLD" = "HOLD";
+
+    if (riskScore < 30) recommendation = "BUY";
+    if (riskScore > 70) recommendation = "AVOID";
+
+    // ✅ FIX: create proper result object
+    const result = {
+      propertyId: property?.id ?? null,
+      price,
+      location,
       riskScore,
-      confidence: Number(confidence.toFixed(2)),
-      horizonMonths: 24,
-      recommendation: this.getRecommendation(growthFactor, riskScore)
+      confidence,
+      recommendation,
+      growthRate: property?.growthRate ?? 5,
+      timestamp: new Date().toISOString()
     };
 
-    this.history.push({
-      property,
-      prediction,
-      timestamp: new Date()
-    });
+    // store safely
+    MarketForecastEngine.history.push(result);
 
-    return prediction;
-  }
-
-  static getGrowthFactor(location: string) {
-
-    const map: Record<string, number> = {
-      "Dubai": 0.18,
-      "London": 0.06,
-      "New York": 0.05,
-      "Lagos": 0.10,
-      "default": 0.04
+    return {
+      riskScore,
+      confidence,
+      recommendation,
+      growthRate: property?.growthRate ?? 5
     };
-
-    return map[location] || map["default"];
-  }
-
-  static getDemandScore(property: any) {
-
-    const base = (property.bedrooms || 2) * 10;
-    const priceFactor = property.price > 100000000 ? 40 : 20;
-
-    return Math.min(100, base + priceFactor);
-  }
-
-  static getRiskScore(property: any) {
-
-    let risk = 20;
-
-    if (property.type === "luxury") risk += 10;
-    if (property.location === "unknown") risk += 30;
-    if (property.price > 500000000) risk += 15;
-
-    return Math.min(100, risk);
-  }
-
-  static getRecommendation(growth: number, risk: number) {
-
-    if (growth > 0.1 && risk < 30) return "STRONG_BUY";
-    if (growth > 0.05) return "BUY";
-    if (risk > 60) return "AVOID";
-
-    return "HOLD";
   }
 }
-
-

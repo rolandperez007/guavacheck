@@ -1,53 +1,68 @@
 export class ConstructionPricingModel {
-
-  static baseRates = {
-    perSqm: {
-      basic: 180000,
-      standard: 250000,
-      luxury: 380000
-    }
-  };
-
-  
-  static riskIndex: Record<string, number> = {
-    low: 1.0,
-    medium: 1.1,
-    high: 1.25
-  };
-
-  static currencyRates: Record<string, number> = {
-    USD: 1,
-    NGN: 1500,
-    GBP: 0.79,
-    EUR: 0.92
-  };
-
+  // -------------------------------------------------
+  // LOCATION MULTIPLIERS
+  // -------------------------------------------------
   static locationIndex: Record<string, number> = {
     lekki: 1.25,
     ajah: 1.1,
     ikoyi: 1.6,
     victoria_island: 1.7,
     ikorodu: 0.9,
-    default: 1.0
+    default: 1.0,
   };
 
-    // -----------------------------
-  // CORE PRICING ENGINE
-  // -----------------------------
+  // -------------------------------------------------
+  // COMPATIBILITY WRAPPER (used by engines)
+  // -------------------------------------------------
+  static calculate(input: {
+    sqm: number;
+    level?: "basic" | "standard" | "premium";
+    location?: string;
+  }) {
+    const qualityMap: Record<
+      "basic" | "standard" | "premium",
+      "low" | "standard" | "premium"
+    > = {
+      basic: "low",
+      standard: "standard",
+      premium: "premium",
+    };
 
+    const report = this.calculateConstructionCost({
+      area: input.sqm,
+      quality: qualityMap[input.level ?? "standard"],
+    });
+
+    const key = (input.location ?? "")
+      .toLowerCase()
+      .replace(/\s+/g, "_");
+
+    const multiplier = this.locationIndex[key] ?? this.locationIndex.default;
+
+    return {
+      baseCost: report.totalCost,
+      adjustedCost: Math.round(report.totalCost * multiplier),
+      costPerSqm: report.ratePerSqm * multiplier,
+      locationMultiplier: multiplier,
+      currency: report.currency,
+    };
+  }
+
+  // -------------------------------------------------
+  // CORE PRICING ENGINE
+  // -------------------------------------------------
   static calculateConstructionCost(input: {
     area: number;
     type?: string;
     quality?: "low" | "standard" | "premium";
   }) {
-    const baseRate = {
+    const baseRate: Record<string, number> = {
       low: 12000,
       standard: 18000,
       premium: 25000,
     };
 
     const quality = input.quality || "standard";
-
     const rate = baseRate[quality] || baseRate.standard;
 
     const total = input.area * rate;
@@ -61,6 +76,9 @@ export class ConstructionPricingModel {
     };
   }
 
+  // -------------------------------------------------
+  // MATERIAL ESTIMATION
+  // -------------------------------------------------
   static estimateMaterials(area: number) {
     return {
       cementBags: Math.ceil(area * 0.8),
@@ -70,6 +88,9 @@ export class ConstructionPricingModel {
     };
   }
 
+  // -------------------------------------------------
+  // FULL REPORT GENERATOR
+  // -------------------------------------------------
   static generateReport(input: any) {
     const cost = this.calculateConstructionCost(input);
 
@@ -79,4 +100,4 @@ export class ConstructionPricingModel {
       timestamp: new Date().toISOString(),
     };
   }
-}  
+}

@@ -1,0 +1,4 @@
+
+
+memory = AustinMemory()
+gpt = AustinAIGateway(memory_store=memory)

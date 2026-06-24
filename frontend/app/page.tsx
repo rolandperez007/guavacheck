@@ -1,7 +1,5 @@
-import AustinSidebar from "@/components/AustinSidebar";
+import AustinSidebar from "@/app/components/austin/AustinSidebar";
 
 export default function Home() {
-  return <AustinSidebar />;
+  return <h1>Loading...</h1>;
 }
-
-

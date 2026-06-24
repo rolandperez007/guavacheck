@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: false,
-};
 
-module.exports = nextConfig;
+  pageExtensions: ["ts", "tsx", "js", "jsx"],
+
+  webpack: (config) => {
+    config.watchOptions = {
+      ignored: ["**/mobile-app-disabled/**"],
+    };
+    return config;
+  },
+};

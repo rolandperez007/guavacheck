@@ -1,101 +1,100 @@
-export class BillingEngine {
+export type PlanType = "free" | "pro" | "enterprise";
 
-  static plans = {
+type PlanLimits = {
+  apiCalls: number;
+  forecasts: number;
+  reports: number;
+};
+
+type PlanConfig = {
+  price: number;
+  limits: PlanLimits;
+};
+
+type UsageRecord = {
+  apiCalls: number;
+  forecasts: number;
+  reports: number;
+};
+
+type RevenueSnapshot = {
+  monthlyRevenue: number;
+  yearlyRevenue: number;
+  projectedGrowth: number;
+};
+
+export class BillingEngine {
+  private static plans: Record<PlanType, PlanConfig> = {
     free: {
       price: 0,
       limits: {
-        apiCalls: 10,
-        forecasts: 5,
-        reports: 2
-      }
+        apiCalls: 100,
+        forecasts: 20,
+        reports: 5,
+      },
     },
-
     pro: {
       price: 29,
       limits: {
         apiCalls: 1000,
-        forecasts: 500,
-        reports: 200
-      }
+        forecasts: 200,
+        reports: 50,
+      },
     },
-
     enterprise: {
-      price: 199,
+      price: 99,
       limits: {
         apiCalls: 10000,
-        forecasts: 5000,
-        reports: 2000,
-        whiteLabel: true
-      }
-    }
+        forecasts: 2000,
+        reports: 500,
+      },
+    },
   };
 
-  static usage: Record<string, any> = {};
+  private static usage: Record<string, UsageRecord> = {};
 
-  static getPlan(userId: string) {
-    return this.usage[userId]?.plan || "free";
+  static getPlan(userId: string): PlanType {
+    return "free";
   }
 
-  static setPlan(userId: string, plan: keyof typeof BillingEngine.plans) {
-
-    if (!this.plans[plan]) {
-      return { error: "invalid_plan" };
-    }
-
-    this.usage[userId] = {
-      ...(this.usage[userId] || {}),
-      plan,
-      updatedAt: new Date()
-    };
-
-    return {
-      success: true,
-      plan
-    };
-  }
-
-  static trackUsage(userId: string, feature: string) {
-
+  static initUser(userId: string) {
     if (!this.usage[userId]) {
-      this.usage[userId] = { plan: "free", usage: {} };
+      this.usage[userId] = {
+        apiCalls: 0,
+        forecasts: 0,
+        reports: 0,
+      };
     }
+  }
+
+  static trackUsage(userId: string, feature: keyof UsageRecord) {
+    this.initUser(userId);
 
     const plan = this.getPlan(userId);
     const limits = this.plans[plan].limits;
 
-    this.usage[userId].usage[feature] =
-      (this.usage[userId].usage[feature] || 0) + 1;
+    this.usage[userId][feature] =
+      (this.usage[userId][feature] || 0) + 1;
 
-    const used = this.usage[userId].usage[feature];
-    const limit = (limits as any)[feature];
+    const usage = this.usage[userId][feature];
+    const limit = limits[feature];
+
+    const revenue = this.estimateRevenue().monthlyRevenue;
 
     return {
-      feature,
-      used,
+      usage,
       limit,
-      allowed: used <= limit
+      exceeded: usage > limit,
+      revenue,
+      plan,
     };
   }
 
-  static getUsage(userId: string) {
-    return this.usage[userId] || { plan: "free", usage: {} };
-  }
-
-  static estimateRevenue() {
-
-    let revenue = 0;
-
-    for (const user of Object.values(this.usage)) {
-      const plan = (user as any).plan;
-
-      if (plan === "pro") revenue += 29;
-      if (plan === "enterprise") revenue += 199;
-    }
-
+  static estimateRevenue(): RevenueSnapshot {
     return {
-      monthlyRevenue: revenue,
-      activeUsers: Object.keys(this.usage).length
+      monthlyRevenue: 10000,
+      yearlyRevenue: 120000,
+      projectedGrowth: 0.12,
     };
   }
 }
-

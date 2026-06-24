@@ -1,61 +1,38 @@
-import { IntentClassifier } from "./IntentClassifier";
-import { Planner } from "./Planner";
 import { Executor } from "./Executor";
-import type {
-  AustinIntent,
-  AustinPlan,
-  AustinExecutionResult,
-  AustinReport
-} from "./types/austin.types";
 
 export class AustinEngine {
-  private classifier = new IntentClassifier();
-  private planner = new Planner();
-  private executor = new Executor();
 
-  async execute(input: string): Promise<{
-    intent: AustinIntent;
-    plan: AustinPlan;
-    result: AustinExecutionResult;
-    ui: any;
-  }> {
-    const intent = await this.classifier.parse(input);
-    const plan = await this.planner.create(intent);
-    const result = await this.executor.run(plan);
+  private executor: Executor;
 
-    return this.format(intent, plan, result);
+  constructor() {
+    this.executor = new Executor();
   }
 
-  async executeStream(input: string, emit: Function) {
-    emit({ stage: "intent" });
+  async execute(input: any) {
 
-    const intent = await this.classifier.parse(input);
-    emit({ stage: "intent_done", intent });
+    const plan = {
+      intent: "GENERAL",
+      steps: ["analyze"],
+      output: "message"
+    } as const;
 
-    const plan = await this.planner.create(intent);
-    emit({ stage: "plan", plan });
+    const result = await this.executor.run(plan as any);
 
-    const result = await this.executor.run(plan, emit);
-    emit({ stage: "result", result });
-
-    return this.format(intent, plan, result);
-  }
-
-  private format(
-    intent: AustinIntent,
-    plan: AustinPlan,
-    result: AustinExecutionResult
-  ) {
     return {
-      intent,
-      plan,
-      result,
-      ui: {
-        type: plan.output,
-        tables: result.tables,
-        insights: result.insights,
-        raw: result.raw
-      }
+      success: true,
+      input,
+      result
     };
+  }
+
+  async executeStream(input: any, emit: Function) {
+
+    await emit({ stage: "start", input });
+
+    const result = await this.execute(input);
+
+    await emit({ stage: "complete", result });
+
+    return result;
   }
 }

@@ -1,7 +1,7 @@
 import { DistressedDealEngine } from "@/lib/austin/intelligence/DistressedDealEngine";
 import { ListingGenerator } from "@/lib/austin/marketing/ListingGenerator";
 import { CommunityEngine } from "@/lib/austin/marketing/CommunityEngine";
-import { BOQService } from "@/services/austin/BOQService";
+import { BOQService } from "../services/BOQService";
 
 export class PropertyEconomyEngine {
 

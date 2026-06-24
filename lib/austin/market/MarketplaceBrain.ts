@@ -6,7 +6,9 @@ export class MarketplaceBrain {
 
   static async processFeed(properties: any[]) {
 
-    const results = [];
+    type MarketplaceResult = any;
+
+    const results: MarketplaceResult[] = [];
 
     for (const property of properties) {
 
