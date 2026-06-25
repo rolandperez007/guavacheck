@@ -1,13 +1,13 @@
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/hero/Hero";
-import Features from "./components/features/Features";
+import AustinSection from "./components/austin/AustinSection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Features />
+      <AustinSection />
     </>
   );
 }
