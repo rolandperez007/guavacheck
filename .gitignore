@@ -26,3 +26,4 @@ backups/
 *.zip
 
 .vercel
+.env*

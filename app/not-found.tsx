@@ -7,60 +7,41 @@ export default function NotFound() {
 
   return (
     <div style={styles.wrapper}>
-      {/* Background grid effect */}
-      <div style={styles.gridOverlay} />
+      <div style={styles.overlay} />
 
-      {/* Main content */}
-      <div style={styles.center}>
-        
-        {/* Construction icon */}
-        <div style={styles.icon}>👷🏽‍♂️🏗️</div>
+      {/* BACKGROUND IMAGE */}
+      <div style={styles.imageLayer} />
 
-        <h1 style={styles.title}>
-          Building Something Powerful
-        </h1>
+      {/* FLOATING PARTICLES */}
+      <div style={styles.particles} />
+
+      {/* CONTENT */}
+      <div style={styles.content}>
+        <h1 style={styles.title}>404</h1>
 
         <p style={styles.subtitle}>
-          This section of GuavaCheck is still under construction.
+          Oops! This space isn’t built yet inside GuavaCheck.
         </p>
 
-        {/* AI message */}
         <div style={styles.aiBox}>
-          🤖 Austin AI:
+          🤖 Austin AI
           <br />
-          "I searched the blueprints… this page isn’t ready yet.
-          But I can still help you find what you need."
+          “I can see the blueprint… but this room hasn’t been constructed yet.”
         </div>
 
-        {/* Feature preview */}
-        <div style={styles.features}>
-          <div>🏠 AI Property Design</div>
-          <div>💰 Cost Estimation Engine</div>
-          <div>📊 Investor Dashboard</div>
-          <div>🧱 Construction Calculator</div>
-          <div>🌍 Marketplace</div>
-          <div>🤖 Austin AI Assistant</div>
-        </div>
-
-        {/* Buttons */}
         <div style={styles.buttons}>
-          <button onClick={() => router.push("/")} style={styles.primaryBtn}>
-            Return Home
+          <button onClick={() => router.push("/")} style={styles.primary}>
+            Back to Home
           </button>
 
-          <button onClick={() => router.push("/contact")} style={styles.secondaryBtn}>
+          <button onClick={() => router.push("/search")} style={styles.secondary}>
+            Search
+          </button>
+
+          <button onClick={() => router.push("/contact")} style={styles.secondary}>
             Contact Us
           </button>
-
-          <button onClick={() => router.push("/onboarding")} style={styles.secondaryBtn}>
-            Join Beta
-          </button>
         </div>
-
-        {/* Footer */}
-        <p style={styles.footer}>
-          GuavaCheck • Building the Future of African Real Estate
-        </p>
       </div>
     </div>
   );
@@ -69,63 +50,75 @@ export default function NotFound() {
 const styles: Record<string, React.CSSProperties> = {
   wrapper: {
     height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#070b14",
-    color: "white",
-    textAlign: "center",
+    overflow: "hidden",
     position: "relative",
-    overflow: "hidden"
+    background: "#050814",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
   },
 
-  gridOverlay: {
+  /* dark cinematic overlay */
+  overlay: {
     position: "absolute",
-    width: "200%",
-    height: "200%",
-    backgroundImage:
-      "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-    backgroundSize: "40px 40px",
-    transform: "rotate(10deg)",
-    opacity: 0.4
+    inset: 0,
+    background:
+      "radial-gradient(circle at 30% 30%, rgba(16,185,129,0.08), transparent 50%), radial-gradient(circle at 70% 70%, rgba(59,130,246,0.08), transparent 50%)",
+    zIndex: 1,
   },
 
-  center: {
+  /* your image as background with slow zoom */
+  imageLayer: {
+    position: "absolute",
+    inset: 0,
+    backgroundImage: "url('/assets/guava-404.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    animation: "slowZoom 12s ease-in-out infinite alternate",
+    filter: "brightness(0.9) contrast(1.05)",
+    zIndex: 0,
+  },
+
+  /* subtle particles */
+  particles: {
+    position: "absolute",
+    inset: 0,
+    background:
+      "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+    backgroundSize: "60px 60px",
+    animation: "floatParticles 20s linear infinite",
     zIndex: 2,
-    maxWidth: "800px",
-    padding: "20px"
+    opacity: 0.4,
   },
 
-  icon: {
-    fontSize: "3rem",
-    marginBottom: "10px"
+  content: {
+    position: "relative",
+    zIndex: 3,
+    textAlign: "center",
+    maxWidth: "700px",
+    padding: "20px",
   },
 
   title: {
-    fontSize: "2.2rem",
-    marginBottom: "10px"
+    fontSize: "4rem",
+    fontWeight: 700,
+    marginBottom: "10px",
+    textShadow: "0 0 30px rgba(16,185,129,0.4)",
   },
 
   subtitle: {
-    opacity: 0.7,
-    marginBottom: "20px"
+    opacity: 0.8,
+    marginBottom: "20px",
   },
 
   aiBox: {
-    background: "rgba(255,255,255,0.05)",
-    padding: "15px",
-    borderRadius: "10px",
-    marginBottom: "20px",
-    border: "1px solid rgba(255,255,255,0.1)"
-  },
-
-  features: {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-    gap: "10px",
-    marginBottom: "20px",
-    fontSize: "0.9rem",
-    opacity: 0.85
+    background: "rgba(0,0,0,0.4)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    padding: "16px",
+    borderRadius: "12px",
+    marginBottom: "25px",
+    backdropFilter: "blur(10px)",
   },
 
   buttons: {
@@ -133,30 +126,41 @@ const styles: Record<string, React.CSSProperties> = {
     gap: "10px",
     justifyContent: "center",
     flexWrap: "wrap",
-    marginBottom: "20px"
   },
 
-  primaryBtn: {
+  primary: {
     padding: "10px 16px",
     background: "#10b981",
     border: "none",
-    color: "black",
     borderRadius: "8px",
     cursor: "pointer",
-    fontWeight: 600
+    fontWeight: 600,
+    color: "black",
   },
 
-  secondaryBtn: {
+  secondary: {
     padding: "10px 16px",
-    background: "transparent",
-    border: "1px solid #374151",
-    color: "white",
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.15)",
     borderRadius: "8px",
-    cursor: "pointer"
+    cursor: "pointer",
+    color: "white",
   },
-
-  footer: {
-    opacity: 0.5,
-    fontSize: "0.8rem"
-  }
 };
+
+/* inject animations */
+if (typeof window !== "undefined") {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    @keyframes floatParticles {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-80px); }
+    }
+  `;
+  document.head.appendChild(style);
+}

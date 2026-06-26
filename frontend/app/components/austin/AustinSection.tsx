@@ -93,11 +93,36 @@ export default function AustinSection() {
         >
           <div
             style={{
-              fontSize: "120px",
-            }}
-          >
-            🤖
-          </div>
+              width: 170,
+              height: 170,
+              margin: "0 auto 30px",
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle at 30% 30%, #1A1A1A 0%, #0B0B0B 45%, #000000 100%)",
+              border: "2px solid rgba(110,231,183,.35)",
+              boxShadow:
+                "0 0 80px rgba(110,231,183,.30), inset 0 0 40px rgba(255,255,255,.04)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              width: 22,
+              height: 22,
+              borderRadius: "50%",
+              background: "#6EE7B7",
+              boxShadow: "0 0 25px #6EE7B7",
+          }}
+        />
+      </div>
+            
+              
+            
+          
+            
+          
 
           <h3
             style={{
