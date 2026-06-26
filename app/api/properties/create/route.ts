@@ -1,18 +1,31 @@
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@supabase/supabase-js";
+
+function getSupabase() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+
+  return createClient(supabaseUrl, supabaseAnonKey);
+}
 
 export async function POST(req: Request) {
   try {
+    const supabase = getSupabase();
+
+    if (!supabase) {
+      return Response.json(
+        { error: "Supabase not configured" },
+        { status: 500 }
+      );
+    }
+
     const body = await req.json();
 
-    const {
-      title,
-      location,
-      price,
-      status,
-      user_id,
-    } = body;
+    const { title, location, price, status, user_id } = body;
 
-    // 🔒 strict validation
     if (!title || !location) {
       return Response.json(
         { error: "title and location are required" },
@@ -48,6 +61,4 @@ export async function POST(req: Request) {
     );
   }
 }
-
-
 
