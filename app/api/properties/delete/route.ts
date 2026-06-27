@@ -11,6 +11,13 @@ export async function POST(req: Request) {
       );
     }
 
+    if (!supabase) {
+      return Response.json(
+        { error: "Supabase client not initialized" },
+        { status: 500 }
+      );
+    }
+
     const { error } = await supabase
       .from("properties")
       .delete()
@@ -24,16 +31,10 @@ export async function POST(req: Request) {
     }
 
     return Response.json({ success: true });
-  } catch (err: any) {
+  } catch (err) {
     return Response.json(
       { error: "Delete failed" },
       { status: 500 }
     );
   }
 }
-
-
-
-
-
-
