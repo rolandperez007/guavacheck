@@ -1,3 +1,5 @@
-export default function Page() {
-  return <h1>IT WORKS 🚀</h1>;
+import { notFound } from "next/navigation";
+
+export default function Home() {
+  notFound();
 }
