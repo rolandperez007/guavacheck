@@ -1,4 +1,4 @@
-import { supabase } from "../../../../lib/supabase";
+import { propertyService } from "../../../../services/propertyService";
 
 export async function POST(req: Request) {
   try {
@@ -6,34 +6,21 @@ export async function POST(req: Request) {
 
     if (!id) {
       return Response.json(
-        { error: "Property ID required" },
+        { success: false, error: "Property ID required" },
         { status: 400 }
       );
     }
 
-    if (!supabase) {
-      return Response.json(
-        { error: "Supabase client not initialized" },
-        { status: 500 }
-      );
+    const result = await propertyService.deleteProperty(id);
+
+    if (!result.success) {
+      return Response.json(result, { status: 500 });
     }
 
-    const { error } = await supabase
-      .from("properties")
-      .delete()
-      .eq("id", id);
-
-    if (error) {
-      return Response.json(
-        { error: error.message },
-        { status: 500 }
-      );
-    }
-
-    return Response.json({ success: true });
-  } catch (err) {
+    return Response.json(result);
+  } catch {
     return Response.json(
-      { error: "Delete failed" },
+      { success: false, error: "Delete failed" },
       { status: 500 }
     );
   }
