@@ -1,0 +1,45 @@
+{
+  "Africa": [
+    "NG",
+    "GH",
+    "KE",
+    "UG",
+    "TZ",
+    "RW",
+    "ZM",
+    "ZW",
+    "ZA"
+  ],
+
+  "Europe": [
+    "GB",
+    "FR",
+    "DE",
+    "IT",
+    "ES"
+  ],
+
+  "Asia": [
+    "JP",
+    "KR",
+    "SG",
+    "IN",
+    "MY"
+  ],
+
+  "North America": [
+    "US",
+    "CA"
+  ],
+
+  "South America": [
+    "BR",
+    "AR",
+    "CL"
+  ],
+
+  "Oceania": [
+    "AU",
+    "NZ"
+  ]
+}

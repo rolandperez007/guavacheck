@@ -1,0 +1,27 @@
+{
+  "code": "US",
+  "iso3": "USA",
+  "name": "United States",
+  "continent": "North America",
+  "capital": "Washington DC",
+  "currency": "USD",
+  "language": "English",
+  "timezone": "America/New_York",
+  "measurement": "Imperial",
+  "supportLevel": 1,
+  "pppMultiplier": 1,
+  "paymentProviders": [],
+  "capabilities": {
+    "construction": false,
+    "valuation": false,
+    "mortgage": false,
+    "insurance": false,
+    "distress": false,
+    "buildingPassport": false,
+    "regulations": false,
+    "materials": false,
+    "climate": false,
+    "subscriptions": true,
+    "payments": true
+  }
+}

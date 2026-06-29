@@ -1,0 +1,27 @@
+{
+  "code": "GB",
+  "iso3": "GBR",
+  "name": "United Kingdom",
+  "continent": "Europe",
+  "capital": "London",
+  "currency": "GBP",
+  "language": "English",
+  "timezone": "Europe/London",
+  "measurement": "Metric",
+  "supportLevel": 1,
+  "pppMultiplier": 1,
+  "paymentProviders": [],
+  "capabilities": {
+    "construction": false,
+    "valuation": false,
+    "mortgage": false,
+    "insurance": false,
+    "distress": false,
+    "buildingPassport": false,
+    "regulations": false,
+    "materials": false,
+    "climate": false,
+    "subscriptions": true,
+    "payments": true
+  }
+}

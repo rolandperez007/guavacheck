@@ -1,0 +1,13 @@
+[
+  { "level":0,"name":"None"},
+  { "level":1,"name":"Global AI"},
+  { "level":2,"name":"Basic"},
+  { "level":3,"name":"Developing"},
+  { "level":4,"name":"Growing"},
+  { "level":5,"name":"Advanced"},
+  { "level":6,"name":"Verified"},
+  { "level":7,"name":"Enterprise"},
+  { "level":8,"name":"National"},
+  { "level":9,"name":"Premium"},
+  { "level":10,"name":"Complete"}
+]

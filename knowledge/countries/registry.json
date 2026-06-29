@@ -1,0 +1,46 @@
+[
+  {
+    "code": "NG",
+    "iso3": "NGA",
+    "name": "Nigeria",
+    "continent": "Africa",
+    "capital": "Abuja",
+    "currency": "NGN",
+    "language": "English",
+    "timezone": "Africa/Lagos",
+    "measurement": "Metric"
+  },
+  {
+    "code": "US",
+    "iso3": "USA",
+    "name": "United States",
+    "continent": "North America",
+    "capital": "Washington DC",
+    "currency": "USD",
+    "language": "English",
+    "timezone": "America/New_York",
+    "measurement": "Imperial"
+  },
+  {
+    "code": "GB",
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "continent": "Europe",
+    "capital": "London",
+    "currency": "GBP",
+    "language": "English",
+    "timezone": "Europe/London",
+    "measurement": "Metric"
+  },
+  {
+    "code": "ZA",
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "continent": "Africa",
+    "capital": "Pretoria",
+    "currency": "ZAR",
+    "language": "English",
+    "timezone": "Africa/Johannesburg",
+    "measurement": "Metric"
+  }
+]

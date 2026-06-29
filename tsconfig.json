@@ -38,11 +38,11 @@
   ],
 
   "exclude": [
-  "node_modules",
-  ".next",
-  "mobile-app-disabled",
-  "frontend",
-  "architecture",
-  "frontend_archive"
-]
+    "node_modules",
+    ".next",
+    "mobile-app-disabled",
+    "frontend",
+    "architecture",
+    "frontend_archive"
+  ]
 }
