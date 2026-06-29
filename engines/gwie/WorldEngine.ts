@@ -5,6 +5,7 @@ import { LocalizationEngine } from "./LocalizationEngine";
 import { PaymentRouter } from "./PaymentRouter";
 import { PPPEngine } from "./PPPEngine";
 import { ContextBuilder } from "./ContextBuilder";
+CountryRegistry.initialize();
 
 export class WorldEngine {
 

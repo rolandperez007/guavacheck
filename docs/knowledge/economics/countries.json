@@ -1,0 +1,90 @@
+[
+  {
+    "country": "NG",
+    "name": "Nigeria",
+    "region": "Africa",
+    "currency": "NGN",
+    "language": "en",
+    "pricingTier": 3,
+    "multiplier": 0.40,
+    "provider": "paystack",
+    "fallbackProvider": "flutterwave"
+  },
+  {
+    "country": "ZA",
+    "name": "South Africa",
+    "region": "Africa",
+    "currency": "ZAR",
+    "language": "en",
+    "pricingTier": 2,
+    "multiplier": 0.70,
+    "provider": "flutterwave",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "US",
+    "name": "United States",
+    "region": "North America",
+    "currency": "USD",
+    "language": "en",
+    "pricingTier": 1,
+    "multiplier": 1.00,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "GB",
+    "name": "United Kingdom",
+    "region": "Europe",
+    "currency": "GBP",
+    "language": "en",
+    "pricingTier": 1,
+    "multiplier": 1.00,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "BR",
+    "name": "Brazil",
+    "region": "South America",
+    "currency": "BRL",
+    "language": "pt",
+    "pricingTier": 2,
+    "multiplier": 0.75,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "JP",
+    "name": "Japan",
+    "region": "Asia",
+    "currency": "JPY",
+    "language": "ja",
+    "pricingTier": 1,
+    "multiplier": 1.00,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "KR",
+    "name": "South Korea",
+    "region": "Asia",
+    "currency": "KRW",
+    "language": "ko",
+    "pricingTier": 1,
+    "multiplier": 1.00,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  },
+  {
+    "country": "AU",
+    "name": "Australia",
+    "region": "Oceania",
+    "currency": "AUD",
+    "language": "en",
+    "pricingTier": 1,
+    "multiplier": 1.00,
+    "provider": "stripe",
+    "fallbackProvider": "paypal"
+  }
+]

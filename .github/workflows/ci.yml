@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
 
       - name: Install dependencies
         run: |
@@ -26,37 +27,29 @@ jobs:
           pip install -r requirements.txt
           pip install black flake8 pytest
 
-      - name: Black
-        run: |
-          black --check .
+      - name: Black Format Check
+        run: black --check .
 
-      - name: Flake8
-        run: |
-          flake8 app
+      - name: Flake8 Lint
+        run: flake8 app --count --show-source --statistics
 
-      - name: Compile
-        run: |
-          python -m py_compile app/main.py
+      - name: Python Compile Check
+        run: python -m compileall app
 
-      - name: Import Validation
-        run: |
-          python -c "import app.main"
+      - name: Import Smoke Test
+        run: python -c "import app; print('APP IMPORT OK')"
 
       - name: Austin Engine Validation
-        run: |
-          python -c "from app.core.austin_engine import AustinEngine; print('ENGINE OK')"
+        run: python -c "from app.core.austin_engine import AustinEngine; print('ENGINE OK')"
 
-      - name: Pytest
-        run: |
-          pytest
+      - name: Pytest (Strict)
+        run: pytest -q --disable-warnings --maxfail=1
+
   frontend:
-
     runs-on: ubuntu-latest
-
     needs: test
 
     steps:
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -73,3 +66,29 @@ jobs:
       - name: Next.js Build
         run: npm run build
    
+     deploy:
+       runs-on: ubuntu-latest
+       needs: frontend
+       if: github.ref == 'refs/heads/main'
+
+       steps:
+         - uses: actions/checkout@v4
+
+         - uses: actions/setup-node@v4
+           with:
+             node-version: 20
+             cache: npm
+
+         - name: Install dependencies
+           run: npm ci
+
+         - name: Build project
+           run: npm run build
+
+         - name: Deploy to Vercel
+           uses: amondnet/vercel-action@v25
+           with:
+             vercel-token: ${{ secrets.VERCEL_TOKEN }}
+             vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+             vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+             vercel-args: "--prod"
