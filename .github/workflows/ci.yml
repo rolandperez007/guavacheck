@@ -49,3 +49,27 @@ jobs:
       - name: Pytest
         run: |
           pytest
+  frontend:
+
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Node Dependencies
+        run: npm ci
+
+      - name: TypeScript Validation
+        run: npx tsc --noEmit
+
+      - name: Next.js Build
+        run: npm run build
+   
