@@ -1,56 +1,47 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { CommunityService } from "@/lib/services/CommunityService";
+import CommunityHeader from "./components/CommunityHeader";
+import SearchBar from "./components/SearchBar";
+import CategoryTabs from "./components/CategoryTabs";
+import AustinDigest from "./components/AustinDigest";
+import TrendingPanel from "./components/TrendingPanel";
+import CommunityFeed from "./components/CommunityFeed";
+import RightSidebar from "./components/RightSidebar";
 
 export default function CommunityPage() {
-  const [posts, setPosts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadPosts() {
-      try {
-        const data = await CommunityService.getPosts();
-        setPosts(data || []);
-      } catch (err) {
-        console.error("Failed to load posts:", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadPosts();
-  }, []);
-
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">
-        Community
-      </h1>
+    <main className="min-h-screen bg-slate-50">
+      <div className="mx-auto max-w-7xl px-6 py-10">
 
-      {loading ? (
-        <p>Loading posts...</p>
-      ) : (
-        <div className="space-y-4">
-          {posts.map((post, idx) => (
-            <div key={idx} className="border rounded-lg p-4">
-              <h2 className="font-semibold">
-                {post.title || "Untitled"}
-              </h2>
-              <p>{post.content || post.body}</p>
-            </div>
-          ))}
+        <CommunityHeader />
+
+        <div className="mt-8">
+          <SearchBar />
         </div>
-      )}
+
+        <div className="mt-6">
+          <CategoryTabs />
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12">
+
+          <div className="space-y-6 lg:col-span-8">
+
+            <AustinDigest />
+
+            <TrendingPanel />
+
+            <CommunityFeed />
+
+          </div>
+
+          <aside className="lg:col-span-4">
+
+            <RightSidebar />
+
+          </aside>
+
+        </div>
+
+      </div>
     </main>
   );
 }
-
-
-
-
-
-
-
-
-

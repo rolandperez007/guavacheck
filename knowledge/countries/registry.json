@@ -6,8 +6,8 @@
     "continent": "Africa",
     "capital": "Abuja",
     "currency": "NGN",
-    "language": "English",
-    "timezone": "Africa/Lagos",
+    "language": "[English]",
+    "timezone": "[Africa/Lagos]",
     "measurement": "Metric"
   },
   {
@@ -17,8 +17,8 @@
     "continent": "North America",
     "capital": "Washington DC",
     "currency": "USD",
-    "language": "English",
-    "timezone": "America/New_York",
+    "language": "[English]",
+    "timezone": "[America/New_York]",
     "measurement": "Imperial"
   },
   {
@@ -28,8 +28,8 @@
     "continent": "Europe",
     "capital": "London",
     "currency": "GBP",
-    "language": "English",
-    "timezone": "Europe/London",
+    "language": "[English]",
+    "timezone": "[Europe/London]",
     "measurement": "Metric"
   },
   {
@@ -39,8 +39,8 @@
     "continent": "Africa",
     "capital": "Pretoria",
     "currency": "ZAR",
-    "language": "English",
-    "timezone": "Africa/Johannesburg",
+    "language": "[English]",
+    "timezone": "[Africa/Johannesburg]",
     "measurement": "Metric"
   }
 ]
