@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "statuses": [
+    "Available",
+    "Reserved",
+    "Under Verification",
+    "Verified",
+    "Pending Documentation",
+    "Under Dispute",
+    "Mortgaged",
+    "Leased",
+    "Sold",
+    "Inactive",
+    "Blacklisted",
+    "Fraud Alert"
+  ]
+}

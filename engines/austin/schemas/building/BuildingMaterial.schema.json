@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/building/BuildingMaterial.schema.json",
+  "title": "Building Material",
+  "description": "Master material definition used throughout every building component.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "materialId",
+    "name",
+    "category"
+  ],
+
+  "properties": {
+
+    "materialId": {
+      "type": "string"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "category": {
+
+      "enum": [
+
+        "CONCRETE",
+        "STEEL",
+        "TIMBER",
+        "BLOCK",
+        "BRICK",
+        "STONE",
+        "GLASS",
+        "ALUMINIUM",
+        "PVC",
+        "COPPER",
+        "CERAMIC",
+        "GRANITE",
+        "MARBLE",
+        "GYPSUM",
+        "PAINT",
+        "INSULATION",
+        "BITUMEN",
+        "ASPHALT",
+        "COMPOSITE",
+        "OTHER"
+
+      ]
+
+    },
+
+    "manufacturer": {
+      "type": "string"
+    },
+
+    "brand": {
+      "type": "string"
+    },
+
+    "grade": {
+      "type": "string"
+    },
+
+    "strength": {
+      "type": "string"
+    },
+
+    "density": {
+      "type": "number"
+    },
+
+    "thermalConductivity": {
+      "type": "number"
+    },
+
+    "fireRating": {
+      "type": "string"
+    },
+
+    "waterResistance": {
+      "type": "string"
+    },
+
+    "lifespanYears": {
+      "type": "integer"
+    },
+
+    "maintenanceIntervalMonths": {
+      "type": "integer"
+    },
+
+    "recyclable": {
+      "type": "boolean"
+    },
+
+    "sustainabilityScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    }
+
+  }
+
+}

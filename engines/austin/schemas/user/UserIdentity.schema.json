@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserSession.schema.json",
+  "title": "User Session",
+
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "required": [
+
+    "sessionId",
+
+    "startedAt",
+
+    "status"
+
+  ],
+
+  "properties": {
+
+    "sessionId": {
+
+      "type": "string"
+
+    },
+
+    "deviceId": {
+
+      "type": "string"
+
+    },
+
+    "deviceName": {
+
+      "type": "string"
+
+    },
+
+    "platform": {
+
+      "type": "string"
+
+    },
+
+    "browser": {
+
+      "type": "string"
+
+    },
+
+    "operatingSystem": {
+
+      "type": "string"
+
+    },
+
+    "ipAddress": {
+
+      "type": "string"
+
+    },
+
+    "country": {
+
+      "type": "string"
+
+    },
+
+    "city": {
+
+      "type": "string"
+
+    },
+
+    "startedAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "lastActivity": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "expiresAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "ACTIVE",
+
+        "IDLE",
+
+        "EXPIRED",
+
+        "LOGGED_OUT",
+
+        "TERMINATED"
+
+      ]
+
+    }
+
+  }
+
+}

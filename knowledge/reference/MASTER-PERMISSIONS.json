@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "dataset": "MASTER-PERMISSIONS",
+    "version": "1.0.0"
+  },
+
+  "roles": {
+
+    "owner": [
+      "create_project",
+      "edit_project",
+      "delete_project",
+      "invite_members",
+      "fund_escrow",
+      "approve_payments"
+    ],
+
+    "contractor": [
+      "accept_project",
+      "upload_progress",
+      "request_payment",
+      "submit_documents"
+    ],
+
+    "architect": [
+      "upload_drawings",
+      "approve_design",
+      "issue_revision"
+    ],
+
+    "engineer": [
+      "approve_structural_work",
+      "submit_inspection"
+    ],
+
+    "lawyer": [
+      "verify_documents",
+      "approve_contracts"
+    ],
+
+    "bank": [
+      "review_mortgage",
+      "approve_loan",
+      "verify_finance"
+    ],
+
+    "insurance": [
+      "issue_policy",
+      "approve_claim",
+      "review_risk"
+    ],
+
+    "operations": [
+      "view_everything",
+      "manage_platform",
+      "manage_users",
+      "manage_projects",
+      "manage_verification",
+      "manage_payments"
+    ],
+
+    "austin_core": [
+      "*"
+    ]
+  }
+}

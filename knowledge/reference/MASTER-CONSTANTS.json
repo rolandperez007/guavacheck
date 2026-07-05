@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "dataset": "MASTER-CONSTANTS",
+    "version": "1.0.0",
+    "schema": "reference.v1",
+    "updatedAt": "2026-07-03T00:00:00Z"
+  },
+
+  "currencyPrecision": 2,
+
+  "defaultLanguage": "en",
+
+  "defaultCountry": "GLOBAL",
+
+  "defaultTimezone": "UTC",
+
+  "defaultMeasurementSystem": "metric",
+
+  "defaultConfidence": 0,
+
+  "maxTrustScore": 100,
+
+  "minTrustScore": 0,
+
+  "maxRiskScore": 100,
+
+  "defaultRiskScore": 50,
+
+  "maxUploadSizeMB": 100,
+
+  "defaultEscrowRelease": 0,
+
+  "defaultWarrantyMonths": 12,
+
+  "defaultRetentionPercent": 5,
+
+  "defaultTaxRate": 0,
+
+  "maxProjectMembers": 1000,
+
+  "maxAttachmentsPerProject": 5000,
+
+  "maxSimulationIterations": 100000,
+
+  "uuidVersion": 4
+}

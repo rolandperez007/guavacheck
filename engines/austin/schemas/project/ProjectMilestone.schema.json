@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectMilestone.schema.json",
+  "title": "Project Milestone",
+  "description": "Defines measurable checkpoints throughout the project lifecycle.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "milestoneId": {
+
+      "type": "string"
+
+    },
+
+    "name": {
+
+      "type": "string"
+
+    },
+
+    "description": {
+
+      "type": "string"
+
+    },
+
+    "sequence": {
+
+      "type": "integer"
+
+    },
+
+    "plannedDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "actualDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "completionPercentage": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "NOT_STARTED",
+
+        "IN_PROGRESS",
+
+        "COMPLETED",
+
+        "DELAYED",
+
+        "BLOCKED",
+
+        "CANCELLED"
+
+      ]
+
+    },
+
+    "dependencies": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "deliverables": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    }
+
+  }
+
+}

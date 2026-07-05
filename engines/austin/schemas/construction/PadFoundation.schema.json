@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/PadFoundation.schema.json",
+  "title": "Pad Foundation",
+  "description": "Individual footing supporting isolated structural columns.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "padId": {
+      "type": "string"
+    },
+
+    "columnReference": {
+      "type": "string"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "depth": {
+      "type": "number"
+    },
+
+    "concreteVolume": {
+      "type": "number"
+    },
+
+    "reinforcementWeight": {
+      "type": "number"
+    },
+
+    "safeWorkingLoad": {
+      "type": "number"
+    }
+
+  }
+
+}

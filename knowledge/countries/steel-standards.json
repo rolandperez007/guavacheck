@@ -1,0 +1,20 @@
+{
+  "grades": [
+
+    {
+      "grade": "Grade40",
+      "yieldStrengthMPa": 280
+    },
+
+    {
+      "grade": "Grade60",
+      "yieldStrengthMPa": 420
+    },
+
+    {
+      "grade": "B500",
+      "yieldStrengthMPa": 500
+    }
+
+  ]
+}

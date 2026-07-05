@@ -1,0 +1,23 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"supplier",
+    "name":"Building Materials Supplier",
+    "category":"Supply Chain",
+    "riskLevel":"high",
+    "licenseRequired":true
+  },
+  "services":[
+    "Building Materials",
+    "Electrical Materials",
+    "Plumbing Materials",
+    "Roofing",
+    "Steel",
+    "Cement",
+    "Blocks",
+    "Timber",
+    "Finishing Materials",
+    "Imported Products"
+  ],
+  "supportedCountries":"global"
+}

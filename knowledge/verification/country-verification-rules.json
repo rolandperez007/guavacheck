@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+
+  "defaultRules": {
+    "identityRequired": true,
+    "governmentVerification": true,
+    "professionalLicense": true,
+    "officeVerification": true,
+    "propertyDocumentVerification": true,
+    "trustScoreRequired": 70
+  },
+
+  "regionalOverrides": {}
+}

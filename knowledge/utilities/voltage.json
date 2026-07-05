@@ -1,0 +1,166 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+  "countries": [
+    {
+      "code": "NG",
+      "country": "Nigeria",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["D", "G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "GH",
+      "country": "Ghana",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["D", "G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "KE",
+      "country": "Kenya",
+      "voltage": 240,
+      "frequency": 50,
+      "plugTypes": ["G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "ZA",
+      "country": "South Africa",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["M", "N", "C"],
+      "system": "single_phase"
+    },
+    {
+      "code": "US",
+      "country": "United States",
+      "voltage": 120,
+      "frequency": 60,
+      "plugTypes": ["A", "B"],
+      "system": "split_phase"
+    },
+    {
+      "code": "CA",
+      "country": "Canada",
+      "voltage": 120,
+      "frequency": 60,
+      "plugTypes": ["A", "B"],
+      "system": "split_phase"
+    },
+    {
+      "code": "GB",
+      "country": "United Kingdom",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "FR",
+      "country": "France",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "E"],
+      "system": "single_phase"
+    },
+    {
+      "code": "DE",
+      "country": "Germany",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "F"],
+      "system": "single_phase"
+    },
+    {
+      "code": "ES",
+      "country": "Spain",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "F"],
+      "system": "single_phase"
+    },
+    {
+      "code": "IT",
+      "country": "Italy",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "F", "L"],
+      "system": "single_phase"
+    },
+    {
+      "code": "AU",
+      "country": "Australia",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["I"],
+      "system": "single_phase"
+    },
+    {
+      "code": "NZ",
+      "country": "New Zealand",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["I"],
+      "system": "single_phase"
+    },
+    {
+      "code": "CN",
+      "country": "China",
+      "voltage": 220,
+      "frequency": 50,
+      "plugTypes": ["A", "C", "I"],
+      "system": "single_phase"
+    },
+    {
+      "code": "JP",
+      "country": "Japan",
+      "voltage": 100,
+      "frequency": 50,
+      "plugTypes": ["A", "B"],
+      "system": "single_phase"
+    },
+    {
+      "code": "IN",
+      "country": "India",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "D", "M"],
+      "system": "single_phase"
+    },
+    {
+      "code": "BR",
+      "country": "Brazil",
+      "voltage": 127,
+      "frequency": 60,
+      "plugTypes": ["C", "N"],
+      "system": "mixed"
+    },
+    {
+      "code": "AE",
+      "country": "United Arab Emirates",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "SA",
+      "country": "Saudi Arabia",
+      "voltage": 230,
+      "frequency": 60,
+      "plugTypes": ["G"],
+      "system": "single_phase"
+    },
+    {
+      "code": "SG",
+      "country": "Singapore",
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["G"],
+      "system": "single_phase"
+    }
+  ]
+}

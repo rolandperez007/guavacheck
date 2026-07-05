@@ -1,0 +1,12 @@
+{
+  "schema": "reference.v1",
+  "description": "Universal schema for all guavacheck reference datasets.",
+  "metadata": {
+    "dataset": "",
+    "version": "",
+    "updatedAt": "",
+    "source": "",
+    "country": "GLOBAL"
+  },
+  "records": []
+}

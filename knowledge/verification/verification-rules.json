@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+
+  "rules": {
+    "minimumTrustScore": 80,
+    "identityRequired": true,
+    "governmentIdRequired": true,
+    "licenseRequired": true,
+    "officeRequired": true,
+    "backgroundCheckRequired": true,
+    "communityReviewRequired": false,
+    "manualApprovalRequired": true,
+    "continuousMonitoring": true
+  }
+}

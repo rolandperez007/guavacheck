@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionMetadata.schema.json",
+  "title": "Construction Metadata",
+  "description": "System metadata for construction records.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "version": {
+
+      "type": "string"
+
+    },
+
+    "schemaVersion": {
+
+      "type": "string"
+
+    },
+
+    "createdBy": {
+
+      "type": "string"
+
+    },
+
+    "updatedBy": {
+
+      "type": "string"
+
+    },
+
+    "createdAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "updatedAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "traceId": {
+
+      "type": "string"
+
+    },
+
+    "requestId": {
+
+      "type": "string"
+
+    },
+
+    "correlationId": {
+
+      "type": "string"
+
+    },
+
+    "checksum": {
+
+      "type": "string"
+
+    },
+
+    "confidenceScore": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 1
+
+    },
+
+    "tags": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    }
+
+  }
+
+}

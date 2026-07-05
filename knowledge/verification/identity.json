@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+
+  "identityDocuments": [
+    "National Identity Card",
+    "Passport",
+    "Driver License",
+    "Residence Permit",
+    "Voter Card",
+    "Tax Identification Number",
+    "Social Security Number",
+    "National Insurance Number"
+  ],
+
+  "verificationMethods": [
+    "Government Database",
+    "Biometric Verification",
+    "Facial Recognition",
+    "Document OCR",
+    "Manual Review"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "builder",
+    "name": "Builder",
+    "category": "Construction",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "verificationRequirements": {
+    "identity": true,
+    "professionalLicense": true,
+    "professionalBodyMembership": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "addressVerification": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "companyRegistration": true,
+    "taxRegistration": true,
+    "insuranceVerification": false,
+    "backgroundCheck": true
+  },
+
+  "services": [
+    "Residential Construction",
+    "Commercial Construction",
+    "Industrial Construction",
+    "Renovation",
+    "Remodeling",
+    "Building Maintenance",
+    "Project Supervision",
+    "Foundation Works",
+    "Concrete Works",
+    "Roof Construction",
+    "Finishing Works",
+    "Turnkey Construction",
+    "Site Management",
+    "Quality Assurance",
+    "Construction Consulting"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Builder License",
+    "Professional Membership Certificate",
+    "Business Registration",
+    "Tax Identification",
+    "Office Address Proof",
+    "Company Profile",
+    "Project Portfolio"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 20,
+    "identityVerification": 15,
+    "professionalMembership": 15,
+    "completedProjects": 20,
+    "communityRating": 15,
+    "officeVerification": 5,
+    "experience": 10
+  },
+
+  "riskChecks": [
+    "Expired License",
+    "Construction Violations",
+    "Safety Violations",
+    "Project Abandonment",
+    "Professional Suspension",
+    "Blacklisted Individual",
+    "Fraud Reports",
+    "Duplicate Registration"
+  ],
+
+  "deliverables": [
+    "Completed Building",
+    "Site Reports",
+    "Construction Schedule",
+    "Progress Reports",
+    "Material Reports",
+    "Quality Reports",
+    "Completion Certificate",
+    "Maintenance Manual",
+    "Handover Documentation"
+  ],
+
+  "supportedCountries": "global"
+}

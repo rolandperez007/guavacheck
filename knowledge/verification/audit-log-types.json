@@ -1,0 +1,18 @@
+{
+  "version":"1.0.0",
+
+  "logs":[
+    "Account Creation",
+    "Profile Update",
+    "Document Upload",
+    "Document Download",
+    "Identity Check",
+    "License Validation",
+    "Trust Score Change",
+    "Permission Change",
+    "Admin Action",
+    "AI Decision",
+    "Appeal Submitted",
+    "Appeal Approved"
+  ]
+}

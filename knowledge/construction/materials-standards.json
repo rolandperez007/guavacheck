@@ -1,0 +1,141 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "categories": [
+    {
+      "id": "concrete",
+      "name": "Concrete",
+      "dataset": "concrete-grades.json",
+      "description": "Concrete strength classes, mix ratios and structural recommendations."
+    },
+    {
+      "id": "cement",
+      "name": "Cement",
+      "dataset": "cement-types.json",
+      "description": "Portland cement classifications and recommended applications."
+    },
+    {
+      "id": "reinforcement",
+      "name": "Reinforcement Steel",
+      "dataset": "steel-grades.json",
+      "description": "Reinforcing bars, mesh and structural steel standards."
+    },
+    {
+      "id": "blocks",
+      "name": "Blocks and Bricks",
+      "dataset": "block-standards.json",
+      "description": "Concrete blocks, clay bricks and masonry standards."
+    },
+    {
+      "id": "timber",
+      "name": "Timber",
+      "dataset": "timber-grades.json",
+      "description": "Hardwood, softwood and engineered timber."
+    },
+    {
+      "id": "roofing",
+      "name": "Roofing",
+      "dataset": "roofing-materials.json",
+      "description": "Roof sheets, shingles, tiles and structural roofing materials."
+    },
+    {
+      "id": "flooring",
+      "name": "Flooring",
+      "dataset": "flooring-materials.json",
+      "description": "Tiles, wood, marble, vinyl, epoxy and concrete flooring."
+    },
+    {
+      "id": "doors_windows",
+      "name": "Doors and Windows",
+      "dataset": "doors-windows.json",
+      "description": "Doors, window systems and glazing."
+    },
+    {
+      "id": "paint",
+      "name": "Paint and Finishes",
+      "dataset": "paint-standards.json",
+      "description": "Interior, exterior and protective coating systems."
+    },
+    {
+      "id": "plumbing",
+      "name": "Plumbing",
+      "dataset": "plumbing-materials.json",
+      "description": "Pipes, fittings, valves and plumbing standards."
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical",
+      "dataset": "electrical-materials.json",
+      "description": "Electrical cables, conduits, sockets, breakers and accessories."
+    },
+    {
+      "id": "hvac",
+      "name": "HVAC",
+      "dataset": "hvac-materials.json",
+      "description": "Heating, ventilation and air-conditioning equipment."
+    },
+    {
+      "id": "waterproofing",
+      "name": "Waterproofing",
+      "dataset": "waterproofing-materials.json",
+      "description": "Membranes, coatings and damp-proof systems."
+    },
+    {
+      "id": "insulation",
+      "name": "Insulation",
+      "dataset": "insulation-materials.json",
+      "description": "Thermal and acoustic insulation materials."
+    },
+    {
+      "id": "ceilings",
+      "name": "Ceilings",
+      "dataset": "ceiling-materials.json",
+      "description": "Gypsum, PVC, mineral fibre and suspended ceilings."
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "dataset": "glass-standards.json",
+      "description": "Tempered, laminated, insulated and architectural glass."
+    },
+    {
+      "id": "landscaping",
+      "name": "Landscaping",
+      "dataset": "landscaping-materials.json",
+      "description": "Outdoor paving, drainage, irrigation and landscape materials."
+    },
+    {
+      "id": "solar",
+      "name": "Solar Systems",
+      "dataset": "solar-components.json",
+      "description": "Solar panels, batteries, inverters and mounting systems."
+    },
+    {
+      "id": "smart_home",
+      "name": "Smart Home",
+      "dataset": "smart-home-devices.json",
+      "description": "Home automation devices and IoT equipment."
+    },
+    {
+      "id": "fire_safety",
+      "name": "Fire Safety",
+      "dataset": "fire-safety.json",
+      "description": "Detection, suppression and fire protection systems."
+    }
+  ],
+
+  "defaultStandards": {
+    "structuralConcrete": "C25",
+    "foundationConcrete": "C30",
+    "reinforcementSteel": "Grade 500",
+    "cement": "Portland 42.5R",
+    "roofing": "Aluminium Longspan",
+    "plumbing": "PVC",
+    "electrical": "Copper Conductors",
+    "paint": "Weather Resistant Acrylic",
+    "waterproofing": "Bituminous Membrane",
+    "windows": "Aluminium",
+    "doors": "Steel Security Door"
+  }
+}

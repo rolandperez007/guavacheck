@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "dataset": "MASTER-DOCUMENTS",
+    "version": "1.0.0"
+  },
+
+  "documents": [
+
+    "passport",
+
+    "national_id",
+
+    "drivers_license",
+
+    "tax_certificate",
+
+    "certificate_of_occupancy",
+
+    "survey_plan",
+
+    "deed_of_assignment",
+
+    "building_plan",
+
+    "structural_drawing",
+
+    "soil_test",
+
+    "invoice",
+
+    "receipt",
+
+    "insurance",
+
+    "contract",
+
+    "utility_bill"
+
+  ]
+}

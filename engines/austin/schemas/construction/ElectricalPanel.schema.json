@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalPanel.schema.json",
+  "title": "Electrical Panel",
+  "description": "Distribution board supplying electrical circuits.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+
+    "panelId",
+
+    "panelType"
+
+  ],
+
+  "properties": {
+
+    "panelId": {
+      "type": "string"
+    },
+
+    "panelName": {
+      "type": "string"
+    },
+
+    "panelType": {
+
+      "enum": [
+
+        "MAIN",
+
+        "SUB_PANEL",
+
+        "GENERATOR",
+
+        "SOLAR",
+
+        "UPS"
+
+      ]
+
+    },
+
+    "ratedVoltage": {
+      "type": "number"
+    },
+
+    "ratedCurrent": {
+      "type": "number"
+    },
+
+    "numberOfWays": {
+      "type": "integer"
+    },
+
+    "installedWays": {
+      "type": "integer"
+    },
+
+    "availableWays": {
+      "type": "integer"
+    },
+
+    "ipRating": {
+      "type": "string"
+    },
+
+    "location": {
+      "type": "string"
+    },
+
+    "manufacturer": {
+      "type": "string"
+    },
+
+    "installationDate": {
+      "type": "string",
+      "format": "date"
+    }
+
+  }
+
+}

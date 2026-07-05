@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+
+  "steps": [
+    "Verify Identity",
+    "Verify Government ID",
+    "Verify Phone Number",
+    "Verify Email",
+    "Verify Address",
+    "Verify Office",
+    "Verify Business Registration",
+    "Verify Professional License",
+    "Verify Property Documents",
+    "Cross Validate Records",
+    "Run Fraud Detection",
+    "Calculate Trust Score",
+    "Austin AI Review",
+    "Human Review",
+    "Publish Verification"
+  ]
+}

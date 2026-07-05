@@ -1,0 +1,23 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"manufacturer",
+    "name":"Manufacturer",
+    "category":"Manufacturing",
+    "riskLevel":"high",
+    "licenseRequired":true
+  },
+  "services":[
+    "Cement Production",
+    "Steel Production",
+    "Glass Manufacturing",
+    "Paint Manufacturing",
+    "Ceramics",
+    "Doors",
+    "Windows",
+    "Furniture",
+    "Electrical Equipment",
+    "Plumbing Products"
+  ],
+  "supportedCountries":"global"
+}

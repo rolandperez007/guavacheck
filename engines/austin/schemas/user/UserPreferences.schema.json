@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserPreferences.schema.json",
+  "title": "User Preferences",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "theme": {
+      "enum": [
+        "light",
+        "dark",
+        "system"
+      ]
+    },
+
+    "language": {
+      "type": "string"
+    },
+
+    "timezone": {
+      "type": "string"
+    },
+
+    "currency": {
+      "type": "string"
+    },
+
+    "measurementSystem": {
+      "enum": [
+        "metric",
+        "imperial"
+      ]
+    },
+
+    "notifications": {
+
+      "type": "object",
+
+      "properties": {
+
+        "email": {
+          "type": "boolean"
+        },
+
+        "sms": {
+          "type": "boolean"
+        },
+
+        "push": {
+          "type": "boolean"
+        }
+
+      }
+
+    },
+
+    "privacy": {
+
+      "type": "object",
+
+      "properties": {
+
+        "profileVisible": {
+          "type": "boolean"
+        },
+
+        "activityVisible": {
+          "type": "boolean"
+        }
+
+      }
+
+    }
+
+  }
+}

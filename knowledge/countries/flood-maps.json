@@ -1,0 +1,16 @@
+{
+  "countries": {
+
+    "NG": [
+      "Lagos",
+      "Bayelsa",
+      "Rivers"
+    ],
+
+    "US": [
+      "Florida",
+      "Louisiana"
+    ]
+
+  }
+}

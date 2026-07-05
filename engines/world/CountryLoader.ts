@@ -1,15 +1,12 @@
-import { CountryRegistry } from "./CountryRegistry";
+import countries from "@/knowledge/countries/countries.json";
+import { CountryProfile } from "./types";
 
 export class CountryLoader {
+  static load(): CountryProfile[] {
+    return countries as CountryProfile[];
+  }
 
-    static initialize(): void {
-
-        CountryRegistry.initialize();
-
-        console.log(
-            `GWIE loaded ${CountryRegistry.count()} countries.`
-        );
-
-    }
-
+  static count(): number {
+    return this.load().length;
+  }
 }

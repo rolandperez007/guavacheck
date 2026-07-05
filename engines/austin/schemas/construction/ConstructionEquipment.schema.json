@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionEquipment.schema.json",
+  "title": "Construction Equipment",
+  "description": "Heavy equipment, tools and machinery available to a construction project.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "equipmentId": {
+
+      "type": "string"
+
+    },
+
+    "name": {
+
+      "type": "string"
+
+    },
+
+    "category": {
+
+      "enum": [
+
+        "EXCAVATOR",
+
+        "CRANE",
+
+        "BULLDOZER",
+
+        "CONCRETE_MIXER",
+
+        "VIBRATOR",
+
+        "GENERATOR",
+
+        "SCAFFOLD",
+
+        "POWER_TOOL",
+
+        "TRANSPORT",
+
+        "SURVEY"
+
+      ]
+
+    },
+
+    "manufacturer": {
+
+      "type": "string"
+
+    },
+
+    "serialNumber": {
+
+      "type": "string"
+
+    },
+
+    "condition": {
+
+      "enum": [
+
+        "NEW",
+
+        "GOOD",
+
+        "FAIR",
+
+        "SERVICE_REQUIRED",
+
+        "OUT_OF_SERVICE"
+
+      ]
+
+    },
+
+    "availability": {
+
+      "enum": [
+
+        "AVAILABLE",
+
+        "ASSIGNED",
+
+        "MAINTENANCE",
+
+        "RETIRED"
+
+      ]
+
+    },
+
+    "hourlyCost": {
+
+      "type": "number"
+
+    },
+
+    "purchaseValue": {
+
+      "type": "number"
+
+    },
+
+    "maintenanceDue": {
+
+      "type": "string",
+
+      "format": "date"
+
+    }
+
+  }
+
+}

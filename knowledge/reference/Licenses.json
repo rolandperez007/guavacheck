@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "dataset": "Reference Licenses"
+  },
+  "records": [
+    {
+      "id": "MIT",
+      "name": "MIT License"
+    },
+    {
+      "id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    }
+  ]
+}

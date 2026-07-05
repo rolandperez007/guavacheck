@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+
+  "levels": [
+    {
+      "level": 1,
+      "name": "Registered"
+    },
+    {
+      "level": 2,
+      "name": "Verified"
+    },
+    {
+      "level": 3,
+      "name": "Certified"
+    },
+    {
+      "level": 4,
+      "name": "Premium Verified"
+    },
+    {
+      "level": 5,
+      "name": "guavacheck Trusted"
+    }
+  ]
+}

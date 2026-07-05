@@ -1,29 +1,23 @@
 export interface PaymentProvider {
-
-    id: string;
-
-    name: string;
-
-    regions: string[];
-
-    currencies: string[];
-
+  id: string;
+  name: string;
+  countries: string[];
 }
 
 export class PaymentRegistry {
+  private static registry = new Map<string, PaymentProvider>();
 
-    private static providers: PaymentProvider[] = [];
+  static register(provider: PaymentProvider) {
+    this.registry.set(provider.id, provider);
+  }
 
-    static register(provider: PaymentProvider): void {
+  static all() {
+    return [...this.registry.values()];
+  }
 
-        this.providers.push(provider);
-
-    }
-
-    static all(): PaymentProvider[] {
-
-        return this.providers;
-
-    }
-
+  static supportedIn(country: string) {
+    return this.all().filter((p) =>
+      p.countries.includes(country)
+    );
+  }
 }

@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "dataset": "WORKFLOW-TEMPLATES",
+    "version": "1.0.0"
+  },
+
+  "verification": [
+
+    "Receive Request",
+
+    "Collect Documents",
+
+    "Cross Validate",
+
+    "Calculate Trust",
+
+    "Generate Report",
+
+    "Issue Decision"
+
+  ],
+
+  "construction": [
+
+    "Project Creation",
+
+    "Design",
+
+    "Budget",
+
+    "Escrow",
+
+    "Mobilization",
+
+    "Construction",
+
+    "Inspection",
+
+    "Completion"
+
+  ],
+
+  "finance": [
+
+    "Funding",
+
+    "Escrow Lock",
+
+    "Milestone Approval",
+
+    "Partial Release",
+
+    "Final Settlement"
+
+  ]
+}

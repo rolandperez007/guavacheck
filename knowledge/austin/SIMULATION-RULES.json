@@ -1,0 +1,7 @@
+{
+  "minimumConfidence": 90,
+  "recordResults": true,
+  "allowReplay": true,
+  "compareHistoricalResults": true,
+  "generateRecommendations": true
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/RaftFoundation.schema.json",
+  "title": "Raft Foundation",
+  "description": "Large reinforced concrete slab supporting the entire building footprint.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "raftId": {
+      "type": "string"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "thickness": {
+      "type": "number"
+    },
+
+    "concreteGrade": {
+      "type": "string"
+    },
+
+    "reinforcementGrade": {
+      "type": "string"
+    },
+
+    "meshSpacing": {
+      "type": "number"
+    },
+
+    "coverThickness": {
+      "type": "number"
+    },
+
+    "expansionJoints": {
+      "type": "integer"
+    },
+
+    "loadCapacity": {
+      "type": "number"
+    },
+
+    "waterproofMembrane": {
+      "type": "boolean"
+    }
+
+  }
+
+}

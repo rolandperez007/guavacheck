@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-07-01",
+
+  "defaultGlobal": {
+    "voltage": 230,
+    "frequency": 50,
+    "plugTypes": ["C", "F"],
+    "earthing": "TN-S"
+  },
+
+  "countryOverrides": {
+    "US": {
+      "voltage": 120,
+      "frequency": 60,
+      "plugTypes": ["A", "B"]
+    },
+
+    "GB": {
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["G"]
+    },
+
+    "NG": {
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["D", "G"]
+    }
+  }
+}

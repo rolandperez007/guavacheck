@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalSystem.schema.json",
+  "title": "Electrical System",
+  "description": "Master electrical distribution system for an entire property.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+
+    "systemId",
+
+    "voltage",
+
+    "frequency"
+
+  ],
+
+  "properties": {
+
+    "systemId": {
+      "type": "string"
+    },
+
+    "buildingId": {
+      "type": "string"
+    },
+
+    "utilityProvider": {
+      "type": "string"
+    },
+
+    "incomingSupply": {
+
+      "enum": [
+
+        "SINGLE_PHASE",
+
+        "THREE_PHASE",
+
+        "SOLAR",
+
+        "GENERATOR",
+
+        "HYBRID"
+
+      ]
+
+    },
+
+    "voltage": {
+      "type": "number"
+    },
+
+    "frequency": {
+      "type": "number"
+    },
+
+    "maximumDemandKW": {
+      "type": "number"
+    },
+
+    "connectedLoadKW": {
+      "type": "number"
+    },
+
+    "backupAvailable": {
+      "type": "boolean"
+    },
+
+    "earthingSystem": {
+
+      "enum": [
+
+        "TN-C",
+
+        "TN-S",
+
+        "TN-C-S",
+
+        "TT",
+
+        "IT"
+
+      ]
+
+    },
+
+    "powerFactor": {
+      "type": "number"
+    },
+
+    "surgeProtection": {
+      "type": "boolean"
+    },
+
+    "smartMeterInstalled": {
+      "type": "boolean"
+    }
+
+  }
+
+}

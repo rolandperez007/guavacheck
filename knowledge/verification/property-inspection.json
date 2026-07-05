@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+
+  "inspectionItems": [
+    "Land Boundary",
+    "Building Foundation",
+    "Walls",
+    "Roof",
+    "Doors",
+    "Windows",
+    "Electrical Installation",
+    "Plumbing",
+    "Drainage",
+    "Water Supply",
+    "Security",
+    "Road Access",
+    "Utilities",
+    "Fire Safety",
+    "Accessibility"
+  ]
+}

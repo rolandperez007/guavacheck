@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "dataset": "File Signatures"
+  },
+  "records": [
+    {
+      "extension": ".pdf",
+      "signature": "25504446"
+    },
+    {
+      "extension": ".png",
+      "signature": "89504E47"
+    },
+    {
+      "extension": ".jpg",
+      "signature": "FFD8FF"
+    }
+  ]
+}

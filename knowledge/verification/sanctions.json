@@ -1,0 +1,16 @@
+{
+  "version":"1.0.0",
+
+  "sanctionTypes":[
+    "Professional Suspension",
+    "License Revocation",
+    "Court Injunction",
+    "Regulatory Ban",
+    "Government Blacklist",
+    "Industry Suspension",
+    "Fraud Conviction",
+    "Tax Default",
+    "Financial Crimes",
+    "Money Laundering Watch"
+  ]
+}

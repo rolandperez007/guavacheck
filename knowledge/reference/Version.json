@@ -1,0 +1,9 @@
+{
+  "name": "guavacheck Reference Library",
+  "version": "1.0.0",
+  "release": "2026.07",
+  "schema": "reference.v1",
+  "maintainer": "guavacheck World Engine",
+  "lastUpdated": "2026-07-03T00:00:00Z",
+  "compatibleEngine": "WorldEngine 1.x"
+}

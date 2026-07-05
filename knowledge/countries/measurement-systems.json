@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+
+  "default": "metric",
+
+  "countries": {
+
+    "US": "imperial",
+
+    "LR": "imperial",
+
+    "MM": "imperial"
+
+  }
+}

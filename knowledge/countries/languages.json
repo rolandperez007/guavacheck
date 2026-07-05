@@ -1,15 +1,25 @@
-[
-    "English",
-    "French",
-    "Spanish",
-    "Portuguese",
-    "Arabic",
-    "Chinese",
-    "Japanese",
-    "Korean",
-    "German",
-    "Italian",
-    "Russian",
-    "Hindi",
-    "Swahili"
-]
+{
+  "schemaVersion": "1.0",
+
+  "countries": {
+
+    "NG": [
+      "English"
+    ],
+
+    "US": [
+      "English"
+    ],
+
+    "CA": [
+      "English",
+      "French"
+    ],
+
+    "IN": [
+      "Hindi",
+      "English"
+    ]
+
+  }
+}

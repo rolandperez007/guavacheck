@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+
+  "verificationChecks": [
+    "GPS Verification",
+    "Physical Inspection",
+    "Utility Bill",
+    "Lease Agreement",
+    "Ownership Verification",
+    "Business Signage",
+    "Street View Confirmation"
+  ]
+}

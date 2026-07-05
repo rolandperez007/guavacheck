@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/Excavation.schema.json",
+  "title": "Excavation",
+  "description": "Represents excavation activities prior to foundation construction.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "excavationId"
+  ],
+
+  "properties": {
+
+    "excavationId": {
+      "type": "string"
+    },
+
+    "excavationType": {
+
+      "enum": [
+
+        "FOUNDATION",
+
+        "BASEMENT",
+
+        "TRENCH",
+
+        "UTILITY",
+
+        "GENERAL_SITE"
+
+      ]
+
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "depth": {
+      "type": "number"
+    },
+
+    "volume": {
+      "type": "number"
+    },
+
+    "excavationMethod": {
+
+      "enum": [
+
+        "MANUAL",
+
+        "BACKHOE",
+
+        "EXCAVATOR",
+
+        "BLASTING",
+
+        "HYDRO_EXCAVATION"
+
+      ]
+
+    },
+
+    "soilType": {
+      "type": "string"
+    },
+
+    "shoringRequired": {
+      "type": "boolean"
+    },
+
+    "dewateringRequired": {
+      "type": "boolean"
+    },
+
+    "backfillRequired": {
+      "type": "boolean"
+    },
+
+    "status": {
+
+      "enum": [
+
+        "PLANNED",
+
+        "IN_PROGRESS",
+
+        "COMPLETED",
+
+        "INSPECTED"
+
+      ]
+
+    }
+
+  }
+
+}

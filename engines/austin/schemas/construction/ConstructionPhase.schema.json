@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionPhase.schema.json",
+  "title": "Construction Phase",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "phaseId": {
+
+      "type": "string"
+
+    },
+
+    "name": {
+
+      "enum": [
+
+        "SITE_PREPARATION",
+
+        "FOUNDATION",
+
+        "SUBSTRUCTURE",
+
+        "SUPERSTRUCTURE",
+
+        "ROOFING",
+
+        "BLOCKWORK",
+
+        "PLUMBING",
+
+        "ELECTRICAL",
+
+        "MECHANICAL",
+
+        "INTERIOR",
+
+        "EXTERIOR",
+
+        "FINISHING",
+
+        "HANDOVER"
+
+      ]
+
+    },
+
+    "plannedStart": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "plannedFinish": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "actualStart": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "actualFinish": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "completion": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    }
+
+  }
+
+}

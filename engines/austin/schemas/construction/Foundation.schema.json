@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/Foundation.schema.json",
+  "title": "Foundation",
+  "description": "Master representation of a building foundation system.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "foundationId",
+    "foundationType"
+  ],
+
+  "properties": {
+
+    "foundationId": {
+      "type": "string"
+    },
+
+    "buildingId": {
+      "type": "string"
+    },
+
+    "foundationType": {
+
+      "enum": [
+
+        "STRIP",
+
+        "PAD",
+
+        "RAFT",
+
+        "PILE",
+
+        "PIER",
+
+        "COMBINED",
+
+        "MAT"
+
+      ]
+
+    },
+
+    "soilBearingCapacity": {
+
+      "type": "number"
+
+    },
+
+    "designLoad": {
+
+      "type": "number"
+
+    },
+
+    "concreteGrade": {
+
+      "type": "string"
+
+    },
+
+    "reinforcementGrade": {
+
+      "type": "string"
+
+    },
+
+    "waterproofed": {
+
+      "type": "boolean"
+
+    },
+
+    "expectedLifeYears": {
+
+      "type": "integer"
+
+    }
+
+  }
+
+}

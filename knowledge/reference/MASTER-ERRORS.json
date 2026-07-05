@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "dataset": "MASTER-ERRORS",
+    "version": "1.0.0"
+  },
+
+  "errors": [
+
+    {
+      "code": "AUTH001",
+      "message": "Authentication failed."
+    },
+
+    {
+      "code": "AUTH002",
+      "message": "Unauthorized access."
+    },
+
+    {
+      "code": "VERIFY001",
+      "message": "Verification failed."
+    },
+
+    {
+      "code": "VERIFY002",
+      "message": "Document expired."
+    },
+
+    {
+      "code": "ESCROW001",
+      "message": "Escrow not funded."
+    },
+
+    {
+      "code": "PROJECT001",
+      "message": "Project not found."
+    },
+
+    {
+      "code": "FINANCE001",
+      "message": "Payment failed."
+    },
+
+    {
+      "code": "SYSTEM001",
+      "message": "Unexpected system error."
+    }
+
+  ]
+}

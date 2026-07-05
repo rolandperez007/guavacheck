@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalLighting.schema.json",
+  "title": "Electrical Lighting",
+  "description": "Lighting system serving a building or space.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+
+    "lightingId"
+
+  ],
+
+  "properties": {
+
+    "lightingId": {
+      "type": "string"
+    },
+
+    "roomId": {
+      "type": "string"
+    },
+
+    "fixtureId": {
+      "type": "string"
+    },
+
+    "lightingType": {
+
+      "enum": [
+
+        "LED",
+
+        "HALOGEN",
+
+        "FLUORESCENT",
+
+        "INCANDESCENT",
+
+        "SOLAR",
+
+        "EMERGENCY",
+
+        "DECORATIVE",
+
+        "SECURITY"
+
+      ]
+
+    },
+
+    "lumens": {
+      "type": "number"
+    },
+
+    "colourTemperature": {
+      "type": "number"
+    },
+
+    "powerWatts": {
+      "type": "number"
+    },
+
+    "dimmable": {
+      "type": "boolean"
+    },
+
+    "motionSensor": {
+      "type": "boolean"
+    },
+
+    "daylightSensor": {
+      "type": "boolean"
+    },
+
+    "smartControlled": {
+      "type": "boolean"
+    }
+
+  }
+
+}

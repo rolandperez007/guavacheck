@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+
+  "riskFactors": [
+    "Expired License",
+    "Identity Mismatch",
+    "Forged Documents",
+    "Duplicate Identity",
+    "Duplicate Property",
+    "Blacklisted Entity",
+    "Outstanding Court Case",
+    "Fraud Complaint",
+    "Suspended Professional Membership",
+    "High Chargeback Rate",
+    "False GPS Location",
+    "Image Manipulation",
+    "Price Manipulation",
+    "Ownership Conflict",
+    "Unknown Payment Source"
+  ]
+}

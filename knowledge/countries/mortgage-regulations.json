@@ -1,0 +1,20 @@
+{
+  "countries": {
+
+    "NG": {
+      "available": true,
+      "maxTenureYears": 30
+    },
+
+    "US": {
+      "available": true,
+      "maxTenureYears": 30
+    },
+
+    "GB": {
+      "available": true,
+      "maxTenureYears": 35
+    }
+
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectBudget.schema.json",
+  "title": "Project Budget",
+  "description": "Financial model governing all project expenditure, forecasting, contingencies and ROI calculations.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "currency": {
+      "type": "string"
+    },
+
+    "estimatedCost": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "approvedBudget": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "currentSpend": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "remainingBudget": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "contingencyReserve": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "expectedROI": {
+      "type": "number"
+    },
+
+    "cashFlowForecast": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+
+    "costCategories": {
+
+      "type": "object",
+
+      "properties": {
+
+        "land": { "type": "number" },
+
+        "design": { "type": "number" },
+
+        "permits": { "type": "number" },
+
+        "materials": { "type": "number" },
+
+        "labour": { "type": "number" },
+
+        "equipment": { "type": "number" },
+
+        "logistics": { "type": "number" },
+
+        "professionalFees": { "type": "number" },
+
+        "taxes": { "type": "number" },
+
+        "insurance": { "type": "number" },
+
+        "miscellaneous": { "type": "number" }
+
+      }
+
+    }
+
+  }
+
+}

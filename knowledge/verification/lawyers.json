@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "lawyer",
+    "name": "Lawyer",
+    "category": "Legal Services",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "verificationRequirements": {
+    "identity": true,
+    "professionalLicense": true,
+    "professionalBodyMembership": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "addressVerification": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "backgroundCheck": true,
+    "insurance": false,
+    "taxRegistration": true
+  },
+
+  "services": [
+    "Property Purchase",
+    "Land Sale",
+    "Title Search",
+    "Due Diligence",
+    "Contract Drafting",
+    "Deed Preparation",
+    "Certificate of Occupancy Processing",
+    "Land Registration",
+    "Property Litigation",
+    "Estate Planning",
+    "Probate",
+    "Lease Agreements",
+    "Commercial Property",
+    "Mortgage Documentation",
+    "Escrow Services"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Practicing License",
+    "Professional Membership Certificate",
+    "Business Registration",
+    "Tax Identification",
+    "Office Address Proof"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 30,
+    "identityVerification": 20,
+    "professionalMembership": 20,
+    "officeVerification": 10,
+    "experience": 10,
+    "communityRating": 10
+  },
+
+  "riskChecks": [
+    "Expired License",
+    "Fake Identity",
+    "Professional Suspension",
+    "Duplicate Registration",
+    "Blacklisted Individual",
+    "Disciplinary Record"
+  ],
+
+  "supportedCountries": "global"
+}

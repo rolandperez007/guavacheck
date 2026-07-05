@@ -1,0 +1,20 @@
+{
+  "types": [
+
+    {
+      "name": "Clay",
+      "bearingCapacity": "Low"
+    },
+
+    {
+      "name": "Sand",
+      "bearingCapacity": "Medium"
+    },
+
+    {
+      "name": "Rock",
+      "bearingCapacity": "High"
+    }
+
+  ]
+}

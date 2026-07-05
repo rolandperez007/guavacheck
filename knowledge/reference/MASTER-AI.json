@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "dataset": "MASTER-AI",
+    "version": "1.0.0"
+  },
+
+  "engines": [
+
+    "Austin Core",
+
+    "Austin Verification",
+
+    "Austin Finance",
+
+    "Austin Construction",
+
+    "Austin Analytics",
+
+    "Austin Community",
+
+    "Austin Commerce",
+
+    "Austin Operations"
+
+  ],
+
+  "capabilities": [
+
+    "predict",
+
+    "recommend",
+
+    "verify",
+
+    "audit",
+
+    "monitor",
+
+    "explain",
+
+    "simulate",
+
+    "learn"
+
+  ]
+}

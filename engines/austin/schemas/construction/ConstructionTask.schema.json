@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionActivity.schema.json",
+  "title": "Construction Activity",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "activityId": {
+
+      "type": "string"
+
+    },
+
+    "task": {
+
+      "type": "string"
+
+    },
+
+    "assignedCrew": {
+
+      "type": "string"
+
+    },
+
+    "assignedEquipment": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "plannedHours": {
+
+      "type": "number"
+
+    },
+
+    "actualHours": {
+
+      "type": "number"
+
+    },
+
+    "materialsRequired": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "dependencies": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "NOT_STARTED",
+
+        "READY",
+
+        "ACTIVE",
+
+        "BLOCKED",
+
+        "COMPLETED"
+
+      ]
+
+    }
+
+  }
+
+}

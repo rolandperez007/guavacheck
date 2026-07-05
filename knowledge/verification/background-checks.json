@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+
+  "checks": [
+    "Identity Fraud",
+    "Criminal Record",
+    "Professional Suspension",
+    "Civil Litigation",
+    "Bankruptcy",
+    "Tax Compliance",
+    "Sanctions List",
+    "Terror Watchlist",
+    "Previous Complaints",
+    "Community Reputation"
+  ]
+}

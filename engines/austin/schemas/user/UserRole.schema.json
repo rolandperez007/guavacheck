@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserRole.schema.json",
+  "title": "User Role",
+  "description": "Primary authorization role assigned to a user.",
+  "type": "string",
+
+  "enum": [
+
+    "GUEST",
+
+    "USER",
+
+    "HOME_OWNER",
+
+    "PROPERTY_OWNER",
+
+    "CONTRACTOR",
+
+    "ENGINEER",
+
+    "ARCHITECT",
+
+    "QUANTITY_SURVEYOR",
+
+    "LAWYER",
+
+    "AUDITOR",
+
+    "VERIFIER",
+
+    "COMPANY",
+
+    "ENTERPRISE",
+
+    "SUPPORT",
+
+    "MODERATOR",
+
+    "ADMINISTRATOR",
+
+    "SYSTEM",
+
+    "AI_AGENT"
+
+  ]
+}

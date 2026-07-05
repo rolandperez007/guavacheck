@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserSubscription.schema.json",
+  "title": "User Subscription",
+  "description": "Subscription and entitlement information.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "tier",
+    "status"
+  ],
+
+  "properties": {
+
+    "subscriptionId": {
+      "type": "string"
+    },
+
+    "tier": {
+      "enum": [
+        "FREE",
+        "STARTER",
+        "BUILDER",
+        "PROFESSIONAL",
+        "ENTERPRISE"
+      ]
+    },
+
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "TRIAL",
+        "PAST_DUE",
+        "EXPIRED",
+        "SUSPENDED",
+        "CANCELLED"
+      ]
+    },
+
+    "billingCycle": {
+      "enum": [
+        "MONTHLY",
+        "YEARLY",
+        "LIFETIME"
+      ]
+    },
+
+    "currency": {
+      "type": "string"
+    },
+
+    "amount": {
+      "type": "number",
+      "minimum": 0
+    },
+
+    "requestLimit": {
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "storageLimitGb": {
+      "type": "number"
+    },
+
+    "aiCredits": {
+      "type": "integer"
+    },
+
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "renewalDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+
+  }
+}

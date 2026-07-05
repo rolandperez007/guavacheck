@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/Project.schema.json",
+  "title": "Project",
+  "description": "Canonical GuavaCheck project. Every residential, commercial, infrastructure, renovation, verification, inspection and simulation project originates from this schema.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "projectId",
+    "name",
+    "type",
+    "status",
+    "owner",
+    "configuration",
+    "context",
+    "createdAt"
+  ],
+
+  "properties": {
+
+    "projectId": {
+      "type": "string"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "description": {
+      "type": "string"
+    },
+
+    "type": {
+      "enum": [
+        "RESIDENTIAL",
+        "COMMERCIAL",
+        "INDUSTRIAL",
+        "INFRASTRUCTURE",
+        "RENOVATION",
+        "INTERIOR",
+        "SURVEY",
+        "VALUATION",
+        "VERIFICATION",
+        "CUSTOM"
+      ]
+    },
+
+    "status": {
+      "$ref": "./ProjectStatus.schema.json"
+    },
+
+    "configuration": {
+      "$ref": "./ProjectConfiguration.schema.json"
+    },
+
+    "context": {
+      "$ref": "./ProjectContext.schema.json"
+    },
+
+    "budget": {
+      "$ref": "./ProjectBudget.schema.json"
+    },
+
+    "timeline": {
+      "$ref": "./ProjectTimeline.schema.json"
+    },
+
+    "workflow": {
+      "$ref": "./ProjectWorkflow.schema.json"
+    },
+
+    "risk": {
+      "$ref": "./ProjectRisk.schema.json"
+    },
+
+    "metadata": {
+      "$ref": "./ProjectMetadata.schema.json"
+    },
+
+    "owner": {
+      "type": "string"
+    },
+
+    "team": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "country": {
+      "type": "string"
+    },
+
+    "state": {
+      "type": "string"
+    },
+
+    "city": {
+      "type": "string"
+    },
+
+    "currency": {
+      "type": "string"
+    },
+
+    "version": {
+      "type": "string"
+    },
+
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+
+  }
+
+}

@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+
+  "specializations": {
+    "architect": [
+      "Residential",
+      "Commercial",
+      "Industrial",
+      "Healthcare",
+      "Hospitality",
+      "Landscape",
+      "Urban Design",
+      "Interior Architecture"
+    ],
+
+    "engineer": [
+      "Civil",
+      "Structural",
+      "Mechanical",
+      "Electrical",
+      "Geotechnical",
+      "Transportation",
+      "Water Resources",
+      "Environmental"
+    ],
+
+    "lawyer": [
+      "Real Estate",
+      "Corporate",
+      "Commercial",
+      "Litigation",
+      "Tax",
+      "Property Documentation"
+    ],
+
+    "surveyor": [
+      "Land Survey",
+      "Hydrographic",
+      "Engineering Survey",
+      "GIS",
+      "Mapping"
+    ],
+
+    "valuer": [
+      "Residential",
+      "Commercial",
+      "Industrial",
+      "Agricultural",
+      "Insurance",
+      "Plant and Machinery"
+    ],
+
+    "builder": [
+      "Residential",
+      "Commercial",
+      "Infrastructure",
+      "Renovation",
+      "Project Management"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/Wall.schema.json",
+  "title": "Structural Wall",
+  "description": "Wall system providing enclosure and/or structural support.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "wallId",
+    "wallType"
+  ],
+
+  "properties": {
+
+    "wallId": {
+      "type": "string"
+    },
+
+    "wallType": {
+
+      "enum": [
+
+        "LOAD_BEARING",
+
+        "NON_LOAD_BEARING",
+
+        "SHEAR",
+
+        "RETAINING",
+
+        "PARTITION",
+
+        "BOUNDARY"
+
+      ]
+
+    },
+
+    "material": {
+      "type": "string"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "height": {
+      "type": "number"
+    },
+
+    "thickness": {
+      "type": "number"
+    },
+
+    "fireRatingHours": {
+      "type": "number"
+    },
+
+    "soundRating": {
+      "type": "number"
+    },
+
+    "thermalResistance": {
+      "type": "number"
+    },
+
+    "reinforced": {
+      "type": "boolean"
+    },
+
+    "finish": {
+      "$ref": "../building/BuildingFinish.schema.json"
+    }
+
+  }
+
+}

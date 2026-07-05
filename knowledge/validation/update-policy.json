@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "policies": [
+
+    {
+      "dataset": "building_codes",
+      "refreshDays": 365
+    },
+
+    {
+      "dataset": "countries",
+      "refreshDays": 365
+    },
+
+    {
+      "dataset": "currencies",
+      "refreshDays": 1
+    },
+
+    {
+      "dataset": "taxes",
+      "refreshDays": 30
+    },
+
+    {
+      "dataset": "material_prices",
+      "refreshDays": 1
+    },
+
+    {
+      "dataset": "supplier_prices",
+      "refreshDays": 1
+    },
+
+    {
+      "dataset": "ppp",
+      "refreshDays": 90
+    },
+
+    {
+      "dataset": "climate",
+      "refreshDays": 365
+    },
+
+    {
+      "dataset": "mortgage_rates",
+      "refreshDays": 7
+    },
+
+    {
+      "dataset": "inflation",
+      "refreshDays": 30
+    }
+  ]
+}

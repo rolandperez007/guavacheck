@@ -1,0 +1,14 @@
+{
+  "version":"1.0.0",
+
+  "statuses":[
+    "Submitted",
+    "Under Review",
+    "Additional Documents Required",
+    "Pending Investigation",
+    "Approved",
+    "Rejected",
+    "Escalated",
+    "Closed"
+  ]
+}

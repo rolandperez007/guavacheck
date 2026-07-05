@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "dataset": "Measurement Standards"
+  },
+  "records": [
+    {
+      "system": "Metric",
+      "countries": [
+        "NG",
+        "FR",
+        "DE"
+      ]
+    },
+    {
+      "system": "Imperial",
+      "countries": [
+        "US"
+      ]
+    }
+  ]
+}

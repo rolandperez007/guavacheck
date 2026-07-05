@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/Footing.schema.json",
+  "title": "Footing",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "footingId": {
+
+      "type": "string"
+
+    },
+
+    "footingType": {
+
+      "enum": [
+
+        "ISOLATED",
+
+        "COMBINED",
+
+        "CONTINUOUS",
+
+        "STRAP",
+
+        "RAFT"
+
+      ]
+
+    },
+
+    "length": {
+
+      "type": "number"
+
+    },
+
+    "width": {
+
+      "type": "number"
+
+    },
+
+    "depth": {
+
+      "type": "number"
+
+    },
+
+    "thickness": {
+
+      "type": "number"
+
+    },
+
+    "concreteVolume": {
+
+      "type": "number"
+
+    },
+
+    "reinforcementWeight": {
+
+      "type": "number"
+
+    }
+
+  }
+
+}

@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "dataset": "MASTER-CATEGORIES",
+    "version": "1.0.0"
+  },
+
+  "districts": [
+    "construction",
+    "finance",
+    "verification",
+    "community",
+    "commerce",
+    "residential",
+    "inspiration",
+    "operations",
+    "austin"
+  ],
+
+  "propertyCategories": [
+    "residential",
+    "commercial",
+    "industrial",
+    "agricultural",
+    "mixed_use"
+  ],
+
+  "professionalCategories": [
+    "architect",
+    "engineer",
+    "quantity_surveyor",
+    "builder",
+    "contractor",
+    "lawyer",
+    "estate_surveyor",
+    "valuer",
+    "supplier",
+    "manufacturer"
+  ],
+
+  "projectCategories": [
+    "new_build",
+    "renovation",
+    "extension",
+    "maintenance",
+    "inspection",
+    "demolition"
+  ],
+
+  "organizationCategories": [
+    "government",
+    "private",
+    "ngo",
+    "financial",
+    "insurance",
+    "developer",
+    "supplier"
+  ]
+}

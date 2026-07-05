@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "dataset": "Country Calling Codes"
+  },
+  "records": [
+    {
+      "country": "Nigeria",
+      "iso": "NG",
+      "callingCode": "+234"
+    },
+    {
+      "country": "United States",
+      "iso": "US",
+      "callingCode": "+1"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "countries": {
+
+    "NG": [
+      "MTN",
+      "Airtel",
+      "Glo",
+      "9mobile",
+      "Starlink"
+    ],
+
+    "US": [
+      "AT&T",
+      "Verizon",
+      "T-Mobile",
+      "Starlink"
+    ]
+
+  }
+}

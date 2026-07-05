@@ -1,0 +1,25 @@
+{
+  "metric": {
+
+    "C20": {
+      "strengthMPa": 20
+    },
+
+    "C25": {
+      "strengthMPa": 25
+    },
+
+    "C30": {
+      "strengthMPa": 30
+    },
+
+    "C35": {
+      "strengthMPa": 35
+    },
+
+    "C40": {
+      "strengthMPa": 40
+    }
+
+  }
+}

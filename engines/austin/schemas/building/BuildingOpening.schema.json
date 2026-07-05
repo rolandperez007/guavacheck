@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/building/BuildingOpening.schema.json",
+  "title": "Building Opening",
+  "description": "Base schema for windows, doors, skylights and other openings.",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "openingId": {
+      "type": "string"
+    },
+
+    "type": {
+
+      "enum": [
+
+        "DOOR",
+
+        "WINDOW",
+
+        "SKYLIGHT",
+
+        "VENT",
+
+        "ACCESS_PANEL"
+
+      ]
+
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "height": {
+      "type": "number"
+    },
+
+    "material": {
+      "$ref": "./BuildingMaterial.schema.json"
+    },
+
+    "finish": {
+      "$ref": "./BuildingFinish.schema.json"
+    },
+
+    "fireRated": {
+      "type": "boolean"
+    },
+
+    "securityRated": {
+      "type": "boolean"
+    },
+
+    "weatherProof": {
+      "type": "boolean"
+    },
+
+    "acousticRating": {
+      "type": "string"
+    }
+
+  }
+
+}

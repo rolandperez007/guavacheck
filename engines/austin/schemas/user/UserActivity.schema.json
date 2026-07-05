@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserActivity.schema.json",
+  "title": "User Activity",
+  "description": "Behavioral activity summary used by Austin for analytics, learning and risk assessment.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "lastLogin": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "lastSeen": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "totalLogins": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "projectsCreated": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "simulationsExecuted": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "predictionsRequested": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "recommendationsAccepted": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "reportsGenerated": {
+
+      "type": "integer",
+
+      "minimum": 0
+
+    },
+
+    "averageSessionMinutes": {
+
+      "type": "number"
+
+    },
+
+    "trustScore": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "riskScore": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "reputationScore": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "lastActivityType": {
+
+      "type": "string"
+
+    },
+
+    "lastActivityAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    }
+
+  }
+
+}

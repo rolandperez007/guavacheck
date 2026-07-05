@@ -1,42 +1,31 @@
-[
-  {
-    "id":"stripe",
-    "regions":["Global"]
-  },
-  {
-    "id":"paypal",
-    "regions":["Global"]
-  },
-  {
-    "id":"paystack",
-    "regions":["Africa"]
-  },
-  {
-    "id":"flutterwave",
-    "regions":["Africa"]
-  },
-  {
-    "id":"razorpay",
-    "regions":["India"]
-  },
-  {
-    "id":"paymob",
-    "regions":["Middle East","Africa"]
-  },
-  {
-    "id":"mercadopago",
-    "regions":["South America"]
-  },
-  {
-    "id":"alipay",
-    "regions":["China"]
-  },
-  {
-    "id":"wechatpay",
-    "regions":["China"]
-  },
-  {
-    "id":"kakaopay",
-    "regions":["South Korea"]
+{
+  "schemaVersion": "1.0",
+
+  "countries": {
+
+    "NG": [
+      "Paystack",
+      "Flutterwave",
+      "Moniepoint",
+      "PalmPay",
+      "Opay"
+    ],
+
+    "US": [
+      "Stripe",
+      "PayPal",
+      "Square"
+    ],
+
+    "GB": [
+      "Stripe",
+      "PayPal"
+    ],
+
+    "IN": [
+      "Razorpay",
+      "Paytm"
+    ]
+
   }
-]
+}

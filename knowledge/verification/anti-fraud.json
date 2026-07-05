@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "checks": [
+    "Duplicate Identity Detection",
+    "Duplicate Property Detection",
+    "Duplicate Survey Detection",
+    "Image Similarity Detection",
+    "Forged Document Detection",
+    "Metadata Analysis",
+    "GPS Consistency Check",
+    "Satellite Cross Verification",
+    "Property History Validation",
+    "Title Verification",
+    "Government Registry Validation",
+    "Professional License Validation",
+    "Multiple Account Detection",
+    "Device Fingerprinting",
+    "IP Reputation",
+    "Behavioral Analysis",
+    "Payment Fraud Detection",
+    "AML Screening",
+    "Sanctions Screening",
+    "Community Fraud Reports"
+  ]
+}

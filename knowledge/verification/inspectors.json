@@ -1,0 +1,20 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"inspector",
+    "name":"Inspector",
+    "category":"Inspection",
+    "riskLevel":"critical",
+    "licenseRequired":true
+  },
+  "services":[
+    "Building Inspection",
+    "Safety Inspection",
+    "Structural Inspection",
+    "Electrical Inspection",
+    "Mechanical Inspection",
+    "Final Completion Inspection",
+    "Insurance Inspection"
+  ],
+  "supportedCountries":"global"
+}

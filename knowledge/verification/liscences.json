@@ -1,0 +1,20 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"laboratory",
+    "name":"Testing Laboratory",
+    "category":"Testing",
+    "riskLevel":"critical",
+    "licenseRequired":true
+  },
+  "services":[
+    "Concrete Testing",
+    "Steel Testing",
+    "Soil Testing",
+    "Water Testing",
+    "Material Certification",
+    "Compressive Strength Test",
+    "Aggregate Testing"
+  ],
+  "supportedCountries":"global"
+}

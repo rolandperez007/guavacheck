@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/building/BuildingSystem.schema.json",
+  "title": "Building System",
+  "description": "Logical representation of an integrated building system.",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "systemId": {
+      "type": "string"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "category": {
+
+      "enum": [
+
+        "STRUCTURAL",
+
+        "MECHANICAL",
+
+        "ELECTRICAL",
+
+        "PLUMBING",
+
+        "HVAC",
+
+        "SECURITY",
+
+        "FIRE",
+
+        "DRAINAGE",
+
+        "SOLAR",
+
+        "COMMUNICATION",
+
+        "AUTOMATION"
+
+      ]
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "DESIGNED",
+
+        "PLANNED",
+
+        "UNDER_CONSTRUCTION",
+
+        "INSTALLED",
+
+        "TESTED",
+
+        "COMMISSIONED",
+
+        "ACTIVE",
+
+        "MAINTENANCE"
+
+      ]
+
+    },
+
+    "components": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "expectedLifeYears": {
+      "type": "integer"
+    },
+
+    "maintenanceIntervalMonths": {
+      "type": "integer"
+    },
+
+    "criticality": {
+
+      "enum": [
+
+        "LOW",
+
+        "MEDIUM",
+
+        "HIGH",
+
+        "MISSION_CRITICAL"
+
+      ]
+
+    }
+
+  }
+
+}

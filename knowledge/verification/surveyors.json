@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "surveyor",
+    "name": "Surveyor",
+    "category": "Land Survey",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "verificationRequirements": {
+    "identity": true,
+    "professionalLicense": true,
+    "professionalBodyMembership": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "addressVerification": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "gpsEquipmentVerification": false,
+    "backgroundCheck": true,
+    "taxRegistration": true
+  },
+
+  "services": [
+    "Boundary Survey",
+    "Cadastral Survey",
+    "Topographic Survey",
+    "Engineering Survey",
+    "Subdivision Survey",
+    "Site Layout",
+    "Beacon Relocation",
+    "GPS Survey",
+    "Hydrographic Survey",
+    "Drone Survey",
+    "As-Built Survey",
+    "Construction Setting-Out"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Professional License",
+    "Professional Membership Certificate",
+    "Business Registration",
+    "Tax Identification",
+    "Office Address Proof"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 30,
+    "identityVerification": 20,
+    "professionalMembership": 20,
+    "officeVerification": 10,
+    "surveyAccuracy": 10,
+    "communityRating": 10
+  },
+
+  "riskChecks": [
+    "Expired License",
+    "Fake Coordinates",
+    "Duplicate Survey",
+    "Invalid Beacon",
+    "Professional Suspension",
+    "Blacklisted Individual"
+  ],
+
+  "supportedCountries": "global"
+}

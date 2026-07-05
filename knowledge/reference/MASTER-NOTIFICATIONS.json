@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "dataset": "MASTER-NOTIFICATIONS",
+    "version": "1.0.0"
+  },
+
+  "channels": [
+
+    "email",
+
+    "sms",
+
+    "push",
+
+    "whatsapp",
+
+    "voice",
+
+    "dashboard"
+
+  ],
+
+  "priorities": [
+
+    "low",
+
+    "normal",
+
+    "high",
+
+    "critical"
+
+  ]
+}

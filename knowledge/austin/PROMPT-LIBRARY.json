@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "dataset": "PROMPT-LIBRARY",
+    "version": "1.0.0"
+  },
+
+  "prompts": [
+
+    {
+      "id": "WELCOME",
+      "text": "Welcome. How can Austin assist you today?"
+    },
+
+    {
+      "id": "VERIFY_PROPERTY",
+      "text": "Please upload the property documents for verification."
+    },
+
+    {
+      "id": "PROJECT_START",
+      "text": "Let's begin planning your project."
+    },
+
+    {
+      "id": "UPLOAD_DRAWINGS",
+      "text": "Upload your architectural drawings to continue."
+    },
+
+    {
+      "id": "SIMULATION_READY",
+      "text": "Simulation environment is ready."
+    }
+
+  ]
+}

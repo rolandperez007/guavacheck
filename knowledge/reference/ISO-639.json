@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "dataset": "ISO-639",
+    "version": "1.0.0"
+  },
+  "records": [
+    {
+      "code": "en",
+      "name": "English"
+    },
+    {
+      "code": "fr",
+      "name": "French"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic"
+    }
+  ]
+}

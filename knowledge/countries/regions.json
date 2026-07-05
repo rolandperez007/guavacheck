@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+  "continents": [
+    {
+      "code": "AF",
+      "name": "Africa",
+      "subregions": [
+        {
+          "code": "WEST_AFRICA",
+          "name": "West Africa",
+          "countries": ["NG", "GH", "CI", "SN", "TG", "BJ", "BF", "ML", "NE", "LR", "SL", "GM", "GW", "CV", "MR"]
+        },
+        {
+          "code": "EAST_AFRICA",
+          "name": "East Africa",
+          "countries": ["KE", "UG", "TZ", "RW", "BI", "ET", "SO", "DJ", "ER", "SS"]
+        },
+        {
+          "code": "CENTRAL_AFRICA",
+          "name": "Central Africa",
+          "countries": ["CM", "TD", "CF", "CG", "CD", "GQ", "GA", "ST"]
+        },
+        {
+          "code": "NORTH_AFRICA",
+          "name": "North Africa",
+          "countries": ["EG", "DZ", "LY", "MA", "TN", "SD"]
+        },
+        {
+          "code": "SOUTHERN_AFRICA",
+          "name": "Southern Africa",
+          "countries": ["ZA", "NA", "BW", "ZW", "ZM", "MW", "MZ", "AO", "LS", "SZ"]
+        }
+      ]
+    },
+    {
+      "code": "EU",
+      "name": "Europe",
+      "subregions": [
+        {
+          "code": "NORTHERN_EUROPE",
+          "name": "Northern Europe",
+          "countries": ["GB", "IE", "NO", "SE", "FI", "DK", "IS"]
+        },
+        {
+          "code": "WESTERN_EUROPE",
+          "name": "Western Europe",
+          "countries": ["FR", "DE", "BE", "NL", "LU", "AT", "CH"]
+        },
+        {
+          "code": "SOUTHERN_EUROPE",
+          "name": "Southern Europe",
+          "countries": ["IT", "ES", "PT", "GR", "HR", "SI", "MT"]
+        },
+        {
+          "code": "EASTERN_EUROPE",
+          "name": "Eastern Europe",
+          "countries": ["PL", "CZ", "SK", "HU", "RO", "BG", "UA"]
+        }
+      ]
+    },
+    {
+      "code": "AS",
+      "name": "Asia",
+      "subregions": [
+        {
+          "code": "EAST_ASIA",
+          "name": "East Asia",
+          "countries": ["CN", "JP", "KR", "KP", "MN", "TW"]
+        },
+        {
+          "code": "SOUTHEAST_ASIA",
+          "name": "Southeast Asia",
+          "countries": ["SG", "MY", "TH", "VN", "ID", "PH", "BN", "KH", "LA", "MM", "TL"]
+        },
+        {
+          "code": "SOUTH_ASIA",
+          "name": "South Asia",
+          "countries": ["IN", "PK", "BD", "LK", "NP", "BT", "MV", "AF"]
+        },
+        {
+          "code": "WEST_ASIA",
+          "name": "West Asia",
+          "countries": ["SA", "AE", "QA", "KW", "OM", "BH", "JO", "LB", "SY", "IQ", "IL", "YE", "IR", "TR"]
+        },
+        {
+          "code": "CENTRAL_ASIA",
+          "name": "Central Asia",
+          "countries": ["KZ", "UZ", "TM", "KG", "TJ"]
+        }
+      ]
+    },
+    {
+      "code": "NA",
+      "name": "North America",
+      "subregions": [
+        {
+          "code": "NORTHERN_AMERICA",
+          "name": "Northern America",
+          "countries": ["US", "CA"]
+        },
+        {
+          "code": "CENTRAL_AMERICA",
+          "name": "Central America",
+          "countries": ["MX", "GT", "BZ", "SV", "HN", "NI", "CR", "PA"]
+        },
+        {
+          "code": "CARIBBEAN",
+          "name": "Caribbean",
+          "countries": ["JM", "CU", "HT", "DO", "TT", "BS", "BB"]
+        }
+      ]
+    },
+    {
+      "code": "SA",
+      "name": "South America",
+      "subregions": [
+        {
+          "code": "SOUTH_AMERICA",
+          "name": "South America",
+          "countries": ["BR", "AR", "CL", "PE", "CO", "VE", "EC", "UY", "PY", "BO", "GY", "SR"]
+        }
+      ]
+    },
+    {
+      "code": "OC",
+      "name": "Oceania",
+      "subregions": [
+        {
+          "code": "AUSTRALIA_NEW_ZEALAND",
+          "name": "Australia & New Zealand",
+          "countries": ["AU", "NZ"]
+        },
+        {
+          "code": "PACIFIC_ISLANDS",
+          "name": "Pacific Islands",
+          "countries": ["FJ", "PG", "WS", "TO", "VU", "SB", "KI", "TV", "NR"]
+        }
+      ]
+    },
+    {
+      "code": "AN",
+      "name": "Antarctica",
+      "subregions": [
+        {
+          "code": "ANTARCTICA",
+          "name": "Antarctica",
+          "countries": []
+        }
+      ]
+    }
+  ]
+}

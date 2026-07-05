@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "dataset": "MASTER-ACTIONS",
+    "version": "1.0.0"
+  },
+
+  "actions": [
+
+    "create",
+
+    "read",
+
+    "update",
+
+    "delete",
+
+    "approve",
+
+    "reject",
+
+    "verify",
+
+    "submit",
+
+    "assign",
+
+    "review",
+
+    "publish",
+
+    "archive",
+
+    "export",
+
+    "download",
+
+    "upload"
+
+  ]
+}

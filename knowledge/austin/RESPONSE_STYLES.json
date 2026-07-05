@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "dataset": "RESPONSE-STYLES",
+    "version": "1.0.0"
+  },
+
+  "styles": [
+
+    {
+      "name": "Professional",
+      "tone": "formal"
+    },
+
+    {
+      "name": "Friendly",
+      "tone": "conversational"
+    },
+
+    {
+      "name": "Technical",
+      "tone": "engineering"
+    },
+
+    {
+      "name": "Executive",
+      "tone": "business"
+    },
+
+    {
+      "name": "Emergency",
+      "tone": "urgent"
+    }
+
+  ]
+}

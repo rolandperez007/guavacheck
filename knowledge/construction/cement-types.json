@@ -1,0 +1,164 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "cementTypes": [
+    {
+      "id": "opc_32_5r",
+      "name": "Ordinary Portland Cement 32.5R",
+      "standard": "EN 197-1",
+      "strengthClass": "32.5R",
+      "setting": "Rapid",
+      "recommendedUses": [
+        "Block Production",
+        "Floor Screed",
+        "Rendering",
+        "Plastering",
+        "Walkways"
+      ],
+      "structural": false,
+      "recommendedClimate": "all"
+    },
+    {
+      "id": "opc_42_5r",
+      "name": "Ordinary Portland Cement 42.5R",
+      "standard": "EN 197-1",
+      "strengthClass": "42.5R",
+      "setting": "Rapid",
+      "recommendedUses": [
+        "Residential Foundations",
+        "Columns",
+        "Beams",
+        "Slabs",
+        "General Structural Concrete"
+      ],
+      "structural": true,
+      "recommendedClimate": "all"
+    },
+    {
+      "id": "opc_52_5r",
+      "name": "Ordinary Portland Cement 52.5R",
+      "standard": "EN 197-1",
+      "strengthClass": "52.5R",
+      "setting": "Rapid",
+      "recommendedUses": [
+        "Commercial Buildings",
+        "Industrial Structures",
+        "High-rise Construction",
+        "Bridge Construction"
+      ],
+      "structural": true,
+      "recommendedClimate": "all"
+    },
+    {
+      "id": "ppc",
+      "name": "Portland Pozzolana Cement",
+      "standard": "ASTM / EN",
+      "strengthClass": "32.5 - 42.5",
+      "setting": "Normal",
+      "recommendedUses": [
+        "Mass Concrete",
+        "Marine Structures",
+        "Foundations",
+        "Water Retaining Structures"
+      ],
+      "structural": true,
+      "recommendedClimate": [
+        "humid",
+        "coastal"
+      ]
+    },
+    {
+      "id": "psc",
+      "name": "Portland Slag Cement",
+      "standard": "ASTM / EN",
+      "strengthClass": "42.5",
+      "setting": "Normal",
+      "recommendedUses": [
+        "Coastal Construction",
+        "Chemical Plants",
+        "Wastewater Facilities"
+      ],
+      "structural": true,
+      "recommendedClimate": [
+        "coastal",
+        "industrial"
+      ]
+    },
+    {
+      "id": "sulfate_resistant",
+      "name": "Sulfate Resistant Cement",
+      "standard": "ASTM C150 Type V",
+      "strengthClass": "42.5",
+      "setting": "Normal",
+      "recommendedUses": [
+        "Sewage Plants",
+        "Marine Foundations",
+        "Aggressive Soils",
+        "Underground Structures"
+      ],
+      "structural": true,
+      "recommendedClimate": [
+        "coastal",
+        "wetlands"
+      ]
+    },
+    {
+      "id": "white_cement",
+      "name": "White Portland Cement",
+      "standard": "EN 197-1",
+      "strengthClass": "52.5",
+      "setting": "Rapid",
+      "recommendedUses": [
+        "Architectural Concrete",
+        "Decorative Finishes",
+        "Terrazzo",
+        "Precast Panels"
+      ],
+      "structural": false,
+      "recommendedClimate": "all"
+    },
+    {
+      "id": "masonry_cement",
+      "name": "Masonry Cement",
+      "standard": "ASTM C91",
+      "strengthClass": "Masonry",
+      "setting": "Normal",
+      "recommendedUses": [
+        "Bricklaying",
+        "Blockwork",
+        "Mortar",
+        "Rendering"
+      ],
+      "structural": false,
+      "recommendedClimate": "all"
+    }
+  ],
+
+  "countryDefaults": {
+    "NG": "opc_42_5r",
+    "GH": "opc_42_5r",
+    "KE": "opc_42_5r",
+    "ZA": "opc_42_5r",
+    "US": "opc_42_5r",
+    "CA": "opc_42_5r",
+    "GB": "opc_42_5r",
+    "AU": "opc_42_5r",
+    "IN": "ppc",
+    "CN": "opc_42_5r"
+  },
+
+  "projectRecommendations": {
+    "singleRoom": "opc_42_5r",
+    "bungalow": "opc_42_5r",
+    "duplex": "opc_42_5r",
+    "apartment": "opc_52_5r",
+    "hospital": "opc_52_5r",
+    "warehouse": "opc_52_5r",
+    "bridge": "opc_52_5r",
+    "marine": "psc",
+    "coastal": "sulfate_resistant",
+    "decorative": "white_cement",
+    "blockProduction": "opc_32_5r"
+  }
+}

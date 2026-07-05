@@ -1,1 +1,199 @@
-[]
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+  "providers": [
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "type": "payment_gateway",
+      "countries": [
+        "US",
+        "CA",
+        "GB",
+        "IE",
+        "FR",
+        "DE",
+        "NL",
+        "BE",
+        "AU",
+        "NZ",
+        "SG",
+        "JP"
+      ],
+      "currencies": "multi",
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "type": "digital_wallet",
+      "countries": "global",
+      "currencies": "multi",
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": false,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "paystack",
+      "name": "Paystack",
+      "type": "payment_gateway",
+      "countries": [
+        "NG",
+        "GH",
+        "ZA"
+      ],
+      "currencies": [
+        "NGN",
+        "GHS",
+        "ZAR",
+        "USD"
+      ],
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": false,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "flutterwave",
+      "name": "Flutterwave",
+      "type": "payment_gateway",
+      "countries": "africa",
+      "currencies": "multi",
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "mpesa",
+      "name": "M-Pesa",
+      "type": "mobile_money",
+      "countries": [
+        "KE",
+        "TZ",
+        "UG",
+        "RW"
+      ],
+      "currencies": [
+        "KES",
+        "TZS",
+        "UGX",
+        "RWF"
+      ],
+      "supportsCards": false,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": false,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "razorpay",
+      "name": "Razorpay",
+      "type": "payment_gateway",
+      "countries": [
+        "IN"
+      ],
+      "currencies": [
+        "INR"
+      ],
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "alipay",
+      "name": "Alipay",
+      "type": "digital_wallet",
+      "countries": [
+        "CN"
+      ],
+      "currencies": [
+        "CNY"
+      ],
+      "supportsCards": false,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "wechat_pay",
+      "name": "WeChat Pay",
+      "type": "digital_wallet",
+      "countries": [
+        "CN"
+      ],
+      "currencies": [
+        "CNY"
+      ],
+      "supportsCards": false,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": true,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "wise",
+      "name": "Wise",
+      "type": "international_transfer",
+      "countries": "global",
+      "currencies": "multi",
+      "supportsCards": false,
+      "supportsBankTransfer": true,
+      "supportsWallets": false,
+      "supportsRecurring": false,
+      "supportsMarketplace": false,
+      "kycRequired": true,
+      "status": "active"
+    },
+    {
+      "id": "revolut",
+      "name": "Revolut",
+      "type": "digital_bank",
+      "countries": [
+        "GB",
+        "EE",
+        "FR",
+        "DE",
+        "IE",
+        "ES",
+        "NL",
+        "IT"
+      ],
+      "currencies": "multi",
+      "supportsCards": true,
+      "supportsBankTransfer": true,
+      "supportsWallets": true,
+      "supportsRecurring": true,
+      "supportsMarketplace": false,
+      "kycRequired": true,
+      "status": "active"
+    }
+  ]
+}

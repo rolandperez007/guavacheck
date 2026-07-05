@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "types": [
+    "Professional License",
+    "Government License",
+    "Contractor License",
+    "Builder License",
+    "Architect License",
+    "Engineer License",
+    "Law Practice License",
+    "Survey License",
+    "Estate Agency License",
+    "Business Registration",
+    "Import License",
+    "Manufacturing License"
+  ]
+}

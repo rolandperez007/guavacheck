@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectConfiguration.schema.json",
+  "title": "Project Configuration",
+  "description": "Defines how Austin should execute, simulate, estimate, audit and manage a project.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "measurementSystem": {
+      "enum": [
+        "METRIC",
+        "IMPERIAL"
+      ]
+    },
+
+    "currency": {
+      "type": "string"
+    },
+
+    "language": {
+      "type": "string"
+    },
+
+    "timezone": {
+      "type": "string"
+    },
+
+    "countryCode": {
+      "type": "string"
+    },
+
+    "enableSimulation": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enablePrediction": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableRecommendation": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableAudit": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableLearning": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableMemory": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableVersioning": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "enableAutoSave": {
+      "type": "boolean",
+      "default": true
+    },
+
+    "autoSaveIntervalSeconds": {
+      "type": "integer",
+      "minimum": 10
+    },
+
+    "backupPolicy": {
+      "enum": [
+        "NONE",
+        "DAILY",
+        "HOURLY",
+        "REALTIME"
+      ]
+    },
+
+    "storageProvider": {
+      "enum": [
+        "LOCAL",
+        "SUPABASE",
+        "S3",
+        "R2",
+        "AZURE",
+        "GCS"
+      ]
+    }
+
+  }
+
+}

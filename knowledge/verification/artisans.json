@@ -1,0 +1,28 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"artisan",
+    "name":"Artisan",
+    "category":"Trades",
+    "riskLevel":"medium",
+    "licenseRequired":false
+  },
+  "specializations":[
+    "Mason",
+    "Carpenter",
+    "Electrician",
+    "Plumber",
+    "Welder",
+    "Painter",
+    "POP Installer",
+    "Tiler",
+    "Roof Installer",
+    "Aluminium Installer",
+    "Solar Installer",
+    "Furniture Maker",
+    "Bricklayer",
+    "Steel Fixer",
+    "Interior Finisher"
+  ],
+  "supportedCountries":"global"
+}

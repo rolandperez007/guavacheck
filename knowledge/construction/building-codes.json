@@ -1,0 +1,127 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "countries": [
+    {
+      "code": "NG",
+      "country": "Nigeria",
+      "codeFamily": "National Building Code",
+      "latestEdition": "2006",
+      "measurementSystem": "metric",
+      "structuralStandard": "British/Eurocode influenced",
+      "electricalStandard": "IEC",
+      "plumbingStandard": "National",
+      "fireCode": "National",
+      "permitRequired": true
+    },
+    {
+      "code": "GH",
+      "country": "Ghana",
+      "codeFamily": "Ghana Building Code",
+      "latestEdition": "2018",
+      "measurementSystem": "metric",
+      "structuralStandard": "Eurocode",
+      "electricalStandard": "IEC",
+      "plumbingStandard": "National",
+      "fireCode": "National",
+      "permitRequired": true
+    },
+    {
+      "code": "KE",
+      "country": "Kenya",
+      "codeFamily": "Kenya Building Regulations",
+      "latestEdition": "Current",
+      "measurementSystem": "metric",
+      "structuralStandard": "Eurocode",
+      "electricalStandard": "IEC",
+      "plumbingStandard": "National",
+      "fireCode": "National",
+      "permitRequired": true
+    },
+    {
+      "code": "ZA",
+      "country": "South Africa",
+      "codeFamily": "SANS 10400",
+      "latestEdition": "Current",
+      "measurementSystem": "metric",
+      "structuralStandard": "SANS",
+      "electricalStandard": "SANS",
+      "plumbingStandard": "SANS",
+      "fireCode": "SANS",
+      "permitRequired": true
+    },
+    {
+      "code": "US",
+      "country": "United States",
+      "codeFamily": "International Building Code (IBC)",
+      "latestEdition": "2024",
+      "measurementSystem": "imperial",
+      "structuralStandard": "ASCE / ACI / AISC",
+      "electricalStandard": "NEC",
+      "plumbingStandard": "IPC",
+      "fireCode": "IFC",
+      "permitRequired": true
+    },
+    {
+      "code": "CA",
+      "country": "Canada",
+      "codeFamily": "National Building Code of Canada",
+      "latestEdition": "2020",
+      "measurementSystem": "metric",
+      "structuralStandard": "CSA",
+      "electricalStandard": "Canadian Electrical Code",
+      "plumbingStandard": "NPC",
+      "fireCode": "National Fire Code",
+      "permitRequired": true
+    },
+    {
+      "code": "GB",
+      "country": "United Kingdom",
+      "codeFamily": "Building Regulations",
+      "latestEdition": "Current",
+      "measurementSystem": "metric",
+      "structuralStandard": "Eurocode",
+      "electricalStandard": "BS 7671",
+      "plumbingStandard": "British Standards",
+      "fireCode": "Approved Document B",
+      "permitRequired": true
+    },
+    {
+      "code": "AU",
+      "country": "Australia",
+      "codeFamily": "National Construction Code",
+      "latestEdition": "2022",
+      "measurementSystem": "metric",
+      "structuralStandard": "AS/NZS",
+      "electricalStandard": "AS/NZS 3000",
+      "plumbingStandard": "AS/NZS",
+      "fireCode": "NCC",
+      "permitRequired": true
+    },
+    {
+      "code": "IN",
+      "country": "India",
+      "codeFamily": "National Building Code of India",
+      "latestEdition": "2016",
+      "measurementSystem": "metric",
+      "structuralStandard": "IS Codes",
+      "electricalStandard": "IS",
+      "plumbingStandard": "National",
+      "fireCode": "NBC Fire Code",
+      "permitRequired": true
+    },
+    {
+      "code": "CN",
+      "country": "China",
+      "codeFamily": "China National Standards",
+      "latestEdition": "Current",
+      "measurementSystem": "metric",
+      "structuralStandard": "GB Standards",
+      "electricalStandard": "GB",
+      "plumbingStandard": "GB",
+      "fireCode": "GB",
+      "permitRequired": true
+    }
+  ]
+}

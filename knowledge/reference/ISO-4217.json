@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "dataset": "ISO-4217",
+    "version": "1.0.0"
+  },
+  "records": [
+    {
+      "code": "NGN",
+      "name": "Nigerian Naira",
+      "symbol": "₦",
+      "minorUnit": 2
+    },
+    {
+      "code": "USD",
+      "name": "United States Dollar",
+      "symbol": "$",
+      "minorUnit": 2
+    }
+  ]
+}

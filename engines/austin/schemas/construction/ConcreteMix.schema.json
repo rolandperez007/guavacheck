@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/ConcreteMix.schema.json",
+  "title": "Concrete Mix",
+  "description": "Concrete mix design specification used throughout the project.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "mixId",
+    "grade"
+  ],
+
+  "properties": {
+
+    "mixId": {
+      "type": "string"
+    },
+
+    "grade": {
+      "type": "string"
+    },
+
+    "cementType": {
+      "type": "string"
+    },
+
+    "cementRatio": {
+      "type": "number"
+    },
+
+    "sandRatio": {
+      "type": "number"
+    },
+
+    "aggregateRatio": {
+      "type": "number"
+    },
+
+    "waterCementRatio": {
+      "type": "number"
+    },
+
+    "slump": {
+      "type": "number"
+    },
+
+    "compressiveStrength7Days": {
+      "type": "number"
+    },
+
+    "compressiveStrength28Days": {
+      "type": "number"
+    },
+
+    "density": {
+      "type": "number"
+    },
+
+    "admixtures": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "curingDays": {
+      "type": "integer"
+    }
+
+  }
+
+}

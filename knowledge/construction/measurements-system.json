@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+  "systems": [
+    {
+      "id": "metric",
+      "name": "Metric System",
+      "description": "International System of Units (SI)",
+      "baseUnits": {
+        "length": "meter",
+        "area": "square_meter",
+        "volume": "cubic_meter",
+        "mass": "kilogram",
+        "temperature": "celsius"
+      },
+      "constructionUnits": {
+        "cement": "bag",
+        "sand": "cubic_meter",
+        "granite": "cubic_meter",
+        "blocks": "piece",
+        "bricks": "piece",
+        "steel": "kilogram",
+        "timber": "cubic_meter",
+        "paint": "liter",
+        "pipes": "meter",
+        "tiles": "square_meter",
+        "roofing": "square_meter",
+        "glass": "square_meter"
+      }
+    },
+    {
+      "id": "imperial",
+      "name": "Imperial System",
+      "description": "Imperial / US Customary Units",
+      "baseUnits": {
+        "length": "foot",
+        "area": "square_foot",
+        "volume": "cubic_foot",
+        "mass": "pound",
+        "temperature": "fahrenheit"
+      },
+      "constructionUnits": {
+        "cement": "bag",
+        "sand": "cubic_yard",
+        "granite": "cubic_yard",
+        "blocks": "piece",
+        "bricks": "piece",
+        "steel": "pound",
+        "timber": "board_foot",
+        "paint": "gallon",
+        "pipes": "foot",
+        "tiles": "square_foot",
+        "roofing": "square_foot",
+        "glass": "square_foot"
+      }
+    }
+  ],
+  "countryDefaults": {
+    "NG": "metric",
+    "GH": "metric",
+    "KE": "metric",
+    "ZA": "metric",
+    "EG": "metric",
+    "FR": "metric",
+    "DE": "metric",
+    "ES": "metric",
+    "IT": "metric",
+    "JP": "metric",
+    "CN": "metric",
+    "IN": "metric",
+    "AU": "metric",
+    "NZ": "metric",
+    "BR": "metric",
+    "MX": "metric",
+    "CA": "metric",
+    "US": "imperial",
+    "GB": "metric"
+  },
+  "conversionFactors": {
+    "meter_to_foot": 3.28084,
+    "foot_to_meter": 0.3048,
+    "square_meter_to_square_foot": 10.7639,
+    "square_foot_to_square_meter": 0.092903,
+    "cubic_meter_to_cubic_foot": 35.3147,
+    "cubic_foot_to_cubic_meter": 0.0283168,
+    "kilogram_to_pound": 2.20462,
+    "pound_to_kilogram": 0.453592,
+    "liter_to_gallon": 0.264172,
+    "gallon_to_liter": 3.78541
+  }
+}

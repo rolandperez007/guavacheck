@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectMetadata.schema.json",
+  "title": "Project Metadata",
+  "description": "System-generated metadata for auditing, observability, governance, provenance, AI reasoning and lifecycle management. This object should never contain business data; it exists solely to describe the project itself.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "version": {
+      "type": "string"
+    },
+
+    "schemaVersion": {
+      "type": "string"
+    },
+
+    "entityVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+
+    "classification": {
+      "enum": [
+        "PUBLIC",
+        "INTERNAL",
+        "CONFIDENTIAL",
+        "RESTRICTED"
+      ]
+    },
+
+    "source": {
+      "type": "string"
+    },
+
+    "sourceEngine": {
+      "type": "string"
+    },
+
+    "createdBy": {
+      "type": "string"
+    },
+
+    "updatedBy": {
+      "type": "string"
+    },
+
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "lastReviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "traceId": {
+      "type": "string"
+    },
+
+    "requestId": {
+      "type": "string"
+    },
+
+    "correlationId": {
+      "type": "string"
+    },
+
+    "checksum": {
+      "type": "string"
+    },
+
+    "digitalSignature": {
+      "type": "string"
+    },
+
+    "confidenceScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+
+    "qualityScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "riskScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "observability": {
+
+      "type": "object",
+
+      "properties": {
+
+        "monitored": {
+          "type": "boolean"
+        },
+
+        "logged": {
+          "type": "boolean"
+        },
+
+        "traced": {
+          "type": "boolean"
+        },
+
+        "audited": {
+          "type": "boolean"
+        }
+
+      }
+
+    },
+
+    "tags": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "labels": {
+
+      "type": "object",
+
+      "additionalProperties": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "notes": {
+
+      "type": "string"
+
+    }
+
+  }
+
+}

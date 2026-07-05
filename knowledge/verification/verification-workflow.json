@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "workflow": [
+    "Account Creation",
+    "Identity Verification",
+    "Document Upload",
+    "License Verification",
+    "Professional Body Verification",
+    "Office Verification",
+    "Background Check",
+    "Community Review",
+    "Austin AI Review",
+    "Human Verification",
+    "Approval",
+    "Continuous Monitoring"
+  ]
+}

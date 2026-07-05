@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/Reinforcement.schema.json",
+  "title": "Reinforcement",
+  "description": "Steel reinforcement specification for structural concrete members.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "reinforcementId": {
+      "type": "string"
+    },
+
+    "steelGrade": {
+      "type": "string"
+    },
+
+    "barDiameter": {
+      "type": "number"
+    },
+
+    "barLength": {
+      "type": "number"
+    },
+
+    "quantity": {
+      "type": "integer"
+    },
+
+    "spacing": {
+      "type": "number"
+    },
+
+    "cover": {
+      "type": "number"
+    },
+
+    "totalWeight": {
+      "type": "number"
+    },
+
+    "yieldStrength": {
+      "type": "number"
+    }
+
+  }
+
+}

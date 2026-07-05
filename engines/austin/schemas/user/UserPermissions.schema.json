@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserPermissions.schema.json",
+  "title": "User Permissions",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "permissions": {
+
+      "type": "array",
+
+      "uniqueItems": true,
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "isAdministrator": {
+
+      "type": "boolean"
+
+    },
+
+    "canVerify": {
+
+      "type": "boolean"
+
+    },
+
+    "canAudit": {
+
+      "type": "boolean"
+
+    },
+
+    "canModerate": {
+
+      "type": "boolean"
+
+    },
+
+    "canManageProjects": {
+
+      "type": "boolean"
+
+    },
+
+    "canManageUsers": {
+
+      "type": "boolean"
+
+    },
+
+    "canAccessEnterprise": {
+
+      "type": "boolean"
+
+    },
+
+    "canAccessApi": {
+
+      "type": "boolean"
+
+    }
+
+  }
+}

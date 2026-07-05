@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+
+  "baseCurrency": "USD",
+
+  "materials": {
+
+    "cement": {
+      "unit": "bag",
+      "price": 8.5
+    },
+
+    "rebar12mm": {
+      "unit": "piece",
+      "price": 11.2
+    },
+
+    "sand": {
+      "unit": "m3",
+      "price": 24
+    },
+
+    "granite": {
+      "unit": "m3",
+      "price": 36
+    }
+
+  }
+}

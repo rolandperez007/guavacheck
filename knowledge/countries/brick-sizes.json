@@ -1,0 +1,21 @@
+{
+  "sizes": [
+
+    {
+      "name": "Standard Metric",
+      "length": 215,
+      "width": 102,
+      "height": 65,
+      "unit": "mm"
+    },
+
+    {
+      "name": "Nigeria Sandcrete Block",
+      "length": 450,
+      "width": 225,
+      "height": 225,
+      "unit": "mm"
+    }
+
+  ]
+}

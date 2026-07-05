@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/building/BuildingFinish.schema.json",
+  "title": "Building Finish",
+  "description": "Surface finish applied to building components.",
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "properties": {
+
+    "finishId": {
+      "type": "string"
+    },
+
+    "finishType": {
+
+      "enum": [
+
+        "PAINT",
+        "TILE",
+        "STONE",
+        "WOOD",
+        "MARBLE",
+        "GRANITE",
+        "LAMINATE",
+        "VINYL",
+        "PVC",
+        "CARPET",
+        "SCREED",
+        "PLASTER",
+        "WALLPAPER",
+        "EXPOSED"
+
+      ]
+
+    },
+
+    "colour": {
+      "type": "string"
+    },
+
+    "texture": {
+      "type": "string"
+    },
+
+    "manufacturer": {
+      "type": "string"
+    },
+
+    "expectedLifeYears": {
+      "type": "integer"
+    },
+
+    "maintenanceScheduleMonths": {
+      "type": "integer"
+    }
+
+  }
+
+}

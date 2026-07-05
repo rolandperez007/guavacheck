@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "levels": [
+    {
+      "id": "verified",
+      "score": 100,
+      "label": "Verified",
+      "description": "Confirmed by authoritative standards or official sources."
+    },
+    {
+      "id": "high",
+      "score": 90,
+      "label": "High Confidence",
+      "description": "Supported by multiple trusted sources."
+    },
+    {
+      "id": "good",
+      "score": 80,
+      "label": "Good Confidence",
+      "description": "Reliable regional or industry data."
+    },
+    {
+      "id": "medium",
+      "score": 70,
+      "label": "Medium Confidence",
+      "description": "Market averages or verified supplier reports."
+    },
+    {
+      "id": "low",
+      "score": 50,
+      "label": "Low Confidence",
+      "description": "Limited information available."
+    },
+    {
+      "id": "unknown",
+      "score": 0,
+      "label": "Unknown",
+      "description": "Awaiting verification."
+    }
+  ]
+}
+    

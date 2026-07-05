@@ -1,0 +1,27 @@
+{
+  "types": [
+
+    {
+      "id": "strip",
+      "soil": [
+        "stable"
+      ]
+    },
+
+    {
+      "id": "raft",
+      "soil": [
+        "weak"
+      ]
+    },
+
+    {
+      "id": "pile",
+      "soil": [
+        "swamp",
+        "marine"
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+
+  "countries": {
+
+    "NG": "Africa/Lagos",
+
+    "US": [
+      "America/New_York",
+      "America/Chicago",
+      "America/Denver",
+      "America/Los_Angeles"
+    ],
+
+    "GB": "Europe/London",
+
+    "JP": "Asia/Tokyo"
+
+  }
+}

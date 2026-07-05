@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+
+  "countries": {
+
+    "NG": {
+
+      "vat": 7.5,
+
+      "propertyTax": "State Dependent"
+
+    },
+
+    "US": {
+
+      "salesTax": "State Dependent",
+
+      "propertyTax": "County Dependent"
+
+    },
+
+    "GB": {
+
+      "vat": 20
+
+    }
+
+  }
+}

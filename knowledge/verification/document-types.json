@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+
+  "documents": {
+
+    "person": [
+      "National ID",
+      "Passport",
+      "Driver License",
+      "Residence Permit",
+      "Tax Identification Number"
+    ],
+
+    "company": [
+      "Certificate of Incorporation",
+      "Business Registration",
+      "Tax Certificate",
+      "Memorandum of Association",
+      "VAT Registration"
+    ],
+
+    "property": [
+      "Survey Plan",
+      "Title Deed",
+      "Certificate of Occupancy",
+      "Building Approval",
+      "Occupancy Permit",
+      "Deed of Assignment"
+    ],
+
+    "construction": [
+      "Structural Drawings",
+      "Architectural Drawings",
+      "Mechanical Drawings",
+      "Electrical Drawings",
+      "Bill of Quantities"
+    ],
+
+    "supplier": [
+      "Business License",
+      "Manufacturer Authorization",
+      "Warehouse Inspection",
+      "Insurance Certificate"
+    ]
+  }
+}

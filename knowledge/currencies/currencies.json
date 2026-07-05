@@ -1,0 +1,171 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+  "source": "ISO 4217",
+  "currencies": [
+    {
+      "code": "NGN",
+      "name": "Nigerian Naira",
+      "symbol": "₦",
+      "numeric": "566",
+      "countryCodes": ["NG"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "USD",
+      "name": "US Dollar",
+      "symbol": "$",
+      "numeric": "840",
+      "countryCodes": ["US"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "numeric": "978",
+      "countryCodes": [
+        "DE",
+        "FR",
+        "IT",
+        "ES",
+        "PT",
+        "NL",
+        "BE",
+        "IE",
+        "AT",
+        "FI",
+        "GR",
+        "LU",
+        "SI",
+        "SK",
+        "EE",
+        "LV",
+        "LT",
+        "CY",
+        "MT"
+      ],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "GBP",
+      "name": "British Pound Sterling",
+      "symbol": "£",
+      "numeric": "826",
+      "countryCodes": ["GB"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "CAD",
+      "name": "Canadian Dollar",
+      "symbol": "$",
+      "numeric": "124",
+      "countryCodes": ["CA"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "AUD",
+      "name": "Australian Dollar",
+      "symbol": "$",
+      "numeric": "036",
+      "countryCodes": ["AU"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "NZD",
+      "name": "New Zealand Dollar",
+      "symbol": "$",
+      "numeric": "554",
+      "countryCodes": ["NZ"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "JPY",
+      "name": "Japanese Yen",
+      "symbol": "¥",
+      "numeric": "392",
+      "countryCodes": ["JP"],
+      "decimalPlaces": 0
+    },
+    {
+      "code": "CNY",
+      "name": "Chinese Yuan",
+      "symbol": "¥",
+      "numeric": "156",
+      "countryCodes": ["CN"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "INR",
+      "name": "Indian Rupee",
+      "symbol": "₹",
+      "numeric": "356",
+      "countryCodes": ["IN"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "CHF",
+      "name": "Swiss Franc",
+      "symbol": "CHF",
+      "numeric": "756",
+      "countryCodes": ["CH"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "ZAR",
+      "name": "South African Rand",
+      "symbol": "R",
+      "numeric": "710",
+      "countryCodes": ["ZA"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "KES",
+      "name": "Kenyan Shilling",
+      "symbol": "KSh",
+      "numeric": "404",
+      "countryCodes": ["KE"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "GHS",
+      "name": "Ghanaian Cedi",
+      "symbol": "GH₵",
+      "numeric": "936",
+      "countryCodes": ["GH"],
+      "decimalPlaces": 2
+    },
+    {
+      "code": "XOF",
+      "name": "West African CFA Franc",
+      "symbol": "CFA",
+      "numeric": "952",
+      "countryCodes": [
+        "BJ",
+        "BF",
+        "CI",
+        "GW",
+        "ML",
+        "NE",
+        "SN",
+        "TG"
+      ],
+      "decimalPlaces": 0
+    },
+    {
+      "code": "XAF",
+      "name": "Central African CFA Franc",
+      "symbol": "FCFA",
+      "numeric": "950",
+      "countryCodes": [
+        "CM",
+        "CF",
+        "TD",
+        "CG",
+        "GQ",
+        "GA"
+      ],
+      "decimalPlaces": 0
+    }
+  ]
+}

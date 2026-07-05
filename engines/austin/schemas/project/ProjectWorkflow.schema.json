@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectWorkflow.schema.json",
+  "title": "Project Workflow",
+  "description": "Describes how Austin moves a project through every operational stage.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "workflowId": {
+
+      "type": "string"
+
+    },
+
+    "currentStage": {
+
+      "type": "string"
+
+    },
+
+    "nextStage": {
+
+      "type": "string"
+
+    },
+
+    "completedStages": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "pendingStages": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "blockedStages": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "requiresApproval": {
+
+      "type": "boolean"
+
+    },
+
+    "approvedBy": {
+
+      "type": "string"
+
+    },
+
+    "automationLevel": {
+
+      "enum": [
+
+        "MANUAL",
+
+        "ASSISTED",
+
+        "AUTOMATED",
+
+        "FULLY_AUTONOMOUS"
+
+      ]
+
+    }
+
+  }
+
+}

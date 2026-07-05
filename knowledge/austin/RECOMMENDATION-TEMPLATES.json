@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "dataset": "RECOMMENDATION-TEMPLATES",
+    "version": "1.0.0"
+  },
+
+  "templates": [
+
+    {
+      "type": "verification",
+      "message": "Complete identity verification before proceeding."
+    },
+
+    {
+      "type": "finance",
+      "message": "Fund escrow before contractor mobilization."
+    },
+
+    {
+      "type": "construction",
+      "message": "Conduct a soil investigation before foundation works."
+    },
+
+    {
+      "type": "property",
+      "message": "Verify title documents with the relevant land authority."
+    },
+
+    {
+      "type": "risk",
+      "message": "High project risk detected. Request professional review."
+    },
+
+    {
+      "type": "materials",
+      "message": "Compare material prices from multiple verified suppliers."
+    }
+
+  ]
+}

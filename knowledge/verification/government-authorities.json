@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+
+  "authorities": [
+    "Land Registry",
+    "Ministry of Lands",
+    "Planning Authority",
+    "Building Control Agency",
+    "Corporate Affairs Registry",
+    "Tax Authority",
+    "Environmental Protection Agency",
+    "Standards Organization",
+    "Fire Service",
+    "Utility Commission"
+  ]
+}

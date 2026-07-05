@@ -1,0 +1,21 @@
+{
+  "critical": [
+    "Notify Operations",
+    "Freeze transaction",
+    "Create incident",
+    "Preserve evidence"
+  ],
+
+  "high": [
+    "Request manual review",
+    "Notify administrator"
+  ],
+
+  "medium": [
+    "Increase monitoring"
+  ],
+
+  "low": [
+    "Record event"
+  ]
+}

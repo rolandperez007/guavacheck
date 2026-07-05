@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "countries": [
+    {
+      "code": "NG",
+      "country": "Nigeria",
+      "currency": "NGN",
+      "vat": 7.5,
+      "propertyTax": "State/Local Government",
+      "capitalGainsTax": 10,
+      "stampDuty": true,
+      "withholdingTax": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "GH",
+      "country": "Ghana",
+      "currency": "GHS",
+      "vat": 15,
+      "propertyTax": "Local Authority",
+      "capitalGainsTax": 15,
+      "stampDuty": true,
+      "withholdingTax": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "KE",
+      "country": "Kenya",
+      "currency": "KES",
+      "vat": 16,
+      "propertyTax": "County Government",
+      "capitalGainsTax": 15,
+      "stampDuty": true,
+      "withholdingTax": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "ZA",
+      "country": "South Africa",
+      "currency": "ZAR",
+      "vat": 15,
+      "propertyTax": "Municipality",
+      "capitalGainsTax": 18,
+      "stampDuty": false,
+      "transferDuty": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "US",
+      "country": "United States",
+      "currency": "USD",
+      "vat": null,
+      "salesTax": "State Dependent",
+      "propertyTax": "County/State",
+      "capitalGainsTax": "Federal + State",
+      "stampDuty": false,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "CA",
+      "country": "Canada",
+      "currency": "CAD",
+      "gst": 5,
+      "propertyTax": "Municipality",
+      "capitalGainsTax": 50,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "GB",
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "vat": 20,
+      "propertyTax": "Council Tax",
+      "capitalGainsTax": 24,
+      "stampDuty": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "FR",
+      "country": "France",
+      "currency": "EUR",
+      "vat": 20,
+      "propertyTax": "Local Authority",
+      "capitalGainsTax": 36.2,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "DE",
+      "country": "Germany",
+      "currency": "EUR",
+      "vat": 19,
+      "propertyTax": "Municipality",
+      "capitalGainsTax": "Conditional",
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "AU",
+      "country": "Australia",
+      "currency": "AUD",
+      "gst": 10,
+      "propertyTax": "State",
+      "capitalGainsTax": "Income Tax Rules",
+      "stampDuty": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "NZ",
+      "country": "New Zealand",
+      "currency": "NZD",
+      "gst": 15,
+      "propertyTax": "Council Rates",
+      "capitalGainsTax": "Limited",
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "IN",
+      "country": "India",
+      "currency": "INR",
+      "gst": 18,
+      "propertyTax": "Municipality",
+      "capitalGainsTax": 20,
+      "stampDuty": true,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "CN",
+      "country": "China",
+      "currency": "CNY",
+      "vat": 13,
+      "propertyTax": "Pilot Regions",
+      "capitalGainsTax": 20,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "AE",
+      "country": "United Arab Emirates",
+      "currency": "AED",
+      "vat": 5,
+      "propertyTax": "Emirate Dependent",
+      "capitalGainsTax": 0,
+      "landRegistrationRequired": true
+    },
+    {
+      "code": "SG",
+      "country": "Singapore",
+      "currency": "SGD",
+      "gst": 9,
+      "propertyTax": "Progressive",
+      "capitalGainsTax": 0,
+      "landRegistrationRequired": true
+    }
+  ]
+}

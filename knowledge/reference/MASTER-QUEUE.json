@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "dataset": "MASTER-QUEUE",
+    "version": "1.0.0"
+  },
+
+  "queues": [
+
+    "verification",
+
+    "finance",
+
+    "payments",
+
+    "projects",
+
+    "notifications",
+
+    "simulations",
+
+    "analytics",
+
+    "audit",
+
+    "austin"
+
+  ]
+}

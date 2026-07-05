@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+
+  "statuses": [
+    "draft",
+    "submitted",
+    "under_review",
+    "waiting_for_documents",
+    "manual_review",
+    "field_inspection",
+    "approved",
+    "rejected",
+    "expired",
+    "revoked"
+  ]
+}

@@ -1,9 +1,42 @@
-[
-    "Africa",
-    "Asia",
-    "Europe",
-    "North America",
-    "South America",
-    "Oceania",
-    "Antarctica"
-]
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-07-01",
+
+  "continents": [
+    {
+      "code": "AF",
+      "name": "Africa",
+      "countries": 54
+    },
+    {
+      "code": "AS",
+      "name": "Asia",
+      "countries": 49
+    },
+    {
+      "code": "EU",
+      "name": "Europe",
+      "countries": 44
+    },
+    {
+      "code": "NA",
+      "name": "North America",
+      "countries": 23
+    },
+    {
+      "code": "SA",
+      "name": "South America",
+      "countries": 12
+    },
+    {
+      "code": "OC",
+      "name": "Oceania",
+      "countries": 14
+    },
+    {
+      "code": "AN",
+      "name": "Antarctica",
+      "countries": 0
+    }
+  ]
+}

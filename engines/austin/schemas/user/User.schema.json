@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/User.schema.json",
+  "title": "Austin User",
+  "description": "Canonical user object for the GuavaCheck ecosystem. Every human, organization, AI agent, administrator, contractor, partner and API consumer ultimately resolves to this schema.",
+  "version": "1.0.0",
+  "constitutionalReferences": [
+    "ACAS Volume 1 - Identity",
+    "ACAS Volume 3 - Human Intelligence",
+    "AIAS Volume 2 - Security",
+    "AOBS Volume 2 - Traceability",
+    "Legal Constitution Volume 1 - Digital Identity"
+  ],
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "username",
+    "displayName",
+    "email",
+    "status",
+    "role",
+    "verification",
+    "subscription",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Globally unique immutable identifier.",
+      "minLength": 8,
+      "maxLength": 128
+    },
+
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 40
+    },
+
+    "displayName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+
+    "phone": {
+      "type": "string"
+    },
+
+    "avatar": {
+      "type": "string",
+      "format": "uri"
+    },
+
+    "role": {
+      "$ref": "./UserRole.schema.json"
+    },
+
+    "profile": {
+      "$ref": "./UserProfile.schema.json"
+    },
+
+    "preferences": {
+      "$ref": "./UserPreferences.schema.json"
+    },
+
+    "permissions": {
+      "$ref": "./UserPermissions.schema.json"
+    },
+
+    "verification": {
+      "$ref": "./UserVerification.schema.json"
+    },
+
+    "subscription": {
+      "$ref": "./UserSubscription.schema.json"
+    },
+
+    "identity": {
+      "$ref": "./UserIdentity.schema.json"
+    },
+
+    "currentSession": {
+      "$ref": "./UserSession.schema.json"
+    },
+
+    "activity": {
+      "$ref": "./UserActivity.schema.json"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE",
+        "LOCKED",
+        "SUSPENDED",
+        "BANNED",
+        "PENDING",
+        "ARCHIVED",
+        "DELETED"
+      ]
+    },
+
+    "aiConfidenceWeight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.5
+    },
+
+    "riskScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "trustScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "reputationScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "lastLoginAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "deletedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  }
+}

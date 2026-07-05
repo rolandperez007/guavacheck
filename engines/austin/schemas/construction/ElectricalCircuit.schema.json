@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalCircuit.schema.json",
+  "title": "Electrical Circuit",
+  "description": "Represents an electrical circuit supplying one or more loads.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "circuitId",
+    "circuitNumber"
+  ],
+
+  "properties": {
+
+    "circuitId": {
+      "type": "string"
+    },
+
+    "panelId": {
+      "type": "string"
+    },
+
+    "circuitNumber": {
+      "type": "integer"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "phase": {
+
+      "enum": [
+
+        "L1",
+
+        "L2",
+
+        "L3",
+
+        "SINGLE"
+
+      ]
+
+    },
+
+    "voltage": {
+      "type": "number"
+    },
+
+    "current": {
+      "type": "number"
+    },
+
+    "connectedLoadKW": {
+      "type": "number"
+    },
+
+    "maximumDemandKW": {
+      "type": "number"
+    },
+
+    "powerFactor": {
+      "type": "number"
+    },
+
+    "breakerId": {
+      "type": "string"
+    },
+
+    "cableId": {
+      "type": "string"
+    },
+
+    "status": {
+
+      "enum": [
+
+        "ACTIVE",
+
+        "ISOLATED",
+
+        "FAULT",
+
+        "MAINTENANCE"
+
+      ]
+
+    }
+
+  }
+
+}

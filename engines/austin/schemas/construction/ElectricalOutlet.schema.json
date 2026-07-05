@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalOutlet.schema.json",
+  "title": "Electrical Outlet",
+  "description": "Represents a power outlet or receptacle.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "outletId",
+    "outletType"
+  ],
+
+  "properties": {
+
+    "outletId": {
+      "type": "string"
+    },
+
+    "roomId": {
+      "type": "string"
+    },
+
+    "circuitId": {
+      "type": "string"
+    },
+
+    "outletType": {
+
+      "enum": [
+
+        "SINGLE",
+
+        "DOUBLE",
+
+        "TRIPLE",
+
+        "USB",
+
+        "INDUSTRIAL",
+
+        "WEATHERPROOF",
+
+        "UPS",
+
+        "SMART"
+
+      ]
+
+    },
+
+    "ratedVoltage": {
+      "type": "number"
+    },
+
+    "ratedCurrent": {
+      "type": "number"
+    },
+
+    "grounded": {
+      "type": "boolean"
+    },
+
+    "gfciProtected": {
+      "type": "boolean"
+    },
+
+    "smartEnabled": {
+      "type": "boolean"
+    },
+
+    "energyMonitoring": {
+      "type": "boolean"
+    },
+
+    "location": {
+      "type": "string"
+    }
+
+  }
+
+}

@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "contractor",
+    "name": "Contractor",
+    "category": "Construction",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "contractorTypes": [
+    "General Contractor",
+    "Civil Contractor",
+    "Building Contractor",
+    "Road Contractor",
+    "Electrical Contractor",
+    "Mechanical Contractor",
+    "HVAC Contractor",
+    "Plumbing Contractor",
+    "Solar Contractor",
+    "Interior Contractor",
+    "Finishing Contractor",
+    "Demolition Contractor",
+    "Water Works Contractor",
+    "Infrastructure Contractor"
+  ],
+
+  "verificationRequirements": {
+    "identity": true,
+    "companyRegistration": true,
+    "professionalLicense": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "taxRegistration": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "backgroundCheck": true,
+    "insuranceVerification": true
+  },
+
+  "services": [
+    "Construction Execution",
+    "Project Management",
+    "Site Supervision",
+    "Procurement",
+    "Labour Management",
+    "Equipment Supply",
+    "Building Maintenance",
+    "Infrastructure Construction",
+    "Fit-Out Projects",
+    "Renovation",
+    "Specialized Installations",
+    "Quality Control"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Company Registration",
+    "Contractor License",
+    "Tax Identification",
+    "Insurance Certificate",
+    "Office Address Proof",
+    "Project Portfolio"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 20,
+    "companyVerification": 15,
+    "completedProjects": 20,
+    "communityRating": 15,
+    "financialReliability": 10,
+    "officeVerification": 10,
+    "experience": 10
+  },
+
+  "riskChecks": [
+    "Project Abandonment",
+    "Fraud Reports",
+    "Contract Violations",
+    "Safety Violations",
+    "Expired License",
+    "Professional Suspension",
+    "Blacklisted Company",
+    "Duplicate Registration"
+  ],
+
+  "deliverables": [
+    "Completed Project",
+    "Progress Reports",
+    "Construction Schedule",
+    "Budget Reports",
+    "Quality Assurance Reports",
+    "Health and Safety Reports",
+    "Completion Certificate",
+    "Warranty Documentation"
+  ],
+
+  "supportedCountries": "global"
+}

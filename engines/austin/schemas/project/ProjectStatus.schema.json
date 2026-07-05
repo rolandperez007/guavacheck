@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectStatus.schema.json",
+  "title": "Project Status",
+  "description": "Current lifecycle state of a GuavaCheck project.",
+  "type": "string",
+
+  "enum": [
+
+    "DRAFT",
+
+    "INITIALIZING",
+
+    "PLANNING",
+
+    "DESIGN",
+
+    "ESTIMATION",
+
+    "SIMULATION",
+
+    "APPROVAL",
+
+    "PROCUREMENT",
+
+    "CONSTRUCTION",
+
+    "INSPECTION",
+
+    "VERIFICATION",
+
+    "AUDIT",
+
+    "COMMISSIONING",
+
+    "COMPLETED",
+
+    "ON_HOLD",
+
+    "CANCELLED",
+
+    "ARCHIVED"
+
+  ]
+}

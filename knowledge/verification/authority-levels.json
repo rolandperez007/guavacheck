@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+
+  "levels": [
+    {
+      "level": 1,
+      "name": "Community"
+    },
+    {
+      "level": 2,
+      "name": "Professional"
+    },
+    {
+      "level": 3,
+      "name": "Corporate"
+    },
+    {
+      "level": 4,
+      "name": "Government"
+    },
+    {
+      "level": 5,
+      "name": "International Authority"
+    }
+  ]
+}

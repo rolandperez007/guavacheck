@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/Slab.schema.json",
+  "title": "Structural Slab",
+  "description": "Horizontal structural element supporting occupancy and transferring loads to beams and columns.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "slabId",
+    "slabType"
+  ],
+
+  "properties": {
+
+    "slabId": {
+      "type": "string"
+    },
+
+    "floorLevel": {
+      "type": "string"
+    },
+
+    "slabType": {
+
+      "enum": [
+
+        "SOLID",
+
+        "RIBBED",
+
+        "WAFFLE",
+
+        "FLAT",
+
+        "HOLLOW_CORE",
+
+        "POST_TENSIONED",
+
+        "PRECAST"
+
+      ]
+
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "thickness": {
+      "type": "number"
+    },
+
+    "concreteGrade": {
+      "type": "string"
+    },
+
+    "reinforcementGrade": {
+      "type": "string"
+    },
+
+    "liveLoad": {
+      "type": "number"
+    },
+
+    "deadLoad": {
+      "type": "number"
+    },
+
+    "fireResistanceHours": {
+      "type": "number"
+    },
+
+    "designLifeYears": {
+      "type": "integer"
+    }
+
+  }
+
+}

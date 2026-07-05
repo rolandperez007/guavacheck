@@ -1,0 +1,11 @@
+{
+  "rules": [
+    "Learn only from verified outcomes.",
+    "Do not learn from rejected fraud.",
+    "Increase confidence after repeated successful predictions.",
+    "Decrease confidence after incorrect predictions.",
+    "Record every completed simulation.",
+    "Record every completed project.",
+    "Keep previous learning history."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "countries": {
+
+    "NG": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+
+    "US": {
+      "all": "911"
+    }
+
+  }
+}

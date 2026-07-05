@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+
+  "sources": [
+    "Government Registry",
+    "Land Registry",
+    "Professional Body",
+    "Licensed Surveyor",
+    "Licensed Architect",
+    "Licensed Engineer",
+    "Licensed Lawyer",
+    "Verified Contractor",
+    "Verified Supplier",
+    "Financial Institution",
+    "Insurance Company",
+    "Satellite Provider",
+    "Drone Inspection",
+    "Community Verification",
+    "Austin AI"
+  ]
+}

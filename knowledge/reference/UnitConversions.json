@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "dataset": "Unit Conversions"
+  },
+  "records": [
+    {
+      "from": "meter",
+      "to": "foot",
+      "factor": 3.28084
+    },
+    {
+      "from": "kilogram",
+      "to": "pound",
+      "factor": 2.20462
+    },
+    {
+      "from": "liter",
+      "to": "gallon",
+      "factor": 0.264172
+    }
+  ]
+}

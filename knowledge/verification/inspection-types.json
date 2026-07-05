@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "types": [
+    "Property Inspection",
+    "Structural Inspection",
+    "Electrical Inspection",
+    "Mechanical Inspection",
+    "Roof Inspection",
+    "Foundation Inspection",
+    "Safety Inspection",
+    "Fire Inspection",
+    "Environmental Inspection",
+    "Material Inspection",
+    "Drone Inspection",
+    "Virtual Inspection"
+  ]
+}

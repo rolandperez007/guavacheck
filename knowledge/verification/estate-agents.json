@@ -1,0 +1,20 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"estate_agent",
+    "name":"Estate Agent",
+    "category":"Real Estate",
+    "riskLevel":"high",
+    "licenseRequired":true
+  },
+  "services":[
+    "Property Sales",
+    "Property Rentals",
+    "Leasing",
+    "Property Marketing",
+    "Tenant Screening",
+    "Property Management",
+    "Investment Advisory"
+  ],
+  "supportedCountries":"global"
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserVerification.schema.json",
+  "title": "User Verification",
+  "description": "Identity and trust verification state.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "verificationStatus": {
+
+      "enum": [
+
+        "UNVERIFIED",
+
+        "PENDING",
+
+        "PARTIALLY_VERIFIED",
+
+        "VERIFIED",
+
+        "REJECTED"
+
+      ]
+
+    },
+
+    "emailVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "phoneVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "identityVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "addressVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "companyVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "biometricVerified": {
+
+      "type": "boolean"
+
+    },
+
+    "verificationProvider": {
+
+      "type": "string"
+
+    },
+
+    "verificationReference": {
+
+      "type": "string"
+
+    },
+
+    "verifiedAt": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "reviewedBy": {
+
+      "type": "string"
+
+    },
+
+    "verificationScore": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    }
+
+  }
+
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/RoofStructure.schema.json",
+  "title": "Roof Structure",
+  "description": "Primary structural roof framing system.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "roofId",
+    "roofType"
+  ],
+
+  "properties": {
+
+    "roofId": {
+      "type": "string"
+    },
+
+    "roofType": {
+
+      "enum": [
+
+        "GABLE",
+
+        "HIP",
+
+        "FLAT",
+
+        "MANSARD",
+
+        "SHED",
+
+        "BUTTERFLY",
+
+        "DOME",
+
+        "TRUSS"
+
+      ]
+
+    },
+
+    "frameMaterial": {
+
+      "enum": [
+
+        "TIMBER",
+
+        "STEEL",
+
+        "ALUMINIUM",
+
+        "REINFORCED_CONCRETE"
+
+      ]
+
+    },
+
+    "roofCovering": {
+      "type": "string"
+    },
+
+    "pitchDegrees": {
+      "type": "number"
+    },
+
+    "span": {
+      "type": "number"
+    },
+
+    "windResistance": {
+      "type": "number"
+    },
+
+    "snowLoad": {
+      "type": "number"
+    },
+
+    "solarReady": {
+      "type": "boolean"
+    },
+
+    "rainwaterHarvesting": {
+      "type": "boolean"
+    }
+
+  }
+
+}

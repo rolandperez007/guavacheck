@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/SoilBearing.schema.json",
+  "title": "Soil Bearing Capacity",
+  "description": "Geotechnical characteristics of soil supporting the foundation.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "soilId"
+  ],
+
+  "properties": {
+
+    "soilId": {
+      "type": "string"
+    },
+
+    "soilClassification": {
+
+      "enum": [
+
+        "ROCK",
+
+        "GRAVEL",
+
+        "SAND",
+
+        "SILT",
+
+        "CLAY",
+
+        "PEAT",
+
+        "FILL",
+
+        "MIXED"
+
+      ]
+
+    },
+
+    "safeBearingCapacity": {
+      "type": "number"
+    },
+
+    "ultimateBearingCapacity": {
+      "type": "number"
+    },
+
+    "moistureContent": {
+      "type": "number"
+    },
+
+    "groundWaterLevel": {
+      "type": "number"
+    },
+
+    "settlementEstimate": {
+      "type": "number"
+    },
+
+    "liquefactionRisk": {
+      "type": "boolean"
+    },
+
+    "expansiveSoil": {
+      "type": "boolean"
+    },
+
+    "soilReportReference": {
+      "type": "string"
+    }
+
+  }
+
+}

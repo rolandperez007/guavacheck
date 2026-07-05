@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://guava/schemas/ElectricalSolar.scheme.json",
+  "title": "Electrical + Solar System Scheme",
+  "type": "object",
+  "description": "Schema defining electrical and solar energy system design for residential and commercial properties, including load calculation, solar generation, storage, and wiring layout.",
+
+  "required": ["projectId", "systemType", "location", "loadProfile", "solarArray", "batterySystem", "inverterSystem"],
+
+  "properties": {
+    "projectId": {
+      "type": "string",
+      "description": "Unique identifier for the building/project"
+    },
+
+    "systemType": {
+      "type": "string",
+      "enum": ["grid-tied", "off-grid", "hybrid"],
+      "description": "Type of electrical/solar system configuration"
+    },
+
+    "location": {
+      "type": "object",
+      "description": "Geographic location for solar yield estimation",
+      "properties": {
+        "country": { "type": "string" },
+        "state": { "type": "string" },
+        "city": { "type": "string" },
+        "sunHoursPerDay": { "type": "number", "minimum": 0 }
+      },
+      "required": ["country", "city"]
+    },
+
+    "loadProfile": {
+      "type": "object",
+      "description": "Energy consumption profile of the building",
+      "properties": {
+        "totalLoadKW": { "type": "number", "minimum": 0 },
+        "peakLoadKW": { "type": "number", "minimum": 0 },
+        "dailyConsumptionKWh": { "type": "number", "minimum": 0 },
+        "appliances": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "powerWatts": { "type": "number" },
+              "hoursPerDay": { "type": "number" }
+            },
+            "required": ["name", "powerWatts"]
+          }
+        }
+      },
+      "required": ["totalLoadKW", "dailyConsumptionKWh"]
+    },
+
+    "solarArray": {
+      "type": "object",
+      "description": "Solar panel configuration",
+      "properties": {
+        "panelType": { "type": "string" },
+        "panelWattage": { "type": "number" },
+        "numberOfPanels": { "type": "integer", "minimum": 0 },
+        "totalCapacityKW": { "type": "number" },
+        "mountingType": {
+          "type": "string",
+          "enum": ["roof", "ground", "floating"]
+        }
+      },
+      "required": ["panelWattage", "numberOfPanels"]
+    },
+
+    "batterySystem": {
+      "type": "object",
+      "description": "Energy storage system",
+      "properties": {
+        "batteryType": {
+          "type": "string",
+          "enum": ["lithium-ion", "lead-acid", "lifepo4"]
+        },
+        "capacityKWh": { "type": "number", "minimum": 0 },
+        "voltage": { "type": "number" },
+        "batteryCount": { "type": "integer", "minimum": 0 },
+        "autonomyDays": { "type": "number" }
+      },
+      "required": ["capacityKWh", "batteryType"]
+    },
+
+    "inverterSystem": {
+      "type": "object",
+      "description": "Power conversion system",
+      "properties": {
+        "inverterType": {
+          "type": "string",
+          "enum": ["string", "micro", "hybrid"]
+        },
+        "capacityKW": { "type": "number", "minimum": 0 },
+        "efficiencyPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "phaseType": {
+          "type": "string",
+          "enum": ["single-phase", "three-phase"]
+        }
+      },
+      "required": ["capacityKW", "inverterType"]
+    },
+
+    "wiringSystem": {
+      "type": "object",
+      "description": "Electrical distribution and wiring configuration",
+      "properties": {
+        "cableType": { "type": "string" },
+        "breakerRatingAmps": { "type": "number" },
+        "distributionPanels": { "type": "integer" },
+        "earthingSystem": { "type": "string" }
+      }
+    },
+
+    "costEstimate": {
+      "type": "object",
+      "description": "Estimated cost breakdown",
+      "properties": {
+        "currency": { "type": "string", "default": "USD" },
+        "solarCost": { "type": "number" },
+        "batteryCost": { "type": "number" },
+        "inverterCost": { "type": "number" },
+        "installationCost": { "type": "number" },
+        "totalCost": { "type": "number" }
+      }
+    },
+
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "version": { "type": "string" }
+      }
+    }
+  }
+}

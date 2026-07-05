@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/StructuralAnalysis.schema.json",
+  "title": "Structural Analysis",
+  "description": "Engineering analysis results for a structural model.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "analysisId"
+  ],
+
+  "properties": {
+
+    "analysisId": {
+      "type": "string"
+    },
+
+    "analysisMethod": {
+
+      "enum": [
+
+        "LINEAR",
+
+        "NON_LINEAR",
+
+        "FINITE_ELEMENT",
+
+        "DYNAMIC",
+
+        "PUSHOVER",
+
+        "MODAL"
+
+      ]
+
+    },
+
+    "analysisSoftware": {
+      "type": "string"
+    },
+
+    "designCode": {
+      "type": "string"
+    },
+
+    "maximumDeflection": {
+      "type": "number"
+    },
+
+    "maximumStress": {
+      "type": "number"
+    },
+
+    "maximumStrain": {
+      "type": "number"
+    },
+
+    "utilizationRatio": {
+      "type": "number"
+    },
+
+    "naturalFrequency": {
+      "type": "number"
+    },
+
+    "passed": {
+      "type": "boolean"
+    },
+
+    "engineerApproval": {
+      "type": "string"
+    }
+
+  }
+
+}

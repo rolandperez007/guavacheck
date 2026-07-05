@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "dataset": "MASTER-STATUSES",
+    "version": "1.0.0"
+  },
+
+  "general": [
+    "active",
+    "inactive",
+    "pending",
+    "approved",
+    "rejected",
+    "suspended",
+    "archived"
+  ],
+
+  "verification": [
+    "pending",
+    "verified",
+    "rejected",
+    "expired",
+    "manual_review"
+  ],
+
+  "payments": [
+    "pending",
+    "processing",
+    "completed",
+    "failed",
+    "refunded"
+  ],
+
+  "escrow": [
+    "created",
+    "funded",
+    "locked",
+    "released",
+    "disputed",
+    "closed"
+  ],
+
+  "construction": [
+    "planned",
+    "mobilized",
+    "ongoing",
+    "inspection",
+    "completed",
+    "stopped"
+  ],
+
+  "simulation": [
+    "queued",
+    "running",
+    "completed",
+    "failed"
+  ]
+}

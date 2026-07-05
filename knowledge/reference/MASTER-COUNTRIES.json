@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "dataset": "MASTER-COUNTRIES",
+    "version": "1.0.0"
+  },
+
+  "default": "GLOBAL",
+
+  "priorityCountries": [
+
+    "NG",
+
+    "GH",
+
+    "KE",
+
+    "ZA",
+
+    "US",
+
+    "CA",
+
+    "GB",
+
+    "DE",
+
+    "AE",
+
+    "AU"
+
+  ]
+}

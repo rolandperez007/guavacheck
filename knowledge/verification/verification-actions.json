@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "actions": [
+    "Approve",
+    "Reject",
+    "Escalate",
+    "Request More Documents",
+    "Schedule Inspection",
+    "Request Human Review",
+    "Cross Validate",
+    "Run Fraud Analysis",
+    "Update Trust Score",
+    "Notify User",
+    "Freeze Listing",
+    "Blacklist Entity"
+  ]
+}

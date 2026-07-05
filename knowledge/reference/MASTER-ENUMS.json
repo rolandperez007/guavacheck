@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "dataset": "MASTER-ENUMS",
+    "version": "1.0.0",
+    "schema": "reference.v1",
+    "maintainer": "guavacheck World Engine",
+    "updatedAt": "2026-07-03T00:00:00Z",
+    "description": "Global enumerations shared across all guavacheck engines."
+  },
+
+  "projectStatus": [
+    "draft",
+    "planning",
+    "bidding",
+    "funding",
+    "active",
+    "paused",
+    "completed",
+    "cancelled"
+  ],
+
+  "projectTypes": [
+    "residential",
+    "commercial",
+    "industrial",
+    "renovation",
+    "infrastructure",
+    "inspection",
+    "maintenance"
+  ],
+
+  "verificationStatus": [
+    "pending",
+    "in_review",
+    "verified",
+    "rejected",
+    "expired",
+    "suspended"
+  ],
+
+  "trustLevels": [
+    "unverified",
+    "verified",
+    "trusted",
+    "elite"
+  ],
+
+  "riskLevels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+
+  "confidenceLevels": [
+    "very_low",
+    "low",
+    "medium",
+    "high",
+    "very_high"
+  ],
+
+  "subscriptionPlans": [
+    "free",
+    "standard",
+    "professional",
+    "enterprise"
+  ],
+
+  "paymentStatus": [
+    "pending",
+    "authorized",
+    "processing",
+    "completed",
+    "failed",
+    "cancelled",
+    "refunded"
+  ],
+
+  "escrowStatus": [
+    "created",
+    "funded",
+    "locked",
+    "released",
+    "partially_released",
+    "disputed",
+    "cancelled",
+    "closed"
+  ],
+
+  "milestoneStatus": [
+    "not_started",
+    "in_progress",
+    "awaiting_review",
+    "approved",
+    "rejected",
+    "completed"
+  ],
+
+  "documentStatus": [
+    "uploaded",
+    "pending_review",
+    "verified",
+    "rejected",
+    "expired"
+  ],
+
+  "documentTypes": [
+    "identity",
+    "passport",
+    "drivers_license",
+    "national_id",
+    "tax_document",
+    "survey_plan",
+    "certificate_of_occupancy",
+    "deed",
+    "architectural_plan",
+    "structural_drawing",
+    "receipt",
+    "invoice",
+    "contract",
+    "insurance",
+    "permit"
+  ],
+
+  "userRoles": [
+    "owner",
+    "buyer",
+    "seller",
+    "tenant",
+    "landlord",
+    "architect",
+    "engineer",
+    "quantity_surveyor",
+    "builder",
+    "contractor",
+    "supplier",
+    "lawyer",
+    "estate_surveyor",
+    "valuer",
+    "bank",
+    "insurance",
+    "government",
+    "admin",
+    "operations",
+    "austin_core"
+  ],
+
+  "organizationTypes": [
+    "construction_company",
+    "architecture_firm",
+    "engineering_firm",
+    "law_firm",
+    "government",
+    "financial_institution",
+    "insurance_company",
+    "supplier",
+    "manufacturer",
+    "developer"
+  ],
+
+  "propertyTypes": [
+    "land",
+    "apartment",
+    "duplex",
+    "bungalow",
+    "terrace",
+    "office",
+    "warehouse",
+    "factory",
+    "shopping_complex",
+    "mixed_use"
+  ],
+
+  "currenciesSupported": [
+    "NGN",
+    "USD",
+    "EUR",
+    "GBP",
+    "CAD",
+    "AUD",
+    "ZAR",
+    "KES",
+    "GHS"
+  ],
+
+  "measurementSystems": [
+    "metric",
+    "imperial"
+  ],
+
+  "yesNo": [
+    "yes",
+    "no"
+  ],
+
+  "booleanValues": [
+    true,
+    false
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "dataset": "MASTER-RISKS",
+    "version": "1.0.0"
+  },
+
+  "levels": [
+
+    {
+      "name": "Low",
+      "score": 25
+    },
+
+    {
+      "name": "Medium",
+      "score": 50
+    },
+
+    {
+      "name": "High",
+      "score": 75
+    },
+
+    {
+      "name": "Critical",
+      "score": 100
+    }
+
+  ]
+}

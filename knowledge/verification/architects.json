@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "architect",
+    "name": "Architect",
+    "category": "Architecture",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "verificationRequirements": {
+    "identity": true,
+    "professionalLicense": true,
+    "professionalBodyMembership": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "addressVerification": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "portfolioVerification": true,
+    "backgroundCheck": true,
+    "taxRegistration": true
+  },
+
+  "services": [
+    "Residential Design",
+    "Commercial Design",
+    "Industrial Design",
+    "Master Planning",
+    "Interior Architecture",
+    "Landscape Architecture",
+    "Renovation Design",
+    "Building Permit Drawings",
+    "Construction Documentation",
+    "Building Information Modeling (BIM)",
+    "Site Planning",
+    "Feasibility Studies",
+    "Accessibility Design",
+    "Heritage Conservation"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Professional License",
+    "Professional Membership Certificate",
+    "Business Registration",
+    "Tax Identification",
+    "Office Address Proof",
+    "Professional Portfolio"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 25,
+    "identityVerification": 20,
+    "professionalMembership": 20,
+    "portfolioQuality": 15,
+    "officeVerification": 10,
+    "communityRating": 10
+  },
+
+  "riskChecks": [
+    "Expired License",
+    "Fake Portfolio",
+    "Professional Suspension",
+    "Copyright Violation",
+    "Duplicate Registration",
+    "Blacklisted Individual"
+  ],
+
+  "deliverables": [
+    "Concept Drawings",
+    "Floor Plans",
+    "Elevations",
+    "Sections",
+    "3D Visualizations",
+    "Construction Drawings",
+    "Permit Drawings",
+    "Specifications",
+    "Material Schedules",
+    "BIM Models"
+  ],
+
+  "supportedCountries": "global"
+}

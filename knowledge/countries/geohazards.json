@@ -1,0 +1,16 @@
+{
+  "hazards": {
+
+    "NG": [
+      "Flooding",
+      "Coastal Erosion"
+    ],
+
+    "JP": [
+      "Earthquake",
+      "Tsunami",
+      "Volcano"
+    ]
+
+  }
+}

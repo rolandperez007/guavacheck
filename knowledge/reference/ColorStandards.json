@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "dataset": "Color Standards"
+  },
+  "records": [
+    {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "rgb": "255,255,255"
+    },
+    {
+      "name": "Black",
+      "hex": "#000000",
+      "rgb": "0,0,0"
+    }
+  ]
+}

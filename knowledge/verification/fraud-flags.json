@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+
+  "flags": [
+    {
+      "id": "duplicate_document",
+      "severity": "critical"
+    },
+    {
+      "id": "edited_document",
+      "severity": "critical"
+    },
+    {
+      "id": "fake_identity",
+      "severity": "critical"
+    },
+    {
+      "id": "duplicate_property",
+      "severity": "high"
+    },
+    {
+      "id": "duplicate_listing",
+      "severity": "medium"
+    },
+    {
+      "id": "price_outlier",
+      "severity": "medium"
+    },
+    {
+      "id": "suspicious_location",
+      "severity": "high"
+    },
+    {
+      "id": "ownership_conflict",
+      "severity": "critical"
+    },
+    {
+      "id": "expired_document",
+      "severity": "medium"
+    },
+    {
+      "id": "blacklisted_entity",
+      "severity": "critical"
+    }
+  ]
+}

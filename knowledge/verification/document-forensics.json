@@ -1,0 +1,17 @@
+{
+  "version":"1.0.0",
+
+  "checks":[
+    "OCR Consistency",
+    "Metadata Inspection",
+    "Digital Signature Validation",
+    "PDF Modification Detection",
+    "Image Manipulation Detection",
+    "Font Consistency",
+    "Document Hash Verification",
+    "Watermark Validation",
+    "QR Code Validation",
+    "Barcode Validation",
+    "Security Feature Detection"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "levels": [
+    {
+      "id": "unverified",
+      "priority": 0,
+      "badge": "gray",
+      "description": "Information has not been reviewed."
+    },
+    {
+      "id": "submitted",
+      "priority": 1,
+      "badge": "blue",
+      "description": "Submitted and awaiting review."
+    },
+    {
+      "id": "pending_documents",
+      "priority": 2,
+      "badge": "yellow",
+      "description": "Additional documentation required."
+    },
+    {
+      "id": "document_verified",
+      "priority": 3,
+      "badge": "green",
+      "description": "Documents verified."
+    },
+    {
+      "id": "identity_verified",
+      "priority": 4,
+      "badge": "green",
+      "description": "Identity confirmed."
+    },
+    {
+      "id": "location_verified",
+      "priority": 5,
+      "badge": "green",
+      "description": "Physical location confirmed."
+    },
+    {
+      "id": "professionally_verified",
+      "priority": 6,
+      "badge": "purple",
+      "description": "Verified by licensed professionals."
+    },
+    {
+      "id": "government_verified",
+      "priority": 7,
+      "badge": "gold",
+      "description": "Verified using official government records."
+    },
+    {
+      "id": "guavacheck_certified",
+      "priority": 8,
+      "badge": "emerald",
+      "description": "Highest verification level."
+    }
+  ]
+}

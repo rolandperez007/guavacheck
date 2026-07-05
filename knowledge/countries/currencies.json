@@ -1,14 +1,42 @@
-[
-    "USD",
-    "EUR",
-    "GBP",
-    "NGN",
-    "ZAR",
-    "JPY",
-    "CNY",
-    "INR",
-    "AUD",
-    "CAD",
-    "BRL",
-    "KRW"
-]
+{
+  "schemaVersion": "1.0",
+
+  "currencies": {
+    "USD": {
+      "name": "United States Dollar",
+      "symbol": "$"
+    },
+    "EUR": {
+      "name": "Euro",
+      "symbol": "€"
+    },
+    "GBP": {
+      "name": "Pound Sterling",
+      "symbol": "£"
+    },
+    "NGN": {
+      "name": "Naira",
+      "symbol": "₦"
+    },
+    "CAD": {
+      "name": "Canadian Dollar",
+      "symbol": "C$"
+    },
+    "AUD": {
+      "name": "Australian Dollar",
+      "symbol": "A$"
+    },
+    "JPY": {
+      "name": "Japanese Yen",
+      "symbol": "¥"
+    },
+    "CNY": {
+      "name": "Chinese Yuan",
+      "symbol": "¥"
+    },
+    "INR": {
+      "name": "Indian Rupee",
+      "symbol": "₹"
+    }
+  }
+}

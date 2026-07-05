@@ -1,0 +1,17 @@
+{
+  "countries": {
+
+    "NG": {
+      "electricity": [
+        "IKEDC",
+        "EKEDC",
+        "AEDC"
+      ],
+
+      "water": [
+        "State Water Board"
+      ]
+    }
+
+  }
+}

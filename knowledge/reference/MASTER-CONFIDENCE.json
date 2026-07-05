@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "dataset": "MASTER-CONFIDENCE",
+    "version": "1.0.0"
+  },
+
+  "levels": [
+
+    {
+      "name": "Very Low",
+      "minimum": 0
+    },
+
+    {
+      "name": "Low",
+      "minimum": 25
+    },
+
+    {
+      "name": "Medium",
+      "minimum": 50
+    },
+
+    {
+      "name": "High",
+      "minimum": 75
+    },
+
+    {
+      "name": "Very High",
+      "minimum": 95
+    }
+
+  ]
+}

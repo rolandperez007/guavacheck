@@ -1,27 +1,20 @@
-export interface PPPProfile {
-
-    country: string;
-
-    multiplier: number;
-
-    updated: string;
-
+export interface PPPInfo {
+  country: string;
+  index: number;
 }
 
 export class PPPRegistry {
+  private static registry = new Map<string, PPPInfo>();
 
-    private static profiles = new Map<string, PPPProfile>();
+  static register(item: PPPInfo) {
+    this.registry.set(item.country, item);
+  }
 
-    static register(profile: PPPProfile): void {
+  static byCountry(code: string) {
+    return this.registry.get(code);
+  }
 
-        this.profiles.set(profile.country, profile);
-
-    }
-
-    static byCountry(country: string): PPPProfile | undefined {
-
-        return this.profiles.get(country);
-
-    }
-
+  static all() {
+    return [...this.registry.values()];
+  }
 }

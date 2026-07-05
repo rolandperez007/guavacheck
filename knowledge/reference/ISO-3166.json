@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "dataset": "ISO-3166",
+    "version": "1.0.0",
+    "authority": "ISO",
+    "updatedAt": "2026-07-03T00:00:00Z"
+  },
+  "records": [
+    {
+      "alpha2": "NG",
+      "alpha3": "NGA",
+      "numeric": "566",
+      "name": "Nigeria"
+    },
+    {
+      "alpha2": "US",
+      "alpha3": "USA",
+      "numeric": "840",
+      "name": "United States"
+    }
+  ]
+}

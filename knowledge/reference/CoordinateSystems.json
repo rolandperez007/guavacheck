@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "dataset": "Coordinate Systems"
+  },
+  "records": [
+    {
+      "name": "WGS84",
+      "epsg": 4326,
+      "description": "Global GPS coordinate reference system."
+    },
+    {
+      "name": "Web Mercator",
+      "epsg": 3857,
+      "description": "Common mapping projection."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/FoundationWall.schema.json",
+  "title": "Foundation Wall",
+  "description": "Wall transferring structural loads from the superstructure to the foundation.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "wallId": {
+      "type": "string"
+    },
+
+    "wallType": {
+      "enum": [
+        "LOAD_BEARING",
+        "BASEMENT",
+        "RETAINING",
+        "STEM"
+      ]
+    },
+
+    "height": {
+      "type": "number"
+    },
+
+    "thickness": {
+      "type": "number"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "material": {
+      "type": "string"
+    },
+
+    "waterproofed": {
+      "type": "boolean"
+    },
+
+    "reinforced": {
+      "type": "boolean"
+    },
+
+    "fireResistanceHours": {
+      "type": "number"
+    }
+
+  }
+
+}

@@ -1,0 +1,7 @@
+{
+  "approve": 95,
+  "recommend": 85,
+  "manualReview": 70,
+  "escalate": 60,
+  "reject": 40
+}

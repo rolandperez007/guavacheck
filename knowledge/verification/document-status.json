@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+
+  "statuses": [
+    "Uploaded",
+    "Pending Review",
+    "OCR Completed",
+    "Verified",
+    "Rejected",
+    "Expired",
+    "Revoked",
+    "Requires Resubmission",
+    "Fraud Suspected",
+    "Archived"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "operations": [
+    "Austin Core cannot be overridden.",
+    "Deputy administrators require audit logging.",
+    "Every administrative action is traceable.",
+    "Critical actions require confirmation.",
+    "Austin Core maintains platform integrity."
+  ]
+}

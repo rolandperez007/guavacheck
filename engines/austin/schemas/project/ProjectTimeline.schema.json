@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/project/ProjectTimeline.schema.json",
+  "title": "Project Timeline",
+  "description": "Master project scheduling information.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "plannedStartDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "plannedCompletionDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "actualStartDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "actualCompletionDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "estimatedDurationDays": {
+
+      "type": "integer"
+
+    },
+
+    "actualDurationDays": {
+
+      "type": "integer"
+
+    },
+
+    "completionPercentage": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "criticalPath": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "delayDays": {
+
+      "type": "integer"
+
+    },
+
+    "forecastCompletionDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    }
+
+  }
+
+}

@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "dataset": "Time Standards"
+  },
+  "records": [
+    {
+      "standard": "UTC",
+      "offset": "+00:00"
+    },
+    {
+      "standard": "WAT",
+      "offset": "+01:00"
+    },
+    {
+      "standard": "EST",
+      "offset": "-05:00"
+    }
+  ]
+}

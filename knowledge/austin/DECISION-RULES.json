@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "dataset": "DECISION-RULES",
+    "version": "1.0.0"
+  },
+
+  "rules": [
+
+    {
+      "id": "VERIFY-001",
+      "priority": 1,
+      "condition": "Identity Verified AND Trust Score >= 90",
+      "action": "Approve"
+    },
+
+    {
+      "id": "VERIFY-002",
+      "priority": 2,
+      "condition": "Confidence < 70",
+      "action": "Manual Review"
+    },
+
+    {
+      "id": "VERIFY-003",
+      "priority": 3,
+      "condition": "Fraud Pattern Detected",
+      "action": "Freeze"
+    },
+
+    {
+      "id": "VERIFY-004",
+      "priority": 4,
+      "condition": "Escrow Not Funded",
+      "action": "Prevent Mobilization"
+    },
+
+    {
+      "id": "PROJECT-001",
+      "priority": 5,
+      "condition": "All Milestones Approved",
+      "action": "Release Escrow"
+    }
+
+  ]
+}

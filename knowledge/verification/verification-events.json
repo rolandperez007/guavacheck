@@ -1,0 +1,18 @@
+{
+  "version":"1.0.0",
+
+  "events":[
+    "Identity Verified",
+    "Identity Failed",
+    "License Approved",
+    "License Expired",
+    "Document Uploaded",
+    "Document Rejected",
+    "Office Verified",
+    "GPS Confirmed",
+    "Trust Score Updated",
+    "Manual Review Started",
+    "Manual Review Completed",
+    "Verification Revoked"
+  ]
+}

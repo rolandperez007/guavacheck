@@ -1,0 +1,24 @@
+{
+  "critical": [
+    "fraud.detected",
+    "escrow.frozen",
+    "building.collapse.risk",
+    "payment.attack"
+  ],
+
+  "high": [
+    "verification.failed",
+    "license.expired",
+    "mortgage.rejected"
+  ],
+
+  "medium": [
+    "project.delayed",
+    "material.price.increase"
+  ],
+
+  "low": [
+    "user.login",
+    "profile.updated"
+  ]
+}

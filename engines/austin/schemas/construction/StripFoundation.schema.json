@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/StripFoundation.schema.json",
+  "title": "Strip Foundation",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "stripId": {
+      "type": "string"
+    },
+
+    "wallReference": {
+      "type": "string"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "depth": {
+      "type": "number"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "concreteGrade": {
+      "type": "string"
+    },
+
+    "reinforcement": {
+      "$ref": "./Reinforcement.schema.json"
+    },
+
+    "soilBearingCapacity": {
+      "type": "number"
+    }
+
+  }
+
+}

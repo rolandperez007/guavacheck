@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/foundation/FoundationBeam.schema.json",
+  "title": "Foundation Beam",
+  "description": "Reinforced concrete beam connecting footings and distributing structural loads.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "beamId": {
+      "type": "string"
+    },
+
+    "beamType": {
+      "enum": [
+        "GROUND_BEAM",
+        "GRADE_BEAM",
+        "TIE_BEAM",
+        "PILE_CAP_BEAM"
+      ]
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "depth": {
+      "type": "number"
+    },
+
+    "concreteGrade": {
+      "type": "string"
+    },
+
+    "reinforcementGrade": {
+      "type": "string"
+    },
+
+    "topBars": {
+      "type": "integer"
+    },
+
+    "bottomBars": {
+      "type": "integer"
+    },
+
+    "stirrupsSpacing": {
+      "type": "number"
+    },
+
+    "designLoad": {
+      "type": "number"
+    }
+
+  }
+
+}

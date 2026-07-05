@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalGenerator.schema.json",
+  "title": "Electrical Generator",
+  "description": "Backup electrical generation system.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "generatorId",
+    "generatorType"
+  ],
+
+  "properties": {
+
+    "generatorId": {
+      "type": "string"
+    },
+
+    "generatorType": {
+
+      "enum": [
+
+        "DIESEL",
+
+        "PETROL",
+
+        "GAS",
+
+        "HYBRID",
+
+        "BIOFUEL"
+
+      ]
+
+    },
+
+    "manufacturer": {
+      "type": "string"
+    },
+
+    "model": {
+      "type": "string"
+    },
+
+    "ratedPowerKW": {
+      "type": "number"
+    },
+
+    "ratedVoltage": {
+      "type": "number"
+    },
+
+    "frequencyHz": {
+      "type": "number"
+    },
+
+    "fuelTankCapacityLitres": {
+      "type": "number"
+    },
+
+    "fuelConsumptionLHr": {
+      "type": "number"
+    },
+
+    "automaticTransferSwitch": {
+      "type": "boolean"
+    },
+
+    "runtimeHours": {
+      "type": "integer"
+    },
+
+    "maintenanceIntervalHours": {
+      "type": "integer"
+    },
+
+    "status": {
+
+      "enum": [
+
+        "OFFLINE",
+
+        "READY",
+
+        "RUNNING",
+
+        "FAULT",
+
+        "MAINTENANCE"
+
+      ]
+
+    }
+
+  }
+
+}

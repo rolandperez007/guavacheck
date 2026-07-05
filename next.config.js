@@ -8,8 +8,6 @@ module.exports = {
 
   pageExtensions: ["ts", "tsx", "js", "jsx"],
 
-  outputFileTracingRoot: path.join(__dirname),
-
   webpack: (config) => {
     config.watchOptions = {
       ignored: [

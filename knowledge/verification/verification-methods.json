@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+
+  "methods": [
+    {
+      "id": "manual_review",
+      "automation": false
+    },
+    {
+      "id": "government_api",
+      "automation": true
+    },
+    {
+      "id": "facial_match",
+      "automation": true
+    },
+    {
+      "id": "ocr_document_scan",
+      "automation": true
+    },
+    {
+      "id": "gps_validation",
+      "automation": true
+    },
+    {
+      "id": "satellite_validation",
+      "automation": true
+    },
+    {
+      "id": "licensed_professional",
+      "automation": false
+    },
+    {
+      "id": "community_consensus",
+      "automation": true
+    },
+    {
+      "id": "supplier_confirmation",
+      "automation": true
+    },
+    {
+      "id": "ai_consistency_check",
+      "automation": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/Construction.schema.json",
+  "title": "Construction",
+  "description": "Master construction object managed by Austin throughout the physical execution lifecycle.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "constructionId",
+    "projectId",
+    "status"
+  ],
+
+  "properties": {
+
+    "constructionId": {
+      "type": "string"
+    },
+
+    "projectId": {
+      "type": "string"
+    },
+
+    "phase": {
+      "$ref": "./ConstructionPhase.schema.json"
+    },
+
+    "activities": {
+
+      "type": "array",
+
+      "items": {
+
+        "$ref": "./ConstructionActivity.schema.json"
+
+      }
+
+    },
+
+    "progress": {
+
+      "$ref": "./ConstructionProgress.schema.json"
+
+    },
+
+    "crew": {
+
+      "$ref": "./ConstructionCrew.schema.json"
+
+    },
+
+    "equipment": {
+
+      "$ref": "./ConstructionEquipment.schema.json"
+
+    },
+
+    "inspection": {
+
+      "$ref": "./ConstructionInspection.schema.json"
+
+    },
+
+    "permit": {
+
+      "$ref": "./ConstructionPermit.schema.json"
+
+    },
+
+    "metadata": {
+
+      "$ref": "./ConstructionMetadata.schema.json"
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "PLANNED",
+
+        "READY",
+
+        "ACTIVE",
+
+        "PAUSED",
+
+        "DELAYED",
+
+        "COMPLETED",
+
+        "CANCELLED"
+
+      ]
+
+    }
+
+  }
+
+}

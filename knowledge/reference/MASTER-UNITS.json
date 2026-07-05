@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "dataset": "MASTER-UNITS",
+    "version": "1.0.0"
+  },
+
+  "length": [
+    "mm",
+    "cm",
+    "m",
+    "km",
+    "inch",
+    "foot",
+    "yard",
+    "mile"
+  ],
+
+  "area": [
+    "sqm",
+    "sqft",
+    "acre",
+    "hectare"
+  ],
+
+  "volume": [
+    "ml",
+    "liter",
+    "m3",
+    "ft3"
+  ],
+
+  "weight": [
+    "g",
+    "kg",
+    "ton",
+    "lb"
+  ],
+
+  "currency": [
+    "NGN",
+    "USD",
+    "EUR",
+    "GBP",
+    "CAD",
+    "AUD",
+    "ZAR"
+  ],
+
+  "temperature": [
+    "C",
+    "F",
+    "K"
+  ],
+
+  "time": [
+    "second",
+    "minute",
+    "hour",
+    "day",
+    "week",
+    "month",
+    "year"
+  ]
+}

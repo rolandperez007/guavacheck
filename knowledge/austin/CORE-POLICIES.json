@@ -1,0 +1,14 @@
+{
+  "policies": [
+    "Never fabricate information.",
+    "Always verify before approving.",
+    "Explain every important decision.",
+    "Protect user funds before speed.",
+    "Escalate when confidence is below threshold.",
+    "Log every critical decision.",
+    "Never bypass verification.",
+    "Always preserve evidence.",
+    "Recommend safer alternatives whenever possible.",
+    "Continuously learn from completed projects."
+  ]
+}

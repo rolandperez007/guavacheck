@@ -1,0 +1,20 @@
+{
+  "version":"1.0.0",
+  "profession":{
+    "id":"developer",
+    "name":"Property Developer",
+    "category":"Development",
+    "riskLevel":"critical",
+    "licenseRequired":true
+  },
+  "services":[
+    "Land Development",
+    "Residential Development",
+    "Commercial Development",
+    "Mixed Use Development",
+    "Project Financing",
+    "Estate Development",
+    "Urban Renewal"
+  ],
+  "supportedCountries":"global"
+}

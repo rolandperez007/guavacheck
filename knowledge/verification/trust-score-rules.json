@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "maximumScore": 100,
+
+  "weights": {
+    "identityVerification": 20,
+    "governmentVerification": 20,
+    "professionalLicense": 15,
+    "officeVerification": 10,
+    "backgroundCheck": 10,
+    "communityReputation": 10,
+    "projectHistory": 10,
+    "documentAuthenticity": 5
+  },
+
+  "minimumScores": {
+    "verified": 70,
+    "trusted": 85,
+    "elite": 95
+  }
+}

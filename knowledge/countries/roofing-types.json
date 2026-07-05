@@ -1,0 +1,21 @@
+{
+  "types": [
+
+    {
+      "id": "longspan",
+      "lifespan": 25,
+      "material": "Aluminium"
+    },
+
+    {
+      "id": "stone-coated",
+      "lifespan": 50
+    },
+
+    {
+      "id": "clay-tile",
+      "lifespan": 100
+    }
+
+  ]
+}

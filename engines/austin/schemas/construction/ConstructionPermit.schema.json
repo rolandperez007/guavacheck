@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionPermit.schema.json",
+  "title": "Construction Permit",
+  "description": "Government and regulatory permits associated with the project.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "permitId": {
+
+      "type": "string"
+
+    },
+
+    "permitNumber": {
+
+      "type": "string"
+
+    },
+
+    "authority": {
+
+      "type": "string"
+
+    },
+
+    "permitType": {
+
+      "enum": [
+
+        "BUILDING",
+
+        "ENVIRONMENTAL",
+
+        "DEMOLITION",
+
+        "OCCUPANCY",
+
+        "ROAD_ACCESS",
+
+        "UTILITY"
+
+      ]
+
+    },
+
+    "issuedDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "expiryDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "PENDING",
+
+        "APPROVED",
+
+        "ACTIVE",
+
+        "EXPIRED",
+
+        "REVOKED"
+
+      ]
+
+    },
+
+    "issuingOfficer": {
+
+      "type": "string"
+
+    }
+
+  }
+
+}

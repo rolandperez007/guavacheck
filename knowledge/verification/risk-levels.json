@@ -1,0 +1,26 @@
+{
+  "version":"1.0.0",
+
+  "levels":[
+    {
+      "id":"very_low",
+      "score":0
+    },
+    {
+      "id":"low",
+      "score":25
+    },
+    {
+      "id":"moderate",
+      "score":50
+    },
+    {
+      "id":"high",
+      "score":75
+    },
+    {
+      "id":"critical",
+      "score":100
+    }
+  ]
+}

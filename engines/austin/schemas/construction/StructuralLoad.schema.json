@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/StructuralLoad.schema.json",
+  "title": "Structural Load",
+  "description": "Represents all loads acting on a structural system.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "loadId"
+  ],
+
+  "properties": {
+
+    "loadId": {
+      "type": "string"
+    },
+
+    "loadType": {
+
+      "enum": [
+
+        "DEAD",
+
+        "LIVE",
+
+        "WIND",
+
+        "SEISMIC",
+
+        "SNOW",
+
+        "RAIN",
+
+        "THERMAL",
+
+        "IMPACT",
+
+        "CONSTRUCTION"
+
+      ]
+
+    },
+
+    "magnitude": {
+      "type": "number"
+    },
+
+    "unit": {
+      "type": "string"
+    },
+
+    "applicationArea": {
+      "type": "number"
+    },
+
+    "direction": {
+
+      "enum": [
+
+        "VERTICAL",
+
+        "HORIZONTAL",
+
+        "LATERAL",
+
+        "TORSIONAL"
+
+      ]
+
+    },
+
+    "loadCombination": {
+      "type": "string"
+    },
+
+    "safetyFactor": {
+      "type": "number"
+    }
+
+  }
+
+}

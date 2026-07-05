@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionInspection.schema.json",
+  "title": "Construction Inspection",
+  "description": "Inspection performed during or after construction.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "inspectionId",
+    "status"
+  ],
+
+  "properties": {
+
+    "inspectionId": {
+      "type": "string"
+    },
+
+    "inspectionType": {
+
+      "enum": [
+
+        "FOUNDATION",
+
+        "STRUCTURAL",
+
+        "ELECTRICAL",
+
+        "PLUMBING",
+
+        "ROOF",
+
+        "FINISHING",
+
+        "SAFETY",
+
+        "QUALITY",
+
+        "FINAL"
+
+      ]
+
+    },
+
+    "inspector": {
+
+      "type": "string"
+
+    },
+
+    "inspectionDate": {
+
+      "type": "string",
+
+      "format": "date-time"
+
+    },
+
+    "passed": {
+
+      "type": "boolean"
+
+    },
+
+    "score": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "findings": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "correctiveActions": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "attachments": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "PENDING",
+
+        "PASSED",
+
+        "FAILED",
+
+        "REQUIRES_REINSPECTION"
+
+      ]
+
+    }
+
+  }
+
+}

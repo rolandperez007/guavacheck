@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "methods": [
+    {
+      "id": "official_document",
+      "description": "Government publication or legal document."
+    },
+    {
+      "id": "international_standard",
+      "description": "ISO, ASTM, IEC, EN or equivalent."
+    },
+    {
+      "id": "manufacturer_datasheet",
+      "description": "Official manufacturer specification."
+    },
+    {
+      "id": "field_measurement",
+      "description": "Measured on-site by professionals."
+    },
+    {
+      "id": "market_survey",
+      "description": "Average collected from multiple suppliers."
+    },
+    {
+      "id": "supplier_confirmation",
+      "description": "Verified directly with supplier."
+    },
+    {
+      "id": "community_validation",
+      "description": "Confirmed by trusted community members."
+    },
+    {
+      "id": "ai_prediction",
+      "description": "Generated using Austin AI predictive models."
+    }
+  ]
+}

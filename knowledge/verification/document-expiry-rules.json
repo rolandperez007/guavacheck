@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+
+  "rules": [
+    {
+      "document": "Professional License",
+      "validityMonths": 12
+    },
+    {
+      "document": "Identity Card",
+      "validityMonths": 120
+    },
+    {
+      "document": "Passport",
+      "validityMonths": 120
+    },
+    {
+      "document": "Insurance Certificate",
+      "validityMonths": 12
+    },
+    {
+      "document": "Tax Clearance",
+      "validityMonths": 12
+    }
+  ]
+}

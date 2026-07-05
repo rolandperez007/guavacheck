@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/user/UserProfile.schema.json",
+  "title": "User Profile",
+  "description": "Extended personal profile information.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "firstName": { "type": "string" },
+
+    "lastName": { "type": "string" },
+
+    "middleName": { "type": "string" },
+
+    "gender": {
+      "enum": [
+        "male",
+        "female",
+        "other",
+        "undisclosed"
+      ]
+    },
+
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "nationality": {
+      "type": "string"
+    },
+
+    "occupation": {
+      "type": "string"
+    },
+
+    "company": {
+      "type": "string"
+    },
+
+    "bio": {
+      "type": "string",
+      "maxLength": 5000
+    },
+
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "website": {
+      "type": "string",
+      "format": "uri"
+    }
+
+  }
+}

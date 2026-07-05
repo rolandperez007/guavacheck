@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "dataset": "Document Standards"
+  },
+  "records": [
+    {
+      "type": "PDF",
+      "mime": "application/pdf"
+    },
+    {
+      "type": "JPEG",
+      "mime": "image/jpeg"
+    },
+    {
+      "type": "PNG",
+      "mime": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+
+  "defaultGlobal": {
+    "primaryCode": "IBC",
+    "fireCode": "IFC",
+    "accessibility": "ISO"
+  },
+
+  "countryOverrides": {
+
+    "US": {
+      "primaryCode": "IBC",
+      "fireCode": "IFC"
+    },
+
+    "GB": {
+      "primaryCode": "UK Building Regulations"
+    },
+
+    "NG": {
+      "primaryCode": "National Building Code"
+    }
+
+  }
+}

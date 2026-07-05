@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/structural/Beam.schema.json",
+  "title": "Structural Beam",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "beamId": {
+      "type": "string"
+    },
+
+    "beamType": {
+
+      "enum": [
+
+        "PRIMARY",
+
+        "SECONDARY",
+
+        "CANTILEVER",
+
+        "TRANSFER",
+
+        "GROUND",
+
+        "RING"
+
+      ]
+
+    },
+
+    "material": {
+      "type": "string"
+    },
+
+    "length": {
+      "type": "number"
+    },
+
+    "width": {
+      "type": "number"
+    },
+
+    "depth": {
+      "type": "number"
+    },
+
+    "concreteGrade": {
+      "type": "string"
+    },
+
+    "reinforcementGrade": {
+      "type": "string"
+    },
+
+    "maximumMoment": {
+      "type": "number"
+    },
+
+    "maximumShear": {
+      "type": "number"
+    }
+
+  }
+
+}

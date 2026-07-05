@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalCable.schema.json",
+  "title": "Electrical Cable",
+  "description": "Electrical conductor interconnecting equipment and loads.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+
+    "cableId",
+
+    "cableType"
+
+  ],
+
+  "properties": {
+
+    "cableId": {
+      "type": "string"
+    },
+
+    "cableType": {
+
+      "enum": [
+
+        "PVC",
+
+        "XLPE",
+
+        "ARMOURED",
+
+        "FLEXIBLE",
+
+        "CONTROL",
+
+        "DATA",
+
+        "FIBER"
+
+      ]
+
+    },
+
+    "coreCount": {
+      "type": "integer"
+    },
+
+    "crossSectionMM2": {
+      "type": "number"
+    },
+
+    "conductorMaterial": {
+
+      "enum": [
+
+        "COPPER",
+
+        "ALUMINIUM"
+
+      ]
+
+    },
+
+    "insulationMaterial": {
+      "type": "string"
+    },
+
+    "lengthMeters": {
+      "type": "number"
+    },
+
+    "currentCapacity": {
+      "type": "number"
+    },
+
+    "voltageDropPercent": {
+      "type": "number"
+    },
+
+    "buried": {
+      "type": "boolean"
+    },
+
+    "fireRated": {
+      "type": "boolean"
+    }
+
+  }
+
+}

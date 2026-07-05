@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "patterns": [
+    "Duplicate Property Listing",
+    "Duplicate Survey Coordinates",
+    "Fake Certificate of Occupancy",
+    "Forged Survey Plan",
+    "Forged Government ID",
+    "Edited PDF Documents",
+    "AI-Generated Fake Documents",
+    "Identity Impersonation",
+    "Price Manipulation",
+    "Ownership Conflict",
+    "Multiple Accounts Using Same Identity",
+    "Repeated Bank Account Across Profiles",
+    "GPS Location Mismatch",
+    "Fake Office Address",
+    "Stolen Property Images",
+    "Title Document Alteration",
+    "Ghost Contractor",
+    "Advance Fee Scam",
+    "False Property Availability",
+    "Counterfeit Professional License"
+  ]
+}

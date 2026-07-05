@@ -1,0 +1,17 @@
+{
+  "baseCurrency": "USD",
+
+  "countries": {
+
+    "US": 100,
+
+    "GB": 118,
+
+    "NG": 36,
+
+    "IN": 31,
+
+    "CN": 42
+
+  }
+}

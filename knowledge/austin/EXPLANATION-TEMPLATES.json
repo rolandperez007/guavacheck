@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "dataset": "EXPLANATION-TEMPLATES",
+    "version": "1.0.0"
+  },
+
+  "verification": {
+
+    "approved": {
+
+      "title": "Verification Successful",
+
+      "template": "Identity, supporting documents and verification requirements were successfully satisfied."
+
+    },
+
+    "manual_review": {
+
+      "title": "Manual Review Required",
+
+      "template": "Additional information is required before a final decision can be made."
+
+    },
+
+    "rejected": {
+
+      "title": "Verification Failed",
+
+      "template": "Verification requirements were not satisfied. Review the listed reasons and recommendations."
+
+    }
+
+  },
+
+  "escrow": {
+
+    "released": {
+
+      "title": "Escrow Released",
+
+      "template": "Approved milestones have been completed and funds were released."
+
+    },
+
+    "locked": {
+
+      "title": "Escrow Locked",
+
+      "template": "Escrow remains protected until milestone approval."
+
+    }
+
+  },
+
+  "simulation": {
+
+    "complete": {
+
+      "title": "Simulation Complete",
+
+      "template": "Austin completed the simulation and generated recommendations."
+
+    }
+
+  }
+}

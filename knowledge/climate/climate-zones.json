@@ -1,0 +1,237 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "zones": [
+    {
+      "id": "equatorial_rainforest",
+      "name": "Equatorial Rainforest",
+      "koppen": ["Af"],
+      "temperatureRange": "24-32°C",
+      "annualRainfall": "2000-4000 mm",
+      "humidity": "Very High",
+      "examples": [
+        "NG",
+        "GH",
+        "CM",
+        "CG",
+        "BR",
+        "ID"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "High",
+        "roofMaterial": "Metal or Concrete",
+        "foundation": "Raised Foundation",
+        "wallMaterial": "Concrete Block",
+        "insulation": "Moderate",
+        "ventilation": "Maximum",
+        "drainage": "Excellent",
+        "waterproofing": "Critical",
+        "solarEfficiency": "Moderate"
+      }
+    },
+
+    {
+      "id": "tropical_monsoon",
+      "name": "Tropical Monsoon",
+      "koppen": ["Am"],
+      "temperatureRange": "24-35°C",
+      "annualRainfall": "1500-3000 mm",
+      "humidity": "High",
+      "examples": [
+        "IN",
+        "BD",
+        "TH",
+        "VN"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "High",
+        "roofMaterial": "Metal",
+        "foundation": "Raised",
+        "wallMaterial": "Concrete",
+        "insulation": "Moderate",
+        "ventilation": "High",
+        "drainage": "Excellent",
+        "waterproofing": "Critical",
+        "solarEfficiency": "High"
+      }
+    },
+
+    {
+      "id": "tropical_savanna",
+      "name": "Tropical Savanna",
+      "koppen": ["Aw"],
+      "temperatureRange": "22-38°C",
+      "annualRainfall": "700-1500 mm",
+      "humidity": "Moderate",
+      "examples": [
+        "NG",
+        "TZ",
+        "KE",
+        "ZM"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "Medium",
+        "roofMaterial": "Metal",
+        "foundation": "Concrete",
+        "wallMaterial": "Block",
+        "insulation": "Moderate",
+        "ventilation": "High",
+        "drainage": "Good",
+        "waterproofing": "High",
+        "solarEfficiency": "Very High"
+      }
+    },
+
+    {
+      "id": "hot_desert",
+      "name": "Hot Desert",
+      "koppen": ["BWh"],
+      "temperatureRange": "15-50°C",
+      "annualRainfall": "<250 mm",
+      "humidity": "Very Low",
+      "examples": [
+        "AE",
+        "SA",
+        "EG"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "Low",
+        "roofMaterial": "Concrete",
+        "foundation": "Concrete",
+        "wallMaterial": "Insulated Masonry",
+        "insulation": "Maximum",
+        "ventilation": "Controlled",
+        "drainage": "Moderate",
+        "waterproofing": "Moderate",
+        "solarEfficiency": "Excellent"
+      }
+    },
+
+    {
+      "id": "mediterranean",
+      "name": "Mediterranean",
+      "koppen": ["Csa", "Csb"],
+      "temperatureRange": "5-35°C",
+      "annualRainfall": "400-900 mm",
+      "humidity": "Moderate",
+      "examples": [
+        "ES",
+        "IT",
+        "GR",
+        "PT"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "Medium",
+        "roofMaterial": "Clay Tile",
+        "foundation": "Concrete",
+        "wallMaterial": "Stone or Concrete",
+        "insulation": "Moderate",
+        "ventilation": "Good",
+        "drainage": "Good",
+        "waterproofing": "Standard",
+        "solarEfficiency": "High"
+      }
+    },
+
+    {
+      "id": "humid_subtropical",
+      "name": "Humid Subtropical",
+      "koppen": ["Cfa"],
+      "temperatureRange": "-5-35°C",
+      "annualRainfall": "800-2000 mm",
+      "humidity": "High",
+      "examples": [
+        "US",
+        "CN",
+        "JP"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "Medium",
+        "roofMaterial": "Asphalt or Metal",
+        "foundation": "Concrete",
+        "wallMaterial": "Wood or Block",
+        "insulation": "High",
+        "ventilation": "Balanced",
+        "drainage": "Excellent",
+        "waterproofing": "High",
+        "solarEfficiency": "High"
+      }
+    },
+
+    {
+      "id": "temperate_oceanic",
+      "name": "Temperate Oceanic",
+      "koppen": ["Cfb"],
+      "temperatureRange": "-2-25°C",
+      "annualRainfall": "700-2000 mm",
+      "humidity": "Moderate",
+      "examples": [
+        "GB",
+        "IE",
+        "NZ"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "High",
+        "roofMaterial": "Slate or Metal",
+        "foundation": "Concrete",
+        "wallMaterial": "Brick",
+        "insulation": "High",
+        "ventilation": "Balanced",
+        "drainage": "Excellent",
+        "waterproofing": "High",
+        "solarEfficiency": "Moderate"
+      }
+    },
+
+    {
+      "id": "continental",
+      "name": "Continental",
+      "koppen": ["Dfa", "Dfb"],
+      "temperatureRange": "-35-30°C",
+      "annualRainfall": "500-1200 mm",
+      "humidity": "Moderate",
+      "examples": [
+        "CA",
+        "RU",
+        "PL"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "High",
+        "roofMaterial": "Metal",
+        "foundation": "Deep Frost Foundation",
+        "wallMaterial": "Brick",
+        "insulation": "Maximum",
+        "ventilation": "Controlled",
+        "drainage": "Good",
+        "waterproofing": "High",
+        "solarEfficiency": "Moderate"
+      }
+    },
+
+    {
+      "id": "subarctic",
+      "name": "Subarctic",
+      "koppen": ["Dfc"],
+      "temperatureRange": "-45-20°C",
+      "annualRainfall": "300-700 mm",
+      "humidity": "Low",
+      "examples": [
+        "CA",
+        "FI",
+        "SE"
+      ],
+      "constructionRecommendations": {
+        "roofPitch": "Very High",
+        "roofMaterial": "Metal",
+        "foundation": "Pile or Frost-Protected",
+        "wallMaterial": "Timber",
+        "insulation": "Maximum",
+        "ventilation": "Mechanical",
+        "drainage": "Good",
+        "waterproofing": "High",
+        "solarEfficiency": "Low"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "levels": [
+
+    {
+      "id": "global",
+      "priority": 1
+    },
+
+    {
+      "id": "continent",
+      "priority": 2
+    },
+
+    {
+      "id": "country",
+      "priority": 3
+    },
+
+    {
+      "id": "state",
+      "priority": 4
+    },
+
+    {
+      "id": "city",
+      "priority": 5
+    },
+
+    {
+      "id": "district",
+      "priority": 6
+    },
+
+    {
+      "id": "community",
+      "priority": 7
+    },
+
+    {
+      "id": "street",
+      "priority": 8
+    },
+
+    {
+      "id": "building",
+      "priority": 9
+    }
+  ]
+}

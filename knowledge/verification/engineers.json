@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-02",
+
+  "profession": {
+    "id": "engineer",
+    "name": "Engineer",
+    "category": "Engineering",
+    "riskLevel": "critical",
+    "licenseRequired": true,
+    "renewalMonths": 12
+  },
+
+  "specializations": [
+    "Structural Engineer",
+    "Civil Engineer",
+    "Mechanical Engineer",
+    "Electrical Engineer",
+    "Geotechnical Engineer",
+    "Environmental Engineer",
+    "Water Resources Engineer",
+    "Transportation Engineer",
+    "Highway Engineer",
+    "Bridge Engineer",
+    "Construction Engineer",
+    "Fire Protection Engineer",
+    "HVAC Engineer",
+    "Energy Engineer",
+    "Renewable Energy Engineer",
+    "Telecommunications Engineer",
+    "Mining Engineer",
+    "Marine Engineer",
+    "Industrial Engineer",
+    "Building Services Engineer"
+  ],
+
+  "verificationRequirements": {
+    "identity": true,
+    "professionalLicense": true,
+    "professionalBodyMembership": true,
+    "governmentId": true,
+    "officeVerification": true,
+    "addressVerification": true,
+    "phoneVerification": true,
+    "emailVerification": true,
+    "portfolioVerification": true,
+    "backgroundCheck": true,
+    "taxRegistration": true
+  },
+
+  "services": [
+    "Structural Design",
+    "Foundation Design",
+    "Bridge Design",
+    "Road Design",
+    "Drainage Design",
+    "Electrical Design",
+    "Mechanical Design",
+    "HVAC Design",
+    "Solar System Design",
+    "Plumbing Design",
+    "Construction Supervision",
+    "Engineering Inspection",
+    "Site Investigation",
+    "Load Calculations",
+    "Safety Assessment",
+    "Engineering Reports",
+    "Retrofitting",
+    "Infrastructure Design",
+    "Building Assessment",
+    "Project Certification"
+  ],
+
+  "requiredDocuments": [
+    "Government Identification",
+    "Professional License",
+    "Professional Membership Certificate",
+    "Business Registration",
+    "Tax Identification",
+    "Office Address Proof",
+    "Professional Portfolio"
+  ],
+
+  "trustFactors": {
+    "licenseValidity": 25,
+    "identityVerification": 20,
+    "professionalMembership": 20,
+    "portfolioQuality": 10,
+    "experience": 10,
+    "officeVerification": 5,
+    "communityRating": 10
+  },
+
+  "riskChecks": [
+    "Expired License",
+    "Professional Suspension",
+    "Fake Engineering Reports",
+    "Structural Negligence History",
+    "Duplicate Registration",
+    "Blacklisted Individual",
+    "Invalid Professional Membership"
+  ],
+
+  "deliverables": [
+    "Engineering Calculations",
+    "Structural Drawings",
+    "Civil Drawings",
+    "Mechanical Drawings",
+    "Electrical Drawings",
+    "Foundation Reports",
+    "Geotechnical Reports",
+    "Inspection Reports",
+    "Site Assessment",
+    "Engineering Certificates",
+    "Bill of Engineering Quantities",
+    "Material Specifications"
+  ],
+
+  "supportedCountries": "global"
+}

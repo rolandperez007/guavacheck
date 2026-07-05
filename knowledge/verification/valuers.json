@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "profession": {
+    "id": "valuer",
+    "name": "Property Valuer",
+    "category": "Valuation",
+    "riskLevel": "critical",
+    "licenseRequired": true
+    },
+  "services":[
+    "Property Valuation",
+    "Insurance Valuation",
+    "Mortgage Valuation",
+    "Rental Assessment",
+    "Asset Valuation",
+    "Compulsory Acquisition",
+    "Investment Analysis"
+  ],
+  "supportedCountries":"global"
+}

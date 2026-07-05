@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+
+  "bodyTypes": [
+    "Engineering Council",
+    "Architects Council",
+    "Builders Council",
+    "Surveyors Council",
+    "Law Society",
+    "Estate Surveyors Association",
+    "Quantity Surveyors Institute",
+    "Construction Association",
+    "Property Developers Association"
+  ]
+}

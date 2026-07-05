@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/construction/ConstructionProgress.schema.json",
+  "title": "Construction Progress",
+  "description": "Overall construction progress monitored by Austin.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+
+    "overallCompletion": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "todayProgress": {
+
+      "type": "number"
+
+    },
+
+    "weeklyProgress": {
+
+      "type": "number"
+
+    },
+
+    "monthlyProgress": {
+
+      "type": "number"
+
+    },
+
+    "tasksCompleted": {
+
+      "type": "integer"
+
+    },
+
+    "tasksRemaining": {
+
+      "type": "integer"
+
+    },
+
+    "estimatedCompletionDate": {
+
+      "type": "string",
+
+      "format": "date"
+
+    },
+
+    "forecastAccuracy": {
+
+      "type": "number",
+
+      "minimum": 0,
+
+      "maximum": 100
+
+    },
+
+    "delayDays": {
+
+      "type": "integer"
+
+    },
+
+    "status": {
+
+      "enum": [
+
+        "ON_TRACK",
+
+        "AHEAD",
+
+        "DELAYED",
+
+        "CRITICAL"
+
+      ]
+
+    }
+
+  }
+
+}

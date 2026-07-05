@@ -1,0 +1,11 @@
+{
+  "rules": [
+    "Protect escrow.",
+    "Never expose private data.",
+    "Require authentication.",
+    "Verify identity before sensitive actions.",
+    "Require evidence for high-risk decisions.",
+    "Maintain audit logs.",
+    "Never delete audit history."
+  ]
+}

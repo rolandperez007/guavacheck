@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.guavacheck.ai/electrical/ElectricalBreaker.schema.json",
+  "title": "Electrical Breaker",
+  "description": "Protective circuit breaker.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+
+    "breakerId",
+
+    "breakerType"
+
+  ],
+
+  "properties": {
+
+    "breakerId": {
+      "type": "string"
+    },
+
+    "breakerType": {
+
+      "enum": [
+
+        "MCB",
+
+        "MCCB",
+
+        "RCBO",
+
+        "RCCB",
+
+        "ACB",
+
+        "VCB"
+
+      ]
+
+    },
+
+    "manufacturer": {
+      "type": "string"
+    },
+
+    "model": {
+      "type": "string"
+    },
+
+    "ratedCurrent": {
+      "type": "number"
+    },
+
+    "ratedVoltage": {
+      "type": "number"
+    },
+
+    "breakingCapacityKA": {
+      "type": "number"
+    },
+
+    "tripCurve": {
+
+      "enum": [
+
+        "B",
+
+        "C",
+
+        "D",
+
+        "K",
+
+        "Z"
+
+      ]
+
+    },
+
+    "poleCount": {
+      "type": "integer"
+    },
+
+    "tripStatus": {
+      "type": "boolean"
+    },
+
+    "healthPercentage": {
+      "type": "number"
+    }
+
+  }
+
+}
