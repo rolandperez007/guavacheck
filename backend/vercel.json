@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/projects/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/projects/run",
+      "methods": ["POST"],
+      "dest": "/api/projects/run.ts"
+    },
+    {
+      "src": "/api/projects/cost",
+      "methods": ["POST"],
+      "dest": "/api/projects/cost.ts"
+    },
+    {
+      "src": "/api/projects/design",
+      "methods": ["POST"],
+      "dest": "/api/projects/design.ts"
+    },
+    {
+      "src": "/api/projects/blueprint",
+      "methods": ["POST"],
+      "dest": "/api/projects/blueprint.ts"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/projects/*.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
+    }
+  }
+}

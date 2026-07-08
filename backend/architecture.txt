@@ -1,0 +1,441 @@
+Folder PATH listing
+Volume serial number is 0062005C 0A35:CB21
+C:.
+ª   .env
+ª   architecture.txt
+ª   python_files.txt
+ª   README.md
+ª   requirements.txt
+ª   ts_files.txt
+ª   vercel.json
+ª   
++---ai
+ª       BlueprintCompiler.ts
+ª       CostEstimationEngine.ts
+ª       DesignGenerator.ts
+ª       
++---api
+ª   ª   main.py
+ª   ª   main_backup.py
+ª   ª   server.ts
+ª   ª   
+ª   +---controllers
+ª   ª       project.controller.ts
+ª   ª       
+ª   +---dependencies
+ª   ª       auth.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---middleware
+ª   ª       logging.py
+ª   ª       security.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---routes
+ª   ª       austin.py
+ª   ª       engineering.py
+ª   ª       health.py
+ª   ª       project.routes.ts
+ª   ª       property.py
+ª   ª       verification.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---services
+ª   ª       project.service.ts
+ª   ª       
+ª   +---__pycache__
+ª           main.cpython-314.pyc
+ª           
++---austin
+ª   ª   bootstrap.py
+ª   ª   config.py
+ª   ª   context.py
+ª   ª   events.py
+ª   ª   health.py
+ª   ª   logger.py
+ª   ª   memory.py
+ª   ª   personality.py
+ª   ª   registry.py
+ª   ª   router.py
+ª   ª   startup.py
+ª   ª   status.py
+ª   ª   _init_.py
+ª   ª   
+ª   +---agents
+ª   ª       base_agent.py
+ª   ª       
+ª   +---memory
+ª   ª       memory.py
+ª   ª       
+ª   +---orchestrator
+ª   ª       orchestrator.py
+ª   ª       
+ª   +---planner
+ª   ª       planner.py
+ª   ª       
+ª   +---prompts
+ª   +---reasoning
+ª   ª       reasoner.py
+ª   ª       
+ª   +---registry
+ª   ª       registry.py
+ª   ª       
+ª   +---router
+ª   ª       router.py
+ª   ª       
+ª   +---system_prompts
+ª   +---tools
++---backend
+ª   ª   package.json
+ª   ª   tsconfig.json
+ª   ª   vercel.json
+ª   ª   
+ª   +---ai
+ª   ª       BlueprintCompiler.ts
+ª   ª       CostEstimationEngine.ts
+ª   ª       DesignGenerator.ts
+ª   ª       
+ª   +---api
+ª   ª   +---projects
+ª   ª           blueprint.ts
+ª   ª           cost.ts
+ª   ª           design.ts
+ª   ª           run.ts
+ª   ª           
+ª   +---core
+ª   ª       EngineeringCalculator.ts
+ª   ª       EngineeringEngine.ts
+ª   ª       EngineeringRegistry.ts
+ª   ª       EngineeringTypes.ts
+ª   ª       EngineeringValidator.ts
+ª   ª       
+ª   +---modules
+ª   ª   +---civil
+ª   ª   ª       CivilEngineering.ts
+ª   ª   ª       
+ª   ª   +---electrical
+ª   ª   ª       ElectricalEngineering.ts
+ª   ª   ª       
+ª   ª   +---fire
+ª   ª   ª       FireSafetyEngineering.ts
+ª   ª   ª       
+ª   ª   +---hvac
+ª   ª   ª       HVACEngineering.ts
+ª   ª   ª       
+ª   ª   +---mechanical
+ª   ª   ª       MechanicalEngineering.ts
+ª   ª   ª       
+ª   ª   +---plumbing
+ª   ª   ª       PlumbingEngineering.ts
+ª   ª   ª       
+ª   ª   +---structural
+ª   ª           StructuralAnalysis.ts
+ª   ª           
+ª   +---orchestrator
+ª   ª       ProjectOrchestrator.ts
+ª   ª       
+ª   +---simulation
+ª   ª       SimulationStore.ts
+ª   ª       
+ª   +---types
+ª           GeoLocation.ts
+ª           
++---brains
+ª   +---compliance
+ª   +---construction
+ª   +---contractor
+ª   +---design
+ª   +---finance
+ª   +---gene
+ª   +---inspection
+ª   +---mortgage
+ª   +---property
+ª   +---valuation
++---controllers
+ª       Electricalsolar.controller.ts
+ª       
++---core
+ª   ª   config.py
+ª   ª   constants.py
+ª   ª   dependencies.py
+ª   ª   EngineeringCalculator.ts
+ª   ª   EngineeringEngine.ts
+ª   ª   EngineeringRegistry.ts
+ª   ª   EngineeringTypes.ts
+ª   ª   EngineeringValidator.ts
+ª   ª   exceptions.py
+ª   ª   logging.py
+ª   ª   registry.py
+ª   ª   router_registry.py
+ª   ª   security.py
+ª   ª   shutdown.py
+ª   ª   startup.py
+ª   ª   __init__.py
+ª   ª   
+ª   +---__pycache__
+ª           router_registry.cpython-314.pyc
+ª           __init__.cpython-314.pyc
+ª           
++---database
+ª   ª   base.py
+ª   ª   connection.py
+ª   ª   models.py
+ª   ª   session.py
+ª   ª   __init__.py
+ª   ª   
+ª   +---repositories
++---digital_twin
+ª       building.py
+ª       cost.py
+ª       electrical.py
+ª       foundation.py
+ª       materials.py
+ª       plumbing.py
+ª       roof.py
+ª       room.py
+ª       timeline.py
+ª       wall.py
+ª       
++---engine
+ª       ElectricalSolar.engine.ts
+ª       
++---engines
+ª   ª   base.py
+ª   ª   exceptions.py
+ª   ª   manager.py
+ª   ª   __init__.py
+ª   ª   
+ª   +---analytics
+ª   ª       dashboard.py
+ª   ª       engine.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---architecture
+ª   ª       engine.py
+ª   ª       planner.py
+ª   ª       planner.py#
+ª   ª       __init__.py
+ª   ª       
+ª   +---community
+ª   ª       engine.py
+ª   ª       moderation.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---cost
+ª   ª       engine.py
+ª   ª       estimator.py
+ª   ª       pricing.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---documentation
+ª   ª       engine.py
+ª   ª       generator.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---engineering
+ª   ª       calculator.py
+ª   ª       engine.py
+ª   ª       foundation.py
+ª   ª       materials.py
+ª   ª       models.py
+ª   ª       quantity.py
+ª   ª       reinforcement.py
+ª   ª       reports.py
+ª   ª       structural.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---geo
+ª   ª       engine.py
+ª   ª       geocoder.py
+ª   ª       mapping.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---investment
+ª   ª       engine.py
+ª   ª       forecast.py
+ª   ª       roi.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---marketplace
+ª   ª       catalog.py
+ª   ª       engine.py
+ª   ª       pricing.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---property
+ª   ª       engine.py
+ª   ª       models.py
+ª   ª       search.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---verification
+ª           engine.py
+ª           models.py
+ª           validator.py
+ª           __init__.py
+ª           
++---memory
++---models
++---modules
+ª   +---civil
+ª   ª       CivilEngineering.ts
+ª   ª       
+ª   +---electrical
+ª   ª       ElectricalEngineering.ts
+ª   ª       
+ª   +---fire
+ª   ª       FireSafetyEngineering.ts
+ª   ª       
+ª   +---hvac
+ª   ª       HVACEngineering.ts
+ª   ª       
+ª   +---mechanical
+ª   ª       MechanicalEngineering.ts
+ª   ª       
+ª   +---plumbing
+ª   ª       PlumbingEngineering.ts
+ª   ª       
+ª   +---structural
+ª           StructuralAnalysis.ts
+ª           
++---monitoring
+ª       metrics.py
+ª       __init__.py
+ª       
++---orchestrator
+ª       ProjectOrchestrator.ts
+ª       
++---repositories
+ª   ª   __init__.py
+ª   ª   
+ª   +---verification
+ª           VerificationRepository.py
+ª           __init__.py
+ª           
++---routes
+ª       ElectricalSolar.routes.ts
+ª       index.ts
+ª       
++---schemas
+ª       ElectricalSolar.scheme.json
+ª       
++---services
+ª   ª   __init__.py
+ª   ª   
+ª   +---verification
+ª           VerificationService.py
+ª           __init__.py
+ª           
++---simulation
+ª       SimulationStore.ts
+ª       
++---tests
++---types
+ª       GeoLocation.ts
+ª       
++---utils
+ª       EngineeringMath.ts
+ª       UnitConverter.ts
+ª       __init__.py
+ª       
++---verification_engine
+ª   ª   __init__.py
+ª   ª   
+ª   +---api
+ª   ª   ª   verification_routes.py
+ª   ª   ª   __init__.py
+ª   ª   ª   
+ª   ª   +---__pycache__
+ª   ª           verification_routes.cpython-314.pyc
+ª   ª           __init__.cpython-314.pyc
+ª   ª           
+ª   +---core
+ª   ª   ª   VerificationConfig.py
+ª   ª   ª   VerificationEngine.py
+ª   ª   ª   VerificationModels.py
+ª   ª   ª   __init__.py
+ª   ª   ª   
+ª   ª   +---__pycache__
+ª   ª           VerificationConfig.cpython-314.pyc
+ª   ª           VerificationEngine.cpython-314.pyc
+ª   ª           VerificationModels.cpython-314.pyc
+ª   ª           __init__.cpython-314.pyc
+ª   ª           
+ª   +---document_ai
+ª   ª       DocumentAnalyzer.py
+ª   ª       DocumentClassifier.py
+ª   ª       OCRProcessor.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---fraud_detection
+ª   ª   ª   FraudDetector.py
+ª   ª   ª   RiskAnalyzer.py
+ª   ª   ª   __init__.py
+ª   ª   ª   
+ª   ª   +---__pycache__
+ª   ª           FraudDetector.cpython-314.pyc
+ª   ª           RiskAnalyzer.cpython-314.pyc
+ª   ª           __init__.cpython-314.pyc
+ª   ª           
+ª   +---reports
+ª   ª       VerificationReportGenerator.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---scoring
+ª   ª   ª   TrustScoreEngine.py
+ª   ª   ª   __init__.py
+ª   ª   ª   
+ª   ª   +---__pycache__
+ª   ª           TrustScoreEngine.cpython-314.pyc
+ª   ª           __init__.cpython-314.pyc
+ª   ª           
+ª   +---uploads
+ª   ª       FileValidator.py
+ª   ª       StorageManager.py
+ª   ª       UploadManager.py
+ª   ª       UploadModels.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---__pycache__
+ª           __init__.cpython-314.pyc
+ª           
++---workers
+ª       __init__.py
+ª       
++---workflows
++---world
+    +---building_codes
+    +---climate
+    +---countries
+    +---economics
+    +---energy
+    ª   ª   index.ts
+    ª   ª   
+    ª   +---materials
+    +---environment
+    +---geotechnical
+    +---hazards
+    +---manufacturers
+    +---materials
+    ª   +---aggregates
+    ª   +---binders
+    ª   +---concrete
+    ª   +---doors
+    ª   +---electrical
+    ª   +---finishes
+    ª   +---glazing
+    ª   +---hvac
+    ª   +---landscape
+    ª   +---masonry
+    ª   +---metals
+    ª   +---plumbing
+    ª   +---reinforcement
+    ª   +---roofing
+    ª   +---smart
+    ª   +---timber
+    +---pricing
+    +---regulations
+    +---suppliers
+    +---sustainability
+    +---transportation
+    +---utilities

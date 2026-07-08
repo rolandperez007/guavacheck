@@ -1,0 +1,489 @@
+Folder PATH listing
+Volume serial number is 0062005C 0A35:CB21
+C:.
+¦   .env
+¦   architecture.txt
+¦   architecture_report.txt
+¦   before_cleanup_tree.txt
+¦   python_files.txt
+¦   README.md
+¦   requirements.txt
+¦   ts_files.txt
+¦   vercel.json
+¦   
++---ai
+¦       BlueprintCompiler.ts
+¦       CostEstimationEngine.ts
+¦       DesignGenerator.ts
+¦       
++---api
+¦   ¦   main.py
+¦   ¦   main_backup.py
+¦   ¦   server.ts
+¦   ¦   
+¦   +---controllers
+¦   ¦       project.controller.ts
+¦   ¦       
+¦   +---dependencies
+¦   ¦       auth.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---middleware
+¦   ¦       logging.py
+¦   ¦       security.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---routes
+¦   ¦       austin.py
+¦   ¦       engineering.py
+¦   ¦       health.py
+¦   ¦       project.routes.ts
+¦   ¦       property.py
+¦   ¦       verification.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦   ¦       project.service.ts
+¦   ¦       
+¦   +---__pycache__
+¦           main.cpython-314.pyc
+¦           
++---austin
+¦   ¦   bootstrap.py
+¦   ¦   config.py
+¦   ¦   context.py
+¦   ¦   events.py
+¦   ¦   health.py
+¦   ¦   logger.py
+¦   ¦   memory.py
+¦   ¦   personality.py
+¦   ¦   registry.py
+¦   ¦   router.py
+¦   ¦   startup.py
+¦   ¦   status.py
+¦   ¦   _init_.py
+¦   ¦   
+¦   +---agents
+¦   ¦       base_agent.py
+¦   ¦       
+¦   +---memory
+¦   ¦       memory.py
+¦   ¦       
+¦   +---orchestrator
+¦   ¦       orchestrator.py
+¦   ¦       
+¦   +---planner
+¦   ¦       planner.py
+¦   ¦       
+¦   +---prompts
+¦   +---reasoning
+¦   ¦       reasoner.py
+¦   ¦       
+¦   +---registry
+¦   ¦       registry.py
+¦   ¦       
+¦   +---router
+¦   ¦       router.py
+¦   ¦       
+¦   +---system_prompts
+¦   +---tools
++---backend
+¦   ¦   package.json
+¦   ¦   tsconfig.json
+¦   ¦   vercel.json
+¦   ¦   
+¦   +---ai
+¦   ¦       BlueprintCompiler.ts
+¦   ¦       CostEstimationEngine.ts
+¦   ¦       DesignGenerator.ts
+¦   ¦       
+¦   +---api
+¦   ¦   +---projects
+¦   ¦           blueprint.ts
+¦   ¦           cost.ts
+¦   ¦           design.ts
+¦   ¦           run.ts
+¦   ¦           
+¦   +---core
+¦   ¦       EngineeringCalculator.ts
+¦   ¦       EngineeringEngine.ts
+¦   ¦       EngineeringRegistry.ts
+¦   ¦       EngineeringTypes.ts
+¦   ¦       EngineeringValidator.ts
+¦   ¦       
+¦   +---modules
+¦   ¦   +---civil
+¦   ¦   ¦       CivilEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---electrical
+¦   ¦   ¦       ElectricalEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---fire
+¦   ¦   ¦       FireSafetyEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---hvac
+¦   ¦   ¦       HVACEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---mechanical
+¦   ¦   ¦       MechanicalEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---plumbing
+¦   ¦   ¦       PlumbingEngineering.ts
+¦   ¦   ¦       
+¦   ¦   +---structural
+¦   ¦           StructuralAnalysis.ts
+¦   ¦           
+¦   +---orchestrator
+¦   ¦       ProjectOrchestrator.ts
+¦   ¦       
+¦   +---simulation
+¦   ¦       SimulationStore.ts
+¦   ¦       
+¦   +---types
+¦           GeoLocation.ts
+¦           
++---brains
+¦   +---compliance
+¦   +---construction
+¦   +---contractor
+¦   +---design
+¦   +---finance
+¦   +---gene
+¦   +---inspection
+¦   +---mortgage
+¦   +---property
+¦   +---valuation
++---cache
+¦       RedisCache.py
+¦       __init__.py
+¦       
++---controllers
+¦       Electricalsolar.controller.ts
+¦       
++---core
+¦   ¦   config.py
+¦   ¦   constants.py
+¦   ¦   dependencies.py
+¦   ¦   EngineeringCalculator.ts
+¦   ¦   EngineeringEngine.ts
+¦   ¦   EngineeringRegistry.ts
+¦   ¦   EngineeringTypes.ts
+¦   ¦   EngineeringValidator.ts
+¦   ¦   exceptions.py
+¦   ¦   logging.py
+¦   ¦   registry.py
+¦   ¦   router_registry.py
+¦   ¦   security.py
+¦   ¦   shutdown.py
+¦   ¦   startup.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           router_registry.cpython-314.pyc
+¦           __init__.cpython-314.pyc
+¦           
++---database
+¦   ¦   audit_models.py
+¦   ¦   base.py
+¦   ¦   connection.py
+¦   ¦   document_models.py
+¦   ¦   init_db.py
+¦   ¦   models.py
+¦   ¦   ownership_models.py
+¦   ¦   property_models.py
+¦   ¦   seed.py
+¦   ¦   session.py
+¦   ¦   verification_models.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---migrations
+¦   ¦       README.md
+¦   ¦       
+¦   +---repositories
+¦           AuditRepository.py
+¦           BaseRepository.py
+¦           DocumentRepository.py
+¦           OwnershipRepository.py
+¦           PropertyRepository.py
+¦           VerificationRepository.py
+¦           __init__.py
+¦           
++---digital_twin
+¦       building.py
+¦       cost.py
+¦       electrical.py
+¦       foundation.py
+¦       materials.py
+¦       plumbing.py
+¦       roof.py
+¦       room.py
+¦       timeline.py
+¦       wall.py
+¦       
++---engine
+¦       ElectricalSolar.engine.ts
+¦       
++---engineering
++---engines
+¦   ¦   base.py
+¦   ¦   exceptions.py
+¦   ¦   manager.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---analytics
+¦   ¦       dashboard.py
+¦   ¦       engine.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---architecture
+¦   ¦       engine.py
+¦   ¦       planner.py
+¦   ¦       planner.py#
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---community
+¦   ¦       engine.py
+¦   ¦       moderation.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---cost
+¦   ¦       engine.py
+¦   ¦       estimator.py
+¦   ¦       pricing.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---documentation
+¦   ¦       engine.py
+¦   ¦       generator.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---engineering
+¦   ¦       calculator.py
+¦   ¦       engine.py
+¦   ¦       foundation.py
+¦   ¦       materials.py
+¦   ¦       models.py
+¦   ¦       quantity.py
+¦   ¦       reinforcement.py
+¦   ¦       reports.py
+¦   ¦       structural.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---geo
+¦   ¦       engine.py
+¦   ¦       geocoder.py
+¦   ¦       mapping.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---investment
+¦   ¦       engine.py
+¦   ¦       forecast.py
+¦   ¦       roi.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---marketplace
+¦   ¦       catalog.py
+¦   ¦       engine.py
+¦   ¦       pricing.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---property
+¦   ¦       engine.py
+¦   ¦       models.py
+¦   ¦       search.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---verification
+¦           engine.py
+¦           models.py
+¦           validator.py
+¦           __init__.py
+¦           
++---memory
++---models
++---modules
+¦   +---civil
+¦   ¦       CivilEngineering.ts
+¦   ¦       
+¦   +---electrical
+¦   ¦       ElectricalEngineering.ts
+¦   ¦       
+¦   +---fire
+¦   ¦       FireSafetyEngineering.ts
+¦   ¦       
+¦   +---hvac
+¦   ¦       HVACEngineering.ts
+¦   ¦       
+¦   +---mechanical
+¦   ¦       MechanicalEngineering.ts
+¦   ¦       
+¦   +---plumbing
+¦   ¦       PlumbingEngineering.ts
+¦   ¦       
+¦   +---structural
+¦           StructuralAnalysis.ts
+¦           
++---monitoring
+¦       metrics.py
+¦       __init__.py
+¦       
++---orchestrator
+¦       ProjectOrchestrator.ts
+¦       
++---repositories
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---verification
+¦           VerificationRepository.py
+¦           __init__.py
+¦           
++---routes
+¦       ElectricalSolar.routes.ts
+¦       index.ts
+¦       
++---schemas
+¦       ElectricalSolar.scheme.json
+¦       
++---services
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---verification
+¦           VerificationService.py
+¦           __init__.py
+¦           
++---simulation
+¦       SimulationStore.ts
+¦       
++---tests
++---types
+¦       GeoLocation.ts
+¦       
++---utils
+¦       EngineeringMath.ts
+¦       UnitConverter.ts
+¦       __init__.py
+¦       
++---verification_engine
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---ai
+¦   ¦       FraudReasoner.py
+¦   ¦       TrustReasoner.py
+¦   ¦       VerificationBrain.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---api
+¦   ¦   ¦   verification_routes.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           verification_routes.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---core
+¦   ¦   ¦   VerificationConfig.py
+¦   ¦   ¦   VerificationEngine.py
+¦   ¦   ¦   VerificationModels.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           VerificationConfig.cpython-314.pyc
+¦   ¦           VerificationEngine.cpython-314.pyc
+¦   ¦           VerificationModels.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---document_ai
+¦   ¦       DocumentAnalyzer.py
+¦   ¦       DocumentClassifier.py
+¦   ¦       OCRProcessor.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---fraud_detection
+¦   ¦   ¦   FraudDetector.py
+¦   ¦   ¦   RiskAnalyzer.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           FraudDetector.cpython-314.pyc
+¦   ¦           RiskAnalyzer.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---geospatial
+¦   ¦       CoordinateValidator.py
+¦   ¦       ParcelMatcher.py
+¦   ¦       SatelliteOverlay.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---government
+¦   ¦       GovernorConsentChecker.py
+¦   ¦       LandRegistryConnector.py
+¦   ¦       TitleRegistryConnector.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---reports
+¦   ¦       VerificationReportGenerator.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---scoring
+¦   ¦   ¦   TrustScoreEngine.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           TrustScoreEngine.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---timeline
+¦   ¦       ChainOfTitle.py
+¦   ¦       OwnershipHistory.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---uploads
+¦   ¦       FileValidator.py
+¦   ¦       StorageManager.py
+¦   ¦       UploadManager.py
+¦   ¦       UploadModels.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦           
++---workers
+¦       __init__.py
+¦       
++---workflows
++---world
+    +---building_codes
+    +---climate
+    +---countries
+    +---economics
+    +---energy
+    ¦   ¦   index.ts
+    ¦   ¦   
+    ¦   +---materials
+    +---environment
+    +---geotechnical
+    +---hazards
+    +---manufacturers
+    +---materials
+    ¦   +---aggregates
+    ¦   +---binders
+    ¦   +---concrete
+    ¦   +---doors
+    ¦   +---electrical
+    ¦   +---finishes
+    ¦   +---glazing
+    ¦   +---hvac
+    ¦   +---landscape
+    ¦   +---masonry
+    ¦   +---metals
+    ¦   +---plumbing
+    ¦   +---reinforcement
+    ¦   +---roofing
+    ¦   +---smart
+    ¦   +---timber
+    +---pricing
+    +---regulations
+    +---suppliers
+    +---sustainability
+    +---transportation
+    +---utilities
