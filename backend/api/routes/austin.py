@@ -71,4 +71,12 @@ async def chat(payload: dict):
 
         "response": result.response,
 
+        "job_id": result.job_id,
+
+        "correlation_id": result.correlation_id,
+
+        "trace_id": result.trace_id,
+
+        "timestamp": result.timestamp,
+
     }

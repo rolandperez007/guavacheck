@@ -35,6 +35,17 @@ def register_routers(app: FastAPI):
     )
 
     # -----------------------------
+    # WebSocket
+    # -----------------------------
+    from api.websocket import (
+        router as websocket_router,
+    )
+
+    app.include_router(
+        websocket_router
+    )
+
+    # -----------------------------
     # Engineering
     # -----------------------------
     from api.routes.engineering import (

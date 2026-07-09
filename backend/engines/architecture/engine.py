@@ -20,7 +20,13 @@ class ArchitectureEngine(BaseEngine):
     )
 
     async def execute(self, request: dict):
-
+        self.kernel.log(
+            message="architecture engine executed",
+            correlation_id=request.get("correlation_id"),
+            trace_id=request.get("trace_id"),
+            engine=self.name,
+            service="engines.architecture",
+        )
         return {
 
             "engine": self.name,

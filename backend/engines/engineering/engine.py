@@ -17,7 +17,13 @@ class EngineeringEngine(BaseEngine):
     )
 
     async def execute(self, request: dict):
-
+        self.kernel.log(
+            message="engineering engine executed",
+            correlation_id=request.get("correlation_id"),
+            trace_id=request.get("trace_id"),
+            engine=self.name,
+            service="engines.engineering",
+        )
         return {
 
             "engine": self.name,

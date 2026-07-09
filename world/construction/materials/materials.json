@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "description": "Master construction material catalog for the GuavaCheck World Engine.",
+  "lastUpdated": "2026-07-05",
+
+  "materials": [
+
+    {
+      "id": "cement_portland_42_5r",
+      "name": "Portland Cement 42.5R",
+      "category": "cementitious",
+      "default_unit": "bag",
+      "active": true
+    },
+
+    {
+      "id": "fine_sand",
+      "name": "Fine Sand",
+      "category": "aggregate",
+      "default_unit": "cubic_meter",
+      "active": true
+    },
+
+    {
+      "id": "coarse_aggregate_20mm",
+      "name": "Granite 20mm",
+      "category": "aggregate",
+      "default_unit": "cubic_meter",
+      "active": true
+    },
+
+    {
+      "id": "reinforcement_y16",
+      "name": "Y16 Reinforcement Bar",
+      "category": "steel",
+      "default_unit": "piece",
+      "active": true
+    },
+
+    {
+      "id": "water_potable",
+      "name": "Potable Water",
+      "category": "utilities",
+      "default_unit": "liter",
+      "active": true
+    }
+
+  ]
+}

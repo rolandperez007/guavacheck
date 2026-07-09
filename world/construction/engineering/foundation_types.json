@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "foundations": [
+    {
+      "id": "strip_foundation",
+      "name": "Strip Foundation",
+      "soil_types": ["firm_clay", "dense_sand"],
+      "building_types": ["residential"],
+      "max_floors": 3
+    },
+    {
+      "id": "raft_foundation",
+      "name": "Raft Foundation",
+      "soil_types": ["soft_clay", "variable"],
+      "building_types": ["residential", "commercial"],
+      "max_floors": 12
+    },
+    {
+      "id": "pile_foundation",
+      "name": "Pile Foundation",
+      "soil_types": ["weak_soil", "coastal"],
+      "building_types": ["high_rise", "industrial"],
+      "max_floors": 100
+    }
+  ]
+}

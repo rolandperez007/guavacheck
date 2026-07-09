@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+
+  "suppliers": [
+
+    {
+      "supplier_id": "default_supplier",
+      "name": "Default Supplier",
+      "country": "NG",
+      "materials": [
+        "cement_portland_42_5r",
+        "fine_sand",
+        "reinforcement_y16"
+      ]
+    }
+
+  ]
+}

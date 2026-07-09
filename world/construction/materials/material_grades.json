@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+
+  "grades": [
+
+    {
+      "material_id": "cement_portland_42_5r",
+      "grade": "42.5R"
+    },
+
+    {
+      "material_id": "reinforcement_y16",
+      "grade": "Grade 500"
+    }
+
+  ]
+}

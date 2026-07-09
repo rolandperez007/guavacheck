@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "levels": [
+    {
+      "id": "economy",
+      "cost_factor": 0.85
+    },
+    {
+      "id": "standard",
+      "cost_factor": 1.0
+    },
+    {
+      "id": "premium",
+      "cost_factor": 1.4
+    },
+    {
+      "id": "luxury",
+      "cost_factor": 2.0
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "./schemas/guava.project.schema.json",
+  "name": "guavacheck",
+  "version": "1.0.0",
+  "organization": "Guava Inc.",
+  "environment": "development",
+
+  "frontend": {
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "directory": "src"
+  },
+
+  "backend": {
+    "language": "Python",
+    "directory": "backend",
+    "entry": "backend/api/main.py"
+  },
+
+  "engines": {
+    "directory": "engines",
+    "autoload": true,
+    "enabled": [
+      "analytics",
+      "blueprint",
+      "boq",
+      "commerce",
+      "community",
+      "compliance",
+      "construction",
+      "economics",
+      "finance",
+      "materials",
+      "operations",
+      "prediction",
+      "pricing",
+      "project",
+      "project-finance",
+      "simulation",
+      "verification",
+      "workflow",
+      "world"
+    ]
+  },
+
+  "knowledge": {
+    "directory": "knowledge",
+    "autoload": true,
+    "validateOnStartup": true
+  },
+
+  "legal": {
+    "directory": "legal",
+    "countrySpecific": true
+  },
+
+  "features": {
+    "worldEngine": true,
+    "aiAssistant": true,
+    "geoAdaptivePricing": true,
+    "verification": true,
+    "payments": true,
+    "marketplace": true,
+    "projectFinance": true,
+    "digitalTwin": true
+  },
+
+  "deployment": {
+    "frontend": "Vercel",
+    "backend": "Railway",
+    "database": "Supabase"
+  }
+}

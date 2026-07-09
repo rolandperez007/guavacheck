@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from .logger import logger
 from .personality import personality
+from .realtime import subscribe_to_events
 from .registry import registry
 from .startup import startup
 from engines.property.engine import PropertyEngine
@@ -22,6 +23,12 @@ def initialize():
     logger.info("")
     logger.info("=" * 70)
     logger.info("Initializing Austin Core")
+
+    try:
+        import asyncio
+        asyncio.create_task(subscribe_to_events())
+    except RuntimeError:
+        pass
     logger.info("=" * 70)
 
     loaded = personality.load()

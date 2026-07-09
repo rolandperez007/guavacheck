@@ -8,6 +8,7 @@ from fastapi import FastAPI
 
 from core.router_registry import register_routers
 from austin.bootstrap import initialize
+from austin.kernel import AustinContextMiddleware
 
 
 def create_application():
@@ -24,6 +25,8 @@ def create_application():
         version="1.0.0"
 
     )
+
+    app.add_middleware(AustinContextMiddleware)
 
     register_routers(app)
 

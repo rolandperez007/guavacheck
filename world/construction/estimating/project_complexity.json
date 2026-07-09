@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "levels": [
+    {
+      "id": "low",
+      "multiplier": 1.0
+    },
+    {
+      "id": "medium",
+      "multiplier": 1.2
+    },
+    {
+      "id": "high",
+      "multiplier": 1.5
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ROADMAP.md
+	modified:   backend/api/main.py
+	modified:   database/functions.sql
+	modified:   database/indexes.sql
+	modified:   database/policies.sql
+	modified:   database/schema.sql
+	modified:   database/seed.sql
+	modified:   docs/FEATURE_STATUS.md
+	modified:   docs/README.md
+	modified:   package-lock.json
+	modified:   package.json
+	deleted:    tools/logs/reset.log
+	deleted:    tsconfig.tsbuildinfo
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.editorconfig
+	.gitattributes
+	.github/CODEOWNERS
+	.github/ISSUE_TEMPLATE/
+	.github/PULL_REQUEST_TEMPLATE.md
+	.github/SECURITY.md
+	.github/dependabot.yml
+	.prettierrc
+	CHANGELOG.md
+	CODE_OF_CONDUCT.md
+	CONTRIBUTING.md
+	LICENSE.md
+	NOTICE.md
+	README.md
+	api/
+	audit/
+	backend/ai/
+	backend/api/controllers/
+	backend/api/dependencies/
+	backend/api/main_backup.py
+	backend/api/middleware/
+	backend/api/routes/
+	backend/api/server.ts
+	backend/api/services/
+	backend/architecture.txt
+	backend/architecture_report.txt
+	backend/austin/_init_.py
+	backend/austin/bootstrap.py
+	backend/austin/config.py
+	backend/austin/context.py
+	backend/austin/events.py
+	backend/austin/health.py
+	backend/austin/logger.py
+	backend/austin/memory.py
+	backend/austin/personality.py
+	backend/austin/registry.py
+	backend/austin/router.py
+	backend/austin/startup.py
+	backend/austin/status.py
+	backend/backend/
+	backend/before_cleanup_files.txt
+	backend/before_cleanup_tree.txt
+	backend/cache/
+	backend/core/EngineeringCalculator.ts
+	backend/core/EngineeringRegistry.ts
+	backend/core/EngineeringTypes.ts
+	backend/core/EngineeringValidator.ts
+	backend/core/__init__.py
+	backend/core/config.py
+	backend/core/constants.py
+	backend/core/dependencies.py
+	backend/core/exceptions.py
+	backend/core/logging.py
+	backend/core/registry.py
+	backend/core/router_registry.py
+	backend/core/security.py
+	backend/core/shutdown.py
+	backend/core/startup.py
+	backend/database/
+	backend/engines/
+	backend/modules/
+	backend/monitoring/
+	backend/orchestrator/
+	backend/python_files.txt
+	backend/repositories/
+	backend/services/
+	backend/simulation/
+	backend/ts_files.txt
+	backend/types/
+	backend/utils/__init__.py
+	backend/vercel.json
+	backend/verification_engine/
+	backend/workers/
+	before_cleanup_files.txt
+	before_cleanup_git_status.txt
+	before_cleanup_tree.txt
+	cache/
+	config/settings.py
+	database/011_property_engineering_snapshots.sql
+	database/catalog/
+	database/models/
+	docs/API.md
+	docs/ARCHITECTURE.md
+	docs/AUSTIN.md
+	docs/BACKUP_STRATEGY.md
+	docs/CHANGELOG.md
+	docs/COMPANY_CHARTER.md
+	docs/DATABASE.md
+	docs/DEPLOYMENT.md
+	docs/ECOSYSTEM.md
+	docs/ENGINES.md
+	docs/GUAVA_CITY.md
+	docs/GUAVA_DOCTRINE.md
+	docs/OPERATIONS.md
+	docs/PROJECT_CONTEXT.md
+	docs/ROADMAP.md
+	docs/RUNBOOK.md
+	docs/SECURITY.md
+	docs/UI_BIBLE.md
+	docs/architecture/API.md
+	docs/architecture/ARCHITECTURE.md
+	docs/architecture/AUSTIN.md
+	docs/architecture/BACKUP_STRATEGY.md
+	docs/architecture/DATABASE.md
+	docs/architecture/ENGINES.md
+	docs/architecture/FEATURE_STATUS.md
+	docs/architecture/RUNBOOK.md
+	docs/deployment/CI_CD.md
+	docs/deployment/DEPLOYMENT.md
+	docs/deployment/ENVIRONMENT.md
+	docs/deployment/SUPABASE.md
+	docs/deployment/VERCEL.md
+	docs/doctrine/
+	docs/engines/
+	docs/guides/
+	docs/knowledge/Austin/
+	engines/engineering/
+	events/
+	guava.project.json
+	integrations/
+	queues/
+	scheduler/
+	schemas/
+	storage/
+	verification_engine/
+	world/
+
+no changes added to commit (use "git add" and/or "git commit -a")

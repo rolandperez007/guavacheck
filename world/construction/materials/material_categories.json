@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-05",
+  "description": "Master categories used by the GuavaCheck Engineering Engine.",
+
+  "categories": [
+    {
+      "id": "aggregate",
+      "name": "Aggregates",
+      "description": "Sand, gravel, crushed stone and similar materials."
+    },
+    {
+      "id": "cementitious",
+      "name": "Cementitious Materials",
+      "description": "Cement, lime, fly ash, slag and related binders."
+    },
+    {
+      "id": "concrete",
+      "name": "Concrete",
+      "description": "Ready-mix, precast and cast-in-place concrete."
+    },
+    {
+      "id": "masonry",
+      "name": "Masonry",
+      "description": "Blocks, bricks and stone products."
+    },
+    {
+      "id": "steel",
+      "name": "Structural Steel",
+      "description": "Reinforcement bars and structural steel members."
+    },
+    {
+      "id": "timber",
+      "name": "Timber & Wood",
+      "description": "Hardwood, softwood and engineered wood."
+    },
+    {
+      "id": "roofing",
+      "name": "Roofing",
+      "description": "Roof sheets, tiles and waterproof coverings."
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "description": "Architectural and safety glazing."
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical",
+      "description": "Cables, conduits, panels and electrical accessories."
+    },
+    {
+      "id": "plumbing",
+      "name": "Plumbing",
+      "description": "Pipes, fittings, valves and fixtures."
+    },
+    {
+      "id": "hvac",
+      "name": "HVAC",
+      "description": "Heating, ventilation and air-conditioning components."
+    },
+    {
+      "id": "fire_safety",
+      "name": "Fire Safety",
+      "description": "Fire protection systems and accessories."
+    },
+    {
+      "id": "finishes",
+      "name": "Architectural Finishes",
+      "description": "Paints, coatings, flooring and decorative finishes."
+    },
+    {
+      "id": "landscaping",
+      "name": "Landscaping",
+      "description": "External works, paving and planting materials."
+    }
+  ]
+}

@@ -17,7 +17,13 @@ class VerificationEngine(BaseEngine):
     description = "Property Verification Engine"
 
     async def execute(self, request: dict):
-
+        self.kernel.log(
+            message="verification engine executed",
+            correlation_id=request.get("correlation_id"),
+            trace_id=request.get("trace_id"),
+            engine=self.name,
+            service="engines.verification",
+        )
         return {
 
             "engine": self.name,

@@ -15,10 +15,12 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Callable, Any
 
+from .event_store import store
 from .logger import logger
+from .models import AustinEvent
 
 
 @dataclass
@@ -28,7 +30,7 @@ class Event:
 
     payload: dict[str, Any]
 
-    timestamp: datetime = datetime.utcnow()
+    timestamp: datetime = datetime.now(timezone.utc)
 
 
 class EventBus:
@@ -68,21 +70,34 @@ class EventBus:
     ):
 
         payload = payload or {}
+        correlation_id = payload.get("correlation_id") or str(payload.get("trace_id") or "anon")
+        event_payload = {
+            "event_type": event_name,
+            "source_service": payload.get("source_service", "austin"),
+            "engine": payload.get("engine", "austin"),
+            "severity": payload.get("severity", "info"),
+            "category": payload.get("category", "operations"),
+            "message": payload.get("message", event_name),
+            "metadata": payload.get("metadata", {}),
+            "correlation_id": correlation_id,
+        }
+        event = AustinEvent.create(
+            event_type=event_payload["event_type"],
+            source_service=event_payload["source_service"],
+            engine=event_payload["engine"],
+            severity=event_payload["severity"],
+            category=event_payload["category"],
+            message=event_payload["message"],
+            correlation_id=event_payload["correlation_id"],
+            metadata=event_payload["metadata"],
+        )
+        store.append(event)
 
         logger.info(
-
-            "Event -> %s",
-
+            "Event -> %s | correlation_id=%s | severity=%s",
             event_name,
-
-        )
-
-        event = Event(
-
-            name=event_name,
-
-            payload=payload,
-
+            event.correlation_id,
+            event.severity,
         )
 
         for callback in self.listeners[event_name]:

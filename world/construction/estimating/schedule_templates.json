@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "single_family_home",
+      "estimated_duration_days": 180
+    },
+    {
+      "id": "office_building",
+      "estimated_duration_days": 540
+    },
+    {
+      "id": "warehouse",
+      "estimated_duration_days": 240
+    }
+  ]
+}

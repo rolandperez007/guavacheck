@@ -1,0 +1,5 @@
+-- ==========================================================
+-- GUAVACHECK ENGINEERING SNAPSHOTS
+-- Existing table managed by Supabase
+-- No migration required.
+-- ==========================================================

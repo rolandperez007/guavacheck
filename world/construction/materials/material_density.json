@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+
+  "densities": [
+
+    {
+      "material_id": "cement_portland_42_5r",
+      "unit": "kg_per_cubic_meter",
+      "value": 1440
+    },
+
+    {
+      "material_id": "fine_sand",
+      "unit": "kg_per_cubic_meter",
+      "value": 1600
+    },
+
+    {
+      "material_id": "coarse_aggregate_20mm",
+      "unit": "kg_per_cubic_meter",
+      "value": 1500
+    },
+
+    {
+      "material_id": "reinforcement_y16",
+      "unit": "kg_per_cubic_meter",
+      "value": 7850
+    }
+
+  ]
+}

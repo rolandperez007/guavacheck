@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+
+  "strengths": [
+
+    {
+      "material_id": "cement_portland_42_5r",
+      "compressive_strength_mpa": 42.5
+    },
+
+    {
+      "material_id": "reinforcement_y16",
+      "yield_strength_mpa": 500,
+      "ultimate_strength_mpa": 620
+    },
+
+    {
+      "material_id": "coarse_aggregate_20mm",
+      "crushing_value_percent": 20
+    }
+
+  ]
+}

@@ -1,0 +1,102 @@
+# ==========================================================
+# guavacheck CODEOWNERS
+# ==========================================================
+#
+# This file defines the default code owners for the
+# guavacheck repository.
+#
+# GitHub automatically requests reviews from the listed
+# owners whenever matching files are modified.
+#
+# Documentation:
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# ==========================================================
+
+#############################################################
+# Default Owner
+#############################################################
+
+* @rolandperez007
+
+#############################################################
+# Documentation
+#############################################################
+
+/docs/ @rolandperez007
+
+#############################################################
+# Austin Intelligence
+#############################################################
+
+/backend/core/austin/ @rolandperez007
+
+#############################################################
+# AI Engines
+#############################################################
+
+/backend/core/ @rolandperez007
+
+#############################################################
+# Frontend
+#############################################################
+
+/app/ @rolandperez007
+
+/components/ @rolandperez007
+
+#############################################################
+# API
+#############################################################
+
+/backend/api/ @rolandperez007
+
+#############################################################
+# Database
+#############################################################
+
+/backend/database/ @rolandperez007
+
+#############################################################
+# Infrastructure
+#############################################################
+
+/.github/ @rolandperez007
+
+#############################################################
+# Public Assets
+#############################################################
+
+/public/ @rolandperez007
+
+#############################################################
+# Configuration
+#############################################################
+
+package.json @rolandperez007
+
+tsconfig.json @rolandperez007
+
+next.config.ts @rolandperez007
+
+#############################################################
+# Environment Templates
+#############################################################
+
+.env.example @rolandperez007
+
+#############################################################
+# Root Documentation
+#############################################################
+
+README.md @rolandperez007
+
+LICENSE.md @rolandperez007
+
+NOTICE.md @rolandperez007
+
+ROADMAP.md @rolandperez007
+
+CHANGELOG.md @rolandperez007
+
+CONTRIBUTING.md @rolandperez007

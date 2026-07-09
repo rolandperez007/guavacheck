@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "adjustments": [
+    {
+      "weather": "heavy_rain",
+      "productivity_factor": 0.65
+    },
+    {
+      "weather": "extreme_heat",
+      "productivity_factor": 0.80
+    },
+    {
+      "weather": "strong_wind",
+      "productivity_factor": 0.75
+    }
+  ]
+}

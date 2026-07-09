@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "profiles": [
+    {
+      "id": "local",
+      "average_lead_time_days": 7
+    },
+    {
+      "id": "regional",
+      "average_lead_time_days": 21
+    },
+    {
+      "id": "international",
+      "average_lead_time_days": 60
+    }
+  ]
+}

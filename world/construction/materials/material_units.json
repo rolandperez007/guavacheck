@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-05",
+
+  "units": [
+    { "id": "bag", "symbol": "bag", "type": "count" },
+    { "id": "piece", "symbol": "pc", "type": "count" },
+    { "id": "meter", "symbol": "m", "type": "length" },
+    { "id": "square_meter", "symbol": "m²", "type": "area" },
+    { "id": "cubic_meter", "symbol": "m³", "type": "volume" },
+    { "id": "kilogram", "symbol": "kg", "type": "mass" },
+    { "id": "tonne", "symbol": "t", "type": "mass" },
+    { "id": "liter", "symbol": "L", "type": "volume" },
+    { "id": "roll", "symbol": "roll", "type": "count" },
+    { "id": "bundle", "symbol": "bundle", "type": "count" }
+  ]
+}
