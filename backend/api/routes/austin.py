@@ -1,82 +1,60 @@
 """
-Austin API
-
-Public endpoints for Austin.
+Austin API Routes
 """
-
+from dataclasses import asdict
 from fastapi import APIRouter
-
+from pydantic import BaseModel
+from austin.queue import queue
 from austin.router import router as austin_router
-from austin.status import status
+from austin.event_store import store
 
 router = APIRouter(
-
     prefix="/austin",
-
     tags=["Austin"],
-
 )
 
 
+class ChatRequest(BaseModel):
+    session_id: str
+    message: str
+
+
 @router.get("/status")
-async def austin_status():
+async def status():
 
     return {
-
-        "online": status.online,
-
-        "healthy": status.healthy,
-
-        "message": status.message,
-
-        "engines": status.registered_engines,
-
+        "platform": "guavacheck",
+        "status": "healthy",
+        "austin": True,
+        "message": "Austin Online",
     }
 
 
 @router.post("/chat")
-async def chat(payload: dict):
-
-    session_id = payload.get(
-
-        "session_id",
-
-        "anonymous",
-
-    )
-
-    message = payload.get(
-
-        "message",
-
-        "",
-
-    )
+async def chat(request: ChatRequest):
 
     result = austin_router.route(
-
-        session_id,
-
-        message,
-
+        request.session_id,
+        request.message,
     )
 
+    return result.__dict__
+
+@router.get("/queue")
+async def queue_summary():
+
+    return queue.summary()
+
+
+
+@router.get("/events")
+async def list_events():
     return {
-
-        "intent": result.intent,
-
-        "confidence": result.confidence,
-
-        "engine": result.engine,
-
-        "response": result.response,
-
-        "job_id": result.job_id,
-
-        "correlation_id": result.correlation_id,
-
-        "trace_id": result.trace_id,
-
-        "timestamp": result.timestamp,
-
+        "events": [
+            {
+                **asdict(event),
+                "timestamp": event.timestamp.isoformat(),
+            }
+            for event in store.list()
+        ]
     }

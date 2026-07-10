@@ -24,11 +24,11 @@ def initialize():
     logger.info("=" * 70)
     logger.info("Initializing Austin Core")
 
-    try:
-        import asyncio
-        asyncio.create_task(subscribe_to_events())
-    except RuntimeError:
-        pass
+    
+        
+        
+    
+        
     logger.info("=" * 70)
 
     loaded = personality.load()
@@ -53,3 +53,12 @@ def initialize():
     logger.info("Austin Bootstrap Complete.")
 
     return True
+import asyncio
+
+async def startup_async():
+
+    logger.info("Starting Austin event subscriptions...")
+
+    await subscribe_to_events()
+
+    logger.info("Austin realtime services online.")
