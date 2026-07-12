@@ -7,7 +7,7 @@ This module connects every Austin subsystem together.
 """
 
 from __future__ import annotations
-
+from austin.registry.loader import register_defaults
 from .logger import logger
 from .personality import personality
 from .realtime import subscribe_to_events
@@ -48,7 +48,7 @@ def initialize():
     for engine in ENGINES:
         registry.register(engine())
 
-    startup()
+    startup(register_defaults)
 
     logger.info("Austin Bootstrap Complete.")
 

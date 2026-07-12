@@ -13,6 +13,12 @@ class AustinEventStore:
 
     def append(self, event: AustinEvent) -> AustinEvent:
         self._events.append(event)
+
+        print("=" * 70)
+        print(f"EVENT STORED -> {len(self._events)}")
+        print(event)
+        print("=" * 70)
+
         return event
 
     def list(self, *, window: str = "1h", engine: str | None = None, severity: str | None = None, category: str | None = None, correlation_id: str | None = None) -> list[AustinEvent]:

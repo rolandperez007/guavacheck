@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from austin.queue import queue
 from austin.router import router as austin_router
 from austin.event_store import store
-
+from austin.memory import memory
 router = APIRouter(
     prefix="/austin",
     tags=["Austin"],
@@ -57,4 +57,11 @@ async def list_events():
             }
             for event in store.list()
         ]
+    }
+@router.get("/memory/{session_id}")
+async def session_memory(session_id: str):
+
+    return {
+        "session_id": session_id,
+        "history": memory.recall(session_id),
     }

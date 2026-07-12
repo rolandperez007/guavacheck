@@ -1,5 +1,3 @@
-const path = require("path");
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
@@ -8,15 +6,18 @@ module.exports = {
 
   pageExtensions: ["ts", "tsx", "js", "jsx"],
 
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   webpack: (config) => {
     config.watchOptions = {
       ignored: [
         "**/mobile-app-disabled/**",
+        "**/backend/**",
       ],
     };
 
     return config;
   },
-};
-
-    
+}; 

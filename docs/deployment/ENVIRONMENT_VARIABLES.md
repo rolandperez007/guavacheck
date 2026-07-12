@@ -25,8 +25,8 @@ Each deployment environment (Development, Staging, Production) should maintain i
 ```env
 NODE_ENV=
 NEXT_PUBLIC_APP_NAME=guavacheck
-NEXT_PUBLIC_APP_URL=
-NEXT_PUBLIC_API_URL=
+NEXT_PUBLIC_APP_URL=https://www.guavacheck.com
+NEXT_PUBLIC_API_URL=postgresql://postgres:password@localhost:5432/guavacheck
 PORT=
 ```
 
