@@ -4,58 +4,35 @@ import type { Metadata } from "next";
 
 import { AuthProvider } from "@/app/context/AuthContext";
 
+import SiteLayout from "@/components/layout/SiteLayout";
+import { rootJsonLd } from "@/lib/seo/jsonld";
 import { Analytics } from "@vercel/analytics/react";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { defaultMetadata } from "./seo/metadata";
-
-import { jsonLd } from "./seo/jsonld";
+import { defaultMetadata } from "@/lib/seo/metadata";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-
+}>) {
   return (
-
     <html lang="en">
+      <head>
+        <JsonLd data={rootJsonLd()} />
+      </head>
 
       <body>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd()),
-          }}
-        />
-
         <AuthProvider>
-
-          {children}
-
+          <SiteLayout>{children}</SiteLayout>
         </AuthProvider>
 
         <Analytics />
-
         <SpeedInsights />
-
       </body>
-
     </html>
-
   );
-
 }
-
-
-
-
-
-
-
-
-

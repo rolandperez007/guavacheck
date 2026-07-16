@@ -1,78 +1,106 @@
+/**
+ * ============================================================================
+ * Default Metadata
+ * ============================================================================
+ *
+ * Global metadata configuration for guavacheck.
+ * Used as the default metadata throughout the application.
+ */
+
 import type { Metadata } from "next";
+import { SITE } from "./constants";
 
 export const defaultMetadata: Metadata = {
-
-  metadataBase: new URL("https://www.guavacheck.com"),
+  metadataBase: new URL(SITE.url),
 
   title: {
-
-    default: "GuavaCheck",
-
-    template: "%s | GuavaCheck",
-
+    default: SITE.name,
+    template: `%s | ${SITE.name}`,
   },
 
-  description:
-    "Global AI platform for property intelligence, valuation, construction, verification and investment.",
+  description: SITE.description,
 
-  keywords: [
+  applicationName: SITE.name,
 
-    "AI",
+  creator: SITE.company,
 
-    "Artificial Intelligence",
+  publisher: SITE.company,
 
-    "Property Intelligence",
-
-    "Real Estate",
-
-    "Valuation",
-
-    "Construction",
-
-    "Investment",
-
-    "Verification",
-
-    "Guava AI",
-
-    "GuavaCheck"
-
+  authors: [
+    {
+      name: SITE.company,
+      url: SITE.url,
+    },
   ],
 
-  applicationName: "GuavaCheck",
+  category: "Technology",
 
-  creator: "Guava Networks Limited",
+  keywords: [
+    "guavacheck",
+    "Guava Networks Limited",
+    "Artificial Intelligence",
+    "Property Intelligence",
+    "Property Valuation",
+    "Construction Cost Estimation",
+    "Investment Analytics",
+    "Property Verification",
+    "Real Estate Technology",
+    "PropTech",
+  ],
 
-  publisher: "Guava Networks Limited",
-
-  category: "Artificial Intelligence",
+  alternates: {
+    canonical: SITE.url,
+  },
 
   robots: {
-
     index: true,
-
     follow: true,
 
     googleBot: {
-
       index: true,
-
       follow: true,
-
       "max-image-preview": "large",
-
       "max-snippet": -1,
-
       "max-video-preview": -1,
-
     },
-
   },
 
-  alternates: {
+  openGraph: {
+    type: "website",
 
-    canonical: "https://www.guavacheck.com",
+    url: SITE.url,
 
+    title: SITE.name,
+
+    description: SITE.description,
+
+    siteName: SITE.name,
+
+    locale: "en_US",
+
+    images: [
+      {
+        url: SITE.logo,
+        width: 1200,
+        height: 630,
+        alt: SITE.name,
+      },
+    ],
   },
 
+  twitter: {
+    card: "summary_large_image",
+
+    title: SITE.name,
+
+    description: SITE.description,
+
+    images: [SITE.logo],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
 };

@@ -1,48 +1,35 @@
 /**
- * ==========================================================
- * Website Identity
- * ==========================================================
+ * ============================================================================
+ * Website Schema
+ * ============================================================================
  */
 
-export const WEBSITE = {
+import { SITE } from "./constants";
 
-  "@context": "https://schema.org",
+export function websiteSchema() {
+  return {
+    "@type": "WebSite",
 
-  "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
 
-  name: "GuavaCheck",
+    url: SITE.url,
 
-  alternateName: "Guava AI",
+    name: SITE.name,
 
-  url: "https://www.guavacheck.com",
+    description: SITE.description,
 
-  description:
-    "Global AI platform for property intelligence, construction intelligence, valuation, investment and verification.",
+    inLanguage: SITE.language,
 
-  inLanguage: [
+    publisher: {
+      "@id": `${SITE.url}/#organization`,
+    },
 
-    "en",
+    potentialAction: {
+      "@type": "SearchAction",
 
-    "es",
+      target: `${SITE.url}/search?q={search_term_string}`,
 
-    "fr",
-
-    "de",
-
-    "pt",
-
-    "ar",
-
-    "zh"
-
-  ],
-
-  publisher: {
-
-    "@type": "Organization",
-
-    name: "Guava Networks Limited"
-
-  }
-
-};
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
