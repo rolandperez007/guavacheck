@@ -1,11 +1,15 @@
-import { redirect } from "next/navigation";
-
-export const metadata = {
-  title: "guavacheck | The Future of the Built Environment",
-  description:
-    "Building the Future of the Built Environment. Powered by Austin.",
-};
+import Image from "next/image";
 
 export default function HomePage() {
-  redirect("/gateway");
+  return (
+    <main className="relative h-screen w-screen overflow-hidden bg-black">
+      <Image
+        src="/images/guava-city-coming-soon.png"
+        alt="Guava City — The Gates Open Soon"
+        fill
+        priority
+        className="object-cover"
+      />
+    </main>
+  );
 }
