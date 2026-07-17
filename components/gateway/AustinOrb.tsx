@@ -1,4 +1,4 @@
-import "@/app/gateway/styles/orb.css";
+import "../../app/gateway/styles/orb.css";
 
 export default function AustinOrb() {
   return (
