@@ -5,18 +5,23 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-black">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-black">
       {/* Background Image */}
 
-      <Image
-        src="/images/launch/hero.png"
-        alt="Guava City"
-        fill
-        priority
-        quality={100}
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      <section
+  className="
+    relative
+    h-[100svh]
+    min-h-[700px]
+    w-full
+    overflow-hidden
+    bg-black
+  "
+>
+  
+</section>
+        
+      
 
       {/* Readability Overlay */}
 
@@ -48,7 +53,7 @@ export default function Hero() {
       {/* Navigation */}
 
       <header className="absolute inset-x-0 top-0 z-30">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-8">
+        <div className="relative z-10 flex h-full items-end justify-center pb-24 md:items-center md:pb-0">
           <Link href="/" className="text-2xl font-semibold tracking-tight text-white">
             guavacheck
           </Link>
