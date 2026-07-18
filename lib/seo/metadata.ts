@@ -4,103 +4,201 @@
  * ============================================================================
  *
  * Global metadata configuration for guavacheck.
- * Used as the default metadata throughout the application.
+ * ============================================================================
  */
 
 import type { Metadata } from "next";
 import { SITE } from "./constants";
 
+
 export const defaultMetadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+
+  metadataBase:
+    new URL(SITE.url),
+
 
   title: {
-    default: SITE.name,
-    template: `%s | ${SITE.name}`,
+
+    default:
+      "guavacheck | AI-Powered Global Property Intelligence Platform",
+
+    template:
+      `%s | guavacheck`,
+
   },
 
-  description: SITE.description,
 
-  applicationName: SITE.name,
+  description:
+    SITE.description,
 
-  creator: SITE.company,
 
-  publisher: SITE.company,
+  applicationName:
+    SITE.name,
+
+
+  generator:
+    "Next.js",
+
+
+  creator:
+    SITE.company,
+
+
+  publisher:
+    SITE.company,
+
 
   authors: [
     {
-      name: SITE.company,
-      url: SITE.url,
+      name:
+        SITE.company,
+
+      url:
+        SITE.url,
     },
   ],
 
-  category: "Technology",
+
+  category:
+    "Technology",
+
 
   keywords: [
+
     "guavacheck",
+
     "Guava Networks Limited",
+
     "Artificial Intelligence",
-    "Property Intelligence",
+
+    "Global Property Intelligence",
+
+    "AI Real Estate Platform",
+
     "Property Valuation",
-    "Construction Cost Estimation",
+
+    "Construction Intelligence",
+
     "Investment Analytics",
+
     "Property Verification",
+
     "Real Estate Technology",
+
     "PropTech",
+
   ],
 
+
   alternates: {
-    canonical: SITE.url,
+
+    canonical:
+      SITE.url,
+
   },
+
 
   robots: {
-    index: true,
-    follow: true,
+
+    index:
+      true,
+
+    follow:
+      true,
 
     googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
+
+      index:
+        true,
+
+      follow:
+        true,
+
+      "max-image-preview":
+        "large",
+
+      "max-snippet":
+        -1,
+
+      "max-video-preview":
+        -1,
+
     },
+
   },
+
 
   openGraph: {
-    type: "website",
 
-    url: SITE.url,
+    type:
+      "website",
 
-    title: SITE.name,
+    url:
+      SITE.url,
 
-    description: SITE.description,
+    title:
+      "guavacheck | AI-Powered Global Property Intelligence Platform",
 
-    siteName: SITE.name,
+    description:
+      SITE.description,
 
-    locale: "en_US",
+    siteName:
+      SITE.name,
+
+    locale:
+      SITE.locale,
 
     images: [
+
       {
-        url: SITE.logo,
-        width: 1200,
-        height: 630,
-        alt: SITE.name,
+
+        url:
+          SITE.logo,
+
+        width:
+          1200,
+
+        height:
+          630,
+
+        alt:
+          "guavacheck",
+
       },
+
     ],
+
   },
+
 
   twitter: {
-    card: "summary_large_image",
 
-    title: SITE.name,
+    card:
+      "summary_large_image",
 
-    description: SITE.description,
+    title:
+      "guavacheck | AI-Powered Property Intelligence",
 
-    images: [SITE.logo],
+    description:
+      SITE.description,
+
+    images:
+      [SITE.logo],
+
   },
+
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/icon.png",
+
+    icon:
+      SITE.favicon,
+
+    shortcut:
+      SITE.favicon,
+
+    apple:
+      SITE.appleIcon,
+
   },
+
 };
