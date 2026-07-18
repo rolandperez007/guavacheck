@@ -1,31 +1,36 @@
 /**
  * ============================================================================
- * Software Application Schema
+ * guavacheck Software Schema
  * ============================================================================
  */
 
 import { SITE } from "./constants";
 
+
 export function softwareSchema() {
   return {
-    "@type": "Organization",
+    "@type": "SoftwareApplication",
 
     "@id": `${SITE.url}/#software`,
 
-    name: SITE.name,
+    name: "guavacheck",
 
-    applicationCategory: "BusinessApplication",
+    applicationCategory:
+      "BusinessApplication",
 
-    operatingSystem: "All",
+    operatingSystem:
+      "Web",
 
-    url: SITE.url,
+    url:
+      SITE.url,
 
-    author: {
-      "@id": `${SITE.url}/#organization`,
+    creator: {
+      "@id":
+        `${SITE.url}/#organization`,
     },
 
     description:
-      "AI-powered global property intelligence platform featuring valuation engines, market intelligence, construction intelligence, investor tools and multilingual AI.",
+      "guavacheck is an AI-powered global property intelligence platform providing property valuation, construction intelligence, market analytics, verification tools and multilingual property search.",
 
     offers: {
       "@type": "Offer",
@@ -34,7 +39,8 @@ export function softwareSchema() {
 
       priceCurrency: "USD",
 
-      availability: "https://schema.org/InStock",
+      availability:
+        "https://schema.org/InStock",
     },
   };
 }

@@ -1,14 +1,12 @@
 /**
  * ============================================================================
  * Guava Networks Limited
- * Organization Schema (Schema.org JSON-LD)
+ * Organization Schema
  * ============================================================================
- *
- * Primary corporate identity for guavacheck.com
- * Used by Google, Bing, AI crawlers and Knowledge Graphs.
  */
 
 import { SITE } from "./constants";
+
 
 export function organizationSchema() {
   return {
@@ -19,8 +17,6 @@ export function organizationSchema() {
     name: SITE.company,
 
     legalName: SITE.company,
-
-    identifier: SITE.identifier,
 
     url: SITE.url,
 
@@ -39,13 +35,13 @@ export function organizationSchema() {
     },
 
     description:
-       "Guava Networks Limited is a technology company specializing in artificial intelligence and global property intelligence software. Its flagship platform, guavacheck, delivers AI-powered property valuation, construction intelligence, investment analytics, verification, multilingual search and market intelligence for users worldwide.",
+      "Guava Networks Limited is a technology company building AI-powered property intelligence software. Its flagship platform, guavacheck, provides property intelligence, valuation tools, construction insights, investment analytics and verification services.",
 
-    slogan: "Where premium properties meet the right owners",
+    slogan:
+      "Where premium properties meet the right owners",
 
-    email: "info@guavacheck.com",
-
-    telephone: "+1 432 276 1388",
+    email:
+      "info@guavacheck.com",
 
     areaServed: {
       "@type": "Place",
@@ -67,37 +63,25 @@ export function organizationSchema() {
       "Property Intelligence",
       "Real Estate Technology",
       "Property Valuation",
-      "Construction Cost Estimation",
+      "Construction Intelligence",
       "Investment Analytics",
-      "Property Verification",
       "Geospatial Intelligence",
-      "Digital Real Estate",
       "PropTech",
       "Machine Learning",
     ],
 
-    brand: [
-      {
-        "@type": "Brand",
+    brand: {
+      "@type": "Brand",
 
-        "@id": `${SITE.url}/#guavacheck`,
+      "@id": `${SITE.url}/#guavacheck`,
 
-        name: "guavacheck",
+      name: "guavacheck",
 
-        description:
-          "AI-powered global property intelligence platform.",
-      },
-      {
-        "@type": "Brand",
+      url: SITE.url,
 
-        "@id": `${SITE.url}/#guava-ai`,
-
-        name: "Guava AI",
-
-        description:
-          "Artificial intelligence technologies developed by Guava Networks Limited.",
-      },
-    ],
+      description:
+        "AI-powered global property intelligence platform.",
+    },
 
     sameAs: [
       SITE.social.linkedin,
