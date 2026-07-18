@@ -6,8 +6,11 @@ export default function GatewayPage() {
   return (
     <>
       <Hero />
-      <CTA />
-      <Footer />
+
+      <div className="bg-black">
+        <CTA />
+        <Footer />
+      </div>
     </>
   );
 }
