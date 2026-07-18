@@ -1,4 +1,4 @@
-import GatewayPage from "@/app/gateway/page";
+import GatewayPage from "@/app/(marketing)/gateway/page";
 
 export default function Home() {
   return <GatewayPage />;
