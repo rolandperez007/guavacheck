@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 
@@ -8,13 +12,20 @@ interface Props {
 export default function SiteLayout({
   children,
 }: Props) {
+
+  const pathname = usePathname();
+
+  const isGateway = pathname?.startsWith("/gateway");
+
   return (
     <>
-      <Header />
+      {!isGateway && <Header />}
 
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
 
-      <Footer />
+      {!isGateway && <Footer />}
     </>
   );
 }
