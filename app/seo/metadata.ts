@@ -28,7 +28,7 @@ export const defaultMetadata: Metadata = {
     "Property Search",
   ],
 
-  applicationName: "GuavaCheck",
+  applicationName: "guavacheck",
 
   category: "Technology",
 

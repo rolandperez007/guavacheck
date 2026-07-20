@@ -20,7 +20,7 @@ export const openGraph = {
 
       height: 630,
 
-      alt: "GuavaCheck",
+      alt: "guavacheck",
     },
   ],
 };

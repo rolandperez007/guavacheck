@@ -84,7 +84,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang={SITE.language}>
-      <body>{children}</body>
-    </html>
-  );
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              organizationSchema(),
+              softwareSchema(),
+            ]),
+        }}
+      />
+
+      {children}
+    </body>
+  </html>
+);
+
 } 

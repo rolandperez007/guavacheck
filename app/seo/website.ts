@@ -3,7 +3,7 @@ export const website = {
 
   "@type": "WebSite",
 
-  name: "GuavaCheck",
+  name: "guavacheck",
 
   url: "https://www.guavacheck.com",
 

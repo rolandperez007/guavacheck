@@ -2,7 +2,7 @@ export const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
 
-  name: "GuavaCheck",
+  name: "guavacheck",
 
   legalName: "Guava Networks Limited",
 
