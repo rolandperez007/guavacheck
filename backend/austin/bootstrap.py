@@ -48,7 +48,8 @@ def initialize():
     for engine in ENGINES:
         registry.register(engine())
 
-    startup(register_defaults)
+    register_defaults()
+    startup()
 
     logger.info("Austin Bootstrap Complete.")
 

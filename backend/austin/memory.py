@@ -1,16 +1,11 @@
 """
 Austin Memory
 
-Austin separates temporary conversation context from persistent
-platform memory.
+Unified memory layer for Austin.
 
-Context:
-    Current conversation.
-
-Memory:
-    Long-term platform knowledge.
-
-This module provides a unified interface for Austin's memory.
+Supports both:
+- Persistent record storage
+- Conversation history compatibility
 """
 
 from __future__ import annotations
@@ -24,26 +19,18 @@ from typing import Any
 class MemoryRecord:
 
     id: str
-
     user_id: str
-
     category: str
-
     title: str
-
     value: Any
 
     created_at: datetime = field(default_factory=datetime.utcnow)
-
     updated_at: datetime = field(default_factory=datetime.utcnow)
 
 
 class AustinMemory:
 
     def __init__(self):
-
-        # Temporary implementation.
-        # Later this becomes Supabase/PostgreSQL.
 
         self.records: dict[str, MemoryRecord] = {}
 
@@ -75,31 +62,75 @@ class AustinMemory:
         return record_id in self.records
 
     # --------------------------------------------------
+    # Conversation Compatibility
+    # --------------------------------------------------
+
+    def remember(
+        self,
+        session_id: str,
+        role: str,
+        message: str,
+    ):
+
+        self.save(
+            {
+                "id": f"{session_id}:{self.count()}",
+                "user_id": session_id,
+                "category": "conversation",
+                "title": role,
+                "value": message,
+            }
+        )
+
+    def recall(
+        self,
+        session_id: str,
+    ):
+
+        history = []
+
+        for record in self.by_user(session_id):
+
+            if record.category == "conversation":
+
+                history.append(
+                    {
+                        "role": record.title,
+                        "message": record.value,
+                    }
+                )
+
+        return history
+
+    def forget(
+        self,
+        session_id: str,
+    ):
+
+        for key in list(self.records.keys()):
+
+            if self.records[key].user_id == session_id:
+
+                del self.records[key]
+
+    # --------------------------------------------------
     # Search
     # --------------------------------------------------
 
     def by_user(self, user_id: str):
 
         return [
-
             record
-
             for record in self.records.values()
-
             if record.user_id == user_id
-
         ]
 
     def by_category(self, category: str):
 
         return [
-
             record
-
             for record in self.records.values()
-
             if record.category == category
-
         ]
 
     def search(self, keyword: str):
@@ -132,22 +163,18 @@ class AustinMemory:
 
     def categories(self):
 
-        return sorted({
-
-            record.category
-
-            for record in self.records.values()
-
-        })
+        return sorted(
+            {
+                record.category
+                for record in self.records.values()
+            }
+        )
 
     def summary(self):
 
         return {
-
             "records": self.count(),
-
             "categories": self.categories(),
-
         }
 
 

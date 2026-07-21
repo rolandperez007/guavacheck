@@ -1,15 +1,14 @@
 """
 Austin Context Builder
 
-Builds the complete execution context for every
-Austin request.
+Builds the complete execution context for every Austin request.
 """
 
 from __future__ import annotations
 
 from ..memory import memory
 from backend.world.world_engine import world_engine
-
+from dataclasses import asdict
 from .context import AustinContext
 from .summarizer import summarizer
 
@@ -19,27 +18,29 @@ class ContextBuilder:
     def build(
         self,
         session_id: str,
+        query: str = "",
     ) -> AustinContext:
 
         history = memory.recall(session_id)
 
         summary = summarizer.summarize(history)
 
-        world = world_engine.dictionary(session_id)
+        world = world_engine.build(
+            query=query,
+            country="NG",
+            language="en",
+        )
 
         return AustinContext(
             session_id=session_id,
             history=history,
             summary=summary,
-            world=world,
+            world=asdict(world),
             metadata={
                 "history_length": len(history),
-                "language": world.get("language"),
-                "currency": world.get("currency"),
-                "locale": world.get("locale"),
-                "timezone": world.get("timezone"),
-                "region": world.get("region"),
-                "unit_system": world.get("unit_system"),
+                "language": world.language,
+                "currency": world.currency,
+                "country": world.country,
             },
         )
 

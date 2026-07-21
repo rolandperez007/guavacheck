@@ -34,11 +34,15 @@ async def status():
 async def chat(request: ChatRequest):
 
     result = austin_router.route(
-        request.session_id,
-        request.message,
+        session_id=request.session_id,
+        message=request.message,
     )
 
-    return result.__dict__
+    return asdict(result)
+        
+    
+
+    
 
 @router.get("/queue")
 async def queue_summary():
