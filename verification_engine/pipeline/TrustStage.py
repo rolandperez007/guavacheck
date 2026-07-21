@@ -1,40 +1,212 @@
 """
-Trust Score Stage
+Trust Stage
+
+Calculates trust indicators before
+the AI reasoning engine evaluates
+the verification package.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
-from verification_engine.scoring.TrustScoreEngine import TrustScoreEngine
+class TrustStage:
+
+    name = "TRUST"
 
 
-class TrustStage(PipelineStage):
-
-    def __init__(self):
-
-        self.engine = TrustScoreEngine()
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        trust_score = self.engine.calculate(
 
-            context.metadata
+        score = 0
+
+
+        #
+        # Evidence sources
+        #
+
+        document_result = (
+            context.stages
+            .get(
+                "DOCUMENT",
+                {}
+            )
+        )
+
+
+        government_result = (
+            context.stages
+            .get(
+                "GOVERNMENT",
+                {}
+            )
+        )
+
+
+        registry_result = (
+            context.stages
+            .get(
+                "REGISTRY",
+                {}
+            )
+        )
+
+
+        fraud_result = (
+            context.stages
+            .get(
+                "FRAUD",
+                {}
+            )
+        )
+
+
+        rule_result = (
+            context.stages
+            .get(
+                "RULE_ENGINE",
+                {}
+            )
+        )
+
+
+
+        #
+        # Document confidence
+        #
+
+        if document_result.get(
+            "documents_valid"
+        ):
+
+            score += 20
+
+
+
+        #
+        # Government intelligence
+        #
+
+        if government_result.get(
+            "status"
+        ) == "INTELLIGENCE_READY":
+
+            score += 25
+
+
+
+        #
+        # Registry verification
+        #
+
+        if registry_result.get(
+            "completed"
+        ):
+
+            score += 25
+
+
+
+        #
+        # Rule engine
+        #
+
+        if rule_result.get(
+            "verification_ready"
+        ):
+
+            score += 20
+
+
+
+        #
+        # Fraud adjustment
+        #
+
+        risk = fraud_result.get(
+            "risk_score",
+            0
+        )
+
+
+        score -= risk / 2
+
+
+
+        #
+        # Clamp score
+        #
+
+        score = max(
+            0,
+            min(
+                100,
+                round(score, 2)
+            )
+        )
+
+
+
+        if score >= 90:
+
+            trust_level = "VERIFIED"
+
+
+        elif score >= 75:
+
+            trust_level = "HIGH_CONFIDENCE"
+
+
+        elif score >= 50:
+
+            trust_level = "REVIEW_REQUIRED"
+
+
+        else:
+
+            trust_level = "HIGH_RISK"
+
+
+
+        result = {
+
+            "completed": True,
+
+            "trust_score":
+                score,
+
+            "trust_level":
+                trust_level,
+
+            "status":
+                "CALCULATED"
+
+        }
+
+
+        context.trust_score = score
+
+
+        context.stages[
+            self.name
+        ] = result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "trust_calculation",
+
+                "data":
+                    result
+
+            }
 
         )
 
-        if not trust_score:
-
-            trust_score = context.metadata.get(
-
-                "rule_score",
-
-                0,
-
-            )
-
-        context.trust_score = trust_score
 
         return context

@@ -1,0 +1,39 @@
+{
+  
+  "version": "1.0",
+  "dataset": "ministries",
+  "records": [
+    {
+      "code": "housing",
+      "name": "Ministry of Housing"
+    },
+    {
+      "code": "lands",
+      "name": "Ministry of Lands"
+    },
+    {
+      "code": "works",
+      "name": "Ministry of Works"
+    },
+    {
+      "code": "planning",
+      "name": "Ministry of Physical Planning"
+    },
+    {
+      "code": "finance",
+      "name": "Ministry of Finance"
+    },
+    {
+      "code": "justice",
+      "name": "Ministry of Justice"
+    },
+    {
+      "code": "environment",
+      "name": "Ministry of Environment"
+    },
+    {
+      "code": "transport",
+      "name": "Ministry of Transport"
+    }
+  ]
+}

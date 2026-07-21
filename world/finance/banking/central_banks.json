@@ -1,0 +1,186 @@
+{
+  "version": "1.0",
+  "description": "Central banking authorities by country",
+  "banks": [
+    {
+      "country": "Nigeria",
+      "name": "Central Bank of Nigeria",
+      "code": "CBN",
+      "currency": "NGN"
+    },
+    {
+      "country": "South Africa",
+      "name": "South African Reserve Bank",
+      "code": "SARB",
+      "currency": "ZAR"
+    },
+    {
+      "country": "Kenya",
+      "name": "Central Bank of Kenya",
+      "code": "CBK",
+      "currency": "KES"
+    },
+    {
+      "country": "Ghana",
+      "name": "Bank of Ghana",
+      "code": "BOG",
+      "currency": "GHS"
+    },
+    {
+      "country": "Egypt",
+      "name": "Central Bank of Egypt",
+      "code": "CBE",
+      "currency": "EGP"
+    },
+    {
+      "country": "United States",
+      "name": "Federal Reserve System",
+      "code": "FED",
+      "currency": "USD"
+    },
+    {
+      "country": "Canada",
+      "name": "Bank of Canada",
+      "code": "BOC",
+      "currency": "CAD"
+    },
+    {
+      "country": "Mexico",
+      "name": "Bank of Mexico",
+      "code": "BANXICO",
+      "currency": "MXN"
+    },
+    {
+      "country": "Brazil",
+      "name": "Central Bank of Brazil",
+      "code": "BCB",
+      "currency": "BRL"
+    },
+    {
+      "country": "Argentina",
+      "name": "Central Bank of Argentina",
+      "code": "BCRA",
+      "currency": "ARS"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "Bank of England",
+      "code": "BOE",
+      "currency": "GBP"
+    },
+    {
+      "country": "European Union",
+      "name": "European Central Bank",
+      "code": "ECB",
+      "currency": "EUR"
+    },
+    {
+      "country": "Switzerland",
+      "name": "Swiss National Bank",
+      "code": "SNB",
+      "currency": "CHF"
+    },
+    {
+      "country": "Norway",
+      "name": "Norges Bank",
+      "code": "NB",
+      "currency": "NOK"
+    },
+    {
+      "country": "Sweden",
+      "name": "Sveriges Riksbank",
+      "code": "RIKSBANK",
+      "currency": "SEK"
+    },
+    {
+      "country": "Russia",
+      "name": "Bank of Russia",
+      "code": "CBR",
+      "currency": "RUB"
+    },
+    {
+      "country": "China",
+      "name": "People's Bank of China",
+      "code": "PBOC",
+      "currency": "CNY"
+    },
+    {
+      "country": "Japan",
+      "name": "Bank of Japan",
+      "code": "BOJ",
+      "currency": "JPY"
+    },
+    {
+      "country": "India",
+      "name": "Reserve Bank of India",
+      "code": "RBI",
+      "currency": "INR"
+    },
+    {
+      "country": "South Korea",
+      "name": "Bank of Korea",
+      "code": "BOK",
+      "currency": "KRW"
+    },
+    {
+      "country": "Singapore",
+      "name": "Monetary Authority of Singapore",
+      "code": "MAS",
+      "currency": "SGD"
+    },
+    {
+      "country": "Malaysia",
+      "name": "Bank Negara Malaysia",
+      "code": "BNM",
+      "currency": "MYR"
+    },
+    {
+      "country": "Indonesia",
+      "name": "Bank Indonesia",
+      "code": "BI",
+      "currency": "IDR"
+    },
+    {
+      "country": "Thailand",
+      "name": "Bank of Thailand",
+      "code": "BOT",
+      "currency": "THB"
+    },
+    {
+      "country": "Vietnam",
+      "name": "State Bank of Vietnam",
+      "code": "SBV",
+      "currency": "VND"
+    },
+    {
+      "country": "Philippines",
+      "name": "Bangko Sentral ng Pilipinas",
+      "code": "BSP",
+      "currency": "PHP"
+    },
+    {
+      "country": "United Arab Emirates",
+      "name": "Central Bank of the UAE",
+      "code": "CBUAE",
+      "currency": "AED"
+    },
+    {
+      "country": "Saudi Arabia",
+      "name": "Saudi Central Bank",
+      "code": "SAMA",
+      "currency": "SAR"
+    },
+    {
+      "country": "Australia",
+      "name": "Reserve Bank of Australia",
+      "code": "RBA",
+      "currency": "AUD"
+    },
+    {
+      "country": "New Zealand",
+      "name": "Reserve Bank of New Zealand",
+      "code": "RBNZ",
+      "currency": "NZD"
+    }
+  ]
+}

@@ -10,9 +10,9 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from austin.bootstrap import initialize, startup_async
-from austin.kernel import AustinContextMiddleware
-from core.router_registry import register_routers
+from backend.austin.bootstrap import initialize, startup_async
+from backend.austin.kernel import AustinContextMiddleware
+from backend.core.router_registry import register_routers
 
 
 @asynccontextmanager

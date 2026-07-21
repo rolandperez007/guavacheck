@@ -5,7 +5,7 @@ Responsible for document verification,
 ownership validation and fraud detection.
 """
 
-from engines.base import BaseEngine
+from backend.engines.base import BaseEngine
 
 
 class VerificationEngine(BaseEngine):

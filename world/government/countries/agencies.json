@@ -1,0 +1,37 @@
+{
+  
+  "version": "1.0",
+  "dataset": "agencies",
+  "records": [
+    {
+      "type": "Land Registry"
+    },
+    {
+      "type": "Surveyor General"
+    },
+    {
+      "type": "Planning Authority"
+    },
+    {
+      "type": "Building Control Agency"
+    },
+    {
+      "type": "Environmental Protection Agency"
+    },
+    {
+      "type": "Fire Service"
+    },
+    {
+      "type": "Property Tax Authority"
+    },
+    {
+      "type": "Company Registry"
+    },
+    {
+      "type": "Judiciary"
+    },
+    {
+      "type": "Utilities Commission"
+    }
+  ]
+}

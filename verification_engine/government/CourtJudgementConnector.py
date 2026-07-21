@@ -1,24 +1,21 @@
-"""
-Court Judgement Connector
-
-Checks litigation records.
-"""
+from typing import Dict
 
 
 class CourtJudgementConnector:
+    """
+    Searches court judgement databases for litigation
+    affecting land ownership.
+    """
 
-    async def search(
+    source = "Court Judgements"
 
-        self,
-
-        property_id: str,
-
-    ) -> dict:
+    def search(self, property_id: str) -> Dict:
 
         return {
-
-            "litigation": False,
-
-            "status": "NOT_CONNECTED",
-
+            "source": self.source,
+            "matches": [],
+            "confidence": 0.0,
+            "status": "offline",
+            "message": "Court connector not implemented.",
+            "property_id": property_id,
         }

@@ -5,7 +5,7 @@ Responsible for property search,
 recommendations and discovery.
 """
 
-from engines.base import BaseEngine
+from backend.engines.base import BaseEngine
 
 from .search import property_search
 

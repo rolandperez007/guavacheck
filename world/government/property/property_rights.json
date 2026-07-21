@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "dataset": "property_rights",
+  "records": [
+    {
+      "right": "Ownership"
+    },
+    {
+      "right": "Possession"
+    },
+    {
+      "right": "Lease"
+    },
+    {
+      "right": "Mortgage"
+    },
+    {
+      "right": "Transfer"
+    },
+    {
+      "right": "Inheritance"
+    },
+    {
+      "right": "Development"
+    }
+  ]
+}

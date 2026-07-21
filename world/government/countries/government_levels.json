@@ -1,0 +1,54 @@
+{
+
+  "version": "1.0",
+  "dataset": "government_levels",
+  "records": [
+    {
+      "id": "national",
+      "name": "National Government",
+      "scope": "Country",
+      "responsibilities": [
+        "Constitution",
+        "Foreign Affairs",
+        "National Security",
+        "Taxation",
+        "National Infrastructure",
+        "Property Regulation"
+      ]
+    },
+    {
+      "id": "state",
+      "name": "State / Provincial Government",
+      "scope": "State",
+      "responsibilities": [
+        "Land Administration",
+        "Urban Planning",
+        "Construction Regulation",
+        "Housing",
+        "Regional Infrastructure"
+      ]
+    },
+    {
+      "id": "county",
+      "name": "County / Regional Authority",
+      "scope": "County",
+      "responsibilities": [
+        "Planning",
+        "Building Approval",
+        "Environmental Compliance"
+      ]
+    },
+    {
+      "id": "municipal",
+      "name": "Municipality / Local Government",
+      "scope": "City",
+      "responsibilities": [
+        "Property Addressing",
+        "Waste",
+        "Roads",
+        "Local Planning",
+        "Permits"
+      ]
+    }
+  ]
+}

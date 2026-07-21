@@ -1,21 +1,30 @@
 """
-Final Verification Result
+Verification Result
+
+Final output returned by the
+Verification Engine.
 """
 
 from dataclasses import dataclass
+from dataclasses import field
+
+from typing import Any
+from typing import Dict
 
 
 @dataclass
 class VerificationResult:
 
-    success: bool
+    verified: bool
 
-    property_id: str
+    decision: str
 
-    trust_score: int
+    confidence: float
 
-    certificate: dict
+    evidence: Dict[str, Any] = field(
+        default_factory=dict
+    )
 
-    evidence: list
-
-    summary: str
+    explanation: Dict[str, Any] = field(
+        default_factory=dict
+    )

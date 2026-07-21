@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "dataset": "ownership_types",
+  "records": [
+    {
+      "id": "freehold",
+      "name": "Freehold"
+    },
+    {
+      "id": "leasehold",
+      "name": "Leasehold"
+    },
+    {
+      "id": "customary",
+      "name": "Customary Ownership"
+    },
+    {
+      "id": "government",
+      "name": "Government Ownership"
+    },
+    {
+      "id": "community",
+      "name": "Community Ownership"
+    },
+    {
+      "id": "joint",
+      "name": "Joint Ownership"
+    },
+    {
+      "id": "corporate",
+      "name": "Corporate Ownership"
+    }
+  ]
+}

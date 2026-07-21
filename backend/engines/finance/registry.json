@@ -1,0 +1,87 @@
+{
+  "engine": {
+    "name": "finance",
+    "version": "1.0.0",
+    "provider": "guavacheck",
+    "description": "Global property finance intelligence engine"
+  },
+
+  "capabilities": [
+    "currency_conversion",
+    "mortgage_analysis",
+    "property_affordability",
+    "investment_analysis",
+    "tax_intelligence",
+    "financial_risk_assessment",
+    "country_finance_registry"
+  ],
+
+  "modules": {
+    "currency": {
+      "status": "active",
+      "supports": [
+        "fiat",
+        "crypto",
+        "multi_currency"
+      ]
+    },
+
+    "mortgage": {
+      "status": "active",
+      "supports": [
+        "loan_estimation",
+        "interest_analysis",
+        "repayment_projection"
+      ]
+    },
+
+    "investment": {
+      "status": "active",
+      "supports": [
+        "roi",
+        "yield_analysis",
+        "market_comparison"
+      ]
+    },
+
+    "affordability": {
+      "status": "active",
+      "supports": [
+        "income_analysis",
+        "purchase_power",
+        "buyer_profile"
+      ]
+    },
+
+    "tax": {
+      "status": "active",
+      "supports": [
+        "property_tax",
+        "transfer_tax",
+        "ownership_costs"
+      ]
+    }
+  },
+
+  "supported_regions": [
+    "Africa",
+    "Asia",
+    "Europe",
+    "Middle East",
+    "North America",
+    "South America"
+  ],
+
+  "registry": {
+    "country_registry": "countries/registry.json",
+    "initial_country_count": 33
+  },
+
+  "integration": {
+    "austin_engine": true,
+    "verification_engine": true,
+    "investment_engine": true
+  },
+
+  "status": "READY"
+}

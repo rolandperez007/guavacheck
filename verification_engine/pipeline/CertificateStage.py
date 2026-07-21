@@ -1,36 +1,124 @@
 """
-Certificate Generation Stage
+Certificate Stage
+
+Prepares verification certificate
+data for certificate generation.
 """
 
+
+from datetime import datetime
 import uuid
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
 
-class CertificateStage(PipelineStage):
+class CertificateStage:
+
+    name = "CERTIFICATE"
+
+
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        context.certificate = {
 
-            "certificate_id": str(uuid.uuid4()),
+        trust_score = getattr(
+            context,
+            "trust_score",
+            0
+        )
 
-            "trust_score": context.trust_score,
 
-            "status": (
+        trust_data = (
+            context.stages
+            .get(
+                "TRUST",
+                {}
+            )
+        )
 
-                "VERIFIED"
 
-                if context.trust_score >= 80
+        approved = (
+            trust_score >= 75
+        )
 
+
+        certificate_id = None
+
+
+        if approved:
+
+            certificate_id = (
+                "GVC-"
+                +
+                str(
+                    uuid.uuid4()
+                )
+                .upper()
+                [:12]
+            )
+
+
+
+        certificate = {
+
+            "certificate_ready":
+                approved,
+
+            "certificate_id":
+                certificate_id,
+
+            "qr_ready":
+                approved,
+
+            "issued_at":
+                datetime.utcnow()
+                .isoformat(),
+
+            "verification_level":
+                trust_data.get(
+                    "trust_level",
+                    "UNKNOWN"
+                ),
+
+            "trust_score":
+                trust_score,
+
+            "property_id":
+                context.property_id,
+
+            "status":
+                "READY"
+                if approved
                 else "REVIEW_REQUIRED"
 
-            ),
-
         }
+
+
+
+        context.certificate = certificate
+
+
+        context.stages[
+            self.name
+        ] = certificate
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "verification_certificate",
+
+                "data":
+                    certificate
+
+            }
+
+        )
+
 
         return context

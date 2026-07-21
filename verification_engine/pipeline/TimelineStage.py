@@ -1,26 +1,71 @@
 """
-Ownership Timeline Stage
+Timeline Stage
+
+Builds a chronological history of
+property ownership and verification events.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
+class TimelineStage:
 
-class TimelineStage(PipelineStage):
+    name = "TIMELINE"
+
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        context.metadata["timeline"] = {
 
-            "owners": [],
+        registry_data = (
+            context.stages
+            .get(
+                "REGISTRY",
+                {}
+            )
+        )
 
-            "ownership_count": 0,
 
-            "conflicts": [],
+        timeline_result = {
+
+            "completed": True,
+
+            "events": [],
+
+            "ownership_changes": 0,
+
+            "timeline_verified": False,
+
+            "source":
+
+                "registry_history",
+
+            "status":
+
+                "PLACEHOLDER"
 
         }
+
+
+        context.stages[
+            self.name
+        ] = timeline_result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "ownership_timeline",
+
+                "data":
+                    timeline_result
+
+            }
+
+        )
+
 
         return context

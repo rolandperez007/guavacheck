@@ -2,7 +2,7 @@
 Austin World Gateway
 """
 
-from world.world_engine import world_engine
+from backend.world.world_engine import world_engine
 
 __all__ = [
     "world_engine",

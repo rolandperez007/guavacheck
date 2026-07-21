@@ -1,0 +1,25 @@
+{
+  
+  "version": "1.0",
+  "dataset": "land_tenure",
+  "records": [
+    {
+      "type": "Freehold"
+    },
+    {
+      "type": "Leasehold"
+    },
+    {
+      "type": "State Grant"
+    },
+    {
+      "type": "Customary Right"
+    },
+    {
+      "type": "Occupancy Right"
+    },
+    {
+      "type": "Communal Land"
+    }
+  ]
+}

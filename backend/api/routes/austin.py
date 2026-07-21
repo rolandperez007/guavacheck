@@ -4,10 +4,10 @@ Austin API Routes
 from dataclasses import asdict
 from fastapi import APIRouter
 from pydantic import BaseModel
-from austin.queue import queue
-from austin.router import router as austin_router
-from austin.event_store import store
-from austin.memory import memory
+from backend.austin.queue import queue
+from backend.austin.router import router as austin_router
+from backend.austin.event_store import store
+from backend.austin.memory import memory
 router = APIRouter(
     prefix="/austin",
     tags=["Austin"],

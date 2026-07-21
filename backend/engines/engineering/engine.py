@@ -5,7 +5,7 @@ Responsible for structural engineering,
 material calculations and construction analysis.
 """
 
-from engines.base import BaseEngine
+from backend.engines.base import BaseEngine
 
 
 class EngineeringEngine(BaseEngine):

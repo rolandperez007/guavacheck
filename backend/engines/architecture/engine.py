@@ -5,8 +5,7 @@ Responsible for architectural planning,
 space optimization, zoning guidance,
 and design orchestration.
 """
-
-from engines.base import BaseEngine
+from backend.engines.base import BaseEngine
 
 
 class ArchitectureEngine(BaseEngine):

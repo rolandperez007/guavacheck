@@ -7,7 +7,7 @@ from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from .context import build_request_context
-from austin.logger import structured_log
+from ..logger import structured_log
 
 
 class AustinContextMiddleware(BaseHTTPMiddleware):

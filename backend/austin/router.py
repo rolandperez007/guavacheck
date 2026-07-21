@@ -5,18 +5,18 @@ Receives incoming requests, builds global execution context,
 stores conversation memory, publishes events, queues work,
 and immediately acknowledges the request.
 """
-
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from austin.context import context_manager
-from austin.events import events
-from austin.memory import memory
-from austin.queue import queue
-from world.world_engine import world_engine
+from .context import context_manager
+from .events import events
+from .memory import memory
+from .queue import queue
+
+from backend.world.world_engine import world_engine
 
 
 @dataclass(slots=True)

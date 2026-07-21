@@ -1,0 +1,43 @@
+{
+  
+  "version": "1.0",
+  "dataset": "land_registry",
+  "records": [
+    {
+      "id": "deed_registry",
+      "name": "Deeds Registry",
+      "stores": [
+        "Property Deeds",
+        "Ownership Transfers",
+        "Mortgages"
+      ]
+    },
+    {
+      "id": "title_registry",
+      "name": "Title Registry",
+      "stores": [
+        "Land Titles",
+        "Title History",
+        "Charges"
+      ]
+    },
+    {
+      "id": "cadastre",
+      "name": "Cadastral Registry",
+      "stores": [
+        "Parcel Boundaries",
+        "Survey Plans",
+        "Coordinates"
+      ]
+    },
+    {
+      "id": "digital_registry",
+      "name": "Digital Land Registry",
+      "stores": [
+        "Electronic Titles",
+        "Digital Certificates",
+        "GIS Records"
+      ]
+    }
+  ]
+}

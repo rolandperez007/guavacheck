@@ -1,0 +1,377 @@
+{
+  "version": "1.0",
+  "updated": "2026-07-20",
+
+  "countries": [
+
+    {
+      "country": "Nigeria",
+      "currency": "NGN",
+      "central_bank": "Central Bank of Nigeria",
+      "bank_code": "CBN",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "NIBSS Instant Payments",
+      "mortgage_market": "Developing",
+      "max_ltv": 80,
+      "max_term_years": 25,
+      "digital_wallets": [
+        "OPay",
+        "PalmPay",
+        "Kuda",
+        "Moniepoint"
+      ]
+    },
+
+    {
+      "country": "United States",
+      "currency": "USD",
+      "central_bank": "Federal Reserve",
+      "bank_code": "FED",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "FedNow",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 97,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay",
+        "PayPal",
+        "Cash App"
+      ]
+    },
+
+    {
+      "country": "Canada",
+      "currency": "CAD",
+      "central_bank": "Bank of Canada",
+      "bank_code": "BOC",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "Interac",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 95,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Interac",
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "central_bank": "Bank of England",
+      "bank_code": "BOE",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "Faster Payments",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 95,
+      "max_term_years": 35,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay",
+        "Monzo",
+        "Revolut"
+      ]
+    },
+
+    {
+      "country": "Germany",
+      "currency": "EUR",
+      "central_bank": "Deutsche Bundesbank",
+      "bank_code": "BUBA",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "SEPA Instant",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 90,
+      "max_term_years": 35,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "France",
+      "currency": "EUR",
+      "central_bank": "Banque de France",
+      "bank_code": "BDF",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "SEPA Instant",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 90,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "Spain",
+      "currency": "EUR",
+      "central_bank": "Banco de España",
+      "bank_code": "BDE",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "SEPA Instant",
+      "mortgage_market": "Mature",
+      "max_ltv": 90,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Bizum",
+        "Apple Pay"
+      ]
+    },
+
+    {
+      "country": "Italy",
+      "currency": "EUR",
+      "central_bank": "Bank of Italy",
+      "bank_code": "BOI",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "SEPA Instant",
+      "mortgage_market": "Mature",
+      "max_ltv": 80,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "United Arab Emirates",
+      "currency": "AED",
+      "central_bank": "Central Bank of UAE",
+      "bank_code": "CBUAE",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "Aani",
+      "mortgage_market": "Advanced",
+      "max_ltv": 80,
+      "max_term_years": 25,
+      "digital_wallets": [
+        "Apple Pay",
+        "Samsung Pay"
+      ]
+    },
+
+    {
+      "country": "Saudi Arabia",
+      "currency": "SAR",
+      "central_bank": "Saudi Central Bank",
+      "bank_code": "SAMA",
+      "swift_supported": true,
+      "iban_supported": true,
+      "open_banking": true,
+      "instant_payments": "SARIE",
+      "mortgage_market": "Advanced",
+      "max_ltv": 85,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "STC Pay",
+        "Apple Pay"
+      ]
+    },
+
+    {
+      "country": "India",
+      "currency": "INR",
+      "central_bank": "Reserve Bank of India",
+      "bank_code": "RBI",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "UPI",
+      "mortgage_market": "Very Large",
+      "max_ltv": 90,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "PhonePe",
+        "Paytm",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "China",
+      "currency": "CNY",
+      "central_bank": "People's Bank of China",
+      "bank_code": "PBOC",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": false,
+      "instant_payments": "CNAPS",
+      "mortgage_market": "Massive",
+      "max_ltv": 80,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+
+    {
+      "country": "Japan",
+      "currency": "JPY",
+      "central_bank": "Bank of Japan",
+      "bank_code": "BOJ",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "Zengin",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 100,
+      "max_term_years": 35,
+      "digital_wallets": [
+        "PayPay",
+        "Rakuten Pay"
+      ]
+    },
+
+    {
+      "country": "Singapore",
+      "currency": "SGD",
+      "central_bank": "Monetary Authority of Singapore",
+      "bank_code": "MAS",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "PayNow",
+      "mortgage_market": "Advanced",
+      "max_ltv": 75,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "GrabPay",
+        "Apple Pay"
+      ]
+    },
+
+    {
+      "country": "Malaysia",
+      "currency": "MYR",
+      "central_bank": "Bank Negara Malaysia",
+      "bank_code": "BNM",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "DuitNow",
+      "mortgage_market": "Advanced",
+      "max_ltv": 90,
+      "max_term_years": 35,
+      "digital_wallets": [
+        "Touch 'n Go eWallet",
+        "Boost"
+      ]
+    },
+
+    {
+      "country": "Indonesia",
+      "currency": "IDR",
+      "central_bank": "Bank Indonesia",
+      "bank_code": "BI",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "BI-FAST",
+      "mortgage_market": "Growing",
+      "max_ltv": 85,
+      "max_term_years": 25,
+      "digital_wallets": [
+        "GoPay",
+        "OVO",
+        "DANA"
+      ]
+    },
+
+    {
+      "country": "Thailand",
+      "currency": "THB",
+      "central_bank": "Bank of Thailand",
+      "bank_code": "BOT",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "PromptPay",
+      "mortgage_market": "Growing",
+      "max_ltv": 90,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "TrueMoney",
+        "Rabbit LINE Pay"
+      ]
+    },
+
+    {
+      "country": "Vietnam",
+      "currency": "VND",
+      "central_bank": "State Bank of Vietnam",
+      "bank_code": "SBV",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "NAPAS",
+      "mortgage_market": "Growing",
+      "max_ltv": 80,
+      "max_term_years": 25,
+      "digital_wallets": [
+        "MoMo",
+        "ZaloPay"
+      ]
+    },
+
+    {
+      "country": "Australia",
+      "currency": "AUD",
+      "central_bank": "Reserve Bank of Australia",
+      "bank_code": "RBA",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "PayID",
+      "mortgage_market": "Highly Mature",
+      "max_ltv": 95,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+
+    {
+      "country": "South Africa",
+      "currency": "ZAR",
+      "central_bank": "South African Reserve Bank",
+      "bank_code": "SARB",
+      "swift_supported": true,
+      "iban_supported": false,
+      "open_banking": true,
+      "instant_payments": "PayShap",
+      "mortgage_market": "Advanced",
+      "max_ltv": 90,
+      "max_term_years": 30,
+      "digital_wallets": [
+        "SnapScan",
+        "Zapper"
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "dataset": "required_documents",
+  "records": [
+    "Government Identification",
+    "Survey Plan",
+    "Title Document",
+    "Tax Clearance",
+    "Building Approval",
+    "Environmental Approval",
+    "Utility Clearance",
+    "Occupancy Certificate"
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "description": "Global government data provider registry for guavacheck verification intelligence engine",
+
+  "providers": [
+    {
+      "id": "land_registry_systems",
+      "name": "Land Registry Systems",
+      "category": "property",
+      "purpose": [
+        "title verification",
+        "ownership validation",
+        "parcel lookup",
+        "encumbrance detection"
+      ],
+      "data_types": [
+        "property_titles",
+        "ownership_history",
+        "land_boundaries",
+        "mortgages",
+        "charges"
+      ],
+      "reliability_weight": 0.95,
+      "requires_authentication": true,
+      "integration_type": [
+        "api",
+        "government_portal",
+        "manual_verification"
+      ]
+    },
+
+    {
+      "id": "company_registration_authorities",
+      "name": "Company Registration Authorities",
+      "category": "corporate",
+      "purpose": [
+        "company verification",
+        "ownership verification",
+        "director verification"
+      ],
+      "data_types": [
+        "company_records",
+        "shareholders",
+        "directors",
+        "business_status"
+      ],
+      "reliability_weight": 0.95,
+      "requires_authentication": true,
+      "integration_type": [
+        "api",
+        "registry_search"
+      ]
+    },
+
+    {
+      "id": "gis_cadastral_systems",
+      "name": "GIS and Cadastral Systems",
+      "category": "geospatial",
+      "purpose": [
+        "parcel validation",
+        "boundary verification",
+        "location intelligence"
+      ],
+      "data_types": [
+        "coordinates",
+        "parcel_geometry",
+        "administrative_boundaries",
+        "land_use"
+      ],
+      "reliability_weight": 0.9,
+      "requires_authentication": false,
+      "integration_type": [
+        "api",
+        "gis_service",
+        "satellite_overlay"
+      ]
+    },
+
+    {
+      "id": "court_legal_records",
+      "name": "Court and Legal Records",
+      "category": "legal",
+      "purpose": [
+        "litigation checks",
+        "ownership disputes",
+        "fraud detection"
+      ],
+      "data_types": [
+        "court_cases",
+        "judgements",
+        "legal_claims"
+      ],
+      "reliability_weight": 0.9,
+      "requires_authentication": true,
+      "integration_type": [
+        "court_database",
+        "legal_partner"
+      ]
+    },
+
+    {
+      "id": "tax_authority_records",
+      "name": "Tax Authority Records",
+      "category": "financial",
+      "purpose": [
+        "tax validation",
+        "property obligations",
+        "financial compliance"
+      ],
+      "data_types": [
+        "tax_records",
+        "property_rates",
+        "tax_status"
+      ],
+      "reliability_weight": 0.85,
+      "requires_authentication": true,
+      "integration_type": [
+        "government_api",
+        "secure_exchange"
+      ]
+    },
+
+    {
+      "id": "surveyor_general_systems",
+      "name": "Surveyor General Systems",
+      "category": "survey",
+      "purpose": [
+        "survey validation",
+        "coordinate verification",
+        "boundary confirmation"
+      ],
+      "data_types": [
+        "survey_plans",
+        "coordinates",
+        "official_maps"
+      ],
+      "reliability_weight": 0.9,
+      "requires_authentication": true,
+      "integration_type": [
+        "registry_connection",
+        "document_verification"
+      ]
+    },
+
+    {
+      "id": "planning_development_authorities",
+      "name": "Planning and Development Authorities",
+      "category": "construction",
+      "purpose": [
+        "building approval verification",
+        "planning compliance",
+        "development restrictions"
+      ],
+      "data_types": [
+        "building_permits",
+        "zoning",
+        "development_plans",
+        "approvals"
+      ],
+      "reliability_weight": 0.85,
+      "requires_authentication": true,
+      "integration_type": [
+        "government_portal",
+        "municipal_api"
+      ]
+    }
+  ],
+
+  "provider_priority": [
+    {
+      "rank": 1,
+      "provider": "official_government_registry"
+    },
+    {
+      "rank": 2,
+      "provider": "licensed_data_partner"
+    },
+    {
+      "rank": 3,
+      "provider": "verified_document_submission"
+    },
+    {
+      "rank": 4,
+      "provider": "machine_intelligence_estimation"
+    }
+  ],
+
+  "verification_policy": {
+    "official_source_required": true,
+    "multiple_source_confirmation": true,
+    "minimum_confidence_score": 0.75,
+    "high_value_property_threshold_usd": 1000000,
+    "institutional_investor_threshold_usd": 5000000
+  }
+}

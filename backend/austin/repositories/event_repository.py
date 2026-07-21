@@ -9,8 +9,8 @@ storage requires no changes to routers.
 
 from __future__ import annotations
 
-from austin.event_store import store
-from austin.models import AustinEvent
+from ..event_store import store
+from ..models import AustinEvent
 
 
 class EventRepository:

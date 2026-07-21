@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "dataset": "document_types",
+  "records": [
+    {
+      "category": "Identity"
+    },
+    {
+      "category": "Ownership"
+    },
+    {
+      "category": "Survey"
+    },
+    {
+      "category": "Construction"
+    },
+    {
+      "category": "Environmental"
+    },
+    {
+      "category": "Legal"
+    },
+    {
+      "category": "Financial"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "dataset": "property_types",
+  "records": [
+    "Residential",
+    "Commercial",
+    "Industrial",
+    "Agricultural",
+    "Mixed Use",
+    "Institutional",
+    "Hospitality",
+    "Retail",
+    "Warehouse",
+    "Office",
+    "Land"
+  ]
+}

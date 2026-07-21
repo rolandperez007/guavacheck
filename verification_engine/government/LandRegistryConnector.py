@@ -10,24 +10,26 @@ Future integrations:
 """
 
 
+from typing import Dict
+
+
 class LandRegistryConnector:
+    """
+    Land Registry connector.
 
-    async def search(
+    Responsible for title verification,
+    ownership history and registry lookup.
+    """
 
-        self,
+    source = "Land Registry"
 
-        title_number: str,
-
-    ) -> dict:
+    def verify_title(self, title_number: str) -> Dict:
 
         return {
-
-            "found": False,
-
+            "verified": False,
+            "confidence": 0.0,
+            "status": "offline",
+            "source": self.source,
             "title_number": title_number,
-
-            "owner": None,
-
-            "status": "NOT_CONNECTED",
-
+            "message": "Land Registry connector not implemented.",
         }

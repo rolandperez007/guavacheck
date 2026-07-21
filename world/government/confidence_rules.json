@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "description": "Global verification confidence scoring framework for guavacheck government intelligence engine",
+
+  "scoring_model": {
+    "type": "weighted_confidence",
+    "minimum_verified_score": 75,
+    "maximum_score": 100
+  },
+
+
+  "verification_dimensions": [
+
+    {
+      "id": "land_registry_match",
+      "name": "Land Registry Verification",
+      "weight": 30,
+      "description": "Confirms official ownership and title records",
+      "rules": [
+        {
+          "condition": "official_title_found",
+          "score": 30
+        },
+        {
+          "condition": "ownership_matches_submission",
+          "score": 20
+        },
+        {
+          "condition": "title_number_verified",
+          "score": 10
+        },
+        {
+          "condition": "registry_unavailable",
+          "score": 0
+        }
+      ]
+    },
+
+
+    {
+      "id": "survey_verification",
+      "name": "Survey and Geospatial Verification",
+      "weight": 20,
+      "description": "Validates coordinates, boundaries and survey information",
+      "rules": [
+        {
+          "condition": "coordinates_match_registry",
+          "score": 20
+        },
+        {
+          "condition": "survey_plan_verified",
+          "score": 15
+        },
+        {
+          "condition": "partial_boundary_match",
+          "score": 10
+        },
+        {
+          "condition": "location_conflict_detected",
+          "score": -15
+        }
+      ]
+    },
+
+
+    {
+      "id": "document_authenticity",
+      "name": "Document Intelligence Verification",
+      "weight": 15,
+      "description": "AI document analysis and fraud detection",
+      "rules": [
+        {
+          "condition": "document_hash_verified",
+          "score": 15
+        },
+        {
+          "condition": "ocr_data_matches_registry",
+          "score": 10
+        },
+        {
+          "condition": "document_altered",
+          "score": -25
+        },
+        {
+          "condition": "missing_required_documents",
+          "score": -10
+        }
+      ]
+    },
+
+
+    {
+      "id": "legal_risk",
+      "name": "Legal and Court Verification",
+      "weight": 15,
+      "description": "Checks disputes, litigation and ownership conflicts",
+      "rules": [
+        {
+          "condition": "no_active_disputes",
+          "score": 15
+        },
+        {
+          "condition": "historical_case_resolved",
+          "score": 5
+        },
+        {
+          "condition": "active_property_case",
+          "score": -30
+        },
+        {
+          "condition": "ownership_dispute",
+          "score": -40
+        }
+      ]
+    },
+
+
+    {
+      "id": "government_consent",
+      "name": "Government Approval Verification",
+      "weight": 10,
+      "description": "Validates required government approvals",
+      "rules": [
+        {
+          "condition": "consent_verified",
+          "score": 10
+        },
+        {
+          "condition": "approval_pending",
+          "score": 5
+        },
+        {
+          "condition": "consent_missing",
+          "score": -15
+        }
+      ]
+    },
+
+
+    {
+      "id": "corporate_verification",
+      "name": "Corporate Identity Verification",
+      "weight": 10,
+      "description": "Checks company ownership and legal identity",
+      "rules": [
+        {
+          "condition": "company_verified",
+          "score": 10
+        },
+        {
+          "condition": "director_match",
+          "score": 5
+        },
+        {
+          "condition": "company_inactive",
+          "score": -15
+        }
+      ]
+    }
+  ],
+
+
+  "risk_penalties": [
+
+    {
+      "risk": "duplicate_property_listing",
+      "penalty": 20
+    },
+
+    {
+      "risk": "fake_document_detected",
+      "penalty": 50
+    },
+
+    {
+      "risk": "ownership_mismatch",
+      "penalty": 40
+    },
+
+    {
+      "risk": "court_restriction",
+      "penalty": 35
+    },
+
+    {
+      "risk": "government_record_conflict",
+      "penalty": 30
+    }
+
+  ],
+
+
+  "trust_levels": [
+
+    {
+      "level": "VERIFIED",
+      "minimum_score": 90,
+      "meaning": "Multiple official sources confirm property authenticity"
+    },
+
+    {
+      "level": "HIGH_CONFIDENCE",
+      "minimum_score": 75,
+      "meaning": "Strong verification with minor missing information"
+    },
+
+    {
+      "level": "REVIEW_REQUIRED",
+      "minimum_score": 50,
+      "meaning": "Additional government or legal review required"
+    },
+
+    {
+      "level": "HIGH_RISK",
+      "minimum_score": 0,
+      "meaning": "Potential fraud, dispute or ownership uncertainty"
+    }
+
+  ],
+
+
+  "institutional_policy": {
+
+    "minimum_score_for_investment": 85,
+
+    "minimum_score_for_mortgage": 90,
+
+    "minimum_score_for_government_contracts": 95,
+
+    "require_manual_review_above_value_usd": 5000000
+
+  },
+
+
+  "audit": {
+
+    "store_score_history": true,
+
+    "store_evidence_sources": true,
+
+    "store_timestamp": true,
+
+    "allow_recalculation": true
+
+  }
+
+}

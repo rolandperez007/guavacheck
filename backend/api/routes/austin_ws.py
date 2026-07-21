@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
-from austin.realtime import realtime_manager
+from backend.austin.realtime import realtime_manager
 
 router = APIRouter(
     prefix="/austin/ws",

@@ -9,14 +9,13 @@ from __future__ import annotations
 from .models import AustinMetrics
 from .models import QueueMetrics
 from .models import EngineMetrics
-
-from austin.status import status
-from austin.queue import queue
-from austin.registry import registry
-from austin.event_store import store
-from austin.incident_manager import manager
-from austin.business_monitor import monitor
-from austin.recommendations import AustinRecommendations
+from ..status import status
+from ..queue import queue
+from ..registry import registry
+from ..event_store import store
+from ..incident_manager import manager
+from ..business_monitor import monitor
+from ..recommendations import AustinRecommendations
 
 
 class AustinMetricsService:

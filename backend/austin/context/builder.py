@@ -7,8 +7,8 @@ Austin request.
 
 from __future__ import annotations
 
-from austin.memory import memory
-from world.world_engine import world_engine
+from ..memory import memory
+from backend.world.world_engine import world_engine
 
 from .context import AustinContext
 from .summarizer import summarizer

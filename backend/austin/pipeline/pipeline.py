@@ -7,7 +7,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from austin.context import context_builder
+from ..context import context_builder
 
 from .stages import PipelineStage
 

@@ -5,23 +5,26 @@ Used when property owner
 is a company.
 """
 
+from typing import Dict
+
 
 class CACConnector:
+    """
+    Corporate Affairs Commission connector.
 
-    async def lookup(
+    Used for verifying company ownership
+    involved in property transactions.
+    """
 
-        self,
+    source = "CAC"
 
-        rc_number: str,
-
-    ) -> dict:
+    def verify_company(self, rc_number: str) -> Dict:
 
         return {
-
-            "exists": False,
-
+            "verified": False,
+            "status": "offline",
+            "confidence": 0.0,
+            "source": self.source,
             "rc_number": rc_number,
-
-            "status": "NOT_CONNECTED",
-
+            "message": "CAC connector not yet implemented.",
         }

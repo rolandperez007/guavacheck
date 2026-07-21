@@ -1,55 +1,80 @@
 """
 Reasoning Engine
 
-Combines evidence into
-AI reasoning.
+Coordinates all intelligence modules to produce
+the final verification decision.
 """
+
+from typing import Dict
+
+from verification_engine.intelligence.EvidenceCollector import (
+    EvidenceCollector,
+)
+
+from verification_engine.intelligence.ConfidenceEngine import (
+    ConfidenceEngine,
+)
+
+from verification_engine.intelligence.ConflictResolver import (
+    ConflictResolver,
+)
+
+from verification_engine.intelligence.ExplanationGenerator import (
+    ExplanationGenerator,
+)
 
 
 class ReasoningEngine:
+    """
+    Primary AI reasoning engine.
+    """
 
-    def reason(
+    def __init__(self):
 
+        self.collector = EvidenceCollector()
+
+        self.confidence = ConfidenceEngine()
+
+        self.conflicts = ConflictResolver()
+
+        self.explainer = ExplanationGenerator()
+
+    def evaluate(
         self,
+        evidence: Dict,
+    ) -> Dict:
 
-        evidence: list,
+        confidence = self.confidence.calculate(
+            evidence,
+        )
 
-    ) -> dict:
+        conflicts = self.conflicts.detect(
+            evidence,
+        )
 
-        confidence = 100
-
-        issues = []
-
-        for item in evidence:
-
-            value = item.get("value", {})
-
-            if isinstance(value, dict):
-
-                if value.get("status") == "NOT_CONNECTED":
-
-                    confidence -= 5
-
-                    issues.append(
-
-                        f"{item['source']} unavailable"
-
-                    )
+        explanation = self.explainer.generate(
+            confidence,
+            conflicts,
+        )
 
         return {
 
-            "confidence": max(confidence, 0),
+            "verified": (
+                confidence["verified"]
+                and not conflicts["conflict_found"]
+            ),
 
-            "issues": issues,
+            "confidence": confidence,
 
-            "recommendation": (
+            "conflicts": conflicts,
 
-                "REVIEW"
+            "explanation": explanation,
 
-                if confidence < 80
-
-                else "VERIFY"
-
-            )
+            "decision": (
+                "VERIFIED"
+                if confidence["verified"]
+                and not conflicts["conflict_found"]
+                else "REVIEW_REQUIRED"
+            ),
 
         }

@@ -3,14 +3,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from austin.business_monitor import monitor
-from austin.event_store import store
-from austin.events import events
-from austin.incident_manager import manager
-from austin.logger import logger, structured_log
-from austin.queue import queue
-from austin.recommendations import AustinRecommendations
-from austin.trust import TrustMonitor
+from ..business_monitor import monitor
+from ..event_store import store
+from ..events import events
+from ..incident_manager import manager
+from ..logger import logger, structured_log
+from ..queue import queue
+from ..recommendations import AustinRecommendations
+from ..trust import TrustMonitor
 
 
 @dataclass

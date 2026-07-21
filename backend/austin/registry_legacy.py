@@ -6,7 +6,7 @@ Compatibility layer.
 Actual engine registration lives inside EngineManager.
 """
 
-from engines.manager import engine_manager
+from backend.engines.manager import engine_manager
 
 
 class AustinRegistry:

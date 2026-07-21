@@ -1,0 +1,50 @@
+{
+  "registry": {
+    "name": "GuavaCheck Global Finance Country Registry",
+    "version": "1.0.0",
+    "description": "Country-level financial intelligence rules for property markets"
+  },
+
+  "countries": {
+
+    "ZW": {
+      "name": "Zimbabwe",
+      "country_code": "ZW",
+      "region": "Africa",
+
+      "currency": {
+        "primary": "USD",
+        "accepted": [
+          "USD",
+          "ZAR",
+          "BWP"
+        ]
+      },
+
+      "property_finance": {
+        "mortgage_available": true,
+        "investment_tracking": true,
+        "valuation_support": true
+      },
+
+      "taxation": {
+        "property_transfer_tax": true,
+        "ownership_cost_tracking": true
+      },
+
+      "verification": {
+        "title_verification_required": true,
+        "registry_check_required": true
+      },
+
+      "market_status": "ACTIVE"
+    }
+
+  },
+
+  "metadata": {
+    "country_count": 1,
+    "coverage": "Africa",
+    "status": "ACTIVE"
+  }
+}

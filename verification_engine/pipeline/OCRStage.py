@@ -1,34 +1,70 @@
 """
 OCR Pipeline Stage
 
-Extracts text from uploaded documents.
+Extracts text and metadata from uploaded
+property documents.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
-from verification_engine.document_ai.OCRProcessor import OCRProcessor
+class OCRStage:
 
+    name = "OCR"
 
-class OCRStage(PipelineStage):
-
-    def __init__(self):
-
-        self.ocr = OCRProcessor()
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        extracted_documents = []
 
-        for document in context.documents:
+        documents = getattr(
+            context,
+            "documents",
+            []
+        )
 
-            result = self.ocr.process(document)
 
-            extracted_documents.append(result)
+        extracted_text = []
 
-        context.metadata["ocr"] = extracted_documents
+
+        result = {
+
+            "completed": True,
+
+            "text":
+                extracted_text,
+
+            "pages":
+                0,
+
+            "documents_processed":
+                len(documents),
+
+            "status":
+                "PLACEHOLDER"
+
+        }
+
+
+        context.stages[
+            self.name
+        ] = result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "ocr_extraction",
+
+                "data":
+                    result
+
+            }
+
+        )
+
 
         return context

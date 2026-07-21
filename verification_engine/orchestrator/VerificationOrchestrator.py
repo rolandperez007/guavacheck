@@ -1,10 +1,12 @@
 """
 Verification Orchestrator
 
-This is the master workflow for the entire
-guavacheck Verification Engine.
+Coordinates the complete verification lifecycle
+for every property submitted to guavacheck.
 """
 
+from datetime import datetime
+from verification_engine.pipeline.GovernmentStage import GovernmentStage
 from verification_engine.orchestrator.VerificationContext import (
     VerificationContext,
 )
@@ -29,12 +31,25 @@ from verification_engine.pipeline.PersistenceStage import PersistenceStage
 
 class VerificationOrchestrator:
 
+    """
+    Master verification workflow.
+
+    Every verification request passes through the
+    complete pipeline in a fixed order.
+    """
+
     def __init__(self):
+
+        self.version = "1.0"
+
+        self.pipeline_name = "guavacheck Verification Engine"
 
         self.stages = [
 
             OCRStage(),
 
+            GovernmentStage(),
+            
             DocumentStage(),
 
             RegistryStage(),
@@ -73,9 +88,29 @@ class VerificationOrchestrator:
 
         context.documents = documents or []
 
+        context.started_at = datetime.utcnow()
+
+        context.pipeline_version = self.version
+
+        context.pipeline_name = self.pipeline_name
+
+        context.completed_stages = []
+
         for stage in self.stages:
 
+            stage_name = stage.__class__.__name__
+
+            context.current_stage = stage_name
+
             context = await stage.execute(context)
+
+            context.completed_stages.append(stage_name)
+
+        context.completed_at = datetime.utcnow()
+
+        context.duration_seconds = (
+            context.completed_at - context.started_at
+        ).total_seconds()
 
         return VerificationResult(
 
@@ -90,5 +125,19 @@ class VerificationOrchestrator:
             evidence=context.evidence,
 
             summary="Verification Completed Successfully",
+
+            metadata={
+
+                "pipeline": self.pipeline_name,
+
+                "version": self.version,
+
+                "completed_stages": context.completed_stages,
+
+                "duration_seconds": context.duration_seconds,
+
+                "verified_at": context.completed_at.isoformat(),
+
+            },
 
         )

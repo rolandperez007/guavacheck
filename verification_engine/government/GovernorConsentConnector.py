@@ -1,24 +1,23 @@
-"""
-Governor Consent Verification
-"""
+from typing import Dict
 
 
 class GovernorConsentConnector:
+    """
+    Governor's Consent verification.
 
-    async def verify(
+    Future implementation will connect to state government
+    property approval databases.
+    """
 
-        self,
+    source = "Governor Consent"
 
-        consent_number: str,
-
-    ) -> dict:
+    def verify(self, consent_number: str) -> Dict:
 
         return {
-
             "verified": False,
-
+            "source": self.source,
+            "confidence": 0.0,
+            "status": "offline",
+            "message": "Governor Consent connector not yet implemented.",
             "consent_number": consent_number,
-
-            "status": "NOT_CONNECTED",
-
         }

@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "dataset": "survey_systems",
+  "records": [
+    {
+      "system": "Total Station Survey"
+    },
+    {
+      "system": "GNSS Survey"
+    },
+    {
+      "system": "GPS Survey"
+    },
+    {
+      "system": "Drone Survey"
+    },
+    {
+      "system": "LiDAR Survey"
+    },
+    {
+      "system": "Satellite Survey"
+    },
+    {
+      "system": "Photogrammetry"
+    }
+  ]
+}

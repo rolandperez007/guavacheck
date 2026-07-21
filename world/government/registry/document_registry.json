@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "dataset": "document_registry",
+  "records": [
+    {
+      "document": "Survey Plan"
+    },
+    {
+      "document": "Site Plan"
+    },
+    {
+      "document": "Building Plan"
+    },
+    {
+      "document": "Title Document"
+    },
+    {
+      "document": "Tax Clearance"
+    },
+    {
+      "document": "Development Permit"
+    },
+    {
+      "document": "Environmental Approval"
+    }
+  ]
+}

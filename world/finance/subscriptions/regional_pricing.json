@@ -1,0 +1,292 @@
+{
+  "version": "1.0.0",
+  "currency_base": "USD",
+  "last_updated": "2026-07-20",
+
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "monthly_usd": 9,
+      "yearly_usd": 90,
+      "credits": 250,
+      "team_members": 1
+    },
+
+    "professional": {
+      "name": "Professional",
+      "monthly_usd": 29,
+      "yearly_usd": 290,
+      "credits": 2500,
+      "team_members": 5
+    },
+
+    "business": {
+      "name": "Business",
+      "monthly_usd": 99,
+      "yearly_usd": 990,
+      "credits": 15000,
+      "team_members": 20
+    },
+
+    "enterprise": {
+      "name": "Enterprise",
+      "monthly_usd": 499,
+      "yearly_usd": 4990,
+      "credits": -1,
+      "team_members": -1,
+      "custom_pricing": true
+    },
+
+    "government": {
+      "name": "Government",
+      "monthly_usd": 0,
+      "yearly_usd": 0,
+      "credits": -1,
+      "team_members": -1,
+      "custom_contract": true,
+      "minimum_contract_usd": 50000
+    }
+  },
+
+  "regions": {
+
+    "north_america": {
+      "pricing_multiplier": 1.00,
+      "countries": [
+        "United States",
+        "Canada",
+        "Mexico"
+      ]
+    },
+
+    "western_europe": {
+      "pricing_multiplier": 0.95,
+      "countries": [
+        "United Kingdom",
+        "Ireland",
+        "Germany",
+        "France",
+        "Netherlands",
+        "Belgium",
+        "Luxembourg",
+        "Austria",
+        "Switzerland"
+      ]
+    },
+
+    "northern_europe": {
+      "pricing_multiplier": 1.00,
+      "countries": [
+        "Sweden",
+        "Norway",
+        "Denmark",
+        "Finland",
+        "Iceland"
+      ]
+    },
+
+    "southern_europe": {
+      "pricing_multiplier": 0.82,
+      "countries": [
+        "Spain",
+        "Portugal",
+        "Italy",
+        "Greece",
+        "Croatia",
+        "Slovenia"
+      ]
+    },
+
+    "eastern_europe": {
+      "pricing_multiplier": 0.68,
+      "countries": [
+        "Poland",
+        "Romania",
+        "Hungary",
+        "Czech Republic",
+        "Slovakia",
+        "Bulgaria",
+        "Ukraine"
+      ]
+    },
+
+    "middle_east": {
+      "pricing_multiplier": 0.90,
+      "countries": [
+        "United Arab Emirates",
+        "Saudi Arabia",
+        "Qatar",
+        "Bahrain",
+        "Kuwait",
+        "Oman",
+        "Jordan",
+        "Israel"
+      ]
+    },
+
+    "africa": {
+      "pricing_multiplier": 0.42,
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya",
+        "South Africa",
+        "Rwanda",
+        "Uganda",
+        "Tanzania",
+        "Botswana",
+        "Namibia",
+        "Egypt",
+        "Morocco",
+        "Algeria",
+        "Tunisia",
+        "Ethiopia"
+      ]
+    },
+
+    "south_asia": {
+      "pricing_multiplier": 0.38,
+      "countries": [
+        "India",
+        "Pakistan",
+        "Bangladesh",
+        "Sri Lanka",
+        "Nepal"
+      ]
+    },
+
+    "east_asia": {
+      "pricing_multiplier": 0.72,
+      "countries": [
+        "Japan",
+        "South Korea",
+        "China",
+        "Taiwan",
+        "Hong Kong",
+        "Mongolia"
+      ]
+    },
+
+    "southeast_asia": {
+      "pricing_multiplier": 0.55,
+      "countries": [
+        "Singapore",
+        "Malaysia",
+        "Thailand",
+        "Indonesia",
+        "Vietnam",
+        "Philippines",
+        "Cambodia",
+        "Laos"
+      ]
+    },
+
+    "oceania": {
+      "pricing_multiplier": 0.95,
+      "countries": [
+        "Australia",
+        "New Zealand"
+      ]
+    },
+
+    "south_america": {
+      "pricing_multiplier": 0.58,
+      "countries": [
+        "Brazil",
+        "Argentina",
+        "Chile",
+        "Colombia",
+        "Peru",
+        "Uruguay",
+        "Paraguay",
+        "Ecuador"
+      ]
+    }
+  },
+
+  "country_overrides": {
+
+    "Singapore": {
+      "pricing_multiplier": 0.90
+    },
+
+    "Switzerland": {
+      "pricing_multiplier": 1.10
+    },
+
+    "Luxembourg": {
+      "pricing_multiplier": 1.05
+    },
+
+    "United Arab Emirates": {
+      "pricing_multiplier": 0.95
+    },
+
+    "Qatar": {
+      "pricing_multiplier": 0.95
+    },
+
+    "Japan": {
+      "pricing_multiplier": 0.82
+    },
+
+    "South Korea": {
+      "pricing_multiplier": 0.80
+    },
+
+    "Australia": {
+      "pricing_multiplier": 1.00
+    },
+
+    "New Zealand": {
+      "pricing_multiplier": 0.92
+    },
+
+    "Nigeria": {
+      "pricing_multiplier": 0.35
+    },
+
+    "India": {
+      "pricing_multiplier": 0.32
+    },
+
+    "Kenya": {
+      "pricing_multiplier": 0.38
+    },
+
+    "Ghana": {
+      "pricing_multiplier": 0.39
+    },
+
+    "South Africa": {
+      "pricing_multiplier": 0.55
+    }
+  },
+
+  "rules": {
+
+    "annual_discount": 0.17,
+
+    "nonprofit_discount": 0.35,
+
+    "educational_discount": 0.40,
+
+    "startup_discount": 0.25,
+
+    "government_contract_only": true,
+
+    "government_requires_enterprise": true,
+
+    "minimum_contract_term_months": 12,
+
+    "minimum_enterprise_users": 25,
+
+    "volume_discounts": {
+      "50_users": 0.05,
+      "100_users": 0.10,
+      "250_users": 0.15,
+      "500_users": 0.20,
+      "1000_users": 0.25
+    }
+  }
+}

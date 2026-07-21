@@ -7,16 +7,16 @@ This module connects every Austin subsystem together.
 """
 
 from __future__ import annotations
-from austin.registry.loader import register_defaults
+from .registry.loader import register_defaults
 from .logger import logger
 from .personality import personality
 from .realtime import subscribe_to_events
 from .registry import registry
 from .startup import startup
-from engines.property.engine import PropertyEngine
-from engines.engineering.engine import EngineeringEngine
-from engines.verification.engine import VerificationEngine
-from engines.architecture.engine import ArchitectureEngine
+from backend.engines.property.engine import PropertyEngine
+from backend.engines.engineering.engine import EngineeringEngine
+from backend.engines.verification.engine import VerificationEngine
+from backend.engines.architecture.engine import ArchitectureEngine
 
 def initialize():
 

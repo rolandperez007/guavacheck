@@ -1,42 +1,186 @@
 """
-Business Rule Engine Stage
+Rule Stage
+
+Executes business validation rules.
+
+Evaluates collected evidence and applies
+verification decision rules.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
+class RuleStage:
 
-class RuleStage(PipelineStage):
+    name = "RULE_ENGINE"
+
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        score = 100
 
-        fraud = context.metadata.get("fraud", {})
+        rules_checked = 0
 
-        if fraud.get("fraud_detected"):
+        rules_passed = 0
 
-            score -= 50
+        rules_failed = 0
 
-        registry = context.metadata.get("registry", {})
 
-        if not registry.get("matched"):
+        #
+        # Evidence sources
+        #
 
-            score -= 20
+        document_result = (
+            context.stages
+            .get(
+                "DOCUMENT",
+                {}
+            )
+        )
 
-        geo = context.metadata.get("geospatial", {})
 
-        if geo.get("overlap_detected"):
+        government_result = (
+            context.stages
+            .get(
+                "GOVERNMENT",
+                {}
+            )
+        )
 
-            score -= 15
 
-        if not geo.get("coordinates_valid"):
+        registry_result = (
+            context.stages
+            .get(
+                "REGISTRY",
+                {}
+            )
+        )
 
-            score -= 15
 
-        context.metadata["rule_score"] = max(score, 0)
+        fraud_result = (
+            context.stages
+            .get(
+                "FRAUD",
+                {}
+            )
+        )
+
+
+
+        #
+        # Rule: Documents exist
+        #
+
+        rules_checked += 1
+
+        if document_result.get(
+            "documents_received",
+            0
+        ) > 0:
+
+            rules_passed += 1
+
+        else:
+
+            rules_failed += 1
+
+
+
+        #
+        # Rule: Government intelligence available
+        #
+
+        rules_checked += 1
+
+        if government_result.get(
+            "status"
+        ) == "INTELLIGENCE_READY":
+
+            rules_passed += 1
+
+        else:
+
+            rules_failed += 1
+
+
+
+        #
+        # Rule: Fraud risk acceptable
+        #
+
+        rules_checked += 1
+
+        if fraud_result.get(
+            "risk_score",
+            100
+        ) < 50:
+
+            rules_passed += 1
+
+        else:
+
+            rules_failed += 1
+
+
+
+        #
+        # Rule: Registry response exists
+        #
+
+        rules_checked += 1
+
+        if registry_result:
+
+            rules_passed += 1
+
+        else:
+
+            rules_failed += 1
+
+
+
+        rule_result = {
+
+            "completed": True,
+
+            "rules_checked":
+                rules_checked,
+
+            "rules_passed":
+                rules_passed,
+
+            "rules_failed":
+                rules_failed,
+
+            "verification_ready":
+                rules_failed == 0,
+
+            "status":
+                "EVALUATED"
+
+        }
+
+
+
+        context.stages[
+            self.name
+        ] = rule_result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "business_rules",
+
+                "data":
+                    rule_result
+
+            }
+
+        )
+
 
         return context

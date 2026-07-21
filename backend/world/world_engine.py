@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from world.currency_engine import currency_engine
-from world.locale_engine import locale_engine
-from world.language_engine import language_engine
+from .currency_engine import currency_engine
+from .locale_engine import locale_engine
+from .language_engine import language_engine
 
 
 @dataclass(slots=True)

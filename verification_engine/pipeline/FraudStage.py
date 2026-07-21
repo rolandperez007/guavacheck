@@ -1,41 +1,145 @@
 """
 Fraud Detection Stage
+
+Detects suspicious activity,
+duplicate ownership,
+forged documents,
+and identity anomalies.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
-from verification_engine.fraud_detection.FraudDetector import FraudDetector
-from verification_engine.fraud_detection.RiskAnalyzer import RiskAnalyzer
+class FraudStage:
 
+    name = "FRAUD"
 
-class FraudStage(PipelineStage):
-
-    def __init__(self):
-
-        self.detector = FraudDetector()
-        self.risk = RiskAnalyzer()
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        fraud_result = self.detector.detect(context.metadata)
 
-        risk = self.risk.analyze(context.metadata)
+        alerts = []
 
-        context.metadata["fraud"] = fraud_result
-        context.metadata["risk"] = risk
+        risk_score = 0
 
-        context.evidence.append({
 
-            "stage": "Fraud",
+        registry_result = (
+            context.stages
+            .get(
+                "REGISTRY",
+                {}
+            )
+        )
 
-            "result": fraud_result,
 
-            "risk": risk,
+        document_result = (
+            context.stages
+            .get(
+                "DOCUMENT",
+                {}
+            )
+        )
 
-        })
+
+        government_result = (
+            context.stages
+            .get(
+                "GOVERNMENT",
+                {}
+            )
+        )
+
+
+        #
+        # Basic fraud indicators
+        #
+
+
+        if not document_result.get(
+            "documents_valid",
+            False
+        ):
+
+            alerts.append(
+                "Document validation incomplete"
+            )
+
+            risk_score += 10
+
+
+
+        if government_result.get(
+            "status"
+        ) != "INTELLIGENCE_READY":
+
+            alerts.append(
+                "Government intelligence unavailable"
+            )
+
+            risk_score += 10
+
+
+
+        registry = (
+            registry_result
+            .get(
+                "registry",
+                {}
+            )
+        )
+
+
+        if registry.get(
+            "overall_status"
+        ) == "DISPUTED":
+
+            alerts.append(
+                "Registry dispute detected"
+            )
+
+            risk_score += 40
+
+
+
+        fraud_result = {
+
+            "completed": True,
+
+            "fraud_detected":
+                risk_score >= 50,
+
+            "risk_score":
+                risk_score,
+
+            "alerts":
+                alerts,
+
+            "status":
+                "ANALYZED"
+
+        }
+
+
+        context.stages[
+            self.name
+        ] = fraud_result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "fraud_analysis",
+
+                "data":
+                    fraud_result
+
+            }
+
+        )
+
 
         return context

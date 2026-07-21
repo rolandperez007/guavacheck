@@ -6,14 +6,14 @@ Platform health endpoints.
 
 from fastapi import APIRouter
 
-from austin.business_monitor import monitor
-from austin.event_store import store
-from austin.events import events
-from austin.incident_manager import manager
-from austin.queue import queue
-from austin.recommendations import AustinRecommendations
-from austin.status import status
-from austin.trust import TrustMonitor
+from backend.austin.business_monitor import monitor
+from backend.austin.event_store import store
+from backend.austin.events import events
+from backend.austin.incident_manager import manager
+from backend.austin.queue import queue
+from backend.austin.recommendations import AustinRecommendations
+from backend.austin.status import status
+from backend.austin.trust import TrustMonitor
 
 router = APIRouter(
     prefix="/health",

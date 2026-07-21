@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "dataset": "building_classifications",
+  "records": [
+    "Detached House",
+    "Semi Detached",
+    "Terrace",
+    "Apartment",
+    "Duplex",
+    "Bungalow",
+    "High Rise",
+    "Warehouse",
+    "Office",
+    "Shopping Mall",
+    "Hospital",
+    "School",
+    "Factory",
+    "Hotel"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "dataset": "occupancy_types",
+  "records": [
+    "Owner Occupied",
+    "Tenant Occupied",
+    "Vacant",
+    "Government Occupied",
+    "Corporate Occupied",
+    "Mixed Occupancy",
+    "Construction Site"
+  ]
+}

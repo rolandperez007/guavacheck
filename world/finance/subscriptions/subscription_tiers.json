@@ -1,0 +1,329 @@
+{
+  "version": "1.0",
+  "currency": "USD",
+  "updated": "2026-07-20",
+
+  "plans": [
+
+    {
+      "id": "free",
+      "name": "Explorer",
+      "monthly": 0,
+      "yearly": 0,
+
+      "credits": 25,
+
+      "users": 1,
+
+      "storage_gb": 1,
+
+      "support": "Community",
+
+      "api_access": false,
+
+      "white_label": false,
+
+      "government": false,
+
+      "enterprise": false,
+
+      "features": [
+
+        "Basic Property Search",
+        "AI Assistant",
+        "Community Access",
+        "Mortgage Calculator",
+        "Currency Converter",
+        "Limited Property Verification"
+
+      ]
+    },
+
+    {
+      "id": "starter",
+
+      "name": "Starter",
+
+      "monthly": 19,
+
+      "yearly": 190,
+
+      "credits": 500,
+
+      "users": 1,
+
+      "storage_gb": 10,
+
+      "support": "Email",
+
+      "api_access": false,
+
+      "white_label": false,
+
+      "government": false,
+
+      "enterprise": false,
+
+      "features": [
+
+        "Unlimited Property Search",
+
+        "Property Verification",
+
+        "Construction Estimator",
+
+        "Valuation Reports",
+
+        "Investment Dashboard",
+
+        "Property Alerts"
+
+      ]
+    },
+
+    {
+      "id": "professional",
+
+      "name": "Professional",
+
+      "monthly": 49,
+
+      "yearly": 490,
+
+      "credits": 3000,
+
+      "users": 5,
+
+      "storage_gb": 100,
+
+      "support": "Priority",
+
+      "api_access": true,
+
+      "white_label": false,
+
+      "government": false,
+
+      "enterprise": false,
+
+      "features": [
+
+        "Everything in Starter",
+
+        "Unlimited AI Reports",
+
+        "AI Construction Planner",
+
+        "Building Cost Intelligence",
+
+        "Market Intelligence",
+
+        "API Access",
+
+        "Export Reports",
+
+        "Property Portfolio"
+
+      ]
+    },
+
+    {
+      "id": "business",
+
+      "name": "Business",
+
+      "monthly": 199,
+
+      "yearly": 1990,
+
+      "credits": 20000,
+
+      "users": 50,
+
+      "storage_gb": 1000,
+
+      "support": "24/7",
+
+      "api_access": true,
+
+      "white_label": true,
+
+      "government": false,
+
+      "enterprise": false,
+
+      "features": [
+
+        "Unlimited Verification",
+
+        "Unlimited Valuations",
+
+        "CRM",
+
+        "Agency Dashboard",
+
+        "White Label",
+
+        "Document Management",
+
+        "Staff Management",
+
+        "Custom Branding"
+
+      ]
+    },
+
+    {
+      "id": "enterprise",
+
+      "name": "Enterprise",
+
+      "monthly": null,
+
+      "yearly": null,
+
+      "credits": -1,
+
+      "users": -1,
+
+      "storage_gb": -1,
+
+      "support": "Dedicated Account Manager",
+
+      "api_access": true,
+
+      "white_label": true,
+
+      "government": false,
+
+      "enterprise": true,
+
+      "contact_sales": true,
+
+      "features": [
+
+        "Unlimited Everything",
+
+        "Private Cloud",
+
+        "SSO",
+
+        "Advanced Security",
+
+        "Dedicated Infrastructure",
+
+        "Unlimited API",
+
+        "AI Training",
+
+        "Custom Integrations",
+
+        "SLA"
+
+      ]
+    },
+
+    {
+      "id": "government",
+
+      "name": "Government",
+
+      "monthly": null,
+
+      "yearly": null,
+
+      "credits": -1,
+
+      "users": -1,
+
+      "storage_gb": -1,
+
+      "support": "Dedicated Government Success Team",
+
+      "api_access": true,
+
+      "white_label": true,
+
+      "government": true,
+
+      "enterprise": true,
+
+      "contact_sales": true,
+
+      "features": [
+
+        "National Land Registry",
+
+        "Government Verification",
+
+        "Court Integration",
+
+        "Surveyor Integration",
+
+        "Land Administration",
+
+        "Audit Trail",
+
+        "Identity Verification",
+
+        "Fraud Intelligence",
+
+        "Compliance",
+
+        "National Dashboards",
+
+        "Custom Deployment"
+
+      ]
+    },
+
+    {
+      "id": "api",
+
+      "name": "Developer API",
+
+      "monthly": 99,
+
+      "yearly": 990,
+
+      "credits": 50000,
+
+      "users": 10,
+
+      "storage_gb": 100,
+
+      "support": "Priority",
+
+      "api_access": true,
+
+      "white_label": false,
+
+      "government": false,
+
+      "enterprise": false,
+
+      "rate_limit": "500 requests/minute",
+
+      "features": [
+
+        "Verification API",
+
+        "Valuation API",
+
+        "Mortgage API",
+
+        "Construction API",
+
+        "Geo Intelligence API",
+
+        "Currency API",
+
+        "AI API",
+
+        "Webhook Support"
+
+      ]
+    }
+
+  ]
+}

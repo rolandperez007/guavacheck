@@ -1,0 +1,323 @@
+{
+  "version": "1.0",
+  "description": "Global regulatory and compliance intelligence matrix for guavacheck government verification engine",
+
+  "compliance_framework": {
+
+    "purpose": [
+      "government contract readiness",
+      "institutional investor requirements",
+      "property verification compliance",
+      "cross-border data governance"
+    ],
+
+    "principles": [
+      "official_source_preference",
+      "data_minimization",
+      "auditability",
+      "traceability",
+      "human_review_for_high_value_transactions"
+    ]
+
+  },
+
+
+  "global_standards": [
+
+    {
+      "standard": "ISO 27001",
+      "category": "information_security",
+      "relevance": [
+        "government_data_protection",
+        "secure_registry_connections",
+        "audit_controls"
+      ]
+    },
+
+    {
+      "standard": "ISO 9001",
+      "category": "quality_management",
+      "relevance": [
+        "verification_process_quality",
+        "operational_consistency"
+      ]
+    },
+
+    {
+      "standard": "GDPR",
+      "category": "data_privacy",
+      "regions": [
+        "European Union",
+        "European Economic Area"
+      ],
+      "requirements": [
+        "consent_management",
+        "data_access_rights",
+        "data_deletion_requests",
+        "privacy_by_design"
+      ]
+    },
+
+    {
+      "standard": "AML/KYC",
+      "category": "financial_compliance",
+      "relevance": [
+        "investor_verification",
+        "property_transaction_monitoring",
+        "fraud_prevention"
+      ]
+    }
+
+  ],
+
+
+  "countries": [
+
+    {
+      "country": "Nigeria",
+      "code": "NG",
+      "region": "Africa",
+
+      "property_compliance": {
+        "primary_authorities": [
+          "State Land Registries",
+          "Ministry of Lands",
+          "Geographic Information Systems"
+        ],
+        "required_documents": [
+          "Certificate of Occupancy",
+          "Governor Consent",
+          "Survey Plan",
+          "Deed Documents"
+        ]
+      },
+
+      "corporate_compliance": {
+        "company_registry": "Corporate Affairs Commission",
+        "requirements": [
+          "company_registration",
+          "director_verification",
+          "ownership_structure"
+        ]
+      },
+
+      "privacy_framework": [
+        "Nigeria Data Protection Act"
+      ],
+
+      "government_ready": true
+    },
+
+
+    {
+      "country": "United Kingdom",
+      "code": "GB",
+      "region": "Europe",
+
+      "property_compliance": {
+        "primary_authority": [
+          "HM Land Registry"
+        ],
+        "required_documents": [
+          "Title Register",
+          "Title Plan"
+        ]
+      },
+
+      "corporate_compliance": {
+        "company_registry": "Companies House",
+        "requirements": [
+          "company_verification",
+          "persons_with_significant_control"
+        ]
+      },
+
+      "privacy_framework": [
+        "UK GDPR",
+        "Data Protection Act 2018"
+      ],
+
+      "government_ready": true
+    },
+
+
+    {
+      "country": "United States",
+      "code": "US",
+      "region": "North America",
+
+      "property_compliance": {
+        "primary_authorities": [
+          "County Recorder Offices",
+          "State Property Systems"
+        ],
+        "required_documents": [
+          "Property Deed",
+          "Tax Records",
+          "Lien Search"
+        ]
+      },
+
+      "corporate_compliance": {
+        "company_registry": "State Business Registries",
+        "requirements": [
+          "entity_verification",
+          "registered_agent_check"
+        ]
+      },
+
+      "privacy_framework": [
+        "CCPA",
+        "State Privacy Regulations"
+      ],
+
+      "government_ready": true
+    },
+
+
+    {
+      "country": "United Arab Emirates",
+      "code": "AE",
+      "region": "Middle East",
+
+      "property_compliance": {
+        "primary_authorities": [
+          "Dubai Land Department",
+          "Abu Dhabi Land Authorities"
+        ],
+        "required_documents": [
+          "Title Deed",
+          "Ownership Certificate"
+        ]
+      },
+
+      "corporate_compliance": {
+        "requirements": [
+          "trade_license_verification",
+          "company_identity_check"
+        ]
+      },
+
+      "privacy_framework": [
+        "UAE Personal Data Protection Law"
+      ],
+
+      "government_ready": true
+    },
+
+
+    {
+      "country": "Singapore",
+      "code": "SG",
+      "region": "Asia",
+
+      "property_compliance": {
+        "primary_authority": [
+          "Singapore Land Authority"
+        ],
+        "required_documents": [
+          "Property Title Information"
+        ]
+      },
+
+      "corporate_compliance": {
+        "company_registry": "ACRA",
+        "requirements": [
+          "company_profile",
+          "director_verification"
+        ]
+      },
+
+      "privacy_framework": [
+        "Personal Data Protection Act"
+      ],
+
+      "government_ready": true
+    }
+
+  ],
+
+
+  "government_contract_requirements": {
+
+    "minimum_security_level": "enterprise",
+
+    "required_capabilities": [
+      "identity_verification",
+      "audit_logs",
+      "source_tracking",
+      "role_based_access",
+      "data_encryption",
+      "incident_reporting"
+    ],
+
+    "verification_certificate_required": true,
+
+    "human_review_required": {
+
+      "government_assets": true,
+
+      "high_value_assets": true,
+
+      "disputed_properties": true
+
+    }
+
+  },
+
+
+  "subscription_compliance_tiers": [
+
+    {
+      "tier": "standard",
+      "target": "individual_users",
+      "features": [
+        "basic_property_check",
+        "document_analysis",
+        "verification_report"
+      ]
+    },
+
+
+    {
+      "tier": "professional",
+      "target": "agents_and_companies",
+      "features": [
+        "bulk_verification",
+        "advanced_reports",
+        "API_access"
+      ]
+    },
+
+
+    {
+      "tier": "enterprise",
+      "target": [
+        "governments",
+        "banks",
+        "institutional_investors"
+      ],
+      "features": [
+        "private_registry_connections",
+        "custom_workflows",
+        "dedicated_support",
+        "compliance_reporting"
+      ]
+    }
+
+  ],
+
+
+  "audit_policy": {
+
+    "retain_verification_history": true,
+
+    "retain_source_evidence": true,
+
+    "retain_model_decisions": true,
+
+    "enable_external_audit": true
+
+  }
+
+}

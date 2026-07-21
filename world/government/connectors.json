@@ -1,0 +1,239 @@
+{
+  "version": "1.0",
+  "description": "Government verification connector mapping for guavacheck verification engine",
+
+  "connectors": [
+
+    {
+      "id": "land_registry_connector",
+      "class": "LandRegistryConnector",
+      "module": "verification_engine.government.LandRegistryConnector",
+      "category": "property",
+      "purpose": [
+        "verify_land_title",
+        "verify_ownership",
+        "check_encumbrances",
+        "retrieve_property_records"
+      ],
+      "input_fields": [
+        "property_id",
+        "title_number",
+        "parcel_number",
+        "owner_name",
+        "location"
+      ],
+      "output_fields": [
+        "ownership_status",
+        "title_status",
+        "encumbrances",
+        "registry_reference",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "national_land_registry",
+        "state_land_registry",
+        "municipal_property_registry"
+      ],
+      "priority": 1
+    },
+
+
+    {
+      "id": "surveyor_general_connector",
+      "class": "SurveyorGeneralConnector",
+      "module": "verification_engine.government.SurveyorGeneralConnector",
+      "category": "geospatial",
+      "purpose": [
+        "verify_survey_plan",
+        "validate_coordinates",
+        "confirm_boundaries"
+      ],
+      "input_fields": [
+        "survey_number",
+        "coordinates",
+        "parcel_number",
+        "location"
+      ],
+      "output_fields": [
+        "survey_validity",
+        "coordinates_match",
+        "boundary_status",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "surveyor_general",
+        "cadastral_database",
+        "gis_registry"
+      ],
+      "priority": 2
+    },
+
+
+    {
+      "id": "governor_consent_connector",
+      "class": "GovernorConsentConnector",
+      "module": "verification_engine.government.GovernorConsentConnector",
+      "category": "legal_property",
+      "purpose": [
+        "verify_government_consent",
+        "check_transfer_authorization",
+        "validate_land_transaction"
+      ],
+      "input_fields": [
+        "title_number",
+        "owner_name",
+        "transaction_reference"
+      ],
+      "output_fields": [
+        "consent_status",
+        "approval_date",
+        "issuing_authority",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "state_land_authority",
+        "ministry_of_lands"
+      ],
+      "priority": 3
+    },
+
+
+    {
+      "id": "cac_connector",
+      "class": "CACConnector",
+      "module": "verification_engine.government.CACConnector",
+      "category": "corporate",
+      "purpose": [
+        "verify_company_registration",
+        "verify_business_identity",
+        "retrieve_company_information"
+      ],
+      "input_fields": [
+        "company_name",
+        "registration_number",
+        "director_name"
+      ],
+      "output_fields": [
+        "company_status",
+        "registration_date",
+        "directors",
+        "ownership_structure",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "corporate_affairs_commission",
+        "company_registries",
+        "business_registrars"
+      ],
+      "priority": 4
+    },
+
+
+    {
+      "id": "court_judgement_connector",
+      "class": "CourtJudgementConnector",
+      "module": "verification_engine.government.CourtJudgementConnector",
+      "category": "legal",
+      "purpose": [
+        "search_property_disputes",
+        "detect_litigation",
+        "verify_judgements"
+      ],
+      "input_fields": [
+        "owner_name",
+        "company_name",
+        "property_reference"
+      ],
+      "output_fields": [
+        "active_cases",
+        "judgements",
+        "legal_risk_score",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "court_databases",
+        "legal_records",
+        "judicial_systems"
+      ],
+      "priority": 5
+    },
+
+
+    {
+      "id": "tax_authority_connector",
+      "class": "TaxAuthorityConnector",
+      "module": "verification_engine.government.TaxAuthorityConnector",
+      "category": "financial",
+      "purpose": [
+        "verify_tax_status",
+        "check_property_obligations",
+        "detect_tax_liabilities"
+      ],
+      "input_fields": [
+        "tax_id",
+        "owner_name",
+        "property_reference"
+      ],
+      "output_fields": [
+        "tax_status",
+        "outstanding_obligations",
+        "compliance_score"
+      ],
+      "supported_sources": [
+        "national_tax_authority",
+        "municipal_tax_systems"
+      ],
+      "priority": 6
+    },
+
+
+    {
+      "id": "planning_authority_connector",
+      "class": "PlanningAuthorityConnector",
+      "module": "verification_engine.government.PlanningAuthorityConnector",
+      "category": "construction",
+      "purpose": [
+        "verify_building_approval",
+        "check_zoning",
+        "validate_development_permission"
+      ],
+      "input_fields": [
+        "property_address",
+        "permit_number",
+        "development_reference"
+      ],
+      "output_fields": [
+        "approval_status",
+        "zoning_classification",
+        "development_constraints",
+        "confidence_score"
+      ],
+      "supported_sources": [
+        "municipal_planning_authority",
+        "urban_development_department"
+      ],
+      "priority": 7
+    }
+
+  ],
+
+
+  "execution_order": [
+    "land_registry_connector",
+    "surveyor_general_connector",
+    "governor_consent_connector",
+    "cac_connector",
+    "court_judgement_connector",
+    "tax_authority_connector",
+    "planning_authority_connector"
+  ],
+
+
+  "security": {
+    "audit_required": true,
+    "store_request_logs": true,
+    "store_response_hash": true,
+    "require_source_timestamp": true
+  }
+
+}

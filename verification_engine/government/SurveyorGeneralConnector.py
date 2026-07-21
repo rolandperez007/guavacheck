@@ -1,24 +1,22 @@
-"""
-Surveyor General Connector
-"""
+from typing import Dict
 
 
 class SurveyorGeneralConnector:
+    """
+    Survey verification.
 
-    async def verify_survey(
+    Confirms survey plans and coordinates.
+    """
 
-        self,
+    source = "Surveyor General"
 
-        survey_number: str,
-
-    ) -> dict:
+    def verify(self, survey_number: str) -> Dict:
 
         return {
-
             "verified": False,
-
+            "confidence": 0.0,
+            "status": "offline",
+            "source": self.source,
             "survey_number": survey_number,
-
-            "status": "NOT_CONNECTED",
-
+            "message": "Survey verification unavailable.",
         }

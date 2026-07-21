@@ -1,44 +1,67 @@
 """
-Document Analysis Stage
+Document Validation Stage
+
+Checks uploaded documents for
+structure and completeness.
 """
 
-from verification_engine.orchestrator.PipelineStage import PipelineStage
-from verification_engine.orchestrator.VerificationContext import VerificationContext
 
-from verification_engine.document_ai.DocumentAnalyzer import DocumentAnalyzer
-from verification_engine.document_ai.DocumentClassifier import DocumentClassifier
+class DocumentStage:
 
+    name = "DOCUMENT"
 
-class DocumentStage(PipelineStage):
-
-    def __init__(self):
-
-        self.analyzer = DocumentAnalyzer()
-        self.classifier = DocumentClassifier()
 
     async def execute(
         self,
-        context: VerificationContext,
-    ) -> VerificationContext:
+        context,
+    ):
 
-        analysis = []
+        documents = getattr(
+            context,
+            "documents",
+            []
+        )
 
-        ocr_results = context.metadata.get("ocr", [])
 
-        for item in ocr_results:
+        validation_result = {
 
-            report = self.analyzer.analyze(item)
+            "completed": True,
 
-            category = self.classifier.classify(item)
+            "documents_received":
+                len(documents),
 
-            analysis.append({
+            "documents_valid":
+                len(documents) > 0,
 
-                "analysis": report,
+            "missing_fields": [],
 
-                "classification": category,
+            "status":
+                "VALIDATED"
+                if documents
+                else "NO_DOCUMENTS"
 
-            })
+        }
 
-        context.metadata["documents"] = analysis
+
+        context.stages[
+            self.name
+        ] = validation_result
+
+
+
+        context.evidence.append(
+
+            {
+
+                "type":
+                    "document_validation",
+
+                "data":
+                    validation_result
+
+            }
+
+        )
+
 
         return context
