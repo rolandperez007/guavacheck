@@ -1,31 +1,50 @@
 """
 Austin Engine Discovery
 
-Provides discovery services for all
-registered Austin engines.
+Discovers all valid Austin engine manifests.
 """
 
 from __future__ import annotations
 
-from .registry import registry
+import importlib
+import pkgutil
+from pathlib import Path
 
 
 class EngineDiscovery:
 
-    def names(self):
+    def __init__(self):
 
-        return registry.list()
+        self.package = "backend.austin.registry.manifests"
 
-    def exists(
-        self,
-        name: str,
-    ) -> bool:
+    def discover(self):
 
-        return registry.exists(name)
+        manifests = []
 
-    def count(self) -> int:
+        package = importlib.import_module(self.package)
 
-        return registry.count()
+        package_path = Path(package.__file__).parent
+
+        for module_info in pkgutil.iter_modules([str(package_path)]):
+
+            if module_info.name.startswith("_"):
+
+                continue
+
+            module = importlib.import_module(
+                f"{self.package}.{module_info.name}"
+            )
+
+            manifest = (
+                getattr(module, "MANIFEST", None)
+                or getattr(module, "manifest", None)
+            )
+
+            if manifest is not None:
+
+                manifests.append(manifest)
+
+        return manifests
 
 
 engine_discovery = EngineDiscovery()

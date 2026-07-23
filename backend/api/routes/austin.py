@@ -69,3 +69,14 @@ async def session_memory(session_id: str):
         "session_id": session_id,
         "history": memory.recall(session_id),
     }
+@router.get("/jobs/{job_id}")
+async def job(job_id: str):
+
+    job = queue.get_job(job_id)
+
+    if job is None:
+        return {
+            "error": "Job not found"
+        }
+
+    return asdict(job)

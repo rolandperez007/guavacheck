@@ -1,23 +1,91 @@
 """
-Austin Registry Loader
+Austin Engine Loader
 
-Registers all default Austin engines.
+Responsible for importing and instantiating Austin engines.
+
+The loader never stores engines.
+The loader never performs discovery.
+The loader only converts a manifest entry into a live engine instance.
 """
 
-from backend.engines.property.engine import PropertyEngine
-from backend.engines.engineering.engine import EngineeringEngine
-from backend.engines.architecture.engine import ArchitectureEngine
-from backend.engines.verification.engine import VerificationEngine
+from __future__ import annotations
 
-from .registry import registry
+import importlib
+
+from backend.austin.registry.manifests.base import EngineManifest
 
 
-def register_defaults() -> None:
+class EngineLoader:
     """
-    Register all built-in engines.
+    Loads engine classes from manifests.
     """
 
-    registry.register(PropertyEngine())
-    registry.register(EngineeringEngine())
-    registry.register(ArchitectureEngine())
-    registry.register(VerificationEngine())
+    def __init__(self):
+
+        self._cache: dict[str, object] = {}
+
+    # ---------------------------------------------------------
+    # Public
+    # ---------------------------------------------------------
+
+    def load(
+        self,
+        manifest: EngineManifest,
+    ) -> object:
+
+        if manifest.name in self._cache:
+            return self._cache[manifest.name]
+
+        engine = self._instantiate(
+            manifest.engine_class
+        )
+
+        self._cache[manifest.name] = engine
+
+        return engine
+
+    def unload(
+        self,
+        name: str,
+    ) -> None:
+
+        self._cache.pop(name, None)
+
+    def unload_all(self) -> None:
+
+        self._cache.clear()
+
+    def loaded(self) -> list[str]:
+
+        return sorted(self._cache.keys())
+
+    # ---------------------------------------------------------
+    # Internal
+    # ---------------------------------------------------------
+
+    def _instantiate(
+        self,
+        class_path: str,
+    ) -> object:
+
+        if "." not in class_path:
+
+            raise RuntimeError(
+                f"Invalid engine path: {class_path}"
+            )
+
+        module_path, class_name = class_path.rsplit(".", 1)
+
+        module = importlib.import_module(
+            module_path
+        )
+
+        engine_class = getattr(
+            module,
+            class_name,
+        )
+
+        return engine_class()
+
+
+loader = EngineLoader()

@@ -1,38 +1,51 @@
 """
-Austin Capabilities Registry
+Austin Capability Registry
 
-Maintains a registry of engine capabilities
-for discovery, routing and AI planning.
+Provides capability-based discovery for Austin engines.
 """
 
 from __future__ import annotations
 
-from typing import Dict, List
+from backend.austin.registry.registry import registry
 
 
 class CapabilityRegistry:
+    """
+    Capability lookup service.
+    """
 
-    def __init__(self) -> None:
-        self._capabilities: Dict[str, List[str]] = {}
-
-    def register(
+    def find(
         self,
-        engine: str,
-        capabilities: List[str],
-    ) -> None:
+        capability: str,
+    ) -> list[object]:
 
-        self._capabilities[engine] = capabilities
+        return registry.find_by_capability(
+            capability
+        )
 
-    def get(
+    def supports(
         self,
-        engine: str,
-    ) -> List[str]:
+        capability: str,
+    ) -> bool:
 
-        return self._capabilities.get(engine, [])
+        return bool(
+            registry.find_by_capability(
+                capability
+            )
+        )
 
-    def all(self) -> Dict[str, List[str]]:
+    def intents(
+        self,
+        intent: str,
+    ) -> list[object]:
 
-        return dict(self._capabilities)
+        return registry.find_by_intent(
+            intent
+        )
+
+    def engines(self) -> list[str]:
+
+        return registry.list_engines()
 
 
 capability_registry = CapabilityRegistry()

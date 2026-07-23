@@ -64,6 +64,24 @@ class AustinJobQueue:
 
     def get_job(self, job_id: str) -> AustinJob | None:
         return self._jobs.get(job_id)
+    
+    def next(self) -> AustinJob | None:
+        """
+        Return the next queued job.
+        """
+
+        for job in self._jobs.values():
+            if job.status == "queued":
+                return job
+
+            return None
+
+    def all_jobs(self) -> list[AustinJob]:
+        """
+        Return every job.
+        """
+
+        return list(self._jobs.values())
 
     def mark_running(self, job_id: str) -> AustinJob | None:
         job = self._jobs.get(job_id)

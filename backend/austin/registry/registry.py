@@ -1,58 +1,246 @@
 """
 Austin Engine Registry
+
+Central runtime registry for Austin engines.
+
+Responsibilities
+----------------
+- Boot the registry
+- Discover engine manifests
+- Load engine instances
+- Register engines
+- Index by intent
+- Index by capability
+- Provide runtime lookup
 """
 
 from __future__ import annotations
 
-from .engine import Engine
+from collections import defaultdict
+from dataclasses import dataclass
+
+from backend.austin.registry.manifests.base import EngineManifest
+from backend.austin.registry.loader import loader
+from .discovery import engine_discovery
+
+@dataclass(slots=True)
+class EngineRecord:
+    manifest: EngineManifest
+    engine: object
 
 
-class EngineRegistry:
+class AustinRegistry:
 
     def __init__(self):
-        self._engines: dict[str, Engine] = {}
 
-    def register(self, engine: Engine):
-        self._engines[engine.name] = engine
+        self._records: dict[str, EngineRecord] = {}
 
-    def unregister(self, name: str):
-        self._engines.pop(name, None)
+        self._intent_index: dict[str, list[EngineRecord]] = (
+            defaultdict(list)
+        )
 
-    def get(self, name: str):
-        return self._engines.get(name)
+        self._capability_index: dict[
+            str,
+            list[EngineRecord],
+        ] = defaultdict(list)
 
-    def exists(self, name: str) -> bool:
-        return name in self._engines
+        self._booted = False
 
-    def list(self):
-        return list(self._engines.keys())
+    # ---------------------------------------------------------
+    # Boot
+    # ---------------------------------------------------------
 
-    def all(self):
-        return list(self._engines.values())
+    def boot(self) -> None:
 
-    def enabled(self):
+        if self._booted:
+            return
+
+        manifests = engine_discovery.discover()
+
+        for manifest in manifests:
+
+            self.register(manifest)
+
+        self._booted = True
+
+    # ---------------------------------------------------------
+    # Shutdown
+    # ---------------------------------------------------------
+
+    def shutdown(self) -> None:
+
+        loader.unload_all()
+
+        self._records.clear()
+
+        self._intent_index.clear()
+
+        self._capability_index.clear()
+
+        self._booted = False
+
+    # ---------------------------------------------------------
+    # Registration
+    # ---------------------------------------------------------
+
+    def register(
+        self,
+        manifest: EngineManifest,
+    ) -> None:
+
+        if not manifest.enabled:
+            return
+
+        engine = loader.load(manifest)
+
+        record = EngineRecord(
+
+            manifest=manifest,
+
+            engine=engine,
+
+        )
+
+        self._records[manifest.name] = record
+
+        for intent in manifest.intents:
+
+            self._intent_index[intent].append(
+                record
+            )
+
+        for capability in manifest.capabilities:
+
+            self._capability_index[
+                capability
+            ].append(record)
+
+    # ---------------------------------------------------------
+    # Engine Lookup
+    # ---------------------------------------------------------
+
+    def get(
+        self,
+        name: str,
+    ) -> object | None:
+
+        record = self._records.get(name)
+
+        if record:
+
+            return record.engine
+
+        return None
+
+    def manifest(
+        self,
+        name: str,
+    ) -> EngineManifest | None:
+
+        record = self._records.get(name)
+
+        if record:
+
+            return record.manifest
+
+        return None
+
+    # ---------------------------------------------------------
+    # Intent Lookup
+    # ---------------------------------------------------------
+
+    def find_by_intent(
+        self,
+        intent: str,
+    ) -> list[object]:
+
         return [
-            e
-            for e in self._engines.values()
-            if getattr(e, "enabled", True)
+
+            record.engine
+
+            for record in self._intent_index.get(
+                intent,
+                [],
+            )
+
         ]
 
-    def healthy(self):
+    # ---------------------------------------------------------
+    # Capability Lookup
+    # ---------------------------------------------------------
+
+    def find_by_capability(
+        self,
+        capability: str,
+    ) -> list[object]:
+
         return [
-            e
-            for e in self._engines.values()
-            if getattr(e, "healthy", True)
+
+            record.engine
+
+            for record in self._capability_index.get(
+                capability,
+                [],
+            )
+
         ]
 
-    def count(self):
-        return len(self._engines)
+    # ---------------------------------------------------------
+    # Listing
+    # ---------------------------------------------------------
 
-    def summary(self):
+    def list_engines(self) -> list[str]:
+
+        return sorted(
+
+            self._records.keys()
+
+        )
+
+    def manifests(self) -> list[EngineManifest]:
+
+        return [
+
+            record.manifest
+
+            for record in self._records.values()
+
+        ]
+
+    # ---------------------------------------------------------
+    # Statistics
+    # ---------------------------------------------------------
+
+    def count(self) -> int:
+
+        return len(self._records)
+
+    @property
+    def booted(self) -> bool:
+
+        return self._booted
+
+    # ---------------------------------------------------------
+    # Diagnostics
+    # ---------------------------------------------------------
+
+    def health(self) -> dict:
+
         return {
-            "registered": self.count(),
-            "healthy": len(self.healthy()),
-            "enabled": len(self.enabled()),
+
+            "booted": self._booted,
+
+            "engine_count": self.count(),
+
+            "engines": self.list_engines(),
+
+            "intents": len(self._intent_index),
+
+            "capabilities": len(
+                self._capability_index
+            ),
+
         }
 
 
-registry = EngineRegistry()
+registry = AustinRegistry()

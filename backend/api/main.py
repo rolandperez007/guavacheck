@@ -1,57 +1,104 @@
 """
-guavacheck Backend API
+GuavaCheck API
 
-Main FastAPI application entry point.
+Main FastAPI application entrypoint.
 """
 
 from __future__ import annotations
 
+import threading
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from backend.austin.bootstrap import initialize, startup_async
-from backend.austin.kernel import AustinContextMiddleware
-from backend.core.router_registry import register_routers
+from backend.api.routes.austin import router as austin_router
+from backend.austin.bootstrap import bootstrap_austin
+from backend.austin.worker import worker
 
+
+# ---------------------------------------------------------------------
+# Austin Worker
+# ---------------------------------------------------------------------
+
+_worker_thread: threading.Thread | None = None
+
+
+def start_austin_worker() -> None:
+    """
+    Start Austin's background worker exactly once.
+    """
+
+    global _worker_thread
+
+    if _worker_thread and _worker_thread.is_alive():
+        return
+
+    _worker_thread = threading.Thread(
+        target=worker.run,
+        daemon=True,
+        name="AustinWorker",
+    )
+
+    _worker_thread.start()
+
+
+# ---------------------------------------------------------------------
+# Application Lifecycle
+# ---------------------------------------------------------------------
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    Application startup/shutdown lifecycle.
-    """
 
-    # Initialize Austin core
-    initialize()
+    bootstrap_austin()
 
-    # Start Austin realtime services
-    await startup_async()
+    start_austin_worker()
+
+    print("=" * 70)
+    print("GuavaCheck API Online")
+    print("Austin Worker Online")
+    print("=" * 70)
 
     yield
 
-    # Future shutdown tasks go here
-    # e.g. await shutdown_async()
+    print("=" * 70)
+    print("GuavaCheck API Shutdown")
+    print("=" * 70)
 
 
-def create_application() -> FastAPI:
-    """
-    Create and configure the FastAPI application.
-    """
+# ---------------------------------------------------------------------
+# FastAPI
+# ---------------------------------------------------------------------
 
-    app = FastAPI(
-        title="guavacheck API",
-        description="AI-powered property verification, engineering and intelligence platform.",
-        version="1.0.0",
-        lifespan=lifespan,
-    )
+app = FastAPI(
+    title="GuavaCheck API",
+    version="1.0.0",
+    description="GuavaCheck Platform API",
+    lifespan=lifespan,
+)
 
-    # Austin request context
-    app.add_middleware(AustinContextMiddleware)
+# ---------------------------------------------------------------------
+# Routes
+# ---------------------------------------------------------------------
 
-    # Register API routes
-    register_routers(app)
-
-    return app
+app.include_router(austin_router)
 
 
-app = create_application()
+@app.get("/")
+async def root():
+    return {
+        "platform": "guavacheck",
+        "status": "online",
+        "austin": "online",
+    }
+
+
+@app.get("/health")
+async def health():
+    return {
+        "status": "healthy",
+        "worker": (
+            _worker_thread.is_alive()
+            if _worker_thread
+            else False
+        ),
+    }

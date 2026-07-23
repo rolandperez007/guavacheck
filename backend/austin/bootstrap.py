@@ -17,6 +17,16 @@ from backend.engines.property.engine import PropertyEngine
 from backend.engines.engineering.engine import EngineeringEngine
 from backend.engines.verification.engine import VerificationEngine
 from backend.engines.architecture.engine import ArchitectureEngine
+from backend.austin.registry.registry import registry
+
+def bootstrap_austin():
+
+    registry.boot()
+
+    print("=" * 70)
+    print("Austin Registry Booted")
+    print(registry.health())
+    print("=" * 70)
 
 def initialize():
 

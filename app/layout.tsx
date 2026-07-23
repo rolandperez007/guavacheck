@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { SITE } from "@/lib/seo/constants";
 import {
- organizationSchema,
- softwareSchema,
+  organizationSchema,
+  softwareSchema,
 } from "@/app/seo/schema";
 
 export const metadata: Metadata = {
@@ -85,6 +86,23 @@ export default function RootLayout({
   return (
     <html lang={SITE.language}>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D1XB03RNNW"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-D1XB03RNNW');
+          `}
+        </Script>
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,12 +110,11 @@ export default function RootLayout({
               organizationSchema(),
               softwareSchema(),
             ]),
-        }}
-      />
+          }}
+        />
 
-      {children}
-    </body>
-  </html>
-);
-
+        {children}
+      </body>
+    </html>
+  );
 } 

@@ -2,16 +2,22 @@
 Austin Registry Package
 """
 
-from .registry import registry
-from .loader import register_defaults
 from .capabilities import capability_registry
 from .discovery import engine_discovery
 from .health import registry_health
+from .loader import loader
+from .registry import registry
 
 __all__ = [
+
     "registry",
-    "register_defaults",
-    "capability_registry",
+
     "engine_discovery",
+
+    "loader",
+
+    "capability_registry",
+
     "registry_health",
+
 ]
