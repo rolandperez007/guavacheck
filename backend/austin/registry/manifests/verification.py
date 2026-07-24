@@ -9,7 +9,7 @@ MANIFEST = EngineManifest(
     description="Property verification engine.",
 
     engine_class=(
-        "backend.austin.engines.verification.engine."
+        "backend.engines.verification.engine.VerificationEngine"
         "VerificationEngine"
     ),
 

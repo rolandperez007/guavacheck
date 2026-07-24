@@ -1,54 +1,57 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-
-type Property = {
-  id: string;
-  title?: string;
-};
+import HeroCard from "@/components/dashboard/cards/HeroCard";
+import MissionControl from "@/components/dashboard/mission/MissionControl";
+import IntelligenceWall from "@/components/dashboard/intelligence/IntelligenceWall";
+import OpportunityFeed from "@/components/dashboard/ai/OpportunityFeed";
+import AustinPanel from "@/components/dashboard/ai/AustinPanel";
+import MarketPulse from "@/components/dashboard/market/MarketPulse";
+import PortfolioSummary from "@/components/dashboard/portfolio/PortfolioSummary";
+import ActivityFeed from "@/components/dashboard/activity/ActivityFeed";
+import DashboardShell from "@/components/dashboard/common/DashboardShell";
 
 export default function DashboardPage() {
-  const router = useRouter();
 
-  const [properties, setProperties] = useState<Property[]>([]);
-  const [fetching, setFetching] = useState(true);
+return(
 
-  // 🔐 TEMP SAFE REDIRECT (no auth system required)
-  useEffect(() => {
-    const isLoggedIn = false; // replace later when auth is ready
+<DashboardShell>
 
-    if (!isLoggedIn) {
-      router.push("/login");
-    }
-  }, [router]);
+<div className="space-y-8">
 
-  // 📦 mock data
-  useEffect(() => {
-    const mockData: Property[] = [
-      { id: "1", title: "Sample Property 1" },
-      { id: "2", title: "Sample Property 2" }
-    ];
+<HeroCard/>
 
-    setProperties(mockData);
-    setFetching(false);
-  }, []);
+<div className="grid gap-8 xl:grid-cols-3">
 
-  return (
-    <div style={{ padding: 20 }}>
-      <h1>Dashboard</h1>
+<div className="xl:col-span-2">
 
-      <h2>Your Properties</h2>
+<MissionControl/>
 
-      {fetching ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {properties.map((p) => (
-            <li key={p.id}>{p.title}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+</div>
+
+<AustinPanel/>
+
+</div>
+
+<IntelligenceWall/>
+
+<div className="grid gap-8 xl:grid-cols-2">
+
+<MarketPulse/>
+
+<OpportunityFeed/>
+
+</div>
+
+<div className="grid gap-8 xl:grid-cols-2">
+
+<ActivityFeed/>
+
+<PortfolioSummary/>
+
+</div>
+
+</div>
+
+</DashboardShell>
+
+)
+
 }

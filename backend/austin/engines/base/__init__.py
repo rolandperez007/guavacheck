@@ -1,5 +1,5 @@
 from .context import EngineContext
-from .engine import AustinEngine
+from .engine import BaseEngine
 from .exceptions import (
     AustinEngineError,
     EngineExecutionError,
@@ -8,7 +8,7 @@ from .exceptions import (
 from .result import EngineResult
 
 __all__ = [
-    "AustinEngine",
+    "BaseEngine",
     "EngineContext",
     "EngineResult",
     "AustinEngineError",

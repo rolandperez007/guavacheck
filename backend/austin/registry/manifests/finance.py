@@ -4,7 +4,7 @@ MANIFEST = EngineManifest(
     name="finance",
     version="1.0",
     priority=80,
-    engine_class="backend.austin.engines.finance.engine.FinanceEngine",
+    engine_class="backend.engines.finance.engine.FinanceEngine",
     description="Financial calculations.",
     capabilities=[
         "mortgage",

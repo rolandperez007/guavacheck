@@ -9,7 +9,7 @@ MANIFEST = EngineManifest(
     description="Engineering engine.",
 
     engine_class=(
-        "backend.austin.engines.engineering.engine."
+        "backend.engines.engineering.engine.EngineeringEngine"
         "EngineeringEngine"
     ),
 

@@ -2,8 +2,8 @@
 Conversation Engine
 """
 
-from .engine import conversation_engine
+from .engine import ConversationEngine
 
 __all__ = [
-    "conversation_engine",
+    "ConversationEngine",
 ]

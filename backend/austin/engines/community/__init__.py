@@ -2,8 +2,8 @@
 Community Engine
 """
 
-from .engine import community_engine
+from .engine import CommunityEngine
 
 __all__ = [
-    "community_engine",
+    "CommunityEngine",
 ]

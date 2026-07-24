@@ -2,45 +2,27 @@
 Austin Bootstrap
 
 Initializes Austin during application startup.
-
-This module connects every Austin subsystem together.
 """
 
 from __future__ import annotations
-from .registry.loader import register_defaults
+
 from .logger import logger
 from .personality import personality
 from .realtime import subscribe_to_events
 from .registry import registry
 from .startup import startup
-from backend.engines.property.engine import PropertyEngine
-from backend.engines.engineering.engine import EngineeringEngine
-from backend.engines.verification.engine import VerificationEngine
-from backend.engines.architecture.engine import ArchitectureEngine
-from backend.austin.registry.registry import registry
 
-def bootstrap_austin():
 
-    registry.boot()
+def bootstrap_austin() -> bool:
+    """
+    Initialize Austin.
+    """
 
-    print("=" * 70)
-    print("Austin Registry Booted")
-    print(registry.health())
-    print("=" * 70)
-
-def initialize():
-
-    logger.info("")
     logger.info("=" * 70)
     logger.info("Initializing Austin Core")
-
-    
-        
-        
-    
-        
     logger.info("=" * 70)
 
+    # Load doctrine/personality
     loaded = personality.load()
 
     logger.info(
@@ -48,28 +30,38 @@ def initialize():
         loaded,
     )
 
-    ENGINES = [
-        PropertyEngine,
-        EngineeringEngine,
-        ArchitectureEngine,
-        VerificationEngine,
-    ]
+    # Boot manifest-driven registry
+    registry.boot()
 
-    for engine in ENGINES:
-        registry.register(engine())
+    logger.info(
+        "Austin Registry Booted"
+    )
 
-    register_defaults()
+    logger.info(
+        registry.health()
+    )
+
+    # Startup hooks
     startup()
 
-    logger.info("Austin Bootstrap Complete.")
+    logger.info("=" * 70)
+    logger.info("Austin Bootstrap Complete")
+    logger.info("=" * 70)
 
     return True
-import asyncio
 
-async def startup_async():
 
-    logger.info("Starting Austin event subscriptions...")
+async def startup_async() -> None:
+    """
+    Start realtime services.
+    """
+
+    logger.info(
+        "Starting Austin realtime services..."
+    )
 
     await subscribe_to_events()
 
-    logger.info("Austin realtime services online.")
+    logger.info(
+        "Austin realtime services online."
+    )
