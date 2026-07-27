@@ -5,7 +5,9 @@ from fastapi.openapi.utils import get_openapi
 from app.api.routes.austin import router as austin_router
 from app.api.ws.austin_ws import router as ws_router
 from app.core.health import router as health_router
+from app.billing.router import router as billing_router
 
+app.include_router(billing_router)
 
 # -------------------------
 # CREATE APP FIRST

@@ -1,21 +1,49 @@
-export const worldState = {
+export type WorldPhase =
+  | "dawn"
+  | "morning"
+  | "day"
+  | "golden-hour"
+  | "sunset"
+  | "night";
 
-  weather: "clear",
+export interface WorldState {
 
-  time: "day",
+  now: Date;
 
-  activeUsers: 0,
+  timezone: string;
 
-  activeMissions: 0,
+  latitude?: number;
 
-  onlineAgents: 0,
+  longitude?: number;
 
-  properties: 0,
+  phase: WorldPhase;
 
-  traffic: 0,
+  sunrise: string;
 
-  construction: 0,
+  sunset: string;
 
-  verification: 0
+  temperature: number;
 
-};
+  humidity: number;
+
+  visibility: number;
+
+  windSpeed: number;
+
+  cloudCoverage: number;
+
+  precipitation: number;
+
+  raining: boolean;
+
+  storm: boolean;
+
+  trafficLevel: number;
+
+  peopleDensity: number;
+
+  starsVisible: boolean;
+
+  moonVisible: boolean;
+
+}
