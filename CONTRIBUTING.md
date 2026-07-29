@@ -1,445 +1,159 @@
-# CONTRIBUTING.md
+# Contributing to Guava
 
-# Contributing to guavacheck
+Welcome to the Guava Platform.
 
-Welcome to the guavacheck project.
-
-Thank you for your interest in helping build one of the world's most ambitious property and infrastructure intelligence platforms.
-
-This document explains how contributions should be made to ensure the platform remains secure, maintainable and consistent.
+This document defines the engineering standards for all contributors.
 
 ---
 
-# Before You Begin
+# Principles
 
-Please read the following documents before making significant changes:
+Write readable code.
 
-README.md
+Prefer composition over duplication.
 
-AUSTIN.md
+Keep engines independent.
 
-GUAVA_DOCTRINE.md
+Publish events instead of tightly coupling services.
 
-UI_BIBLE.md
-
-ARCHITECTURE.md
-
-ENGINES.md
-
-API.md
-
-CODE_OF_CONDUCT.md
-
-These documents define the philosophy and standards of the platform.
+Document major architectural changes.
 
 ---
 
-# Guiding Principle
+# Branching Strategy
 
-Every contribution should improve at least one of the following:
+main
 
-Trust
+Production-ready code.
 
-Performance
+develop
 
-Reliability
+Integration branch.
 
-Security
+feature/<name>
 
-Maintainability
+New features.
 
-Scalability
+bugfix/<name>
 
-Developer Experience
+Bug fixes.
 
-User Experience
+hotfix/<name>
 
-If a contribution improves none of these, reconsider it.
-
----
-
-# Development Workflow
-
-1.
-
-Fork or clone the repository.
-
-2.
-
-Create a new feature branch.
-
-Example:
-
-feature/property-search
-
-bugfix/auth-refresh
-
-docs/austin-update
-
-refactor/engineering-engine
-
-3.
-
-Keep commits focused.
-
-Avoid unrelated changes in the same commit.
-
-4.
-
-Open a Pull Request.
-
-5.
-
-Respond to review feedback professionally.
-
----
-
-# Branch Naming
-
-Examples
-
-feature/user-verification
-
-feature/austin-memory
-
-feature/engineering-engine
-
-bugfix/login-loop
-
-bugfix/api-timeout
-
-docs/readme-update
-
-docs/ui-bible
-
-refactor/property-engine
-
-hotfix/payment-service
+Production fixes.
 
 ---
 
 # Commit Messages
 
-Use clear commit messages.
-
 Examples
 
-feat: add engineering estimation engine
+feat: add Twin Registry
 
-fix: resolve authentication refresh bug
+fix: correct ownership validation
 
-docs: update Austin doctrine
+docs: update system architecture
 
-refactor: simplify property routing
+refactor: simplify finance engine
 
-perf: optimize map rendering
-
-security: improve token validation
-
-test: add verification engine tests
-
-Avoid messages like:
-
-update
-
-changes
-
-fix stuff
-
-misc
-
-done
+test: add passport integration tests
 
 ---
 
 # Pull Requests
 
-A Pull Request should explain:
+Every PR must include:
 
-What changed
+Description
 
-Why it changed
-
-How it was tested
-
-Any known limitations
-
-Screenshots if UI changed
-
-Documentation updates if required
-
----
-
-# Code Style
-
-Code should be:
-
-Readable
-
-Consistent
-
-Modular
-
-Well named
-
-Documented where necessary
-
-Avoid unnecessary complexity.
-
-Simple solutions usually scale better.
-
----
-
-# Documentation
-
-Every significant feature should include documentation.
-
-Documentation should be updated when:
-
-Architecture changes
-
-New APIs are introduced
-
-Austin behavior changes
-
-Engine responsibilities change
-
-Security procedures change
-
-Documentation is part of the product.
-
----
-
-# Austin
-
-Austin is the central intelligence.
-
-Contributors should avoid embedding business logic inside Austin.
-
-Austin should:
-
-Understand intent
-
-Select engines
-
-Coordinate engines
-
-Explain results
-
-Monitor operations
-
-Business logic belongs inside engines.
-
----
-
-# Engine Development
-
-Each engine should:
-
-Have a single responsibility.
-
-Remain independently testable.
-
-Expose clean interfaces.
-
-Avoid unnecessary dependencies.
-
-Register through Austin.
-
-Every new engine should include:
-
-Documentation
-
-Configuration
+Screenshots (if UI)
 
 Tests
 
-Health checks
+Documentation updates
 
-Logging
-
-Version information
+Migration notes (if required)
 
 ---
 
-# Security
+# Coding Standards
 
-Never commit:
+Use clear names.
 
-Passwords
+Write modular code.
 
-Secrets
+Keep functions focused.
 
-Private keys
+Avoid duplicated logic.
 
-Tokens
+Add comments only where necessary.
 
-Database credentials
-
-Certificates
-
-Environment files
-
-Sensitive customer data
-
-Use environment variables.
-
-Review security implications before submitting code.
+Prefer dependency injection.
 
 ---
 
 # Testing
 
-Before submitting changes:
+Unit Tests
 
-Run linting.
+Integration Tests
 
-Run unit tests.
+API Tests
 
-Run integration tests.
+Event Tests
 
-Verify affected workflows.
+Performance Tests
 
-Confirm documentation remains accurate.
-
-Production stability is more important than development speed.
+Security Tests
 
 ---
 
-# Performance
+# Documentation
 
-Avoid introducing:
+Major changes must update:
 
-Unnecessary database queries
+SYSTEM_ARCHITECTURE.md
 
-Large bundle sizes
+ROADMAP.md
 
-Blocking operations
+ENGINE specifications
 
-Memory leaks
+API Guide
 
-Duplicate calculations
-
-Performance should improve over time.
+Database Guide
 
 ---
 
-# User Experience
+# Review Checklist
 
-Every interface should remain:
+Architecture
 
-Simple
+Security
 
-Accessible
+Performance
 
-Responsive
+Documentation
 
-Predictable
+Tests
 
-Professional
+Events
 
-Complex engineering should remain behind the interface.
-
----
-
-# Reviews
-
-Code reviews exist to improve quality.
-
-Review feedback should:
-
-Remain respectful
-
-Explain reasoning
-
-Suggest improvements
-
-Focus on code
-
-Not individuals
-
-The objective is a better platform.
+Backward compatibility
 
 ---
 
-# Version Control
+# Engineering Values
 
-Never rewrite published history without team approval.
+Build Once.
 
-Avoid force pushes to protected branches.
+Reuse Everywhere.
 
-Keep history understandable.
+Protect Trust.
 
-Future engineers should understand why changes were made.
+Optimise Continuously.
 
----
+Think Platform.
 
-# Issues
+Think Long-Term.
 
-When reporting an issue include:
-
-Description
-
-Expected behaviour
-
-Actual behaviour
-
-Steps to reproduce
-
-Logs if available
-
-Screenshots when useful
-
-Platform information
-
----
-
-# Feature Requests
-
-Feature requests should explain:
-
-Problem
-
-Proposed solution
-
-Alternatives considered
-
-Expected user value
-
-Architectural impact
-
-Features should solve real problems.
-
----
-
-# Philosophy
-
-We build for decades.
-
-Not for demonstrations.
-
-Not for temporary trends.
-
-Every contribution should move guavacheck closer to becoming the world's most trusted operating intelligence for property and infrastructure.
-
----
-
-# Thank You
-
-Every contribution strengthens the platform.
-
-Every improvement helps future users.
-
-Every engineer helps shape the future of guavacheck.
-
-We appreciate your professionalism, curiosity and commitment.
-
----
-
-© 2026 Guava Inc.
-
-Intelligence with integrity.
-
-Technology with purpose.
-
-Trust above everything.
+Every commit should improve the platform.
