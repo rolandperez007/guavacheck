@@ -9,7 +9,13 @@ from app.billing.router import router as billing_router
 from app.twin.router import router as twin_router
 from fastapi.staticfiles import StaticFiles
 from app.property.api.router import router as property_router
+from fastapi import APIRouter
 
+from app.property.api.graph import router as graph_router
+
+router = APIRouter()
+
+router.include_router(graph_router)
 
 # -------------------------
 # CREATE APP FIRST

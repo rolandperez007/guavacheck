@@ -1,6 +1,9 @@
+from uuid import UUID
+
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
@@ -12,17 +15,19 @@ from app.vision.models.base import VisionBase
 class Render(VisionBase):
     __tablename__ = "vision_renders"
 
-    project_id: Mapped[str] = mapped_column(
+    project_id: Mapped[UUID] = mapped_column(
+        PG_UUID(as_uuid=True),
         ForeignKey("vision_projects.id"),
         nullable=False,
     )
 
-    room_id: Mapped[str] = mapped_column(
+    room_id: Mapped[UUID] = mapped_column(
+        PG_UUID(as_uuid=True),
         ForeignKey("vision_rooms.id"),
         nullable=False,
     )
 
-    image_url: Mapped[str] = mapped_column(
+    image_url: Mapped[str | None] = mapped_column(
         String(500),
         nullable=True,
     )
@@ -32,7 +37,7 @@ class Render(VisionBase):
         nullable=False,
     )
 
-    prompt: Mapped[str] = mapped_column(
+    prompt: Mapped[str | None] = mapped_column(
         String(4000),
         nullable=True,
     )
@@ -40,11 +45,13 @@ class Render(VisionBase):
     version: Mapped[int] = mapped_column(
         Integer,
         default=1,
+        nullable=False,
     )
 
     status: Mapped[str] = mapped_column(
         String(30),
         default="pending",
+        nullable=False,
     )
 
     project = relationship(

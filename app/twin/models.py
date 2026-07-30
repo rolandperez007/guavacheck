@@ -1,24 +1,25 @@
-from datetime import datetime
-from uuid import uuid4
-
-from sqlalchemy import DateTime
 from sqlalchemy import Integer
 from sqlalchemy import String
 
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
-
 from app.db.base import Base
+from app.db.constants import STATUS_LENGTH
+from app.db.mixins import TimestampMixin
+from app.db.mixins import UUIDMixin
 
-class Twin(Base):
+
+class Twin(
+    UUIDMixin,
+    TimestampMixin,
+    Base,
+):
+    """
+    Digital representation of a physical property.
+    """
+
     __tablename__ = "twins"
-
-    id: Mapped[str] = mapped_column(
-        String(36),
-        primary_key=True,
-        default=lambda: str(uuid4()),
-    )
 
     property_id: Mapped[str] = mapped_column(
         String(36),
@@ -26,7 +27,7 @@ class Twin(Base):
         index=True,
     )
 
-    passport_id: Mapped[str] = mapped_column(
+    passport_id: Mapped[str | None] = mapped_column(
         String(36),
         nullable=True,
     )
@@ -34,25 +35,17 @@ class Twin(Base):
     owner_id: Mapped[str] = mapped_column(
         String(36),
         nullable=False,
+        index=True,
     )
 
     status: Mapped[str] = mapped_column(
-        String(20),
+        String(STATUS_LENGTH),
         default="active",
+        nullable=False,
     )
 
     version: Mapped[int] = mapped_column(
         Integer,
         default=1,
-    )
-
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime,
-        default=datetime.utcnow,
-    )
-
-    updated_at: Mapped[datetime] = mapped_column(
-        DateTime,
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow,
+        nullable=False,
     )

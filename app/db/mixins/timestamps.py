@@ -1,27 +1,14 @@
 from datetime import datetime
-from uuid import uuid4
-from uuid import UUID
 
 from sqlalchemy import DateTime
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
-from app.db.base import Base
 
-
-class VisionBase(Base):
+class TimestampMixin:
     """
-    Base class for all Vision ORM models.
+    Adds creation and update timestamps.
     """
-
-    __abstract__ = True
-
-    id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        primary_key=True,
-        default=uuid4,
-    )
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime,
