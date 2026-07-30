@@ -3,8 +3,7 @@ from fastapi import Depends
 
 from sqlalchemy.orm import Session
 
-from app.database.session import get_db
-
+from app.db.dependencies import get_db
 from app.twin.schemas import TwinCreate
 from app.twin.service import TwinService
 

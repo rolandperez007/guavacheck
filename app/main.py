@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
-
+from app.vision.api.router import router as vision_router
 from app.api.routes.austin import router as austin_router
 from app.api.ws.austin_ws import router as ws_router
 from app.core.health import router as health_router
 from app.billing.router import router as billing_router
 from app.twin.router import router as twin_router
+from fastapi.staticfiles import StaticFiles
+from app.property.api.router import router as property_router
 
-app.include_router(twin_router)
-app.include_router(billing_router)
 
 # -------------------------
 # CREATE APP FIRST
@@ -59,7 +59,7 @@ app.openapi = custom_openapi
 # -------------------------
 # MIDDLEWARE
 # -------------------------
-from fastapi.middleware.cors import CORSMiddleware
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -76,7 +76,11 @@ app.add_middleware(
 app.include_router(austin_router, prefix="/austin")
 app.include_router(ws_router)
 app.include_router(health_router)
-
+app.include_router(twin_router)
+app.include_router(billing_router)
+app.include_router(vision_router)
+app.include_router(property_router)
+app.mount("/storage",StaticFiles(directory="storage"),name="storage",)
 
 # -------------------------
 # STARTUP
