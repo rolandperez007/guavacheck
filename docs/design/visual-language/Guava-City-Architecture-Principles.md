@@ -1,9 +1,9 @@
 # Guava City Architecture Principles
 
-**Version:** 1.0  
-**System:** Guava City Experience Architecture  
-**Product:** guavacheck  
-**Powered By:** Austin Cognitive Operating System
+Version: 1.0  
+System: Guava City Experience Architecture  
+Product: guavacheck  
+Powered By: Austin Cognitive Operating System
 
 ---
 
@@ -42,7 +42,6 @@ Example:
 
 Technical:
 
-```
 Database
 
 AI Model
@@ -50,11 +49,9 @@ AI Model
 API
 
 Workflow
-```
 
 Human:
 
-```
 Find a Home
 
 Invest Money
@@ -64,7 +61,6 @@ Build Property
 Verify Ownership
 
 Understand Market
-```
 
 The city is designed around human activity.
 
@@ -104,7 +100,6 @@ Example:
 
 Buying Property:
 
-```
 Discovery Street
 
 ↓
@@ -122,7 +117,6 @@ Verification District
 ↓
 
 Ownership Gate
-```
 
 Workflows should feel natural.
 
@@ -199,13 +193,11 @@ Complex systems require simple interfaces.
 
 Every screen should answer:
 
-```
 Where am I?
 
 What can I do?
 
 What happens next?
-```
 
 ---
 
@@ -358,7 +350,6 @@ No district exists without a blueprint.
 
 Every architectural concept maps to:
 
-```
 Architecture
 
 ↓
@@ -380,7 +371,6 @@ Prototype
 ↓
 
 Production Code
-```
 
 Design and engineering remain synchronized.
 

@@ -44,7 +44,6 @@ The objective is to create the world's most trusted property intelligence enviro
 
 Guava City follows a simple architectural model:
 
-```
 City
  |
  +-- Districts
@@ -56,11 +55,10 @@ City
                   +-- Workflows
                         |
                         +-- Actions
-```
+
 
 Translation:
 
-```
 Districts
 =
 Major Product Domains
@@ -80,7 +78,6 @@ Users
 Austin
 =
 City Intelligence
-```
 
 ---
 
@@ -303,7 +300,6 @@ Contains:
 
 Guava City navigation consists of:
 
-```
 City Map
 
 District Selector
@@ -317,7 +313,6 @@ Notifications
 Identity
 
 Settings
-```
 
 The user should always understand:
 

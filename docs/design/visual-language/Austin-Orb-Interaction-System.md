@@ -1,9 +1,9 @@
 # Austin Orb Interaction System
 
-**Version:** 1.0  
-**System:** Guava City Experience Architecture  
-**Intelligence Layer:** Austin Cognitive Operating System  
-**Product:** guavacheck
+Version: 1.0  
+System: Guava City Experience Architecture  
+Intelligence Layer: Austin Cognitive Operating System  
+Product: guavacheck
 
 ---
 
@@ -61,7 +61,6 @@ Not:
 
 The Orb represents:
 
-```
 Austin Intelligence
 
 +
@@ -71,7 +70,6 @@ Human Interaction
 +
 
 Trust Layer
-```
 
 The Orb is a living interface element.
 
@@ -320,7 +318,6 @@ When Austin provides an important recommendation:
 
 The Orb can reveal:
 
-```
 Recommendation
 
 ↓
@@ -338,7 +335,6 @@ Sources
 ↓
 
 Possible Risks
-```
 
 Trust is built through visibility.
 
