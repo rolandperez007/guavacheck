@@ -1,0 +1,25 @@
+name: Victoria Island
+
+country: Nigeria
+
+level: district
+
+type: commercial
+
+property:
+  categories:
+    - office
+    - luxury_residential
+    - retail
+
+market:
+  profile: premium
+
+infrastructure:
+  transport:
+    - roads
+    - bridges
+
+investment:
+  profile:
+    opportunity: high

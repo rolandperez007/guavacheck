@@ -34,16 +34,6 @@ def test_world_bootstrap():
     registry = WorldGraphRegistry()
 
 
-    registry.register_country(
-
-        "Nigeria",
-
-        {
-            "currency": "NGN",
-        }
-
-    )
-
 
     bootstrap = WorldBootstrap(
 
@@ -57,6 +47,7 @@ def test_world_bootstrap():
     result = bootstrap.boot()
 
 
+
     assert (
         result["status"]
         ==
@@ -65,8 +56,15 @@ def test_world_bootstrap():
 
 
     assert (
-        result["registry"]["countries"]
-        ==
+        result["world"]["countries"]
+        >=
+        1
+    )
+
+
+    assert (
+        result["world"]["districts"]
+        >=
         1
     )
 

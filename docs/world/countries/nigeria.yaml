@@ -1,0 +1,43 @@
+name: Nigeria
+
+code: NG
+
+continent: Africa
+
+currency:
+  code: NGN
+  symbol: ₦
+
+geography:
+  capital: Abuja
+
+economy:
+  sectors:
+    - real_estate
+    - technology
+    - agriculture
+    - energy
+
+construction:
+  materials:
+    - concrete
+    - steel
+    - blockwork
+
+property:
+  categories:
+    - residential
+    - commercial
+    - industrial
+    - land
+
+verification:
+  required:
+    - ownership
+    - documentation
+    - location
+
+investment:
+  profile:
+    risk: medium
+    opportunity: high
