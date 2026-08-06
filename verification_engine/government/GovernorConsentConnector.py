@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class GovernorConsentConnector:
     """
     Governor's Consent verification.
@@ -11,7 +8,7 @@ class GovernorConsentConnector:
 
     source = "Governor Consent"
 
-    def verify(self, consent_number: str) -> Dict:
+    def verify(self, consent_number: str) -> dict:
 
         return {
             "verified": False,

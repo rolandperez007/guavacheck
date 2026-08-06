@@ -9,21 +9,19 @@
  */
 
 export interface EventMetadata {
+  environment: string;
 
-    environment: string;
+  runtime: string;
 
-    runtime: string;
+  region: string;
 
-    region: string;
+  engine: string;
 
-    engine: string;
+  version: string;
 
-    version: string;
+  hostname?: string;
 
-    hostname?: string;
+  ipAddress?: string;
 
-    ipAddress?: string;
-
-    traceId?: string;
-
+  traceId?: string;
 }

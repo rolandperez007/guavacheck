@@ -3,15 +3,12 @@ import { ListingGenerator } from "@/lib/austin/marketing/ListingGenerator";
 import { CommunityEngine } from "@/lib/austin/marketing/CommunityEngine";
 
 export class MarketplaceBrain {
-
   static async processFeed(properties: any[]) {
-
     type MarketplaceResult = any;
 
     const results: MarketplaceResult[] = [];
 
     for (const property of properties) {
-
       // 1. FULL AUTONOMOUS ANALYSIS
       const agent = await AustinAutonomousAgent.run(property);
 
@@ -38,7 +35,7 @@ export class MarketplaceBrain {
         negotiation: agent.negotiation,
         analysis: agent.analysis,
 
-        marketAction
+        marketAction,
       });
     }
 
@@ -46,30 +43,27 @@ export class MarketplaceBrain {
   }
 
   static route(decision: string, agent: any, property: any) {
-
     switch (decision) {
-
       case "PROCEED":
         return {
           action: "AUTO_LIST_AND_PUSH",
           priority: "HIGH",
-          reason: "High ROI + strong deal signal"
+          reason: "High ROI + strong deal signal",
         };
 
       case "MONITOR":
         return {
           action: "TRACK_AND_SCORE",
           priority: "MEDIUM",
-          reason: "Potential opportunity pending improvement"
+          reason: "Potential opportunity pending improvement",
         };
 
       default:
         return {
           action: "IGNORE",
           priority: "LOW",
-          reason: "Weak market signal"
+          reason: "Weak market signal",
         };
     }
   }
 }
-

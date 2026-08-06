@@ -10,15 +10,11 @@
 import { Event } from "./Event";
 
 export interface EventSubscriber {
+  subscribe(
+    event: string,
 
-    subscribe(
+    handler: (event: Event) => Promise<void>,
+  ): Promise<void>;
 
-        event: string,
-
-        handler: (event: Event) => Promise<void>
-
-    ): Promise<void>;
-
-    unsubscribe(event: string): Promise<void>;
-
+  unsubscribe(event: string): Promise<void>;
 }

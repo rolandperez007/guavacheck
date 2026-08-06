@@ -26,7 +26,7 @@ export function AustinTimeline({ events }: { events: Event[] }) {
         padding: 12,
         background: "#fafafa",
         fontFamily: "monospace",
-        fontSize: 12
+        fontSize: 12,
       }}
     >
       {events.map((e, i) => (
@@ -40,12 +40,3 @@ export function AustinTimeline({ events }: { events: Event[] }) {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-

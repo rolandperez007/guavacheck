@@ -1,29 +1,23 @@
 import { SystemHealth } from "./SystemHealthEngine";
 
 export interface DashboardSummary {
+  uptime: number;
 
-    uptime: number;
+  onlineUsers: number;
 
-    onlineUsers: number;
+  activeProjects: number;
 
-    activeProjects: number;
+  activeEscrows: number;
 
-    activeEscrows: number;
+  pendingVerifications: number;
 
-    pendingVerifications: number;
+  unresolvedAlerts: number;
 
-    unresolvedAlerts: number;
-
-    health: SystemHealth;
-
+  health: SystemHealth;
 }
 
 export class OperationsDashboard {
-
-    static generate(summary: DashboardSummary): DashboardSummary {
-
-        return summary;
-
-    }
-
+  static generate(summary: DashboardSummary): DashboardSummary {
+    return summary;
+  }
 }

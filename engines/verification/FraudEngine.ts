@@ -1,27 +1,17 @@
 export interface FraudSignal {
+  id: string;
 
-    id: string;
+  entityId: string;
 
-    entityId: string;
+  type: string;
 
-    type: string;
+  severity: "low" | "medium" | "high" | "critical";
 
-    severity: "low" | "medium" | "high" | "critical";
-
-    detectedAt: Date;
-
+  detectedAt: Date;
 }
 
 export class FraudEngine {
-
-    static suspicious(signals: FraudSignal[]): boolean {
-
-        return signals.some(signal =>
-
-            signal.severity === "critical"
-
-        );
-
-    }
-
+  static suspicious(signals: FraudSignal[]): boolean {
+    return signals.some((signal) => signal.severity === "critical");
+  }
 }

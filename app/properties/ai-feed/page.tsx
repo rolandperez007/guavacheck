@@ -58,7 +58,7 @@ export default function PropertiesPage() {
       result = result.filter(
         (p) =>
           p.title?.toLowerCase().includes(search.toLowerCase()) ||
-          p.location?.toLowerCase().includes(search.toLowerCase())
+          p.location?.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
@@ -83,9 +83,7 @@ export default function PropertiesPage() {
 
   return (
     <div style={{ padding: 30 }}>
-      <h1 style={{ fontSize: 28, marginBottom: 20 }}>
-        AI Property Intelligence Feed
-      </h1>
+      <h1 style={{ fontSize: 28, marginBottom: 20 }}>AI Property Intelligence Feed</h1>
 
       {/* FILTERS */}
       <div
@@ -117,11 +115,7 @@ export default function PropertiesPage() {
           style={{ padding: 10 }}
         />
 
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          style={{ padding: 10 }}
-        >
+        <select value={status} onChange={(e) => setStatus(e.target.value)} style={{ padding: 10 }}>
           <option value="all">All</option>
           <option value="draft">Draft</option>
           <option value="active">Active</option>

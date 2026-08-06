@@ -1,15 +1,13 @@
 export interface TimelineEvent {
+  id: string;
 
-    id: string;
+  projectId: string;
 
-    projectId: string;
+  title: string;
 
-    title: string;
+  description?: string;
 
-    description?: string;
+  createdAt: Date;
 
-    createdAt: Date;
-
-    createdBy: string;
-
+  createdBy: string;
 }

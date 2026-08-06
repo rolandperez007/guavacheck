@@ -12,16 +12,13 @@ async def auth_guard(request: Request, call_next):
         "/status",
         "/docs",
         "/openapi.json",
-        "/redoc"
+        "/redoc",
     ]:
         return await call_next(request)
 
     api_key = request.headers.get("x-api-key")
 
     if api_key != API_SECRET:
-        return JSONResponse(
-            status_code=401,
-            content={"error": "Unauthorized"}
-        )
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
 
     return await call_next(request)

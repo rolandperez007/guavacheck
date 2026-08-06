@@ -1,20 +1,19 @@
 export default function NotFound() {
   return (
-    <div style={{
-      minHeight: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexDirection: "column",
-      textAlign: "center",
-      padding: "40px",
-      background: "#0b0f17",
-      color: "white"
-    }}>
-      
-      <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
-        404
-      </h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        textAlign: "center",
+        padding: "40px",
+        background: "#0b0f17",
+        color: "white",
+      }}
+    >
+      <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>404</h1>
 
       <h2 style={{ marginBottom: "20px", opacity: 0.9 }}>
         Oops! This space isn’t built yet inside GuavaCheck.
@@ -28,7 +27,7 @@ export default function NotFound() {
           maxWidth: "700px",
           borderRadius: "16px",
           marginBottom: "25px",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.4)"
+          boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
         }}
       />
 
@@ -37,9 +36,15 @@ export default function NotFound() {
       </p>
 
       <div style={{ marginTop: "30px", display: "flex", gap: "15px" }}>
-        <a href="/" style={btnStyle}>Back to Home</a>
-        <a href="/search" style={btnStyle}>Search</a>
-        <a href="/contact" style={btnStyle}>Contact Us</a>
+        <a href="/" style={btnStyle}>
+          Back to Home
+        </a>
+        <a href="/search" style={btnStyle}>
+          Search
+        </a>
+        <a href="/contact" style={btnStyle}>
+          Contact Us
+        </a>
       </div>
     </div>
   );
@@ -51,7 +56,5 @@ const btnStyle = {
   background: "#1f2937",
   color: "white",
   textDecoration: "none",
-  fontSize: "14px"
+  fontSize: "14px",
 };
-
-

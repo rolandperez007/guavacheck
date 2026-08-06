@@ -64,7 +64,7 @@ class AustinJobQueue:
 
     def get_job(self, job_id: str) -> AustinJob | None:
         return self._jobs.get(job_id)
-    
+
     def next(self) -> AustinJob | None:
         """
         Return the next queued job.
@@ -92,7 +92,9 @@ class AustinJobQueue:
         job.attempts += 1
         return job
 
-    def complete(self, job_id: str, execution_time_ms: int | None = None) -> AustinJob | None:
+    def complete(
+        self, job_id: str, execution_time_ms: int | None = None
+    ) -> AustinJob | None:
         job = self._jobs.get(job_id)
         if not job:
             return None

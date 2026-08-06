@@ -7,19 +7,11 @@
  * ===========================================================
  */
 
-export type BillingCycle =
-  | "monthly"
-  | "yearly";
+export type BillingCycle = "monthly" | "yearly";
 
-export type PlanType =
-  | "free"
-  | "starter"
-  | "professional"
-  | "business"
-  | "enterprise";
+export type PlanType = "free" | "starter" | "professional" | "business" | "enterprise";
 
 export interface Plan {
-
   id: PlanType;
 
   name: string;
@@ -34,7 +26,6 @@ export interface Plan {
 }
 
 export interface CountryTier {
-
   countryCode: string;
 
   tier: number;
@@ -47,7 +38,6 @@ export interface CountryTier {
 }
 
 export interface PricingRequest {
-
   country: string;
 
   currency?: string;
@@ -58,7 +48,6 @@ export interface PricingRequest {
 }
 
 export interface PricingResult {
-
   success: boolean;
 
   originalPriceUSD: number;

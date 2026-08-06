@@ -5,27 +5,19 @@
  */
 
 export class FlutterwaveProvider {
+  async initializeTransaction(data: unknown) {
+    console.log("Flutterwave checkout");
 
-    async initializeTransaction(data: unknown) {
+    return {
+      success: true,
 
-        console.log("Flutterwave checkout");
+      provider: "flutterwave",
 
-        return {
+      transaction: null,
 
-            success: true,
-
-            provider: "flutterwave",
-
-            transaction: null,
-
-            data
-
-        };
-
-    }
-
+      data,
+    };
+  }
 }
 
-export const flutterwaveProvider =
-
-new FlutterwaveProvider();
+export const flutterwaveProvider = new FlutterwaveProvider();

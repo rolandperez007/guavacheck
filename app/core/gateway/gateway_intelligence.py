@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, Any
+from typing import Any
 
 
 @dataclass
@@ -34,7 +34,7 @@ class GatewayIntelligence:
     """
 
     def classify(
-        self, query: str, context: Dict[str, Any] | None = None
+        self, query: str, context: dict[str, Any] | None = None
     ) -> RoutingDecision:
         query_lower = query.lower()
 

@@ -1,41 +1,31 @@
 export interface VerificationExplanation {
+  decision: string;
 
-    decision: string;
+  confidence: number;
 
-    confidence: number;
+  reasons: string[];
 
-    reasons: string[];
-
-    recommendations: string[];
-
+  recommendations: string[];
 }
 
 export class ExplanationEngine {
+  static generate(
+    decision: string,
 
-    static generate(
+    confidence: number,
 
-        decision: string,
+    reasons: string[],
 
-        confidence: number,
+    recommendations: string[],
+  ): VerificationExplanation {
+    return {
+      decision,
 
-        reasons: string[],
+      confidence,
 
-        recommendations: string[]
+      reasons,
 
-    ): VerificationExplanation {
-
-        return {
-
-            decision,
-
-            confidence,
-
-            reasons,
-
-            recommendations
-
-        };
-
-    }
-
+      recommendations,
+    };
+  }
 }

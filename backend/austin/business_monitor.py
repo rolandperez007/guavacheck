@@ -36,7 +36,9 @@ class BusinessMonitor:
                 for name, stages in self._workflows.items()
             },
             "failed_workflows": [
-                name for name, stages in self._workflows.items() if any(stage.status == "failed" for stage in stages)
+                name
+                for name, stages in self._workflows.items()
+                if any(stage.status == "failed" for stage in stages)
             ],
         }
 

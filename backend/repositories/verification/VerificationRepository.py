@@ -13,7 +13,6 @@ from database.connection import database
 
 
 class VerificationRepository:
-
     def __init__(self):
         self.database = database
 

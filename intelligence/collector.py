@@ -2,8 +2,8 @@ from datetime import datetime
 
 from .models import Event
 
-class EventCollector:
 
+class EventCollector:
     async def collect(self, payload):
 
         return Event(
@@ -16,5 +16,6 @@ class EventCollector:
             metadata=payload.metadata,
             created_at=datetime.utcnow(),
         )
+
 
 collector = EventCollector()

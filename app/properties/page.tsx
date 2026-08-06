@@ -48,7 +48,7 @@ export default function PropertiesPage() {
       result = result.filter(
         (p) =>
           p.title?.toLowerCase().includes(search.toLowerCase()) ||
-          p.location?.toLowerCase().includes(search.toLowerCase())
+          p.location?.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
@@ -77,8 +77,16 @@ export default function PropertiesPage() {
 
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 10 }}>
         <input placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
-        <input placeholder="Min Price" value={minPrice} onChange={(e) => setMinPrice(e.target.value)} />
-        <input placeholder="Max Price" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
+        <input
+          placeholder="Min Price"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+        />
+        <input
+          placeholder="Max Price"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+        />
 
         <select value={status} onChange={(e) => setStatus(e.target.value)}>
           <option value="all">All</option>

@@ -1,5 +1,5 @@
-from irongate.core.rating_engine import build_ai_status
 from irongate.bootstrap import gate
+from irongate.core.rating_engine import build_ai_status
 
 
 def get_system_snapshot():

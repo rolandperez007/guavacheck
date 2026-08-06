@@ -1,26 +1,23 @@
 export class AISelfImprovementEngine {
-
   static proposals: any[] = [];
 
   static logPerformance(data: any) {
-
     return {
       stored: true,
       timestamp: new Date(),
-      data
+      data,
     };
   }
 
   // 🧠 AI suggests improvements (does NOT apply them automatically)
   static analyzeSystem(metrics: any) {
-
     const suggestions: any[] = [];
 
     if (metrics.successRate < 50) {
       suggestions.push({
         area: "valuation_engine",
         change: "increase_risk_weight",
-        reason: "low deal success rate"
+        reason: "low deal success rate",
       });
     }
 
@@ -28,7 +25,7 @@ export class AISelfImprovementEngine {
       suggestions.push({
         area: "investment_model",
         change: "adjust_roi_threshold",
-        reason: "weak investment performance"
+        reason: "weak investment performance",
       });
     }
 
@@ -36,7 +33,7 @@ export class AISelfImprovementEngine {
       suggestions.push({
         area: "negotiation_ai",
         change: "improve_offer_strategy",
-        reason: "high failure rate"
+        reason: "high failure rate",
       });
     }
 
@@ -44,13 +41,12 @@ export class AISelfImprovementEngine {
 
     return {
       suggestions,
-      totalProposals: this.proposals.length
+      totalProposals: this.proposals.length,
     };
   }
 
   // 🧠 Human approval gate (IMPORTANT)
   static approveProposal(index: number) {
-
     const proposal = this.proposals[index];
 
     if (!proposal) {
@@ -60,12 +56,11 @@ export class AISelfImprovementEngine {
     return {
       status: "approved",
       proposal,
-      message: "Ready for execution in system layer"
+      message: "Ready for execution in system layer",
     };
   }
 
   static rejectProposal(index: number) {
-
     const proposal = this.proposals[index];
 
     if (!proposal) {
@@ -76,7 +71,7 @@ export class AISelfImprovementEngine {
 
     return {
       status: "rejected",
-      remaining: this.proposals.length
+      remaining: this.proposals.length,
     };
   }
 
@@ -84,4 +79,3 @@ export class AISelfImprovementEngine {
     return this.proposals;
   }
 }
-

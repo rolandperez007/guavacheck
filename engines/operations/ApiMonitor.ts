@@ -1,29 +1,21 @@
 export interface ApiMetric {
+  endpoint: string;
 
-    endpoint: string;
+  averageResponse: number;
 
-    averageResponse: number;
+  requests: number;
 
-    requests: number;
+  errors: number;
 
-    errors: number;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }
 
 export class ApiMonitor {
+  static health(metric: ApiMetric): string {
+    if (metric.errors > 10) return "critical";
 
-    static health(metric: ApiMetric): string {
+    if (metric.averageResponse > 500) return "warning";
 
-        if (metric.errors > 10)
-            return "critical";
-
-        if (metric.averageResponse > 500)
-            return "warning";
-
-        return "healthy";
-
-    }
-
+    return "healthy";
+  }
 }

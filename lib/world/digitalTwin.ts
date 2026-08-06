@@ -1,15 +1,11 @@
 import { runSimulation } from "./simulation";
 
-export function getDigitalTwin(){
+export function getDigitalTwin() {
+  return {
+    city: runSimulation(),
 
-    return{
+    version: "1.0",
 
-        city:runSimulation(),
-
-        version:"1.0",
-
-        syncedAt:new Date().toISOString()
-
-    };
-
+    syncedAt: new Date().toISOString(),
+  };
 }

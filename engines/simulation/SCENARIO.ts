@@ -1,13 +1,11 @@
 export interface Scenario {
+  id: string;
 
-    id: string;
+  title: string;
 
-    title: string;
+  objective: string;
 
-    objective: string;
+  trigger: string;
 
-    trigger: string;
-
-    participants: string[];
-
+  participants: string[];
 }

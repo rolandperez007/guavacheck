@@ -7,34 +7,24 @@ Austin is responsible for orchestrating every major subsystem
 inside the platform.
 """
 
-from .startup import startup
-from .router import router
-from .registry import registry
-from .memory import memory
 from .context import context_manager
-from .health import health
 from .events import events
-from .status import status
+from .health import health
+from .memory import memory
 from .personality import personality
+from .registry import registry
+from .router import router
+from .startup import startup
+from .status import status
 
 __all__ = [
-
-    "startup",
-
-    "router",
-
-    "registry",
-
-    "memory",
-
     "context_manager",
-
-    "health",
-
     "events",
-
-    "status",
-
+    "health",
+    "memory",
     "personality",
-
+    "registry",
+    "router",
+    "startup",
+    "status",
 ]

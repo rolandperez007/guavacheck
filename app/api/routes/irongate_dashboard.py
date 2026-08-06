@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+
 from irongate.telemetry import get_metrics, get_recent
 
 router = APIRouter()

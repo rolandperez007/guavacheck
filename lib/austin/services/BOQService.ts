@@ -14,7 +14,7 @@ export class BOQService {
   static calculateTotalCost(data: any) {
     return {
       total: 0,
-      breakdown: []
+      breakdown: [],
     };
   }
 }

@@ -3,7 +3,6 @@
 export default function AmbientLife() {
   return (
     <div className="absolute inset-0 pointer-events-none">
-
       {/* Future simulation layer:
           vehicles
           pedestrians
@@ -21,7 +20,6 @@ export default function AmbientLife() {
         blur-sm
         "
       />
-
     </div>
   );
 }

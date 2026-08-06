@@ -6,5 +6,3 @@ export function AustinInsightCard({ insight }: any) {
     </div>
   );
 }
-
-

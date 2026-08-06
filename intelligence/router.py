@@ -9,6 +9,7 @@ router = APIRouter(
     tags=["Guava Intelligence"],
 )
 
+
 @router.post("/event")
 async def collect_event(payload: IntelligenceEvent):
 

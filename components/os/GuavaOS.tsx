@@ -6,11 +6,7 @@ import AmbientLife from "./AmbientLife";
 
 import Shell from "./Shell";
 
-export default function GuavaOS({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function GuavaOS({ children }: { children: React.ReactNode }) {
   return (
     <main
       className="
@@ -20,7 +16,6 @@ export default function GuavaOS({
       bg-black
       "
     >
-
       <Sky />
 
       <Clouds />
@@ -28,11 +23,8 @@ export default function GuavaOS({
       <AmbientLife />
 
       <div className="relative z-10">
-        <Shell>
-          {children}
-        </Shell>
+        <Shell>{children}</Shell>
       </div>
-
     </main>
   );
 }

@@ -10,7 +10,6 @@ from backend.austin.models.engine_result import EngineResult
 
 
 class ResponseBuilder:
-
     def build(self, result: EngineResult):
 
         return asdict(result)

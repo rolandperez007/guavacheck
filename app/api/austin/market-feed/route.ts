@@ -26,23 +26,17 @@ export async function GET() {
     },
   ];
 
-  const feed =
-    (await MarketplaceBrain.processFeed(sampleProperties)) as any[];
+  const feed = (await MarketplaceBrain.processFeed(sampleProperties)) as any[];
 
   return Response.json({
     portfolioValue: 370000000,
 
-    activeDeals: feed.filter(
-      (f: any) => f?.decision === "PROCEED"
-    ),
+    activeDeals: feed.filter((f: any) => f?.decision === "PROCEED"),
 
     opportunities: feed.map((f: any) => ({
       title: f?.listing?.headline ?? "Untitled",
       roi: f?.analysis?.economyScore ?? 0,
-      risk:
-        (f?.negotiation?.probabilityOfClose ?? 0) < 50
-          ? "HIGH"
-          : "MEDIUM",
+      risk: (f?.negotiation?.probabilityOfClose ?? 0) < 50 ? "HIGH" : "MEDIUM",
     })),
 
     insights: [
@@ -52,8 +46,3 @@ export async function GET() {
     ],
   });
 }
-
-
-
-
-

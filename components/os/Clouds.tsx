@@ -3,7 +3,6 @@
 export default function Clouds() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
       <div
         className="
         absolute top-20 left-0
@@ -25,7 +24,6 @@ export default function Clouds() {
         animate-[cloud_90s_linear_infinite]
         "
       />
-
     </div>
   );
 }

@@ -10,7 +10,6 @@ export default function CommunityPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-10">
-
         <CommunityHeader />
 
         <div className="mt-8">
@@ -22,25 +21,18 @@ export default function CommunityPage() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12">
-
           <div className="space-y-6 lg:col-span-8">
-
             <AustinDigest />
 
             <TrendingPanel />
 
             <CommunityFeed />
-
           </div>
 
           <aside className="lg:col-span-4">
-
             <RightSidebar />
-
           </aside>
-
         </div>
-
       </div>
     </main>
   );

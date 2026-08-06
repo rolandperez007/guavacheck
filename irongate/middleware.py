@@ -1,8 +1,9 @@
-from fastapi import Request, HTTPException
+from fastapi import Request
 from fastapi.responses import JSONResponse
+
+from irongate import audit
 from irongate.bootstrap import gate
 from irongate.normalizer import normalize_request
-from irongate import audit
 
 
 async def irongate_guard(request: Request, call_next):

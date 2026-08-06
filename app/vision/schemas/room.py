@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, ConfigDict
 
 
@@ -7,9 +5,9 @@ class RoomCreate(BaseModel):
     project_id: str
     name: str
     room_type: str
-    width: Optional[float] = None
-    length: Optional[float] = None
-    height: Optional[float] = None
+    width: float | None = None
+    length: float | None = None
+    height: float | None = None
 
 
 class RoomResponse(BaseModel):
@@ -19,6 +17,6 @@ class RoomResponse(BaseModel):
     project_id: str
     name: str
     room_type: str
-    width: Optional[float]
-    length: Optional[float]
-    height: Optional[float]
+    width: float | None
+    length: float | None
+    height: float | None

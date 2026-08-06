@@ -8,7 +8,6 @@ from typing import Any
 
 
 class VisionEngine:
-
     name = "vision"
     version = "1.0.0"
 

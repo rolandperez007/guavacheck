@@ -7,7 +7,6 @@
 
 import { SITE } from "./constants";
 
-
 export function organizationSchema() {
   return {
     "@type": "Organization",
@@ -37,26 +36,16 @@ export function organizationSchema() {
     description:
       "Guava Networks Limited is a technology company building AI-powered property intelligence software. Its flagship platform, guavacheck, provides property intelligence, valuation tools, construction insights, investment analytics and verification services.",
 
-    slogan:
-      "Where premium properties meet the right owners",
+    slogan: "Where premium properties meet the right owners",
 
-    email:
-      "info@guavacheck.com",
+    email: "info@guavacheck.com",
 
     areaServed: {
       "@type": "Place",
       name: "Worldwide",
     },
 
-    knowsLanguage: [
-      "English",
-      "French",
-      "Spanish",
-      "Portuguese",
-      "Arabic",
-      "German",
-      "Chinese",
-    ],
+    knowsLanguage: ["English", "French", "Spanish", "Portuguese", "Arabic", "German", "Chinese"],
 
     knowsAbout: [
       "Artificial Intelligence",
@@ -79,14 +68,9 @@ export function organizationSchema() {
 
       url: SITE.url,
 
-      description:
-        "AI-powered global property intelligence platform.",
+      description: "AI-powered global property intelligence platform.",
     },
 
-    sameAs: [
-      SITE.social.linkedin,
-      SITE.social.facebook,
-      SITE.social.github,
-    ],
+    sameAs: [SITE.social.linkedin, SITE.social.facebook, SITE.social.github],
   };
 }

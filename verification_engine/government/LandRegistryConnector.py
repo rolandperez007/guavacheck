@@ -10,9 +10,6 @@ Future integrations:
 """
 
 
-from typing import Dict
-
-
 class LandRegistryConnector:
     """
     Land Registry connector.
@@ -23,7 +20,7 @@ class LandRegistryConnector:
 
     source = "Land Registry"
 
-    def verify_title(self, title_number: str) -> Dict:
+    def verify_title(self, title_number: str) -> dict:
 
         return {
             "verified": False,

@@ -1,8 +1,6 @@
 import { PropertyContext, SpecialistResponse } from "../types";
 
-export function mediaSpecialist(
-  context: PropertyContext
-): SpecialistResponse {
+export function mediaSpecialist(context: PropertyContext): SpecialistResponse {
   const photos = context.media?.photos || [];
 
   return {
@@ -11,9 +9,7 @@ export function mediaSpecialist(
     summary: "Media quality analysis completed",
 
     findings: [
-      photos.length > 5
-        ? "Good number of property images"
-        : "Insufficient property visuals",
+      photos.length > 5 ? "Good number of property images" : "Insufficient property visuals",
     ],
 
     opportunities: [

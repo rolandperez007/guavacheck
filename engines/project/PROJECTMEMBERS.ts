@@ -1,18 +1,16 @@
 export interface ProjectMember {
+  userId: string;
 
-    userId: string;
+  role:
+    | "owner"
+    | "architect"
+    | "engineer"
+    | "contractor"
+    | "lawyer"
+    | "surveyor"
+    | "quantitySurveyor"
+    | "inspector"
+    | "supplier";
 
-    role:
-        | "owner"
-        | "architect"
-        | "engineer"
-        | "contractor"
-        | "lawyer"
-        | "surveyor"
-        | "quantitySurveyor"
-        | "inspector"
-        | "supplier";
-
-    joinedAt: Date;
-
+  joinedAt: Date;
 }

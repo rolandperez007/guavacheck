@@ -1,27 +1,21 @@
 export interface TrustProfile {
+  entityId: string;
 
-    entityId: string;
+  score: number;
 
-    score: number;
+  level: string;
 
-    level: string;
-
-    lastUpdated: Date;
-
+  lastUpdated: Date;
 }
 
 export class TrustEngine {
+  static calculate(score: number): string {
+    if (score >= 95) return "Elite";
 
-    static calculate(score: number): string {
+    if (score >= 85) return "Trusted";
 
-        if (score >= 95) return "Elite";
+    if (score >= 70) return "Verified";
 
-        if (score >= 85) return "Trusted";
-
-        if (score >= 70) return "Verified";
-
-        return "Unverified";
-
-    }
-
+    return "Unverified";
+  }
 }

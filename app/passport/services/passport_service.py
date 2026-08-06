@@ -7,7 +7,6 @@ from app.passport.schemas.passport import PropertyPassportCreate
 
 
 class PassportService:
-
     def __init__(self):
 
         self.repository = PassportRepository()
@@ -39,49 +38,29 @@ class PassportService:
     ) -> PropertyPassport:
 
         passport = PropertyPassport(
-
             passport_id=self._generate_passport_id(),
-
             asset_uid=self._generate_asset_uid(
                 request.property_type,
                 request.country,
                 request.state,
             ),
-
             property_name=request.property_name,
-
             property_type=request.property_type,
-
             owner_id=request.owner_id,
-
             country=request.country,
-
             state=request.state,
-
             city=request.city,
-
             address=request.address,
-
             latitude=request.latitude,
-
             longitude=request.longitude,
-
             construction_year=request.construction_year,
-
             land_area=request.land_area,
-
             building_area=request.building_area,
-
             verified=False,
-
             dna_generated=False,
-
             twin_generated=False,
-
             published=False,
-
             created_at=datetime.utcnow(),
-
             updated_at=datetime.utcnow(),
         )
 

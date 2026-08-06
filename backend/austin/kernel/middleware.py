@@ -6,13 +6,17 @@ from typing import Any
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from .context import build_request_context
 from ..logger import structured_log
+from .context import build_request_context
 
 
 class AustinContextMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next: Any) -> Any:
-        trace_id = request.headers.get("x-trace-id") or request.headers.get("traceparent") or None
+        trace_id = (
+            request.headers.get("x-trace-id")
+            or request.headers.get("traceparent")
+            or None
+        )
         correlation_id = request.headers.get("x-correlation-id") or None
         request.state.trace_id = trace_id
         request.state.correlation_id = correlation_id

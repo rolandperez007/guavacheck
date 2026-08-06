@@ -1,0 +1,2187 @@
+Folder PATH listing
+Volume serial number is 0043002D 0A35:CB21
+C:\DEV\PROJECTS\GUAVACHECK-CLEAN\APP
+¦   .npmrc
+¦   .vercelignore
+¦   config.py
+¦   export default function Properties() {.html
+¦   global.d.ts
+¦   globals.css
+¦   icon.png
+¦   layout.tsx
+¦   main.py
+¦   manifest.ts
+¦   mcp.json
+¦   not-found.tsx
+¦   opengraph_image.tsx
+¦   page.tsx
+¦   robots.ts
+¦   sitemap.ts
+¦   test_supabase.py
+¦   twitter_image.tsx
+¦   __init__.py
+¦   
++---(app)
+¦       layout.tsx
+¦       
++---(marketing)
+¦   ¦   layout.tsx
+¦   ¦   
+¦   +---gateway
+¦           page.tsx
+¦           
++---about
+¦       page.tsx
+¦       
++---admin
+¦   +---austin
+¦       ¦   page.tsx
+¦       ¦   types.ts
+¦       ¦   
+¦       +---animations
+¦       +---components
+¦       ¦       ActivityFeed.tsx
+¦       ¦       AustinChat.tsx
+¦       ¦       AustinHeader.tsx
+¦       ¦       AustinInput.tsx
+¦       ¦       AustinSidebar.tsx
+¦       ¦       CommandCenterOverview.tsx
+¦       ¦       DashboardHeader.tsx
+¦       ¦       EngineStatus.tsx
+¦       ¦       EventsTable.tsx
+¦       ¦       IncidentCenter.tsx
+¦       ¦       JobQueue.tsx
+¦       ¦       LiveEventFeed.tsx
+¦       ¦       LiveLogs.tsx
+¦       ¦       LoadingOverlay.tsx
+¦       ¦       MemoryMonitor.tsx
+¦       ¦       OperationalIntelligenceFeed.tsx
+¦       ¦       PredictiveIntelligence.tsx
+¦       ¦       QueueCard.tsx
+¦       ¦       ReasoningTimeline.tsx
+¦       ¦       RefreshButton.tsx
+¦       ¦       StatusCard.tsx
+¦       ¦       StatusCards.tsx
+¦       ¦       SystemHealth.tsx
+¦       ¦       ThinkingPanel.tsx
+¦       ¦       
+¦       +---config
+¦       +---data
+¦       +---hooks
+¦       ¦       useAustin.ts
+¦       ¦       useAustinEvents.ts
+¦       ¦       useAustinQueue.ts
+¦       ¦       useAustinStatus.ts
+¦       ¦       useLiveMetrics.ts
+¦       ¦       useSystemHealth.ts
+¦       ¦       
+¦       +---icons
+¦       +---layouts
+¦       +---lib
+¦       +---providers
+¦       +---services
+¦       ¦       austin.service.ts
+¦       ¦       health.service.ts
+¦       ¦       metrics.service.ts
+¦       ¦       
+¦       +---styles
+¦       +---types
+¦       ¦       austin.ts
+¦       ¦       health.ts
+¦       ¦       metrics.ts
+¦       ¦       
+¦       +---utils
+¦       +---widgets
+¦               MetricCard.tsx
+¦               SectionTitle.tsx
+¦               StatusBadge.tsx
+¦               
++---agents
+¦   ¦   architecture_agent.py
+¦   ¦   base_agent.py
+¦   ¦   build_agent.py
+¦   ¦   crm_agent.py
+¦   ¦   investment _agent.py
+¦   ¦   investor_agents.py
+¦   ¦   listing_agent.py
+¦   ¦   marketing_agent.py
+¦   ¦   mortgage_agent.py
+¦   ¦   tool_router.py
+¦   ¦   valuation_agent.py
+¦   ¦   
+¦   +---swarm
+¦           agent_base.py
+¦           coordinator.py
+¦           insight_agent.py
+¦           listing_agent.py
+¦           market_agent.py
+¦           mortgage_agent.py
+¦           pricing_agent.py
+¦           ranking_agent.py
+¦           roi_agent.py
+¦           swarm_coordinator.py
+¦           swarm_coordinator_v2.py
+¦           swarm_v2.py
+¦           
++---ai
+¦   +---architect
+¦           page.tsx
+¦           
++---ai-estimator
++---ai_engine.py
++---analytics
++---api
+¦   ¦   austin_gateway.py
+¦   ¦   page.tsx
+¦   ¦   routes.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---admin
+¦   ¦   +---metrics
+¦   ¦           route.ts
+¦   ¦           
+¦   +---affordability
+¦   ¦       route.ts
+¦   ¦       
+¦   +---ai
+¦   ¦   +---architect
+¦   ¦           route.ts
+¦   ¦           
+¦   +---ai-feed
+¦   ¦       route.ts
+¦   ¦       
+¦   +---austin
+¦   ¦   ¦   route.py
+¦   ¦   ¦   
+¦   ¦   +---chat
+¦   ¦   +---execute
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---market-feed
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---report
+¦   ¦       ¦   route.ts
+¦   ¦       ¦   
+¦   ¦       +---pdf
+¦   ¦               route.ts
+¦   ¦               
+¦   +---construction
+¦   ¦   +---boq
+¦   ¦   +---estimate
+¦   ¦   +---finance
+¦   ¦   +---phases
+¦   +---contracts
+¦   +---currency
+¦   ¦   +---convert
+¦   ¦   +---history
+¦   ¦   +---rates
+¦   +---distress
+¦   ¦   +---create
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---delete
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---documents
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---list
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---notifications
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---offers
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---search
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---transactions
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---update
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---verification
+¦   ¦           route.ts
+¦   ¦           
+¦   +---escrow
+¦   ¦   +---create
+¦   ¦   +---release
+¦   +---Finance
+¦   ¦   +---score
+¦   +---investor
+¦   ¦   ¦   route.ts
+¦   ¦   ¦   
+¦   ¦   +---deals
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---forecast
+¦   ¦   +---risk
+¦   ¦   +---roi
+¦   ¦   +---yield
+¦   +---middleware
+¦   ¦       auth.py
+¦   ¦       auth_middleware.py
+¦   ¦       logging.py
+¦   ¦       rate_limit.py
+¦   ¦       
+¦   +---mobile
+¦   ¦   +---austin
+¦   ¦           route.ts
+¦   ¦           
+¦   +---mortgage
+¦   ¦   ¦   route.ts
+¦   ¦   ¦   
+¦   ¦   +---affordability
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---amortization
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---calc
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---refinance
+¦   +---payments
+¦   ¦   +---flutterwave
+¦   ¦   +---paystack
+¦   ¦   +---stripe
+¦   +---properties
+¦   ¦   ¦   route.ts
+¦   ¦   ¦   
+¦   ¦   +---create
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---delete
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---update
+¦   ¦   ¦       route.ts
+¦   ¦   ¦       
+¦   ¦   +---upload
+¦   ¦           route.ts
+¦   ¦           
+¦   +---public
+¦   ¦   +---austin
+¦   ¦           route.ts
+¦   ¦           
+¦   +---routes
+¦   ¦   ¦   austin.py
+¦   ¦   ¦   dashboard.py
+¦   ¦   ¦   irongate.py
+¦   ¦   ¦   irongate_control.py
+¦   ¦   ¦   irongate_dashboard.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           austin.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---search
+¦   ¦       route.ts
+¦   ¦       
+¦   +---ws
+¦   ¦   ¦   austin_ws.py
+¦   ¦   ¦   dashboard_ws.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           austin_ws.cpython-314.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦           
++---austin
+¦       page.tsx
+¦       
++---auth
+¦       page.jsx
+¦       
++---bids
++---billing
+¦   ¦   models.py
+¦   ¦   router.py
+¦   ¦   schemas.py
+¦   ¦   service.py
+¦   ¦   
+¦   +---providers
+¦   ¦   ¦   base.py
+¦   ¦   ¦   stripe.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           stripe.cpython-314.pyc
+¦   ¦           
+¦   +---workflows
+¦   ¦       analytics.py
+¦   ¦       commissions.py
+¦   ¦       escrow.py
+¦   ¦       events.py
+¦   ¦       invoices.py
+¦   ¦       ledger.py
+¦   ¦       manager.py
+¦   ¦       payments.py
+¦   ¦       receipts.py
+¦   ¦       refunds.py
+¦   ¦       repository.py
+¦   ¦       service.py
+¦   ¦       subscriptions.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---__pycache__
+¦           router.cpython-314.pyc
+¦           schemas.cpython-314.pyc
+¦           service.cpython-314.pyc
+¦           
++---blog
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---[slug]
+¦           page.tsx
+¦           
++---brains
+¦   +---construction
+¦   ¦       boq_engine.py
+¦   ¦       cost_engine.py
+¦   ¦       
+¦   +---design
+¦           architecture.py
+¦           design_brain.py
+¦           electrical.py
+¦           interior.py
+¦           plumbing.py
+¦           structural.py
+¦           
++---cache
+¦       redis_cache.py
+¦       
++---city
++---community
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---components
+¦   ¦       AustinDigest.tsx
+¦   ¦       CategoryTabs.tsx
+¦   ¦       CommunityFeed.tsx
+¦   ¦       CommunityHeader.tsx
+¦   ¦       CommunityStats.tsx
+¦   ¦       FloatingCompose.tsx
+¦   ¦       PostCard.tsx
+¦   ¦       RightSidebar.tsx
+¦   ¦       SearchBar.tsx
+¦   ¦       TrendingPanel.tsx
+¦   ¦       
+¦   +---create
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---data
+¦   ¦       mockCategories.ts
+¦   ¦       mockPosts.ts
+¦   ¦       mockTrending.ts
+¦   ¦       
+¦   +---hooks
+¦   ¦       useCommunity.ts
+¦   ¦       
+¦   +---services
+¦   ¦       community.service.ts
+¦   ¦       
+¦   +---styles
+¦   +---types
+¦   ¦       community.ts
+¦   ¦       
+¦   +---[slug]
+¦           page.tsx
+¦           
++---company
+¦       page.tsx
+¦       
++---components
+¦   ¦   FloorplanViewer.tsx
+¦   ¦   property3DViewer.tsx
+¦   ¦   
+¦   +---austin
+¦   ¦       AustinAnimator.tsx
+¦   ¦       AustinChat.tsx
+¦   ¦       AustinSidebar.tsx
+¦   ¦       Austintimeline.tsx
+¦   ¦       
+¦   +---dashboard
+¦   ¦       Dashboard.tsx
+¦   ¦       
+¦   +---investor
+¦   ¦       ROIChart.tsx
+¦   ¦       
+¦   +---launch
+¦   +---recovery
+¦   ¦       RecoveryScene.tsx
+¦   ¦       
+¦   +---seo
+¦   +---three
+¦   ¦       PropertyScene.tsx
+¦   ¦       
+¦   +---ui
++---config
+¦       constants.py
+¦       environment.py
+¦       feature_flags.py
+¦       settings.py
+¦       
++---construction
++---contact
+¦       page.tsx
+¦       
++---context
+¦       AuthContext.tsx
+¦       
++---contractor
+¦   +---profile
+¦           page.jsx
+¦           
++---contractors
++---contracts
+¦       listing_schema.py
+¦       
++---core
+¦   ¦   agent _registry.py
+¦   ¦   agent_dispatcher.py
+¦   ¦   ai_engine.py
+¦   ¦   austin_ai_gateway.py
+¦   ¦   austin_brain.py
+¦   ¦   austin_brain_v2.py
+¦   ¦   austin_contract.py
+¦   ¦   austin_engine.py
+¦   ¦   austin_gpt.py
+¦   ¦   austin_gpt_brain.py
+¦   ¦   austin_memory.py
+¦   ¦   austin_orchestrator.py
+¦   ¦   austin_parser.py
+¦   ¦   austin_router.py
+¦   ¦   base_agent.py
+¦   ¦   boq_engine.py
+¦   ¦   cache.py
+¦   ¦   config.py
+¦   ¦   context_manager.py
+¦   ¦   contractor_engine.py
+¦   ¦   cost_engine.py
+¦   ¦   cost_tracker.py
+¦   ¦   database.py
+¦   ¦   design_brain.py
+¦   ¦   execution_ai.py
+¦   ¦   execution_engine.py
+¦   ¦   execution_engine_v2.py
+¦   ¦   execution_sync.py
+¦   ¦   facility_brain.py
+¦   ¦   facility_registry.py
+¦   ¦   funds_release_engine .py
+¦   ¦   geo_resolver.py
+¦   ¦   health.py
+¦   ¦   intent_classifier.py
+¦   ¦   investment_brain.py
+¦   ¦   llm.py
+¦   ¦   master_planner.py
+¦   ¦   memory_brain.py
+¦   ¦   memory_manager.py
+¦   ¦   milestone_engine.py
+¦   ¦   mode_router.py
+¦   ¦   mortgage_brain.py
+¦   ¦   payment_orchestrator.py
+¦   ¦   payment_router.py
+¦   ¦   project_classifier.py
+¦   ¦   project_pipeline.py
+¦   ¦   query_parser.py
+¦   ¦   response_builder.py
+¦   ¦   security.py
+¦   ¦   swarm_coordinator.py
+¦   ¦   timeline_engine.py
+¦   ¦   tool_router.py
+¦   ¦   validator.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---deployment
+¦   ¦       canary_engine.py
+¦   ¦       deployment_monitor.py
+¦   ¦       feature_flags.py
+¦   ¦       promotion_engine.py
+¦   ¦       
+¦   +---events
+¦   ¦       event_bus.py
+¦   ¦       event_bus_stable_v1.py
+¦   ¦       
+¦   +---execution
+¦   ¦       contractor_router.py
+¦   ¦       execution_engine.py
+¦   ¦       execution_state.py
+¦   ¦       job_engine.py
+¦   ¦       milestone_executor.py
+¦   ¦       progress_tracker.py
+¦   ¦       task_generator.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---execution_ai
+¦   ¦       execution_ai.py
+¦   ¦       execution_state.py
+¦   ¦       milestone_detector.py
+¦   ¦       progress_analyzer.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---gateway
+¦   ¦       gateway_intelligence.py
+¦   ¦       iron_gateway.py
+¦   ¦       job_engine.py
+¦   ¦       
+¦   +---i18n
+¦   ¦       global_context.py
+¦   ¦       
+¦   +---integrations
+¦   ¦       payment_to_escrow_bridge.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---intelligence
+¦   ¦       execution_intelligence_v1.py
+¦   ¦       
+¦   +---jobs
+¦   ¦       idempotency.py
+¦   ¦       job_engine.py
+¦   ¦       job_model.py
+¦   ¦       job_queue.py
+¦   ¦       job_state.py
+¦   ¦       job_store.py
+¦   ¦       local_redis_fallback.py
+¦   ¦       redis_client.py
+¦   ¦       worker.py
+¦   ¦       
+¦   +---memory
+¦   ¦       hybrid_memory.py
+¦   ¦       
+¦   +---payments
+¦   ¦       currency_guard.py
+¦   ¦       invoice_builder.py
+¦   ¦       payment_engine.py
+¦   ¦       payment_router.py
+¦   ¦       payment_state.py
+¦   ¦       webhook_handler.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---payment_providers
+¦   ¦       flutterwave_provider.py
+¦   ¦       paystack_provider.py
+¦   ¦       stripe_provider.py
+¦   ¦       
+¦   +---realtime
+¦   ¦       import asyncio.py
+¦   ¦       websocket_manager.py
+¦   ¦       websocket_server.py
+¦   ¦       
+¦   +---router
+¦   ¦       complexity_classifier.py
+¦   ¦       cost_tracker.py
+¦   ¦       evaluation_engine.py
+¦   ¦       gateway_intelligence.py
+¦   ¦       model_gateway.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---security
+¦   ¦   ¦   context.py
+¦   ¦   ¦   context_builder.py
+¦   ¦   ¦   guards.py
+¦   ¦   ¦   security.py
+¦   ¦   ¦   security_simulator.py
+¦   ¦   ¦   
+¦   ¦   +---guards
+¦   ¦           security_guard.py
+¦   ¦           
+¦   +---simulations
+¦   ¦       austin_simulator.py
+¦   ¦       
+¦   +---ui
+¦   ¦   ¦   ui_contract.py
+¦   ¦   ¦   ui_event_contract.py
+¦   ¦   ¦   ui_event_stream.py
+¦   ¦   ¦   
+¦   ¦   +---animations
+¦   ¦   ¦       austinAnimator.ts
+¦   ¦   ¦       
+¦   ¦   +---components
+¦   ¦   ¦       AustinPanel.tsx
+¦   ¦   ¦       
+¦   ¦   +---hooks
+¦   ¦           useAustinStream.ts
+¦   ¦           
+¦   +---visualization
+¦   ¦       three_engine.py
+¦   ¦       
+¦   +---wallet
+¦   ¦       wallet_engine.py
+¦   ¦       
+¦   +---__pycache__
+¦           austin_ai_gateway.cpython-314.pyc
+¦           austin_brain.cpython-314.pyc
+¦           austin_contract.cpython-314.pyc
+¦           austin_gpt_brain.cpython-314.pyc
+¦           austin_memory.cpython-314.pyc
+¦           austin_orchestrator.cpython-314.pyc
+¦           austin_parser.cpython-314.pyc
+¦           config.cpython-314.pyc
+¦           health.cpython-314.pyc
+¦           __init__.cpython-314.pyc
+¦           
++---currency
++---dashboard
+¦   ¦   error.tsx
+¦   ¦   layout.tsx
+¦   ¦   loading.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---contractor
+¦   ¦       page.jsx
+¦   ¦       
+¦   +---investor
+¦           page.tsx
+¦           
++---database
++---db
+¦   ¦   base.py
+¦   ¦   constants.py
+¦   ¦   create_tables.py
+¦   ¦   dependencies.py
+¦   ¦   enums.py
+¦   ¦   init.sql
+¦   ¦   session.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---mixins
+¦   ¦   ¦   audit.py
+¦   ¦   ¦   soft_delete.py
+¦   ¦   ¦   timestamps.py
+¦   ¦   ¦   uuid.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           audit.cpython-314.pyc
+¦   ¦           soft_delete.cpython-314.pyc
+¦   ¦           timestamps.cpython-314.pyc
+¦   ¦           uuid.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           base.cpython-314.pyc
+¦           constants.cpython-314.pyc
+¦           create_tables.cpython-314.pyc
+¦           dependencies.cpython-314.pyc
+¦           session.cpython-314.pyc
+¦           __init__.cpython-314.pyc
+¦           
++---decision
+¦   +---api
+¦   ¦       router.py
+¦   ¦       
+¦   +---engines
+¦   ¦       decision_engine.py
+¦   ¦       
+¦   +---models
+¦   ¦       context.py
+¦   ¦       decision.py
+¦   ¦       report.py
+¦   ¦       
+¦   +---providers
+¦   ¦       base.py
+¦   ¦       
+¦   +---repositories
+¦   ¦       decision_repository.py
+¦   ¦       
+¦   +---schemas
+¦   ¦       request.py
+¦   ¦       response.py
+¦   ¦       
+¦   +---services
+¦   ¦       decision_service.py
+¦   ¦       
+¦   +---utils
+¦           constants.py
+¦           
++---distress
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---admin
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---agent
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---buyer
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---dashboard
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---listing
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---seller
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---transaction
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---verification
+¦           page.tsx
+¦           
++---distressed
++---docs
+¦       page.tsx
+¦       
++---engines
++---escrow
++---frontend
+¦   +---components
+¦           AustinSidebar.tsx
+¦           
++---gateway
+¦   +---styles
+¦           background.css
+¦           orb.css
+¦           
++---hooks
+¦       useAustinQueue.ts
+¦       
++---i18n
+¦       currency_mapper.py
+¦       formatter.py
+¦       global_context.py
+¦       language_pack.py
+¦       locale_detector.py
+¦       timezone_resolver.py
+¦       __init__.py
+¦       
++---infra
+¦       redis_client.py
+¦       
++---institution
+¦   ¦   bootstrap.py
+¦   ¦   dependencies.py
+¦   ¦   enums.py
+¦   ¦   institutions.py
+¦   ¦   integration.py
+¦   ¦   manifest.py
+¦   ¦   startup.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---adapters
+¦   ¦       austin_adapter.py
+¦   ¦       billing_adapter.py
+¦   ¦       decision_adapter.py
+¦   ¦       notification_adapter.py
+¦   ¦       passport_adapter.py
+¦   ¦       trust_adapter.py
+¦   ¦       twin_adapter.py
+¦   ¦       vision_adapter.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---analytics
+¦   ¦       institution_metrics.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---api
+¦   ¦       branch.py
+¦   ¦       institution.py
+¦   ¦       membership.py
+¦   ¦       registry.py
+¦   ¦       router.py
+¦   ¦       subscription.py
+¦   ¦       verification.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---docs
+¦   ¦       API.md
+¦   ¦       ARCHITECTURE.md
+¦   ¦       EVENTS.md
+¦   ¦       README.md
+¦   ¦       ROADMAP.md
+¦   ¦       
+¦   +---events
+¦   ¦       institution_events.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---integrations
+¦   ¦       provider_interface.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---jobs
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---schedulers
+¦   ¦   ¦       institution_scheduler.py
+¦   ¦   ¦       
+¦   ¦   +---tasks
+¦   ¦   ¦       analytics_task.py
+¦   ¦   ¦       institution_sync.py
+¦   ¦   ¦       notification_task.py
+¦   ¦   ¦       subscription_task.py
+¦   ¦   ¦       verification_task.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---workers
+¦   ¦           institution_worker.py
+¦   ¦           
+¦   +---models
+¦   ¦       api_credentials.py
+¦   ¦       api_scope.py
+¦   ¦       audit_log.py
+¦   ¦       branch.py
+¦   ¦       compliance.py
+¦   ¦       department.py
+¦   ¦       department_member.py
+¦   ¦       institution.py
+¦   ¦       institution_old.py
+¦   ¦       institution_verification.py
+¦   ¦       integration.py
+¦   ¦       invitation.py
+¦   ¦       kyc_document.py
+¦   ¦       license.py
+¦   ¦       membership.py
+¦   ¦       membership_role.py
+¦   ¦       offer.py
+¦   ¦       permission.py
+¦   ¦       pricing_plan.py
+¦   ¦       product.py
+¦   ¦       product_service.py
+¦   ¦       role.py
+¦   ¦       role_permission.py
+¦   ¦       service.py
+¦   ¦       subscription.py
+¦   ¦       subscription_usage.py
+¦   ¦       team.py
+¦   ¦       team_member.py
+¦   ¦       usage_event.py
+¦   ¦       verification.py
+¦   ¦       webhook.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---orchestration
+¦   ¦       compliance.py
+¦   ¦       coordinator.py
+¦   ¦       insurance.py
+¦   ¦       mortgage.py
+¦   ¦       onboarding.py
+¦   ¦       property_sale.py
+¦   ¦       valuation.py
+¦   ¦       verification.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---permissions
+¦   ¦       permissions.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---repositories
+¦   ¦       base_repository.py
+¦   ¦       institution_repository.py
+¦   ¦       offer_repository.py
+¦   ¦       pricing_plan_repository.py
+¦   ¦       product_repository.py
+¦   ¦       subscription_usage_repository.py
+¦   ¦       usage_event_repository.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---schemas
+¦   ¦       branch.py
+¦   ¦       institution.py
+¦   ¦       membership.py
+¦   ¦       offer.py
+¦   ¦       pricing_plan.py
+¦   ¦       product.py
+¦   ¦       subscription_usage.py
+¦   ¦       usage_event.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦   ¦       base_service.py
+¦   ¦       institution_service.py
+¦   ¦       membership_service.py
+¦   ¦       offer_service.py
+¦   ¦       pricing_plan_service.py
+¦   ¦       product_service.py
+¦   ¦       subscription_service.py
+¦   ¦       subscription_usage_service.py
+¦   ¦       usage_event_service.py
+¦   ¦       verification_service.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---tests
+¦   ¦       test_membership.py
+¦   ¦       test_registry.py
+¦   ¦       test_verification.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---validators
+¦   ¦       institution_validator.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---workflows
+¦           analytics.py
+¦           assignments.py
+¦           events.py
+¦           executions.py
+¦           institution_onboarding.py
+¦           manager.py
+¦           permissions.py
+¦           repository.py
+¦           service.py
+¦           templates.py
+¦           __init__.py
+¦           
++---institutions
+¦   ¦   provider.py
+¦   ¦   registry.py
+¦   ¦   repository.py
+¦   ¦   router.py
+¦   ¦   schemas.py
+¦   ¦   service.py
+¦   ¦   
+¦   +---ai
+¦   ¦       engine.py
+¦   ¦       
+¦   +---analytics
+¦   ¦       engine.py
+¦   ¦       
+¦   +---api
+¦   +---events
+¦   ¦       engine.py
+¦   ¦       
+¦   +---marketplace
+¦   ¦       engine.py
+¦   ¦       
+¦   +---models
+¦   ¦       application.py
+¦   ¦       institution.py
+¦   ¦       offer.py
+¦   ¦       
+¦   +---onboarding
+¦   ¦       engine.py
+¦   ¦       
+¦   +---permissions
+¦   ¦       engine.py
+¦   ¦       
+¦   +---providers
+¦   +---repositories
+¦   +---schemas
+¦   +---services
+¦   +---simulation
+¦   ¦       engine.py
+¦   ¦       
+¦   +---webhooks
+¦           handler.py
+¦           
++---integrations
+¦       ai_models.py
+¦       external_real_estate_apis.py
+¦       google_maps.py
+¦       supabase.py
+¦       __init__.py
+¦       
++---investor
+¦       page.tsx
+¦       
++---irongate
+¦   +---audit
+¦   +---authentication
+¦   +---authorization
+¦   +---compliance
+¦   +---control
+¦   +---dashboard
+¦   +---encryption
+¦   +---events
+¦   +---identity
+¦   +---keys
+¦   +---middleware
+¦   +---monitoring
+¦   +---permissions
+¦   +---policies
+¦   +---providers
+¦   +---simulator
++---jobs
+¦   ¦   dispatcher.py
+¦   ¦   scheduler.py
+¦   ¦   worker.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---schedulers
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---tasks
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---workers
+¦           __init__.py
+¦           
++---knowledge
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---ai
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---construction
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---investment
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---property-intelligence
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---property-valuation
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---verification
+¦           page.tsx
+¦           
++---launch
++---login
+¦       page.tsx
+¦       
++---marketplace
+¦       page.jsx
+¦       
++---memory
+¦       conversation_memory.py
+¦       conversation_store.py
+¦       listing_memory.py
+¦       memory_graph.py
+¦       preference_engine.py
+¦       preference_store.py
+¦       profile_builder.py
+¦       property_memory.py
+¦       session_memory.py
+¦       user_memory.py
+¦       user_profile.py
+¦       vector_memory.py
+¦       
++---middleware
+¦       auth_middleware.py
+¦       irongate_middleware.py
+¦       __init__.py
+¦       
++---models
+¦       request_models.py
+¦       response_models.py
+¦       
++---modes
+¦       build_mode.py
+¦       crm_mode.py
+¦       investor_mode.py
+¦       marketing_mode.py
+¦       mode_registry.py
+¦       property_modes.py
+¦       
++---mortgage
+¦   +---calculator
+¦           route.ts
+¦           
++---my-properties
+¦       page.jsx
+¦       
++---notifications
++---onboarding
+¦       page.jsx
+¦       
++---opportunity
+¦   ¦   error.tsx
+¦   ¦   layout.tsx
+¦   ¦   loading.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---analysis
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---compare
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---map
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---market
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---opportunities
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---risk
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---valuation
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---watchlist
+¦           page.tsx
+¦           
++---orchestrator
+¦       event_bus.py
+¦       execute.py
+¦       pipeline.py
+¦       task_graph.py
+¦       workflow_engine.py
+¦       
++---os
+¦       layout.tsx
+¦       page.tsx
+¦       
++---passport
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---events
+¦   ¦       passport_events.py
+¦   ¦       
+¦   +---models
+¦   ¦   ¦   passport.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           passport.cpython-314.pyc
+¦   ¦           
+¦   +---repository
+¦   ¦       passport_repository.py
+¦   ¦       
+¦   +---router
+¦   ¦       router.py
+¦   ¦       
+¦   +---schemas
+¦   ¦       passport.py
+¦   ¦       
+¦   +---services
+¦   ¦       passport_service.py
+¦   ¦       
+¦   +---workflows
+¦   ¦       analytics.py
+¦   ¦       compliance.py
+¦   ¦       events.py
+¦   ¦       financing.py
+¦   ¦       insurance.py
+¦   ¦       manager.py
+¦   ¦       ownership.py
+¦   ¦       repository.py
+¦   ¦       service.py
+¦   ¦       subscriptions.py
+¦   ¦       valuation.py
+¦   ¦       verification.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦           
++---path
+¦       page.tsx
+¦       
++---payments
++---privacy
+¦       page.tsx
+¦       
++---products
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---construction-cost-estimator
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---currency-engine
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---geo-engine
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---investment-analytics
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---market-intelligence
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---mortgage-calculator
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---property-intelligence
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---property-valuation
+¦           page.tsx
+¦           
++---properties
+¦   ¦   error.tsx
+¦   ¦   loading.tsx
+¦   ¦   not-found.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---ai-feed
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---create
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---edit
+¦   ¦   +---[id]
+¦   ¦           page.tsx
+¦   ¦           
+¦   +---upload
+¦   ¦       page.tsx
+¦   ¦       Vercel HOOK httpsapi.vercel.comv1in.txt
+¦   ¦       
+¦   +---[slug]
+¦           error.tsx
+¦           layout.tsx
+¦           loading.tsx
+¦           not-found.tsx
+¦           page.tsx
+¦           
++---property
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---api
+¦   ¦       graph.py
+¦   ¦       router.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---create
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---engines
+¦   ¦       graph_engine.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---events
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---integrations
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---models
+¦   ¦       property.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---providers
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---repositories
+¦   ¦       graph_repository.py
+¦   ¦       property.py
+¦   ¦       registry.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---schemas
+¦   ¦       graph.py
+¦   ¦       property.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦   ¦       property.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---tasks
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---tests
+¦           __init__.py
+¦           
++---public
++---residential
++---runtime
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---cache
+¦   ¦       graph_cache.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---events
+¦   ¦       event_bus.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---registry
+¦   ¦       engine_registry.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦           __init__.py
+¦           
++---schemas
+¦       agent_schema.py
+¦       austin_request.py
+¦       austin_response.py
+¦       austin_schemas.py
+¦       command_schema.py
+¦       investor_schema.py
+¦       listing_schema.py
+¦       project_schema.py
+¦       __init__.py
+¦       
++---security
+¦       page.tsx
+¦       
++---seo
+¦       canonical.ts
+¦       descriptions.ts
+¦       faq.ts
+¦       index.ts
+¦       jsonld.ts
+¦       keywords.ts
+¦       metadata.ts
+¦       openGraph.ts
+¦       organization.ts
+¦       robots.ts
+¦       schema.ts
+¦       sitemap.ts
+¦       titles.ts
+¦       twitter.ts
+¦       website.ts
+¦       __init__.ts
+¦       
++---services
+¦   ¦   ai_ratings.py
+¦   ¦   cache_service.py
+¦   ¦   currency_service.py
+¦   ¦   database_service.py
+¦   ¦   fx_engine.py
+¦   ¦   maps_service.py
+¦   ¦   notification_service.py
+¦   ¦   openai_service.py
+¦   ¦   pricing_engine.py
+¦   ¦   property_service.py
+¦   ¦   search_service.py
+¦   ¦   storage_service.py
+¦   ¦   user_service.py
+¦   ¦   
+¦   +---austin
+¦   ¦       AIBlogservice.ts
+¦   ¦       BOQServices.ts
+¦   ¦       
+¦   +---community
+¦   +---database
+¦   ¦       supabase_service.py
+¦   ¦       
+¦   +---__pycache__
+¦           ai_ratings.cpython-314.pyc
+¦           
++---simulation
+¦   ¦   bootstrap.py
+¦   ¦   coordinator.py
+¦   ¦   engine.py
+¦   ¦   manifest.py
+¦   ¦   registry.py
+¦   ¦   startup.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---analytics
+¦   ¦       benchmarking.py
+¦   ¦       dashboard.py
+¦   ¦       forecasting.py
+¦   ¦       kpis.py
+¦   ¦       portfolio.py
+¦   ¦       reporting.py
+¦   ¦       risk.py
+¦   ¦       trends.py
+¦   ¦       utilization.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---api
+¦   +---engines
+¦   ¦       banking.py
+¦   ¦       base.py
+¦   ¦       climate.py
+¦   ¦       construction.py
+¦   ¦       government.py
+¦   ¦       insurance.py
+¦   ¦       investment.py
+¦   ¦       market.py
+¦   ¦       monte_carlo.py
+¦   ¦       mortgage.py
+¦   ¦       portfolio.py
+¦   ¦       risk.py
+¦   ¦       valuation.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---events
+¦   ¦       report_generated.py
+¦   ¦       simulation_completed.py
+¦   ¦       simulation_failed.py
+¦   ¦       simulation_started.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---jobs
+¦   +---models
+¦   ¦       execution.py
+¦   ¦       report.py
+¦   ¦       scenario.py
+¦   ¦       simulation.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---repositories
+¦   ¦       execution_repository.py
+¦   ¦       report_repository.py
+¦   ¦       scenario_repository.py
+¦   ¦       simulation_repositories.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---runtime
+¦   ¦       cache.py
+¦   ¦       context.py
+¦   ¦       dispatcher.py
+¦   ¦       metrics.py
+¦   ¦       pipeline.py
+¦   ¦       registry.py
+¦   ¦       state.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---scenarios
+¦   ¦       banking.py
+¦   ¦       base.py
+¦   ¦       builder.py
+¦   ¦       climate.py
+¦   ¦       construction.py
+¦   ¦       government.py
+¦   ¦       insurance.py
+¦   ¦       investment.py
+¦   ¦       library.py
+¦   ¦       mortgage.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---schemas
+¦   ¦       assumption.py
+¦   ¦       comparison.py
+¦   ¦       forecast.py
+¦   ¦       optimization.py
+¦   ¦       parameter.py
+¦   ¦       report.py
+¦   ¦       request.py
+¦   ¦       result.py
+¦   ¦       scenario.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦   +---workflows
+¦           analytics.py
+¦           construction.py
+¦           events.py
+¦           forecast.py
+¦           investment.py
+¦           manager.py
+¦           market.py
+¦           mortgage.py
+¦           repository.py
+¦           risk.py
+¦           scenario.py
+¦           service.py
+¦           valuation.py
+¦           __init__.py
+¦           
++---simulations
+¦       austin_simulator.py
+¦       __init__.py
+¦       
++---src
+¦   +---Austin
+¦   ¦   +---agents
+¦   ¦   ¦       BOQAgent.ts
+¦   ¦   ¦       ConstructionAgent.ts
+¦   ¦   ¦       ContractorAgent.ts
+¦   ¦   ¦       FraudDetectionAgent.ts
+¦   ¦   ¦       InspectionAgent.ts
+¦   ¦   ¦       InvestmentAgent.ts
+¦   ¦   ¦       LegalAgent.ts
+¦   ¦   ¦       MortgageAgent.ts
+¦   ¦   ¦       NegotiationAgent.ts
+¦   ¦   ¦       PropertyAgent.ts
+¦   ¦   ¦       RecommendationAgent.ts
+¦   ¦   ¦       ValuationAgent.ts
+¦   ¦   ¦       
+¦   ¦   +---analytics
+¦   ¦   ¦       AnalyticsEngine.ts
+¦   ¦   ¦       EventTracker.ts
+¦   ¦   ¦       Metricscollector.ts
+¦   ¦   ¦       PerformanceMonitor.ts
+¦   ¦   ¦       UsageTracker.ts
+¦   ¦   ¦       
+¦   ¦   +---api
+¦   ¦   ¦       analyze.ts
+¦   ¦   ¦       chat.ts
+¦   ¦   ¦       estimate.ts
+¦   ¦   ¦       execute.ts
+¦   ¦   ¦       monitor.ts
+¦   ¦   ¦       recommend.ts
+¦   ¦   ¦       stream.ts
+¦   ¦   ¦       valuate.ts
+¦   ¦   ¦       verify.ts
+¦   ¦   ¦       
+¦   ¦   +---execution
+¦   ¦   ¦       ActionExecutor.ts
+¦   ¦   ¦       ExecutionLogger.ts
+¦   ¦   ¦       ExecutionQueue.ts
+¦   ¦   ¦       Executor.ts
+¦   ¦   ¦       TaskExecutor.ts
+¦   ¦   ¦       
+¦   ¦   +---integrations
+¦   ¦   ¦       EmailProvider.ts
+¦   ¦   ¦       ExchangeRateProvider.ts
+¦   ¦   ¦       FLutterwaveProvider.ts
+¦   ¦   ¦       GoogleMapsProvider.ts
+¦   ¦   ¦       OpenAIProvider.ts
+¦   ¦   ¦       PaystackProvider.ts
+¦   ¦   ¦       SMSProvider.ts
+¦   ¦   ¦       SupabaseProvider.ts
+¦   ¦   ¦       WhatsAppProvider.ts
+¦   ¦   ¦       
+¦   ¦   +---intelligence
+¦   ¦   ¦       BOQEngine.ts
+¦   ¦   ¦       ContractorScoringEngine.ts
+¦   ¦   ¦       FraudDetectionEngine.ts
+¦   ¦   ¦       MarketAnalyser.ts
+¦   ¦   ¦       PropertyScoringEngine.ts
+¦   ¦   ¦       RentalYieldEngine.ts
+¦   ¦   ¦       RiskScoringEngine.ts
+¦   ¦   ¦       ROIEngine.ts
+¦   ¦   ¦       ValuationEngine.ts
+¦   ¦   ¦       
+¦   ¦   +---memory
+¦   ¦   ¦       ConversationMemory.ts
+¦   ¦   ¦       KnowledgeMemory.ts
+¦   ¦   ¦       MemoryManager.ts
+¦   ¦   ¦       ProjectMemory.ts
+¦   ¦   ¦       SessionMemory.ts
+¦   ¦   ¦       UserMemory.ts
+¦   ¦   ¦       
+¦   ¦   +---planners
+¦   ¦   ¦       DecisionPlanner.ts
+¦   ¦   ¦       ExecutionPlanner.ts
+¦   ¦   ¦       Planner.ts
+¦   ¦   ¦       TaskPlanner.ts
+¦   ¦   ¦       WorkflowPlanner.ts
+¦   ¦   ¦       
+¦   ¦   +---prompts
+¦   ¦   ¦       boq.prompt.ts
+¦   ¦   ¦       contractor.prompt.ts
+¦   ¦   ¦       inspection.prompt.ts
+¦   ¦   ¦       investment.prompt.ts
+¦   ¦   ¦       mortgage.prompt.ts
+¦   ¦   ¦       valuation.prompt.ts
+¦   ¦   ¦       
+¦   ¦   +---real time
+¦   ¦   ¦       EventBus.ts
+¦   ¦   ¦       RealTimeManager.ts
+¦   ¦   ¦       RealTimePublisher.ts
+¦   ¦   ¦       RealTimeSubscriber.ts
+¦   ¦   ¦       SSEManager.ts
+¦   ¦   ¦       WebSocketManager.ts
+¦   ¦   ¦       
+¦   ¦   +---reasoning
+¦   ¦   ¦       ConfidenceScorer.ts
+¦   ¦   ¦       DecisionEngine.ts
+¦   ¦   ¦       ExplanationEngine.ts
+¦   ¦   ¦       IntentClassifier.ts
+¦   ¦   ¦       ReasoningEngine.ts
+¦   ¦   ¦       RiskAnalyser.ts
+¦   ¦   ¦       
+¦   ¦   +---schemas
+¦   ¦   ¦       AustinRequest.ts
+¦   ¦   ¦       AustinResponse.ts
+¦   ¦   ¦       BOQ.ts
+¦   ¦   ¦       Contractor.ts
+¦   ¦   ¦       ExecutionPlan.ts
+¦   ¦   ¦       Property.ts
+¦   ¦   ¦       Task.ts
+¦   ¦   ¦       Valuation.ts
+¦   ¦   ¦       Workflow.ts
+¦   ¦   ¦       
+¦   ¦   +---security
+¦   ¦   ¦       AuditLogger.ts
+¦   ¦   ¦       FraudGuard.ts
+¦   ¦   ¦       PermissionManager.ts
+¦   ¦   ¦       RateLimiter.ts
+¦   ¦   ¦       RoleManager.ts
+¦   ¦   ¦       
+¦   ¦   +---tools
+¦   ¦   ¦       analyticsTool.ts
+¦   ¦   ¦       boqGenerationTool.ts
+¦   ¦   ¦       boqTool.ts
+¦   ¦   ¦       contractorTool.ts
+¦   ¦   ¦       costEstimatorTool.ts
+¦   ¦   ¦       currencyConversionTool.ts
+¦   ¦   ¦       documentAnalysisTool.ts
+¦   ¦   ¦       emailTool.ts
+¦   ¦   ¦       escrowTool.ts
+¦   ¦   ¦       exchangeRateTool.ts
+¦   ¦   ¦       floorPlanTool.ts
+¦   ¦   ¦       fraudDetectionTool.ts
+¦   ¦   ¦       imageAnalysisTool.ts
+¦   ¦   ¦       investmentAnalysisTool.ts
+¦   ¦   ¦       legalComplianceTool.ts
+¦   ¦   ¦       locationintelligenceTool.ts
+¦   ¦   ¦       marketComparisonTool.ts
+¦   ¦   ¦       memoryTool.ts
+¦   ¦   ¦       mortgageTool.ts
+¦   ¦   ¦       neighbourhoodAnalysisTool.ts
+¦   ¦   ¦       notificationTool.ts
+¦   ¦   ¦       permitTool.ts
+¦   ¦   ¦       progressMonitoringTool.ts
+¦   ¦   ¦       projectBudgetTool.ts
+¦   ¦   ¦       projectForecastTool.ts
+¦   ¦   ¦       propertyAnalysisTool.ts
+¦   ¦   ¦       propertySearchTool.ts
+¦   ¦   ¦       reasoningTool.ts
+¦   ¦   ¦       recommendationTool.ts
+¦   ¦   ¦       rentalYieldTool.ts
+¦   ¦   ¦       reportGenerationTool.ts
+¦   ¦   ¦       roiTool.ts
+¦   ¦   ¦       searchTool.ts
+¦   ¦   ¦       smsTool.ts
+¦   ¦   ¦       timelineTool.ts
+¦   ¦   ¦       toolRegistry.ts
+¦   ¦   ¦       trustScoreTool.ts
+¦   ¦   ¦       valuationTool.ts
+¦   ¦   ¦       verificationTool.ts
+¦   ¦   ¦       whatsappTool.ts
+¦   ¦   ¦       workflowTool.ts
+¦   ¦   ¦       
+¦   ¦   +---utils
+¦   ¦   ¦       calculator.ts
+¦   ¦   ¦       constants.ts
+¦   ¦   ¦       formatter.ts
+¦   ¦   ¦       helpers.ts
+¦   ¦   ¦       logger.ts
+¦   ¦   ¦       validator.ts
+¦   ¦   ¦       
+¦   ¦   +---workflows
+¦   ¦           ConstructionMonitoringWorkflow.ts
+¦   ¦           ContractorVerificationWorkflow.ts
+¦   ¦           GenerateBOQWorkflow.ts
+¦   ¦           InvestmentAnalysisWorkflow.ts
+¦   ¦           MortgageWorkflow.ts
+¦   ¦           PropertyListingWorkflow.ts
+¦   ¦           PropertyValuationWorkflow.ts
+¦   ¦           
+¦   +---hooks
+¦   ¦       useAustin.ts
+¦   ¦       useAustinanalysis.ts
+¦   ¦       useAustinChat.ts
+¦   ¦       useAustinStream.ts
+¦   ¦       
+¦   +---lib
+¦   ¦   +---core
+¦   ¦           AustinBootstrap.ts
+¦   ¦           AustinConfig.ts
+¦   ¦           AustinContext.ts
+¦   ¦           AustinEngine.ts
+¦   ¦           AustinKernel.ts
+¦   ¦           AustinRegistry.ts
+¦   ¦           AustinRuntime.ts
+¦   ¦           
+¦   +---services
+¦   ¦   +---services
+¦   ¦           AnalyticsService.ts
+¦   ¦           AustinService.ts
+¦   ¦           ContractorService.ts
+¦   ¦           NotificationService.ts
+¦   ¦           PropertyService.ts
+¦   ¦           ValuationService.ts
+¦   ¦           
+¦   +---store
+¦   ¦   ¦   austinStore.ts
+¦   ¦   ¦   
+¦   ¦   +---chatStore.ts
+¦   +---types
+¦   ¦   ¦   r3f.d.ts
+¦   ¦   ¦   three-fiber.d.ts
+¦   ¦   ¦   
+¦   ¦   +---types
+¦   ¦           api.types.ts
+¦   ¦           austin.types.ts
+¦   ¦           boq.types.ts
+¦   ¦           contractor.types.ts
+¦   ¦           property.types.ts
+¦   ¦           valuation.types.ts
+¦   ¦           workflow.types.ts
+¦   ¦           
+¦   +---utils
+¦           boqHelpers.ts
+¦           confidenceScore.ts
+¦           costCalculator.ts
+¦           valuationHelpers.ts
+¦           
++---static
+¦       dashboard.html
+¦       
++---storage
++---terms
+¦       page.tsx
+¦       
++---test-supabase
+¦       page.jsx
+¦       
++---tests
+¦   +---test_agents
+¦   +---test_api
+¦   +---test_orchestrator
+¦   +---test_tools
++---tools
+¦       ad_generator_tool.py
+¦       boq_generator.py
+¦       geo_tool.py
+¦       market_analyzer.py
+¦       pricing_tools.py
+¦       property_search_tool.py
+¦       property_tools.py
+¦       roi_calculator.py
+¦       
++---trust
+¦   ¦   error.tsx
+¦   ¦   layout.tsx
+¦   ¦   loading.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---agreements
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---audit
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---buyer
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---lifecycle
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---operations
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---seller
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---submit
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---vault
+¦   ¦       page.tsx
+¦   ¦       
+¦   +---verify
+¦           page.tsx
+¦           
++---twin
+¦   ¦   engine.py
+¦   ¦   events.py
+¦   ¦   models.py
+¦   ¦   permissions.py
+¦   ¦   repository.py
+¦   ¦   router.py
+¦   ¦   schemas.py
+¦   ¦   service.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---ai
+¦   +---assets
+¦   ¦       documents.py
+¦   ¦       drones.py
+¦   ¦       models.py
+¦   ¦       photos.py
+¦   ¦       uploads.py
+¦   ¦       
+¦   +---geometry
+¦   ¦       builder.py
+¦   ¦       materials.py
+¦   ¦       measurements.py
+¦   ¦       rooms.py
+¦   ¦       terrain.py
+¦   ¦       
+¦   +---integrations
+¦   ¦       commerce.py
+¦   ¦       finance.py
+¦   ¦       investor.py
+¦   ¦       passport.py
+¦   ¦       trust_exchange.py
+¦   ¦       
+¦   +---lifecycle
+¦   ¦       construction.py
+¦   ¦       inspections.py
+¦   ¦       maintenance.py
+¦   ¦       renovations.py
+¦   ¦       timeline.py
+¦   ¦       
+¦   +---__pycache__
+¦           models.cpython-314.pyc
+¦           repository.cpython-314.pyc
+¦           router.cpython-314.pyc
+¦           schemas.cpython-314.pyc
+¦           service.cpython-314.pyc
+¦           __init__.cpython-314.pyc
+¦           
++---unauthorized
+¦       page.jsx
+¦       
++---upload
+¦       page.jsx
+¦       
++---utils
++---valuation
+¦       page.jsx
+¦       
++---vision
+¦   +---api
+¦   ¦   ¦   exports.py
+¦   ¦   ¦   furniture.py
+¦   ¦   ¦   materials.py
+¦   ¦   ¦   projects.py
+¦   ¦   ¦   renders.py
+¦   ¦   ¦   revisions.py
+¦   ¦   ¦   rooms.py
+¦   ¦   ¦   router.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           exports.cpython-314.pyc
+¦   ¦           furniture.cpython-314.pyc
+¦   ¦           materials.cpython-314.pyc
+¦   ¦           projects.cpython-314.pyc
+¦   ¦           renders.cpython-314.pyc
+¦   ¦           revisions.cpython-314.pyc
+¦   ¦           rooms.cpython-314.pyc
+¦   ¦           router.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---engines
+¦   ¦   ¦   exterior_engine.py
+¦   ¦   ¦   floorplan_engine.py
+¦   ¦   ¦   interior_engine.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           exterior_engine.cpython-314.pyc
+¦   ¦           floorplan_engine.cpython-314.pyc
+¦   ¦           interior_engine.cpython-314.pyc
+¦   ¦           
+¦   +---exports
+¦   ¦   ¦   pdf_export.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           pdf_export.cpython-314.pyc
+¦   ¦           
+¦   +---furniture
+¦   +---materials
+¦   +---models
+¦   ¦   ¦   base.py
+¦   ¦   ¦   furniture.py
+¦   ¦   ¦   material.py
+¦   ¦   ¦   project.py
+¦   ¦   ¦   render.py
+¦   ¦   ¦   revision.py
+¦   ¦   ¦   room.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           base.cpython-314.pyc
+¦   ¦           furniture.cpython-314.pyc
+¦   ¦           material.cpython-314.pyc
+¦   ¦           project.cpython-314.pyc
+¦   ¦           render.cpython-314.pyc
+¦   ¦           revision.cpython-314.pyc
+¦   ¦           room.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---projects
+¦   +---prompts
+¦   ¦   ¦   exterior_prompt.py
+¦   ¦   ¦   floorplan_prompt.py
+¦   ¦   ¦   interior_prompt.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           exterior_prompt.cpython-314.pyc
+¦   ¦           floorplan_prompt.cpython-314.pyc
+¦   ¦           interior_prompt.cpython-314.pyc
+¦   ¦           
+¦   +---providers
+¦   ¦   ¦   base.py
+¦   ¦   ¦   google_provider.py
+¦   ¦   ¦   openai_provider.py
+¦   ¦   ¦   provider_factory.py
+¦   ¦   ¦   stability_provider.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           base.cpython-314.pyc
+¦   ¦           google_provider.cpython-314.pyc
+¦   ¦           openai_provider.cpython-314.pyc
+¦   ¦           provider_factory.cpython-314.pyc
+¦   ¦           stability_provider.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---rendering
+¦   ¦   ¦   image_storage.py
+¦   ¦   ¦   renderer.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           renderer.cpython-314.pyc
+¦   ¦           
+¦   +---repositories
+¦   ¦   ¦   base.py
+¦   ¦   ¦   furniture_repository.py
+¦   ¦   ¦   material_repository.py
+¦   ¦   ¦   project_repository.py
+¦   ¦   ¦   render_repository.py
+¦   ¦   ¦   revision_repository.py
+¦   ¦   ¦   room_repository.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           base.cpython-314.pyc
+¦   ¦           furniture_repository.cpython-314.pyc
+¦   ¦           material_repository.cpython-314.pyc
+¦   ¦           project_repository.cpython-314.pyc
+¦   ¦           render_repository.cpython-314.pyc
+¦   ¦           revision_repository.cpython-314.pyc
+¦   ¦           room_repository.cpython-314.pyc
+¦   ¦           
+¦   +---schemas
+¦   ¦   ¦   furniture.py
+¦   ¦   ¦   material.py
+¦   ¦   ¦   project.py
+¦   ¦   ¦   render.py
+¦   ¦   ¦   requests.py
+¦   ¦   ¦   responses.py
+¦   ¦   ¦   revision.py
+¦   ¦   ¦   room.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           furniture.cpython-314.pyc
+¦   ¦           material.cpython-314.pyc
+¦   ¦           project.cpython-314.pyc
+¦   ¦           render.cpython-314.pyc
+¦   ¦           requests.cpython-314.pyc
+¦   ¦           responses.cpython-314.pyc
+¦   ¦           revision.cpython-314.pyc
+¦   ¦           room.cpython-314.pyc
+¦   ¦           
+¦   +---services
+¦   ¦   ¦   vision_service.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           vision_service.cpython-314.pyc
+¦   ¦           
+¦   +---utils
+¦       ¦   constants.py
+¦       ¦   enums.py
+¦       ¦   
+¦       +---__pycache__
+¦               constants.cpython-314.pyc
+¦               enums.cpython-314.pyc
+¦               
++---workflows
+¦   ¦   coordinator.py
+¦   ¦   engine.py
+¦   ¦   manifest.py
+¦   ¦   registry.py
+¦   ¦   startup.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---actions
+¦   ¦       analytics.py
+¦   ¦       base.py
+¦   ¦       billing.py
+¦   ¦       decision.py
+¦   ¦       document.py
+¦   ¦       institution.py
+¦   ¦       integration.py
+¦   ¦       notification.py
+¦   ¦       passport.py
+¦   ¦       registry.py
+¦   ¦       simulation.py
+¦   ¦       vision.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---analytics
+¦   ¦       aggregator.py
+¦   ¦       analytics_manager.py
+¦   ¦       collector.py
+¦   ¦       dashboard.py
+¦   ¦       forecast.py
+¦   ¦       insights.py
+¦   ¦       metrics.py
+¦   ¦       report_generator.py
+¦   ¦       sla.py
+¦   ¦       trend_analyzer.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---api
+¦   ¦       analytics_routes.py
+¦   ¦       event_routes.py
+¦   ¦       execution_routes.py
+¦   ¦       history_routes.py
+¦   ¦       router.py
+¦   ¦       template_routes.py
+¦   ¦       validator_routes.py
+¦   ¦       workflow_routes.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---builders
+¦   ¦       action_builder.py
+¦   ¦       approval_builder.py
+¦   ¦       condition_builder.py
+¦   ¦       node_builder.py
+¦   ¦       pipeline_builder.py
+¦   ¦       template_builder.py
+¦   ¦       trigger_builder.py
+¦   ¦       workflow_builder.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---conditions
+¦   ¦       base.py
+¦   ¦       boolean.py
+¦   ¦       comparison.py
+¦   ¦       custom.py
+¦   ¦       engine.py
+¦   ¦       exists.py
+¦   ¦       permission.py
+¦   ¦       registry.py
+¦   ¦       risk.py
+¦   ¦       role.py
+¦   ¦       score.py
+¦   ¦       simulation.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---engine
+¦   ¦       base.py
+¦   ¦       context.py
+¦   ¦       dispatcher.py
+¦   ¦       executor.py
+¦   ¦       metrics.py
+¦   ¦       pipeline.py
+¦   ¦       registry.py
+¦   ¦       runtime.py
+¦   ¦       state.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---events
+¦   ¦       base.py
+¦   ¦       billing_events.py
+¦   ¦       bus.py
+¦   ¦       dispatcher.py
+¦   ¦       institution_events.py
+¦   ¦       notification_events.py
+¦   ¦       passport_events.py
+¦   ¦       publisher.py
+¦   ¦       registry.py
+¦   ¦       simulation_events.py
+¦   ¦       subscriber.py
+¦   ¦       workflow_events.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---executions
+¦   ¦       checkpoint.py
+¦   ¦       compensation.py
+¦   ¦       context.py
+¦   ¦       executor.py
+¦   ¦       manager.py
+¦   ¦       retry.py
+¦   ¦       serializer.py
+¦   ¦       state.py
+¦   ¦       timeout.py
+¦   ¦       tracker.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---history
+¦   ¦       approval_history.py
+¦   ¦       audit_history.py
+¦   ¦       event_history.py
+¦   ¦       execution_history.py
+¦   ¦       history_manager.py
+¦   ¦       history_repository.py
+¦   ¦       serializer.py
+¦   ¦       step_history.py
+¦   ¦       timeline.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---jobs
+¦   +---models
+¦   ¦       approval.py
+¦   ¦       audit.py
+¦   ¦       edge.py
+¦   ¦       execution.py
+¦   ¦       node.py
+¦   ¦       task.py
+¦   ¦       workflow.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---repositories
+¦   ¦       approval_repository.py
+¦   ¦       audit_repository.py
+¦   ¦       base.py
+¦   ¦       edge_repository.py
+¦   ¦       execution_repository.py
+¦   ¦       node_repository.py
+¦   ¦       task_repository.py
+¦   ¦       workflow_repository.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---scheduler
+¦   +---schemas
+¦   ¦       action.py
+¦   ¦       approval.py
+¦   ¦       condition.py
+¦   ¦       edge.py
+¦   ¦       execution.py
+¦   ¦       node.py
+¦   ¦       task.py
+¦   ¦       transition.py
+¦   ¦       trigger.py
+¦   ¦       workflow.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---services
+¦   ¦       approval_service.py
+¦   ¦       audit_service.py
+¦   ¦       execution_service.py
+¦   ¦       runtime_service.py
+¦   ¦       scheduler_service.py
+¦   ¦       task_service.py
+¦   ¦       template_service.py
+¦   ¦       workflow_service.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---templates
+¦   ¦       base_template.py
+¦   ¦       construction_approval.py
+¦   ¦       developer_onboarding.py
+¦   ¦       institution_onboarding.py
+¦   ¦       insurance_claim.py
+¦   ¦       loan_origination.py
+¦   ¦       maintenance_request.py
+¦   ¦       mortgage_approval.py
+¦   ¦       property_purchase.py
+¦   ¦       property_sale.py
+¦   ¦       property_transfer.py
+¦   ¦       property_verification.py
+¦   ¦       registry.py
+¦   ¦       rent_collection.py
+¦   ¦       tenant_screening.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---triggers
+¦   ¦       api_trigger.py
+¦   ¦       base.py
+¦   ¦       billing_trigger.py
+¦   ¦       event_trigger.py
+¦   ¦       institution_trigger.py
+¦   ¦       manual_trigger.py
+¦   ¦       registry.py
+¦   ¦       schedule_trigger.py
+¦   ¦       simulation_trigger.py
+¦   ¦       webhook_trigger.py
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---validators
+¦           action_validator.py
+¦           approval_validator.py
+¦           base.py
+¦           condition_validator.py
+¦           engine.py
+¦           graph_validator.py
+¦           node_validator.py
+¦           permission_validator.py
+¦           registry.py
+¦           template_validator.py
+¦           trigger_validator.py
+¦           workflow_validator.py
+¦           __init__.py
+¦           
++---__pycache__
+        config.cpython-314.pyc
+        main.cpython-314.pyc
+        __init__.cpython-314.pyc
+        

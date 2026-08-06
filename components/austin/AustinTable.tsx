@@ -25,7 +25,6 @@ export function AustinTable({ table }: any) {
 
   return (
     <div className="border rounded p-4 bg-white shadow">
-
       <h3 className="font-bold mb-3">BOQ Breakdown</h3>
 
       <table className="w-full text-sm">
@@ -48,11 +47,7 @@ export function AustinTable({ table }: any) {
         </tbody>
       </table>
 
-      <div className="mt-3 font-bold">
-        Total: ₦{table.total?.toLocaleString()}
-      </div>
+      <div className="mt-3 font-bold">Total: ₦{table.total?.toLocaleString()}</div>
     </div>
   );
 }
-
-

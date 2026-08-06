@@ -1,8 +1,6 @@
 import { PropertyContext, SpecialistResponse } from "../types";
 
-export function marketSpecialist(
-  context: PropertyContext
-): SpecialistResponse {
+export function marketSpecialist(context: PropertyContext): SpecialistResponse {
   const city = context.location?.city;
 
   const trends: Record<string, number> = {
@@ -18,15 +16,9 @@ export function marketSpecialist(
 
     summary: "Market conditions analyzed",
 
-    findings: [
-      `Average market growth: ${growth}%`,
-      "Demand trending upward in selected region",
-    ],
+    findings: [`Average market growth: ${growth}%`, "Demand trending upward in selected region"],
 
-    opportunities: [
-      "Strong appreciation potential",
-      "Good time to list property",
-    ],
+    opportunities: ["Strong appreciation potential", "Good time to list property"],
 
     risks: growth < 6 ? ["Slow market conditions"] : [],
   };

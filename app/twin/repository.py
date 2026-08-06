@@ -4,7 +4,6 @@ from app.twin.models import Twin
 
 
 class TwinRepository:
-
     @staticmethod
     def create(
         db: Session,
@@ -20,11 +19,7 @@ class TwinRepository:
         db: Session,
         twin_id: str,
     ):
-        return (
-            db.query(Twin)
-            .filter(Twin.id == twin_id)
-            .first()
-        )
+        return db.query(Twin).filter(Twin.id == twin_id).first()
 
     @staticmethod
     def list(

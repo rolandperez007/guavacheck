@@ -32,11 +32,7 @@ export function generateBuildingModel(input: PropertyInput): ModelPart[] {
     model.push({
       type: "floor",
       position: [0, baseHeight + i * 1.2, 0],
-      scale: [
-        width * (type === "terrace" ? 1 : 0.9),
-        1,
-        length * (type === "terrace" ? 1 : 0.9),
-      ],
+      scale: [width * (type === "terrace" ? 1 : 0.9), 1, length * (type === "terrace" ? 1 : 0.9)],
     });
   }
 

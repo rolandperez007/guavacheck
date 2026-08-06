@@ -7,11 +7,9 @@
  */
 
 export const PurchasingPower = {
+  tier1: 1.0,
 
-tier1: 1.0,
+  tier2: 0.7,
 
-tier2: 0.70,
-
-tier3: 0.40
-
+  tier3: 0.4,
 };

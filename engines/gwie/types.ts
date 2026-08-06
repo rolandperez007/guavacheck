@@ -15,12 +15,7 @@ export enum SupportLevel {
 /**
  * Capability strength model (replaces booleans for scalability)
  */
-export type CapabilityState =
-  | "none"
-  | "basic"
-  | "standard"
-  | "advanced"
-  | "regulated";
+export type CapabilityState = "none" | "basic" | "standard" | "advanced" | "regulated";
 
 /**
  * Core feature capabilities per country

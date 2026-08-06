@@ -9,13 +9,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .currency_engine import currency_engine
-from .locale_engine import locale_engine
 from .language_engine import language_engine
+from .locale_engine import locale_engine
 
 
 @dataclass(slots=True)
 class WorldContext:
-
     country: str
 
     language: str
@@ -30,7 +29,6 @@ class WorldContext:
 
 
 class WorldEngine:
-
     def build(
         self,
         *,

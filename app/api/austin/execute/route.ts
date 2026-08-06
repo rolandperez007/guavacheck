@@ -20,20 +20,14 @@ export async function POST(req: Request) {
   (async () => {
     try {
       await engine.executeStream(input, async (event: any) => {
-        writer.write(
-          encoder.encode(`data: ${JSON.stringify(event)}\n\n`)
-        );
+        writer.write(encoder.encode(`data: ${JSON.stringify(event)}\n\n`));
       });
 
-      writer.write(
-        encoder.encode(`event: done\ndata: complete\n\n`)
-      );
+      writer.write(encoder.encode(`event: done\ndata: complete\n\n`));
 
       writer.close();
     } catch (err: any) {
-      writer.write(
-        encoder.encode(`event: error\ndata: ${err.message}\n\n`)
-      );
+      writer.write(encoder.encode(`event: error\ndata: ${err.message}\n\n`));
       writer.close();
     }
   })();
@@ -42,13 +36,7 @@ export async function POST(req: Request) {
     headers: {
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache",
-      Connection: "keep-alive"
-    }
+      Connection: "keep-alive",
+    },
   });
 }
-
-
-
-
-
-

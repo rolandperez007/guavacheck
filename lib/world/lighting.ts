@@ -25,7 +25,7 @@ export function getLighting(): LightingState {
 
     case "morning":
       return {
-        brightness: 0.90,
+        brightness: 0.9,
         cityLights: false,
         windowLights: false,
         streetLights: false,

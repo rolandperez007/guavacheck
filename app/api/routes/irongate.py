@@ -1,22 +1,22 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
 
+from irongate import audit
 from irongate.bootstrap import gate
 from irongate.normalizer import normalize_request
-from irongate import audit
 
 router = APIRouter(prefix="/irongate", tags=["IronGate"])
 
 
 class IronGateEvaluateRequest(BaseModel):
-    user_id: Optional[str] = Field(None, description="Logical user identifier")
-    action: Optional[str] = Field(None, description="Requested action")
-    payload: Optional[Dict[str, Any]] = Field(default_factory=dict)
-    meta: Optional[Dict[str, Any]] = None
+    user_id: str | None = Field(None, description="Logical user identifier")
+    action: str | None = Field(None, description="Requested action")
+    payload: dict[str, Any] | None = Field(default_factory=dict)
+    meta: dict[str, Any] | None = None
 
 
 class IronGateEvaluateResponse(BaseModel):
@@ -24,10 +24,10 @@ class IronGateEvaluateResponse(BaseModel):
     score: int
     decision: str
     decision_id: str
-    reason: Optional[str] = None
-    reasons: Optional[List[str]] = None
-    rules_triggered: Optional[List[Dict[str, Any]]] = None
-    final_action: Optional[str] = None
+    reason: str | None = None
+    reasons: list[str] | None = None
+    rules_triggered: list[dict[str, Any]] | None = None
+    final_action: str | None = None
 
 
 @router.post("/evaluate", response_model=IronGateEvaluateResponse)

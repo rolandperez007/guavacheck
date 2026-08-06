@@ -6,11 +6,7 @@
  * evacuation logic, and safety classification.
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringValidator } from "./EngineeringValidator";
 
@@ -27,9 +23,10 @@ export interface FireSafetyOutput {
   recommendation: string;
 }
 
-export class FireSafetyEngineering
-  implements IEngineeringModule<FireSafetyInput, FireSafetyOutput>
-{
+export class FireSafetyEngineering implements IEngineeringModule<
+  FireSafetyInput,
+  FireSafetyOutput
+> {
   discipline = "fire_safety" as const;
 
   async validate(input: EngineeringInput<FireSafetyInput>): Promise<void> {
@@ -41,31 +38,25 @@ export class FireSafetyEngineering
   }
 
   async compute(
-    input: EngineeringInput<FireSafetyInput>
+    input: EngineeringInput<FireSafetyInput>,
   ): Promise<EngineeringResult<FireSafetyOutput>> {
     const { areaSqm, floors, occupancy } = input.data;
 
     // Fire risk model (simplified composite score)
-    const fireRiskScore =
-      (areaSqm * 0.3) + (floors * 10) + (occupancy * 2);
+    const fireRiskScore = areaSqm * 0.3 + floors * 10 + occupancy * 2;
 
     // Evacuation time model (seconds)
-    const evacuationTime =
-      (areaSqm / 10) + (occupancy * 0.5) + (floors * 15);
+    const evacuationTime = areaSqm / 10 + occupancy * 0.5 + floors * 15;
 
     const safetyLevel =
-      fireRiskScore > 200
-        ? "critical"
-        : fireRiskScore > 120
-        ? "moderate"
-        : "safe";
+      fireRiskScore > 200 ? "critical" : fireRiskScore > 120 ? "moderate" : "safe";
 
     const recommendation =
       safetyLevel === "critical"
         ? "Install advanced fire suppression and increase exits"
         : safetyLevel === "moderate"
-        ? "Improve evacuation routes and fire systems"
-        : "Meets basic fire safety standards";
+          ? "Improve evacuation routes and fire systems"
+          : "Meets basic fire safety standards";
 
     return {
       discipline: this.discipline,
@@ -85,10 +76,7 @@ export class FireSafetyEngineering
         occupancy,
       },
 
-      warnings:
-        safetyLevel !== "safe"
-          ? ["Fire safety attention required"]
-          : [],
+      warnings: safetyLevel !== "safe" ? ["Fire safety attention required"] : [],
 
       errors: [],
 

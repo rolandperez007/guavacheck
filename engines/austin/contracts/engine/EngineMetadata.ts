@@ -3,39 +3,27 @@
  */
 
 export interface EngineMetadata {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  displayName: string;
 
-    displayName: string;
+  description: string;
 
-    description: string;
+  owner: string;
 
-    owner: string;
+  version: string;
 
-    version: string;
+  build: string;
 
-    build: string;
+  created: Date;
 
-    created: Date;
+  updated: Date;
 
-    updated: Date;
+  tags: string[];
 
-    tags: string[];
+  category: string;
 
-    category: string;
-
-    status:
-
-        | "development"
-
-        | "testing"
-
-        | "staging"
-
-        | "production"
-
-        | "deprecated";
-
+  status: "development" | "testing" | "staging" | "production" | "deprecated";
 }

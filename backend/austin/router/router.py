@@ -14,7 +14,6 @@ class AustinRouteResult:
 
 
 class AustinRouter:
-
     def route(self, context):
         """
         Placeholder routing.
@@ -25,9 +24,7 @@ class AustinRouter:
         engine registry.
         """
 
-        return AustinRouteResult(
-            engine="conversation"
-        )
+        return AustinRouteResult(engine="conversation")
 
 
 router = AustinRouter()

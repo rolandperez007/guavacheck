@@ -1,8 +1,6 @@
 import { PropertyContext, SpecialistResponse } from "../types";
 
-export function valuationSpecialist(
-  context: PropertyContext
-): SpecialistResponse {
+export function valuationSpecialist(context: PropertyContext): SpecialistResponse {
   const p = context.property;
 
   let basePrice = 0;
@@ -29,9 +27,7 @@ export function valuationSpecialist(
       `Location adjustment applied`,
     ],
 
-    opportunities: [
-      "Property may be optimized for higher listing price",
-    ],
+    opportunities: ["Property may be optimized for higher listing price"],
 
     data: {
       estimatedValue: Math.round(basePrice),

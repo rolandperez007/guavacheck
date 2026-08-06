@@ -1,15 +1,12 @@
-from fastapi import APIRouter
-from fastapi import Depends
-from fastapi import HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.db.dependencies import get_db
-
 from app.vision.models.project import VisionProject
 from app.vision.schemas.project import (
     VisionProjectCreate,
-    VisionProjectUpdate,
     VisionProjectResponse,
+    VisionProjectUpdate,
 )
 from app.vision.services.vision_service import VisionService
 

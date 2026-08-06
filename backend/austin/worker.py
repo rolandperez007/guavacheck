@@ -35,12 +35,11 @@ Complete Queue Job
 
 from __future__ import annotations
 
-import traceback
 import time
+import traceback
 from time import perf_counter
 
 from backend.austin.queue import queue
-
 from backend.austin.runtime.dispatcher import dispatcher
 from backend.austin.runtime.executor import executor
 from backend.austin.runtime.result_builder import result_builder
@@ -72,7 +71,6 @@ class AustinWorker:
         print()
 
         try:
-
             context = job.payload.get("context", {})
 
             execution_plan = context.get("plan")
@@ -84,7 +82,6 @@ class AustinWorker:
             if execution_plan is None:
 
                 class DefaultPlan:
-
                     engine = "conversation"
 
                 execution_plan = DefaultPlan()
@@ -93,27 +90,16 @@ class AustinWorker:
             # Dispatch
             #
 
-            dispatch = dispatcher.dispatch(
-                execution_plan
-            )
+            dispatch = dispatcher.dispatch(execution_plan)
 
             if not dispatch.success:
+                raise RuntimeError(dispatch.diagnostics["reason"])
 
-                raise RuntimeError(
-                    dispatch.diagnostics["reason"]
-                )
+            print(f"Requested Engine : {dispatch.requested_engine}")
 
-            print(
-                f"Requested Engine : {dispatch.requested_engine}"
-            )
+            print(f"Resolved Engine  : {dispatch.resolved_engine}")
 
-            print(
-                f"Resolved Engine  : {dispatch.resolved_engine}"
-            )
-
-            print(
-                f"Fallback         : {dispatch.fallback_used}"
-            )
+            print(f"Fallback         : {dispatch.fallback_used}")
 
             print()
 
@@ -147,9 +133,7 @@ class AustinWorker:
 
             job.payload["response"] = response
 
-            elapsed = int(
-                (perf_counter() - started) * 1000
-            )
+            elapsed = int((perf_counter() - started) * 1000)
 
             queue.complete(
                 job.job_id,
@@ -162,7 +146,6 @@ class AustinWorker:
             print("=" * 70)
 
         except Exception as exc:
-
             traceback.print_exc()
 
             queue.fail(
@@ -187,11 +170,9 @@ class AustinWorker:
         print("=" * 70)
 
         while True:
-
             job = queue.next()
 
             if job is None:
-
                 time.sleep(self.POLL_INTERVAL)
 
                 continue

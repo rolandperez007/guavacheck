@@ -10,7 +10,6 @@ from .profile import WorldProfile
 
 
 class WorldDetector:
-
     DEFAULT = WorldProfile(
         country="Nigeria",
         language="en",

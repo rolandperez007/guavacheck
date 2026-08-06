@@ -3,8 +3,7 @@ export const twitter = {
 
   title: "guavacheck",
 
-  description:
-    "AI-powered Global Property Intelligence Platform.",
+  description: "AI-powered Global Property Intelligence Platform.",
 
   images: ["/icon.png"],
 

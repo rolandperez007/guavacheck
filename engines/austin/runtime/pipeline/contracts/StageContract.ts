@@ -20,31 +20,23 @@
 import { PipelineContext } from "../PipelineContext";
 
 export interface StageContract {
+  /**
+   * Unique stage identifier.
+   */
+  readonly name: string;
 
-    /**
-     * Unique stage identifier.
-     */
-    readonly name: string;
+  /**
+   * Determines whether this stage should execute.
+   */
+  canExecute(context: PipelineContext): Promise<boolean>;
 
-    /**
-     * Determines whether this stage should execute.
-     */
-    canExecute(
-        context: PipelineContext
-    ): Promise<boolean>;
+  /**
+   * Execute stage logic.
+   */
+  execute(context: PipelineContext): Promise<void>;
 
-    /**
-     * Execute stage logic.
-     */
-    execute(
-        context: PipelineContext
-    ): Promise<void>;
-
-    /**
-     * Roll back this stage if pipeline execution fails.
-     */
-    rollback?(
-        context: PipelineContext
-    ): Promise<void>;
-
+  /**
+   * Roll back this stage if pipeline execution fails.
+   */
+  rollback?(context: PipelineContext): Promise<void>;
 }

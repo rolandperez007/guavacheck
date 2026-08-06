@@ -1,21 +1,19 @@
 export enum ProjectPermission {
+  VIEW = "view",
 
-    VIEW = "view",
+  COMMENT = "comment",
 
-    COMMENT = "comment",
+  EDIT = "edit",
 
-    EDIT = "edit",
+  APPROVE = "approve",
 
-    APPROVE = "approve",
+  VERIFY = "verify",
 
-    VERIFY = "verify",
+  FUND = "fund",
 
-    FUND = "fund",
+  RELEASE_ESCROW = "release_escrow",
 
-    RELEASE_ESCROW = "release_escrow",
+  MANAGE_MEMBERS = "manage_members",
 
-    MANAGE_MEMBERS = "manage_members",
-
-    DELETE = "delete"
-
+  DELETE = "delete",
 }

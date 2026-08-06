@@ -14,26 +14,18 @@ import { PipelineResponse } from "../PipelineResponse";
 import { StageContract } from "./StageContract";
 
 export interface PipelineContract {
+  /**
+   * Register a stage.
+   */
+  registerStage(stage: StageContract): void;
 
-    /**
-     * Register a stage.
-     */
-    registerStage(
-        stage: StageContract
-    ): void;
+  /**
+   * Remove a stage.
+   */
+  unregisterStage(stageName: string): void;
 
-    /**
-     * Remove a stage.
-     */
-    unregisterStage(
-        stageName: string
-    ): void;
-
-    /**
-     * Execute the complete pipeline.
-     */
-    execute(
-        request: PipelineRequest
-    ): Promise<PipelineResponse>;
-
+  /**
+   * Execute the complete pipeline.
+   */
+  execute(request: PipelineRequest): Promise<PipelineResponse>;
 }

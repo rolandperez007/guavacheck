@@ -6,11 +6,7 @@
  * airflow, and ventilation system design.
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringCalculator } from "./EngineeringCalculator";
 import { EngineeringValidator } from "./EngineeringValidator";
@@ -28,9 +24,7 @@ export interface HVACOutput {
   efficiencyRating: "low" | "medium" | "high";
 }
 
-export class HVACEngineering
-  implements IEngineeringModule<HVACInput, HVACOutput>
-{
+export class HVACEngineering implements IEngineeringModule<HVACInput, HVACOutput> {
   discipline = "hvac" as const;
 
   async validate(input: EngineeringInput<HVACInput>): Promise<void> {
@@ -41,34 +35,22 @@ export class HVACEngineering
     }
   }
 
-  async compute(
-    input: EngineeringInput<HVACInput>
-  ): Promise<EngineeringResult<HVACOutput>> {
-    const {
-      areaSqm,
-      occupants,
-      ceilingHeight = 3,
-    } = input.data;
+  async compute(input: EngineeringInput<HVACInput>): Promise<EngineeringResult<HVACOutput>> {
+    const { areaSqm, occupants, ceilingHeight = 3 } = input.data;
 
-    const coolingLoadBTU =
-      EngineeringCalculator.estimateCoolingLoad(areaSqm, ceilingHeight);
+    const coolingLoadBTU = EngineeringCalculator.estimateCoolingLoad(areaSqm, ceilingHeight);
 
-    const airflowRequirement =
-      (occupants * 6) + (areaSqm * 0.3); // simplified ventilation model
+    const airflowRequirement = occupants * 6 + areaSqm * 0.3; // simplified ventilation model
 
     const systemSizeRecommendation =
       coolingLoadBTU > 60000
         ? "Central HVAC system recommended"
         : coolingLoadBTU > 30000
-        ? "Split unit system recommended"
-        : "Single unit AC system sufficient";
+          ? "Split unit system recommended"
+          : "Single unit AC system sufficient";
 
     const efficiencyRating =
-      coolingLoadBTU > 80000
-        ? "low"
-        : coolingLoadBTU > 50000
-        ? "medium"
-        : "high";
+      coolingLoadBTU > 80000 ? "low" : coolingLoadBTU > 50000 ? "medium" : "high";
 
     return {
       discipline: this.discipline,
@@ -88,10 +70,7 @@ export class HVACEngineering
         ceilingHeight,
       },
 
-      warnings:
-        efficiencyRating === "low"
-          ? ["High cooling demand detected"]
-          : [],
+      warnings: efficiencyRating === "low" ? ["High cooling demand detected"] : [],
 
       errors: [],
 

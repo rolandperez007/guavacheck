@@ -9,7 +9,6 @@ from dataclasses import dataclass
 
 @dataclass
 class StructuralMember:
-
     name: str
 
     length: float

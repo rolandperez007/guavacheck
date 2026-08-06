@@ -9,10 +9,7 @@ export default function StepProperty() {
 
   const property = wizard.property;
 
-  function updateField(
-    field: keyof typeof property,
-    value: string | number | boolean
-  ) {
+  function updateField(field: keyof typeof property, value: string | number | boolean) {
     updateWizard({
       property: {
         ...property,
@@ -23,36 +20,25 @@ export default function StepProperty() {
 
   return (
     <div className="mx-auto max-w-5xl">
-
       <div className="mb-10">
-
-        <h1 className="text-4xl font-bold">
-          Tell us about your property
-        </h1>
+        <h1 className="text-4xl font-bold">Tell us about your property</h1>
 
         <p className="mt-3 text-gray-600">
-          This information helps Austin estimate value,
-          understand the property, and prepare it for
+          This information helps Austin estimate value, understand the property, and prepare it for
           verification.
         </p>
-
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-
         {/* Property Name */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Property Name
-          </label>
+          <label className="mb-2 block font-medium">Property Name</label>
 
           <input
             type="text"
             value={property.name}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              updateField("name", e.target.value)
-            }
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updateField("name", e.target.value)}
             className="w-full rounded-xl border p-3"
             placeholder="Sunrise Villa"
           />
@@ -61,15 +47,11 @@ export default function StepProperty() {
         {/* Property Type */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Property Type
-          </label>
+          <label className="mb-2 block font-medium">Property Type</label>
 
           <select
             value={property.propertyType}
-            onChange={(e) =>
-              updateField("propertyType", e.target.value)
-            }
+            onChange={(e) => updateField("propertyType", e.target.value)}
             className="w-full rounded-xl border p-3"
           >
             <option value="">Select Property Type</option>
@@ -89,20 +71,13 @@ export default function StepProperty() {
         {/* Bedrooms */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Bedrooms
-          </label>
+          <label className="mb-2 block font-medium">Bedrooms</label>
 
           <input
             type="number"
             min={0}
             value={property.bedrooms}
-            onChange={(e) =>
-              updateField(
-                "bedrooms",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("bedrooms", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -110,20 +85,13 @@ export default function StepProperty() {
         {/* Bathrooms */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Bathrooms
-          </label>
+          <label className="mb-2 block font-medium">Bathrooms</label>
 
           <input
             type="number"
             min={0}
             value={property.bathrooms}
-            onChange={(e) =>
-              updateField(
-                "bathrooms",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("bathrooms", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -131,20 +99,13 @@ export default function StepProperty() {
         {/* Toilets */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Toilets
-          </label>
+          <label className="mb-2 block font-medium">Toilets</label>
 
           <input
             type="number"
             min={0}
             value={property.toilets}
-            onChange={(e) =>
-              updateField(
-                "toilets",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("toilets", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -152,20 +113,13 @@ export default function StepProperty() {
         {/* Parking */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Parking Spaces
-          </label>
+          <label className="mb-2 block font-medium">Parking Spaces</label>
 
           <input
             type="number"
             min={0}
             value={property.parkingSpaces}
-            onChange={(e) =>
-              updateField(
-                "parkingSpaces",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("parkingSpaces", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -173,20 +127,13 @@ export default function StepProperty() {
         {/* Land */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Land Size (sqm)
-          </label>
+          <label className="mb-2 block font-medium">Land Size (sqm)</label>
 
           <input
             type="number"
             min={0}
             value={property.landSize}
-            onChange={(e) =>
-              updateField(
-                "landSize",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("landSize", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -194,20 +141,13 @@ export default function StepProperty() {
         {/* Building */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Building Size (sqm)
-          </label>
+          <label className="mb-2 block font-medium">Building Size (sqm)</label>
 
           <input
             type="number"
             min={0}
             value={property.buildingSize}
-            onChange={(e) =>
-              updateField(
-                "buildingSize",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("buildingSize", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -215,20 +155,13 @@ export default function StepProperty() {
         {/* Floors */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Number of Floors
-          </label>
+          <label className="mb-2 block font-medium">Number of Floors</label>
 
           <input
             type="number"
             min={1}
             value={property.floors}
-            onChange={(e) =>
-              updateField(
-                "floors",
-                Number(e.target.value)
-              )
-            }
+            onChange={(e) => updateField("floors", Number(e.target.value))}
             className="w-full rounded-xl border p-3"
           />
         </div>
@@ -236,15 +169,11 @@ export default function StepProperty() {
         {/* Condition */}
 
         <div>
-          <label className="mb-2 block font-medium">
-            Condition
-          </label>
+          <label className="mb-2 block font-medium">Condition</label>
 
           <select
             value={property.condition}
-            onChange={(e) =>
-              updateField("condition", e.target.value)
-            }
+            onChange={(e) => updateField("condition", e.target.value)}
             className="w-full rounded-xl border p-3"
           >
             <option value="">Select</option>
@@ -255,55 +184,35 @@ export default function StepProperty() {
             <option>Distress Sale</option>
           </select>
         </div>
-
       </div>
 
       {/* Furnished */}
 
       <div className="mt-8">
-
         <label className="flex items-center gap-3">
-
           <input
             type="checkbox"
             checked={property.furnished}
-            onChange={(e) =>
-              updateField(
-                "furnished",
-                e.target.checked
-              )
-            }
+            onChange={(e) => updateField("furnished", e.target.checked)}
           />
 
           <span>This property is furnished</span>
-
         </label>
-
       </div>
 
       {/* Description */}
 
       <div className="mt-8">
-
-        <label className="mb-2 block font-medium">
-          Description
-        </label>
+        <label className="mb-2 block font-medium">Description</label>
 
         <textarea
           rows={6}
           value={property.description}
-          onChange={(e) =>
-            updateField(
-              "description",
-              e.target.value
-            )
-          }
+          onChange={(e) => updateField("description", e.target.value)}
           className="w-full rounded-xl border p-3"
           placeholder="Tell buyers about this property..."
         />
-
       </div>
-
     </div>
   );
 }

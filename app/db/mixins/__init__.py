@@ -4,8 +4,8 @@ from .timestamps import TimestampMixin
 from .uuid import UUIDMixin
 
 __all__ = [
-    "UUIDMixin",
-    "TimestampMixin",
     "AuditMixin",
     "SoftDeleteMixin",
+    "TimestampMixin",
+    "UUIDMixin",
 ]

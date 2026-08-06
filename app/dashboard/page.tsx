@@ -9,49 +9,33 @@ import ActivityFeed from "@/components/dashboard/activity/ActivityFeed";
 import DashboardShell from "@/components/dashboard/common/DashboardShell";
 
 export default function DashboardPage() {
+  return (
+    <DashboardShell>
+      <div className="space-y-8">
+        <HeroCard />
 
-return(
+        <div className="grid gap-8 xl:grid-cols-3">
+          <div className="xl:col-span-2">
+            <MissionControl />
+          </div>
 
-<DashboardShell>
+          <AustinPanel />
+        </div>
 
-<div className="space-y-8">
+        <IntelligenceWall />
 
-<HeroCard/>
+        <div className="grid gap-8 xl:grid-cols-2">
+          <MarketPulse />
 
-<div className="grid gap-8 xl:grid-cols-3">
+          <OpportunityFeed />
+        </div>
 
-<div className="xl:col-span-2">
+        <div className="grid gap-8 xl:grid-cols-2">
+          <ActivityFeed />
 
-<MissionControl/>
-
-</div>
-
-<AustinPanel/>
-
-</div>
-
-<IntelligenceWall/>
-
-<div className="grid gap-8 xl:grid-cols-2">
-
-<MarketPulse/>
-
-<OpportunityFeed/>
-
-</div>
-
-<div className="grid gap-8 xl:grid-cols-2">
-
-<ActivityFeed/>
-
-<PortfolioSummary/>
-
-</div>
-
-</div>
-
-</DashboardShell>
-
-)
-
+          <PortfolioSummary />
+        </div>
+      </div>
+    </DashboardShell>
+  );
 }

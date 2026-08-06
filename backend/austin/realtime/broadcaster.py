@@ -10,8 +10,8 @@ from __future__ import annotations
 import asyncio
 from dataclasses import asdict
 
-from .manager import realtime_manager
 from ..models import AustinEvent
+from .manager import realtime_manager
 
 
 def broadcast_event(event: AustinEvent) -> None:
@@ -25,9 +25,7 @@ def broadcast_event(event: AustinEvent) -> None:
     try:
         loop = asyncio.get_running_loop()
 
-        loop.create_task(
-            realtime_manager.broadcast(payload)
-        )
+        loop.create_task(realtime_manager.broadcast(payload))
 
     except RuntimeError:
         # Server isn't running an event loop yet.

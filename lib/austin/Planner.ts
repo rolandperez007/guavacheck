@@ -1,11 +1,8 @@
 export class Planner {
-
   async create(intent: any) {
-
     const type = intent?.type;
 
     switch (type) {
-
       // 🧱 BOQ / Construction Planning
       case "boq_analysis":
         return {
@@ -16,9 +13,9 @@ export class Planner {
             "apply_location_multiplier",
             "calculate_total_cost",
             "generate_boq_table",
-            "store_result"
+            "store_result",
           ],
-          output: "table"
+          output: "table",
         };
 
       // 🏠 Property valuation
@@ -31,9 +28,9 @@ export class Planner {
             "calculate_market_value",
             "adjust_for_location",
             "generate_valuation_report",
-            "store_result"
+            "store_result",
           ],
-          output: "insight"
+          output: "insight",
         };
 
       // 🧑‍🔧 Contractor verification
@@ -46,9 +43,9 @@ export class Planner {
             "analyze_reviews_and_risk",
             "compute_trust_score",
             "generate_verification_report",
-            "store_result"
+            "store_result",
           ],
-          output: "report"
+          output: "report",
         };
 
       // 📈 Investment / ROI
@@ -61,9 +58,9 @@ export class Planner {
             "calculate_roi",
             "compare_market_yield",
             "generate_investment_score",
-            "store_result"
+            "store_result",
           ],
-          output: "scorecard"
+          output: "scorecard",
         };
 
       // 💰 Mortgage
@@ -75,9 +72,9 @@ export class Planner {
             "calculate_monthly_payment",
             "estimate_affordability",
             "generate_payment_schedule",
-            "store_result"
+            "store_result",
           ],
-          output: "finance_table"
+          output: "finance_table",
         };
 
       // 🏘 Property search
@@ -88,9 +85,9 @@ export class Planner {
             "query_property_database",
             "filter_by_budget_and_location",
             "rank_by_value",
-            "generate_listing_cards"
+            "generate_listing_cards",
           ],
-          output: "listings"
+          output: "listings",
         };
 
       // ⚠ Risk / fraud
@@ -101,22 +98,18 @@ export class Planner {
             "analyze_user_input",
             "check_fraud_patterns",
             "evaluate_risk_score",
-            "generate_risk_warning"
+            "generate_risk_warning",
           ],
-          output: "risk_report"
+          output: "risk_report",
         };
 
       // 🧠 fallback
       default:
         return {
           intent: "unknown",
-          steps: [
-            "log_request",
-            "return_general_response"
-          ],
-          output: "message"
+          steps: ["log_request", "return_general_response"],
+          output: "message",
         };
     }
   }
 }
-

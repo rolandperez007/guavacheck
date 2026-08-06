@@ -1,5 +1,4 @@
 from austin.event_store import store
-from austin.events import events
 from austin.models import AustinEvent
 from austin.router import router
 

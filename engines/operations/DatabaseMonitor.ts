@@ -1,43 +1,33 @@
 export interface DatabaseHealth {
+  activeConnections: number;
 
-    activeConnections: number;
+  idleConnections: number;
 
-    idleConnections: number;
+  averageQueryTime: number;
 
-    averageQueryTime: number;
+  slowQueries: number;
 
-    slowQueries: number;
+  cacheHitRate: number;
 
-    cacheHitRate: number;
+  sequentialScans: number;
 
-    sequentialScans: number;
+  missingIndexes: number;
 
-    missingIndexes: number;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }
 
 export class DatabaseMonitor {
+  static evaluate(health: DatabaseHealth): string[] {
+    const recommendations: string[] = [];
 
-    static evaluate(health: DatabaseHealth): string[] {
+    if (health.averageQueryTime > 100) recommendations.push("Investigate slow queries.");
 
-        const recommendations: string[] = [];
+    if (health.cacheHitRate < 95) recommendations.push("Increase cache efficiency.");
 
-        if (health.averageQueryTime > 100)
-            recommendations.push("Investigate slow queries.");
+    if (health.missingIndexes > 0) recommendations.push("Create recommended indexes.");
 
-        if (health.cacheHitRate < 95)
-            recommendations.push("Increase cache efficiency.");
+    if (health.sequentialScans > 100) recommendations.push("Review execution plans.");
 
-        if (health.missingIndexes > 0)
-            recommendations.push("Create recommended indexes.");
-
-        if (health.sequentialScans > 100)
-            recommendations.push("Review execution plans.");
-
-        return recommendations;
-
-    }
-
+    return recommendations;
+  }
 }

@@ -7,7 +7,8 @@ Lightweight in-memory publish/subscribe event bus.
 from __future__ import annotations
 
 from collections import defaultdict
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 Subscriber = Callable[[dict[str, Any]], None]
 

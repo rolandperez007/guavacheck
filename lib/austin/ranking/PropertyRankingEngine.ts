@@ -16,26 +16,17 @@ export class PropertyRankingEngine {
       condition: property.condition,
     });
 
-    const investmentScore =
-      distressed.score * 0.6 +
-      ((property.rentalYield || 5) * 5);
+    const investmentScore = distressed.score * 0.6 + (property.rentalYield || 5) * 5;
 
     return {
       investmentScore: Math.round(investmentScore),
 
-      constructionEstimate:
-        construction.adjustedCost ?? construction.baseCost,
+      constructionEstimate: construction.adjustedCost ?? construction.baseCost,
 
       distressedScore: distressed.score,
 
       grade:
-        investmentScore > 80
-          ? "A+"
-          : investmentScore > 60
-          ? "A"
-          : investmentScore > 40
-          ? "B"
-          : "C",
+        investmentScore > 80 ? "A+" : investmentScore > 60 ? "A" : investmentScore > 40 ? "B" : "C",
 
       meta: {
         model: "ranking-engine-v1",

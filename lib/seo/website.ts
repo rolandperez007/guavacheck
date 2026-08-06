@@ -6,7 +6,6 @@
 
 import { SITE } from "./constants";
 
-
 export function websiteSchema() {
   return {
     "@type": "WebSite",
@@ -30,11 +29,9 @@ export function websiteSchema() {
     potentialAction: {
       "@type": "SearchAction",
 
-      target:
-        `${SITE.url}/search?q={search_term_string}`,
+      target: `${SITE.url}/search?q={search_term_string}`,
 
-      "query-input":
-        "required name=search_term_string",
+      "query-input": "required name=search_term_string",
     },
   };
 }

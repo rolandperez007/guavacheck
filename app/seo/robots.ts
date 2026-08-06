@@ -1,11 +1,8 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-
   return {
-
     rules: [
-
       {
         userAgent: "*",
 
@@ -41,12 +38,10 @@ export default function robots(): MetadataRoute.Robots {
 
         allow: "/",
       },
-
     ],
 
     sitemap: "https://www.guavacheck.com/sitemap.xml",
 
     host: "https://www.guavacheck.com",
   };
-
 }

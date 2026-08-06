@@ -1,10 +1,5 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy import Float
-from sqlalchemy import String
-
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
+from sqlalchemy import Float, ForeignKey, String
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.vision.models.base import VisionBase
 

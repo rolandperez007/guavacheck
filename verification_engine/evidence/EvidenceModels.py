@@ -7,7 +7,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Evidence:
-
     source: str
 
     description: str

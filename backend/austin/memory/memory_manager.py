@@ -11,7 +11,6 @@ from .session_memory import session_memory
 
 
 class MemoryManager:
-
     def remember(
         self,
         session_id: str,

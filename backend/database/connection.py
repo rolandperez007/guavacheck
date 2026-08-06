@@ -18,8 +18,8 @@ import os
 
 try:
     from sqlalchemy.ext.asyncio import (  # type: ignore
-        create_async_engine,
         AsyncSession,
+        create_async_engine,
     )
     from sqlalchemy.orm import sessionmaker  # type: ignore
 except ImportError:  # pragma: no cover - optional dependency
@@ -35,7 +35,11 @@ DATABASE_URL = os.getenv(
 engine = None
 SessionLocal = None
 
-if create_async_engine is not None and sessionmaker is not None and AsyncSession is not None:
+if (
+    create_async_engine is not None
+    and sessionmaker is not None
+    and AsyncSession is not None
+):
     engine = create_async_engine(
         DATABASE_URL,
         echo=False,

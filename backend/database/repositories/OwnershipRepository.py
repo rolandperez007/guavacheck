@@ -1,20 +1,8 @@
+from database.ownership_models import OwnershipRecord
 from database.repositories.BaseRepository import BaseRepository
 
-from database.ownership_models import OwnershipRecord
 
-
-class OwnershipRepository(
-
-    BaseRepository[OwnershipRecord]
-
-):
-
+class OwnershipRepository(BaseRepository[OwnershipRecord]):
     def __init__(self, session):
 
-        super().__init__(
-
-            session,
-
-            OwnershipRecord
-
-        )
+        super().__init__(session, OwnershipRecord)

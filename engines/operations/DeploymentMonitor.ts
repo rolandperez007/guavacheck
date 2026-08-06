@@ -1,29 +1,21 @@
 export interface Deployment {
+  version: string;
 
-    version: string;
+  deployedAt: Date;
 
-    deployedAt: Date;
+  deployedBy: string;
 
-    deployedBy: string;
-
-    successful: boolean;
-
+  successful: boolean;
 }
 
 export class DeploymentMonitor {
+  private static history: Deployment[] = [];
 
-    private static history: Deployment[] = [];
+  static record(deployment: Deployment): void {
+    this.history.push(deployment);
+  }
 
-    static record(deployment: Deployment): void {
-
-        this.history.push(deployment);
-
-    }
-
-    static latest(): Deployment | undefined {
-
-        return this.history.at(-1);
-
-    }
-
+  static latest(): Deployment | undefined {
+    return this.history.at(-1);
+  }
 }

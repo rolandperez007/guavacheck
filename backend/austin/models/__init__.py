@@ -2,12 +2,12 @@
 Austin Models
 """
 
-from .execution_plan import ExecutionPlan
-from .engine_result import EngineResult
 from .austin_event import AustinEvent
+from .engine_result import EngineResult
+from .execution_plan import ExecutionPlan
 
 __all__ = [
-    "ExecutionPlan",
-    "EngineResult",
     "AustinEvent",
+    "EngineResult",
+    "ExecutionPlan",
 ]

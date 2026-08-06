@@ -1,27 +1,15 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-} from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
-import {
-  PropertyWizardData,
-  WizardStep,
-} from "@/types/PropertyWizard";
+import { PropertyWizardData, WizardStep } from "@/types/PropertyWizard";
 
 interface PropertyWizardContextType {
   wizard: PropertyWizardData;
 
-  setWizard: React.Dispatch<
-    React.SetStateAction<PropertyWizardData>
-  >;
+  setWizard: React.Dispatch<React.SetStateAction<PropertyWizardData>>;
 
-  updateWizard: (
-    data: Partial<PropertyWizardData>
-  ) => void;
+  updateWizard: (data: Partial<PropertyWizardData>) => void;
 
   goToStep: (step: WizardStep) => void;
 
@@ -119,22 +107,12 @@ const defaultWizard: PropertyWizardData = {
   },
 };
 
-const PropertyWizardContext =
-  createContext<PropertyWizardContextType | undefined>(
-    undefined
-  );
+const PropertyWizardContext = createContext<PropertyWizardContextType | undefined>(undefined);
 
-export function PropertyWizardProvider({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  const [wizard, setWizard] =
-    useState<PropertyWizardData>(defaultWizard);
+export function PropertyWizardProvider({ children }: { children: ReactNode }) {
+  const [wizard, setWizard] = useState<PropertyWizardData>(defaultWizard);
 
-  function updateWizard(
-    data: Partial<PropertyWizardData>
-  ) {
+  function updateWizard(data: Partial<PropertyWizardData>) {
     setWizard((prev) => ({
       ...prev,
       ...data,
@@ -174,9 +152,7 @@ export function usePropertyWizardContext() {
   const context = useContext(PropertyWizardContext);
 
   if (!context) {
-    throw new Error(
-      "usePropertyWizardContext must be used inside PropertyWizardProvider"
-    );
+    throw new Error("usePropertyWizardContext must be used inside PropertyWizardProvider");
   }
 
   return context;

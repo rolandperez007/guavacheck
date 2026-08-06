@@ -2,9 +2,7 @@ interface SchemaProps {
   data: object;
 }
 
-export default function Schema({
-  data,
-}: SchemaProps) {
+export default function Schema({ data }: SchemaProps) {
   return (
     <script
       type="application/ld+json"

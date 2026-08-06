@@ -3,7 +3,6 @@ from app.decision.models.report import DecisionReport
 
 
 class DecisionEngine:
-
     def evaluate(
         self,
         context: DecisionContext,
@@ -16,10 +15,7 @@ class DecisionEngine:
         # ---------------------------------------------------
 
         if context.passport:
-
-            report.recommendations.append(
-                "Property Passport available."
-            )
+            report.recommendations.append("Property Passport available.")
 
             report.score += 10
 
@@ -28,10 +24,7 @@ class DecisionEngine:
         # ---------------------------------------------------
 
         if context.vision:
-
-            report.recommendations.append(
-                "Vision render completed."
-            )
+            report.recommendations.append("Vision render completed.")
 
             report.score += 10
 
@@ -40,10 +33,7 @@ class DecisionEngine:
         # ---------------------------------------------------
 
         if context.twin:
-
-            report.recommendations.append(
-                "Digital Twin is active."
-            )
+            report.recommendations.append("Digital Twin is active.")
 
             report.score += 10
 

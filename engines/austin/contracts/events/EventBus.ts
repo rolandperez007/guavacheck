@@ -14,19 +14,15 @@
 import { Event } from "./Event";
 
 export interface EventBus {
+  publish(event: Event): Promise<void>;
 
-    publish(event: Event): Promise<void>;
+  subscribe(
+    event: string,
 
-    subscribe(
+    handler: (event: Event) => Promise<void>,
+  ): Promise<void>;
 
-        event: string,
+  unsubscribe(event: string): Promise<void>;
 
-        handler: (event: Event) => Promise<void>
-
-    ): Promise<void>;
-
-    unsubscribe(event: string): Promise<void>;
-
-    clear(): Promise<void>;
-
+  clear(): Promise<void>;
 }

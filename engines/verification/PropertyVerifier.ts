@@ -1,13 +1,11 @@
 export interface PropertyVerification {
+  propertyId: string;
 
-    propertyId: string;
+  ownershipVerified: boolean;
 
-    ownershipVerified: boolean;
+  titleVerified: boolean;
 
-    titleVerified: boolean;
+  surveyVerified: boolean;
 
-    surveyVerified: boolean;
-
-    disputeFree: boolean;
-
+  disputeFree: boolean;
 }

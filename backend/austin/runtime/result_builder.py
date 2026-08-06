@@ -6,7 +6,6 @@ from __future__ import annotations
 
 
 class ResultBuilder:
-
     def build(
         self,
         *,
@@ -15,16 +14,12 @@ class ResultBuilder:
     ):
 
         return {
-
             "engine": engine,
-
             "message": result.get(
                 "message",
                 "",
             ),
-
             "data": result,
-
             "status": "success",
         }
 

@@ -1,13 +1,11 @@
 export interface VerificationEvent {
+  id: string;
 
-    id: string;
+  entityId: string;
 
-    entityId: string;
+  event: string;
 
-    event: string;
+  actor: string;
 
-    actor: string;
-
-    createdAt: Date;
-
+  createdAt: Date;
 }

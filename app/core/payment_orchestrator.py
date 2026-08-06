@@ -1,4 +1,4 @@
-from app.core.payment_router import PaymentRouter
+from app.core.payments.payment_router import PaymentRouter
 from app.core.wallet.wallet_engine import WalletEngine
 
 

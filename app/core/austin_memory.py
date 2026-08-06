@@ -1,5 +1,4 @@
 class AustinMemory:
-
     def __init__(self):
         self.memory = {}
 
@@ -18,4 +17,3 @@ class AustinMemory:
 
     def get_history(self, user_id):
         return self.memory.get(user_id, [])
-    

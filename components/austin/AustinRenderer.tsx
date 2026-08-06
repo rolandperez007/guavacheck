@@ -10,28 +10,27 @@ export function AustinRenderer({ data }: any) {
 
   const ui = data.ui;
   const downloadPDF = async () => {
-  try {
-    const res = await fetch("/api/austin/report/pdf", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ report: data?.report }),
-    });
+    try {
+      const res = await fetch("/api/austin/report/pdf", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ report: data?.report }),
+      });
 
-    const blob = await res.blob();
-    const url = window.URL.createObjectURL(blob);
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "austin-construction-report.pdf";
-    a.click();
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "austin-construction-report.pdf";
+      a.click();
 
-    window.URL.revokeObjectURL(url);
-  } catch (err) {
-    console.error("PDF download failed:", err);
-  }
-};
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("PDF download failed:", err);
+    }
+  };
   switch (ui.type) {
-
     // 📊 BOQ TABLE VIEW
     case "boq_table":
       return (
@@ -51,13 +50,12 @@ export function AustinRenderer({ data }: any) {
                 border: "none",
                 cursor: "pointer",
               }}
-           >
+            >
               Download Construction Report (PDF)
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
-   
-    );
+      );
 
     // 💡 INSIGHTS VIEW
     case "insight":
@@ -86,22 +84,18 @@ export function AustinRenderer({ data }: any) {
       );
     // 📈 ROI VIEW
     case "roi":
-      return (
-        <ROIBlock data={ui.data} />
-      );
+      return <ROIBlock data={ui.data} />;
 
     // 🏠 RECOMMENDATION VIEW
     case "recommendation":
-      return (
-        <RecommendationCard data={ui.data} />
-      );
+      return <RecommendationCard data={ui.data} />;
 
     // 🔁 MIXED DASHBOARD VIEW
-       case "dashboard":
-         return (
-           <div className="space-y-6">
-             {ui.tables?.map((t: any, i: number) => (
-               <AustinTable key={i} table={t} />
+    case "dashboard":
+      return (
+        <div className="space-y-6">
+          {ui.tables?.map((t: any, i: number) => (
+            <AustinTable key={i} table={t} />
           ))}
 
           {ui.insights?.map((i: any, idx: number) => (
@@ -124,14 +118,8 @@ export function AustinRenderer({ data }: any) {
             </button>
           </div>
         </div>
-      )
-          default:
-            return (
-              <pre className="text-xs bg-gray-100 p-2 rounded">
-                {JSON.stringify(ui, null, 2)}
-              </pre>
-            );
-        }
-      }
-
-
+      );
+    default:
+      return <pre className="text-xs bg-gray-100 p-2 rounded">{JSON.stringify(ui, null, 2)}</pre>;
+  }
+}

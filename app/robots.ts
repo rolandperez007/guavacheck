@@ -1,20 +1,15 @@
 import { MetadataRoute } from "next";
 import { SITE } from "@/lib/seo/constants";
 
-
 export default function robots(): MetadataRoute.Robots {
-
   return {
-
     rules: [
-
       {
         userAgent: "*",
 
         allow: ["/"],
 
         disallow: [
-
           "/app",
 
           "/login",
@@ -32,17 +27,10 @@ export default function robots(): MetadataRoute.Robots {
           "/models",
 
           "/orchestrator",
-
         ],
-
       },
-
     ],
 
-
-    sitemap:
-      `${SITE.url}/sitemap.xml`,
-
+    sitemap: `${SITE.url}/sitemap.xml`,
   };
-
 }

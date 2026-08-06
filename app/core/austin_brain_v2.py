@@ -1,5 +1,4 @@
-from typing import Dict, Any, List
-import re
+from typing import Any
 
 
 class AustinBrainV2:
@@ -30,7 +29,7 @@ class AustinBrainV2:
             "market": ["market", "trend", "demand", "area", "growth"],
         }
 
-    def _score_tool(self, query: str, keywords: List[str]) -> float:
+    def _score_tool(self, query: str, keywords: list[str]) -> float:
         query = query.lower()
         score = 0
 
@@ -41,7 +40,7 @@ class AustinBrainV2:
         # normalize confidence
         return min(score / max(len(keywords), 1), 1.0)
 
-    def route(self, query: str) -> Dict[str, Any]:
+    def route(self, query: str) -> dict[str, Any]:
         scores = {}
 
         for tool, keywords in self.tools.items():

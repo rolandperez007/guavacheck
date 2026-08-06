@@ -32,9 +32,7 @@ class OpenAIProvider(VisionProvider):
         api_key = os.getenv("OPENAI_API_KEY")
 
         if not api_key:
-            raise RuntimeError(
-                "OPENAI_API_KEY is not configured."
-            )
+            raise RuntimeError("OPENAI_API_KEY is not configured.")
 
         self.client = OpenAI(
             api_key=api_key,
@@ -54,13 +52,9 @@ class OpenAIProvider(VisionProvider):
     ) -> dict[str, Any]:
 
         response = self.client.images.generate(
-
             model=model or self.DEFAULT_MODEL,
-
             prompt=prompt,
-
             size=size or self.DEFAULT_SIZE,
-
             quality=quality or self.DEFAULT_QUALITY,
         )
 

@@ -1,5 +1,4 @@
 class FloorplanPromptBuilder:
-
     @staticmethod
     def build(project):
 

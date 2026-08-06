@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, ConfigDict
 
 
@@ -8,7 +6,7 @@ class FurnitureCreate(BaseModel):
     category: str
     name: str
     quantity: float = 1
-    estimated_cost: Optional[float] = None
+    estimated_cost: float | None = None
 
 
 class FurnitureResponse(BaseModel):
@@ -19,4 +17,4 @@ class FurnitureResponse(BaseModel):
     category: str
     name: str
     quantity: float
-    estimated_cost: Optional[float]
+    estimated_cost: float | None

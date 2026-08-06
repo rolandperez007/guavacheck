@@ -73,8 +73,7 @@ export class BillingEngine {
     const plan = this.getPlan(userId);
     const limits = this.plans[plan].limits;
 
-    this.usage[userId][feature] =
-      (this.usage[userId][feature] || 0) + 1;
+    this.usage[userId][feature] = (this.usage[userId][feature] || 0) + 1;
 
     const usage = this.usage[userId][feature];
     const limit = limits[feature];

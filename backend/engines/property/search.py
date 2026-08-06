@@ -6,17 +6,11 @@ Search utilities for properties.
 
 from __future__ import annotations
 
-from typing import List
-
 
 class PropertySearch:
-
     def search(
-
         self,
-
         request: dict,
-
     ):
 
         #
@@ -27,33 +21,22 @@ class PropertySearch:
         #
 
         return {
-
             "query": request,
-
             "results": [],
-
             "count": 0,
-
             "message": "Search completed.",
-
         }
 
     def recommend(
-
         self,
-
         user_id: str,
-
     ):
 
         return []
 
     def similar(
-
         self,
-
         property_id: str,
-
     ):
 
         return []

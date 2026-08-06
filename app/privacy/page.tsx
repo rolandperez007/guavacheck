@@ -15,10 +15,7 @@ export default function PrivacyPage() {
     >
       <h1>Privacy Policy</h1>
 
-      <p>
-        Your privacy and data protection are fundamental to
-        Guava Networks Limited.
-      </p>
+      <p>Your privacy and data protection are fundamental to Guava Networks Limited.</p>
     </main>
   );
 }

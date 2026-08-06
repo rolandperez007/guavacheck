@@ -12,9 +12,10 @@ Austin coordinates.
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Callable
+from typing import Any
 
 from .event_store import store
 from .logger import logger
@@ -53,9 +54,8 @@ class EventBus:
 
         payload = payload or {}
 
-        correlation_id = (
-            payload.get("correlation_id")
-            or str(payload.get("trace_id") or "anon")
+        correlation_id = payload.get("correlation_id") or str(
+            payload.get("trace_id") or "anon"
         )
 
         event = AustinEvent.create(

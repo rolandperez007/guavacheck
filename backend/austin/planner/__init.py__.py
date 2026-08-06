@@ -5,11 +5,11 @@ Responsible for converting user requests into
 structured execution plans.
 """
 
-from .planner import planner
 from .models import ExecutionPlan, ExecutionTask
+from .planner import planner
 
 __all__ = [
-    "planner",
     "ExecutionPlan",
     "ExecutionTask",
+    "planner",
 ]

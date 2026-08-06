@@ -11,35 +11,25 @@
 import { Span } from "./Span";
 
 export interface Trace {
+  traceId: string;
 
-    traceId: string;
+  requestId: string;
 
-    requestId: string;
+  sessionId?: string;
 
-    sessionId?: string;
+  userId?: string;
 
-    userId?: string;
+  engine: string;
 
-    engine: string;
+  operation: string;
 
-    operation: string;
+  startTime: Date;
 
-    startTime: Date;
+  endTime?: Date;
 
-    endTime?: Date;
+  durationMs?: number;
 
-    durationMs?: number;
+  status: "RUNNING" | "SUCCESS" | "FAILED" | "CANCELLED";
 
-    status:
-
-        | "RUNNING"
-
-        | "SUCCESS"
-
-        | "FAILED"
-
-        | "CANCELLED";
-
-    spans: Span[];
-
+  spans: Span[];
 }

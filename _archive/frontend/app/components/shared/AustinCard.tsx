@@ -18,18 +18,13 @@ export default function AustinCard() {
       <div style={avatarContainer}>
         <div style={orbGlow}></div>
 
-        <img
-          src="/images/austin-core.png"
-          alt="Austin"
-          style={avatarImage}
-        />
+        <img src="/images/austin-core.png" alt="Austin" style={avatarImage} />
       </div>
 
       {/* Online */}
 
       <div style={statusStyle}>
         <span style={statusDot}></span>
-
         Austin Online
       </div>
 
@@ -64,19 +59,16 @@ export default function AustinCard() {
           lineHeight: 1.8,
           marginTop: 30,
           marginBottom: 35,
-          opacity: .92,
+          opacity: 0.92,
         }}
       >
         <strong>Good afternoon.</strong>
-
-        <br /><br />
-
-        I'm ready to help design, estimate,
-        analyse, verify and supervise your
-        next construction project.
-
-        <br /><br />
-
+        <br />
+        <br />
+        I'm ready to help design, estimate, analyse, verify and supervise your next construction
+        project.
+        <br />
+        <br />
         <strong>What shall we build today?</strong>
       </p>
 
@@ -134,8 +126,7 @@ const orbGlow: React.CSSProperties = {
   width: 180,
   height: 180,
   borderRadius: "50%",
-  background:
-    "radial-gradient(circle, rgba(110,231,183,.25), rgba(110,231,183,.05), transparent)",
+  background: "radial-gradient(circle, rgba(110,231,183,.25), rgba(110,231,183,.05), transparent)",
   filter: "blur(16px)",
 };
 
@@ -144,8 +135,7 @@ const avatarImage: React.CSSProperties = {
   width: 190,
   height: 190,
   objectFit: "contain",
-  filter:
-    "drop-shadow(0 0 18px rgba(110,231,183,.35)) drop-shadow(0 0 60px rgba(110,231,183,.18))",
+  filter: "drop-shadow(0 0 18px rgba(110,231,183,.35)) drop-shadow(0 0 60px rgba(110,231,183,.18))",
 };
 
 const statusStyle: React.CSSProperties = {

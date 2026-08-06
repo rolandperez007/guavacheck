@@ -5,18 +5,16 @@ Responsible for architectural planning,
 space optimization, zoning guidance,
 and design orchestration.
 """
+
 from backend.engines.base import BaseEngine
 
 
 class ArchitectureEngine(BaseEngine):
-
     name = "architecture"
 
     version = "1.0.0"
 
-    description = (
-        "Architectural planning and design."
-    )
+    description = "Architectural planning and design."
 
     async def execute(self, request: dict):
         self.kernel.log(
@@ -27,13 +25,8 @@ class ArchitectureEngine(BaseEngine):
             service="engines.architecture",
         )
         return {
-
             "engine": self.name,
-
             "status": "success",
-
             "message": "Architecture Engine executed.",
-
             "request": request,
-
         }

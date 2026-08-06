@@ -1,10 +1,7 @@
-from typing import Optional
-
 from pydantic import BaseModel, Field
 
 
 class PropertyPassportCreate(BaseModel):
-
     property_name: str = Field(
         min_length=2,
         max_length=200,
@@ -25,44 +22,42 @@ class PropertyPassportCreate(BaseModel):
 
     address: str
 
-    latitude: Optional[float] = None
+    latitude: float | None = None
 
-    longitude: Optional[float] = None
+    longitude: float | None = None
 
-    construction_year: Optional[int] = None
+    construction_year: int | None = None
 
-    land_area: Optional[float] = None
+    land_area: float | None = None
 
-    building_area: Optional[float] = None
+    building_area: float | None = None
 
 
 class PropertyPassportUpdate(BaseModel):
+    property_name: str | None = None
 
-    property_name: Optional[str] = None
+    property_type: str | None = None
 
-    property_type: Optional[str] = None
+    country: str | None = None
 
-    country: Optional[str] = None
+    state: str | None = None
 
-    state: Optional[str] = None
+    city: str | None = None
 
-    city: Optional[str] = None
+    address: str | None = None
 
-    address: Optional[str] = None
+    latitude: float | None = None
 
-    latitude: Optional[float] = None
+    longitude: float | None = None
 
-    longitude: Optional[float] = None
+    construction_year: int | None = None
 
-    construction_year: Optional[int] = None
+    land_area: float | None = None
 
-    land_area: Optional[float] = None
-
-    building_area: Optional[float] = None
+    building_area: float | None = None
 
 
 class PropertyPassportResponse(BaseModel):
-
     id: str
 
     passport_id: str
@@ -81,15 +76,15 @@ class PropertyPassportResponse(BaseModel):
 
     address: str
 
-    latitude: Optional[float]
+    latitude: float | None
 
-    longitude: Optional[float]
+    longitude: float | None
 
-    construction_year: Optional[int]
+    construction_year: int | None
 
-    land_area: Optional[float]
+    land_area: float | None
 
-    building_area: Optional[float]
+    building_area: float | None
 
     verified: bool
 

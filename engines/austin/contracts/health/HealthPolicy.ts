@@ -10,23 +10,21 @@
  */
 
 export interface HealthPolicy {
+  enabled: boolean;
 
-    enabled: boolean;
+  heartbeatInterval: number;
 
-    heartbeatInterval: number;
+  timeout: number;
 
-    timeout: number;
+  warningThreshold: number;
 
-    warningThreshold: number;
+  criticalThreshold: number;
 
-    criticalThreshold: number;
+  autoRecovery: boolean;
 
-    autoRecovery: boolean;
+  restartOnFailure: boolean;
 
-    restartOnFailure: boolean;
+  notifyOnFailure: boolean;
 
-    notifyOnFailure: boolean;
-
-    maxRecoveryAttempts: number;
-
+  maxRecoveryAttempts: number;
 }

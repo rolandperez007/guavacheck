@@ -10,27 +10,25 @@
  */
 
 export interface RequestContext {
+  requestId: string;
 
-    requestId: string;
+  sessionId?: string;
 
-    sessionId?: string;
+  userId?: string;
 
-    userId?: string;
+  ipAddress?: string;
 
-    ipAddress?: string;
+  country?: string;
 
-    country?: string;
+  city?: string;
 
-    city?: string;
+  userAgent?: string;
 
-    userAgent?: string;
+  engine: string;
 
-    engine: string;
+  endpoint?: string;
 
-    endpoint?: string;
+  method?: string;
 
-    method?: string;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }

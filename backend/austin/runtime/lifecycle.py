@@ -12,7 +12,6 @@ from datetime import datetime, timezone
 
 @dataclass(slots=True)
 class RuntimeLifecycle:
-
     started: bool = False
 
     startup_time: str | None = None
@@ -21,7 +20,6 @@ class RuntimeLifecycle:
 
 
 class RuntimeLifecycleManager:
-
     def __init__(self):
 
         self._state = RuntimeLifecycle()
@@ -30,17 +28,13 @@ class RuntimeLifecycleManager:
 
         self._state.started = True
 
-        self._state.startup_time = (
-            datetime.now(timezone.utc).isoformat()
-        )
+        self._state.startup_time = datetime.now(timezone.utc).isoformat()
 
     def shutdown(self):
 
         self._state.started = False
 
-        self._state.shutdown_time = (
-            datetime.now(timezone.utc).isoformat()
-        )
+        self._state.shutdown_time = datetime.now(timezone.utc).isoformat()
 
     @property
     def state(self):

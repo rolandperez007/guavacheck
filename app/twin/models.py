@@ -1,13 +1,9 @@
-from sqlalchemy import Integer
-from sqlalchemy import String
-
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
 from app.db.constants import STATUS_LENGTH
-from app.db.mixins import TimestampMixin
-from app.db.mixins import UUIDMixin
+from app.db.mixins import TimestampMixin, UUIDMixin
 
 
 class Twin(

@@ -1,16 +1,15 @@
 from dataclasses import dataclass
-from typing import Dict, Optional
 
 
 @dataclass
 class ScorePoint:
     score: int
-    reason: Optional[str] = None
+    reason: str | None = None
 
 
 def rate_limit_provider(
-    context: Dict[str, any], max_requests_per_minute: int = 100
-) -> Optional[ScorePoint]:
+    context: dict[str, any], max_requests_per_minute: int = 100
+) -> ScorePoint | None:
     import time
 
     if not hasattr(rate_limit_provider, "_req_log"):
@@ -38,10 +37,10 @@ def rate_limit_provider(
 
 
 def duplicate_request_provider(
-    context: Dict[str, any], window_seconds: int = 60
-) -> Optional[ScorePoint]:
-    import time
+    context: dict[str, any], window_seconds: int = 60
+) -> ScorePoint | None:
     import json
+    import time
 
     if not hasattr(duplicate_request_provider, "_req_history"):
         duplicate_request_provider._req_history = {}
@@ -90,21 +89,21 @@ def duplicate_request_provider(
     return None
 
 
-def spam_pattern_provider(context: Dict[str, any]) -> Optional[ScorePoint]:
+def spam_pattern_provider(context: dict[str, any]) -> ScorePoint | None:
     """Soft score for spam patterns detected by rules."""
     return None
 
 
-def automation_header_provider(context: Dict[str, any]) -> Optional[ScorePoint]:
+def automation_header_provider(context: dict[str, any]) -> ScorePoint | None:
     """Soft score for automation headers detected by rules."""
     return None
 
 
-def austin_low_risk_provider(context: Dict[str, any]) -> Optional[ScorePoint]:
+def austin_low_risk_provider(context: dict[str, any]) -> ScorePoint | None:
     """Negative score for low-risk Austin queries detected by rules."""
     return None
 
 
-def payload_size_provider(context: Dict[str, any]) -> Optional[ScorePoint]:
+def payload_size_provider(context: dict[str, any]) -> ScorePoint | None:
     """Soft score for large payloads detected by rules."""
     return None

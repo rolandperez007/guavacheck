@@ -7,19 +7,9 @@ to cadastral parcels.
 
 
 class ParcelMatcher:
-
     async def match(
-
         self,
-
         coordinates,
-
     ):
 
-        return {
-
-            "matched": False,
-
-            "parcel": None
-
-        }
+        return {"matched": False, "parcel": None}

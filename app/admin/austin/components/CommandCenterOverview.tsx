@@ -36,7 +36,9 @@ export default function CommandCenterOverview() {
     <section className="rounded-2xl border border-slate-800 bg-slate-950/90 p-6 shadow-2xl shadow-black/20">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-sm uppercase tracking-[0.35em] text-slate-500">Austin Command Center</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-500">
+            Austin Command Center
+          </p>
           <h2 className="mt-2 text-2xl font-semibold text-white">Global platform overview</h2>
         </div>
         <div className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-300">
@@ -52,7 +54,8 @@ export default function CommandCenterOverview() {
       </div>
 
       <div className="mt-4 rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-sm text-slate-300">
-        Austin recommends: queue depth is stable, but high verification demand in Lagos warrants a proactive capacity review in the next 10 minutes.
+        Austin recommends: queue depth is stable, but high verification demand in Lagos warrants a
+        proactive capacity review in the next 10 minutes.
       </div>
     </section>
   );

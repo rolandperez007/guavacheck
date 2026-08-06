@@ -1,9 +1,7 @@
 import { CommunityEngine } from "./CommunityEngine";
 
 export class ListingGenerator {
-
   static generate(property: any) {
-
     const tags: string[] = [];
 
     if (property.price > 200_000_000) tags.push("luxury");
@@ -27,7 +25,7 @@ export class ListingGenerator {
       description: property.description ?? "A well-structured investment opportunity.",
       seoTags: tags,
       tone: "professional",
-      post
+      post,
     };
   }
 }

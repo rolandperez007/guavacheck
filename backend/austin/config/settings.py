@@ -34,15 +34,9 @@ class AustinConfig:
         "gpt-5.5",
     )
 
-    enabled: bool = (
-        os.getenv("AUSTIN_ENABLED", "true").lower()
-        == "true"
-    )
+    enabled: bool = os.getenv("AUSTIN_ENABLED", "true").lower() == "true"
 
-    memory_enabled: bool = (
-        os.getenv("AUSTIN_MEMORY_ENABLED", "true").lower()
-        == "true"
-    )
+    memory_enabled: bool = os.getenv("AUSTIN_MEMORY_ENABLED", "true").lower() == "true"
 
     # Database
 

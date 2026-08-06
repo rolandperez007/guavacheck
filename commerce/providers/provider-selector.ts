@@ -9,101 +9,84 @@
 import { ProviderRegistry } from "./provider-registry";
 
 export function getProvider(id: string) {
-
-    return ProviderRegistry.find(
-
-        p => p.id === id
-
-    );
-
+  return ProviderRegistry.find((p) => p.id === id);
 }
 
 export function getSupportedProviders(country: string) {
+  const code = country.toUpperCase();
 
-    const code = country.toUpperCase();
-
-    return ProviderRegistry.filter(
-
-        provider =>
-
-            provider.supportedCountries.includes("*") ||
-
-            provider.supportedCountries.includes(code)
-
-    );
-
+  return ProviderRegistry.filter(
+    (provider) =>
+      provider.supportedCountries.includes("*") || provider.supportedCountries.includes(code),
+  );
 }
 export function getPreferredProvider(country: string): string {
+  const code = country.toUpperCase();
 
-    const code = country.toUpperCase();
+  switch (code) {
+    // Africa
+    case "NG":
+    case "GH":
+      return "paystack";
 
-    switch (code) {
+    case "KE":
+    case "UG":
+    case "TZ":
+    case "RW":
+    case "ZM":
+    case "ZW":
+    case "ZA":
+      return "flutterwave";
 
-        // Africa
-        case "NG":
-        case "GH":
-            return "paystack";
-
-        case "KE":
-        case "UG":
-        case "TZ":
-        case "RW":
-        case "ZM":
-        case "ZW":
-        case "ZA":
-            return "flutterwave";
-
-        // Default
-        default:
-            return "stripe";
-    }
+    // Default
+    default:
+      return "stripe";
+  }
 }
 
 export function getPreferredCurrency(country: string): string {
+  const code = country.toUpperCase();
 
-    const code = country.toUpperCase();
+  switch (code) {
+    case "NG":
+      return "NGN";
 
-    switch (code) {
+    case "GH":
+      return "GHS";
 
-        case "NG":
-            return "NGN";
+    case "KE":
+      return "KES";
 
-        case "GH":
-            return "GHS";
+    case "ZA":
+      return "ZAR";
 
-        case "KE":
-            return "KES";
+    case "JP":
+      return "JPY";
 
-        case "ZA":
-            return "ZAR";
+    case "KR":
+      return "KRW";
 
-        case "JP":
-            return "JPY";
+    case "AU":
+      return "AUD";
 
-        case "KR":
-            return "KRW";
+    case "GB":
+      return "GBP";
 
-        case "AU":
-            return "AUD";
+    case "BR":
+      return "BRL";
 
-        case "GB":
-            return "GBP";
+    case "CA":
+      return "CAD";
 
-        case "BR":
-            return "BRL";
+    case "DE":
+    case "FR":
+    case "IT":
+    case "ES":
+    case "NL":
+    case "PT":
+      return "EUR";
 
-        case "CA":
-            return "CAD";
-
-        case "DE":
-        case "FR":
-        case "IT":
-        case "ES":
-        case "NL":
-        case "PT":
-            return "EUR";
-
-        default:
-            return "USD";
-    }
+    default:
+      return "USD";
+  }
 }

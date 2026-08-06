@@ -1,33 +1,19 @@
 export interface VerificationAnomaly {
+  id: string;
 
-    id: string;
+  entityId: string;
 
-    entityId: string;
+  category: string;
 
-    category: string;
+  severity: "low" | "medium" | "high" | "critical";
 
-    severity: "low" | "medium" | "high" | "critical";
+  message: string;
 
-    message: string;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }
 
 export class AnomalyEngine {
-
-    static detect(
-
-        anomalies: VerificationAnomaly[]
-
-    ): boolean {
-
-        return anomalies.some(
-
-            a => a.severity === "critical"
-
-        );
-
-    }
-
+  static detect(anomalies: VerificationAnomaly[]): boolean {
+    return anomalies.some((a) => a.severity === "critical");
+  }
 }

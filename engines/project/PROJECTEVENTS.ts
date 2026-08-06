@@ -1,15 +1,13 @@
 export interface ProjectEvent {
+  id: string;
 
-    id: string;
+  projectId: string;
 
-    projectId: string;
+  type: string;
 
-    type: string;
+  message: string;
 
-    message: string;
+  actor: string;
 
-    actor: string;
-
-    createdAt: Date;
-
+  createdAt: Date;
 }

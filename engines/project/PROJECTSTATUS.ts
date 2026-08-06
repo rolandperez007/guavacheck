@@ -1,19 +1,17 @@
 export enum ProjectStatus {
+  DRAFT = "draft",
 
-    DRAFT = "draft",
+  PLANNING = "planning",
 
-    PLANNING = "planning",
+  BIDDING = "bidding",
 
-    BIDDING = "bidding",
+  FUNDING = "funding",
 
-    FUNDING = "funding",
+  ACTIVE = "active",
 
-    ACTIVE = "active",
+  PAUSED = "paused",
 
-    PAUSED = "paused",
+  COMPLETED = "completed",
 
-    COMPLETED = "completed",
-
-    CANCELLED = "cancelled"
-
+  CANCELLED = "cancelled",
 }

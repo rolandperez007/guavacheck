@@ -9,7 +9,6 @@ from dataclasses import dataclass
 
 @dataclass(slots=True)
 class Locale:
-
     country: str
     currency: str
     language: str
@@ -17,7 +16,6 @@ class Locale:
 
 
 class LocaleEngine:
-
     _countries = {
         "NG": Locale(
             country="Nigeria",

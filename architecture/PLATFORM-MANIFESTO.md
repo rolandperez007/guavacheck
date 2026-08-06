@@ -1,12 +1,12 @@
 # guavacheck Platform Manifesto
 
-**Version:** 1.0.0
+Version: 1.0.0
 
-**Status:** Living Document
+Status: Living Document
 
-**Classification:** Foundational Platform Document
+Classification: Foundational Platform Document
 
-**Owner:** Guava Networks Limited
+Owner: Guava Networks Limited
 
 ---
 

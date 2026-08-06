@@ -15,39 +15,37 @@
  */
 
 export interface EngineContract {
+  readonly id: string;
 
-    readonly id: string;
+  readonly name: string;
 
-    readonly name: string;
+  readonly version: string;
 
-    readonly version: string;
+  readonly description: string;
 
-    readonly description: string;
+  readonly author: string;
 
-    readonly author: string;
+  readonly constitutionalReferences: string[];
 
-    readonly constitutionalReferences: string[];
+  readonly dependencies: string[];
 
-    readonly dependencies: string[];
+  readonly capabilities: string[];
 
-    readonly capabilities: string[];
+  readonly publishes: string[];
 
-    readonly publishes: string[];
+  readonly subscribes: string[];
 
-    readonly subscribes: string[];
+  initialize(): Promise<void>;
 
-    initialize(): Promise<void>;
+  start(): Promise<void>;
 
-    start(): Promise<void>;
+  stop(): Promise<void>;
 
-    stop(): Promise<void>;
+  restart(): Promise<void>;
 
-    restart(): Promise<void>;
+  shutdown(): Promise<void>;
 
-    shutdown(): Promise<void>;
+  health(): Promise<boolean>;
 
-    health(): Promise<boolean>;
-
-    metrics(): Promise<Record<string, unknown>>;
-
+  metrics(): Promise<Record<string, unknown>>;
 }

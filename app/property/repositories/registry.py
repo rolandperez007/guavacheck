@@ -7,7 +7,7 @@ obtains repositories from other domains.
 This avoids circular imports throughout the system.
 """
 
-from app.property.repositories.repository import PropertyRepository
+from app.property.repositories.property import PropertyRepository
 
 # Uncomment these as the modules are standardized.
 #
@@ -18,7 +18,6 @@ from app.property.repositories.repository import PropertyRepository
 
 
 class RepositoryRegistry:
-
     def __init__(self):
 
         self.property = PropertyRepository()

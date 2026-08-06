@@ -7,9 +7,7 @@ export interface MortgageInput {
 }
 
 export class MortgageAffordabilityEngine {
-
   static calculate(input: MortgageInput) {
-
     const price = input.propertyPrice;
 
     const downPaymentRate = (input.downPaymentPercent ?? 20) / 100;
@@ -20,9 +18,7 @@ export class MortgageAffordabilityEngine {
     const monthlyRate = interestRate / 12;
     const months = years * 12;
 
-    const monthlyPayment =
-      (principal * monthlyRate) /
-      (1 - Math.pow(1 + monthlyRate, -months));
+    const monthlyPayment = (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
 
     const totalPayment = monthlyPayment * months;
     const totalInterest = totalPayment - principal;
@@ -46,12 +42,7 @@ export class MortgageAffordabilityEngine {
       affordabilityRatio: Number(affordabilityRatio.toFixed(2)),
       status,
 
-      recommendation:
-        status === "SAFE"
-          ? "BUY"
-          : status === "STRETCHED"
-          ? "CAUTION"
-          : "AVOID"
+      recommendation: status === "SAFE" ? "BUY" : status === "STRETCHED" ? "CAUTION" : "AVOID",
     };
   }
 }

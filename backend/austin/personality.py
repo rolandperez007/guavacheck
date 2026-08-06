@@ -15,7 +15,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[2]
 
 DOCS = ROOT / "docs"
@@ -23,7 +22,6 @@ DOCS = ROOT / "docs"
 
 @dataclass
 class PersonalityDocument:
-
     name: str
 
     path: Path
@@ -34,38 +32,31 @@ class PersonalityDocument:
 
 
 class AustinPersonality:
-
     def __init__(self):
 
         self.documents = [
-
             PersonalityDocument(
                 "Austin",
                 DOCS / "AUSTIN.md",
             ),
-
             PersonalityDocument(
                 "Doctrine",
                 DOCS / "GUAVA_DOCTRINE.md",
             ),
-
             PersonalityDocument(
                 "UI Bible",
                 DOCS / "UI_BIBLE.md",
             ),
-
             PersonalityDocument(
                 "Vision",
                 DOCS / "VISION.md",
                 required=False,
             ),
-
             PersonalityDocument(
                 "Ecosystem",
                 DOCS / "ECOSYSTEM.md",
                 required=False,
             ),
-
         ]
 
     def load(self):
@@ -73,20 +64,13 @@ class AustinPersonality:
         loaded = 0
 
         for document in self.documents:
-
             if document.path.exists():
-
-                document.content = document.path.read_text(
-                    encoding="utf-8"
-                )
+                document.content = document.path.read_text(encoding="utf-8")
 
                 loaded += 1
 
             elif document.required:
-
-                raise FileNotFoundError(
-                    f"Missing doctrine document: {document.path}"
-                )
+                raise FileNotFoundError(f"Missing doctrine document: {document.path}")
 
         return loaded
 
@@ -95,11 +79,8 @@ class AustinPersonality:
         sections = []
 
         for document in self.documents:
-
             if document.content.strip():
-
                 sections.append(
-
                     f"""
 ==================================================
 {document.name.upper()}
@@ -114,21 +95,9 @@ class AustinPersonality:
     def summary(self):
 
         return {
-
             "documents": len(self.documents),
-
-            "loaded": sum(
-                1
-                for d in self.documents
-                if d.content
-            ),
-
-            "required": sum(
-                1
-                for d in self.documents
-                if d.required
-            ),
-
+            "loaded": sum(1 for d in self.documents if d.content),
+            "required": sum(1 for d in self.documents if d.required),
         }
 
 

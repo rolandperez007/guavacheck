@@ -6,17 +6,16 @@ compliance evaluation, provider management,
 and verification policy services for guavacheck.
 """
 
-from .RegistryLoader import RegistryLoader
-from .ProviderRegistry import ProviderRegistry
 from .ComplianceEngine import ComplianceEngine
-from .GovernmentVerificationPolicy import GovernmentVerificationPolicy
 from .GovernmentIntelligenceService import GovernmentIntelligenceService
-
+from .GovernmentVerificationPolicy import GovernmentVerificationPolicy
+from .ProviderRegistry import ProviderRegistry
+from .RegistryLoader import RegistryLoader
 
 __all__ = [
-    "RegistryLoader",
-    "ProviderRegistry",
     "ComplianceEngine",
-    "GovernmentVerificationPolicy",
     "GovernmentIntelligenceService",
+    "GovernmentVerificationPolicy",
+    "ProviderRegistry",
+    "RegistryLoader",
 ]

@@ -9,7 +9,6 @@ from dataclasses import dataclass
 
 @dataclass(slots=True)
 class Relationship:
-
     source: str
 
     relation: str
@@ -18,7 +17,6 @@ class Relationship:
 
 
 class RelationshipRegistry:
-
     def __init__(self):
 
         self._relationships: list[Relationship] = []
@@ -33,15 +31,7 @@ class RelationshipRegistry:
 
     def outgoing(self, entity_id: str):
 
-        return [
-
-            r
-
-            for r in self._relationships
-
-            if r.source == entity_id
-
-        ]
+        return [r for r in self._relationships if r.source == entity_id]
 
 
 relationships = RelationshipRegistry()

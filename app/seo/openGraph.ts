@@ -1,8 +1,7 @@
 export const openGraph = {
   title: "GuavaCheck",
 
-  description:
-    "AI-powered Global Property Intelligence Platform.",
+  description: "AI-powered Global Property Intelligence Platform.",
 
   url: "https://www.guavacheck.com",
 

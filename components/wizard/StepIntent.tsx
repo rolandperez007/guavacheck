@@ -70,22 +70,16 @@ export default function StepIntent() {
 
   return (
     <div className="mx-auto max-w-6xl">
-
       <div className="mb-10 text-center">
-
-        <h1 className="mb-3 text-4xl font-bold text-gray-900">
-          What would you like to do?
-        </h1>
+        <h1 className="mb-3 text-4xl font-bold text-gray-900">What would you like to do?</h1>
 
         <p className="text-lg text-gray-600">
-          Choose the experience that best matches your goal.
-          Austin will tailor the remaining steps accordingly.
+          Choose the experience that best matches your goal. Austin will tailor the remaining steps
+          accordingly.
         </p>
-
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-
         {intents.map((item) => {
           const active = wizard.intent === item.value;
 
@@ -100,27 +94,17 @@ export default function StepIntent() {
                   : "border-gray-200 bg-white hover:border-green-400 hover:shadow-md"
               }`}
             >
-              <div className="mb-5 text-5xl">
-                {item.icon}
-              </div>
+              <div className="mb-5 text-5xl">{item.icon}</div>
 
-              <h2 className="mb-2 text-xl font-semibold text-gray-900">
-                {item.title}
-              </h2>
+              <h2 className="mb-2 text-xl font-semibold text-gray-900">{item.title}</h2>
 
-              <p className="text-sm leading-6 text-gray-600">
-                {item.subtitle}
-              </p>
+              <p className="text-sm leading-6 text-gray-600">{item.subtitle}</p>
 
-              <div className="mt-6 text-sm font-semibold text-green-600">
-                Continue →
-              </div>
+              <div className="mt-6 text-sm font-semibold text-green-600">Continue →</div>
             </button>
           );
         })}
-
       </div>
-
     </div>
   );
 }

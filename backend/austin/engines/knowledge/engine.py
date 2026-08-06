@@ -8,7 +8,6 @@ from typing import Any
 
 
 class KnowledgeEngine:
-
     name = "knowledge"
     version = "1.0.0"
 

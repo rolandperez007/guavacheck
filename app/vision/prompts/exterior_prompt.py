@@ -1,5 +1,4 @@
 class ExteriorPromptBuilder:
-
     @staticmethod
     def build(project):
 

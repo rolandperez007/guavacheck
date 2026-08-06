@@ -12,9 +12,7 @@ export default function AustinChat() {
     >
       <h2>Austin AI Chat</h2>
 
-      <p>
-        Austin AI module is loading...
-      </p>
+      <p>Austin AI module is loading...</p>
     </div>
   );
 }

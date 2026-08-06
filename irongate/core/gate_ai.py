@@ -1,7 +1,7 @@
 from irongate.ai.context_builder import build_ai_context
-from irongate.ai.risk_engine import compute_risk
 from irongate.ai.decision_engine import make_decision
 from irongate.ai.reputation import update_reputation
+from irongate.ai.risk_engine import compute_risk
 
 
 class IronGateAI:

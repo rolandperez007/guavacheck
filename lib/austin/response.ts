@@ -1,8 +1,4 @@
-import {
-  AustinResponse,
-  AustinDecision,
-  SpecialistResponse,
-} from "./types";
+import { AustinResponse, AustinDecision, SpecialistResponse } from "./types";
 
 /**
  * Austin Response Engine
@@ -71,19 +67,12 @@ function generateTitle(decision: AustinDecision): string {
    SUMMARY
 ------------------------------*/
 
-function generateSummary(
-  decision: AustinDecision,
-  insights: string[]
-): string {
-  const base =
-    "Austin has completed an analysis of the provided property data.";
+function generateSummary(decision: AustinDecision, insights: string[]): string {
+  const base = "Austin has completed an analysis of the provided property data.";
 
   const confidenceNote = `Confidence level: ${decision.confidence.value}%.`;
 
-  const insightPreview =
-    insights.length > 0
-      ? ` Key insight: ${insights[0]}`
-      : "";
+  const insightPreview = insights.length > 0 ? ` Key insight: ${insights[0]}` : "";
 
   return `${base} ${confidenceNote}${insightPreview}`;
 }
@@ -124,9 +113,7 @@ function extractWarnings(results: SpecialistResponse[]): string[] {
    RECOMMENDATIONS
 ------------------------------*/
 
-function extractRecommendations(
-  results: SpecialistResponse[]
-): string[] {
+function extractRecommendations(results: SpecialistResponse[]): string[] {
   const recs: string[] = [];
 
   for (const r of results) {

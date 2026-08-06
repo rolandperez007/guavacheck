@@ -8,21 +8,19 @@
  */
 
 export interface PaymentProvider {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  supportedCountries: string[];
 
-    supportedCountries: string[];
+  supportedCurrencies: string[];
 
-    supportedCurrencies: string[];
+  supportsSubscriptions: boolean;
 
-    supportsSubscriptions: boolean;
+  supportsRefunds: boolean;
 
-    supportsRefunds: boolean;
+  supportsWebhooks: boolean;
 
-    supportsWebhooks: boolean;
-
-    enabled: boolean;
-
+  enabled: boolean;
 }

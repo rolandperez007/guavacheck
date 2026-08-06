@@ -11,9 +11,7 @@
 import { Event } from "./Event";
 
 export interface EventHandler {
+  readonly event: string;
 
-    readonly event: string;
-
-    handle(event: Event): Promise<void>;
-
+  handle(event: Event): Promise<void>;
 }

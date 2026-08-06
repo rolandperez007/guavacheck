@@ -46,7 +46,7 @@ function getWorldEnvironment(location: any) {
     sunHoursPerDay: location.sunHoursPerDay || 5,
     systemLossFactor: 0.2, // 20% loss default for Africa-style environments
     gridStability: location.country === "Nigeria" ? "unstable" : "stable",
-    solarEfficiencyMultiplier: 0.85
+    solarEfficiencyMultiplier: 0.85,
   };
 }
 
@@ -116,32 +116,32 @@ export function computeElectricalSolarSystem(input: ElectricalSolarInput) {
     energyAnalysis: {
       dailyConsumptionKWh: dailyEnergy,
       usableSolarPerKWPerDay: usableSolarPerKW,
-      requiredSolarKW
+      requiredSolarKW,
     },
 
     solarDesign: {
       panelWattage: panelWatt,
       requiredPanels,
-      totalSolarKW: (requiredPanels * panelWatt) / 1000
+      totalSolarKW: (requiredPanels * panelWatt) / 1000,
     },
 
     batteryDesign: {
       requiredBatteryKWh,
       selectedBatteryKWh: finalBattery,
-      autonomyDays
+      autonomyDays,
     },
 
     inverterDesign: {
       requiredInverterKW,
-      selectedInverterKW: finalInverter
+      selectedInverterKW: finalInverter,
     },
 
     systemSummary: {
       systemType: input.systemType,
       efficiencyLoss: lossFactor,
       gridStatus: env.gridStability,
-      autoAdjustments
-    }
+      autoAdjustments,
+    },
   };
 
   // -----------------------------
@@ -155,17 +155,17 @@ export function computeElectricalSolarSystem(input: ElectricalSolarInput) {
       solarKW: requiredSolarKW,
       panels: requiredPanels,
       batteryKWh: finalBattery,
-      inverterKW: finalInverter
+      inverterKW: finalInverter,
     },
 
     flags: {
       autoAdjusted: autoAdjustments.length > 0,
-      warnings: autoAdjustments
-    }
+      warnings: autoAdjustments,
+    },
   };
 
   return {
     engineeringReport,
-    apiResponse
+    apiResponse,
   };
 }

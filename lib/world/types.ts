@@ -1,9 +1,4 @@
-export type TimeOfDay =
-  | "dawn"
-  | "morning"
-  | "afternoon"
-  | "sunset"
-  | "night";
+export type TimeOfDay = "dawn" | "morning" | "afternoon" | "sunset" | "night";
 
 export interface WorldClock {
   hour: number;
@@ -14,12 +9,7 @@ export interface WorldClock {
 }
 
 export interface WeatherState {
-  condition:
-    | "clear"
-    | "cloudy"
-    | "rain"
-    | "storm"
-    | "fog";
+  condition: "clear" | "cloudy" | "rain" | "storm" | "fog";
 
   temperature: number;
   humidity: number;

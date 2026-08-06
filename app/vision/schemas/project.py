@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -8,16 +6,16 @@ class VisionProjectCreate(BaseModel):
     owner_id: str
     property_type: str
     design_style: str
-    budget: Optional[int] = Field(default=None, ge=0)
-    location: Optional[str] = None
+    budget: int | None = Field(default=None, ge=0)
+    location: str | None = None
 
 
 class VisionProjectUpdate(BaseModel):
-    name: Optional[str] = None
-    design_style: Optional[str] = None
-    budget: Optional[int] = Field(default=None, ge=0)
-    location: Optional[str] = None
-    status: Optional[str] = None
+    name: str | None = None
+    design_style: str | None = None
+    budget: int | None = Field(default=None, ge=0)
+    location: str | None = None
+    status: str | None = None
 
 
 class VisionProjectResponse(BaseModel):
@@ -28,6 +26,6 @@ class VisionProjectResponse(BaseModel):
     owner_id: str
     property_type: str
     design_style: str
-    budget: Optional[int]
-    location: Optional[str]
+    budget: int | None
+    location: str | None
     status: str

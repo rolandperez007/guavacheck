@@ -33,21 +33,16 @@ class RuntimeScheduler:
         job = queue.next()
 
         if job is None:
-
             return SchedulerDecision(
                 job=None,
                 reason="No queued jobs.",
-                timestamp=datetime.now(
-                    timezone.utc
-                ).isoformat(),
+                timestamp=datetime.now(timezone.utc).isoformat(),
             )
 
         return SchedulerDecision(
             job=job,
             reason="Queued job available.",
-            timestamp=datetime.now(
-                timezone.utc
-            ).isoformat(),
+            timestamp=datetime.now(timezone.utc).isoformat(),
         )
 
     def queue_depth(self) -> int:

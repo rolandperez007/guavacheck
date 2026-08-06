@@ -13,15 +13,6 @@ export async function GET() {
 
     return Response.json(data);
   } catch (err: any) {
-    return Response.json(
-      { error: err.message || "Server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: err.message || "Server error" }, { status: 500 });
   }
 }
-
-
-
-
-
-

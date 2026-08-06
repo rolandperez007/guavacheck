@@ -1,43 +1,31 @@
 import { RuleResult } from "./RuleEngine";
 
 export interface VerificationScore {
+  total: number;
 
-    total: number;
+  confidence: number;
 
-    confidence: number;
+  passed: number;
 
-    passed: number;
-
-    failed: number;
-
+  failed: number;
 }
 
 export class ScoringEngine {
+  static calculate(results: RuleResult[]): VerificationScore {
+    const passed = results.filter((r) => r.passed).length;
 
-    static calculate(results: RuleResult[]): VerificationScore {
+    const failed = results.length - passed;
 
-        const passed = results.filter(r => r.passed).length;
+    const total = results.reduce((sum, r) => sum + r.score, 0);
 
-        const failed = results.length - passed;
+    return {
+      total,
 
-        const total =
-            results.reduce((sum, r) => sum + r.score, 0);
+      confidence: results.length === 0 ? 0 : total / results.length,
 
-        return {
+      passed,
 
-            total,
-
-            confidence:
-                results.length === 0
-                    ? 0
-                    : total / results.length,
-
-            passed,
-
-            failed
-
-        };
-
-    }
-
+      failed,
+    };
+  }
 }

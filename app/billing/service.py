@@ -1,6 +1,5 @@
 from app.billing.providers.stripe import StripeProvider
 
-
 provider = StripeProvider()
 
 

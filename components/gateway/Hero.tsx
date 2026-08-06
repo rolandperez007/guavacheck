@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative h-[100svh] min-h-[700px] w-full overflow-hidden bg-black">
-
       {/* Background */}
       <div className="absolute inset-0 scale-110 md:scale-100 transition-transform duration-700">
         <Image
@@ -25,9 +24,7 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-10 flex h-full items-end justify-center pb-24 md:items-center md:pb-0">
-
         <div className="mx-auto max-w-4xl px-6 text-center">
-
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-7xl">
             Welcome to
             <br />
@@ -35,9 +32,8 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
-            The future home of global property intelligence,
-            AI-powered real estate, construction technology,
-            and smarter investment decisions.
+            The future home of global property intelligence, AI-powered real estate, construction
+            technology, and smarter investment decisions.
           </p>
 
           <div className="mt-10">
@@ -48,11 +44,8 @@ export default function Hero() {
               Request Early Access
             </Link>
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

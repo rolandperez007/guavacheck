@@ -1,11 +1,9 @@
-export enum WorldEvent{
+export enum WorldEvent {
+  COUNTRY_CHANGED = "country.changed",
 
-    COUNTRY_CHANGED="country.changed",
+  LANGUAGE_CHANGED = "language.changed",
 
-    LANGUAGE_CHANGED="language.changed",
+  PAYMENT_CHANGED = "payment.changed",
 
-    PAYMENT_CHANGED="payment.changed",
-
-    PPP_CHANGED="ppp.changed"
-
+  PPP_CHANGED = "ppp.changed",
 }

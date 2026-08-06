@@ -7,25 +7,23 @@
 import { EngineState } from "./EngineState";
 
 export interface EngineLifecycle {
+  readonly state: EngineState;
 
-    readonly state: EngineState;
+  initialize(): Promise<void>;
 
-    initialize(): Promise<void>;
+  configure(): Promise<void>;
 
-    configure(): Promise<void>;
+  start(): Promise<void>;
 
-    start(): Promise<void>;
+  pause(): Promise<void>;
 
-    pause(): Promise<void>;
+  resume(): Promise<void>;
 
-    resume(): Promise<void>;
+  reload(): Promise<void>;
 
-    reload(): Promise<void>;
+  recover(): Promise<void>;
 
-    recover(): Promise<void>;
+  stop(): Promise<void>;
 
-    stop(): Promise<void>;
-
-    shutdown(): Promise<void>;
-
+  shutdown(): Promise<void>;
 }

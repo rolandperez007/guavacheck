@@ -1,6 +1,6 @@
-from .locale_detector import LocaleDetector
 from .currency_mapper import CurrencyMapper
 from .language_pack import LanguagePack
+from .locale_detector import LocaleDetector
 from .timezone_resolver import TimezoneResolver
 
 

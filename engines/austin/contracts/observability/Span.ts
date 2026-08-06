@@ -9,27 +9,25 @@
  */
 
 export interface Span {
+  spanId: string;
 
-    spanId: string;
+  parentSpanId?: string;
 
-    parentSpanId?: string;
+  traceId: string;
 
-    traceId: string;
+  engine: string;
 
-    engine: string;
+  name: string;
 
-    name: string;
+  operation: string;
 
-    operation: string;
+  startTime: Date;
 
-    startTime: Date;
+  endTime?: Date;
 
-    endTime?: Date;
+  durationMs?: number;
 
-    durationMs?: number;
+  success: boolean;
 
-    success: boolean;
-
-    metadata?: Record<string, unknown>;
-
+  metadata?: Record<string, unknown>;
 }

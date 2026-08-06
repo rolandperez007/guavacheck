@@ -14,23 +14,21 @@
  */
 
 export interface Metric {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  category: string;
 
-    category: string;
+  description?: string;
 
-    description?: string;
+  value: number;
 
-    value: number;
+  unit: string;
 
-    unit: string;
+  source: string;
 
-    source: string;
+  timestamp: Date;
 
-    timestamp: Date;
-
-    tags?: Record<string, string>;
-
+  tags?: Record<string, string>;
 }

@@ -1,15 +1,13 @@
 export interface VerificationReport {
+  id: string;
 
-    id: string;
+  generatedAt: Date;
 
-    generatedAt: Date;
+  verified: number;
 
-    verified: number;
+  pending: number;
 
-    pending: number;
+  rejected: number;
 
-    rejected: number;
-
-    suspended: number;
-
+  suspended: number;
 }

@@ -77,20 +77,10 @@ export async function POST(req: Request) {
     return new Response(pdfBytes, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": "attachment; filename=austin-report.pdf"
-      }
+        "Content-Disposition": "attachment; filename=austin-report.pdf",
+      },
     });
-
   } catch (err: any) {
-    return Response.json(
-      { error: err.message },
-      { status: 500 }
-    );
+    return Response.json({ error: err.message }, { status: 500 });
   }
 }
-
-
-
-
-
-

@@ -8,7 +8,6 @@ engine modes and scoring parameters.
 
 
 class VerificationConfig:
-
     ENGINE_NAME = "guavacheck Verification Engine"
     VERSION = "1.0.0"
 
@@ -17,7 +16,6 @@ class VerificationConfig:
     VERIFIED_THRESHOLD = 85
     REVIEW_THRESHOLD = 60
     HIGH_RISK_THRESHOLD = 40
-
 
     # Document confidence
 
@@ -29,7 +27,6 @@ class VerificationConfig:
 
     FRAUD_WEIGHT = 0.20
 
-
     # Supported document categories
 
     SUPPORTED_DOCUMENTS = [
@@ -40,9 +37,8 @@ class VerificationConfig:
         "gazette",
         "allocation_letter",
         "building_approval",
-        "tax_document"
+        "tax_document",
     ]
-
 
     # Engine modes
 
@@ -50,9 +46,7 @@ class VerificationConfig:
     MODE_ADVANCED = "advanced"
     MODE_GOVERNMENT = "government"
 
-
     DEFAULT_MODE = MODE_BASIC
-
 
     @classmethod
     def get_engine_info(cls):
@@ -60,5 +54,5 @@ class VerificationConfig:
         return {
             "name": cls.ENGINE_NAME,
             "version": cls.VERSION,
-            "mode": cls.DEFAULT_MODE
+            "mode": cls.DEFAULT_MODE,
         }

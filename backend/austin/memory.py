@@ -17,7 +17,6 @@ from typing import Any
 
 @dataclass
 class MemoryRecord:
-
     id: str
     user_id: str
     category: str
@@ -29,7 +28,6 @@ class MemoryRecord:
 
 
 class AustinMemory:
-
     def __init__(self):
 
         self.records: dict[str, MemoryRecord] = {}
@@ -90,9 +88,7 @@ class AustinMemory:
         history = []
 
         for record in self.by_user(session_id):
-
             if record.category == "conversation":
-
                 history.append(
                     {
                         "role": record.title,
@@ -108,9 +104,7 @@ class AustinMemory:
     ):
 
         for key in list(self.records.keys()):
-
             if self.records[key].user_id == session_id:
-
                 del self.records[key]
 
     # --------------------------------------------------
@@ -119,18 +113,12 @@ class AustinMemory:
 
     def by_user(self, user_id: str):
 
-        return [
-            record
-            for record in self.records.values()
-            if record.user_id == user_id
-        ]
+        return [record for record in self.records.values() if record.user_id == user_id]
 
     def by_category(self, category: str):
 
         return [
-            record
-            for record in self.records.values()
-            if record.category == category
+            record for record in self.records.values() if record.category == category
         ]
 
     def search(self, keyword: str):
@@ -140,15 +128,12 @@ class AustinMemory:
         results = []
 
         for record in self.records.values():
-
             if keyword in record.title.lower():
-
                 results.append(record)
 
                 continue
 
             if keyword in str(record.value).lower():
-
                 results.append(record)
 
         return results
@@ -163,12 +148,7 @@ class AustinMemory:
 
     def categories(self):
 
-        return sorted(
-            {
-                record.category
-                for record in self.records.values()
-            }
-        )
+        return sorted({record.category for record in self.records.values()})
 
     def summary(self):
 

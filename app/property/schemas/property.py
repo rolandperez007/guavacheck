@@ -4,40 +4,19 @@ from pydantic import BaseModel, Field
 
 
 class PropertyCreate(BaseModel):
+    reference_code: str = Field(min_length=3, max_length=50)
 
-    reference_code: str = Field(
-        min_length=3,
-        max_length=50
-    )
+    property_type: str = Field(min_length=2, max_length=50)
 
-    property_type: str = Field(
-        min_length=2,
-        max_length=50
-    )
+    status: str = Field(default="active")
 
-    status: str = Field(
-        default="active"
-    )
+    country: str = Field(min_length=2, max_length=100)
 
-    country: str = Field(
-        min_length=2,
-        max_length=100
-    )
+    state: str = Field(min_length=2, max_length=100)
 
-    state: str = Field(
-        min_length=2,
-        max_length=100
-    )
+    city: str = Field(min_length=2, max_length=100)
 
-    city: str = Field(
-        min_length=2,
-        max_length=100
-    )
-
-    address: str = Field(
-        min_length=5,
-        max_length=255
-    )
+    address: str = Field(min_length=5, max_length=255)
 
     latitude: float | None = None
 
@@ -47,7 +26,6 @@ class PropertyCreate(BaseModel):
 
 
 class PropertyResponse(BaseModel):
-
     id: str
 
     reference_code: str
@@ -74,7 +52,5 @@ class PropertyResponse(BaseModel):
 
     updated_at: datetime
 
-
     class Config:
-
         from_attributes = True

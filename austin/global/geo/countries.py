@@ -7,7 +7,6 @@ Defines geographic defaults used throughout Austin.
 from __future__ import annotations
 
 COUNTRIES = {
-
     "Nigeria": {
         "code": "NG",
         "currency": "NGN",
@@ -18,7 +17,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Africa",
     },
-
     "United States": {
         "code": "US",
         "currency": "USD",
@@ -29,7 +27,6 @@ COUNTRIES = {
         "measurement": "feet",
         "region": "North America",
     },
-
     "United Kingdom": {
         "code": "GB",
         "currency": "GBP",
@@ -40,7 +37,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Europe",
     },
-
     "France": {
         "code": "FR",
         "currency": "EUR",
@@ -51,7 +47,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Europe",
     },
-
     "Spain": {
         "code": "ES",
         "currency": "EUR",
@@ -62,7 +57,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Europe",
     },
-
     "Germany": {
         "code": "DE",
         "currency": "EUR",
@@ -73,7 +67,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Europe",
     },
-
     "United Arab Emirates": {
         "code": "AE",
         "currency": "AED",
@@ -84,7 +77,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Middle East",
     },
-
     "Canada": {
         "code": "CA",
         "currency": "CAD",
@@ -95,7 +87,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "North America",
     },
-
     "Australia": {
         "code": "AU",
         "currency": "AUD",
@@ -106,7 +97,6 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Oceania",
     },
-
     "Japan": {
         "code": "JP",
         "currency": "JPY",
@@ -117,5 +107,4 @@ COUNTRIES = {
         "measurement": "meters",
         "region": "Asia",
     },
-
 }

@@ -1,7 +1,4 @@
-export type IntentType =
-  | "GENERAL"
-  | "ANALYZE"
-  | "EXECUTE";
+export type IntentType = "GENERAL" | "ANALYZE" | "EXECUTE";
 
 export interface AustinPlan {
   intent: IntentType;

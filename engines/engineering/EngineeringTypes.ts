@@ -9,13 +9,7 @@
 export type CountryCode = "NG" | "US" | "UK" | "CA" | "AE" | "GLOBAL";
 
 export type EngineeringDiscipline =
-  | "civil"
-  | "structural"
-  | "electrical"
-  | "mechanical"
-  | "plumbing"
-  | "hvac"
-  | "fire_safety";
+  "civil" | "structural" | "electrical" | "mechanical" | "plumbing" | "hvac" | "fire_safety";
 
 export type UnitSystem = "metric" | "imperial";
 

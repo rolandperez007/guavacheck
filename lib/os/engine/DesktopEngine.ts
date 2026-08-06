@@ -1,45 +1,37 @@
 export interface DesktopApplication {
+  id: string;
 
-    id:string;
+  title: string;
 
-    title:string;
+  icon: string;
 
-    icon:string;
+  component: string;
 
-    component:string;
+  width: number;
 
-    width:number;
+  height: number;
 
-    height:number;
+  x: number;
 
-    x:number;
+  y: number;
 
-    y:number;
+  minimized: boolean;
 
-    minimized:boolean;
+  maximized: boolean;
 
-    maximized:boolean;
-
-    focused:boolean;
-
+  focused: boolean;
 }
 
-class DesktopEngine{
+class DesktopEngine {
+  private apps: DesktopApplication[] = [];
 
-    private apps:DesktopApplication[]=[];
+  register(app: DesktopApplication) {
+    this.apps.push(app);
+  }
 
-    register(app:DesktopApplication){
-
-        this.apps.push(app);
-
-    }
-
-    getApplications(){
-
-        return this.apps;
-
-    }
-
+  getApplications() {
+    return this.apps;
+  }
 }
 
-export const desktopEngine=new DesktopEngine();
+export const desktopEngine = new DesktopEngine();

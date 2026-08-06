@@ -1,19 +1,13 @@
-import {DomainModule} from "../types";
+import { DomainModule } from "../types";
 
-export class AustinModule implements DomainModule{
+export class AustinModule implements DomainModule {
+  initialize() {
+    console.log("Austin Ready");
+  }
 
-initialize(){
+  destroy() {}
 
-console.log("Austin Ready");
-
-}
-
-destroy(){}
-
-handle(message:any){
-
-console.log("Austin received",message);
-
-}
-
+  handle(message: any) {
+    console.log("Austin received", message);
+  }
 }

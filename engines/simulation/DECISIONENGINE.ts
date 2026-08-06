@@ -1,21 +1,15 @@
 export interface Decision {
+  id: string;
 
-    id: string;
+  reason: string;
 
-    reason: string;
+  confidence: number;
 
-    confidence: number;
-
-    approved: boolean;
-
+  approved: boolean;
 }
 
 export class DecisionEngine {
-
-    static approve(confidence: number): boolean {
-
-        return confidence >= 95;
-
-    }
-
+  static approve(confidence: number): boolean {
+    return confidence >= 95;
+  }
 }

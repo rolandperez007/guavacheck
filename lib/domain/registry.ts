@@ -1,25 +1,17 @@
-import {DomainModule} from "./types";
+import { DomainModule } from "./types";
 
-class Registry{
+class Registry {
+  private modules: DomainModule[] = [];
 
-private modules:DomainModule[]=[];
+  register(module: DomainModule) {
+    this.modules.push(module);
+  }
 
-register(module:DomainModule){
-
-this.modules.push(module);
-
+  broadcast(message: any) {
+    this.modules.forEach((module) => {
+      module.handle(message);
+    });
+  }
 }
 
-broadcast(message:any){
-
-this.modules.forEach(module=>{
-
-module.handle(message);
-
-});
-
-}
-
-}
-
-export const registry=new Registry();
+export const registry = new Registry();

@@ -15,10 +15,7 @@ export default function SecurityPage() {
     >
       <h1>Security</h1>
 
-      <p>
-        guavacheck is designed with security,
-        responsible AI and privacy-first principles.
-      </p>
+      <p>guavacheck is designed with security, responsible AI and privacy-first principles.</p>
     </main>
   );
 }

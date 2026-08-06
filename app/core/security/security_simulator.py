@@ -1,7 +1,6 @@
 # app/core/security/security_simulator.py
 
 from dataclasses import dataclass
-from typing import Dict, Any
 
 
 @dataclass

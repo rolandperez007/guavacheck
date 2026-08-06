@@ -8,7 +8,6 @@ from backend.austin.memory import MemoryRecord
 
 
 class ContextSummarizer:
-
     def summarize(
         self,
         history: list[MemoryRecord],
@@ -22,7 +21,6 @@ class ContextSummarizer:
         lines = []
 
         for item in recent:
-
             if isinstance(item, dict):
                 title = item.get("title", "message")
                 value = item.get("value", "")

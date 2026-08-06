@@ -6,7 +6,6 @@ Provides reusable engineering calculations.
 
 
 class EngineeringCalculator:
-
     def estimate_foundation(
         self,
         length: float,
@@ -16,11 +15,8 @@ class EngineeringCalculator:
         area = length * width
 
         return {
-
             "area": area,
-
             "unit": "m²",
-
         }
 
 

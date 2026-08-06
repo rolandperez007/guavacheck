@@ -2,15 +2,14 @@ import asyncio
 
 from app.agents.listing_agent import ListingAgent
 from app.agents.swarm.swarm_coordinator_v2 import SwarmCoordinatorV2
-from app.core.memory.hybrid_memory import HybridMemory
-from app.core.router.model_gateway import ModelGatewayV2
 from app.core.events.event_bus import EventBus
-from app.core.ui.ui_event_stream import UIEventStream
-
-from app.core.query_parser import QueryParser
-from app.core.project_classifier import ProjectClassifier
 from app.core.i18n.global_context import GlobalContext
+from app.core.memory.hybrid_memory import HybridMemory
+from app.core.project_classifier import ProjectClassifier
+from app.core.query_parser import QueryParser
+from app.core.router.model_gateway import ModelGatewayV2
 from app.core.security.context import SecurityContext
+from app.core.ui.ui_event_stream import UIEventStream
 
 
 class AustinEngine:

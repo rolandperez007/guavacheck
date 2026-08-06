@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import time
 import uuid
-from typing import Dict, Any, Optional
+from typing import Any
+
 from app.core.execution.job_engine import JobEngine
 
 job_engine = JobEngine()
@@ -15,7 +16,7 @@ def _dispatch(self, job):
 # -----------------------------------
 # In-memory job store (swap to Redis later)
 # -----------------------------------
-JOB_DB: Dict[str, Dict[str, Any]] = {}
+JOB_DB: dict[str, dict[str, Any]] = {}
 
 
 class JobEngine:
@@ -43,7 +44,7 @@ class JobEngine:
     # -----------------------------------
     # MAIN WORKER ENTRY (simulate worker)
     # -----------------------------------
-    def process_job(self, job_id: str) -> Optional[Dict[str, Any]]:
+    def process_job(self, job_id: str) -> dict[str, Any] | None:
         job = JOB_DB.get(job_id)
 
         if not job:

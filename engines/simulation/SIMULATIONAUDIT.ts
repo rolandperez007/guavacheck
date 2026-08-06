@@ -1,11 +1,9 @@
 export interface SimulationAudit {
+  simulationId: string;
 
-    simulationId: string;
+  timestamp: Date;
 
-    timestamp: Date;
+  passed: boolean;
 
-    passed: boolean;
-
-    notes: string;
-
+  notes: string;
 }

@@ -9,12 +9,9 @@ from backend.engines.base import BaseEngine
 
 
 class EngineeringEngine(BaseEngine):
-
     name = "engineering"
 
-    description = (
-        "Engineering calculations and analysis."
-    )
+    description = "Engineering calculations and analysis."
 
     async def execute(self, request: dict):
         self.kernel.log(
@@ -25,13 +22,8 @@ class EngineeringEngine(BaseEngine):
             service="engines.engineering",
         )
         return {
-
             "engine": self.name,
-
             "status": "success",
-
             "message": "Engineering Engine executed.",
-
             "request": request,
-
         }

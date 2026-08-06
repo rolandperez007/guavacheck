@@ -1,19 +1,7 @@
-export type IntentType =
-  | "valuation"
-  | "mortgage"
-  | "boq"
-  | "market"
-  | "report"
-  | "agent";
+export type IntentType = "valuation" | "mortgage" | "boq" | "market" | "report" | "agent";
 
 export type AustinOutput =
-  | "table"
-  | "insight"
-  | "report"
-  | "scorecard"
-  | "finance_table"
-  | "listings"
-  | "message";
+  "table" | "insight" | "report" | "scorecard" | "finance_table" | "listings" | "message";
 
 export interface AustinIntent {
   raw: string;

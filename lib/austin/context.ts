@@ -1,17 +1,11 @@
-import {
-  PropertyContext,
-  WizardAustinInput,
-  UserIntent,
-} from "./types";
+import { PropertyContext, WizardAustinInput, UserIntent } from "./types";
 
 /**
  * Convert Wizard Data → Austin Context
  * This is Austin's "perception layer"
  */
 
-export function buildAustinContext(
-  input: WizardAustinInput
-): PropertyContext {
+export function buildAustinContext(input: WizardAustinInput): PropertyContext {
   return {
     intent: mapIntent(input.intent),
 
@@ -143,8 +137,7 @@ function normalizeDocuments(documents: any) {
   if (!documents) return {};
 
   return {
-    certificateOfOccupancy:
-      documents.certificateOfOccupancy || [],
+    certificateOfOccupancy: documents.certificateOfOccupancy || [],
 
     surveyPlan: documents.surveyPlan || [],
 

@@ -1,23 +1,19 @@
 export enum RiskLevel {
+  LOW = "low",
 
-    LOW = "low",
+  MEDIUM = "medium",
 
-    MEDIUM = "medium",
+  HIGH = "high",
 
-    HIGH = "high",
-
-    CRITICAL = "critical"
-
+  CRITICAL = "critical",
 }
 
 export interface RiskProfile {
+  entityId: string;
 
-    entityId: string;
+  score: number;
 
-    score: number;
+  level: RiskLevel;
 
-    level: RiskLevel;
-
-    reasons: string[];
-
+  reasons: string[];
 }

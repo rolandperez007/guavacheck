@@ -1,5 +1,5 @@
-from app.core.payment_providers.paystack_provider import PaystackProvider
 from app.core.payment_providers.flutterwave_provider import FlutterwaveProvider
+from app.core.payment_providers.paystack_provider import PaystackProvider
 from app.core.payment_providers.stripe_provider import StripeProvider
 
 

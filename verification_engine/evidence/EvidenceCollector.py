@@ -9,7 +9,6 @@ from verification_engine.evidence.EvidenceModels import Evidence
 
 
 class EvidenceCollector:
-
     def __init__(self):
 
         self.items = []

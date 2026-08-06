@@ -1,5 +1,4 @@
 export class GlobalFinanceEngine {
-
   static defaultCurrency = "USD";
 
   static exchangeRates: Record<string, number> = {
@@ -7,13 +6,13 @@ export class GlobalFinanceEngine {
     EUR: 0.92,
     GBP: 0.78,
     NGN: 1500,
-    AED: 3.67
+    AED: 3.67,
   };
 
   static format(amount: number, currency: string = "USD") {
     return new Intl.NumberFormat(undefined, {
       style: "currency",
-      currency
+      currency,
     }).format(amount);
   }
 
@@ -27,20 +26,18 @@ export class GlobalFinanceEngine {
   }
 
   static applyRegionMultiplier(amount: number, region?: string) {
-
     const multipliers: Record<string, number> = {
       global: 1,
       africa: 0.75,
       europe: 1.1,
       usa: 1.3,
-      middleeast: 1.15
+      middleeast: 1.15,
     };
 
     return amount * (multipliers[region || "global"] || 1);
   }
 
   static detectCurrencyFromLocale(locale?: string) {
-
     if (!locale) return "USD";
 
     if (locale.includes("ng")) return "NGN";
@@ -51,4 +48,3 @@ export class GlobalFinanceEngine {
     return "USD";
   }
 }
-

@@ -10,7 +10,6 @@ from typing import Any
 
 @dataclass(slots=True)
 class EngineResult:
-
     success: bool
 
     engine: str

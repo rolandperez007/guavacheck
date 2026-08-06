@@ -1,6 +1,6 @@
 import { ThreeElements } from "@react-three/fiber";
-import { ReactThreeFiber } from '@react-three/fiber'
-import * as THREE from 'three'
+import { ReactThreeFiber } from "@react-three/fiber";
+import * as THREE from "three";
 
 declare global {
   namespace JSX {

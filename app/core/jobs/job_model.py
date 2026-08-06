@@ -1,21 +1,21 @@
 # app/core/jobs/job_model.py
 
 from dataclasses import dataclass
-from typing import Any, Dict, Optional
 from datetime import datetime
+from typing import Any
 
 
 @dataclass
 class Job:
     job_id: str
     job_type: str
-    payload: Dict[str, Any]
+    payload: dict[str, Any]
 
     status: str = "queued"
     progress: int = 0
 
-    result: Optional[Dict[str, Any]] = None
-    error: Optional[str] = None
+    result: dict[str, Any] | None = None
+    error: str | None = None
 
     created_at: datetime = datetime.utcnow()
     updated_at: datetime = datetime.utcnow()

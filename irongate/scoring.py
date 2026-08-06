@@ -16,9 +16,7 @@ def compute_score(reasons: list) -> int:
             continue
 
     # clamp to 0-100
-    if total < 0:
-        total = 0
-    if total > 100:
-        total = 100
+    total = max(total, 0)
+    total = min(total, 100)
 
     return total

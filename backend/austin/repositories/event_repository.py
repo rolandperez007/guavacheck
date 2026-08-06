@@ -14,7 +14,6 @@ from ..models import AustinEvent
 
 
 class EventRepository:
-
     def all(self) -> list[AustinEvent]:
 
         return store.list()

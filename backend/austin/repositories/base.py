@@ -12,8 +12,7 @@ class BaseEventRepository(ABC):
     """
 
     @abstractmethod
-    def append(self, event: AustinEvent) -> AustinEvent:
-        ...
+    def append(self, event: AustinEvent) -> AustinEvent: ...
 
     @abstractmethod
     def list(
@@ -22,15 +21,12 @@ class BaseEventRepository(ABC):
         window: str = "1h",
         engine: str | None = None,
         severity: str | None = None,
-        category: str |None = None,
+        category: str | None = None,
         correlation_id: str | None = None,
-    ) -> list[AustinEvent]:
-        ...
+    ) -> list[AustinEvent]: ...
 
     @abstractmethod
-    def summary(self) -> dict[str, Any]:
-        ...
+    def summary(self) -> dict[str, Any]: ...
 
     @abstractmethod
-    def clear(self) -> None:
-        ...
+    def clear(self) -> None: ...

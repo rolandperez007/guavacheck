@@ -5,13 +5,7 @@ export async function GET() {
     sample: {
       principal: 1000000,
       rate: 6,
-      termMonths: 24
-    }
+      termMonths: 24,
+    },
   });
 }
-
-
-
-
-
-

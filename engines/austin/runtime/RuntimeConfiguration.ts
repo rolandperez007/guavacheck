@@ -3,17 +3,15 @@
  */
 
 export interface RuntimeConfiguration {
+  workerThreads: number;
 
-    workerThreads: number;
+  enableTracing: boolean;
 
-    enableTracing: boolean;
+  enableProfiling: boolean;
 
-    enableProfiling: boolean;
+  maximumQueueSize: number;
 
-    maximumQueueSize: number;
+  taskTimeoutMs: number;
 
-    taskTimeoutMs: number;
-
-    retryAttempts: number;
-
+  retryAttempts: number;
 }

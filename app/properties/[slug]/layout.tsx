@@ -7,14 +7,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const title = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const title = slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   return {
     title: `${title} | GuavaCheck`,
-    description:
-      "Verified property listing powered by GuavaCheck AI.",
+    description: "Verified property listing powered by GuavaCheck AI.",
 
     alternates: {
       canonical: `https://www.guavacheck.com/properties/${slug}`,
@@ -22,8 +19,7 @@ export async function generateMetadata({
 
     openGraph: {
       title,
-      description:
-        "Verified global property listing.",
+      description: "Verified global property listing.",
 
       url: `https://www.guavacheck.com/properties/${slug}`,
 
@@ -37,16 +33,11 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description:
-        "Verified property listing.",
+      description: "Verified property listing.",
     },
   };
 }
 
-export default function PropertyLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PropertyLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

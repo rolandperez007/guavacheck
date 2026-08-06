@@ -1,5 +1,5 @@
-from app.agents.swarm.pricing_agent import PricingAgent
 from app.agents.swarm.insight_agent import InsightAgent
+from app.agents.swarm.pricing_agent import PricingAgent
 from app.agents.swarm.ranking_agent import RankingAgent
 
 

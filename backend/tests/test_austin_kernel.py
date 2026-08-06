@@ -1,8 +1,9 @@
 import asyncio
 
+from austin.kernel import AustinKernel, build_request_context
+
 from backend.engines.base import BaseEngine
 from backend.engines.property.engine import PropertyEngine
-from austin.kernel import AustinKernel, RequestContext, build_request_context
 
 
 class FailingEngine(BaseEngine):
@@ -41,7 +42,9 @@ def test_engine_execute_emits_kernel_observability_and_queue_work():
     kernel = AustinKernel()
     engine = PropertyEngine(kernel=kernel)
 
-    result = asyncio.run(engine.execute({"correlation_id": "corr-456", "trace_id": "trace-456"}))
+    result = asyncio.run(
+        engine.execute({"correlation_id": "corr-456", "trace_id": "trace-456"})
+    )
 
     assert result["engine"] == "property"
     assert kernel.queue_service.summary()["total"] >= 1
@@ -53,7 +56,9 @@ def test_engine_failure_creates_incident_and_health_signal():
     engine = FailingEngine(kernel=kernel)
 
     try:
-        asyncio.run(engine.execute({"correlation_id": "corr-fail", "trace_id": "trace-fail"}))
+        asyncio.run(
+            engine.execute({"correlation_id": "corr-fail", "trace_id": "trace-fail"})
+        )
     except RuntimeError:
         pass
 

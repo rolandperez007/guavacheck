@@ -1,9 +1,7 @@
 export interface AustinLearning {
+  lesson: string;
 
-    lesson: string;
+  source: string;
 
-    source: string;
-
-    recordedAt: Date;
-
+  recordedAt: Date;
 }

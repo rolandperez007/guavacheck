@@ -6,13 +6,7 @@
  */
 
 export type WizardIntent =
-  | "sell"
-  | "distress"
-  | "rent"
-  | "build"
-  | "commercial"
-  | "design"
-  | "estimate";
+  "sell" | "distress" | "rent" | "build" | "commercial" | "design" | "estimate";
 
 export type WizardStep =
   | "welcome"

@@ -4,12 +4,10 @@ Upload Models
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
 
 
 @dataclass
 class UploadedDocument:
-
     document_id: str
 
     filename: str
@@ -18,16 +16,14 @@ class UploadedDocument:
 
     file_size: int
 
-    property_id: Optional[str] = None
+    property_id: str | None = None
 
-    uploaded_by: Optional[str] = None
+    uploaded_by: str | None = None
 
-    storage_path: Optional[str] = None
+    storage_path: str | None = None
 
-    checksum: Optional[str] = None
+    checksum: str | None = None
 
-    uploaded_at: datetime = field(
-        default_factory=datetime.utcnow
-    )
+    uploaded_at: datetime = field(default_factory=datetime.utcnow)
 
     status: str = "UPLOADED"

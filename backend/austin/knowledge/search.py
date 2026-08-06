@@ -8,7 +8,6 @@ from .entities import registry
 
 
 class KnowledgeSearch:
-
     def search(self, query: str):
 
         query = query.lower()
@@ -16,21 +15,12 @@ class KnowledgeSearch:
         results = []
 
         for entity in registry.all():
-
             if query in entity.name.lower():
-
                 results.append(entity)
 
                 continue
 
-            if any(
-
-                query in alias.lower()
-
-                for alias in entity.aliases
-
-            ):
-
+            if any(query in alias.lower() for alias in entity.aliases):
                 results.append(entity)
 
         return results

@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function Background() {
   return (
     <div className="fixed inset-0 -z-10">
-
       <Image
         src="/images/launch/hero.png"
         alt="Guava City"
@@ -18,7 +17,6 @@ export default function Background() {
 
       {/* Soft Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#07110E]/80" />
-
     </div>
   );
 }

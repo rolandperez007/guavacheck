@@ -1,8 +1,7 @@
+from fastapi import Header, HTTPException, status
 from jose import JWTError, jwt
-from fastapi import HTTPException, Header, status
 from pydantic import BaseModel
-from typing import Optional
-from fastapi import APIRouter, Depends
+
 from app.core.security.security import get_current_user
 
 # ⚠️ Move this to .env later
@@ -12,8 +11,8 @@ ALGORITHM = "HS256"
 
 class User(BaseModel):
     id: str
-    org_id: Optional[str] = None
-    role: Optional[str] = "user"
+    org_id: str | None = None
+    role: str | None = "user"
 
 
 # -----------------------------

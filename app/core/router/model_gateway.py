@@ -1,5 +1,5 @@
 import asyncio
-from typing import Any, Dict, Optional
+from typing import Any
 
 
 class ModelGatewayV2:
@@ -15,9 +15,9 @@ class ModelGatewayV2:
     async def ask(
         self,
         prompt: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
         temperature: float = 0.2,
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         cache_key = hash(prompt + str(context))
 
         if cache_key in self.cache:

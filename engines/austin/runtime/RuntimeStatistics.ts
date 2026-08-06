@@ -3,19 +3,17 @@
  */
 
 export interface RuntimeStatistics {
+  totalTasksExecuted: number;
 
-    totalTasksExecuted: number;
+  totalFailures: number;
 
-    totalFailures: number;
+  totalWorkerStarts: number;
 
-    totalWorkerStarts: number;
+  averageExecutionTimeMs: number;
 
-    averageExecutionTimeMs: number;
+  averageQueueTimeMs: number;
 
-    averageQueueTimeMs: number;
+  peakWorkers: number;
 
-    peakWorkers: number;
-
-    runtimeStarted: string;
-
+  runtimeStarted: string;
 }

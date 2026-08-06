@@ -31,7 +31,7 @@ export class MarketForecastEngine {
       confidence,
       recommendation,
       growthRate: property?.growthRate ?? 5,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
 
     // store safely
@@ -41,7 +41,7 @@ export class MarketForecastEngine {
       riskScore,
       confidence,
       recommendation,
-      growthRate: property?.growthRate ?? 5
+      growthRate: property?.growthRate ?? 5,
     };
   }
 }

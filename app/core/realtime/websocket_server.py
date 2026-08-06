@@ -1,4 +1,5 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+
 from app.core.realtime.websocket_manager import ws_manager
 
 app = FastAPI()

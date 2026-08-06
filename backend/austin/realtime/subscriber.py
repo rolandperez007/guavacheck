@@ -6,8 +6,8 @@ Registers realtime listeners on the Austin Event Bus.
 
 from __future__ import annotations
 
-from .broadcaster import broadcast_event
 from ..events import events
+from .broadcaster import broadcast_event
 
 
 async def subscribe_to_events() -> None:

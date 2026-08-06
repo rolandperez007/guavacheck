@@ -15,10 +15,7 @@ export default function DocsPage() {
     >
       <h1>Developer Documentation</h1>
 
-      <p>
-        Documentation for APIs, SDKs and integrations
-        powering guavacheck.
-      </p>
+      <p>Documentation for APIs, SDKs and integrations powering guavacheck.</p>
     </main>
   );
 }

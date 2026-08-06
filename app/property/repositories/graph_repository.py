@@ -3,7 +3,6 @@ from app.property.schemas.graph import PropertyGraph
 
 
 class PropertyGraphRepository:
-
     def __init__(self):
 
         self.repositories = RepositoryRegistry()

@@ -4,7 +4,9 @@ from typing import Any
 
 
 class AustinRecommendations:
-    def explain(self, *, queue_depth: int, active_workers: int, wait_time_ms: int | None = None) -> dict[str, Any]:
+    def explain(
+        self, *, queue_depth: int, active_workers: int, wait_time_ms: int | None = None
+    ) -> dict[str, Any]:
         if queue_depth > 100 and active_workers < 3:
             return {
                 "title": "Scale worker capacity",

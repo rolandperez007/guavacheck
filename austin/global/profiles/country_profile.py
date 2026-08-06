@@ -9,7 +9,6 @@ from dataclasses import dataclass
 
 @dataclass(slots=True)
 class CountryProfile:
-
     name: str
 
     code: str

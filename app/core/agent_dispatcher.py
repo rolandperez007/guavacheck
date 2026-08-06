@@ -18,6 +18,3 @@ class AgentDispatcher:
             return {"message": "No matching agent"}
 
         return await agent.run(query)
-
-
-from app.core.tool_router import ToolRouter

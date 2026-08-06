@@ -6,16 +6,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from types import SimpleNamespace
+
 from irongate.normalizer import normalize_request
 from irongate.rule import (
-    spam_pattern_rule,
     austin_low_risk_rule,
     automation_header_rule,
+    duplicate_request_rule,
     payload_size_limit_rule,
     rate_limit_rule,
-    duplicate_request_rule,
+    spam_pattern_rule,
 )
-from irongate.bootstrap import gate
 
 
 def make_request(path="/", method="POST", headers=None):

@@ -1,27 +1,19 @@
 import { CountryProfile } from "./types";
 
 export class ContextBuilder {
+  constructor(private readonly profile: CountryProfile) {}
 
-    constructor(private readonly profile: CountryProfile){}
+  public build() {
+    return {
+      country: this.profile,
 
-    public build(){
+      localization: {
+        language: this.profile.language,
 
-        return{
+        currency: this.profile.currency,
 
-            country:this.profile,
-
-            localization:{
-
-                language:this.profile.language,
-
-                currency:this.profile.currency,
-
-                timezone:this.profile.timezone
-
-            }
-
-        };
-
-    }
-
+        timezone: this.profile.timezone,
+      },
+    };
+  }
 }

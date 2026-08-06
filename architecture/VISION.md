@@ -1,12 +1,12 @@
 # guavacheck Vision
 
-**Document Version:** 1.0.0
+Document Version: 1.0.0
 
-**Status:** Living Document
+Status: Living Document
 
-**Classification:** Strategic Platform Documentation
+Classification: Strategic Platform Documentation
 
-**Owner:** Guava Networks Limited
+Owner: Guava Networks Limited
 
 ---
 

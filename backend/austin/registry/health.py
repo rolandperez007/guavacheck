@@ -10,21 +10,14 @@ from backend.austin.registry.registry import registry
 
 
 class RegistryHealth:
-
     def report(self) -> dict:
 
         return {
-
             "timestamp": datetime.utcnow(),
-
             "healthy": registry.booted,
-
             "engine_count": registry.count(),
-
             "engines": registry.list_engines(),
-
             "details": registry.health(),
-
         }
 
 

@@ -8,11 +8,7 @@
  * - Safety evaluation
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringCalculator } from "./EngineeringCalculator";
 import { EngineeringValidator } from "./EngineeringValidator";
@@ -30,9 +26,7 @@ export interface StructuralOutput {
   recommendation: string;
 }
 
-export class StructuralAnalysis
-  implements IEngineeringModule<StructuralInput, StructuralOutput>
-{
+export class StructuralAnalysis implements IEngineeringModule<StructuralInput, StructuralOutput> {
   discipline = "structural" as const;
 
   async validate(input: EngineeringInput<StructuralInput>): Promise<void> {
@@ -41,36 +35,28 @@ export class StructuralAnalysis
   }
 
   async compute(
-    input: EngineeringInput<StructuralInput>
+    input: EngineeringInput<StructuralInput>,
   ): Promise<EngineeringResult<StructuralOutput>> {
-    const { span, load, materialStrength, safetyFactor = 1.5 } =
-      input.data;
+    const { span, load, materialStrength, safetyFactor = 1.5 } = input.data;
 
     // Step 1: distributed load
-    const distributedLoad =
-      EngineeringCalculator.distributeLoad(load, span);
+    const distributedLoad = EngineeringCalculator.distributeLoad(load, span);
 
     // Step 2: simplified bending moment
     const moment = (load * span) / 8;
 
     // Step 3: stress calculation
-    const stress = EngineeringCalculator.bendingStress(
-      moment,
-      materialStrength
-    );
+    const stress = EngineeringCalculator.bendingStress(moment, materialStrength);
 
     // Step 4: apply safety factor
-    const safeStress =
-      EngineeringCalculator.applySafetyFactor(stress, safetyFactor);
+    const safeStress = EngineeringCalculator.applySafetyFactor(stress, safetyFactor);
 
     const safe = safeStress < materialStrength;
 
     return {
       discipline: this.discipline,
       success: true,
-      summary: safe
-        ? "Structure is within safe limits"
-        : "Structure exceeds safe stress limits",
+      summary: safe ? "Structure is within safe limits" : "Structure exceeds safe stress limits",
 
       data: {
         stress: safeStress,

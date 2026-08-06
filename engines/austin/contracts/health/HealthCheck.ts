@@ -12,7 +12,5 @@
 import { HealthReport } from "./HealthReport";
 
 export interface HealthCheck {
-
-    execute(): Promise<HealthReport>;
-
+  execute(): Promise<HealthReport>;
 }

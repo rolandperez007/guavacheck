@@ -10,23 +10,20 @@ export async function POST(req: Request) {
     }
 
     const enriched = properties.map((p: any) => {
-
       const mortgage = MortgageAffordabilityEngine.calculate({
         propertyPrice: p.price || 0,
-        monthlyIncome: p.monthlyIncome
+        monthlyIncome: p.monthlyIncome,
       });
 
       const aiScore = p.aiScore || {
         finalScore: 60,
         roiScore: 10,
         riskScore: 40,
-        grade: "C"
+        grade: "C",
       };
 
       const investmentScore =
-        (aiScore.finalScore * 0.5) +
-        (aiScore.roiScore * 0.3) -
-        (aiScore.riskScore * 0.2);
+        aiScore.finalScore * 0.5 + aiScore.roiScore * 0.3 - aiScore.riskScore * 0.2;
 
       let decision = "HOLD";
       if (investmentScore >= 75) decision = "BUY";
@@ -38,7 +35,7 @@ export async function POST(req: Request) {
 
         investment: {
           score: Math.round(investmentScore),
-          decision
+          decision,
         },
 
         mortgage,
@@ -46,26 +43,16 @@ export async function POST(req: Request) {
         summary: {
           price: p.price,
           location: p.location,
-          grade: aiScore.grade
-        }
+          grade: aiScore.grade,
+        },
       };
     });
 
     return Response.json({
       count: enriched.length,
-      data: enriched
+      data: enriched,
     });
-
   } catch (err: any) {
-    return Response.json(
-      { error: err.message },
-      { status: 500 }
-    );
+    return Response.json({ error: err.message }, { status: 500 });
   }
 }
-
-
-
-
-
-

@@ -11,11 +11,13 @@ try:
     from .property_models import PropertyRecord
     from .verification_models import VerificationRecord
 except ImportError:  # pragma: no cover - optional dependency
-    AuditLog = DocumentRecord = OwnershipRecord = PropertyRecord = VerificationRecord = None  # type: ignore[assignment]
+    AuditLog = DocumentRecord = OwnershipRecord = PropertyRecord = (
+        VerificationRecord
+    ) = None  # type: ignore[assignment]
 
 __all__ = [
-    "Base",
     "AuditLog",
+    "Base",
     "DocumentRecord",
     "OwnershipRecord",
     "PropertyRecord",

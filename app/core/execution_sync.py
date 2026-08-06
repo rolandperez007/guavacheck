@@ -1,5 +1,5 @@
-from app.core.escrow.milestone_engine import MilestoneEngine
 from app.core.escrow.fund_release_engine import FundReleaseEngine
+from app.core.escrow.milestone_engine import MilestoneEngine
 
 
 class ExecutionEscrowSync:

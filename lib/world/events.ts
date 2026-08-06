@@ -1,29 +1,25 @@
-const events=[
+const events = [
+  "New property verified",
 
-"New property verified",
+  "Mortgage approved",
 
-"Mortgage approved",
+  "Construction milestone reached",
 
-"Construction milestone reached",
+  "Investor joined marketplace",
 
-"Investor joined marketplace",
+  "Property listed",
 
-"Property listed",
+  "Drone survey completed",
 
-"Drone survey completed",
+  "Austin completed valuation",
 
-"Austin completed valuation",
+  "Title verification completed",
 
-"Title verification completed",
+  "Market confidence increased",
 
-"Market confidence increased",
-
-"Currency updated"
-
+  "Currency updated",
 ];
 
-export function randomEvent(){
-
-    return events[Math.floor(Math.random()*events.length)];
-
+export function randomEvent() {
+  return events[Math.floor(Math.random() * events.length)];
 }

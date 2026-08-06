@@ -12,12 +12,7 @@ export enum SupportLevel {
   COMPLETE = 10,
 }
 
-export type CapabilityState =
-  | "none"
-  | "basic"
-  | "standard"
-  | "advanced"
-  | "regulated";
+export type CapabilityState = "none" | "basic" | "standard" | "advanced" | "regulated";
 
 export interface CapabilitySet {
   construction: CapabilityState;

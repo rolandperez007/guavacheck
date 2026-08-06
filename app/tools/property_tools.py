@@ -6,7 +6,7 @@ class PropertyTools:
         self.db = SupabaseGateway()
 
     def search_properties(self, location=None, limit=20):
-        import time
+        pass
 
 
 def search_properties(self, location=None):

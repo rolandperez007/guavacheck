@@ -53,13 +53,12 @@ export default function Features() {
             style={{
               maxWidth: "700px",
               margin: "0 auto",
-              opacity: .8,
+              opacity: 0.8,
               lineHeight: 1.8,
               fontSize: "19px",
             }}
           >
-            From your first sketch to final construction,
-            guavacheck helps you design, estimate,
+            From your first sketch to final construction, guavacheck helps you design, estimate,
             verify and build with confidence.
           </p>
         </div>

@@ -3,14 +3,9 @@ import Link from "next/link";
 export default function PropertyNotFound() {
   return (
     <main className="container mx-auto py-20 text-center">
+      <h1 className="text-6xl font-bold">404</h1>
 
-      <h1 className="text-6xl font-bold">
-        404
-      </h1>
-
-      <p className="mt-4 text-gray-600">
-        We couldn't find the property you're looking for.
-      </p>
+      <p className="mt-4 text-gray-600">We couldn't find the property you're looking for.</p>
 
       <Link
         href="/properties"
@@ -18,7 +13,6 @@ export default function PropertyNotFound() {
       >
         Back to Properties
       </Link>
-
     </main>
   );
 }

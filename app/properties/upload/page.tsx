@@ -1,36 +1,31 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { supabase } from "../../../lib/supabase"
+import { useState } from "react";
+import { supabase } from "../../../lib/supabase";
 
 export default function UploadProperty() {
-
-  const [title, setTitle] = useState("")
-  const [price, setPrice] = useState("")
-  const [location, setLocation] = useState("")
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [location, setLocation] = useState("");
 
   const uploadProperty = async () => {
-
-    const { error } = await supabase
-      .from("properties")
-      .insert([
-        {
-          title,
-          price,
-          location
-        }
-      ])
+    const { error } = await supabase.from("properties").insert([
+      {
+        title,
+        price,
+        location,
+      },
+    ]);
 
     if (error) {
-      alert(error.message)
+      alert(error.message);
     } else {
-      alert("Property uploaded successfully")
+      alert("Property uploaded successfully");
     }
-  }
+  };
 
   return (
     <main style={{ padding: 40 }}>
-
       <h1>Upload Property</h1>
 
       <input
@@ -54,15 +49,11 @@ export default function UploadProperty() {
         style={{ display: "block", marginTop: 20 }}
       />
 
-      <button
-        onClick={uploadProperty}
-        style={{ marginTop: 20 }}
-      >
+      <button onClick={uploadProperty} style={{ marginTop: 20 }}>
         Upload Property
       </button>
-
     </main>
-  )
+  );
 }
 async function uploadImage(file: File) {
   const formData = new FormData();
@@ -75,7 +66,3 @@ async function uploadImage(file: File) {
 
   return await res.json();
 }
-
-
-
-

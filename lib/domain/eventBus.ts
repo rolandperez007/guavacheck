@@ -1,7 +1,5 @@
-import {registry} from "./registry";
+import { registry } from "./registry";
 
-export function publish(message:any){
-
-registry.broadcast(message);
-
+export function publish(message: any) {
+  registry.broadcast(message);
 }

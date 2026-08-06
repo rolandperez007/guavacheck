@@ -3,41 +3,39 @@
  */
 
 export interface EngineCapabilities {
+  enabled: boolean;
 
-    enabled: boolean;
+  supportsRealtime: boolean;
 
-    supportsRealtime: boolean;
+  supportsPersistence: boolean;
 
-    supportsPersistence: boolean;
+  supportsRecovery: boolean;
 
-    supportsRecovery: boolean;
+  supportsScaling: boolean;
 
-    supportsScaling: boolean;
+  supportsObservability: boolean;
 
-    supportsObservability: boolean;
+  supportsTelemetry: boolean;
 
-    supportsTelemetry: boolean;
+  supportsCaching: boolean;
 
-    supportsCaching: boolean;
+  supportsLearning: boolean;
 
-    supportsLearning: boolean;
+  supportsSimulation: boolean;
 
-    supportsSimulation: boolean;
+  supportsPrediction: boolean;
 
-    supportsPrediction: boolean;
+  supportsDistributedExecution: boolean;
 
-    supportsDistributedExecution: boolean;
+  supportsBackgroundJobs: boolean;
 
-    supportsBackgroundJobs: boolean;
+  supportsEncryption: boolean;
 
-    supportsEncryption: boolean;
+  supportsCompression: boolean;
 
-    supportsCompression: boolean;
+  supportsVersioning: boolean;
 
-    supportsVersioning: boolean;
+  maxConcurrency?: number;
 
-    maxConcurrency?: number;
-
-    maxWorkers?: number;
-
+  maxWorkers?: number;
 }

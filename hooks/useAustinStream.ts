@@ -14,7 +14,7 @@ export function useAustinStream() {
 
     const res = await fetch("/api/austin/execute", {
       method: "POST",
-      body: JSON.stringify({ input })
+      body: JSON.stringify({ input }),
     });
 
     const reader = res.body?.getReader();

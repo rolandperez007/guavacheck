@@ -13,27 +13,25 @@
  */
 
 export interface Event {
+  id: string;
 
-    id: string;
+  type: string;
 
-    type: string;
+  source: string;
 
-    source: string;
+  timestamp: Date;
 
-    timestamp: Date;
+  correlationId: string;
 
-    correlationId: string;
+  requestId?: string;
 
-    requestId?: string;
+  sessionId?: string;
 
-    sessionId?: string;
+  userId?: string;
 
-    userId?: string;
+  priority: "LOW" | "NORMAL" | "HIGH" | "CRITICAL";
 
-    priority: "LOW" | "NORMAL" | "HIGH" | "CRITICAL";
+  payload: Record<string, unknown>;
 
-    payload: Record<string, unknown>;
-
-    metadata?: Record<string, unknown>;
-
+  metadata?: Record<string, unknown>;
 }

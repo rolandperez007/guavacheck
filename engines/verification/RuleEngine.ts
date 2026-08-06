@@ -1,38 +1,30 @@
 export interface VerificationRule {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  description: string;
 
-    description: string;
+  weight: number;
 
-    weight: number;
-
-    enabled: boolean;
-
+  enabled: boolean;
 }
 
 export interface RuleResult {
+  ruleId: string;
 
-    ruleId: string;
+  passed: boolean;
 
-    passed: boolean;
+  score: number;
 
-    score: number;
-
-    reason: string;
-
+  reason: string;
 }
 
 export class RuleEngine {
-
-    static evaluate(
-        rules: VerificationRule[],
-        evaluator: (rule: VerificationRule) => RuleResult
-    ): RuleResult[] {
-
-        return rules.map(evaluator);
-
-    }
-
+  static evaluate(
+    rules: VerificationRule[],
+    evaluator: (rule: VerificationRule) => RuleResult,
+  ): RuleResult[] {
+    return rules.map(evaluator);
+  }
 }

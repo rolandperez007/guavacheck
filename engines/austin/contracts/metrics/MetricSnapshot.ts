@@ -11,15 +11,13 @@
 import { Metric } from "./Metric";
 
 export interface MetricSnapshot {
+  generatedAt: Date;
 
-    generatedAt: Date;
+  engine: string;
 
-    engine: string;
+  metrics: Metric[];
 
-    metrics: Metric[];
+  totalMetrics: number;
 
-    totalMetrics: number;
-
-    durationMs: number;
-
+  durationMs: number;
 }

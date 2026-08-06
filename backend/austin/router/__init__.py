@@ -9,7 +9,7 @@ from .router import (
 )
 
 __all__ = [
-    "AustinRouter",
     "AustinRouteResult",
+    "AustinRouter",
     "router",
 ]

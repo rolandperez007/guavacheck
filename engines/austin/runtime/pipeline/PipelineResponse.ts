@@ -26,122 +26,116 @@
  * ============================================================================
  */
 
-export type PipelineStatus =
-    | "SUCCESS"
-    | "PARTIAL_SUCCESS"
-    | "FAILED"
-    | "CANCELLED"
-    | "TIMEOUT";
+export type PipelineStatus = "SUCCESS" | "PARTIAL_SUCCESS" | "FAILED" | "CANCELLED" | "TIMEOUT";
 
 export interface PipelineResponse<T = unknown> {
+  /**
+   * Original request identifier.
+   */
+  requestId: string;
 
-    /**
-     * Original request identifier.
-     */
-    requestId: string;
+  /**
+   * Pipeline execution identifier.
+   */
+  executionId: string;
 
-    /**
-     * Pipeline execution identifier.
-     */
-    executionId: string;
+  /**
+   * Final execution status.
+   */
+  status: PipelineStatus;
 
-    /**
-     * Final execution status.
-     */
-    status: PipelineStatus;
+  /**
+   * Whether execution completed successfully.
+   */
+  success: boolean;
 
-    /**
-     * Whether execution completed successfully.
-     */
-    success: boolean;
+  /**
+   * Service that generated the response.
+   */
+  service: string;
 
-    /**
-     * Service that generated the response.
-     */
-    service: string;
+  /**
+   * Action that was executed.
+   */
+  action: string;
 
-    /**
-     * Action that was executed.
-     */
-    action: string;
+  /**
+   * Returned data.
+   */
+  result?: T;
 
-    /**
-     * Returned data.
-     */
-    result?: T;
+  /**
+   * Optional human-readable summary.
+   */
+  message?: string;
 
-    /**
-     * Optional human-readable summary.
-     */
-    message?: string;
+  /**
+   * Warnings produced during execution.
+   */
+  warnings: string[];
 
-    /**
-     * Warnings produced during execution.
-     */
-    warnings: string[];
+  /**
+   * Recoverable issues.
+   */
+  notices: string[];
 
-    /**
-     * Recoverable issues.
-     */
-    notices: string[];
+  /**
+   * Execution errors.
+   */
+  errors: string[];
 
-    /**
-     * Execution errors.
-     */
-    errors: string[];
+  /**
+   * Current pipeline stage when execution finished.
+   */
+  completedStage: string;
 
-    /**
-     * Current pipeline stage when execution finished.
-     */
-    completedStage: string;
+  /**
+   * Number of stages executed.
+   */
+  stagesExecuted: number;
 
-    /**
-     * Number of stages executed.
-     */
-    stagesExecuted: number;
+  /**
+   * Total execution duration.
+   */
+  executionTimeMs: number;
 
-    /**
-     * Total execution duration.
-     */
-    executionTimeMs: number;
+  /**
+   * CPU time consumed (optional).
+   */
+  cpuTimeMs?: number;
 
-    /**
-     * CPU time consumed (optional).
-     */
-    cpuTimeMs?: number;
+  /**
+   * Peak memory usage (optional).
+   */
+  memoryUsageMb?: number;
 
-    /**
-     * Peak memory usage (optional).
-     */
-    memoryUsageMb?: number;
+  /**
+   * Pipeline start time.
+   */
+  startedAt: Date;
 
-    /**
-     * Pipeline start time.
-     */
-    startedAt: Date;
+  /**
+   * Pipeline completion time.
+   */
+  completedAt: Date;
 
-    /**
-     * Pipeline completion time.
-     */
-    completedAt: Date;
+  /**
+   * Correlation identifier for distributed tracing.
+   */
+  correlationId?: string;
 
-    /**
-     * Correlation identifier for distributed tracing.
-     */
-    correlationId?: string;
+  /**
+   * Trace identifier.
+   */
+  traceId?: string;
 
-    /**
-     * Trace identifier.
-     */
-    traceId?: string;
+  /**
+   * Version of Austin producing this response.
+   */
+  runtimeVersion?: string;
 
-    /**
-     * Version of Austin producing this response.
-     */
-    runtimeVersion?: string;
-
-    /**
-     * Arbitrary metadata.
-     */
-    metadata: Record<string, unknown>;
+  /**
+   * Arbitrary metadata.
+   */
+  metadata: Record<string, unknown>;
 }

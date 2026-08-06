@@ -6,7 +6,6 @@ from __future__ import annotations
 
 
 class TimezoneEngine:
-
     def timezone_for_country(self, country: str) -> str:
 
         mapping = {

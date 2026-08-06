@@ -1,13 +1,11 @@
 export interface DocumentVerification {
+  documentId: string;
 
-    documentId: string;
+  verified: boolean;
 
-    verified: boolean;
+  confidence: number;
 
-    confidence: number;
+  reviewer?: string;
 
-    reviewer?: string;
-
-    reviewedAt?: Date;
-
+  reviewedAt?: Date;
 }

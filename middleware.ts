@@ -37,10 +37,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (
-    launchConfig.launchMode &&
-    protectedRoutes.some((route) => pathname.startsWith(route))
-  ) {
+  if (launchConfig.launchMode && protectedRoutes.some((route) => pathname.startsWith(route))) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 

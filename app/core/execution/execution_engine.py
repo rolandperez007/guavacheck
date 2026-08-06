@@ -1,7 +1,7 @@
-from app.core.execution.task_generator import TaskGenerator
 from app.core.execution.contractor_router import ContractorRouter
-from app.core.execution.progress_tracker import ProgressTracker
 from app.core.execution.execution_state import ExecutionState
+from app.core.execution.progress_tracker import ProgressTracker
+from app.core.execution.task_generator import TaskGenerator
 
 
 class ExecutionEngine:

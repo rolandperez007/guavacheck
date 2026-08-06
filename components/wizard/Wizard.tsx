@@ -2,13 +2,9 @@
 
 import { useMemo } from "react";
 
-import {
-  WizardStep,
-} from "@/types/PropertyWizard";
+import { WizardStep } from "@/types/PropertyWizard";
 
-import {
-  usePropertyWizardContext,
-} from "@/context/PropertyWizardContext";
+import { usePropertyWizardContext } from "@/context/PropertyWizardContext";
 
 const steps: WizardStep[] = [
   "welcome",
@@ -24,24 +20,15 @@ const steps: WizardStep[] = [
 ];
 
 export function usePropertyWizard() {
-  const {
-    wizard,
-    updateWizard,
-    goToStep,
-    resetWizard,
-  } = usePropertyWizardContext();
+  const { wizard, updateWizard, goToStep, resetWizard } = usePropertyWizardContext();
 
   const currentIndex = useMemo(() => {
-    return steps.indexOf(
-      wizard.progress.currentStep
-    );
+    return steps.indexOf(wizard.progress.currentStep);
   }, [wizard.progress.currentStep]);
 
   const totalSteps = steps.length;
 
-  const percentage = Math.round(
-    ((currentIndex + 1) / totalSteps) * 100
-  );
+  const percentage = Math.round(((currentIndex + 1) / totalSteps) * 100);
 
   function nextStep() {
     if (currentIndex >= totalSteps - 1) return;
@@ -54,10 +41,7 @@ export function usePropertyWizard() {
         currentStep: next,
         percentage,
         completedSteps: [
-          ...new Set([
-            ...wizard.progress.completedSteps,
-            wizard.progress.currentStep,
-          ]),
+          ...new Set([...wizard.progress.completedSteps, wizard.progress.currentStep]),
         ],
       },
     });
@@ -90,18 +74,13 @@ export function usePropertyWizard() {
   function saveDraft() {
     if (typeof window === "undefined") return;
 
-    localStorage.setItem(
-      "guavacheck-property-wizard",
-      JSON.stringify(wizard)
-    );
+    localStorage.setItem("guavacheck-property-wizard", JSON.stringify(wizard));
   }
 
   function loadDraft() {
     if (typeof window === "undefined") return;
 
-    const draft = localStorage.getItem(
-      "guavacheck-property-wizard"
-    );
+    const draft = localStorage.getItem("guavacheck-property-wizard");
 
     if (!draft) return;
 
@@ -111,9 +90,7 @@ export function usePropertyWizard() {
   function clearDraft() {
     if (typeof window === "undefined") return;
 
-    localStorage.removeItem(
-      "guavacheck-property-wizard"
-    );
+    localStorage.removeItem("guavacheck-property-wizard");
   }
 
   return {

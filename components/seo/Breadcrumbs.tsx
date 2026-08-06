@@ -9,9 +9,7 @@ interface Props {
   items: Item[];
 }
 
-export default function Breadcrumbs({
-  items,
-}: Props) {
+export default function Breadcrumbs({ items }: Props) {
   return (
     <nav aria-label="Breadcrumb">
       <ol

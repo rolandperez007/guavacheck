@@ -14,14 +14,9 @@ export function organizationSchema() {
       name: SITE.founder,
     },
     description: SITE.description,
-    sameAs: [
-      SITE.social.linkedin,
-      SITE.social.github,
-      SITE.social.facebook,
-    ],
+    sameAs: [SITE.social.linkedin, SITE.social.github, SITE.social.facebook],
   };
 }
-
 
 export function softwareSchema() {
   return {
@@ -29,12 +24,9 @@ export function softwareSchema() {
     "@type": "SoftwareApplication",
     "@id": SITE.ids.software,
     name: SITE.brand,
-    applicationCategory:
-      "Real Estate Software",
-    operatingSystem:
-      "Web",
+    applicationCategory: "Real Estate Software",
+    operatingSystem: "Web",
     url: SITE.url,
-    description:
-      SITE.description,
+    description: SITE.description,
   };
 }

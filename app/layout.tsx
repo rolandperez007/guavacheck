@@ -1,11 +1,31 @@
+/**
+ * Root Application Shell
+ *
+ * This file prepares the runtime environment
+ * for every guavacheck experience.
+ *
+ * Responsibilities:
+ *
+ * - Global Metadata
+ * - Global Providers
+ * - Analytics
+ * - Structured Data
+ * - Austin Runtime Bootstrap
+ *
+ * Austin Cognitive Kernel is intentionally
+ * independent of this layer.
+ */
+
 import "./globals.css";
+
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import { SITE } from "@/lib/seo/constants";
-import {
-  organizationSchema,
-  softwareSchema,
-} from "@/app/seo/schema";
+
+import Providers from "@/components/app/providers/Providers";
+import Analytics from "@/components/app/analytics/Analytics";
+import StructuredData from "@/components/app/seo/StructuredData";
+import AustinBootstrap from "@/components/app/bootstrap/AustinBootstrap";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -78,43 +98,30 @@ export const metadata: Metadata = {
   manifest: SITE.manifest,
 };
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps) {
   return (
-    <html lang={SITE.language}>
+    <html lang={SITE.language} suppressHydrationWarning>
       <body>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-D1XB03RNNW"
-          strategy="afterInteractive"
-        />
+        <Providers>
 
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+          <Analytics />
 
-            gtag('config', 'G-D1XB03RNNW');
-          `}
-        </Script>
+          <StructuredData />
 
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              organizationSchema(),
-              softwareSchema(),
-            ]),
-          }}
-        />
+          <AustinBootstrap>
 
-        {children}
+            {children}
+
+          </AustinBootstrap>
+
+        </Providers>
       </body>
     </html>
   );
-} 
+}

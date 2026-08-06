@@ -7,13 +7,10 @@ export async function POST(req: Request) {
     const { report } = await req.json();
 
     if (!report) {
-      return new Response(
-        JSON.stringify({ error: "Missing report" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
+      return new Response(JSON.stringify({ error: "Missing report" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     const pdf = await PDFDocument.create();
@@ -30,7 +27,7 @@ export async function POST(req: Request) {
         y,
         size,
         font: isBold ? bold : font,
-        color: rgb(0, 0, 0)
+        color: rgb(0, 0, 0),
       });
       y -= size + 6;
     };
@@ -41,7 +38,7 @@ export async function POST(req: Request) {
         start: { x: 50, y },
         end: { x: 550, y },
         thickness: 1,
-        color: rgb(0.85, 0.85, 0.85)
+        color: rgb(0.85, 0.85, 0.85),
       });
       y -= 15;
     };
@@ -101,23 +98,13 @@ export async function POST(req: Request) {
     return new Response(pdfBytes, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": "attachment; filename=austin-report.pdf"
-      }
+        "Content-Disposition": "attachment; filename=austin-report.pdf",
+      },
     });
-
   } catch (err: any) {
-    return new Response(
-      JSON.stringify({ error: String(err?.message || err) }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" }
-      }
-    );
+    return new Response(JSON.stringify({ error: String(err?.message || err) }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
-
-
-
-
-
-

@@ -13,27 +13,17 @@
  */
 
 export class AsiaProvider {
+  async initialize(data: unknown) {
+    return {
+      success: false,
 
-    async initialize(data: unknown) {
+      provider: "asia",
 
-        return {
+      message: "Asia provider not yet configured.",
 
-            success: false,
-
-            provider: "asia",
-
-            message:
-
-            "Asia provider not yet configured.",
-
-            data
-
-        };
-
-    }
-
+      data,
+    };
+  }
 }
 
-export const asiaProvider =
-
-new AsiaProvider();
+export const asiaProvider = new AsiaProvider();

@@ -3,14 +3,13 @@ from uuid import uuid4
 
 
 class Payment:
-
     def __init__(
         self,
         user_id: str,
         amount: int,
         currency: str,
         provider: str,
-        description: str | None = None
+        description: str | None = None,
     ):
         self.id = str(uuid4())
         self.user_id = user_id

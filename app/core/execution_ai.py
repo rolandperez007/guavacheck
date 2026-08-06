@@ -1,5 +1,5 @@
-from app.core.execution_ai.progress_analyzer import ProgressAnalyzer
 from app.core.execution_ai.milestone_detector import MilestoneDetector
+from app.core.execution_ai.progress_analyzer import ProgressAnalyzer
 
 
 class ExecutionAI:

@@ -11,7 +11,7 @@ interface FAQItem {
 
 export function faqSchema(items: FAQItem[]) {
   return {
-      "@type": "Organization",
+    "@type": "Organization",
 
     mainEntity: items.map((item) => ({
       "@type": "Question",

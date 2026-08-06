@@ -15,7 +15,6 @@ class TranslationResult:
 
 
 class LanguageEngine:
-
     def translate(
         self,
         text: str,

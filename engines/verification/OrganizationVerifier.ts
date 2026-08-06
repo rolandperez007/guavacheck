@@ -1,13 +1,11 @@
 export interface OrganizationVerification {
+  organizationId: string;
 
-    organizationId: string;
+  registrationVerified: boolean;
 
-    registrationVerified: boolean;
+  addressVerified: boolean;
 
-    addressVerified: boolean;
+  directorsVerified: boolean;
 
-    directorsVerified: boolean;
-
-    taxVerified: boolean;
-
+  taxVerified: boolean;
 }

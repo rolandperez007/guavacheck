@@ -16,10 +16,7 @@ export async function POST(req: Request) {
     const supabase = getSupabase();
 
     if (!supabase) {
-      return Response.json(
-        { error: "Supabase not configured" },
-        { status: 500 }
-      );
+      return Response.json({ error: "Supabase not configured" }, { status: 500 });
     }
 
     const body = await req.json();
@@ -27,10 +24,7 @@ export async function POST(req: Request) {
     const { title, location, price, status, user_id } = body;
 
     if (!title || !location) {
-      return Response.json(
-        { error: "title and location are required" },
-        { status: 400 }
-      );
+      return Response.json({ error: "title and location are required" }, { status: 400 });
     }
 
     const { data, error } = await supabase
@@ -47,18 +41,11 @@ export async function POST(req: Request) {
       .select();
 
     if (error) {
-      return Response.json(
-        { error: error.message },
-        { status: 500 }
-      );
+      return Response.json({ error: error.message }, { status: 500 });
     }
 
     return Response.json(data);
   } catch (err) {
-    return Response.json(
-      { error: "Invalid request" },
-      { status: 400 }
-    );
+    return Response.json({ error: "Invalid request" }, { status: 400 });
   }
 }
-

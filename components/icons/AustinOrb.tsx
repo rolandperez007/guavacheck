@@ -6,12 +6,7 @@ interface AustinOrbProps {
   className?: string;
 }
 
-export default function AustinOrb({
-  size = 24,
-  state = "idle",
-  className = "",
-}: AustinOrbProps) {
-
+export default function AustinOrb({ size = 24, state = "idle", className = "" }: AustinOrbProps) {
   const stateClasses = {
     idle: "animate-pulse",
     thinking: "animate-spin",

@@ -1,6 +1,3 @@
-import re
-
-
 class LocaleDetector:
     COUNTRY_HINTS = {
         "nigeria": "NG",

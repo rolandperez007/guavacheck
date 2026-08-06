@@ -1,13 +1,13 @@
 from dataclasses import dataclass
-from typing import Any, Dict
+from typing import Any
 
 
 @dataclass
 class AustinResponse:
     user_id: str
     query: str
-    parsed: Dict[str, Any]
-    analysis: Dict[str, Any]
+    parsed: dict[str, Any]
+    analysis: dict[str, Any]
     response: str
 
     def to_dict(self):

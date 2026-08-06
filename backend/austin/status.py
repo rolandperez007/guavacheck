@@ -10,7 +10,6 @@ from datetime import datetime
 
 @dataclass
 class AustinStatus:
-
     online: bool = False
 
     startup_complete: bool = False

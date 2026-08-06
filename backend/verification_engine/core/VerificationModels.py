@@ -7,47 +7,36 @@ property verification workflows.
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Dict, Optional
-
 
 
 @dataclass
 class PropertyIdentity:
-
     property_id: str
 
     address: str
 
-    owner_name: Optional[str] = None
+    owner_name: str | None = None
 
-    coordinates: Optional[Dict] = None
+    coordinates: dict | None = None
 
-    created_at: datetime = field(
-        default_factory=datetime.utcnow
-    )
-
+    created_at: datetime = field(default_factory=datetime.utcnow)
 
 
 @dataclass
 class VerificationDocument:
-
     document_id: str
 
     document_type: str
 
     filename: str
 
-    extracted_data: Dict = field(
-        default_factory=dict
-    )
+    extracted_data: dict = field(default_factory=dict)
 
     authenticity_score: float = 0
 
 
-
 @dataclass
 class VerificationResult:
-
     property_id: str
 
     document_score: float = 0
@@ -60,25 +49,20 @@ class VerificationResult:
 
     final_score: float = 0
 
-    warnings: List[str] = field(
-        default_factory=list
-    )
+    warnings: list[str] = field(default_factory=list)
 
     status: str = "PENDING"
-
 
     def add_warning(self, message):
 
         self.warnings.append(message)
 
 
-
 @dataclass
 class OwnershipRecord:
-
     owner_name: str
 
-    transaction_date: Optional[str]
+    transaction_date: str | None
 
     source: str
 

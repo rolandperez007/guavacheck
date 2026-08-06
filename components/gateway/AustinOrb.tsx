@@ -4,7 +4,6 @@ export default function AustinOrb() {
   return (
     <div className="orb-container">
       <div className="orb">
-
         <div className="orb-ambient" />
 
         <div className="orb-halo" />
@@ -16,7 +15,6 @@ export default function AustinOrb() {
         <div className="orb-center" />
 
         <div className="orb-highlight" />
-
       </div>
     </div>
   );

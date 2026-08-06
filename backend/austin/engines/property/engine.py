@@ -8,7 +8,6 @@ from typing import Any
 
 
 class PropertyEngine:
-
     name = "property"
     version = "1.0.0"
 

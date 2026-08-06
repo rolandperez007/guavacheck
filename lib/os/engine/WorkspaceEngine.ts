@@ -1,9 +1,7 @@
-export interface Workspace{
+export interface Workspace {
+  activeWorkspace: string;
 
-    activeWorkspace:string;
+  openedWindows: string[];
 
-    openedWindows:string[];
-
-    pinnedApps:string[];
-
+  pinnedApps: string[];
 }

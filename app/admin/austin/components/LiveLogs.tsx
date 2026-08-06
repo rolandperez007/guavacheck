@@ -2,30 +2,18 @@
 
 import SectionTitle from "../widgets/SectionTitle";
 
-
 const logs = [
-
   "Austin Engine initialized",
   "Global Parser v3 loaded",
   "Verification Engine heartbeat received",
   "WebSocket stream connected",
   "Memory Engine cache synchronized",
-
 ];
 
-
 export default function LiveLogs() {
-
-
   return (
-
     <section>
-
-      <SectionTitle
-        title="Live Logs"
-        subtitle="Real-time Austin engineering events"
-      />
-
+      <SectionTitle title="Live Logs" subtitle="Real-time Austin engineering events" />
 
       <div
         className="
@@ -37,31 +25,12 @@ export default function LiveLogs() {
           text-sm
         "
       >
-
         {logs.map((log, index) => (
-
-          <div
-            key={index}
-            className="mb-2"
-          >
-
-            <span>
-              [{new Date().toLocaleTimeString()}]
-            </span>
-
-            {" "}
-
-            {log}
-
+          <div key={index} className="mb-2">
+            <span>[{new Date().toLocaleTimeString()}]</span> {log}
           </div>
-
         ))}
-
-
       </div>
-
-
     </section>
-
   );
 }

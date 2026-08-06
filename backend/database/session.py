@@ -2,11 +2,9 @@
 Database Session Manager
 """
 
+from database.connection import engine
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
-
-from database.connection import engine
-
 
 SessionLocal = sessionmaker(
     bind=engine,
@@ -18,5 +16,4 @@ SessionLocal = sessionmaker(
 async def get_session():
 
     async with SessionLocal() as session:
-
         yield session

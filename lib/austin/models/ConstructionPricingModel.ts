@@ -19,10 +19,7 @@ export class ConstructionPricingModel {
     level?: "basic" | "standard" | "premium";
     location?: string;
   }) {
-    const qualityMap: Record<
-      "basic" | "standard" | "premium",
-      "low" | "standard" | "premium"
-    > = {
+    const qualityMap: Record<"basic" | "standard" | "premium", "low" | "standard" | "premium"> = {
       basic: "low",
       standard: "standard",
       premium: "premium",
@@ -33,9 +30,7 @@ export class ConstructionPricingModel {
       quality: qualityMap[input.level ?? "standard"],
     });
 
-    const key = (input.location ?? "")
-      .toLowerCase()
-      .replace(/\s+/g, "_");
+    const key = (input.location ?? "").toLowerCase().replace(/\s+/g, "_");
 
     const multiplier = this.locationIndex[key] ?? this.locationIndex.default;
 

@@ -5,201 +5,169 @@ import { AustinState } from "./AustinState";
  * Austin Operating System Kernel
  */
 export class AustinKernel {
+  /**
+   * Current kernel state.
+   */
+  private state: AustinState = AustinState.STOPPED;
+
+  /**
+   * Global Austin configuration.
+   */
+  private readonly configuration: AustinConfiguration;
+
+  /**
+   * Timestamp when Austin started.
+   */
+  private startedAt?: Date;
+
+  /**
+   * Number of processed requests.
+   */
+  private requestsProcessed = 0;
+
+  /**
+   * Current uptime.
+   */
+  private uptime = 0;
+
+  constructor(configuration: AustinConfiguration) {
+    this.configuration = configuration;
+  }
+
+  /**
+   * Initializes Austin.
+   */
+  public async initialize(): Promise<void> {
+    this.transition(AustinState.INITIALIZING);
 
     /**
-     * Current kernel state.
+     * Future
+     *
+     * Logger
+     * Metrics
+     * Registry
+     * Plugins
+     * Security
+     * Knowledge
      */
-    private state: AustinState = AustinState.STOPPED;
+  }
 
-    /**
-     * Global Austin configuration.
-     */
-    private readonly configuration: AustinConfiguration;
+  /**
+   * Starts Austin.
+   */
+  public async start(): Promise<void> {
+    this.transition(AustinState.BOOTSTRAPPING);
 
-    /**
-     * Timestamp when Austin started.
-     */
-    private startedAt?: Date;
+    this.startedAt = new Date();
 
-    /**
-     * Number of processed requests.
-     */
-    private requestsProcessed = 0;
+    this.transition(AustinState.READY);
 
-    /**
-     * Current uptime.
-     */
-    private uptime = 0;
+    this.transition(AustinState.RUNNING);
+  }
 
-    constructor(configuration: AustinConfiguration) {
-
-        this.configuration = configuration;
-
+  /**
+   * Executes one Austin request.
+   */
+  public async execute<TRequest, TResponse>(request: TRequest): Promise<TResponse> {
+    if (this.state !== AustinState.RUNNING) {
+      throw new Error(`Austin is currently ${this.state}.`);
     }
 
-    /**
-     * Initializes Austin.
-     */
-    public async initialize(): Promise<void> {
-
-        this.transition(AustinState.INITIALIZING);
-
-        /**
-         * Future
-         *
-         * Logger
-         * Metrics
-         * Registry
-         * Plugins
-         * Security
-         * Knowledge
-         */
-
-    }
+    this.requestsProcessed++;
 
     /**
-     * Starts Austin.
+     * Future pipeline
+     *
+     * Planner
+     *
+     * Context
+     *
+     * Knowledge
+     *
+     * Registry
+     *
+     * Simulation
+     *
+     * Prediction
+     *
+     * Decision
+     *
+     * Recommendation
+     *
+     * Explanation
+     *
+     * Execution
      */
-    public async start(): Promise<void> {
 
-        this.transition(AustinState.BOOTSTRAPPING);
+    return {} as TResponse;
+  }
 
-        this.startedAt = new Date();
-
-        this.transition(AustinState.READY);
-
-        this.transition(AustinState.RUNNING);
-
-    }
+  /**
+   * Gracefully shuts Austin down.
+   */
+  public async shutdown(): Promise<void> {
+    this.transition(AustinState.SHUTTING_DOWN);
 
     /**
-     * Executes one Austin request.
+     * Future
+     *
+     * Save memory
+     * Flush logs
+     * Finish workflows
+     * Disconnect services
      */
-    public async execute<TRequest, TResponse>(
-        request: TRequest
-    ): Promise<TResponse> {
 
-        if (this.state !== AustinState.RUNNING) {
+    this.transition(AustinState.TERMINATED);
+  }
 
-            throw new Error(
-                `Austin is currently ${this.state}.`
-            );
+  /**
+   * Current kernel state.
+   */
+  public getState(): AustinState {
+    return this.state;
+  }
 
-        }
-
-        this.requestsProcessed++;
-
-        /**
-         * Future pipeline
-         *
-         * Planner
-         *
-         * Context
-         *
-         * Knowledge
-         *
-         * Registry
-         *
-         * Simulation
-         *
-         * Prediction
-         *
-         * Decision
-         *
-         * Recommendation
-         *
-         * Explanation
-         *
-         * Execution
-         */
-
-        return {} as TResponse;
-
+  /**
+   * Austin uptime.
+   */
+  public getUptime(): number {
+    if (!this.startedAt) {
+      return 0;
     }
 
-    /**
-     * Gracefully shuts Austin down.
-     */
-    public async shutdown(): Promise<void> {
+    return Date.now() - this.startedAt.getTime();
+  }
 
-        this.transition(AustinState.SHUTTING_DOWN);
+  /**
+   * Number of processed requests.
+   */
+  public getProcessedRequests(): number {
+    return this.requestsProcessed;
+  }
 
-        /**
-         * Future
-         *
-         * Save memory
-         * Flush logs
-         * Finish workflows
-         * Disconnect services
-         */
+  /**
+   * Kernel status.
+   */
+  public status() {
+    return {
+      state: this.state,
 
-        this.transition(AustinState.TERMINATED);
+      version: this.configuration.version,
 
-    }
+      environment: this.configuration.environment,
 
-    /**
-     * Current kernel state.
-     */
-    public getState(): AustinState {
+      startedAt: this.startedAt,
 
-        return this.state;
+      uptime: this.getUptime(),
 
-    }
+      requestsProcessed: this.requestsProcessed,
+    };
+  }
 
-    /**
-     * Austin uptime.
-     */
-    public getUptime(): number {
-
-        if (!this.startedAt) {
-
-            return 0;
-
-        }
-
-        return Date.now() - this.startedAt.getTime();
-
-    }
-
-    /**
-     * Number of processed requests.
-     */
-    public getProcessedRequests(): number {
-
-        return this.requestsProcessed;
-
-    }
-
-    /**
-     * Kernel status.
-     */
-    public status() {
-
-        return {
-
-            state: this.state,
-
-            version: this.configuration.version,
-
-            environment: this.configuration.environment,
-
-            startedAt: this.startedAt,
-
-            uptime: this.getUptime(),
-
-            requestsProcessed: this.requestsProcessed
-
-        };
-
-    }
-
-    /**
-     * Changes kernel state.
-     */
-    private transition(state: AustinState): void {
-
-        this.state = state;
-
-    }
-
+  /**
+   * Changes kernel state.
+   */
+  private transition(state: AustinState): void {
+    this.state = state;
+  }
 }

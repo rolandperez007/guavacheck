@@ -45,11 +45,9 @@ export default function AustinSection() {
               opacity: 0.9,
             }}
           >
-            Austin™ is your AI construction partner.
-            From the first sketch to the final block,
-            Austin helps you design smarter,
-            estimate accurately, verify property records,
-            and guide your project from concept to completion.
+            Austin™ is your AI construction partner. From the first sketch to the final block,
+            Austin helps you design smarter, estimate accurately, verify property records, and guide
+            your project from concept to completion.
           </p>
 
           <div
@@ -100,29 +98,22 @@ export default function AustinSection() {
               background:
                 "radial-gradient(circle at 30% 30%, #1A1A1A 0%, #0B0B0B 45%, #000000 100%)",
               border: "2px solid rgba(110,231,183,.35)",
-              boxShadow:
-                "0 0 80px rgba(110,231,183,.30), inset 0 0 40px rgba(255,255,255,.04)",
+              boxShadow: "0 0 80px rgba(110,231,183,.30), inset 0 0 40px rgba(255,255,255,.04)",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              width: 22,
-              height: 22,
-              borderRadius: "50%",
-              background: "#6EE7B7",
-              boxShadow: "0 0 25px #6EE7B7",
-          }}
-        />
-      </div>
-            
-              
-            
-          
-            
-          
+            }}
+          >
+            <div
+              style={{
+                width: 22,
+                height: 22,
+                borderRadius: "50%",
+                background: "#6EE7B7",
+                boxShadow: "0 0 25px #6EE7B7",
+              }}
+            />
+          </div>
 
           <h3
             style={{
@@ -138,8 +129,7 @@ export default function AustinSection() {
               lineHeight: 1.8,
             }}
           >
-            "Every great building starts with a great decision.
-            I'm here to help you make it."
+            "Every great building starts with a great decision. I'm here to help you make it."
           </p>
         </div>
       </div>

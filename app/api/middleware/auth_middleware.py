@@ -15,7 +15,7 @@ async def auth_guard(request: Request, call_next):
     if auth != API_SECRET:
         return JSONResponse(
             status_code=401,
-            content={"error": "Unauthorized - missing or invalid API key"}
+            content={"error": "Unauthorized - missing or invalid API key"},
         )
 
     # IMPORTANT: allow request to continue

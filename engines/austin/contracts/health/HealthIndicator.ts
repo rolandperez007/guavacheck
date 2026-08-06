@@ -12,21 +12,19 @@
 import { HealthStatus } from "./HealthStatus";
 
 export interface HealthIndicator {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  status: HealthStatus;
 
-    status: HealthStatus;
+  score: number;
 
-    score: number;
+  value: unknown;
 
-    value: unknown;
+  threshold?: number;
 
-    threshold?: number;
+  message?: string;
 
-    message?: string;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }

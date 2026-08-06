@@ -20,6 +20,6 @@ class FakeRedis:
         self.store.setdefault(key, []).insert(0, value)
 
     def rpop(self, key):
-        if key in self.store and self.store[key]:
+        if self.store.get(key):
             return self.store[key].pop()
         return None

@@ -9,9 +9,7 @@ export async function POST(req: Request) {
   let balance = principal;
   const schedule: any[] = [];
 
-  const payment =
-    (principal * r * Math.pow(1 + r, n)) /
-    (Math.pow(1 + r, n) - 1);
+  const payment = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
 
   for (let i = 1; i <= n; i++) {
     const interest = balance * r;
@@ -30,9 +28,3 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ schedule });
 }
-
-
-
-
-
-

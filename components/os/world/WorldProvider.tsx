@@ -1,149 +1,85 @@
 "use client";
 
-import {
+import { createContext, useContext, useEffect, useState } from "react";
 
-  createContext,
+import { WorldState } from "./WorldState";
 
-  useContext,
+import { getWorldPhase } from "./TimeEngine";
 
-  useEffect,
+import { simulateWeather } from "./WeatherEngine";
 
-  useState,
+const WorldContext = createContext<WorldState | null>(null);
 
-} from "react";
+export function WorldProvider({ children }: { children: React.ReactNode }) {
+  const [world, setWorld] = useState<WorldState>(() => {
+    const now = new Date();
 
-import {
+    return {
+      now,
 
-  WorldState,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 
-} from "./WorldState";
+      phase: getWorldPhase(now),
 
-import {
+      sunrise: "06:25",
 
-  getWorldPhase,
+      sunset: "18:48",
 
-} from "./TimeEngine";
+      temperature: 27,
 
-import {
+      humidity: 0.52,
 
-  simulateWeather,
+      visibility: 1,
 
-} from "./WeatherEngine";
+      windSpeed: 5,
 
-const WorldContext =
-  createContext<WorldState | null>(null);
+      cloudCoverage: 0.35,
 
-export function WorldProvider({
+      precipitation: 0,
 
-  children,
+      raining: false,
 
-}: {
+      storm: false,
 
-  children: React.ReactNode;
+      trafficLevel: 0.55,
 
-}) {
+      peopleDensity: 0.62,
 
-  const [world, setWorld] =
-    useState<WorldState>(() => {
+      starsVisible: false,
 
-      const now = new Date();
-
-      return {
-
-        now,
-
-        timezone:
-          Intl.DateTimeFormat().resolvedOptions().timeZone,
-
-        phase:
-          getWorldPhase(now),
-
-        sunrise: "06:25",
-
-        sunset: "18:48",
-
-        temperature: 27,
-
-        humidity: 0.52,
-
-        visibility: 1,
-
-        windSpeed: 5,
-
-        cloudCoverage: 0.35,
-
-        precipitation: 0,
-
-        raining: false,
-
-        storm: false,
-
-        trafficLevel: 0.55,
-
-        peopleDensity: 0.62,
-
-        starsVisible: false,
-
-        moonVisible: false,
-
-      };
-
-    });
+      moonVisible: false,
+    };
+  });
 
   useEffect(() => {
-
     const timer = setInterval(() => {
-
-      setWorld(previous => {
-
+      setWorld((previous) => {
         const now = new Date();
 
         return simulateWeather({
-
           ...previous,
 
           now,
 
           phase: getWorldPhase(now),
 
-          starsVisible:
-            now.getHours() >= 20,
+          starsVisible: now.getHours() >= 20,
 
-          moonVisible:
-            now.getHours() >= 18,
-
+          moonVisible: now.getHours() >= 18,
         });
-
       });
-
     }, 60000);
 
     return () => clearInterval(timer);
-
   }, []);
 
-  return (
-
-    <WorldContext.Provider value={world}>
-
-      {children}
-
-    </WorldContext.Provider>
-
-  );
-
+  return <WorldContext.Provider value={world}>{children}</WorldContext.Provider>;
 }
 
 export function useWorld() {
+  const context = useContext(WorldContext);
 
-  const context =
-    useContext(WorldContext);
-
-  if (!context)
-    throw new Error(
-      "useWorld must be used inside WorldProvider"
-    );
+  if (!context) throw new Error("useWorld must be used inside WorldProvider");
 
   return context;
-
 }

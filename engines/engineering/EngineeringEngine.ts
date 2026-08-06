@@ -29,13 +29,8 @@ export class EngineeringEngine {
   /**
    * Main execution entry point
    */
-  async run<TInput, TOutput>(
-    input: EngineeringInput<TInput>
-  ): Promise<EngineeringResult<TOutput>> {
-    const module = this.registry.get(input.discipline) as IEngineeringModule<
-      TInput,
-      TOutput
-    >;
+  async run<TInput, TOutput>(input: EngineeringInput<TInput>): Promise<EngineeringResult<TOutput>> {
+    const module = this.registry.get(input.discipline) as IEngineeringModule<TInput, TOutput>;
 
     await this.safeValidate(module, input);
 
@@ -49,14 +44,12 @@ export class EngineeringEngine {
    */
   private async safeValidate<TInput>(
     module: IEngineeringModule<TInput>,
-    input: EngineeringInput<TInput>
+    input: EngineeringInput<TInput>,
   ): Promise<void> {
     try {
       await module.validate(input);
     } catch (error: any) {
-      throw new Error(
-        `Validation failed for ${input.discipline}: ${error.message}`
-      );
+      throw new Error(`Validation failed for ${input.discipline}: ${error.message}`);
     }
   }
 
@@ -65,7 +58,7 @@ export class EngineeringEngine {
    */
   private enrichResult<T>(
     result: EngineeringResult<T>,
-    discipline: EngineeringDiscipline
+    discipline: EngineeringDiscipline,
   ): EngineeringResult<T> {
     return {
       ...result,

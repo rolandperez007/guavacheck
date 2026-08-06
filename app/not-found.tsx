@@ -19,9 +19,7 @@ export default function NotFound() {
       <div style={styles.content}>
         <h1 style={styles.title}>404</h1>
 
-        <p style={styles.subtitle}>
-          Oops! This space isn’t built yet inside GuavaCheck.
-        </p>
+        <p style={styles.subtitle}>Oops! This space isn’t built yet inside GuavaCheck.</p>
 
         <div style={styles.aiBox}>
           🤖 Austin AI
@@ -84,8 +82,7 @@ const styles: Record<string, React.CSSProperties> = {
   particles: {
     position: "absolute",
     inset: 0,
-    background:
-      "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+    background: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
     backgroundSize: "60px 60px",
     animation: "floatParticles 20s linear infinite",
     zIndex: 2,

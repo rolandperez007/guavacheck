@@ -1,13 +1,8 @@
 from datetime import datetime
 from uuid import uuid4
 
-from sqlalchemy import Boolean
-from sqlalchemy import DateTime
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from sqlalchemy import Boolean, DateTime, Float, Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
 

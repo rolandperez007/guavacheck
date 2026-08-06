@@ -16,125 +16,118 @@
  /**
  * Default Austin Configuration
  */
- export const DefaultAustinConfiguration: AustinConfiguration = {
+export const DefaultAustinConfiguration: AustinConfiguration = {
+  name: "Austin",
 
-    name: "Austin",
+  version: "1.0.0",
 
-    version: "1.0.0",
+  environment: "development",
 
-    environment: "development",
+  debug: true,
 
-    debug: true,
+  simulationEnabled: true,
 
-    simulationEnabled: true,
+  predictionEnabled: true,
 
-    predictionEnabled: true,
+  learningEnabled: true,
 
-    learningEnabled: true,
+  maxConcurrentWorkflows: 100,
 
-    maxConcurrentWorkflows: 100,
+  maxConcurrentSimulations: 50,
 
-    maxConcurrentSimulations: 50,
+  memoryCacheLimit: 10000,
 
-    memoryCacheLimit: 10000,
+  autoRegisterEngines: true,
 
-    autoRegisterEngines: true,
+  pluginsEnabled: true,
 
-    pluginsEnabled: true,
+  auditEnabled: true,
 
-    auditEnabled: true,
+  healthMonitoring: true,
 
-    healthMonitoring: true,
+  language: "en",
 
-    language: "en",
-
-    timezone: "UTC"
-
+  timezone: "UTC",
 };
 
 export interface AustinConfiguration {
+  /**
+   * Name of the AI platform.
+   */
+  readonly name: string;
 
-    /**
-     * Name of the AI platform.
-     */
-    readonly name: string;
+  /**
+   * Austin version.
+   */
+  readonly version: string;
 
-    /**
-     * Austin version.
-     */
-    readonly version: string;
+  /**
+   * Current environment.
+   */
+  readonly environment: "development" | "staging" | "production";
 
-    /**
-     * Current environment.
-     */
-    readonly environment:
-        | "development"
-        | "staging"
-        | "production";
+  /**
+   * Enable verbose logging.
+   */
+  readonly debug: boolean;
 
-    /**
-     * Enable verbose logging.
-     */
-    readonly debug: boolean;
+  /**
+   * Enable simulation engine.
+   */
+  readonly simulationEnabled: boolean;
 
-    /**
-     * Enable simulation engine.
-     */
-    readonly simulationEnabled: boolean;
+  /**
+   * Enable prediction engine.
+   */
+  readonly predictionEnabled: boolean;
 
-    /**
-     * Enable prediction engine.
-     */
-    readonly predictionEnabled: boolean;
+  /**
+   * Enable learning engine.
+   */
+  readonly learningEnabled: boolean;
 
-    /**
-     * Enable learning engine.
-     */
-    readonly learningEnabled: boolean;
+  /**
+   * Maximum concurrent workflows.
+   */
+  readonly maxConcurrentWorkflows: number;
 
-    /**
-     * Maximum concurrent workflows.
-     */
-    readonly maxConcurrentWorkflows: number;
+  /**
+   * Maximum concurrent simulations.
+   */
+  readonly maxConcurrentSimulations: number;
 
-    /**
-     * Maximum concurrent simulations.
-     */
-    readonly maxConcurrentSimulations: number;
+  /**
+   * Maximum memory cache entries.
+   */
+  readonly memoryCacheLimit: number;
 
-    /**
-     * Maximum memory cache entries.
-     */
-    readonly memoryCacheLimit: number;
+  /**
+   * Auto-register all engines during startup.
+   */
+  readonly autoRegisterEngines: boolean;
 
-    /**
-     * Auto-register all engines during startup.
-     */
-    readonly autoRegisterEngines: boolean;
+  /**
+   * Enable plugin discovery.
+   */
+  readonly pluginsEnabled: boolean;
 
-    /**
-     * Enable plugin discovery.
-     */
-    readonly pluginsEnabled: boolean;
+  /**
+   * Enable audit logging.
+   */
+  readonly auditEnabled: boolean;
 
-    /**
-     * Enable audit logging.
-     */
-    readonly auditEnabled: boolean;
+  /**
+   * Enable health monitoring.
+   */
+  readonly healthMonitoring: boolean;
 
-    /**
-     * Enable health monitoring.
-     */
-    readonly healthMonitoring: boolean;
+  /**
+   * Default language.
+   */
+  readonly language: string;
 
-    /**
-     * Default language.
-     */
-    readonly language: string;
-
-    /**
-     * Default timezone.
-     */
-    readonly timezone: string;
-
+  /**
+   * Default timezone.
+   */
+  readonly timezone: string;
 }

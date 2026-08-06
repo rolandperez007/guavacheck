@@ -10,153 +10,93 @@
 import { PaymentProvider } from "./provider-types";
 
 export const ProviderRegistry: PaymentProvider[] = [
+  {
+    id: "stripe",
 
-{
+    name: "Stripe",
 
-id: "stripe",
+    supportedCountries: [
+      "US",
+      "CA",
+      "GB",
+      "AU",
+      "NZ",
+      "JP",
+      "KR",
 
-name: "Stripe",
+      "SG",
+      "DE",
+      "FR",
+      "IT",
+      "ES",
+      "NL",
 
-supportedCountries: [
+      "BR",
+      "MX",
+    ],
 
-"US","CA","GB","AU","NZ","JP","KR",
+    supportedCurrencies: ["USD", "EUR", "GBP", "JPY", "KRW", "AUD", "CAD", "BRL"],
 
-"SG","DE","FR","IT","ES","NL",
+    supportsSubscriptions: true,
 
-"BR","MX"
+    supportsRefunds: true,
 
-],
+    supportsWebhooks: true,
 
-supportedCurrencies: [
+    enabled: true,
+  },
 
-"USD","EUR","GBP","JPY","KRW",
+  {
+    id: "paystack",
 
-"AUD","CAD","BRL"
+    name: "Paystack",
 
-],
+    supportedCountries: ["NG", "GH"],
 
-supportsSubscriptions: true,
+    supportedCurrencies: ["NGN", "GHS"],
 
-supportsRefunds: true,
+    supportsSubscriptions: true,
 
-supportsWebhooks: true,
+    supportsRefunds: true,
 
-enabled: true
+    supportsWebhooks: true,
 
-},
+    enabled: true,
+  },
 
-{
+  {
+    id: "flutterwave",
 
-id: "paystack",
+    name: "Flutterwave",
 
-name: "Paystack",
+    supportedCountries: ["NG", "KE", "UG", "TZ", "RW", "ZM", "ZW", "ZA"],
 
-supportedCountries: [
+    supportedCurrencies: ["NGN", "KES", "UGX", "TZS", "RWF", "ZMW", "ZAR"],
 
-"NG",
+    supportsSubscriptions: true,
 
-"GH"
+    supportsRefunds: true,
 
-],
+    supportsWebhooks: true,
 
-supportedCurrencies: [
+    enabled: true,
+  },
 
-"NGN",
+  {
+    id: "paypal",
 
-"GHS"
+    name: "PayPal",
 
-],
+    supportedCountries: ["*"],
 
-supportsSubscriptions: true,
+    supportedCurrencies: ["*"],
 
-supportsRefunds: true,
+    supportsSubscriptions: true,
 
-supportsWebhooks: true,
+    supportsRefunds: true,
 
-enabled: true
+    supportsWebhooks: true,
 
-},
-
-{
-
-id: "flutterwave",
-
-name: "Flutterwave",
-
-supportedCountries: [
-
-"NG",
-
-"KE",
-
-"UG",
-
-"TZ",
-
-"RW",
-
-"ZM",
-
-"ZW",
-
-"ZA"
-
-],
-
-supportedCurrencies: [
-
-"NGN",
-
-"KES",
-
-"UGX",
-
-"TZS",
-
-"RWF",
-
-"ZMW",
-
-"ZAR"
-
-],
-
-supportsSubscriptions: true,
-
-supportsRefunds: true,
-
-supportsWebhooks: true,
-
-enabled: true
-
-},
-
-{
-
-id: "paypal",
-
-name: "PayPal",
-
-supportedCountries: [
-
-"*"
-
-],
-
-supportedCurrencies: [
-
-"*"
-
-],
-
-supportsSubscriptions: true,
-
-supportsRefunds: true,
-
-supportsWebhooks: true,
-
-enabled: true
-
-}
-
+    enabled: true,
+  },
 ];

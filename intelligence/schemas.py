@@ -1,5 +1,7 @@
-from pydantic import BaseModel, Field
 from typing import Any
+
+from pydantic import BaseModel, Field
+
 
 class IntelligenceEvent(BaseModel):
     event_name: str = Field(..., min_length=1)

@@ -6,7 +6,6 @@ from time import perf_counter
 
 
 class Stopwatch:
-
     def __init__(self):
 
         self.started = perf_counter()

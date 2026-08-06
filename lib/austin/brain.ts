@@ -2,10 +2,7 @@ import { buildAustinContext } from "./context";
 import { reasonAboutRequest } from "./reasoning";
 import { buildAustinResponse } from "./response";
 
-import {
-  AustinResponse,
-  WizardAustinInput,
-} from "./types";
+import { AustinResponse, WizardAustinInput } from "./types";
 
 /**
  * Austin Brain (CEO Layer)
@@ -19,9 +16,7 @@ import {
  *   → Response
  */
 
-export async function runAustin(
-  input: WizardAustinInput
-): Promise<AustinResponse> {
+export async function runAustin(input: WizardAustinInput): Promise<AustinResponse> {
   try {
     /**
      * 1. PERCEPTION LAYER
@@ -55,19 +50,13 @@ export async function runAustin(
     return {
       title: "Austin Error Report",
 
-      summary:
-        "Austin encountered an issue while processing this request.",
+      summary: "Austin encountered an issue while processing this request.",
 
       insights: [],
 
-      warnings: [
-        error?.message || "Unknown error occurred",
-      ],
+      warnings: [error?.message || "Unknown error occurred"],
 
-      recommendations: [
-        "Retry analysis",
-        "Check input data completeness",
-      ],
+      recommendations: ["Retry analysis", "Check input data completeness"],
 
       confidence: {
         value: 0,
@@ -98,10 +87,7 @@ import {
  * Real execution layer (NO MOCKS)
  */
 
-export async function runSpecialists(
-  decision: any,
-  context: any
-) {
+export async function runSpecialists(decision: any, context: any) {
   const results = [];
 
   for (const specialist of decision.specialistsUsed) {

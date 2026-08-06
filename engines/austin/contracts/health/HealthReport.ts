@@ -13,21 +13,19 @@ import { HealthIndicator } from "./HealthIndicator";
 import { HealthStatus } from "./HealthStatus";
 
 export interface HealthReport {
+  engine: string;
 
-    engine: string;
+  status: HealthStatus;
 
-    status: HealthStatus;
+  overallScore: number;
 
-    overallScore: number;
+  indicators: HealthIndicator[];
 
-    indicators: HealthIndicator[];
+  warnings: string[];
 
-    warnings: string[];
+  recommendations: string[];
 
-    recommendations: string[];
+  generatedAt: Date;
 
-    generatedAt: Date;
-
-    nextCheck: Date;
-
+  nextCheck: Date;
 }

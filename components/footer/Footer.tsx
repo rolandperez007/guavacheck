@@ -9,9 +9,7 @@ export default function Footer() {
         padding: "40px 0",
       }}
     >
-      <Container>
-        © {new Date().getFullYear()} Guava Networks 
-      </Container>
+      <Container>© {new Date().getFullYear()} Guava Networks</Container>
     </footer>
   );
 }

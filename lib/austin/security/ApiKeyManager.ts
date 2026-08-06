@@ -1,10 +1,9 @@
 export class ApiKeyManager {
-
   static keys: Record<string, any> = {
-    "public_demo": {
+    public_demo: {
       plan: "free",
-      active: true
-    }
+      active: true,
+    },
   };
 
   static generateKey(name: string) {
@@ -14,7 +13,7 @@ export class ApiKeyManager {
       name,
       plan: "pro",
       active: true,
-      created: new Date()
+      created: new Date(),
     };
 
     return key;
@@ -31,4 +30,3 @@ export class ApiKeyManager {
     return true;
   }
 }
-

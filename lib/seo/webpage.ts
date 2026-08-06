@@ -12,17 +12,11 @@ interface WebPageProps {
   path: string;
 }
 
-export function webpageSchema({
-  title,
-  description,
-  path,
-}: WebPageProps) {
+export function webpageSchema({ title, description, path }: WebPageProps) {
   const url = `${SITE.url}${path}`;
 
   return {
     "@type": "Organization",
-
-
 
     "@id": `${url}#webpage`,
 

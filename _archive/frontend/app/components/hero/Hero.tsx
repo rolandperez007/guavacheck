@@ -4,8 +4,7 @@ export default function Hero() {
     <section
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(135deg,#050907 0%,#07130C 35%,#0F2417 70%,#173927 100%)",
+        background: "linear-gradient(135deg,#050907 0%,#07130C 35%,#0F2417 70%,#173927 100%)",
         color: "white",
         display: "flex",
         alignItems: "center",
@@ -61,18 +60,14 @@ export default function Hero() {
             style={{
               fontSize: 21,
               lineHeight: 1.8,
-              opacity: .9,
+              opacity: 0.9,
               maxWidth: 650,
             }}
           >
-            Design smarter.
-            Estimate accurately.
-            Verify confidently.
-
-            <br /><br />
-
-            Powered by Austin™ —
-            your AI construction and property intelligence partner.
+            Design smarter. Estimate accurately. Verify confidently.
+            <br />
+            <br />
+            Powered by Austin™ — your AI construction and property intelligence partner.
           </p>
 
           <div
@@ -116,7 +111,6 @@ export default function Hero() {
         {/* RIGHT */}
 
         <AustinCard />
-
       </div>
     </section>
   );

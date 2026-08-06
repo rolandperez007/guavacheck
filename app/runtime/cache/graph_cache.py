@@ -1,10 +1,7 @@
-from typing import Dict
-
 from app.property.schemas.graph import PropertyGraph
 
 
 class PropertyGraphCache:
-
     """
     Simple in-memory cache.
 
@@ -13,7 +10,7 @@ class PropertyGraphCache:
 
     def __init__(self):
 
-        self._cache: Dict[str, PropertyGraph] = {}
+        self._cache: dict[str, PropertyGraph] = {}
 
     def get(self, property_id: str):
 

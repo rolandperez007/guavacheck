@@ -1,7 +1,7 @@
 import re
 
-class AustinParser:
 
+class AustinParser:
     def parse(self, text: str):
         text_lower = text.lower()
 
@@ -49,9 +49,6 @@ class AustinParser:
         return {
             "intent": intent,
             "location": location,
-            "financial": {
-                "price": price,
-                "currency": currency
-            },
-            "property_type": property_type
+            "financial": {"price": price, "currency": currency},
+            "property_type": property_type,
         }

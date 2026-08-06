@@ -1,21 +1,12 @@
 "use client";
 
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip
-} from "recharts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
 interface ROIChartProps {
   data: any[];
 }
 
-export default function ROIChart({
-  data
-}: ROIChartProps) {
+export default function ROIChart({ data }: ROIChartProps) {
   return (
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">
@@ -29,5 +20,3 @@ export default function ROIChart({
     </div>
   );
 }
-
-

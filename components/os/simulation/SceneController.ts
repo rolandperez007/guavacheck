@@ -5,13 +5,9 @@ import { worldClock } from "./WorldClock";
 import { eventBus } from "./EventBus";
 
 export default function SceneController() {
-
   useEffect(() => {
-
     const interval = setInterval(() => {
-
       eventBus.emit({
-
         id: crypto.randomUUID(),
 
         type: "world.tick",
@@ -19,19 +15,13 @@ export default function SceneController() {
         timestamp: Date.now(),
 
         payload: {
-
-          progress: worldClock.getDayProgress()
-
-        }
-
+          progress: worldClock.getDayProgress(),
+        },
       });
-
     }, 1000);
 
     return () => clearInterval(interval);
-
   }, []);
 
   return null;
-
 }

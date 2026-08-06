@@ -5,27 +5,19 @@
  */
 
 export class StripeProvider {
+  async createCheckoutSession(data: unknown) {
+    console.log("Stripe checkout");
 
-    async createCheckoutSession(data: unknown) {
+    return {
+      success: true,
 
-        console.log("Stripe checkout");
+      provider: "stripe",
 
-        return {
+      session: null,
 
-            success: true,
-
-            provider: "stripe",
-
-            session: null,
-
-            data
-
-        };
-
-    }
-
+      data,
+    };
+  }
 }
 
-export const stripeProvider =
-
-new StripeProvider();
+export const stripeProvider = new StripeProvider();

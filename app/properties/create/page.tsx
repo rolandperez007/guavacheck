@@ -68,9 +68,7 @@ export default function CreatePropertyPage() {
 
   return (
     <div style={{ padding: 30, maxWidth: 600 }}>
-      <h1 style={{ fontSize: 28, marginBottom: 20 }}>
-        Create Property
-      </h1>
+      <h1 style={{ fontSize: 28, marginBottom: 20 }}>Create Property</h1>
 
       <form onSubmit={handleSubmit}>
         {/* TITLE */}
@@ -110,19 +108,10 @@ export default function CreatePropertyPage() {
 
         {uploading && <p>Uploading image...</p>}
 
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            style={{ width: "100%", marginBottom: 15 }}
-          />
-        )}
+        {imageUrl && <img src={imageUrl} style={{ width: "100%", marginBottom: 15 }} />}
 
         {/* SUBMIT */}
-        <button
-          type="submit"
-          disabled={loading}
-          style={buttonStyle}
-        >
+        <button type="submit" disabled={loading} style={buttonStyle}>
           {loading ? "Creating..." : "Create Property"}
         </button>
       </form>
@@ -149,12 +138,3 @@ const buttonStyle: React.CSSProperties = {
   borderRadius: 8,
   cursor: "pointer",
 };
-
-
-
-
-
-
-
-
-

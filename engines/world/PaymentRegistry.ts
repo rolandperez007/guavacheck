@@ -26,9 +26,7 @@ export class PaymentRegistry {
   }
 
   static supportedIn(country: string): PaymentProvider[] {
-    return this.all().filter((provider) =>
-      provider.countries.includes(country)
-    );
+    return this.all().filter((provider) => provider.countries.includes(country));
   }
 
   static count(): number {

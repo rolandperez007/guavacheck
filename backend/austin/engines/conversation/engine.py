@@ -9,7 +9,6 @@ from backend.austin.models.engine_result import EngineResult
 
 
 class ConversationEngine(BaseEngine):
-
     name = "conversation"
 
     def execute(self, context) -> EngineResult:

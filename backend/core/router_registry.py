@@ -5,9 +5,8 @@ Central registration point for all backend routes.
 """
 
 from fastapi import FastAPI
-from backend.api.routes.austin_ws import router as austin_ws_router
 
-from fastapi import FastAPI
+from backend.api.routes.austin_ws import router as austin_ws_router
 
 
 def register_routers(app: FastAPI) -> None:
@@ -16,7 +15,6 @@ def register_routers(app: FastAPI) -> None:
     """
 
     from backend.api.routes.austin import router as austin_router
-    from backend.api.routes.austin_ws import router as austin_ws_router
     from backend.api.routes.health import router as health_router
 
     # Health endpoints

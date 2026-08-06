@@ -1,29 +1,21 @@
 export interface Alert {
+  id: string;
 
-    id: string;
+  severity: "info" | "warning" | "critical";
 
-    severity: "info" | "warning" | "critical";
+  message: string;
 
-    message: string;
-
-    createdAt: Date;
-
+  createdAt: Date;
 }
 
 export class AlertEngine {
+  private static alerts: Alert[] = [];
 
-    private static alerts: Alert[] = [];
+  static push(alert: Alert): void {
+    this.alerts.push(alert);
+  }
 
-    static push(alert: Alert): void {
-
-        this.alerts.push(alert);
-
-    }
-
-    static active(): Alert[] {
-
-        return this.alerts;
-
-    }
-
+  static active(): Alert[] {
+    return this.alerts;
+  }
 }

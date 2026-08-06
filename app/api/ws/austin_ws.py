@@ -1,11 +1,12 @@
 import json
-from fastapi import WebSocket, APIRouter
 
-from app.core.austin_parser import AustinParser
+from fastapi import APIRouter, WebSocket
+
 from app.core.austin_brain import AustinBrain
 from app.core.austin_gpt_brain import AustinGPTBrain
-from app.services.ai_ratings import get_system_snapshot
 from app.core.austin_memory import AustinMemory
+from app.core.austin_parser import AustinParser
+from app.services.ai_ratings import get_system_snapshot
 
 router = APIRouter()
 
@@ -13,6 +14,7 @@ parser = AustinParser()
 brain = AustinBrain()
 gpt = AustinGPTBrain()
 memory = AustinMemory()
+
 
 @router.websocket("/ws/austin")
 async def austin_socket(websocket: WebSocket):
@@ -31,14 +33,16 @@ async def austin_socket(websocket: WebSocket):
         # -----------------------------
         # 1. THINKING
         # -----------------------------
-        await websocket.send_json({
-            "type": "chunk",
-            "data": {
-                "type": "thinking",
-                "stage": "start",
-                "message": "Analyzing request..."
+        await websocket.send_json(
+            {
+                "type": "chunk",
+                "data": {
+                    "type": "thinking",
+                    "stage": "start",
+                    "message": "Analyzing request...",
+                },
             }
-        })
+        )
 
         # -----------------------------
         # 2. PARSE INPUT
@@ -62,7 +66,7 @@ async def austin_socket(websocket: WebSocket):
             "query": query,
             "analysis": analysis,
             "decision": analysis.get("decision"),
-            "score": analysis.get("score")
+            "score": analysis.get("score"),
         }
 
         snapshot = get_system_snapshot()
@@ -71,56 +75,44 @@ async def austin_socket(websocket: WebSocket):
         # -----------------------------
         # 6. SEND CONTEXT (optional)
         # -----------------------------
-        await websocket.send_json({
-            "type": "chunk",
-            "data": {
-                "type": "context",
+        await websocket.send_json(
+            {
+                "type": "chunk",
                 "data": {
-                    "query": query,
-                    "history": history[-5:],  # last 5 interactions
-                    "status": "processed"
-                }
+                    "type": "context",
+                    "data": {
+                        "query": query,
+                        "history": history[-5:],  # last 5 interactions
+                        "status": "processed",
+                    },
+                },
             }
-       })
+        )
 
         # -----------------------------
         # 7. SEND ANALYSIS
         # -----------------------------
-        await websocket.send_json({
-            "type": "chunk",
-            "data": {
-                "type": "analysis",
-                "data": analysis
-            }
-        })
+        await websocket.send_json(
+            {"type": "chunk", "data": {"type": "analysis", "data": analysis}}
+        )
 
         # -----------------------------
         # 8. SEND RESPONSE (GPT)
         # -----------------------------
-        await websocket.send_json({
-            "type": "chunk",
-            "data": {
-                "type": "response",
-                "message": explanation
-            }
-        })
+        await websocket.send_json(
+            {"type": "chunk", "data": {"type": "response", "message": explanation}}
+        )
 
         # -----------------------------
         # 9. DASHBOARD EVENT STREAM
         # -----------------------------
-        await websocket.send_json({
-            "type": "chunk",
-            "data": {
-                "type": "dashboard_event",
-                "data": event
-            }
-        })
+        await websocket.send_json(
+            {"type": "chunk", "data": {"type": "dashboard_event", "data": event}}
+        )
         memory.save(user_id, event)
         history = memory.get_history(user_id)
-        
+
         # -----------------------------
         # 10. DONE
         # -----------------------------
-        await websocket.send_json({
-            "type": "done"
-        })
+        await websocket.send_json({"type": "done"})

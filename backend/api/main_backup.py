@@ -9,17 +9,15 @@ Austin initializes before the API begins serving requests.
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+
 from backend.api.middleware.logging import LoggingMiddleware
 from backend.api.middleware.security import SecurityMiddleware
-
-
-from backend.austin.bootstrap import initialize
-
-from backend.api.routes.health import router as health_router
 from backend.api.routes.austin import router as austin_router
 from backend.api.routes.engineering import router as engineering_router
+from backend.api.routes.health import router as health_router
 from backend.api.routes.property import router as property_router
 from backend.api.routes.verification import router as verification_router
+from backend.austin.bootstrap import initialize
 
 
 @asynccontextmanager
@@ -37,13 +35,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-
     title="guavacheck API",
-
     version="1.0.0",
-
     lifespan=lifespan,
-
 )
 
 #
@@ -64,17 +58,13 @@ app.add_middleware(LoggingMiddleware)
 
 app.add_middleware(SecurityMiddleware)
 
+
 @app.get("/")
 async def root():
 
     return {
-
         "platform": "guavacheck",
-
         "version": "1.0.0",
-
         "status": "online",
-
         "intelligence": "Austin",
-
     }

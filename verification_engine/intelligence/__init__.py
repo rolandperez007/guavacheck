@@ -13,16 +13,16 @@ Components
 - Reasoning Engine
 """
 
-from .EvidenceCollector import EvidenceCollector
 from .ConfidenceEngine import ConfidenceEngine
 from .ConflictResolver import ConflictResolver
+from .EvidenceCollector import EvidenceCollector
 from .ExplanationGenerator import ExplanationGenerator
 from .ReasoningEngine import ReasoningEngine
 
 __all__ = [
-    "EvidenceCollector",
     "ConfidenceEngine",
     "ConflictResolver",
+    "EvidenceCollector",
     "ExplanationGenerator",
     "ReasoningEngine",
 ]

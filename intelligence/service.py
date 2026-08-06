@@ -1,5 +1,4 @@
 class IntelligenceService:
-
     async def store(self, event):
 
         # TODO
@@ -9,5 +8,6 @@ class IntelligenceService:
             "status": "stored",
             "event": event.event_name,
         }
+
 
 service = IntelligenceService()

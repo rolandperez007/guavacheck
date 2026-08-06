@@ -6,11 +6,7 @@
  * efficiency and equipment estimation.
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringCalculator } from "./EngineeringCalculator";
 import { EngineeringValidator } from "./EngineeringValidator";
@@ -27,9 +23,10 @@ export interface MechanicalOutput {
   recommendation: string;
 }
 
-export class MechanicalEngineering
-  implements IEngineeringModule<MechanicalInput, MechanicalOutput>
-{
+export class MechanicalEngineering implements IEngineeringModule<
+  MechanicalInput,
+  MechanicalOutput
+> {
   discipline = "mechanical" as const;
 
   async validate(input: EngineeringInput<MechanicalInput>): Promise<void> {
@@ -41,13 +38,9 @@ export class MechanicalEngineering
   }
 
   async compute(
-    input: EngineeringInput<MechanicalInput>
+    input: EngineeringInput<MechanicalInput>,
   ): Promise<EngineeringResult<MechanicalOutput>> {
-    const {
-      systemLoad,
-      efficiency = 85,
-      operatingHours = 8,
-    } = input.data;
+    const { systemLoad, efficiency = 85, operatingHours = 8 } = input.data;
 
     const efficiencyFactor = efficiency / 100;
 

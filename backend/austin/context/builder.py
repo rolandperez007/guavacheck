@@ -6,15 +6,16 @@ Builds the complete execution context for every Austin request.
 
 from __future__ import annotations
 
-from ..memory import memory
-from backend.world.world_engine import world_engine
 from dataclasses import asdict
+
+from backend.world.world_engine import world_engine
+
+from ..memory import memory
 from .context import AustinContext
 from .summarizer import summarizer
 
 
 class ContextBuilder:
-
     def build(
         self,
         session_id: str,

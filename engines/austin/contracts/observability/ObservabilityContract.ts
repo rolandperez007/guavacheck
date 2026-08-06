@@ -18,18 +18,13 @@ import { Span } from "./Span";
 import { Trace } from "./Trace";
 
 export interface ObservabilityContract {
+  startTrace(context: RequestContext): Promise<Trace>;
 
-    startTrace(context: RequestContext): Promise<Trace>;
+  endTrace(traceId: string): Promise<void>;
 
-    endTrace(traceId: string): Promise<void>;
+  startSpan(traceId: string, name: string): Promise<Span>;
 
-    startSpan(
-        traceId: string,
-        name: string
-    ): Promise<Span>;
+  finishSpan(spanId: string): Promise<void>;
 
-    finishSpan(spanId: string): Promise<void>;
-
-    currentContext(): CorrelationContext;
-
+  currentContext(): CorrelationContext;
 }

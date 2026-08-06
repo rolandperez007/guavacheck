@@ -8,7 +8,6 @@ from backend.austin.engines.conversation.engine import conversation_engine
 
 
 class EngineRegistry:
-
     def __init__(self):
 
         self._engines = {}

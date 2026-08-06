@@ -1,7 +1,6 @@
 import { Executor } from "./Executor";
 
 export class AustinEngine {
-
   private executor: Executor;
 
   constructor() {
@@ -9,11 +8,10 @@ export class AustinEngine {
   }
 
   async execute(input: any) {
-
     const plan = {
       intent: "GENERAL",
       steps: ["analyze"],
-      output: "message"
+      output: "message",
     } as const;
 
     const result = await this.executor.run(plan as any);
@@ -21,12 +19,11 @@ export class AustinEngine {
     return {
       success: true,
       input,
-      result
+      result,
     };
   }
 
   async executeStream(input: any, emit: Function) {
-
     await emit({ stage: "start", input });
 
     const result = await this.execute(input);

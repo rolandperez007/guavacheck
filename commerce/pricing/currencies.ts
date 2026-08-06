@@ -1,27 +1,25 @@
 export const SupportedCurrencies = {
+  USD: "$",
 
-USD: "$",
+  EUR: "€",
 
-EUR: "€",
+  GBP: "£",
 
-GBP: "£",
+  NGN: "₦",
 
-NGN: "₦",
+  ZAR: "R",
 
-ZAR: "R",
+  KES: "KSh",
 
-KES: "KSh",
+  GHS: "GH₵",
 
-GHS: "GH₵",
+  JPY: "¥",
 
-JPY: "¥",
+  KRW: "₩",
 
-KRW: "₩",
+  AUD: "A$",
 
-AUD: "A$",
+  BRL: "R$",
 
-BRL: "R$",
-
-CAD: "C$"
-
+  CAD: "C$",
 };

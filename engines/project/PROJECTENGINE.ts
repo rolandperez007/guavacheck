@@ -2,25 +2,17 @@ import { Project } from "./PROJECT";
 import { ProjectRegistry } from "./PROJECTREGISTRY";
 
 export class ProjectEngine {
+  static create(project: Project): Project {
+    ProjectRegistry.register(project);
 
-    static create(project: Project): Project {
+    return project;
+  }
 
-        ProjectRegistry.register(project);
+  static find(id: string): Project | undefined {
+    return ProjectRegistry.get(id);
+  }
 
-        return project;
-
-    }
-
-    static find(id: string): Project | undefined {
-
-        return ProjectRegistry.get(id);
-
-    }
-
-    static list(): Project[] {
-
-        return ProjectRegistry.all();
-
-    }
-
+  static list(): Project[] {
+    return ProjectRegistry.all();
+  }
 }

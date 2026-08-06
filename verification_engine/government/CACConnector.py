@@ -5,8 +5,6 @@ Used when property owner
 is a company.
 """
 
-from typing import Dict
-
 
 class CACConnector:
     """
@@ -18,7 +16,7 @@ class CACConnector:
 
     source = "CAC"
 
-    def verify_company(self, rc_number: str) -> Dict:
+    def verify_company(self, rc_number: str) -> dict:
 
         return {
             "verified": False,

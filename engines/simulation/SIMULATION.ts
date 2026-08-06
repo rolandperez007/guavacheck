@@ -1,17 +1,15 @@
 export interface Simulation {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  description: string;
 
-    description: string;
+  category: string;
 
-    category: string;
+  difficulty: "easy" | "medium" | "hard" | "critical";
 
-    difficulty: "easy" | "medium" | "hard" | "critical";
+  expectedOutcome: string;
 
-    expectedOutcome: string;
-
-    createdAt: Date;
-
+  createdAt: Date;
 }

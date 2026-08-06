@@ -1,17 +1,14 @@
 export class NegotiationEngine {
-
   static analyze(input: {
     askingPrice: number;
     marketValue: number;
     urgencyLevel?: "low" | "medium" | "high";
     buyerBudget?: number;
   }) {
-
-    const discount = (input.marketValue - input.askingPrice) / input.marketValue * 100;
+    const discount = ((input.marketValue - input.askingPrice) / input.marketValue) * 100;
 
     const urgencyMultiplier =
-      input.urgencyLevel === "high" ? 1.3 :
-      input.urgencyLevel === "medium" ? 1.1 : 1.0;
+      input.urgencyLevel === "high" ? 1.3 : input.urgencyLevel === "medium" ? 1.1 : 1.0;
 
     const buyerGap = input.buyerBudget
       ? ((input.buyerBudget - input.askingPrice) / input.askingPrice) * 100
@@ -30,13 +27,10 @@ export class NegotiationEngine {
       strategy = "PRICE ABOVE BUDGET — COUNTER REQUIRED";
     }
 
-    const probabilityOfClose =
-      Math.min(95,
-        Math.max(20,
-          (discount * 1.5) +
-          (input.urgencyLevel === "high" ? 25 : 10)
-        )
-      );
+    const probabilityOfClose = Math.min(
+      95,
+      Math.max(20, discount * 1.5 + (input.urgencyLevel === "high" ? 25 : 10)),
+    );
 
     return {
       discount: Math.round(discount),
@@ -45,7 +39,7 @@ export class NegotiationEngine {
 
       negotiationRange: {
         low: Math.round(negotiationRangeLow),
-        high: Math.round(negotiationRangeHigh)
+        high: Math.round(negotiationRangeHigh),
       },
 
       strategy,
@@ -55,9 +49,8 @@ export class NegotiationEngine {
         probabilityOfClose > 70
           ? "STRONGLY RECOMMEND CLOSE"
           : probabilityOfClose > 40
-          ? "NEGOTIATE"
-          : "WAIT OR REPRICE"
+            ? "NEGOTIATE"
+            : "WAIT OR REPRICE",
     };
   }
 }
-

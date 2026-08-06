@@ -1,33 +1,19 @@
 export interface Verification {
+  id: string;
 
-    id: string;
+  targetId: string;
 
-    targetId: string;
+  targetType: "user" | "organization" | "property" | "project" | "document" | "professional";
 
-    targetType:
-        | "user"
-        | "organization"
-        | "property"
-        | "project"
-        | "document"
-        | "professional";
+  status: "pending" | "in_review" | "verified" | "rejected" | "expired" | "suspended";
 
-    status:
-        | "pending"
-        | "in_review"
-        | "verified"
-        | "rejected"
-        | "expired"
-        | "suspended";
+  trustScore: number;
 
-    trustScore: number;
+  confidence: number;
 
-    confidence: number;
+  verifiedBy: string;
 
-    verifiedBy: string;
+  verifiedAt?: Date;
 
-    verifiedAt?: Date;
-
-    createdAt: Date;
-
+  createdAt: Date;
 }

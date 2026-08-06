@@ -7,7 +7,7 @@ export default function AIAssistant() {
     "System alert: page not found…",
     "Activating Guava recovery protocol…",
     "Scanning property network…",
-    "Recommended routes are ready."
+    "Recommended routes are ready.",
   ];
 
   const [index, setIndex] = useState(0);
@@ -20,11 +20,5 @@ export default function AIAssistant() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="text-center text-white text-lg font-light">
-      🤖 {messages[index]}
-    </div>
-  );
+  return <div className="text-center text-white text-lg font-light">🤖 {messages[index]}</div>;
 }
-
-

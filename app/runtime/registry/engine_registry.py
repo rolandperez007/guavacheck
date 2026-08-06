@@ -11,7 +11,6 @@ from app.property.engines.graph_engine import (
 
 
 class EngineRegistry:
-
     def __init__(self):
 
         self.graph = PropertyGraphEngine()

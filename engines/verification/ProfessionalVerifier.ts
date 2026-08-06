@@ -1,13 +1,11 @@
 export interface ProfessionalVerification {
+  professionalId: string;
 
-    professionalId: string;
+  profession: string;
 
-    profession: string;
+  licenseVerified: boolean;
 
-    licenseVerified: boolean;
+  organizationVerified: boolean;
 
-    organizationVerified: boolean;
-
-    trustScore: number;
-
+  trustScore: number;
 }

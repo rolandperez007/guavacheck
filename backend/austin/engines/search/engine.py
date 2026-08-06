@@ -8,7 +8,6 @@ from typing import Any
 
 
 class SearchEngine:
-
     name = "search"
     version = "1.0.0"
 

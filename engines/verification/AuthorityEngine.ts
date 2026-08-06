@@ -1,47 +1,33 @@
 export interface Authority {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  country: string;
 
-    country: string;
+  category: string;
 
-    category: string;
+  trusted: boolean;
 
-    trusted: boolean;
-
-    endpoint?: string;
-
+  endpoint?: string;
 }
 
 export class AuthorityEngine {
+  private static authorities = new Map<string, Authority>();
 
-    private static authorities =
+  static register(authority: Authority): void {
+    this.authorities.set(
+      authority.id,
 
-        new Map<string, Authority>();
+      authority,
+    );
+  }
 
-    static register(authority: Authority): void {
+  static find(id: string): Authority | undefined {
+    return this.authorities.get(id);
+  }
 
-        this.authorities.set(
-
-            authority.id,
-
-            authority
-
-        );
-
-    }
-
-    static find(id: string): Authority | undefined {
-
-        return this.authorities.get(id);
-
-    }
-
-    static all(): Authority[] {
-
-        return [...this.authorities.values()];
-
-    }
-
+  static all(): Authority[] {
+    return [...this.authorities.values()];
+  }
 }

@@ -18,9 +18,20 @@ class MonitoringConfig:
     def __init__(self, thresholds: MonitoringThresholds | None = None) -> None:
         self.thresholds = thresholds or MonitoringThresholds()
 
-    def evaluate(self, *, queue_depth: int, active_workers: int, wait_time_ms: int, worker_utilization: int) -> dict[str, Any]:
+    def evaluate(
+        self,
+        *,
+        queue_depth: int,
+        active_workers: int,
+        wait_time_ms: int,
+        worker_utilization: int,
+    ) -> dict[str, Any]:
         return {
-            "status": "warning" if queue_depth > self.thresholds.queue_depth_warning or wait_time_ms > self.thresholds.wait_time_warning_ms or worker_utilization > self.thresholds.worker_utilization_warning else "healthy",
+            "status": "warning"
+            if queue_depth > self.thresholds.queue_depth_warning
+            or wait_time_ms > self.thresholds.wait_time_warning_ms
+            or worker_utilization > self.thresholds.worker_utilization_warning
+            else "healthy",
             "queue_depth": queue_depth,
             "active_workers": active_workers,
             "wait_time_ms": wait_time_ms,

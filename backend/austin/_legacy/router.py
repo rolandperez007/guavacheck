@@ -31,7 +31,6 @@ class RouterResult:
 
 
 class AustinRouter:
-
     def route(
         self,
         *,

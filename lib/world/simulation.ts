@@ -2,16 +2,12 @@ import { buildCity } from "./city";
 import { getEconomy } from "./economy";
 import { randomEvent } from "./events";
 
-export function runSimulation(){
+export function runSimulation() {
+  return {
+    world: buildCity(),
 
-    return{
+    economy: getEconomy(),
 
-        world:buildCity(),
-
-        economy:getEconomy(),
-
-        event:randomEvent()
-
-    };
-
+    event: randomEvent(),
+  };
 }

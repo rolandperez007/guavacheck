@@ -15,10 +15,7 @@ export default function TermsPage() {
     >
       <h1>Terms of Service</h1>
 
-      <p>
-        Terms governing the use of guavacheck and services
-        provided by Guava Networks Limited.
-      </p>
+      <p>Terms governing the use of guavacheck and services provided by Guava Networks Limited.</p>
     </main>
   );
 }

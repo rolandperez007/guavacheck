@@ -7,25 +7,21 @@ import { getPopulation } from "./people";
 import { getConstruction } from "./construction";
 
 export function buildCity() {
+  return {
+    generatedAt: new Date().toISOString(),
 
-    return {
+    clock: getWorldClock(),
 
-        generatedAt:new Date().toISOString(),
+    weather: getWeather(),
 
-        clock:getWorldClock(),
+    lighting: getLighting(),
 
-        weather:getWeather(),
+    clouds: getCloudState(),
 
-        lighting:getLighting(),
+    traffic: getTraffic(),
 
-        clouds:getCloudState(),
+    population: getPopulation(),
 
-        traffic:getTraffic(),
-
-        population:getPopulation(),
-
-        construction:getConstruction()
-
-    };
-
+    construction: getConstruction(),
+  };
 }

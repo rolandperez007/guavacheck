@@ -4,13 +4,13 @@ import hashlib
 import json
 import time
 from dataclasses import dataclass
-from typing import Any, Dict, Optional
+from typing import Any
 
 # -----------------------------
 # Simple in-memory job store
 # (swap later with Redis / DB)
 # -----------------------------
-JOB_STORE: Dict[str, Dict[str, Any]] = {}
+JOB_STORE: dict[str, dict[str, Any]] = {}
 
 
 def _generate_idempotency_key(user_id: str, payload: dict) -> str:
@@ -45,14 +45,14 @@ class IronGateway:
     Single entry point for all heavy system requests.
     """
 
-    def __init__(self, job_store: Dict[str, Dict[str, Any]] = None):
+    def __init__(self, job_store: dict[str, dict[str, Any]] = None):
         self.job_store = job_store if job_store is not None else JOB_STORE
 
     # -------------------------
     # MAIN ENTRY METHOD
     # -------------------------
     def handle_request(
-        self, user_id: str, payload: Dict[str, Any], request_type: str = "generic"
+        self, user_id: str, payload: dict[str, Any], request_type: str = "generic"
     ) -> GatewayResponse:
         # 1. Create idempotency key
         idem_key = _generate_idempotency_key(user_id, payload)
@@ -97,7 +97,7 @@ class IronGateway:
     # -------------------------
     # INTERNAL: duplicate check
     # -------------------------
-    def _find_by_idempotency_key(self, key: str) -> Optional[Dict[str, Any]]:
+    def _find_by_idempotency_key(self, key: str) -> dict[str, Any] | None:
         for job in self.job_store.values():
             if job.get("idempotency_key") == key:
                 return job
@@ -106,7 +106,7 @@ class IronGateway:
     # -------------------------
     # INTERNAL: dispatcher hook
     # -------------------------
-    def _dispatch(self, job: Dict[str, Any]) -> None:
+    def _dispatch(self, job: dict[str, Any]) -> None:
         """
         This is where we plug:
         - Ingest worker (Trigger.dev / Celery / BullMQ equivalent)

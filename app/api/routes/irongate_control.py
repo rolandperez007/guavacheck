@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
 # ---- Request model ----
 class ControlRequest(BaseModel):
     query: str
@@ -18,8 +19,4 @@ def health():
 # ---- Simple command endpoint (for Austin later) ----
 @router.post("/command")
 def command(req: ControlRequest):
-    return {
-        "message": "command received",
-        "query": req.query,
-        "user": req.user_id
-    }
+    return {"message": "command received", "query": req.query, "user": req.user_id}

@@ -1,23 +1,19 @@
 export enum ProjectRisk {
+  LOW = "low",
 
-    LOW = "low",
+  MEDIUM = "medium",
 
-    MEDIUM = "medium",
+  HIGH = "high",
 
-    HIGH = "high",
-
-    CRITICAL = "critical"
-
+  CRITICAL = "critical",
 }
 
 export interface RiskAssessment {
+  projectId: string;
 
-    projectId: string;
+  risk: ProjectRisk;
 
-    risk: ProjectRisk;
+  score: number;
 
-    score: number;
-
-    reason: string[];
-
+  reason: string[];
 }

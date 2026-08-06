@@ -9,7 +9,6 @@ from __future__ import annotations
 
 
 class LandRegistryConnector:
-
     def __init__(self):
 
         self.provider = "Government Land Registry"
@@ -18,7 +17,6 @@ class LandRegistryConnector:
         self,
         title_number: str,
     ):
-
         """
         Future:
 
@@ -26,15 +24,10 @@ class LandRegistryConnector:
         """
 
         return {
-
             "found": False,
-
             "provider": self.provider,
-
             "title_number": title_number,
-
-            "status": "NOT_IMPLEMENTED"
-
+            "status": "NOT_IMPLEMENTED",
         }
 
     async def verify_owner(
@@ -43,12 +36,4 @@ class LandRegistryConnector:
         owner_name: str,
     ):
 
-        return {
-
-            "verified": False,
-
-            "owner": owner_name,
-
-            "status": "NOT_IMPLEMENTED"
-
-        }
+        return {"verified": False, "owner": owner_name, "status": "NOT_IMPLEMENTED"}

@@ -12,7 +12,7 @@ export interface PropertyContext {
 
   intent?: UserIntent;
 
-  property?: any;     // will tighten later
+  property?: any; // will tighten later
   location?: any;
   media?: any;
   documents?: any;

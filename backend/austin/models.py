@@ -32,7 +32,7 @@ class AustinEvent:
         correlation_id: str | None = None,
         metadata: dict[str, Any] | None = None,
         timestamp: datetime | None = None,
-    ) -> "AustinEvent":
+    ) -> AustinEvent:
         return cls(
             event_id=str(uuid4()),
             timestamp=timestamp or datetime.now(timezone.utc),

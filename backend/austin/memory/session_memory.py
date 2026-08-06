@@ -8,7 +8,6 @@ from collections import defaultdict
 
 
 class SessionMemory:
-
     def __init__(self):
 
         self._memory = defaultdict(list)

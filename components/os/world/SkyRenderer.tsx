@@ -5,13 +5,10 @@ import { useWorld } from "./WorldProvider";
 import { backgroundForPhase } from "./LightingEngine";
 
 export default function SkyRenderer() {
-
   const world = useWorld();
 
   return (
-
     <div
-
       className={`
         absolute
         inset-0
@@ -20,9 +17,6 @@ export default function SkyRenderer() {
         transition-all
         duration-[4000ms]
       `}
-
     />
-
   );
-
 }

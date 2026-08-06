@@ -15,11 +15,7 @@ export default function Property3DViewer({ property }: { property: any }) {
 
         {model.map((part, i) => {
           const color =
-            part.type === "base"
-              ? "#666666"
-              : part.type === "roof"
-              ? "#444444"
-              : "#9ecbff";
+            part.type === "base" ? "#666666" : part.type === "roof" ? "#444444" : "#9ecbff";
 
           return (
             <Box key={i} position={part.position as any} args={part.scale as any}>

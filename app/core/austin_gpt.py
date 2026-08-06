@@ -2,8 +2,8 @@ from openai import OpenAI
 
 client = OpenAI(api_key="YOUR_API_KEY")
 
-class AustinGPT:
 
+class AustinGPT:
     def explain(self, query: str, analysis: dict):
         prompt = f"""
 You are Austin AI, a real estate investment assistant.
@@ -21,8 +21,8 @@ Give a short, clear, human explanation of the investment decision.
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a real estate AI assistant."},
-                {"role": "user", "content": prompt}
-            ]
+                {"role": "user", "content": prompt},
+            ],
         )
 
         return response.choices[0].message.content

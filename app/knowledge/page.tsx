@@ -16,9 +16,8 @@ export default function KnowledgePage() {
       <h1>Knowledge Center</h1>
 
       <p>
-        Guides, AI insights and educational resources on
-        property intelligence, valuation, investment and
-        construction.
+        Guides, AI insights and educational resources on property intelligence, valuation,
+        investment and construction.
       </p>
     </main>
   );

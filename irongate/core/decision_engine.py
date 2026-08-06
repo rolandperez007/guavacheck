@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import List, Optional, Dict
 
 
 @dataclass
@@ -7,7 +6,7 @@ class RuleSignal:
     name: str
     score: int = 0
     critical: bool = False
-    reason: Optional[str] = None
+    reason: str | None = None
 
 
 @dataclass
@@ -15,8 +14,8 @@ class DecisionResult:
     allowed: bool
     decision: str  # allow | warn | block
     score: int
-    reasons: List[str]
-    rules_triggered: List[Dict]
+    reasons: list[str]
+    rules_triggered: list[dict]
     final_action: str
 
 
@@ -25,7 +24,7 @@ class DecisionEngine:
         self.warn_threshold = warn_threshold
         self.block_threshold = block_threshold
 
-    def evaluate(self, signals: List[RuleSignal]) -> DecisionResult:
+    def evaluate(self, signals: list[RuleSignal]) -> DecisionResult:
         score = 0
         reasons = []
         triggered = []

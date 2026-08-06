@@ -1,33 +1,19 @@
 export interface Evidence {
+  id: string;
 
-    id: string;
+  type: string;
 
-    type: string;
+  description: string;
 
-    description: string;
+  source: string;
 
-    source: string;
+  verified: boolean;
 
-    verified: boolean;
-
-    uploadedAt: Date;
-
+  uploadedAt: Date;
 }
 
 export class EvidenceEngine {
-
-    static sufficient(
-
-        evidence: Evidence[]
-
-    ): boolean {
-
-        return evidence.filter(
-
-            item => item.verified
-
-        ).length >= 2;
-
-    }
-
+  static sufficient(evidence: Evidence[]): boolean {
+    return evidence.filter((item) => item.verified).length >= 2;
+  }
 }

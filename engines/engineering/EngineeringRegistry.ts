@@ -6,11 +6,7 @@
  * Enables dynamic injection, swapping, scaling, and AI routing.
  */
 
-import {
-  EngineeringDiscipline,
-  IEngineeringModule,
-  RegisteredModule,
-} from "./EngineeringTypes";
+import { EngineeringDiscipline, IEngineeringModule, RegisteredModule } from "./EngineeringTypes";
 
 export class EngineeringRegistry {
   private modules: Map<EngineeringDiscipline, RegisteredModule>;
@@ -39,9 +35,7 @@ export class EngineeringRegistry {
     const entry = this.modules.get(discipline);
 
     if (!entry) {
-      throw new Error(
-        `Engineering module not found for discipline: ${discipline}`
-      );
+      throw new Error(`Engineering module not found for discipline: ${discipline}`);
     }
 
     return entry.module;

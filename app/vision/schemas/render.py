@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, ConfigDict
 
 
@@ -16,6 +14,6 @@ class RenderResponse(BaseModel):
     project_id: str
     room_id: str
     provider: str
-    image_url: Optional[str]
+    image_url: str | None
     status: str
     version: int

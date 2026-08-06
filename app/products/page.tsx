@@ -15,10 +15,7 @@ export default function ProductsPage() {
     >
       <h1>Products</h1>
 
-      <p>
-        Explore AI-powered products developed by
-        Guava Networks Limited.
-      </p>
+      <p>Explore AI-powered products developed by Guava Networks Limited.</p>
     </main>
   );
 }

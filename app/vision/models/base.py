@@ -1,11 +1,9 @@
 from datetime import datetime
-from uuid import uuid4
-from uuid import UUID
+from uuid import UUID, uuid4
 
 from sqlalchemy import DateTime
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
 

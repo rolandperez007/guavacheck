@@ -8,7 +8,6 @@ from .registry import CURRENCIES
 
 
 class CurrencyFormatter:
-
     def format(
         self,
         amount: float,

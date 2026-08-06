@@ -10,7 +10,6 @@ from backend.engines.manager import engine_manager
 
 
 class AustinRegistry:
-
     def register(self, engine):
 
         engine_manager.register(engine)

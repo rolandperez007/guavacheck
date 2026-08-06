@@ -1,9 +1,7 @@
-from pydantic import BaseModel
-from pydantic import EmailStr
+from pydantic import BaseModel, EmailStr
 
 
 class UserCreate(BaseModel):
-
     full_name: str
 
     email: EmailStr
@@ -12,7 +10,6 @@ class UserCreate(BaseModel):
 
 
 class UserResponse(BaseModel):
-
     id: str
 
     full_name: str
@@ -24,5 +21,4 @@ class UserResponse(BaseModel):
     is_admin: bool
 
     class Config:
-
         from_attributes = True

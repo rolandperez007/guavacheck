@@ -9,10 +9,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function SiteLayout({
-  children,
-}: Props) {
-
+export default function SiteLayout({ children }: Props) {
   const pathname = usePathname();
 
   const isGateway = pathname?.startsWith("/gateway");
@@ -21,9 +18,7 @@ export default function SiteLayout({
     <>
       {!isGateway && <Header />}
 
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       {!isGateway && <Footer />}
     </>

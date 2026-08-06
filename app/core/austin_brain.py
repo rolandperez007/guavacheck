@@ -43,11 +43,7 @@ class AustinBrain:
         else:
             decision = "avoid"
 
-        return {
-            "decision": decision,
-            "score": round(score, 2),
-            "currency": currency
-        }
+        return {"decision": decision, "score": round(score, 2), "currency": currency}
 
     # IMPORTANT: FIXED INDENTATION HERE
     def explain(self, result: dict, query: str):

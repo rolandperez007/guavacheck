@@ -6,12 +6,7 @@ export enum SupportLevel {
   FULL = "full",
 }
 
-export type CapabilityLevel =
-  | "none"
-  | "basic"
-  | "standard"
-  | "advanced"
-  | "full";
+export type CapabilityLevel = "none" | "basic" | "standard" | "advanced" | "full";
 
 export interface CapabilitySet {
   construction: CapabilityLevel;

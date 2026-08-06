@@ -9,31 +9,15 @@
  */
 
 export interface MetricDefinition {
+  id: string;
 
-    id: string;
+  name: string;
 
-    name: string;
+  description: string;
 
-    description: string;
+  unit: string;
 
-    unit: string;
+  aggregation: "SUM" | "AVG" | "MAX" | "MIN" | "COUNT" | "RATE" | "PERCENTILE";
 
-    aggregation:
-
-        | "SUM"
-
-        | "AVG"
-
-        | "MAX"
-
-        | "MIN"
-
-        | "COUNT"
-
-        | "RATE"
-
-        | "PERCENTILE";
-
-    retentionDays: number;
-
+  retentionDays: number;
 }

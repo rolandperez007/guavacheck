@@ -10,12 +10,11 @@ Austin aggregates them into one operational view.
 
 from datetime import datetime
 
-from .status import status
 from .logger import logger
+from .status import status
 
 
 class HealthMonitor:
-
     def __init__(self):
 
         self.services = {}
@@ -31,19 +30,13 @@ class HealthMonitor:
         healthy = True
 
         for name, callback in self.services.items():
-
             try:
-
                 results[name] = callback()
 
             except Exception as exc:
-
                 results[name] = {
-
                     "healthy": False,
-
                     "error": str(exc),
-
                 }
 
                 healthy = False
@@ -61,24 +54,17 @@ class HealthMonitor:
         total = len(self.services)
 
         healthy = sum(
-
             1
-
             for r in status.metadata.get(
                 "health",
                 {},
             ).values()
-
             if r.get("healthy")
-
         )
 
         return {
-
             "healthy": healthy,
-
             "total": total,
-
         }
 
 

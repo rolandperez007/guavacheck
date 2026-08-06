@@ -19,7 +19,6 @@ export default function NavigationButtons({
 
   return (
     <div className="flex items-center justify-between">
-
       <button
         type="button"
         onClick={onPrevious}
@@ -40,7 +39,6 @@ export default function NavigationButtons({
       >
         {isLast ? "Finish" : "Next"}
       </button>
-
     </div>
   );
 }

@@ -36,9 +36,7 @@ class EngineLoader:
         if manifest.name in self._cache:
             return self._cache[manifest.name]
 
-        engine = self._instantiate(
-            manifest.engine_class
-        )
+        engine = self._instantiate(manifest.engine_class)
 
         self._cache[manifest.name] = engine
 
@@ -69,16 +67,11 @@ class EngineLoader:
     ) -> object:
 
         if "." not in class_path:
-
-            raise RuntimeError(
-                f"Invalid engine path: {class_path}"
-            )
+            raise RuntimeError(f"Invalid engine path: {class_path}")
 
         module_path, class_name = class_path.rsplit(".", 1)
 
-        module = importlib.import_module(
-            module_path
-        )
+        module = importlib.import_module(module_path)
 
         engine_class = getattr(
             module,

@@ -13,9 +13,7 @@ export type ArchitectureSuggestion = {
 };
 
 // 🌍 Simple architecture intelligence engine
-export function generateArchitectAdvice(
-  input: PropertyInput
-): ArchitectureSuggestion {
+export function generateArchitectAdvice(input: PropertyInput): ArchitectureSuggestion {
   const landSize = input.landSize ?? 300;
   const price = input.price ?? 0;
 
@@ -49,7 +47,7 @@ export function generateArchitectAdvice(
       recommendedType === "terrace"
         ? "Large land favors multi-unit development for maximum yield"
         : recommendedType === "duplex"
-        ? "Medium land optimized for duplex structure and resale value"
-        : "Small land best suited for compact flat design",
+          ? "Medium land optimized for duplex structure and resale value"
+          : "Small land best suited for compact flat design",
   };
 }

@@ -8,7 +8,6 @@ from typing import Any
 
 @dataclass
 class RuleResult:
-
     name: str
 
     passed: bool

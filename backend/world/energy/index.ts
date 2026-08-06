@@ -34,15 +34,9 @@ export interface EnergyEnvironment {
 
   electricityTariff: number;
 
-  preferredSystem:
-    | "grid-tied"
-    | "off-grid"
-    | "hybrid";
+  preferredSystem: "grid-tied" | "off-grid" | "hybrid";
 
-  preferredBattery:
-    | "lifepo4"
-    | "lithium-ion"
-    | "lead-acid";
+  preferredBattery: "lifepo4" | "lithium-ion" | "lead-acid";
 
   voltageStandard: number;
 
@@ -65,9 +59,9 @@ const DEFAULT_ENVIRONMENT: EnergyEnvironment = {
 
   solarEfficiencyFactor: 0.85,
 
-  systemLossFactor: 0.20,
+  systemLossFactor: 0.2,
 
-  gridReliability: 0.70,
+  gridReliability: 0.7,
 
   electricityTariff: 0.15,
 
@@ -79,9 +73,7 @@ const DEFAULT_ENVIRONMENT: EnergyEnvironment = {
 
   frequencyHz: 50,
 
-  notes: [
-    "Default global engineering assumptions."
-  ]
+  notes: ["Default global engineering assumptions."],
 };
 
 /**
@@ -90,7 +82,6 @@ const DEFAULT_ENVIRONMENT: EnergyEnvironment = {
  * from your world dataset.
  */
 const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
-
   NG: {
     country: "Nigeria",
     climateZone: "tropical",
@@ -99,7 +90,7 @@ const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
 
     solarEfficiencyFactor: 0.84,
 
-    systemLossFactor: 0.20,
+    systemLossFactor: 0.2,
 
     gridReliability: 0.45,
 
@@ -111,10 +102,7 @@ const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
 
     frequencyHz: 50,
 
-    notes: [
-      "Frequent grid interruptions.",
-      "Solar + battery strongly recommended."
-    ]
+    notes: ["Frequent grid interruptions.", "Solar + battery strongly recommended."],
   },
 
   US: {
@@ -136,7 +124,7 @@ const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
 
     voltageStandard: 120,
 
-    frequencyHz: 60
+    frequencyHz: 60,
   },
 
   DE: {
@@ -146,7 +134,7 @@ const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
 
     averageSunHours: 3.4,
 
-    solarEfficiencyFactor: 0.90,
+    solarEfficiencyFactor: 0.9,
 
     systemLossFactor: 0.15,
 
@@ -158,25 +146,21 @@ const REGIONS: Record<string, Partial<EnergyEnvironment>> = {
 
     voltageStandard: 230,
 
-    frequencyHz: 50
-  }
-
+    frequencyHz: 50,
+  },
 };
 
 /**
  * Returns engineering environment
  * for a supplied region/country code.
  */
-export function getEnergyEnvironment(
-  regionCode?: string
-): EnergyEnvironment {
-
+export function getEnergyEnvironment(regionCode?: string): EnergyEnvironment {
   if (!regionCode) {
     return DEFAULT_ENVIRONMENT;
   }
 
   return {
     ...DEFAULT_ENVIRONMENT,
-    ...(REGIONS[regionCode.toUpperCase()] || {})
+    ...(REGIONS[regionCode.toUpperCase()] || {}),
   };
 }

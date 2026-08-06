@@ -1,5 +1,4 @@
 export class IntentClassifier {
-
   async parse(input: string) {
     const text = input.toLowerCase();
 
@@ -8,7 +7,7 @@ export class IntentClassifier {
       raw: input,
       confidence: 0,
       entities: {},
-      type: "unknown"
+      type: "unknown",
     };
 
     // 🧱 BOQ / construction cost
@@ -23,7 +22,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "boq_analysis",
-        confidence: 0.9
+        confidence: 0.9,
       };
     }
 
@@ -37,7 +36,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "property_valuation",
-        confidence: 0.88
+        confidence: 0.88,
       };
     }
 
@@ -52,7 +51,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "contractor_verification",
-        confidence: 0.85
+        confidence: 0.85,
       };
     }
 
@@ -67,7 +66,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "investment_analysis",
-        confidence: 0.87
+        confidence: 0.87,
       };
     }
 
@@ -81,7 +80,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "mortgage_analysis",
-        confidence: 0.86
+        confidence: 0.86,
       };
     }
 
@@ -96,7 +95,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "property_search",
-        confidence: 0.82
+        confidence: 0.82,
       };
     }
 
@@ -111,7 +110,7 @@ export class IntentClassifier {
       return {
         ...base,
         type: "risk_analysis",
-        confidence: 0.9
+        confidence: 0.9,
       };
     }
 

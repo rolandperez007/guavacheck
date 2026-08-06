@@ -1,11 +1,9 @@
 export interface SimulationMetrics {
+  totalSimulations: number;
 
-    totalSimulations: number;
+  passed: number;
 
-    passed: number;
+  failed: number;
 
-    failed: number;
-
-    averageConfidence: number;
-
+  averageConfidence: number;
 }

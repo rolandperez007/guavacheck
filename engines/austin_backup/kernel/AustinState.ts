@@ -13,65 +13,63 @@
  */
 
 export enum AustinState {
+  /**
+   * Austin has not yet started.
+   */
+  STOPPED = "STOPPED",
 
-    /**
-     * Austin has not yet started.
-     */
-    STOPPED = "STOPPED",
+  /**
+   * Austin is initializing internal systems.
+   */
+  INITIALIZING = "INITIALIZING",
 
-    /**
-     * Austin is initializing internal systems.
-     */
-    INITIALIZING = "INITIALIZING",
+  /**
+   * Core services are loading.
+   */
+  BOOTSTRAPPING = "BOOTSTRAPPING",
 
-    /**
-     * Core services are loading.
-     */
-    BOOTSTRAPPING = "BOOTSTRAPPING",
+  /**
+   * Engines are registering.
+   */
+  REGISTERING = "REGISTERING",
 
-    /**
-     * Engines are registering.
-     */
-    REGISTERING = "REGISTERING",
+  /**
+   * Knowledge and memory are loading.
+   */
+  LOADING = "LOADING",
 
-    /**
-     * Knowledge and memory are loading.
-     */
-    LOADING = "LOADING",
+  /**
+   * Austin is operational and ready to receive requests.
+   */
+  READY = "READY",
 
-    /**
-     * Austin is operational and ready to receive requests.
-     */
-    READY = "READY",
+  /**
+   * Austin is actively processing requests.
+   */
+  RUNNING = "RUNNING",
 
-    /**
-     * Austin is actively processing requests.
-     */
-    RUNNING = "RUNNING",
+  /**
+   * Austin is temporarily paused.
+   */
+  PAUSED = "PAUSED",
 
-    /**
-     * Austin is temporarily paused.
-     */
-    PAUSED = "PAUSED",
+  /**
+   * Austin is restarting.
+   */
+  RESTARTING = "RESTARTING",
 
-    /**
-     * Austin is restarting.
-     */
-    RESTARTING = "RESTARTING",
+  /**
+   * Austin is shutting down.
+   */
+  SHUTTING_DOWN = "SHUTTING_DOWN",
 
-    /**
-     * Austin is shutting down.
-     */
-    SHUTTING_DOWN = "SHUTTING_DOWN",
+  /**
+   * Austin encountered a fatal error.
+   */
+  FAILED = "FAILED",
 
-    /**
-     * Austin encountered a fatal error.
-     */
-    FAILED = "FAILED",
-
-    /**
-     * Austin has completely shut down.
-     */
-    TERMINATED = "TERMINATED"
-
+  /**
+   * Austin has completely shut down.
+   */
+  TERMINATED = "TERMINATED",
 }

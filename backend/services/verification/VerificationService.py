@@ -5,17 +5,16 @@ Coordinates the complete verification workflow.
 """
 
 from verification_engine.core.VerificationEngine import VerificationEngine
-from verification_engine.document_ai.OCRProcessor import OCRProcessor
 from verification_engine.document_ai.DocumentAnalyzer import DocumentAnalyzer
+from verification_engine.document_ai.OCRProcessor import OCRProcessor
 from verification_engine.fraud_detection.FraudDetector import FraudDetector
-from verification_engine.scoring.TrustScoreEngine import TrustScoreEngine
 from verification_engine.reports.VerificationReportGenerator import (
     VerificationReportGenerator,
 )
+from verification_engine.scoring.TrustScoreEngine import TrustScoreEngine
 
 
 class VerificationService:
-
     def __init__(self):
 
         self.engine = VerificationEngine()

@@ -1,21 +1,19 @@
 export interface CountryProfile {
+  country: string;
 
-    country: string;
+  name: string;
 
-    name: string;
+  region: string;
 
-    region: string;
+  currency: string;
 
-    currency: string;
+  language: string;
 
-    language: string;
+  pricingTier: number;
 
-    pricingTier: number;
+  multiplier: number;
 
-    multiplier: number;
+  provider: string;
 
-    provider: string;
-
-    fallbackProvider: string;
-
+  fallbackProvider: string;
 }

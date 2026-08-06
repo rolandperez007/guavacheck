@@ -1,21 +1,19 @@
-export interface WindowState{
+export interface WindowState {
+  id: string;
 
-    id:string;
+  x: number;
 
-    x:number;
+  y: number;
 
-    y:number;
+  width: number;
 
-    width:number;
+  height: number;
 
-    height:number;
+  zIndex: number;
 
-    zIndex:number;
+  minimized: boolean;
 
-    minimized:boolean;
+  maximized: boolean;
 
-    maximized:boolean;
-
-    focused:boolean;
-
+  focused: boolean;
 }

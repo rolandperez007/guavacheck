@@ -2,7 +2,6 @@ from pydantic import BaseModel
 
 
 class PropertyCreate(BaseModel):
-
     title_number: str
 
     owner_name: str
@@ -15,9 +14,7 @@ class PropertyCreate(BaseModel):
 
 
 class PropertyResponse(PropertyCreate):
-
     id: str
 
     class Config:
-
         from_attributes = True

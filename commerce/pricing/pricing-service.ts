@@ -6,34 +6,14 @@
  * ===========================================================
  */
 
-import {
+import { PricingRequest, PricingResult } from "./pricing-types";
 
-    PricingRequest,
-
-    PricingResult
-
-} from "./pricing-types";
-
-import {
-
-    pricingEngine
-
-} from "./pricing-engine";
+import { pricingEngine } from "./pricing-engine";
 
 class PricingService {
-
-    async getPricing(
-
-        request: PricingRequest
-
-    ): Promise<PricingResult> {
-
-        return pricingEngine.calculate(request);
-
-    }
-
+  async getPricing(request: PricingRequest): Promise<PricingResult> {
+    return pricingEngine.calculate(request);
+  }
 }
 
-export const pricingService =
-
-    new PricingService();
+export const pricingService = new PricingService();

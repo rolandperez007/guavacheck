@@ -1,5 +1,4 @@
 class InteriorPromptBuilder:
-
     @staticmethod
     def build(project, room):
 

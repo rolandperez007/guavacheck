@@ -1,5 +1,6 @@
-from app.db.session import SessionLocal
 from sqlalchemy import text
+
+from app.db.session import SessionLocal
 
 
 def create_user(email: str, full_name: str):

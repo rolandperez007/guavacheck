@@ -8,10 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function AppWindow({
-  title,
-  children,
-}: Props) {
+export default function AppWindow({ title, children }: Props) {
   return (
     <section
       className="
@@ -23,15 +20,9 @@ export default function AppWindow({
       shadow-2xl
       "
     >
-
       <WindowHeader title={title} />
 
-      <div className="h-full overflow-auto">
-
-        {children}
-
-      </div>
-
+      <div className="h-full overflow-auto">{children}</div>
     </section>
   );
 }

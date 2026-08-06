@@ -5,20 +5,15 @@ Coordinates all intelligence modules to produce
 the final verification decision.
 """
 
-from typing import Dict
-
-from verification_engine.intelligence.EvidenceCollector import (
-    EvidenceCollector,
-)
-
 from verification_engine.intelligence.ConfidenceEngine import (
     ConfidenceEngine,
 )
-
 from verification_engine.intelligence.ConflictResolver import (
     ConflictResolver,
 )
-
+from verification_engine.intelligence.EvidenceCollector import (
+    EvidenceCollector,
+)
 from verification_engine.intelligence.ExplanationGenerator import (
     ExplanationGenerator,
 )
@@ -41,8 +36,8 @@ class ReasoningEngine:
 
     def evaluate(
         self,
-        evidence: Dict,
-    ) -> Dict:
+        evidence: dict,
+    ) -> dict:
 
         confidence = self.confidence.calculate(
             evidence,
@@ -58,23 +53,13 @@ class ReasoningEngine:
         )
 
         return {
-
-            "verified": (
-                confidence["verified"]
-                and not conflicts["conflict_found"]
-            ),
-
+            "verified": (confidence["verified"] and not conflicts["conflict_found"]),
             "confidence": confidence,
-
             "conflicts": conflicts,
-
             "explanation": explanation,
-
             "decision": (
                 "VERIFIED"
-                if confidence["verified"]
-                and not conflicts["conflict_found"]
+                if confidence["verified"] and not conflicts["conflict_found"]
                 else "REVIEW_REQUIRED"
             ),
-
         }

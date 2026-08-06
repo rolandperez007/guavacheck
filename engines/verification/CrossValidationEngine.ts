@@ -1,55 +1,25 @@
 export interface ValidationSource {
+  source: string;
 
-    source: string;
+  verified: boolean;
 
-    verified: boolean;
-
-    confidence: number;
-
+  confidence: number;
 }
 
 export class CrossValidationEngine {
+  static validate(sources: ValidationSource[]): boolean {
+    return sources.every((source) => source.verified);
+  }
 
-    static validate(
+  static confidence(sources: ValidationSource[]): number {
+    if (sources.length === 0) return 0;
 
-        sources: ValidationSource[]
+    return (
+      sources.reduce(
+        (sum, source) => sum + source.confidence,
 
-    ): boolean {
-
-        return sources.every(
-
-            source => source.verified
-
-        );
-
-    }
-
-    static confidence(
-
-        sources: ValidationSource[]
-
-    ): number {
-
-        if (sources.length === 0)
-
-            return 0;
-
-        return (
-
-            sources.reduce(
-
-                (sum, source) =>
-
-                    sum + source.confidence,
-
-                0
-
-            ) /
-
-            sources.length
-
-        );
-
-    }
-
+        0,
+      ) / sources.length
+    );
+  }
 }

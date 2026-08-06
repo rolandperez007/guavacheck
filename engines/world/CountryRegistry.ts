@@ -1,76 +1,54 @@
 import countries from "@/knowledge/countries/countries.json";
 
-import {
-    CountryProfile,
-    SupportLevel,
-    CapabilitySet
-} from "./types";
+import { CountryProfile, SupportLevel, CapabilitySet } from "./types";
 
 export class CountryRegistry {
+  private static registry = new Map<string, CountryProfile>();
 
-    private static registry = new Map<string, CountryProfile>();
+  static initialize(): void {
+    if (this.registry.size > 0) return;
 
-    static initialize(): void {
+    countries.forEach((country: any) => {
+      this.register({
+        ...country,
 
-        if (this.registry.size > 0) return;
+        measurementSystem: country.measurement,
 
-        countries.forEach((country: any) => {
+        supportLevel: SupportLevel.GLOBAL_AI,
 
-            this.register({
+        paymentProviders: [],
 
-                ...country,
+        capabilities: {
+          construction: "none",
+          valuation: "none",
+          mortgage: "none",
+          insurance: "none",
+          distress: "none",
+          buildingPassport: "none",
+          regulations: "none",
+          materials: "none",
+          climate: "none",
+          taxation: "none",
+          subscriptions: "standard",
+          payments: "standard",
+        } satisfies CapabilitySet,
+      });
+    });
+  }
 
-                measurementSystem: country.measurement,
+  static register(profile: CountryProfile): void {
+    this.registry.set(profile.code.toUpperCase(), profile);
+  }
 
-                supportLevel: SupportLevel.GLOBAL_AI,
+  static byCode(code: string): CountryProfile | undefined {
+    return this.registry.get(code.toUpperCase());
+  }
 
-                paymentProviders: [],
+  static all(): CountryProfile[] {
+    return [...this.registry.values()];
+  }
 
-                capabilities: {
-
-                    construction: "none",
-                    valuation: "none",
-                    mortgage: "none",
-                    insurance: "none",
-                    distress: "none",
-                    buildingPassport: "none",
-                    regulations: "none",
-                    materials: "none",
-                    climate: "none",
-                    taxation: "none",
-                    subscriptions: "standard",
-                    payments: "standard"
-
-                } satisfies CapabilitySet
-
-            });
-
-        });
-
-    }
-
-    static register(profile: CountryProfile): void {
-
-        this.registry.set(profile.code.toUpperCase(), profile);
-
-    }
-
-    static byCode(code: string): CountryProfile | undefined {
-
-        return this.registry.get(code.toUpperCase());
-
-    }
-
-    static all(): CountryProfile[] {
-
-        return [...this.registry.values()];
-
-    }
-
-    static count(): number {
-
-        return this.registry.size;
-
-    }
-
+  static count(): number {
+    return this.registry.size;
+  }
 }

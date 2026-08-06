@@ -22,11 +22,7 @@ export default function Dashboard() {
     <div style={{ width: "100%", padding: 20, background: "#111", color: "#fff" }}>
       <h2>📊 Austin Intelligence Dashboard</h2>
 
-      <pre style={{ fontSize: 12 }}>
-        {JSON.stringify(data, null, 2)}
-      </pre>
+      <pre style={{ fontSize: 12 }}>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 }
-
-

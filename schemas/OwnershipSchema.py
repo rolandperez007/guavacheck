@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 
 class OwnershipCreate(BaseModel):
-
     property_id: str
 
     owner_name: str
@@ -15,9 +14,7 @@ class OwnershipCreate(BaseModel):
 
 
 class OwnershipResponse(OwnershipCreate):
-
     id: str
 
     class Config:
-
         from_attributes = True

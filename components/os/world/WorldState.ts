@@ -1,13 +1,6 @@
-export type WorldPhase =
-  | "dawn"
-  | "morning"
-  | "day"
-  | "golden-hour"
-  | "sunset"
-  | "night";
+export type WorldPhase = "dawn" | "morning" | "day" | "golden-hour" | "sunset" | "night";
 
 export interface WorldState {
-
   now: Date;
 
   timezone: string;
@@ -45,5 +38,4 @@ export interface WorldState {
   starsVisible: boolean;
 
   moonVisible: boolean;
-
 }

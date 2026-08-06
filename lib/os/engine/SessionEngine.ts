@@ -1,13 +1,11 @@
-export interface Session{
+export interface Session {
+  user: string;
 
-    user:string;
+  workspace: string;
 
-    workspace:string;
+  openedApps: string[];
 
-    openedApps:string[];
+  recentDocuments: string[];
 
-    recentDocuments:string[];
-
-    notifications:number;
-
+  notifications: number;
 }

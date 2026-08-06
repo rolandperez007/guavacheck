@@ -1,11 +1,9 @@
 export interface SanctionRecord {
+  entityId: string;
 
-    entityId: string;
+  authority: string;
 
-    authority: string;
+  description: string;
 
-    description: string;
-
-    effectiveDate: Date;
-
+  effectiveDate: Date;
 }

@@ -1,14 +1,10 @@
 import { getWeather } from "./weather";
 import { getWorldClock } from "./clock";
 
-export function getEnvironment(){
+export function getEnvironment() {
+  return {
+    clock: getWorldClock(),
 
-    return{
-
-        clock:getWorldClock(),
-
-        weather:getWeather()
-
-    }
-
+    weather: getWeather(),
+  };
 }

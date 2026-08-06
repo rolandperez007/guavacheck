@@ -3,9 +3,7 @@ import { AustinEngine } from "@/lib/austin/AustinEngine";
 import { RevenueEngine } from "@/lib/austin/economy/RevenueEngine";
 
 export async function POST(req: Request) {
-
   try {
-
     const body = await req.json();
 
     const input = body?.input;
@@ -30,23 +28,16 @@ export async function POST(req: Request) {
       meta: {
         version: "1.0",
         plan,
-        apiKey: apiKey.substring(0, 6) + "***"
-      }
+        apiKey: apiKey.substring(0, 6) + "***",
+      },
     });
-
   } catch (err: any) {
-
-    return Response.json({
-      success: false,
-      error: err.message
-    }, { status: 500 });
-
+    return Response.json(
+      {
+        success: false,
+        error: err.message,
+      },
+      { status: 500 },
+    );
   }
 }
-
-
-
-
-
-
-

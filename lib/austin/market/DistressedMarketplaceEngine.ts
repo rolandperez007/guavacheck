@@ -2,7 +2,6 @@ import { DistressedScoringEngine } from "@/lib/austin/intelligence/DistressedSco
 import { ConstructionPricingModel } from "./ConstructionPricingModel";
 
 export class DistressedMarketplaceEngine {
-
   static analyzeListing(property: any) {
     const construction = ConstructionPricingModel.calculate({
       sqm: property.sqm || 100,

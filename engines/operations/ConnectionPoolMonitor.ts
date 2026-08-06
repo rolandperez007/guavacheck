@@ -1,19 +1,13 @@
 export interface PoolStatus {
+  maxConnections: number;
 
-    maxConnections: number;
+  activeConnections: number;
 
-    activeConnections: number;
-
-    waitingClients: number;
-
+  waitingClients: number;
 }
 
 export class ConnectionPoolMonitor {
-
-    static utilization(pool: PoolStatus): number {
-
-        return (pool.activeConnections / pool.maxConnections) * 100;
-
-    }
-
+  static utilization(pool: PoolStatus): number {
+    return (pool.activeConnections / pool.maxConnections) * 100;
+  }
 }

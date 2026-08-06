@@ -4,12 +4,10 @@ import { CommunityEngine } from "@/lib/austin/marketing/CommunityEngine";
 import { BOQService } from "../services/BOQService";
 
 export class PropertyEconomyEngine {
-
   static analyze(property: any) {
-
     const valuation = BOQService.calculateTotalCost({
       sqm: property.sqm,
-      level: property.level
+      level: property.level,
     });
 
     const distress = DistressedDealEngine.analyze(property);
@@ -22,10 +20,7 @@ export class PropertyEconomyEngine {
       listing,
       communityPost: post,
 
-      economyScore:
-        (distress.opportunityScore * 0.4) +
-        (property.investment?.score || 50) * 0.6
+      economyScore: distress.opportunityScore * 0.4 + (property.investment?.score || 50) * 0.6,
     };
   }
 }
-

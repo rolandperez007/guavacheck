@@ -1,31 +1,21 @@
 import { CountryProfile } from "./types";
 
 export class LocalizationEngine {
+  constructor(private readonly profile: CountryProfile) {}
 
-    constructor(private readonly profile: CountryProfile){}
+  public language() {
+    return this.profile.language;
+  }
 
-    public language(){
+  public currency() {
+    return this.profile.currency;
+  }
 
-        return this.profile.language;
+  public timezone() {
+    return this.profile.timezone;
+  }
 
-    }
-
-    public currency(){
-
-        return this.profile.currency;
-
-    }
-
-    public timezone(){
-
-        return this.profile.timezone;
-
-    }
-
-    public measurement(){
-
-        return this.profile.measurementSystem;
-
-    }
-
+  public measurement() {
+    return this.profile.measurementSystem;
+  }
 }

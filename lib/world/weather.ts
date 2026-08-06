@@ -1,17 +1,13 @@
 import { WeatherState } from "./types";
 
-export function getWeather():WeatherState{
+export function getWeather(): WeatherState {
+  return {
+    condition: "clear",
 
-    return{
+    temperature: 27,
 
-        condition:"clear",
+    humidity: 72,
 
-        temperature:27,
-
-        humidity:72,
-
-        windSpeed:6
-
-    }
-
+    windSpeed: 6,
+  };
 }

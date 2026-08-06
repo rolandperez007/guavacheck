@@ -2,15 +2,12 @@ import { DataNormalizer } from "./DataNormalizer";
 import { GlobalPropertyMap } from "@/lib/austin/world/GlobalPropertyMap";
 
 export class IngestionPipeline {
-
   static dataset: any[] = [];
 
   static ingestBatch(rawList: any[]) {
-
-    const normalized = rawList.map(item => DataNormalizer.normalize(item));
+    const normalized = rawList.map((item) => DataNormalizer.normalize(item));
 
     for (const item of normalized) {
-
       const enriched = GlobalPropertyMap.ingest(item);
 
       this.dataset.push(enriched);
@@ -18,15 +15,15 @@ export class IngestionPipeline {
 
     return {
       ingested: normalized.length,
-      totalDataset: this.dataset.length
+      totalDataset: this.dataset.length,
     };
   }
 
   static search(query: string) {
-
-    return this.dataset.filter(item =>
-      item.location?.toLowerCase().includes(query.toLowerCase()) ||
-      item.title?.toLowerCase().includes(query.toLowerCase())
+    return this.dataset.filter(
+      (item) =>
+        item.location?.toLowerCase().includes(query.toLowerCase()) ||
+        item.title?.toLowerCase().includes(query.toLowerCase()),
     );
   }
 
@@ -34,4 +31,3 @@ export class IngestionPipeline {
     return this.dataset;
   }
 }
-

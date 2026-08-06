@@ -3,31 +3,29 @@
  */
 
 export interface EngineHealth {
+  healthy: boolean;
 
-    healthy: boolean;
+  score: number;
 
-    score: number;
+  uptime: number;
 
-    uptime: number;
+  startedAt: Date;
 
-    startedAt: Date;
+  lastHeartbeat: Date;
 
-    lastHeartbeat: Date;
+  memoryUsage: number;
 
-    memoryUsage: number;
+  cpuUsage: number;
 
-    cpuUsage: number;
+  activeWorkers: number;
 
-    activeWorkers: number;
+  queuedJobs: number;
 
-    queuedJobs: number;
+  activeRequests: number;
 
-    activeRequests: number;
+  failedRequests: number;
 
-    failedRequests: number;
+  warnings: string[];
 
-    warnings: string[];
-
-    errors: string[];
-
+  errors: string[];
 }

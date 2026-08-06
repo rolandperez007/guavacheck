@@ -33,118 +33,87 @@
  */
 
 export class AustinClock {
+  /**
+   * Current timestamp in milliseconds.
+   */
+  public static now(): number {
+    return Date.now();
+  }
 
-    /**
-     * Current timestamp in milliseconds.
-     */
-    public static now(): number {
+  /**
+   * Current Date object.
+   */
+  public static date(): Date {
+    return new Date();
+  }
 
-        return Date.now();
+  /**
+   * Current UTC ISO-8601 timestamp.
+   */
+  public static utc(): string {
+    return new Date().toISOString();
+  }
 
+  /**
+   * Unix timestamp (seconds).
+   */
+  public static unix(): number {
+    return Math.floor(Date.now() / 1000);
+  }
+
+  /**
+   * Measures elapsed milliseconds.
+   */
+  public static elapsed(startTime: number): number {
+    return this.now() - startTime;
+  }
+
+  /**
+   * High precision timer.
+   *
+   * Uses performance.now() when available.
+   */
+  public static highResolution(): number {
+    if (typeof performance !== "undefined" && typeof performance.now === "function") {
+      return performance.now();
     }
 
-    /**
-     * Current Date object.
-     */
-    public static date(): Date {
+    return Date.now();
+  }
 
-        return new Date();
+  /**
+   * Sleep helper.
+   */
+  public static sleep(milliseconds: number): Promise<void> {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    });
+  }
 
-    }
+  /**
+   * Generates an ISO timestamp.
+   */
+  public static timestamp(): string {
+    return this.utc();
+  }
 
-    /**
-     * Current UTC ISO-8601 timestamp.
-     */
-    public static utc(): string {
+  /**
+   * Measures execution time of an async task.
+   */
+  public static async measure<T>(operation: () => Promise<T>): Promise<{
+    result: T;
+    duration: number;
+  }> {
+    const start = this.highResolution();
 
-        return new Date().toISOString();
+    const result = await operation();
 
-    }
+    const end = this.highResolution();
 
-    /**
-     * Unix timestamp (seconds).
-     */
-    public static unix(): number {
+    return {
+      result,
 
-        return Math.floor(Date.now() / 1000);
-
-    }
-
-    /**
-     * Measures elapsed milliseconds.
-     */
-    public static elapsed(startTime: number): number {
-
-        return this.now() - startTime;
-
-    }
-
-    /**
-     * High precision timer.
-     *
-     * Uses performance.now() when available.
-     */
-    public static highResolution(): number {
-
-        if (
-            typeof performance !== "undefined" &&
-            typeof performance.now === "function"
-        ) {
-
-            return performance.now();
-
-        }
-
-        return Date.now();
-
-    }
-
-    /**
-     * Sleep helper.
-     */
-    public static sleep(milliseconds: number): Promise<void> {
-
-        return new Promise(resolve => {
-
-            setTimeout(resolve, milliseconds);
-
-        });
-
-    }
-
-    /**
-     * Generates an ISO timestamp.
-     */
-    public static timestamp(): string {
-
-        return this.utc();
-
-    }
-
-    /**
-     * Measures execution time of an async task.
-     */
-    public static async measure<T>(
-        operation: () => Promise<T>
-    ): Promise<{
-        result: T;
-        duration: number;
-    }> {
-
-        const start = this.highResolution();
-
-        const result = await operation();
-
-        const end = this.highResolution();
-
-        return {
-
-            result,
-
-            duration: end - start
-
-        };
-
-    }
-
+      duration: end - start,
+    };
+  }
 }

@@ -12,15 +12,6 @@ export async function POST(req: Request) {
 
     return Response.json(result);
   } catch (err) {
-    return Response.json(
-      { error: "AI Architect failed" },
-      { status: 500 }
-    );
+    return Response.json({ error: "AI Architect failed" }, { status: 500 });
   }
 }
-
-
-
-
-
-

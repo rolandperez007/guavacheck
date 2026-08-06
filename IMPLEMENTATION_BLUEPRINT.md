@@ -310,7 +310,6 @@ Every institution integration implements a common interface.
 
 ```python
 class InstitutionProvider:
-
     verify()
 
     search_products()
@@ -320,7 +319,6 @@ class InstitutionProvider:
     webhook()
 
     health()
-
 ```
 
 This enables interchangeable partner integrations.

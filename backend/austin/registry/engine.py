@@ -11,7 +11,6 @@ from dataclasses import dataclass, field
 
 @dataclass(slots=True)
 class Engine:
-
     name: str
 
     version: str

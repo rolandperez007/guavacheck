@@ -2,21 +2,19 @@ import type { AustinExecutionResult, AustinPlan } from "./types/austin.types";
 
 export class Executor {
   async run(plan: AustinPlan, emit?: Function): Promise<AustinExecutionResult> {
-
     const results: AustinExecutionResult = {
       stepsCompleted: [],
       tables: [],
       insights: [],
-      raw: []
+      raw: [],
     };
 
     for (const step of plan.steps) {
-
       emit?.({ stage: "step", step });
 
       const output = {
         step,
-        status: "completed"
+        status: "completed",
       };
 
       results.raw.push(output);

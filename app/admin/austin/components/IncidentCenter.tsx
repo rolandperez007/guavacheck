@@ -37,10 +37,15 @@ export default function IncidentCenter() {
 
       <div className="mt-5 space-y-4">
         {incidents.map((incident) => (
-          <div key={incident.service} className="rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-sm text-slate-300">
+          <div
+            key={incident.service}
+            className="rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-sm text-slate-300"
+          >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="font-semibold text-white">{incident.service}</div>
-              <div className="rounded-full bg-amber-500/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-300">{incident.severity}</div>
+              <div className="rounded-full bg-amber-500/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-300">
+                {incident.severity}
+              </div>
             </div>
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               <div>Customers affected: {incident.customers}</div>

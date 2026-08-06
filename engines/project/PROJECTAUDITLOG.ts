@@ -1,15 +1,13 @@
 export interface AuditLog {
+  id: string;
 
-    id: string;
+  projectId: string;
 
-    projectId: string;
+  action: string;
 
-    action: string;
+  performedBy: string;
 
-    performedBy: string;
+  timestamp: Date;
 
-    timestamp: Date;
-
-    details?: Record<string, unknown>;
-
+  details?: Record<string, unknown>;
 }

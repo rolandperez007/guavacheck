@@ -1,19 +1,13 @@
-import {DomainModule} from "../types";
+import { DomainModule } from "../types";
 
-export class PropertyModule implements DomainModule{
+export class PropertyModule implements DomainModule {
+  initialize() {
+    console.log("Property Engine Ready");
+  }
 
-initialize(){
+  destroy() {}
 
-console.log("Property Engine Ready");
-
-}
-
-destroy(){}
-
-handle(message:any){
-
-console.log("Property Event",message);
-
-}
-
+  handle(message: any) {
+    console.log("Property Event", message);
+  }
 }

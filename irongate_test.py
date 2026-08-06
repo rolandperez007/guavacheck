@@ -1,8 +1,7 @@
 from irongate.core import IronGate
-
 from irongate.rules import (
-    block_empty_payload,
     allow_only_known_actions,
+    block_empty_payload,
     block_suspicious_users,
 )
 
@@ -32,7 +31,6 @@ def create_gate():
     return gate
 
 
-
 def test_valid_job():
 
     gate = create_gate()
@@ -41,14 +39,11 @@ def test_valid_job():
         {
             "user_id": "guava_user",
             "action": "run_job",
-            "payload": {
-                "task": "build_house_quote"
-            },
+            "payload": {"task": "build_house_quote"},
         }
     )
 
     assert result["allowed"] is True
-
 
 
 def test_empty_payload():
@@ -66,7 +61,6 @@ def test_empty_payload():
     assert result["allowed"] is False
 
 
-
 def test_invalid_action():
 
     gate = create_gate()
@@ -75,14 +69,11 @@ def test_invalid_action():
         {
             "user_id": "guava_user",
             "action": "delete_database",
-            "payload": {
-                "danger": True
-            },
+            "payload": {"danger": True},
         }
     )
 
     assert result["allowed"] is False
-
 
 
 def test_banned_user():
@@ -93,13 +84,8 @@ def test_banned_user():
         {
             "user_id": "test_spam_user",
             "action": "run_job",
-            "payload": {
-                "task": "hack_attempt"
-            },
+            "payload": {"task": "hack_attempt"},
         }
     )
 
     assert result["allowed"] is False
-
-
-

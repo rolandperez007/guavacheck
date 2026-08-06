@@ -1,19 +1,13 @@
 export interface VerificationCheck {
+  entityId: string;
 
-    entityId: string;
+  nextReview: Date;
 
-    nextReview: Date;
-
-    frequencyDays: number;
-
+  frequencyDays: number;
 }
 
 export class ContinuousVerification {
-
-    static due(check: VerificationCheck): boolean {
-
-        return new Date() >= check.nextReview;
-
-    }
-
+  static due(check: VerificationCheck): boolean {
+    return new Date() >= check.nextReview;
+  }
 }

@@ -8,29 +8,21 @@ import StatusBar from "./StatusBar";
 import NotificationCenter from "./NotificationCenter";
 
 export default function Shell() {
+  return (
+    <div className="relative flex h-screen overflow-hidden bg-[#050608]">
+      <Sidebar />
 
-    return (
+      <div className="flex flex-1 flex-col">
+        <Topbar />
 
-        <div className="relative flex h-screen overflow-hidden bg-[#050608]">
+        <Workspace />
 
-            <Sidebar />
+        <Dock />
 
-            <div className="flex flex-1 flex-col">
+        <StatusBar />
+      </div>
 
-                <Topbar />
-
-                <Workspace />
-
-                <Dock />
-
-                <StatusBar />
-
-            </div>
-
-            <NotificationCenter />
-
-        </div>
-
-    );
-
+      <NotificationCenter />
+    </div>
+  );
 }

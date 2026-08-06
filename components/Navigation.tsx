@@ -18,22 +18,11 @@ export default function Navigation() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 transition hover:opacity-90"
-        >
-          <Image
-            src="/images/guava-logo.png"
-            alt="GuavaCheck"
-            width={46}
-            height={46}
-            priority
-          />
+        <Link href="/" className="flex items-center gap-3 transition hover:opacity-90">
+          <Image src="/images/guava-logo.png" alt="GuavaCheck" width={46} height={46} priority />
 
           <div>
-            <div className="text-lg font-bold tracking-wide text-white">
-              GUAVACHECK
-            </div>
+            <div className="text-lg font-bold tracking-wide text-white">GUAVACHECK</div>
 
             <div className="text-xs tracking-[0.3em] text-emerald-400 uppercase">
               Austin Intelligence
@@ -58,9 +47,7 @@ export default function Navigation() {
         <div className="hidden items-center gap-4 lg:flex">
           <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs font-medium text-emerald-300">
-              Austin Online
-            </span>
+            <span className="text-xs font-medium text-emerald-300">Austin Online</span>
           </div>
 
           <Link

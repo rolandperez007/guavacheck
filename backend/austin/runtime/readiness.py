@@ -14,7 +14,6 @@ from backend.austin.queue import queue
 
 @dataclass(slots=True)
 class RuntimeReadiness:
-
     ready: bool
 
     reason: str
@@ -23,7 +22,6 @@ class RuntimeReadiness:
 
 
 class RuntimeReadinessService:
-
     MAX_QUEUE_DEPTH = 500
 
     def check(self) -> RuntimeReadiness:
@@ -31,25 +29,16 @@ class RuntimeReadinessService:
         summary = queue.summary()
 
         if summary["queued"] > self.MAX_QUEUE_DEPTH:
-
             return RuntimeReadiness(
-
                 ready=False,
-
                 reason="Queue overload",
-
                 queue_depth=summary["queued"],
-
             )
 
         return RuntimeReadiness(
-
             ready=True,
-
             reason="Runtime ready",
-
             queue_depth=summary["queued"],
-
         )
 
 

@@ -5,7 +5,6 @@ from openai import OpenAI
 
 
 class AustinGPTBrain:
-
     def __init__(self):
         self.client = None
         self.cache = {}
@@ -22,7 +21,7 @@ class AustinGPTBrain:
         return self.client
 
     def _cache_key(self, query, analysis):
-        raw = f"{query}-{str(analysis)}"
+        raw = f"{query}-{analysis!s}"
         return hashlib.md5(raw.encode()).hexdigest()
 
     def _offline_reason(self, query, analysis):
@@ -69,15 +68,9 @@ Explain the decision clearly and briefly.
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {
-                        "role": "system",
-                        "content": "You are Austin AI assistant."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ]
+                    {"role": "system", "content": "You are Austin AI assistant."},
+                    {"role": "user", "content": prompt},
+                ],
             )
 
             result = response.choices[0].message.content

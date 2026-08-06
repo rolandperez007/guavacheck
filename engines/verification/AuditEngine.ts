@@ -1,13 +1,11 @@
 export interface VerificationAudit {
+  id: string;
 
-    id: string;
+  verificationId: string;
 
-    verificationId: string;
+  action: string;
 
-    action: string;
+  actor: string;
 
-    actor: string;
-
-    timestamp: Date;
-
+  timestamp: Date;
 }

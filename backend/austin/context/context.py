@@ -12,7 +12,6 @@ from typing import Any
 
 @dataclass(slots=True)
 class AustinContext:
-
     session_id: str
 
     history: list[dict[str, Any]]

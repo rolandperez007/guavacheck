@@ -6,11 +6,7 @@
  * pipe flow estimation, and consumption modeling.
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringCalculator } from "./EngineeringCalculator";
 import { EngineeringValidator } from "./EngineeringValidator";
@@ -28,9 +24,7 @@ export interface PlumbingOutput {
   riskLevel: "low" | "medium" | "high";
 }
 
-export class PlumbingEngineering
-  implements IEngineeringModule<PlumbingInput, PlumbingOutput>
-{
+export class PlumbingEngineering implements IEngineeringModule<PlumbingInput, PlumbingOutput> {
   discipline = "plumbing" as const;
 
   async validate(input: EngineeringInput<PlumbingInput>): Promise<void> {
@@ -42,7 +36,7 @@ export class PlumbingEngineering
   }
 
   async compute(
-    input: EngineeringInput<PlumbingInput>
+    input: EngineeringInput<PlumbingInput>,
   ): Promise<EngineeringResult<PlumbingOutput>> {
     const { occupants, buildingArea, waterPressure = 3 } = input.data;
 
@@ -50,20 +44,12 @@ export class PlumbingEngineering
     const dailyWaterDemand = occupants * 150;
 
     // Pipe flow estimation
-    const pipeFlowRate = EngineeringCalculator.pipeFlowRate(
-      25,
-      waterPressure
-    );
+    const pipeFlowRate = EngineeringCalculator.pipeFlowRate(25, waterPressure);
 
     // Storage sizing (3-day backup)
     const storageTankRecommendation = dailyWaterDemand * 3;
 
-    const riskLevel =
-      waterPressure < 2
-        ? "high"
-        : waterPressure < 3
-        ? "medium"
-        : "low";
+    const riskLevel = waterPressure < 2 ? "high" : waterPressure < 3 ? "medium" : "low";
 
     return {
       discipline: this.discipline,
@@ -82,10 +68,7 @@ export class PlumbingEngineering
         buildingArea,
       },
 
-      warnings:
-        riskLevel === "high"
-          ? ["Low water pressure detected"]
-          : [],
+      warnings: riskLevel === "high" ? ["Low water pressure detected"] : [],
 
       errors: [],
 

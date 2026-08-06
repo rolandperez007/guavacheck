@@ -27,6 +27,6 @@ export const organization = {
     "Property Valuation",
     "Fraud Detection",
     "Mortgage Analysis",
-    "Investment Intelligence"
-  ]
+    "Investment Intelligence",
+  ],
 };

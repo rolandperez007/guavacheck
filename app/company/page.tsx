@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Company",
-  description:
-    "Corporate information about Guava Networks Limited, the company behind guavacheck.",
+  description: "Corporate information about Guava Networks Limited, the company behind guavacheck.",
 };
 
 export default function CompanyPage() {
@@ -18,14 +17,14 @@ export default function CompanyPage() {
       <h1>Guava Networks Limited</h1>
 
       <p>
-        Guava Networks Limited is a technology company building AI-powered
-        software for global property intelligence.
+        Guava Networks Limited is a technology company building AI-powered software for global
+        property intelligence.
       </p>
 
       <p>
-        Its flagship platform, <strong>guavacheck</strong>, combines
-        valuation, construction intelligence, investment analytics,
-        verification and multilingual AI into a unified platform.
+        Its flagship platform, <strong>guavacheck</strong>, combines valuation, construction
+        intelligence, investment analytics, verification and multilingual AI into a unified
+        platform.
       </p>
     </main>
   );

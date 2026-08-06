@@ -1,6 +1,7 @@
-import redis
 import json
 import os
+
+import redis
 
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 
@@ -8,7 +9,6 @@ r = redis.Redis.from_url(REDIS_URL, decode_responses=True)
 
 
 class Cache:
-
     @staticmethod
     def get(key: str):
         value = r.get(key)

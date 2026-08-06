@@ -1,8 +1,6 @@
 import time
-from collections import defaultdict
 
 # in-memory lightweight tracker (replace with Redis later)
-import time
 from irongate.ai.redis_client import client
 from irongate.ai.reputation import get_reputation
 
@@ -100,7 +98,6 @@ def build_ai_context(context: dict):
         "request_rate_per_min": request_rate,
         "has_auth": bool(context.get("headers", {}).get("authorization")),
     }
-    from irongate.ai.reputation import get_reputation
 
 
 def build_ai_context(context: dict):

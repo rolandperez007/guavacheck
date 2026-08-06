@@ -3,7 +3,6 @@ from app.twin.repository import TwinRepository
 
 
 class TwinService:
-
     @staticmethod
     def create(
         db,

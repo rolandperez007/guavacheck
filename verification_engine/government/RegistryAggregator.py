@@ -5,24 +5,20 @@ Coordinates all government registry connectors and
 returns a unified verification result.
 """
 
-from verification_engine.government.LandRegistryConnector import (
-    LandRegistryConnector,
-)
-
-from verification_engine.government.SurveyorGeneralConnector import (
-    SurveyorGeneralConnector,
-)
-
-from verification_engine.government.GovernorConsentConnector import (
-    GovernorConsentConnector,
-)
-
 from verification_engine.government.CACConnector import (
     CACConnector,
 )
-
 from verification_engine.government.CourtJudgementConnector import (
     CourtJudgementConnector,
+)
+from verification_engine.government.GovernorConsentConnector import (
+    GovernorConsentConnector,
+)
+from verification_engine.government.LandRegistryConnector import (
+    LandRegistryConnector,
+)
+from verification_engine.government.SurveyorGeneralConnector import (
+    SurveyorGeneralConnector,
 )
 
 

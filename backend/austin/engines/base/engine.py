@@ -10,7 +10,6 @@ from backend.austin.models.engine_result import EngineResult
 
 
 class BaseEngine(ABC):
-
     name: str = "base"
 
     @abstractmethod

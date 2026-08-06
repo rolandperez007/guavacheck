@@ -25,7 +25,7 @@ export default function AustinSidebar() {
       JSON.stringify({
         query: input,
         user_id: "test-user",
-      })
+      }),
     );
 
     setInput("");
@@ -39,11 +39,7 @@ export default function AustinSidebar() {
         ))}
       </div>
 
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Ask Austin..."
-      />
+      <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask Austin..." />
       <button onClick={sendQuery}>Send</button>
     </div>
   );

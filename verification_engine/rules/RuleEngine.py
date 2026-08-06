@@ -2,11 +2,8 @@
 Enterprise Rule Engine
 """
 
-from verification_engine.rules.RuleResult import RuleResult
-
 
 class RuleEngine:
-
     def __init__(self):
 
         self.rules = []
@@ -22,17 +19,10 @@ class RuleEngine:
         total_score = 0
 
         for rule in self.rules:
-
             result = await rule(verification_data)
 
             results.append(result)
 
             total_score += result.score
 
-        return {
-
-            "results": results,
-
-            "score": total_score
-
-        }
+        return {"results": results, "score": total_score}

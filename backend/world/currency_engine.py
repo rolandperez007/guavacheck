@@ -18,7 +18,6 @@ class CurrencyResult:
 
 
 class CurrencyEngine:
-
     _rates = {
         ("NGN", "USD"): 0.00065,
         ("USD", "NGN"): 1538.46,

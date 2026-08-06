@@ -12,7 +12,6 @@ from pathlib import Path
 
 
 class EngineDiscovery:
-
     def __init__(self):
         self.package = "backend.austin.registry.manifests"
 
@@ -36,16 +35,13 @@ class EngineDiscovery:
         }
 
         for module_info in pkgutil.iter_modules([str(package_path)]):
-
             if module_info.name.startswith("_"):
                 continue
 
             if module_info.name not in supported_manifests:
                 continue
 
-            module = importlib.import_module(
-                f"{self.package}.{module_info.name}"
-            )
+            module = importlib.import_module(f"{self.package}.{module_info.name}")
 
             manifest = getattr(module, "MANIFEST", None)
 

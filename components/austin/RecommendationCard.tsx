@@ -3,9 +3,7 @@ export function RecommendationCard({ data }: any) {
 
   return (
     <div className="border rounded p-4 bg-blue-50">
-      <h3 className="font-bold text-blue-700">
-        Property Recommendation
-      </h3>
+      <h3 className="font-bold text-blue-700">Property Recommendation</h3>
 
       <div className="mt-2 text-sm space-y-1">
         <p>Type: {data.type}</p>
@@ -16,5 +14,3 @@ export function RecommendationCard({ data }: any) {
     </div>
   );
 }
-
-

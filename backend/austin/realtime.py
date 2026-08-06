@@ -2,12 +2,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from .events import events
-from .logger import logger
 from api.websocket import manager
 
+from .events import events
+from .logger import logger
 
-async def broadcast_event(event_name: str, payload: dict[str, Any] | None = None) -> None:
+
+async def broadcast_event(
+    event_name: str, payload: dict[str, Any] | None = None
+) -> None:
     payload = payload or {}
     await manager.broadcast(
         {

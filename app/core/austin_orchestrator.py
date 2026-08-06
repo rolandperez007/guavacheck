@@ -1,11 +1,10 @@
-from app.core.austin_parser import AustinParser
-from app.core.austin_brain import AustinBrain
 from app.core.austin_ai_gateway import AustinAIGateway
+from app.core.austin_brain import AustinBrain
 from app.core.austin_contract import AustinResponse
+from app.core.austin_parser import AustinParser
 
 
 class AustinOrchestrator:
-
     def __init__(self, memory_store=None):
         self.memory = memory_store
         self.parser = AustinParser()
@@ -27,5 +26,5 @@ class AustinOrchestrator:
             query=query,
             parsed=parsed,
             analysis=analysis,
-            response=response
+            response=response,
         ).to_dict()

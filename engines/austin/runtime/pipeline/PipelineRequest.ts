@@ -23,92 +23,86 @@
  * ============================================================================
  */
 
-export type PipelinePriority =
-    | "Low"
-    | "Normal"
-    | "High"
-    | "Critical";
+export type PipelinePriority = "Low" | "Normal" | "High" | "Critical";
 
 export interface PipelineRequest {
+  /**
+   * Unique request identifier.
+   */
+  requestId: string;
 
-    /**
-     * Unique request identifier.
-     */
-    requestId: string;
+  /**
+   * Service responsible for execution.
+   *
+   * Examples:
+   *  verification
+   *  simulation
+   *  knowledge
+   *  recommendation
+   *  construction
+   */
+  service: string;
 
-    /**
-     * Service responsible for execution.
-     *
-     * Examples:
-     *  verification
-     *  simulation
-     *  knowledge
-     *  recommendation
-     *  construction
-     */
-    service: string;
+  /**
+   * Action to perform.
+   *
+   * Examples:
+   * estimateCost
+   * verifyCompany
+   * searchMaterials
+   */
+  action: string;
 
-    /**
-     * Action to perform.
-     *
-     * Examples:
-     * estimateCost
-     * verifyCompany
-     * searchMaterials
-     */
-    action: string;
+  /**
+   * User payload.
+   */
+  payload: unknown;
 
-    /**
-     * User payload.
-     */
-    payload: unknown;
+  /**
+   * User initiating request.
+   */
+  userId?: string;
 
-    /**
-     * User initiating request.
-     */
-    userId?: string;
+  /**
+   * Optional session.
+   */
+  sessionId?: string;
 
-    /**
-     * Optional session.
-     */
-    sessionId?: string;
+  /**
+   * Optional project.
+   */
+  projectId?: string;
 
-    /**
-     * Optional project.
-     */
-    projectId?: string;
+  /**
+   * Geographic region.
+   */
+  location?: string;
 
-    /**
-     * Geographic region.
-     */
-    location?: string;
+  /**
+   * Preferred language.
+   */
+  language?: string;
 
-    /**
-     * Preferred language.
-     */
-    language?: string;
+  /**
+   * Request priority.
+   */
+  priority?: PipelinePriority;
 
-    /**
-     * Request priority.
-     */
-    priority?: PipelinePriority;
+  /**
+   * Tags for routing,
+   * analytics,
+   * search,
+   * logging.
+   */
+  tags?: string[];
 
-    /**
-     * Tags for routing,
-     * analytics,
-     * search,
-     * logging.
-     */
-    tags?: string[];
+  /**
+   * Arbitrary metadata.
+   */
+  metadata?: Record<string, unknown>;
 
-    /**
-     * Arbitrary metadata.
-     */
-    metadata?: Record<string, unknown>;
-
-    /**
-     * Creation timestamp.
-     */
-    createdAt: Date;
-
+  /**
+   * Creation timestamp.
+   */
+  createdAt: Date;
 }

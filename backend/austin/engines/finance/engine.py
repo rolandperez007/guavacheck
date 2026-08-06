@@ -8,7 +8,6 @@ from typing import Any
 
 
 class FinanceEngine:
-
     name = "finance"
     version = "1.0.0"
 

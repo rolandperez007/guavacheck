@@ -5,27 +5,19 @@
  */
 
 export class PaypalProvider {
+  async createOrder(data: unknown) {
+    console.log("PayPal checkout");
 
-    async createOrder(data: unknown) {
+    return {
+      success: true,
 
-        console.log("PayPal checkout");
+      provider: "paypal",
 
-        return {
+      order: null,
 
-            success: true,
-
-            provider: "paypal",
-
-            order: null,
-
-            data
-
-        };
-
-    }
-
+      data,
+    };
+  }
 }
 
-export const paypalProvider =
-
-new PaypalProvider();
+export const paypalProvider = new PaypalProvider();

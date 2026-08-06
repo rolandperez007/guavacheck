@@ -19,29 +19,21 @@ class CapabilityRegistry:
         capability: str,
     ) -> list[object]:
 
-        return registry.find_by_capability(
-            capability
-        )
+        return registry.find_by_capability(capability)
 
     def supports(
         self,
         capability: str,
     ) -> bool:
 
-        return bool(
-            registry.find_by_capability(
-                capability
-            )
-        )
+        return bool(registry.find_by_capability(capability))
 
     def intents(
         self,
         intent: str,
     ) -> list[object]:
 
-        return registry.find_by_intent(
-            intent
-        )
+        return registry.find_by_intent(intent)
 
     def engines(self) -> list[str]:
 

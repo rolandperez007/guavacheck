@@ -1,11 +1,9 @@
 export interface AustinInsight {
+  title: string;
 
-    title: string;
+  description: string;
 
-    description: string;
+  confidence: number;
 
-    confidence: number;
-
-    recommendation: string;
-
+  recommendation: string;
 }

@@ -1,6 +1,6 @@
+from app.agents.swarm.market_agent import MarketAgent
 from app.agents.swarm.pricing_agent import PricingAgent
 from app.agents.swarm.roi_agent import ROIAgent
-from app.agents.swarm.market_agent import MarketAgent
 
 
 class SwarmCoordinatorV2:

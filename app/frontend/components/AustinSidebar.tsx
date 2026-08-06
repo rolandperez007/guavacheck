@@ -26,23 +26,24 @@ export default function AustinSidebar() {
     ws.send(
       JSON.stringify({
         query: input,
-        user_id: "test-user"
-      })
+        user_id: "test-user",
+      }),
     );
 
     setInput("");
   };
 
   return (
-    <div style={{
-      width: 400,
-      height: "100vh",
-      background: "#0a0a0a",
-      color: "white",
-      display: "flex",
-      flexDirection: "column"
-    }}>
-      
+    <div
+      style={{
+        width: 400,
+        height: "100vh",
+        background: "#0a0a0a",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <div style={{ flex: 1, overflowY: "auto", padding: 10 }}>
         {messages.map((m, i) => (
           <pre key={i} style={{ fontSize: 12 }}>
@@ -63,12 +64,3 @@ export default function AustinSidebar() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-

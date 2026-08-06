@@ -1,17 +1,15 @@
 export interface ProjectDocument {
+  id: string;
 
-    id: string;
+  projectId: string;
 
-    projectId: string;
+  title: string;
 
-    title: string;
+  category: string;
 
-    category: string;
+  uploadedBy: string;
 
-    uploadedBy: string;
+  uploadedAt: Date;
 
-    uploadedAt: Date;
-
-    verified: boolean;
-
+  verified: boolean;
 }

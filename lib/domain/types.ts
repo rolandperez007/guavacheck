@@ -1,19 +1,15 @@
-export interface DomainMessage{
+export interface DomainMessage {
+  type: string;
 
-type:string
+  payload: any;
 
-payload:any
-
-timestamp:number
-
+  timestamp: number;
 }
 
-export interface DomainModule{
+export interface DomainModule {
+  initialize(): void;
 
-initialize():void
+  destroy(): void;
 
-destroy():void
-
-handle(message:DomainMessage):void
-
+  handle(message: DomainMessage): void;
 }

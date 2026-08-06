@@ -1,19 +1,16 @@
 from sqlalchemy.orm import Session
 
 from app.vision.models.project import VisionProject
-from app.vision.models.room import Room
 from app.vision.models.render import Render
-
-from app.vision.repositories.project_repository import ProjectRepository
-from app.vision.repositories.room_repository import RoomRepository
-from app.vision.repositories.render_repository import RenderRepository
-
+from app.vision.models.room import Room
 from app.vision.prompts.interior_prompt import InteriorPromptBuilder
 from app.vision.providers.provider_factory import ProviderFactory
+from app.vision.repositories.project_repository import ProjectRepository
+from app.vision.repositories.render_repository import RenderRepository
+from app.vision.repositories.room_repository import RoomRepository
 
 
 class VisionService:
-
     def __init__(self, db: Session):
         self.db = db
 
@@ -102,6 +99,7 @@ class VisionService:
         )
 
         return image
+
     def update_project(self, project_id: str, payload):
 
         project = self.projects.get(project_id)
@@ -127,7 +125,6 @@ class VisionService:
         self.projects.update()
 
         return project
-
 
     def delete_project(self, project_id: str):
 

@@ -13,7 +13,7 @@ interface Crumb {
 
 export function breadcrumbSchema(items: Crumb[]) {
   return {
-      "@type": "Organization",
+    "@type": "Organization",
 
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",

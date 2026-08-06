@@ -8,13 +8,9 @@ from .orchestrator import orchestrator
 
 
 class IntelligenceRouter:
-
     def process(
-
         self,
-
         query: str,
-
     ):
 
         return orchestrator.execute(query)

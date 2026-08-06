@@ -3,17 +3,15 @@
  */
 
 export interface RuntimeCapabilities {
+  supportsParallelExecution: boolean;
 
-    supportsParallelExecution: boolean;
+  supportsBackgroundWorkers: boolean;
 
-    supportsBackgroundWorkers: boolean;
+  supportsScheduling: boolean;
 
-    supportsScheduling: boolean;
+  supportsTracing: boolean;
 
-    supportsTracing: boolean;
+  supportsSnapshots: boolean;
 
-    supportsSnapshots: boolean;
-
-    supportsPipelines: boolean;
-
+  supportsPipelines: boolean;
 }

@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class CourtJudgementConnector:
     """
     Searches court judgement databases for litigation
@@ -9,7 +6,7 @@ class CourtJudgementConnector:
 
     source = "Court Judgements"
 
-    def search(self, property_id: str) -> Dict:
+    def search(self, property_id: str) -> dict:
 
         return {
             "source": self.source,

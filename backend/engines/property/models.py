@@ -3,12 +3,10 @@ Property Models
 """
 
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
 class Property:
-
     id: str
 
     title: str
@@ -25,6 +23,6 @@ class Property:
 
     currency: str
 
-    land_size: Optional[float] = None
+    land_size: float | None = None
 
     available: bool = True

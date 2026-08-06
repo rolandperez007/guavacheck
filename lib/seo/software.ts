@@ -6,7 +6,6 @@
 
 import { SITE } from "./constants";
 
-
 export function softwareSchema() {
   return {
     "@type": "SoftwareApplication",
@@ -15,18 +14,14 @@ export function softwareSchema() {
 
     name: "guavacheck",
 
-    applicationCategory:
-      "BusinessApplication",
+    applicationCategory: "BusinessApplication",
 
-    operatingSystem:
-      "Web",
+    operatingSystem: "Web",
 
-    url:
-      SITE.url,
+    url: SITE.url,
 
     creator: {
-      "@id":
-        `${SITE.url}/#organization`,
+      "@id": `${SITE.url}/#organization`,
     },
 
     description:
@@ -39,8 +34,7 @@ export function softwareSchema() {
 
       priceCurrency: "USD",
 
-      availability:
-        "https://schema.org/InStock",
+      availability: "https://schema.org/InStock",
     },
   };
 }

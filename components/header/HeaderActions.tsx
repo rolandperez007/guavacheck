@@ -9,9 +9,7 @@ export default function HeaderActions() {
         alignItems: "center",
       }}
     >
-      <Link href="/login">
-        Sign In
-      </Link>
+      <Link href="/login">Sign In</Link>
 
       <Link
         href="/auth"

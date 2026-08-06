@@ -60,13 +60,7 @@ export async function GET() {
         success: false,
         error: error?.message || "AI feed failed",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-
-
-
-
-
-

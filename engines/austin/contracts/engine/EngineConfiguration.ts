@@ -5,39 +5,37 @@
  */
 
 export interface EngineConfiguration {
+  enabled: boolean;
 
-    enabled: boolean;
+  autoStart: boolean;
 
-    autoStart: boolean;
+  autoRecover: boolean;
 
-    autoRecover: boolean;
+  debug: boolean;
 
-    debug: boolean;
+  maintenanceMode: boolean;
 
-    maintenanceMode: boolean;
+  timeout: number;
 
-    timeout: number;
+  retryAttempts: number;
 
-    retryAttempts: number;
+  retryDelay: number;
 
-    retryDelay: number;
+  maxConcurrency: number;
 
-    maxConcurrency: number;
+  maxQueueSize: number;
 
-    maxQueueSize: number;
+  cacheEnabled: boolean;
 
-    cacheEnabled: boolean;
+  metricsEnabled: boolean;
 
-    metricsEnabled: boolean;
+  tracingEnabled: boolean;
 
-    tracingEnabled: boolean;
+  loggingEnabled: boolean;
 
-    loggingEnabled: boolean;
+  healthCheckInterval: number;
 
-    healthCheckInterval: number;
+  heartbeatInterval: number;
 
-    heartbeatInterval: number;
-
-    custom?: Record<string, unknown>;
-
+  custom?: Record<string, unknown>;
 }

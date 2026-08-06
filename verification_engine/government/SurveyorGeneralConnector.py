@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class SurveyorGeneralConnector:
     """
     Survey verification.
@@ -10,7 +7,7 @@ class SurveyorGeneralConnector:
 
     source = "Surveyor General"
 
-    def verify(self, survey_number: str) -> Dict:
+    def verify(self, survey_number: str) -> dict:
 
         return {
             "verified": False,

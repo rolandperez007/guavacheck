@@ -1,11 +1,9 @@
-from typing import Optional
-
 from pydantic import BaseModel, ConfigDict
 
 
 class RevisionCreate(BaseModel):
     render_id: str
-    notes: Optional[str] = None
+    notes: str | None = None
 
 
 class RevisionResponse(BaseModel):
@@ -14,5 +12,5 @@ class RevisionResponse(BaseModel):
     id: str
     render_id: str
     revision_number: int
-    notes: Optional[str]
-    image_url: Optional[str]
+    notes: str | None
+    image_url: str | None

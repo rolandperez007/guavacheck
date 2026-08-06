@@ -19,9 +19,11 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass
 
-from backend.austin.registry.manifests.base import EngineManifest
 from backend.austin.registry.loader import loader
+from backend.austin.registry.manifests.base import EngineManifest
+
 from .discovery import engine_discovery
+
 
 @dataclass(slots=True)
 class EngineRecord:
@@ -30,14 +32,11 @@ class EngineRecord:
 
 
 class AustinRegistry:
-
     def __init__(self):
 
         self._records: dict[str, EngineRecord] = {}
 
-        self._intent_index: dict[str, list[EngineRecord]] = (
-            defaultdict(list)
-        )
+        self._intent_index: dict[str, list[EngineRecord]] = defaultdict(list)
 
         self._capability_index: dict[
             str,
@@ -58,7 +57,6 @@ class AustinRegistry:
         manifests = engine_discovery.discover()
 
         for manifest in manifests:
-
             self.register(manifest)
 
         self._booted = True
@@ -94,26 +92,17 @@ class AustinRegistry:
         engine = loader.load(manifest)
 
         record = EngineRecord(
-
             manifest=manifest,
-
             engine=engine,
-
         )
 
         self._records[manifest.name] = record
 
         for intent in manifest.intents:
-
-            self._intent_index[intent].append(
-                record
-            )
+            self._intent_index[intent].append(record)
 
         for capability in manifest.capabilities:
-
-            self._capability_index[
-                capability
-            ].append(record)
+            self._capability_index[capability].append(record)
 
     # ---------------------------------------------------------
     # Engine Lookup
@@ -127,7 +116,6 @@ class AustinRegistry:
         record = self._records.get(name)
 
         if record:
-
             return record.engine
 
         return None
@@ -140,7 +128,6 @@ class AustinRegistry:
         record = self._records.get(name)
 
         if record:
-
             return record.manifest
 
         return None
@@ -155,14 +142,11 @@ class AustinRegistry:
     ) -> list[object]:
 
         return [
-
             record.engine
-
             for record in self._intent_index.get(
                 intent,
                 [],
             )
-
         ]
 
     # ---------------------------------------------------------
@@ -175,14 +159,11 @@ class AustinRegistry:
     ) -> list[object]:
 
         return [
-
             record.engine
-
             for record in self._capability_index.get(
                 capability,
                 [],
             )
-
         ]
 
     # ---------------------------------------------------------
@@ -191,21 +172,11 @@ class AustinRegistry:
 
     def list_engines(self) -> list[str]:
 
-        return sorted(
-
-            self._records.keys()
-
-        )
+        return sorted(self._records.keys())
 
     def manifests(self) -> list[EngineManifest]:
 
-        return [
-
-            record.manifest
-
-            for record in self._records.values()
-
-        ]
+        return [record.manifest for record in self._records.values()]
 
     # ---------------------------------------------------------
     # Statistics
@@ -227,19 +198,11 @@ class AustinRegistry:
     def health(self) -> dict:
 
         return {
-
             "booted": self._booted,
-
             "engine_count": self.count(),
-
             "engines": self.list_engines(),
-
             "intents": len(self._intent_index),
-
-            "capabilities": len(
-                self._capability_index
-            ),
-
+            "capabilities": len(self._capability_index),
         }
 
 

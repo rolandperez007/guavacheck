@@ -7,7 +7,7 @@ export class RevenueEngine {
     return {
       success: true,
       charged: 0,
-      plan
+      plan,
     };
   }
 }

@@ -1,9 +1,9 @@
-from typing import Dict, Any
+from typing import Any
 
 VALID_KEYS = {"dev-key-123": "dev_tenant"}
 
 
-def api_key_validation_rule(context: Dict[str, Any]) -> Dict[str, Any]:
+def api_key_validation_rule(context: dict[str, Any]) -> dict[str, Any]:
     headers = context.get("headers", {})
     api_key = headers.get("x-api-key")
 

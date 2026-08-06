@@ -9,15 +9,9 @@ from .loader import loader
 from .registry import registry
 
 __all__ = [
-
-    "registry",
-
-    "engine_discovery",
-
-    "loader",
-
     "capability_registry",
-
+    "engine_discovery",
+    "loader",
+    "registry",
     "registry_health",
-
 ]

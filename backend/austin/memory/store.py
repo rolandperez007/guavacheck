@@ -63,17 +63,11 @@ class AustinMemory:
     # --------------------------------------------------
 
     def by_user(self, user_id: str) -> list[MemoryRecord]:
-        return [
-            record
-            for record in self.records.values()
-            if record.user_id == user_id
-        ]
+        return [record for record in self.records.values() if record.user_id == user_id]
 
     def by_category(self, category: str) -> list[MemoryRecord]:
         return [
-            record
-            for record in self.records.values()
-            if record.category == category
+            record for record in self.records.values() if record.category == category
         ]
 
     def recall(self, user_id: str) -> list[dict[str, Any]]:
@@ -131,12 +125,7 @@ class AustinMemory:
         return len(self.records)
 
     def categories(self) -> list[str]:
-        return sorted(
-            {
-                record.category
-                for record in self.records.values()
-            }
-        )
+        return sorted({record.category for record in self.records.values()})
 
     def summary(self) -> dict[str, Any]:
         return {

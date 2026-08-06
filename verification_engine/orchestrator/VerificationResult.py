@@ -5,26 +5,18 @@ Final output returned by the
 Verification Engine.
 """
 
-from dataclasses import dataclass
-from dataclasses import field
-
+from dataclasses import dataclass, field
 from typing import Any
-from typing import Dict
 
 
 @dataclass
 class VerificationResult:
-
     verified: bool
 
     decision: str
 
     confidence: float
 
-    evidence: Dict[str, Any] = field(
-        default_factory=dict
-    )
+    evidence: dict[str, Any] = field(default_factory=dict)
 
-    explanation: Dict[str, Any] = field(
-        default_factory=dict
-    )
+    explanation: dict[str, Any] = field(default_factory=dict)

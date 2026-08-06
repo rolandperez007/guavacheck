@@ -11,9 +11,7 @@ import {
  * Converts context → structured thinking → decision path
  */
 
-export function reasonAboutRequest(
-  context: PropertyContext
-): AustinDecision {
+export function reasonAboutRequest(context: PropertyContext): AustinDecision {
   const steps: AustinThinkingStep[] = [];
 
   // 1. Understand intent
@@ -30,10 +28,7 @@ export function reasonAboutRequest(
   steps.push({
     step: "data_check",
     description: "Checking completeness of property data",
-    result:
-      missingData.length > 0
-        ? `Missing: ${missingData.join(", ")}`
-        : "Data complete",
+    result: missingData.length > 0 ? `Missing: ${missingData.join(", ")}` : "Data complete",
     confidenceImpact: missingData.length > 0 ? -10 : 10,
   });
 
@@ -53,8 +48,7 @@ export function reasonAboutRequest(
   steps.push({
     step: "risk_assessment",
     description: "Evaluating potential risks in property data",
-    result:
-      risks.length > 0 ? risks.join(", ") : "No major risks detected",
+    result: risks.length > 0 ? risks.join(", ") : "No major risks detected",
     confidenceImpact: risks.length > 0 ? -15 : 5,
   });
 
@@ -73,9 +67,7 @@ export function reasonAboutRequest(
    SPECIALIST SELECTION
 ------------------------------*/
 
-function selectSpecialists(
-  intent?: UserIntent
-): AustinSpecialist[] {
+function selectSpecialists(intent?: UserIntent): AustinSpecialist[] {
   switch (intent) {
     case "price_estimate":
     case "valuation":
@@ -86,11 +78,11 @@ function selectSpecialists(
 
     case "media_review":
       return ["media"];
-    
+
     case "verification":
       return ["legal"];
-    
-      case "distress_analysis":
+
+    case "distress_analysis":
       return ["distress", "valuation", "legal"];
 
     case "design_advice":
@@ -140,9 +132,7 @@ function evaluateRisks(context: PropertyContext): string[] {
    CONFIDENCE ENGINE
 ------------------------------*/
 
-function computeConfidence(
-  steps: AustinThinkingStep[]
-) {
+function computeConfidence(steps: AustinThinkingStep[]) {
   let score = 70; // base confidence
 
   for (const step of steps) {

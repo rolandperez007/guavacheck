@@ -1,11 +1,9 @@
 export interface Incident {
+  id: string;
 
-    id: string;
+  severity: "low" | "medium" | "high" | "critical";
 
-    severity: "low" | "medium" | "high" | "critical";
+  description: string;
 
-    description: string;
-
-    reportedAt: Date;
-
+  reportedAt: Date;
 }

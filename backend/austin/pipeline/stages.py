@@ -11,7 +11,6 @@ from enum import Enum
 
 
 class PipelineStage(str, Enum):
-
     RECEIVE = "receive"
 
     LOAD_MEMORY = "load_memory"

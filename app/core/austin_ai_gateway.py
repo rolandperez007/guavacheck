@@ -1,8 +1,8 @@
 import hashlib
 import time
-from typing import Optional
 
 from openai import OpenAI
+
 from app.core.config import OPENAI_API_KEY
 
 
@@ -38,7 +38,7 @@ class AustinAIGateway:
     # CACHE KEY
     # ----------------------------
     def _cache_key(self, query, analysis):
-        raw = f"{query}:{str(analysis)}"
+        raw = f"{query}:{analysis!s}"
         return hashlib.md5(raw.encode()).hexdigest()
 
     # ----------------------------
@@ -109,8 +109,8 @@ Explain the decision clearly and briefly.
                 model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": "You are Austin AI assistant."},
-                    {"role": "user", "content": prompt}
-                ]
+                    {"role": "user", "content": prompt},
+                ],
             )
 
             result = response.choices[0].message.content

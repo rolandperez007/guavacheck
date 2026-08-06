@@ -5,10 +5,7 @@ export function jsonLd() {
   return {
     "@context": "https://schema.org",
 
-    "@graph": [
-      organization,
-      website,
-    ],
+    "@graph": [organization, website],
   };
 }
 

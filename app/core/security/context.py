@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, Dict, Any
+from typing import Any
 
 
 @dataclass
@@ -10,9 +10,9 @@ class SecurityContext:
     """
 
     user_id: str
-    org_id: Optional[str] = None
+    org_id: str | None = None
     role: str = "user"
-    claims: Optional[Dict[str, Any]] = None
+    claims: dict[str, Any] | None = None
 
     def is_admin(self) -> bool:
         return self.role.lower() == "admin"

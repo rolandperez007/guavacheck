@@ -70,10 +70,18 @@ export default function FloorplanViewer({
 
         {selectedRoom ? (
           <div>
-            <p><b>Name:</b> {selectedRoom.name}</p>
-            <p><b>Floor:</b> {selectedRoom.floor}</p>
-            <p><b>Width:</b> {selectedRoom.width.toFixed(2)}m</p>
-            <p><b>Length:</b> {selectedRoom.length.toFixed(2)}m</p>
+            <p>
+              <b>Name:</b> {selectedRoom.name}
+            </p>
+            <p>
+              <b>Floor:</b> {selectedRoom.floor}
+            </p>
+            <p>
+              <b>Width:</b> {selectedRoom.width.toFixed(2)}m
+            </p>
+            <p>
+              <b>Length:</b> {selectedRoom.length.toFixed(2)}m
+            </p>
           </div>
         ) : (
           <p>Click a room to view details</p>

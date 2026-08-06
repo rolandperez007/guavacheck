@@ -14,7 +14,6 @@ from backend.austin.queue import queue
 
 @dataclass(slots=True)
 class RuntimeHealth:
-
     status: str
     timestamp: str
     worker_running: bool
@@ -25,7 +24,6 @@ class RuntimeHealth:
 
 
 class RuntimeHealthService:
-
     def get_health(
         self,
         *,
@@ -44,9 +42,7 @@ class RuntimeHealthService:
 
         return RuntimeHealth(
             status=status,
-            timestamp=datetime.now(
-                timezone.utc
-            ).isoformat(),
+            timestamp=datetime.now(timezone.utc).isoformat(),
             worker_running=worker_running,
             queued_jobs=summary["queued"],
             running_jobs=summary["running"],

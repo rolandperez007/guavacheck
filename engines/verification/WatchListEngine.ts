@@ -1,27 +1,19 @@
 export interface WatchlistEntry {
+  entityId: string;
 
-    entityId: string;
+  reason: string;
 
-    reason: string;
-
-    addedAt: Date;
-
+  addedAt: Date;
 }
 
 export class WatchlistEngine {
+  private static entries: WatchlistEntry[] = [];
 
-    private static entries: WatchlistEntry[] = [];
+  static add(entry: WatchlistEntry): void {
+    this.entries.push(entry);
+  }
 
-    static add(entry: WatchlistEntry): void {
-
-        this.entries.push(entry);
-
-    }
-
-    static all(): WatchlistEntry[] {
-
-        return this.entries;
-
-    }
-
+  static all(): WatchlistEntry[] {
+    return this.entries;
+  }
 }

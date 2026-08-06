@@ -5,10 +5,7 @@ export async function POST(req: Request) {
     const { id } = await req.json();
 
     if (!id) {
-      return Response.json(
-        { success: false, error: "Property ID required" },
-        { status: 400 }
-      );
+      return Response.json({ success: false, error: "Property ID required" }, { status: 400 });
     }
 
     const result = await propertyService.deleteProperty(id);
@@ -19,9 +16,6 @@ export async function POST(req: Request) {
 
     return Response.json(result);
   } catch {
-    return Response.json(
-      { success: false, error: "Delete failed" },
-      { status: 500 }
-    );
+    return Response.json({ success: false, error: "Delete failed" }, { status: 500 });
   }
 }

@@ -19,8 +19,8 @@ export function generateFloorplan({
     type === "flat"
       ? ["Living Room", "Bedroom", "Kitchen", "Bathroom"]
       : type === "duplex"
-      ? ["Living Room", "Kitchen", "Master Bedroom", "Bedroom", "Bathroom"]
-      : ["Living Room", "Kitchen", "Bedroom", "Bedroom", "Bathroom"];
+        ? ["Living Room", "Kitchen", "Master Bedroom", "Bedroom", "Bathroom"]
+        : ["Living Room", "Kitchen", "Bedroom", "Bedroom", "Bathroom"];
 
   let id = 1;
 

@@ -40,7 +40,7 @@ export default function AustinSidebar() {
       JSON.stringify({
         query: input,
         user_id: "frontend-user",
-      })
+      }),
     );
 
     // HTTP fallback (backend API)

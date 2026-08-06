@@ -9,19 +9,17 @@
  */
 
 export interface CorrelationContext {
+  correlationId: string;
 
-    correlationId: string;
+  traceId: string;
 
-    traceId: string;
+  requestId: string;
 
-    requestId: string;
+  sessionId?: string;
 
-    sessionId?: string;
+  userId?: string;
 
-    userId?: string;
+  workflowId?: string;
 
-    workflowId?: string;
-
-    pipelineId?: string;
-
+  pipelineId?: string;
 }

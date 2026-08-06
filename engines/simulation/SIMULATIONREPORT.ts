@@ -1,11 +1,9 @@
 import { SimulationMetrics } from "./SIMULATIONMETRICS";
 
 export interface SimulationReport {
+  generatedAt: Date;
 
-    generatedAt: Date;
+  metrics: SimulationMetrics;
 
-    metrics: SimulationMetrics;
-
-    summary: string;
-
+  summary: string;
 }

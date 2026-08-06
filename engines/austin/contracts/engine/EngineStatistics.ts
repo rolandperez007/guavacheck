@@ -5,35 +5,33 @@
  */
 
 export interface EngineStatistics {
+  totalRequests: number;
 
-    totalRequests: number;
+  successfulRequests: number;
 
-    successfulRequests: number;
+  failedRequests: number;
 
-    failedRequests: number;
+  activeRequests: number;
 
-    activeRequests: number;
+  queuedRequests: number;
 
-    queuedRequests: number;
+  averageLatency: number;
 
-    averageLatency: number;
+  peakLatency: number;
 
-    peakLatency: number;
+  throughputPerSecond: number;
 
-    throughputPerSecond: number;
+  uptimeSeconds: number;
 
-    uptimeSeconds: number;
+  restarts: number;
 
-    restarts: number;
+  crashes: number;
 
-    crashes: number;
+  warnings: number;
 
-    warnings: number;
+  errors: number;
 
-    errors: number;
+  memoryUsageMB: number;
 
-    memoryUsageMB: number;
-
-    cpuUsagePercent: number;
-
+  cpuUsagePercent: number;
 }

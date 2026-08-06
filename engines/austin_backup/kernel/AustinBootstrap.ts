@@ -22,44 +22,36 @@ import { DefaultAustinConfiguration } from "./AustinConfiguration";
 import { AustinKernel } from "./AustinKernel";
 
 export class AustinBootstrap {
+  /**
+   * Current Austin configuration.
+   */
+  private readonly configuration: AustinConfiguration;
 
-    /**
-     * Current Austin configuration.
-     */
-    private readonly configuration: AustinConfiguration;
+  /**
+   * Austin Kernel instance.
+   */
+  private readonly kernel: AustinKernel;
 
-    /**
-     * Austin Kernel instance.
-     */
-    private readonly kernel: AustinKernel;
+  constructor(configuration: AustinConfiguration = DefaultAustinConfiguration) {
+    this.configuration = configuration;
+    this.kernel = new AustinKernel(configuration);
+  }
 
-    constructor(
-        configuration: AustinConfiguration = DefaultAustinConfiguration
-    ) {
+  /**
+   * Starts the Austin Operating System.
+   */
+  public async boot(): Promise<void> {
+    console.log("=====================================");
+    console.log(" Austin Operating System");
+    console.log(" Boot Sequence Starting...");
+    console.log("=====================================");
 
-        this.configuration = configuration;
-        this.kernel = new AustinKernel(configuration);
+    await this.kernel.initialize();
 
-    }
+    await this.kernel.start();
 
-    /**
-     * Starts the Austin Operating System.
-     */
-    public async boot(): Promise<void> {
-
-        console.log("=====================================");
-        console.log(" Austin Operating System");
-        console.log(" Boot Sequence Starting...");
-        console.log("=====================================");
-
-        await this.kernel.initialize();
-
-        await this.kernel.start();
-
-        console.log("=====================================");
-        console.log(" Austin Ready");
-        console.log("=====================================");
-
-    }
-
+    console.log("=====================================");
+    console.log(" Austin Ready");
+    console.log("=====================================");
+  }
 }

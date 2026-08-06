@@ -9,9 +9,7 @@ export default function Footer() {
         padding: 40,
       }}
     >
-      <p>
-        © {new Date().getFullYear()} Guava Networks Limited
-      </p>
+      <p>© {new Date().getFullYear()} Guava Networks Limited</p>
 
       <div
         style={{

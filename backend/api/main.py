@@ -15,7 +15,6 @@ from backend.api.routes.austin import router as austin_router
 from backend.austin.bootstrap import bootstrap_austin
 from backend.austin.worker import worker
 
-
 # ---------------------------------------------------------------------
 # Austin Worker
 # ---------------------------------------------------------------------
@@ -45,6 +44,7 @@ def start_austin_worker() -> None:
 # ---------------------------------------------------------------------
 # Application Lifecycle
 # ---------------------------------------------------------------------
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -96,9 +96,5 @@ async def root():
 async def health():
     return {
         "status": "healthy",
-        "worker": (
-            _worker_thread.is_alive()
-            if _worker_thread
-            else False
-        ),
+        "worker": (_worker_thread.is_alive() if _worker_thread else False),
     }

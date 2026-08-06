@@ -6,10 +6,9 @@ Central logging configuration.
 Every Austin subsystem uses this logger.
 """
 
-import logging
 import json
+import logging
 from datetime import datetime, timezone
-
 
 LOGGER_NAME = "Austin"
 
@@ -35,7 +34,17 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def structured_log(*, message: str, correlation_id: str | None = None, trace_id: str | None = None, engine: str = "austin", duration_ms: int | None = None, outcome: str = "ok", severity: str = "info", service: str = "austin") -> None:
+def structured_log(
+    *,
+    message: str,
+    correlation_id: str | None = None,
+    trace_id: str | None = None,
+    engine: str = "austin",
+    duration_ms: int | None = None,
+    outcome: str = "ok",
+    severity: str = "info",
+    service: str = "austin",
+) -> None:
     payload = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "trace_id": trace_id,

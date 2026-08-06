@@ -1,14 +1,14 @@
 # guavacheck Architecture Blueprint
 
-**Document Version:** 1.0.0
+Document Version: 1.0.0
 
-**Status:** Draft (Living Document)
+Status: Draft (Living Document)
 
-**Classification:** Internal Engineering Documentation
+Classification: Internal Engineering Documentation
 
-**Owner:** Guava Networks Limited
+Owner: Guava Networks Limited
 
-**Platform:** guavacheck
+Platform: guavacheck
 
 ---
 
@@ -96,7 +96,7 @@ The platform is designed around the following principles:
 
 The platform is organized into multiple architectural layers.
 
-```
+
 
                  Users
                     │
@@ -118,7 +118,6 @@ The platform is organized into multiple architectural layers.
                     ▼
             Cloud Infrastructure
 
-```
 
 Each layer has clearly defined responsibilities.
 

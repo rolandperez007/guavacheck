@@ -25,38 +25,24 @@ router = APIRouter(
 async def platform_health():
 
     return {
-
         "platform": "guavacheck",
-
         "status": "healthy" if status.healthy else "degraded",
-
         "austin": status.online,
-
         "registered_engines": status.registered_engines,
-
         "message": status.message,
-
     }
 
 
 @router.get("/live")
 async def live():
 
-    return {
-
-        "alive": True
-
-    }
+    return {"alive": True}
 
 
 @router.get("/ready")
 async def ready():
 
-    return {
-
-        "ready": status.startup_complete
-
-    }
+    return {"ready": status.startup_complete}
 
 
 @router.get("/metrics")
@@ -73,9 +59,27 @@ async def metrics():
         "memory": 62,
         "requests": 128,
         "engines": [
-            {"name": "intent", "status": "active", "load": 72, "requests": 84, "responseTime": 131},
-            {"name": "planner", "status": "active", "load": 53, "requests": 42, "responseTime": 118},
-            {"name": "reasoning", "status": "active", "load": 64, "requests": 57, "responseTime": 143},
+            {
+                "name": "intent",
+                "status": "active",
+                "load": 72,
+                "requests": 84,
+                "responseTime": 131,
+            },
+            {
+                "name": "planner",
+                "status": "active",
+                "load": 53,
+                "requests": 42,
+                "responseTime": 118,
+            },
+            {
+                "name": "reasoning",
+                "status": "active",
+                "load": 64,
+                "requests": 57,
+                "responseTime": 143,
+            },
         ],
         "queue": {
             **queue.summary(),

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
@@ -21,7 +20,15 @@ class AustinEventStore:
 
         return event
 
-    def list(self, *, window: str = "1h", engine: str | None = None, severity: str | None = None, category: str | None = None, correlation_id: str | None = None) -> list[AustinEvent]:
+    def list(
+        self,
+        *,
+        window: str = "1h",
+        engine: str | None = None,
+        severity: str | None = None,
+        category: str | None = None,
+        correlation_id: str | None = None,
+    ) -> list[AustinEvent]:
         now = datetime.now(timezone.utc)
         if window == "1h":
             cutoff = now - timedelta(hours=1)
@@ -40,7 +47,9 @@ class AustinEventStore:
         if category:
             filtered = [event for event in filtered if event.category == category]
         if correlation_id:
-            filtered = [event for event in filtered if event.correlation_id == correlation_id]
+            filtered = [
+                event for event in filtered if event.correlation_id == correlation_id
+            ]
         return sorted(filtered, key=lambda item: item.timestamp, reverse=True)
 
     def summary(self) -> dict[str, Any]:

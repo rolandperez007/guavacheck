@@ -4,7 +4,6 @@ from app.vision.models.project import VisionProject
 
 
 class ProjectRepository:
-
     def __init__(self, db: Session):
         self.db = db
 
@@ -19,25 +18,17 @@ class ProjectRepository:
     def get(self, project_id: str):
 
         return (
-            self.db.query(VisionProject)
-            .filter(
-                VisionProject.id == project_id
-            )
-            .first()
+            self.db.query(VisionProject).filter(VisionProject.id == project_id).first()
         )
 
     def list(self):
 
-        return (
-            self.db.query(VisionProject)
-            .all()
-        )
+        return self.db.query(VisionProject).all()
 
     def delete(self, project_id: str):
 
         project = self.get(project_id)
 
         if project:
-
             self.db.delete(project)
             self.db.commit()

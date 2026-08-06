@@ -9,29 +9,27 @@
  */
 
 export interface TelemetryContext {
+  cpuUsage: number;
 
-    cpuUsage: number;
+  memoryUsage: number;
 
-    memoryUsage: number;
+  activeWorkers: number;
 
-    activeWorkers: number;
+  queuedTasks: number;
 
-    queuedTasks: number;
+  activeRequests: number;
 
-    activeRequests: number;
+  latencyMs: number;
 
-    latencyMs: number;
+  throughput: number;
 
-    throughput: number;
+  errorRate: number;
 
-    errorRate: number;
+  cacheHitRate: number;
 
-    cacheHitRate: number;
+  networkLatency: number;
 
-    networkLatency: number;
+  storageLatency: number;
 
-    storageLatency: number;
-
-    aiLatency?: number;
-
+  aiLatency?: number;
 }

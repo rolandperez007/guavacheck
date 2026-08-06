@@ -10,48 +10,25 @@ Future:
 - Google Cloud Storage
 """
 
-from pathlib import Path
 import shutil
+from pathlib import Path
 
 
 class StorageManager:
-
     def __init__(self):
 
         self.storage_root = Path("storage")
 
-        self.storage_root.mkdir(
-            exist_ok=True
-        )
+        self.storage_root.mkdir(exist_ok=True)
 
+    def save_file(self, source_file, destination_name):
 
-    def save_file(
-        self,
-        source_file,
-        destination_name
-    ):
+        destination = self.storage_root / destination_name
 
-        destination = (
-            self.storage_root /
-            destination_name
-        )
-
-
-        shutil.copy2(
-            source_file,
-            destination
-        )
-
+        shutil.copy2(source_file, destination)
 
         return str(destination)
 
+    def exists(self, filename):
 
-    def exists(
-        self,
-        filename
-    ):
-
-        return (
-            self.storage_root /
-            filename
-        ).exists()
+        return (self.storage_root / filename).exists()

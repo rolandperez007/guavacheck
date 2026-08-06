@@ -12,7 +12,6 @@ from typing import Any
 
 @dataclass(slots=True)
 class Entity:
-
     id: str
 
     entity_type: str
@@ -27,7 +26,6 @@ class Entity:
 
 
 class EntityRegistry:
-
     def __init__(self):
 
         self._entities: dict[str, Entity] = {}

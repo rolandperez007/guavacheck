@@ -7,11 +7,8 @@ Endpoints for Engineering Engine.
 from fastapi import APIRouter
 
 router = APIRouter(
-
     prefix="/engineering",
-
     tags=["Engineering"],
-
 )
 
 
@@ -19,19 +16,12 @@ router = APIRouter(
 async def index():
 
     return {
-
         "engine": "Engineering",
-
         "status": "ready",
-
     }
 
 
 @router.get("/health")
 async def health():
 
-    return {
-
-        "healthy": True
-
-    }
+    return {"healthy": True}

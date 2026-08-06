@@ -1,11 +1,10 @@
 export class ContractorService {
-
   static async getProfile() {
-    return { name: 'Verified Contractor', rating: 4.6 };
+    return { name: "Verified Contractor", rating: 4.6 };
   }
 
   static async getHistory() {
-    return [{ project: 'Lekki Duplex', status: 'completed' }];
+    return [{ project: "Lekki Duplex", status: "completed" }];
   }
 
   static async analyzeReviews() {
@@ -18,8 +17,8 @@ export class ContractorService {
 
   static async generateReport() {
     return {
-      summary: 'Reliable contractor profile',
-      score: 80
+      summary: "Reliable contractor profile",
+      score: 80,
     };
   }
 }

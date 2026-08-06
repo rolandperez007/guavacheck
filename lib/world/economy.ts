@@ -1,23 +1,19 @@
-export function getEconomy(){
+export function getEconomy() {
+  const hour = new Date().getHours();
 
-    const hour=new Date().getHours();
+  return {
+    confidence: 82,
 
-    return{
+    transactions: Math.floor(Math.random() * 80) + 20,
 
-        confidence:82,
+    listings: 1480,
 
-        transactions:Math.floor(Math.random()*80)+20,
+    rentalDemand: 74,
 
-        listings:1480,
+    mortgageDemand: 68,
 
-        rentalDemand:74,
+    activeInvestors: 312,
 
-        mortgageDemand:68,
-
-        activeInvestors:312,
-
-        sentiment:hour<18?"Bullish":"Neutral"
-
-    };
-
+    sentiment: hour < 18 ? "Bullish" : "Neutral",
+  };
 }

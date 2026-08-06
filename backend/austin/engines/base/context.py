@@ -12,7 +12,6 @@ from typing import Any
 
 @dataclass(slots=True)
 class EngineContext:
-
     session_id: str
 
     correlation_id: str

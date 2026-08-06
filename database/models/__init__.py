@@ -2,18 +2,18 @@
 guavacheck Database Models
 """
 
-from .Verification import Verification
-from .Property import Property
+from .Audit import Audit
 from .Document import Document
 from .Ownership import Ownership
-from .Audit import Audit
+from .Property import Property
 from .User import User
+from .Verification import Verification
 
 __all__ = [
-    "Verification",
-    "Property",
+    "Audit",
     "Document",
     "Ownership",
-    "Audit",
+    "Property",
     "User",
+    "Verification",
 ]

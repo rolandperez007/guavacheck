@@ -1,25 +1,19 @@
 export interface SystemHealth {
+  database: boolean;
 
-    database: boolean;
+  api: boolean;
 
-    api: boolean;
+  ai: boolean;
 
-    ai: boolean;
+  storage: boolean;
 
-    storage: boolean;
+  payments: boolean;
 
-    payments: boolean;
-
-    verification: boolean;
-
+  verification: boolean;
 }
 
 export class SystemHealthEngine {
-
-    static healthy(system: SystemHealth): boolean {
-
-        return Object.values(system).every(Boolean);
-
-    }
-
+  static healthy(system: SystemHealth): boolean {
+    return Object.values(system).every(Boolean);
+  }
 }

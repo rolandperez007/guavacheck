@@ -10,9 +10,6 @@ from .engine import PropertyEngine
 property_engine = PropertyEngine()
 
 __all__ = [
-
-    "property_engine",
-
     "PropertyEngine",
-
+    "property_engine",
 ]

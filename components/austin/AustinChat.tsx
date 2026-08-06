@@ -18,14 +18,10 @@ export default function AustinChat() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center">
-      
       <div className="w-full max-w-3xl p-6 space-y-6">
-
         {/* HEADER */}
         <div className="text-center space-y-1">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Austin Intelligence
-          </h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Austin Intelligence</h1>
           <p className="text-sm text-gray-500">
             Property • Construction • Investment Analysis Engine
           </p>
@@ -60,9 +56,7 @@ export default function AustinChat() {
           <div className="bg-white border rounded-lg p-3 text-xs text-gray-500 space-y-1">
             {events.map((e, i) => (
               <div key={i} className="flex gap-2">
-                <span className="font-medium text-gray-700">
-                  {e.stage}
-                </span>
+                <span className="font-medium text-gray-700">{e.stage}</span>
                 <span>{e.step ? `→ ${e.step}` : ""}</span>
               </div>
             ))}
@@ -75,10 +69,7 @@ export default function AustinChat() {
             <AustinRenderer data={finalData} />
           </div>
         )}
-
       </div>
     </div>
   );
 }
-
-

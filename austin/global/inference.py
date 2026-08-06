@@ -9,7 +9,6 @@ from .engine import global_engine
 
 
 class ContextInferenceEngine:
-
     def infer(
         self,
         text: str,
@@ -18,25 +17,20 @@ class ContextInferenceEngine:
         country = detectors.detect_country(text)
 
         if country is None:
-
             country = "United States"
 
         context = global_engine.build(
-
             country=country,
-
         )
 
         detected_currency = detectors.detect_currency(text)
 
         if detected_currency:
-
             context.metadata["requested_currency"] = detected_currency
 
         city = detectors.detect_city(text)
 
         if city:
-
             context.metadata["city"] = city
 
         context.metadata["original_query"] = text

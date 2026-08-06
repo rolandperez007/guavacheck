@@ -10,16 +10,13 @@ Austin queries EngineManager.
 
 from __future__ import annotations
 
-from typing import Dict, List
-
 from .base import BaseEngine
 
 
 class EngineManager:
-
     def __init__(self):
 
-        self._engines: Dict[str, BaseEngine] = {}
+        self._engines: dict[str, BaseEngine] = {}
 
     # -------------------------------------------------
     # Registration
@@ -49,21 +46,13 @@ class EngineManager:
 
         return self._engines
 
-    def names(self) -> List[str]:
+    def names(self) -> list[str]:
 
         return sorted(self._engines.keys())
 
     def enabled(self):
 
-        return [
-
-            engine
-
-            for engine in self._engines.values()
-
-            if engine.enabled
-
-        ]
+        return [engine for engine in self._engines.values() if engine.enabled]
 
     # -------------------------------------------------
     # Diagnostics
@@ -74,7 +63,6 @@ class EngineManager:
         report = {}
 
         for engine in self._engines.values():
-
             report[engine.name] = await engine.health()
 
         return report

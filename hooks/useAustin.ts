@@ -13,9 +13,9 @@ export function useAustin() {
       const res = await fetch("/api/austin/execute", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ input })
+        body: JSON.stringify({ input }),
       });
 
       const json = await res.json();
@@ -36,6 +36,6 @@ export function useAustin() {
     runAustin,
     loading,
     data,
-    error
+    error,
   };
 }

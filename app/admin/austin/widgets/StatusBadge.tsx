@@ -1,25 +1,9 @@
 interface StatusBadgeProps {
-
-  status:
-    | "online"
-    | "offline"
-    | "active"
-    | "idle"
-    | "error"
-    | "unknown"
-    | "degraded"
-    | "checking";
-
+  status: "online" | "offline" | "active" | "idle" | "error" | "unknown" | "degraded" | "checking";
 }
 
-
-export default function StatusBadge({
-  status,
-}: StatusBadgeProps) {
-
-
+export default function StatusBadge({ status }: StatusBadgeProps) {
   return (
-
     <span
       className="
         rounded-full
@@ -30,10 +14,7 @@ export default function StatusBadge({
         uppercase
       "
     >
-
       {status}
-
     </span>
-
   );
 }

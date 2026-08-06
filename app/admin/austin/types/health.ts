@@ -1,9 +1,4 @@
-export type ServiceStatus =
-  | "online"
-  | "offline"
-  | "degraded"
-  | "checking"
-  | "unknown";
+export type ServiceStatus = "online" | "offline" | "degraded" | "checking" | "unknown";
 
 export interface ServiceHealth {
   name: string;

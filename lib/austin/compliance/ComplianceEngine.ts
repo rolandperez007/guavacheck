@@ -1,10 +1,8 @@
 export class ComplianceEngine {
-
   static kycRecords: any[] = [];
   static amlFlags: any[] = [];
 
   static runKYC(user: any) {
-
     const score = this.calculateIdentityScore(user);
 
     const record = {
@@ -12,7 +10,7 @@ export class ComplianceEngine {
       user,
       verified: score > 70,
       score,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
     this.kycRecords.push(record);
@@ -21,7 +19,6 @@ export class ComplianceEngine {
   }
 
   static calculateIdentityScore(user: any) {
-
     let score = 50;
 
     if (user.email?.includes("@")) score += 10;
@@ -33,7 +30,6 @@ export class ComplianceEngine {
   }
 
   static amlCheck(transaction: any) {
-
     let risk = 20;
 
     if (transaction.amount > 100000000) risk += 30;
@@ -47,7 +43,7 @@ export class ComplianceEngine {
       transaction,
       riskScore: risk,
       flagged,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
     this.amlFlags.push(result);
@@ -56,7 +52,6 @@ export class ComplianceEngine {
   }
 
   static complianceScore(user: any, transaction: any) {
-
     const kyc = this.calculateIdentityScore(user);
     const aml = this.amlCheck(transaction).riskScore;
 
@@ -66,15 +61,14 @@ export class ComplianceEngine {
       kycScore: kyc,
       amlRisk: aml,
       complianceScore: score,
-      approved: score > 50
+      approved: score > 50,
     };
   }
 
   static getReports() {
     return {
       kyc: this.kycRecords,
-      aml: this.amlFlags
+      aml: this.amlFlags,
     };
   }
 }
-

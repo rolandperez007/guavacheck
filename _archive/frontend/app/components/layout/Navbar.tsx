@@ -26,13 +26,7 @@ export default function Navbar() {
           gap: 14,
         }}
       >
-        <Image
-          src="/images/guava-logo.png"
-          alt="guavacheck"
-          width={46}
-          height={46}
-          priority
-        />
+        <Image src="/images/guava-logo.png" alt="guavacheck" width={46} height={46} priority />
 
         <div>
           <div

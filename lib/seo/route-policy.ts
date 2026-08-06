@@ -22,20 +22,10 @@ const privateRoutes = [
   "/internal",
 ];
 
-const noIndexRoutes = [
-  "/404",
-  "/500",
-  "/maintenance",
-  "/preview",
-  "/test",
-];
+const noIndexRoutes = ["/404", "/500", "/maintenance", "/preview", "/test"];
 
 function matchesRoute(pathname: string, routes: string[]) {
-  return routes.some(
-    (route) =>
-      pathname === route ||
-      pathname.startsWith(`${route}/`)
-  );
+  return routes.some((route) => pathname === route || pathname.startsWith(`${route}/`));
 }
 
 /**

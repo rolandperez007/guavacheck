@@ -32,9 +32,7 @@ class ExecutionContext:
     correlation_id: str = ""
     trace_id: str = ""
 
-    created_at: datetime = field(
-        default_factory=lambda: datetime.now(timezone.utc)
-    )
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
     configuration: dict[str, Any] = field(default_factory=dict)
 

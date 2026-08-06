@@ -5,7 +5,6 @@ from app.vision.repositories.base import BaseRepository
 
 
 class RenderRepository(BaseRepository):
-
     def __init__(self, db: Session):
         super().__init__(db)
 
@@ -21,8 +20,4 @@ class RenderRepository(BaseRepository):
         )
 
     def get(self, render_id: str):
-        return (
-            self.db.query(Render)
-            .filter(Render.id == render_id)
-            .first()
-        )
+        return self.db.query(Render).filter(Render.id == render_id).first()

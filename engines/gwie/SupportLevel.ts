@@ -1,27 +1,25 @@
 import { SupportLevel } from "./types";
 
-export const SupportNames: Record<SupportLevel,string>={
+export const SupportNames: Record<SupportLevel, string> = {
+  [SupportLevel.NONE]: "None",
 
-    [SupportLevel.NONE]:"None",
+  [SupportLevel.GLOBAL_AI]: "Global AI",
 
-    [SupportLevel.GLOBAL_AI]:"Global AI",
+  [SupportLevel.BASIC]: "Basic",
 
-    [SupportLevel.BASIC]:"Basic",
+  [SupportLevel.DEVELOPING]: "Developing",
 
-    [SupportLevel.DEVELOPING]:"Developing",
+  [SupportLevel.GROWING]: "Growing",
 
-    [SupportLevel.GROWING]:"Growing",
+  [SupportLevel.ADVANCED]: "Advanced",
 
-    [SupportLevel.ADVANCED]:"Advanced",
+  [SupportLevel.VERIFIED]: "Verified",
 
-    [SupportLevel.VERIFIED]:"Verified",
+  [SupportLevel.ENTERPRISE]: "Enterprise",
 
-    [SupportLevel.ENTERPRISE]:"Enterprise",
+  [SupportLevel.NATIONAL]: "National",
 
-    [SupportLevel.NATIONAL]:"National",
+  [SupportLevel.PREMIUM]: "Premium",
 
-    [SupportLevel.PREMIUM]:"Premium",
-
-    [SupportLevel.COMPLETE]:"Complete"
-
+  [SupportLevel.COMPLETE]: "Complete",
 };

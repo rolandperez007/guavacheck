@@ -5,31 +5,21 @@
  */
 
 export class RuntimeManager {
+  private running = false;
 
-    private running = false;
+  public async initialize(): Promise<void> {
+    this.running = false;
+  }
 
-    public async initialize(): Promise<void> {
+  public async start(): Promise<void> {
+    this.running = true;
+  }
 
-        this.running = false;
+  public async shutdown(): Promise<void> {
+    this.running = false;
+  }
 
-    }
-
-    public async start(): Promise<void> {
-
-        this.running = true;
-
-    }
-
-    public async shutdown(): Promise<void> {
-
-        this.running = false;
-
-    }
-
-    public isRunning(): boolean {
-
-        return this.running;
-
-    }
-
+  public isRunning(): boolean {
+    return this.running;
+  }
 }

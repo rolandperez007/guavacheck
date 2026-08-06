@@ -12,9 +12,6 @@ const router = Router();
  */
 
 // Electrical + Solar Engineering
-router.use(
-  "/electrical-solar",
-  electricalSolarRoutes
-);
+router.use("/electrical-solar", electricalSolarRoutes);
 
 export default router;

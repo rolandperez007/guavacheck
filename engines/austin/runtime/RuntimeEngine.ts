@@ -19,37 +19,27 @@ import { RuntimeRegistry } from "./RuntimeRegistry";
 import { RuntimeHealth } from "./RuntimeHealth";
 
 export class RuntimeEngine {
+  private readonly manager = new RuntimeManager();
 
-    private readonly manager = new RuntimeManager();
+  private readonly registry = new RuntimeRegistry();
 
-    private readonly registry = new RuntimeRegistry();
+  private readonly health = new RuntimeHealth();
 
-    private readonly health = new RuntimeHealth();
+  public async initialize(): Promise<void> {
+    await this.registry.initialize();
 
-    public async initialize(): Promise<void> {
+    await this.manager.initialize();
+  }
 
-        await this.registry.initialize();
+  public async start(): Promise<void> {
+    await this.manager.start();
+  }
 
-        await this.manager.initialize();
+  public async shutdown(): Promise<void> {
+    await this.manager.shutdown();
+  }
 
-    }
-
-    public async start(): Promise<void> {
-
-        await this.manager.start();
-
-    }
-
-    public async shutdown(): Promise<void> {
-
-        await this.manager.shutdown();
-
-    }
-
-    public getHealth(): RuntimeHealth {
-
-        return this.health;
-
-    }
-
+  public getHealth(): RuntimeHealth {
+    return this.health;
+  }
 }

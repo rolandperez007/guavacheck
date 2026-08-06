@@ -3,7 +3,6 @@ from app.decision.models.context import DecisionContext
 
 
 class DecisionService:
-
     def __init__(self):
 
         self.engine = DecisionEngine()

@@ -16,8 +16,8 @@ export default function ContactPage() {
       <h1>Contact</h1>
 
       <p>
-        Contact Guava Networks Limited regarding guavacheck,
-        partnerships, enterprise services and support.
+        Contact Guava Networks Limited regarding guavacheck, partnerships, enterprise services and
+        support.
       </p>
     </main>
   );

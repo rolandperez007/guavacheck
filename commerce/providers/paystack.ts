@@ -5,27 +5,19 @@
  */
 
 export class PaystackProvider {
+  async initializeTransaction(data: unknown) {
+    console.log("Paystack checkout");
 
-    async initializeTransaction(data: unknown) {
+    return {
+      success: true,
 
-        console.log("Paystack checkout");
+      provider: "paystack",
 
-        return {
+      transaction: null,
 
-            success: true,
-
-            provider: "paystack",
-
-            transaction: null,
-
-            data
-
-        };
-
-    }
-
+      data,
+    };
+  }
 }
 
-export const paystackProvider =
-
-new PaystackProvider();
+export const paystackProvider = new PaystackProvider();

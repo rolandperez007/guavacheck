@@ -11,7 +11,6 @@ from .search import property_search
 
 
 class PropertyEngine(BaseEngine):
-
     name = "property"
 
     version = "1.0.0"
@@ -27,23 +26,15 @@ class PropertyEngine(BaseEngine):
             service="engines.property",
         )
         action = request.get(
-
             "action",
-
             "search",
-
         )
 
         if action == "search":
-
             return property_search.search(request)
 
         return {
-
             "engine": self.name,
-
             "status": "completed",
-
             "message": "No matching action.",
-
         }

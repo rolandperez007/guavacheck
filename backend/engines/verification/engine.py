@@ -9,7 +9,6 @@ from backend.engines.base import BaseEngine
 
 
 class VerificationEngine(BaseEngine):
-
     name = "verification"
 
     version = "1.0.0"
@@ -25,13 +24,8 @@ class VerificationEngine(BaseEngine):
             service="engines.verification",
         )
         return {
-
             "engine": self.name,
-
             "status": "success",
-
             "message": "Verification Engine executed.",
-
             "request": request,
-
         }

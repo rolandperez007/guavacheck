@@ -1,11 +1,9 @@
-export interface DockItem{
+export interface DockItem {
+  id: string;
 
-    id:string;
+  pinned: boolean;
 
-    pinned:boolean;
+  running: boolean;
 
-    running:boolean;
-
-    badge:number;
-
+  badge: number;
 }

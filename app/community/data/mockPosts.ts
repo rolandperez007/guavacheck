@@ -19,8 +19,7 @@ export const posts: CommunityPost[] = [
     role: "Builder",
     category: "Construction",
     title: "Foundation costs increased unexpectedly",
-    excerpt:
-      "What strategies are helping reduce excavation costs without compromising quality?",
+    excerpt: "What strategies are helping reduce excavation costs without compromising quality?",
     replies: 17,
     likes: 91,
     time: "Today",
@@ -31,8 +30,7 @@ export const posts: CommunityPost[] = [
     role: "Engineer",
     category: "Materials",
     title: "Roofing sheets for coastal environments",
-    excerpt:
-      "Looking for corrosion-resistant roofing options for humid climates.",
+    excerpt: "Looking for corrosion-resistant roofing options for humid climates.",
     replies: 31,
     likes: 204,
     time: "Yesterday",

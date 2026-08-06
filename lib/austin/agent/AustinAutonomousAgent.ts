@@ -26,7 +26,7 @@ export class AustinAutonomousAgent {
         buyer: "AUTO_AGENT",
         seller: property.ownerId || "UNKNOWN",
         propertyId: property.id || "PROPERTY",
-        amount: property.price || 0
+        amount: property.price || 0,
       });
     }
 
@@ -57,8 +57,8 @@ export class AustinAutonomousAgent {
         action === "PROCEED"
           ? "High-value asset with strong closing probability"
           : action === "MONITOR"
-          ? "Potential opportunity but needs tracking"
-          : "Low ROI or weak deal signals",
+            ? "Potential opportunity but needs tracking"
+            : "Low ROI or weak deal signals",
     };
   }
 }

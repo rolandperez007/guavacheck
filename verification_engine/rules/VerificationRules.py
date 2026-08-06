@@ -7,7 +7,6 @@ Trust Score.
 
 
 class VerificationRules:
-
     TITLE_EXISTS = "Title Exists"
 
     OWNER_MATCH = "Owner Match"

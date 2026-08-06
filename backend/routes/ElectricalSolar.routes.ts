@@ -11,27 +11,15 @@ const router = Router();
  */
 
 // Health Check
-router.get(
-  "/health",
-  ElectricalSolarController.health
-);
+router.get("/health", ElectricalSolarController.health);
 
 // Validate Input
-router.post(
-  "/validate",
-  ElectricalSolarController.validateInput
-);
+router.post("/validate", ElectricalSolarController.validateInput);
 
 // Quick System Estimate
-router.post(
-  "/estimate",
-  ElectricalSolarController.estimate
-);
+router.post("/estimate", ElectricalSolarController.estimate);
 
 // Full Engineering Design & Report
-router.post(
-  "/design",
-  ElectricalSolarController.generateDesign
-);
+router.post("/design", ElectricalSolarController.generateDesign);
 
 export default router;

@@ -2,7 +2,6 @@ from collections import defaultdict
 
 
 class EventBus:
-
     """
     Enterprise Event Bus
 
@@ -32,5 +31,4 @@ class EventBus:
     ):
 
         for callback in self._listeners[event_name]:
-
             callback(payload)

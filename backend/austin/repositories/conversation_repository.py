@@ -20,7 +20,6 @@ from typing import Any
 
 
 class ConversationRepository:
-
     def __init__(self):
 
         self._sessions = defaultdict(list)
@@ -63,9 +62,7 @@ class ConversationRepository:
 
     def sessions(self) -> list[str]:
 
-        return sorted(
-            self._sessions.keys()
-        )
+        return sorted(self._sessions.keys())
 
 
 conversation_repository = ConversationRepository()

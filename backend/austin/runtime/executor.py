@@ -11,7 +11,6 @@ from .validator import validator
 
 
 class RuntimeExecutor:
-
     def execute(
         self,
         *,
@@ -29,9 +28,7 @@ class RuntimeExecutor:
         if hasattr(engine, "after_execute"):
             engine.after_execute(raw)
 
-        duration = (
-            time.perf_counter() - start
-        ) * 1000
+        duration = (time.perf_counter() - start) * 1000
 
         response = result_builder.build(
             engine=engine.name,

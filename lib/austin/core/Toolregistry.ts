@@ -8,6 +8,6 @@ export const ToolRegistry = {
   boq: BOQService,
   valuation: ValuationService,
   mortgage: MortgageService,
-  
+
   fraud: FraudService,
 };

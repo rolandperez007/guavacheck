@@ -6,11 +6,7 @@
  * power distribution, and system sizing.
  */
 
-import {
-  EngineeringInput,
-  EngineeringResult,
-  IEngineeringModule,
-} from "./EngineeringTypes";
+import { EngineeringInput, EngineeringResult, IEngineeringModule } from "./EngineeringTypes";
 
 import { EngineeringCalculator } from "./EngineeringCalculator";
 import { EngineeringValidator } from "./EngineeringValidator";
@@ -28,9 +24,10 @@ export interface ElectricalOutput {
   riskLevel: "low" | "medium" | "high";
 }
 
-export class ElectricalEngineering
-  implements IEngineeringModule<ElectricalInput, ElectricalOutput>
-{
+export class ElectricalEngineering implements IEngineeringModule<
+  ElectricalInput,
+  ElectricalOutput
+> {
   discipline = "electrical" as const;
 
   async validate(input: EngineeringInput<ElectricalInput>): Promise<void> {
@@ -42,27 +39,18 @@ export class ElectricalEngineering
   }
 
   async compute(
-    input: EngineeringInput<ElectricalInput>
+    input: EngineeringInput<ElectricalInput>,
   ): Promise<EngineeringResult<ElectricalOutput>> {
     const { areaSqm, applianceLoad, backupSystem = "solar" } = input.data;
 
     const estimatedLoad =
-      applianceLoad ??
-      EngineeringCalculator.estimateElectricalLoad(areaSqm) / 1000; // convert W → kW
+      applianceLoad ?? EngineeringCalculator.estimateElectricalLoad(areaSqm) / 1000; // convert W → kW
 
     const recommendedCapacity = estimatedLoad * 1.25;
 
-    const riskLevel =
-      estimatedLoad > 20
-        ? "high"
-        : estimatedLoad > 10
-        ? "medium"
-        : "low";
+    const riskLevel = estimatedLoad > 20 ? "high" : estimatedLoad > 10 ? "medium" : "low";
 
-    const backupSuggestion = this.getBackupAdvice(
-      backupSystem,
-      estimatedLoad
-    );
+    const backupSuggestion = this.getBackupAdvice(backupSystem, estimatedLoad);
 
     return {
       discipline: this.discipline,
@@ -81,10 +69,7 @@ export class ElectricalEngineering
         loadFactor: estimatedLoad / areaSqm,
       },
 
-      warnings:
-        riskLevel === "high"
-          ? ["High electrical load detected"]
-          : [],
+      warnings: riskLevel === "high" ? ["High electrical load detected"] : [],
 
       errors: [],
 
@@ -92,15 +77,10 @@ export class ElectricalEngineering
     };
   }
 
-  private getBackupAdvice(
-    system: ElectricalInput["backupSystem"],
-    load: number
-  ): string {
+  private getBackupAdvice(system: ElectricalInput["backupSystem"], load: number): string {
     switch (system) {
       case "solar":
-        return load > 15
-          ? "Hybrid solar system recommended"
-          : "Standard solar system sufficient";
+        return load > 15 ? "Hybrid solar system recommended" : "Standard solar system sufficient";
       case "generator":
         return "Diesel generator backup recommended";
       case "hybrid":

@@ -11,11 +11,9 @@
 import { Metric } from "./Metric";
 
 export interface MetricCollector {
+  collect(metric: Metric): Promise<void>;
 
-    collect(metric: Metric): Promise<void>;
+  flush(): Promise<void>;
 
-    flush(): Promise<void>;
-
-    clear(): Promise<void>;
-
+  clear(): Promise<void>;
 }

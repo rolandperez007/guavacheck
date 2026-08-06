@@ -8,7 +8,6 @@ from datetime import datetime
 
 @dataclass(slots=True)
 class ExecutionState:
-
     execution_id: str
 
     stage: str

@@ -3,7 +3,6 @@ from dataclasses import dataclass, field
 
 @dataclass
 class DecisionReport:
-
     score: float = 0.0
 
     confidence: float = 0.0

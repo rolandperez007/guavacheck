@@ -1,6 +1,5 @@
 from app.infra.redis_client import redis_client
 from irongate.distributed.state_store import state_store
-from irongate.core.decision_engine import RuleSignal
 
 
 def distributed_rate_limit_rule(context):
@@ -125,7 +124,6 @@ def payload_size_limit_rule(context, max_bytes: int = 1024 * 100):
 
 def rate_limit_rule(context, max_requests_per_minute: int = 100):
     """Simple in-memory rate limiting as a soft risk rule."""
-    import time
 
     if not hasattr(rate_limit_rule, "_req_log"):
         rate_limit_rule._req_log = {}
@@ -152,7 +150,6 @@ def rate_limit_rule(context, max_requests_per_minute: int = 100):
 
 def duplicate_request_rule(context, window_seconds: int = 60):
     """Detect repeated identical requests as a soft risk rule."""
-    import time
     import json
 
     if not hasattr(duplicate_request_rule, "_req_history"):

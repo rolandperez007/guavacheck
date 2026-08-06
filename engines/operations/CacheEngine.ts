@@ -1,21 +1,15 @@
 export interface CacheStats {
+  hits: number;
 
-    hits: number;
-
-    misses: number;
-
+  misses: number;
 }
 
 export class CacheEngine {
+  static hitRate(stats: CacheStats): number {
+    const total = stats.hits + stats.misses;
 
-    static hitRate(stats: CacheStats): number {
+    if (total === 0) return 0;
 
-        const total = stats.hits + stats.misses;
-
-        if (total === 0) return 0;
-
-        return (stats.hits / total) * 100;
-
-    }
-
+    return (stats.hits / total) * 100;
+  }
 }

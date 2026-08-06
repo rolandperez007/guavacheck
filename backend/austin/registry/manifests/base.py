@@ -54,9 +54,7 @@ class EngineManifest:
 
     keywords: list[str] = field(default_factory=list)
 
-    supported_languages: list[str] = field(
-        default_factory=lambda: ["*"]
-    )
+    supported_languages: list[str] = field(default_factory=lambda: ["*"])
 
     # ------------------------------------------------------------------
     # Dependencies
