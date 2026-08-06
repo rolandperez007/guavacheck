@@ -1,0 +1,18 @@
+name: West Africa
+
+code: WA
+
+continent: Africa
+
+countries:
+  - Nigeria
+  - Ghana
+  - Senegal
+  - Ivory Coast
+
+economy:
+  profile: emerging
+
+trade:
+  zones:
+    - ECOWAS
