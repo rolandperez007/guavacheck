@@ -1,53 +1,81 @@
 """
 Austin Cognitive Orchestrator
 
-Coordinates:
-- intent understanding
-- context management
-- world resolution
-- reasoning
+Coordinates the complete Austin
+runtime execution pipeline.
 """
 
 from app.austin.runtime.intent import IntentNormalizer
 from app.austin.runtime.context import SessionContext
 from app.austin.runtime.reasoning import ReasoningPlanner
 from app.austin.runtime.world import WorldResolver
+from app.austin.runtime.router import EngineRouter
+from app.austin.runtime.execution import EngineExecutor
 
 
 class AustinOrchestrator:
 
     def __init__(
         self,
-        context=None,
         registry=None,
+        context=None,
         graph=None,
     ):
-        self.normalizer = IntentNormalizer()
+
         self.context = context or SessionContext()
+
+        self.intent = IntentNormalizer()
+
         self.world = WorldResolver(
             registry=registry,
             graph=graph,
         )
-        self.planner = ReasoningPlanner()
+
+        self.router = EngineRouter(
+            registry,
+        )
+
+        self.executor = EngineExecutor()
+
+        self.reasoning = ReasoningPlanner()
 
     def process(
         self,
         message,
         location=None,
     ):
-        intent_result = self.normalizer.detect_intent(message)
 
-        world_result = None
+        intent = self.intent.detect_intent(
+            message
+        )
+
+        world = None
 
         if location:
-            world_result = self.world.resolve(location)
+            world = self.world.resolve(
+                location
+            )
 
-        plan = self.planner.plan(
-            intent_result["intent"],
+        plan = self.reasoning.plan(
+
+            intent["intent"],
+
             {
                 **self.context.snapshot(),
-                "world": world_result,
+                "world": world,
             },
+        )
+
+        engine = self.router.route(
+            intent["intent"]
+        )
+
+        execution = self.executor.execute(
+
+            engine,
+
+            message,
+
         )
 
         self.context.remember_action(
@@ -55,9 +83,17 @@ class AustinOrchestrator:
         )
 
         return {
-            "input": message,
-            "intent": intent_result,
-            "world": world_result,
+
+            "status": "success",
+
+            "intent": intent,
+
+            "world": world,
+
             "plan": plan,
+
+            "execution": execution,
+
             "context": self.context.snapshot(),
+
         }
