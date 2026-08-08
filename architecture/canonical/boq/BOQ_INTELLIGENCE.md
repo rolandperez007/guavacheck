@@ -1,72 +1,59 @@
-# Canonical BOQ Intelligence
+# BOQ Intelligence
 
 ## Purpose
 
-Define the canonical responsibility of the Bill of Quantities intelligence
-layer.
+BOQ Intelligence converts verified quantities and construction intelligence
+into an auditable Bill of Quantities.
 
-The BOQ layer converts measurable construction information into an auditable
-Bill of Quantities.
+The BOQ engine is an orchestration and commercial-structure layer.
 
----
-
-# BOQ Does Not Design the Building
-
-The BOQ engine does not independently determine:
-
-- architectural design
-- district character
-- room design
-- structural design
-- material preferences
-- interior style
-- construction methodology
-
-Those decisions originate upstream.
+It must not invent construction knowledge.
 
 ---
 
-# BOQ Input
+# Core Responsibility
 
-The BOQ engine consumes:
+BOQ Intelligence resolves:
 
-- project
-- site
-- district
-- building
-- levels
-- spaces
-- building elements
-- interior specifications
-- construction assemblies
-- quantity rules
-- materials
-- labour definitions
-- equipment definitions
-- regional pricing
-- waste rules
+Project
++
+Building Elements
++
+Assemblies
++
+Quantities
++
+Pricing
+→
+Auditable BOQ
 
 ---
 
-# BOQ Processing
+# BOQ Pipeline
 
-Building Element
-→ Assembly
-→ Component
-→ Quantity Rule
-→ Raw Quantity
-→ Waste Adjustment
-→ BOQ Quantity
-→ Unit Rate
-→ Line Amount
+Building Model
+→
+Elements
+→
+Assemblies
+→
+Quantity Intelligence
+→
+BOQ Line Candidates
+→
+Pricing Intelligence
+→
+BOQ Lines
+→
+Estimate
 
 ---
 
-# BOQ Line Item
+# BOQ Line Identity
 
-Every canonical BOQ line item should be capable of representing:
+Every BOQ line should contain:
 
-- id
+- boq_line_id
 - project_id
 - building_id
 - element_id
@@ -75,120 +62,256 @@ Every canonical BOQ line item should be capable of representing:
 - material_id
 - code
 - description
-- category
 - specification
 - quantity
+- unit
 - waste_factor
 - adjusted_quantity
-- unit
 - unit_rate
-- currency
 - amount
+- currency
 - region
-- source
+- pricing_source
+- quantity_source
 - confidence
 - version
-- created_at
-- updated_at
+
+---
+
+# BOQ Sections
+
+A BOQ may be organized into:
+
+- preliminaries
+- site preparation
+- earthworks
+- foundations
+- structural frame
+- floors
+- walls
+- roofs
+- doors
+- windows
+- finishes
+- ceilings
+- painting
+- plumbing
+- electrical
+- HVAC
+- fire protection
+- security
+- external works
+- landscaping
+- specialist works
+
+The section structure must remain extensible.
+
+---
+
+# BOQ Generation
+
+BOQ Intelligence consumes:
+
+- building elements
+- selected assemblies
+- calculated quantities
+- applicable specifications
+- pricing results
+
+It should not independently calculate construction knowledge that belongs
+to the upstream domains.
+
+---
+
+# Pricing Boundary
+
+BOQ Intelligence requests pricing from Pricing Intelligence.
+
+Pricing Intelligence determines:
+
+- material rate
+- labour rate
+- equipment rate
+- contractor rate
+- regional adjustment
+- market adjustment
+- currency
+- taxes
+- escalation
+
+BOQ Intelligence consumes those results.
+
+---
+
+# Amount Calculation
+
+A BOQ amount is derived from:
+
+Adjusted Quantity
+×
+Applicable Unit Rate
+
+The source quantity and source price must remain independently auditable.
+
+---
+
+# Currency
+
+Each BOQ must define:
+
+- project currency
+- pricing currency
+- exchange rate
+- exchange-rate source
+- exchange-rate timestamp
+- conversion version
+
+Currency conversion must not overwrite the original pricing source.
+
+---
+
+# Confidence
+
+BOQ lines should carry confidence information.
+
+Confidence may reflect:
+
+- geometry confidence
+- assembly confidence
+- quantity confidence
+- pricing confidence
+- source confidence
+
+The final BOQ confidence must remain explainable.
 
 ---
 
 # Provenance
 
-Every generated quantity should be traceable.
+Every BOQ line must be traceable to:
 
-Example:
-
-Room
-→ Floor Finish
-→ Assembly
-→ Tile Component
-→ Area Quantity
-→ Waste Factor
-→ BOQ Line
-
-Austin must be able to explain where the number came from.
+District Context
+→
+Building Element
+→
+Interior Specification
+→
+Assembly
+→
+Component
+→
+Quantity Rule
+→
+Calculated Quantity
+→
+Pricing Source
+→
+Unit Rate
+→
+BOQ Line
 
 ---
 
 # Versioning
 
-BOQs are versioned.
+BOQs must support versions.
 
-A change to:
+A new version may result from:
 
-- building geometry
-- room dimensions
-- interior specification
-- assembly
-- quantity rule
-- material
-- waste factor
-- regional rate
+- geometry changes
+- design changes
+- assembly changes
+- quantity changes
+- pricing changes
+- district-rule changes
+- currency changes
+- user edits
 
-must be capable of producing a new BOQ version.
-
-Previous versions remain auditable.
+Previous versions must remain identifiable.
 
 ---
 
-# District Awareness
+# User Editing
 
-The BOQ engine may receive district-derived intelligence.
+Users may edit BOQ values where permitted.
 
-Example:
+Editable values must preserve:
+
+- original value
+- edited value
+- editor
+- timestamp
+- reason
+- version
+
+AI-generated values must never silently become indistinguishable from
+human-entered values.
+
+---
+
+# Audit Trail
+
+The BOQ must be capable of answering:
+
+- Why does this line exist?
+- Which building element created it?
+- Which assembly created it?
+- How was the quantity calculated?
+- Which waste rule was applied?
+- Where did the unit rate come from?
+- Which currency was used?
+- Which version generated the line?
+- Was the value generated or manually edited?
+
+---
+
+# Canonical Ownership
+
+BOQ Intelligence owns:
+
+- BOQ structure
+- line-item orchestration
+- BOQ grouping
+- BOQ versioning
+- BOQ editing
+- BOQ audit trail
+- BOQ export representation
+
+It does not own:
+
+- district rules
+- room design
+- assembly definitions
+- quantity algorithms
+- market price databases
+
+---
+
+# Critical Principle
+
+The BOQ engine must never become a hidden construction knowledge database.
+
+Construction knowledge belongs upstream.
+
+BOQ Intelligence consumes that knowledge and makes it commercially
+measurable and auditable.
+
+---
+
+# Canonical Flow
 
 District
-→ Luxury Finish Profile
-→ Premium Flooring Assembly
-→ Tile Quantity
-→ BOQ
-
-The BOQ engine itself should not contain hard-coded district-specific design
-logic.
-
----
-
-# Interior Awareness
-
-Interior specifications resolve into assemblies.
-
-Example:
-
-Master Bedroom
-→ Premium Floor Finish
-→ Porcelain Tile Assembly
-→ Floor Area × Tile Quantity Rule
-→ BOQ
-
----
-
-# Structural Awareness
-
-Structural elements resolve through assemblies.
-
-Example:
-
-Column
-→ Reinforced Concrete Column Assembly
-→ Concrete
-→ Reinforcement
-→ Formwork
-→ Labour
-→ Equipment
-→ BOQ
-
----
-
-# Non-Goals
-
-The BOQ engine should not become:
-
-- a CAD engine
-- an architectural design engine
-- an interior style engine
-- a district database
-- a pricing database
-- a rendering engine
-
-It is the measurable commercial construction layer connecting those systems.
++
+Building
++
+Interior
++
+Assembly
++
+Quantity
++
+Pricing
+↓
+BOQ
+↓
+Estimate
