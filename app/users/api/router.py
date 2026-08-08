@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.database.session import get_db
-from app.security.authentication import get_current_user
+from app.security.user_context import get_authenticated_user
 from app.users.models.user import User
 
 
@@ -15,7 +15,7 @@ router = APIRouter(
 
 @router.get("/me")
 def get_me(
-    current_user_id: str = Depends(get_current_user),
+    current_user: User = Depends(get_authenticated_user),
     db: Session = Depends(get_db),
 ):
     user = (
