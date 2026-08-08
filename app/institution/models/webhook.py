@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import Boolean, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
@@ -15,32 +13,76 @@ class Webhook(
     TimestampMixin,
     Base,
 ):
+    """
+    Webhook endpoint registered by an Institution.
+
+    Webhooks allow guavacheck to notify an institution about
+    platform events such as product activity, subscriptions,
+    verification changes, and other integration events.
+    """
+
     __tablename__ = "institution_webhooks"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id"),
+    # ==========================================================
+    # Ownership
+    # ==========================================================
+
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
+        index=True,
     )
 
-    event = mapped_column(
+    # ==========================================================
+    # Webhook Configuration
+    # ==========================================================
+
+    event: Mapped[str] = mapped_column(
         String(100),
         nullable=False,
+        index=True,
     )
 
-    endpoint = mapped_column(
+    endpoint: Mapped[str] = mapped_column(
         String(500),
         nullable=False,
     )
 
-    secret = mapped_column(
+    secret: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
     )
 
-    active = mapped_column(
+    active: Mapped[bool] = mapped_column(
         Boolean,
+        nullable=False,
         default=True,
     )
 
-    institution = relationship("Institution")
+    # ==========================================================
+    # Relationships
+    # ==========================================================
+
+    institution: Mapped["Institution"] = relationship(
+        "Institution",
+        back_populates="webhooks",
+    )
+
+    # ==========================================================
+    # Representation
+    # ==========================================================
+
+    def __repr__(self) -> str:
+        return (
+            f"<Webhook("
+            f"id={self.id}, "
+            f"institution={self.institution_id}, "
+            f"event='{self.event}', "
+            f"active={self.active}"
+            f")>"
+        )
+

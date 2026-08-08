@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from uuid import UUID
+from datetime import datetime
 
 from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
@@ -15,47 +15,65 @@ class Compliance(
     TimestampMixin,
     Base,
 ):
+    """
+    Compliance assessment and monitoring record
+    associated with an Institution.
+    """
+
     __tablename__ = "institution_compliance"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey("institutions.id"),
         nullable=False,
+        index=True,
     )
 
-    framework = mapped_column(
+    framework: Mapped[str] = mapped_column(
         String(150),
         nullable=False,
     )
 
-    status = mapped_column(
+    status: Mapped[str] = mapped_column(
         String(50),
         default="pending",
+        nullable=False,
     )
 
-    score = mapped_column(
+    score: Mapped[int] = mapped_column(
         Integer,
         default=0,
+        nullable=False,
     )
 
-    findings = mapped_column(
+    findings: Mapped[str | None] = mapped_column(
         Text,
         nullable=True,
     )
 
-    last_reviewed = mapped_column(
+    last_reviewed: Mapped[datetime | None] = mapped_column(
         DateTime,
         nullable=True,
     )
 
-    next_review = mapped_column(
+    next_review: Mapped[datetime | None] = mapped_column(
         DateTime,
         nullable=True,
     )
 
-    compliant = mapped_column(
+    compliant: Mapped[bool] = mapped_column(
         Boolean,
         default=False,
+        nullable=False,
     )
 
     institution = relationship("Institution")
+
+    def __repr__(self) -> str:
+        return (
+            f"<Compliance("
+            f"institution={self.institution_id}, "
+            f"framework='{self.framework}', "
+            f"status='{self.status}'"
+            f")>"
+        )

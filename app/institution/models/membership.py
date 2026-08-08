@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from uuid import UUID
 
 from sqlalchemy import Boolean, DateTime, Enum, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import (
     InvitationStatus,
@@ -29,34 +28,35 @@ class Membership(
 
     __tablename__ = "institution_memberships"
 
-    # ---------------------------------------------------------
-    # Relationships
-    # ---------------------------------------------------------
-
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id", ondelete="CASCADE"),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
         index=True,
     )
 
-    branch_id: Mapped[UUID | None] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institution_branches.id", ondelete="SET NULL"),
+    branch_id: Mapped[str | None] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institution_branches.id",
+            ondelete="SET NULL",
+        ),
         nullable=True,
         index=True,
     )
 
-    user_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("users.id", ondelete="CASCADE"),
+    user_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "users.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
         index=True,
     )
-
-    # ---------------------------------------------------------
-    # Role
-    # ---------------------------------------------------------
 
     role: Mapped[MembershipRole] = mapped_column(
         Enum(MembershipRole),
@@ -74,19 +74,17 @@ class Membership(
         nullable=True,
     )
 
-    # ---------------------------------------------------------
-    # Invitation
-    # ---------------------------------------------------------
-
     invitation_status: Mapped[InvitationStatus] = mapped_column(
         Enum(InvitationStatus),
         default=InvitationStatus.PENDING,
         nullable=False,
     )
 
-    invited_by: Mapped[UUID | None] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("users.id"),
+    invited_by: Mapped[str | None] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "users.id",
+        ),
         nullable=True,
     )
 
@@ -100,10 +98,6 @@ class Membership(
         nullable=True,
     )
 
-    # ---------------------------------------------------------
-    # Access
-    # ---------------------------------------------------------
-
     is_primary_contact: Mapped[bool] = mapped_column(
         Boolean,
         default=False,
@@ -116,13 +110,9 @@ class Membership(
         nullable=False,
     )
 
-    # ---------------------------------------------------------
-    # Relationships
-    # ---------------------------------------------------------
-
     institution = relationship(
         "Institution",
-        back_populates="members",
+        back_populates="memberships",
     )
 
     branch = relationship(
@@ -138,6 +128,12 @@ class Membership(
     inviter = relationship(
         "User",
         foreign_keys=[invited_by],
+    )
+
+    teams = relationship(
+        "TeamMember",
+        back_populates="membership",
+        cascade="all, delete-orphan",
     )
 
     def __repr__(self) -> str:

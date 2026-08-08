@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from uuid import UUID
 
 from sqlalchemy import DateTime, Enum, ForeignKey, Numeric, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import OfferStatus
 
@@ -23,17 +22,37 @@ class Offer(
 
     __tablename__ = "institution_offers"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id"),
+    # ---------------------------------------------------------
+    # Ownership
+    # ---------------------------------------------------------
+
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
+        index=True,
     )
 
-    product_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institution_products.id"),
+    # ---------------------------------------------------------
+    # Product
+    # ---------------------------------------------------------
+
+    product_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institution_products.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
+        index=True,
     )
+
+    # ---------------------------------------------------------
+    # Offer
+    # ---------------------------------------------------------
 
     title: Mapped[str] = mapped_column(
         String(255),
@@ -52,18 +71,28 @@ class Offer(
 
     valid_from: Mapped[datetime] = mapped_column(
         DateTime,
+        nullable=False,
     )
 
     valid_until: Mapped[datetime | None] = mapped_column(
         DateTime,
+        nullable=True,
     )
 
     status: Mapped[OfferStatus] = mapped_column(
         Enum(OfferStatus),
         default=OfferStatus.DRAFT,
+        nullable=False,
     )
 
-    institution = relationship("Institution")
+    # ---------------------------------------------------------
+    # Relationships
+    # ---------------------------------------------------------
+
+    institution = relationship(
+        "Institution",
+        back_populates="offers",
+    )
 
     product = relationship(
         "Product",

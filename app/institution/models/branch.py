@@ -1,12 +1,11 @@
+
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import Enum, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import BranchStatus
 
@@ -26,8 +25,8 @@ class Branch(
     # Relationship
     # ------------------------------------------------------------------
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey("institutions.id", ondelete="CASCADE"),
         nullable=False,
         index=True,

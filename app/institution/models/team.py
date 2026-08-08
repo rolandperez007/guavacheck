@@ -1,48 +1,70 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import ForeignKey, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
-class KYCDocument(
+class Team(
     UUIDMixin,
     TimestampMixin,
     Base,
 ):
     """
-    KYC or compliance document submitted by an Institution.
+    Team within an Institution.
+
+    Teams provide an operational grouping layer for institution
+    members and can represent departments, business units, project
+    teams, regional teams, or other internal groups.
     """
 
-    __tablename__ = "institution_kyc_documents"
+    __tablename__ = "institution_teams"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id"),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
+        nullable=False,
+        index=True,
+    )
+
+    name: Mapped[str] = mapped_column(
+        String(150),
         nullable=False,
     )
 
-    document_type: Mapped[str] = mapped_column(
-        String(100),
-        nullable=False,
+    code: Mapped[str | None] = mapped_column(
+        String(50),
+        nullable=True,
+        index=True,
     )
 
-    file_url: Mapped[str] = mapped_column(
-        String(500),
-        nullable=False,
-    )
-
-    checksum: Mapped[str | None] = mapped_column(
-        String(128),
-    )
-
-    notes: Mapped[str | None] = mapped_column(
+    description: Mapped[str | None] = mapped_column(
         Text,
+        nullable=True,
     )
 
-    institution = relationship("Institution")
+    institution = relationship(
+        "Institution",
+        back_populates="teams",
+    )
+
+    members = relationship(
+        "TeamMember",
+        back_populates="team",
+        cascade="all, delete-orphan",
+    )
+
+    def __repr__(self) -> str:
+        return (
+            f"<Team("
+            f"id={self.id}, "
+            f"institution={self.institution_id}, "
+            f"name='{self.name}'"
+            f")>"
+        )

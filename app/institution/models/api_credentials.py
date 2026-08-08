@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from uuid import UUID
 
 from sqlalchemy import Boolean, DateTime, Enum, ForeignKey, Integer, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import API_KEY_LENGTH, UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import ApiKeyStatus
 
@@ -30,8 +29,8 @@ class ApiCredential(
     # Ownership
     # ---------------------------------------------------------
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey("institutions.id", ondelete="CASCADE"),
         nullable=False,
         index=True,
@@ -56,7 +55,7 @@ class ApiCredential(
     # ---------------------------------------------------------
 
     api_key: Mapped[str] = mapped_column(
-        String(128),
+        String(API_KEY_LENGTH),
         unique=True,
         nullable=False,
         index=True,
@@ -139,6 +138,7 @@ class ApiCredential(
 
     institution = relationship(
         "Institution",
+        back_populates="api_credentials",
     )
 
     def __repr__(self) -> str:
@@ -149,3 +149,5 @@ class ApiCredential(
             f"status='{self.status.value}'"
             f")>"
         )
+
+

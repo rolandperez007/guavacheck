@@ -195,13 +195,6 @@ class Institution(
         cascade="all, delete-orphan",
     )
 
-    offers: Mapped[list["Offer"]] = relationship(
-        "Offer",
-        back_populates="institution",
-        cascade="all, delete-orphan",
-    )
-
-
     services: Mapped[list["Service"]] = relationship(
         "Service",
         back_populates="institution",

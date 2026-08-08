@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import Boolean, Enum, ForeignKey, Numeric, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -30,8 +27,12 @@ class Product(
 
     __tablename__ = "institution_products"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    # ---------------------------------------------------------
+    # Ownership
+    # ---------------------------------------------------------
+
+    institution_id: Mapped[str] = mapped_column(
+        String(36),
         ForeignKey(
             "institutions.id",
             ondelete="CASCADE",
@@ -39,6 +40,10 @@ class Product(
         nullable=False,
         index=True,
     )
+
+    # ---------------------------------------------------------
+    # Identity
+    # ---------------------------------------------------------
 
     name: Mapped[str] = mapped_column(
         String(255),
@@ -56,9 +61,14 @@ class Product(
         nullable=True,
     )
 
+    # ---------------------------------------------------------
+    # Pricing
+    # ---------------------------------------------------------
+
     currency: Mapped[str] = mapped_column(
         String(3),
         default="USD",
+        nullable=False,
     )
 
     base_price: Mapped[float | None] = mapped_column(
@@ -66,16 +76,31 @@ class Product(
         nullable=True,
     )
 
+    # ---------------------------------------------------------
+    # Lifecycle
+    # ---------------------------------------------------------
+
     active: Mapped[bool] = mapped_column(
         Boolean,
         default=True,
+        nullable=False,
     )
 
     status: Mapped[OfferStatus] = mapped_column(
         Enum(OfferStatus),
         default=OfferStatus.DRAFT,
+        nullable=False,
     )
 
+    # ---------------------------------------------------------
+    # Relationships
+    # ---------------------------------------------------------
+    
+    pricing_plans = relationship(
+        "PricingPlan",
+        back_populates="product",
+        cascade="all, delete-orphan",
+    )
     institution = relationship(
         "Institution",
     )
@@ -86,5 +111,19 @@ class Product(
         cascade="all, delete-orphan",
     )
 
+    usage_events = relationship(
+        "UsageEvent",
+        back_populates="product",
+        cascade="all, delete-orphan",
+    )
+    # ---------------------------------------------------------
+    # Representation
+    # ---------------------------------------------------------
+
     def __repr__(self) -> str:
-        return f"<Product(id={self.id}, name='{self.name}')>"
+        return (
+            f"<Product("
+            f"id={self.id}, "
+            f"name='{self.name}'"
+            f")>"
+        )

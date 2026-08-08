@@ -1,13 +1,13 @@
+
 from __future__ import annotations
 
 from datetime import datetime
-from uuid import UUID
 
 from sqlalchemy import Boolean, DateTime, Enum, ForeignKey, Integer, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import SubscriptionTier
 
@@ -26,12 +26,15 @@ class Subscription(
     __tablename__ = "institution_subscriptions"
 
     # ---------------------------------------------------------
-    # Relationships
+    # Ownership
     # ---------------------------------------------------------
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id", ondelete="CASCADE"),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
         index=True,
     )
@@ -128,6 +131,16 @@ class Subscription(
         back_populates="subscriptions",
     )
 
+    usage_records = relationship(
+        "SubscriptionUsage",
+        back_populates="subscription",
+        cascade="all, delete-orphan",
+    )
+
+    # ---------------------------------------------------------
+    # Representation
+    # ---------------------------------------------------------
+
     def __repr__(self) -> str:
         return (
             f"<Subscription("
@@ -136,3 +149,5 @@ class Subscription(
             f"active={self.active}"
             f")>"
         )
+
+

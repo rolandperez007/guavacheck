@@ -1,16 +1,20 @@
+"""
+Create all database tables.
+
+This module uses the canonical SQLAlchemy Base and registry.
+"""
+
 from app.db.base import Base
 from app.db.session import engine
 
-# Core
-import app.passport.models.passport  # noqa: F401
-import app.twin.models  # noqa: F401
+# Importing the canonical registry registers all ORM models.
+import app.db.registry  # noqa: F401
 
-# Vision
-import app.vision.models  # noqa: F401
 
-# Institution
-import app.institution.models  # noqa: F401
+def create_tables() -> None:
+    Base.metadata.create_all(bind=engine)
+    print("Database tables created successfully.")
 
-Base.metadata.create_all(bind=engine)
 
-print("Database tables created successfully.")
+if __name__ == "__main__":
+    create_tables()

@@ -9,6 +9,9 @@ from app.db.constants import UUID_LENGTH
 class UUIDMixin:
     """
     Adds a UUID primary key to a model.
+
+    GuavaCheck stores UUID identifiers as 36-character
+    strings rather than PostgreSQL native UUID values.
     """
 
     id: Mapped[str] = mapped_column(

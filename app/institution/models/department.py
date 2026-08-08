@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import ForeignKey, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
@@ -15,14 +13,29 @@ class Department(
     TimestampMixin,
     Base,
 ):
+    """
+    Organizational department belonging to an Institution.
+    """
+
     __tablename__ = "institution_departments"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id", ondelete="CASCADE"),
+    # ---------------------------------------------------------
+    # Ownership
+    # ---------------------------------------------------------
+
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
         index=True,
     )
+
+    # ---------------------------------------------------------
+    # Identity
+    # ---------------------------------------------------------
 
     name: Mapped[str] = mapped_column(
         String(150),
@@ -39,4 +52,11 @@ class Department(
         nullable=True,
     )
 
-    institution = relationship("Institution")
+    # ---------------------------------------------------------
+    # Relationships
+    # ---------------------------------------------------------
+
+    institution = relationship(
+        "Institution",
+        back_populates="departments",
+    )

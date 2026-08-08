@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
-from sqlalchemy import ForeignKey
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
+from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin
 
 
@@ -28,8 +26,8 @@ class ProductService(
 
     __tablename__ = "institution_product_services"
 
-    product_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    product_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey(
             "institution_products.id",
             ondelete="CASCADE",
@@ -37,8 +35,8 @@ class ProductService(
         primary_key=True,
     )
 
-    service_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    service_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey(
             "institution_services.id",
             ondelete="CASCADE",

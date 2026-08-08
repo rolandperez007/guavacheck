@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from uuid import UUID
 
 from sqlalchemy import DateTime, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
@@ -16,13 +15,28 @@ class Invitation(
     TimestampMixin,
     Base,
 ):
+    """
+    Invitation issued to a prospective Institution member.
+    """
+
     __tablename__ = "institution_invitations"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
-        ForeignKey("institutions.id", ondelete="CASCADE"),
+    # ---------------------------------------------------------
+    # Ownership
+    # ---------------------------------------------------------
+
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
+        ForeignKey(
+            "institutions.id",
+            ondelete="CASCADE",
+        ),
         nullable=False,
     )
+
+    # ---------------------------------------------------------
+    # Invitation
+    # ---------------------------------------------------------
 
     email: Mapped[str] = mapped_column(
         String(255),
@@ -34,8 +48,8 @@ class Invitation(
         nullable=False,
     )
 
-    invited_by: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    invited_by: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         nullable=False,
     )
 
@@ -44,4 +58,11 @@ class Invitation(
         nullable=False,
     )
 
-    institution = relationship("Institution")
+    # ---------------------------------------------------------
+    # Relationships
+    # ---------------------------------------------------------
+
+    institution = relationship(
+        "Institution",
+        back_populates="invitations",
+    )

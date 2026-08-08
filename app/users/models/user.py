@@ -1,10 +1,10 @@
 from datetime import datetime
 from uuid import uuid4
-
+from app.identity.models.identity import Identity
 from sqlalchemy import Boolean, DateTime, ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.database.base import Base
+from app.db.base import Base
 
 
 class User(Base):
@@ -101,7 +101,7 @@ class User(Base):
     )
 
     identity = relationship(
-        "Identity",
+        Identity,
         back_populates="users",
         foreign_keys=[identity_id],
         lazy="joined",

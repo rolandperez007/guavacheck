@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import Boolean, ForeignKey, String, Text
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 
 
@@ -15,10 +13,14 @@ class Role(
     TimestampMixin,
     Base,
 ):
+    """
+    Institution-specific role definition.
+    """
+
     __tablename__ = "institution_roles"
 
-    institution_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    institution_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey("institutions.id", ondelete="CASCADE"),
         nullable=False,
     )
@@ -36,6 +38,18 @@ class Role(
     system_role: Mapped[bool] = mapped_column(
         Boolean,
         default=False,
+        nullable=False,
     )
 
-    institution = relationship("Institution")
+    institution = relationship(
+        "Institution",
+        back_populates="roles",
+    )
+
+    def __repr__(self) -> str:
+        return (
+            f"<Role("
+            f"name='{self.name}', "
+            f"institution={self.institution_id}"
+            f")>"
+        )

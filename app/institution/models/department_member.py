@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
-from sqlalchemy import ForeignKey
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
+from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin
 
 
@@ -20,8 +18,8 @@ class DepartmentMember(
 
     __tablename__ = "institution_department_members"
 
-    department_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    department_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey(
             "institution_departments.id",
             ondelete="CASCADE",
@@ -29,8 +27,8 @@ class DepartmentMember(
         primary_key=True,
     )
 
-    membership_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    membership_id: Mapped[str] = mapped_column(
+        String(UUID_LENGTH),
         ForeignKey(
             "institution_memberships.id",
             ondelete="CASCADE",

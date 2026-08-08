@@ -12,6 +12,19 @@ class Permission(
     TimestampMixin,
     Base,
 ):
+    """
+    Global permission definition.
+
+    Permissions are intentionally not owned by an institution.
+    They represent reusable capabilities such as:
+
+        institution.read
+        institution.manage
+        members.invite
+        products.create
+        offers.approve
+    """
+
     __tablename__ = "institution_permissions"
 
     name: Mapped[str] = mapped_column(
@@ -34,3 +47,12 @@ class Permission(
         Text,
         nullable=True,
     )
+
+    def __repr__(self) -> str:
+        return (
+            f"<Permission("
+            f"name='{self.name}', "
+            f"resource='{self.resource}', "
+            f"action='{self.action}'"
+            f")>"
+        )

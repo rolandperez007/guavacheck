@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-from uuid import UUID
-
 from sqlalchemy import ForeignKey
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
+from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin
 
 
@@ -15,13 +13,12 @@ class TeamMember(
     Base,
 ):
     """
-    Users belonging to Teams.
+    Associates an institution membership with a team.
     """
 
     __tablename__ = "institution_team_members"
 
-    team_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    team_id: Mapped[str] = mapped_column(
         ForeignKey(
             "institution_teams.id",
             ondelete="CASCADE",
@@ -29,11 +26,20 @@ class TeamMember(
         primary_key=True,
     )
 
-    membership_id: Mapped[UUID] = mapped_column(
-        PG_UUID(as_uuid=True),
+    membership_id: Mapped[str] = mapped_column(
         ForeignKey(
             "institution_memberships.id",
             ondelete="CASCADE",
         ),
         primary_key=True,
+    )
+
+    team = relationship(
+        "Team",
+        back_populates="members",
+    )
+
+    membership = relationship(
+        "Membership",
+        back_populates="teams",
     )

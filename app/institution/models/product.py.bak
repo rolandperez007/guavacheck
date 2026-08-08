@@ -1,31 +1,41 @@
 from __future__ import annotations
 
+from uuid import UUID
+
 from sqlalchemy import Boolean, Enum, ForeignKey, Numeric, String, Text
+from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
-from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import OfferStatus
 
 
-class Service(
+class Product(
     UUIDMixin,
     TimestampMixin,
     Base,
 ):
     """
-    Professional service provided by an Institution.
+    Product offered by an Institution.
+
+    Examples:
+
+    - Mortgage
+    - Home Insurance
+    - Land Banking
+    - Property Development
+    - Investment Fund
     """
 
-    __tablename__ = "institution_services"
+    __tablename__ = "institution_products"
 
     # ---------------------------------------------------------
     # Ownership
     # ---------------------------------------------------------
 
-    institution_id: Mapped[str] = mapped_column(
-        String(UUID_LENGTH),
+    institution_id: Mapped[UUID] = mapped_column(
+        PG_UUID(as_uuid=True),
         ForeignKey(
             "institutions.id",
             ondelete="CASCADE",
@@ -58,15 +68,15 @@ class Service(
     # Pricing
     # ---------------------------------------------------------
 
-    fee: Mapped[float | None] = mapped_column(
-        Numeric(18, 2),
-        nullable=True,
-    )
-
     currency: Mapped[str] = mapped_column(
         String(3),
         default="USD",
         nullable=False,
+    )
+
+    base_price: Mapped[float | None] = mapped_column(
+        Numeric(18, 2),
+        nullable=True,
     )
 
     # ---------------------------------------------------------
@@ -91,7 +101,18 @@ class Service(
 
     institution = relationship(
         "Institution",
-        back_populates="services",
+    )
+
+    offers = relationship(
+        "Offer",
+        back_populates="product",
+        cascade="all, delete-orphan",
+    )
+
+    usage_events = relationship(
+        "UsageEvent",
+        back_populates="product",
+        cascade="all, delete-orphan",
     )
 
     # ---------------------------------------------------------
@@ -100,7 +121,7 @@ class Service(
 
     def __repr__(self) -> str:
         return (
-            f"<Service("
+            f"<Product("
             f"id={self.id}, "
             f"name='{self.name}'"
             f")>"

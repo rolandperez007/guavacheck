@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 from datetime import datetime
@@ -9,7 +8,6 @@ from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
-from app.db.constants import UUID_LENGTH
 from app.db.mixins import TimestampMixin, UUIDMixin
 from app.institution.enums import VerificationStatus
 
@@ -22,29 +20,26 @@ class InstitutionVerification(
     """
     Verification lifecycle for an Institution.
 
-    Every verification event is stored as its own record,
-    providing a complete verification and audit history.
+    Every verification event is stored as its own
+    record, providing a complete audit history.
     """
 
     __tablename__ = "institution_verifications"
 
-    # ==========================================================
+    # ---------------------------------------------------------
     # Ownership
-    # ==========================================================
+    # ---------------------------------------------------------
 
     institution_id: Mapped[str] = mapped_column(
         String(UUID_LENGTH),
-        ForeignKey(
-            "institutions.id",
-            ondelete="CASCADE",
-        ),
+        ForeignKey("institutions.id", ondelete="CASCADE"),
         nullable=False,
         index=True,
     )
 
-    # ==========================================================
+    # ---------------------------------------------------------
     # Verification
-    # ==========================================================
+    # ---------------------------------------------------------
 
     verification_type: Mapped[str] = mapped_column(
         String(100),
@@ -55,7 +50,6 @@ class InstitutionVerification(
         Enum(VerificationStatus),
         default=VerificationStatus.PENDING,
         nullable=False,
-        index=True,
     )
 
     confidence_score: Mapped[int | None] = mapped_column(
@@ -66,9 +60,9 @@ class InstitutionVerification(
         nullable=True,
     )
 
-    # ==========================================================
+    # ---------------------------------------------------------
     # Documents
-    # ==========================================================
+    # ---------------------------------------------------------
 
     submitted_document: Mapped[str | None] = mapped_column(
         String(500),
@@ -80,9 +74,9 @@ class InstitutionVerification(
         nullable=True,
     )
 
-    # ==========================================================
+    # ---------------------------------------------------------
     # Review
-    # ==========================================================
+    # ---------------------------------------------------------
 
     reviewer_id: Mapped[UUID | None] = mapped_column(
         PG_UUID(as_uuid=True),
@@ -99,9 +93,9 @@ class InstitutionVerification(
         nullable=True,
     )
 
-    # ==========================================================
-    # Verification Period
-    # ==========================================================
+    # ---------------------------------------------------------
+    # Expiry
+    # ---------------------------------------------------------
 
     verified_at: Mapped[datetime | None] = mapped_column(
         DateTime,
@@ -113,18 +107,13 @@ class InstitutionVerification(
         nullable=True,
     )
 
-    # ==========================================================
+    # ---------------------------------------------------------
     # Relationships
-    # ==========================================================
+    # ---------------------------------------------------------
 
-    institution: Mapped["Institution"] = relationship(
+    institution = relationship(
         "Institution",
-        back_populates="verifications",
     )
-
-    # ==========================================================
-    # Representation
-    # ==========================================================
 
     def __repr__(self) -> str:
         return (
