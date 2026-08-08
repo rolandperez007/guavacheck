@@ -1,0 +1,68 @@
+from fastapi import APIRouter, Depends
+
+from sqlalchemy.orm import Session
+
+from app.database.session import get_db
+
+from app.security.authentication import get_current_user
+
+from app.users.schemas.register import RegisterRequest
+
+from app.users.services.registration_service import RegistrationService
+
+
+router = APIRouter(
+    prefix="/users",
+    tags=["Users"]
+)
+
+
+registration_service = RegistrationService()
+
+
+@router.get("/")
+def users_status():
+
+    return {
+        "module": "users",
+        "status": "active"
+    }
+
+
+
+@router.post("/register")
+def register(
+    data: RegisterRequest,
+    db: Session = Depends(get_db)
+):
+
+    user = registration_service.register(
+        db,
+        data
+    )
+
+
+    return {
+
+        "id": user.id,
+
+        "username": user.username,
+
+        "status": user.status
+
+    }
+
+
+
+@router.get("/me")
+def current_user(
+    user_id: str = Depends(get_current_user)
+):
+
+    return {
+
+        "authenticated": True,
+
+        "user_id": user_id
+
+    }

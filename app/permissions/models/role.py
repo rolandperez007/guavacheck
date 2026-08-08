@@ -1,0 +1,38 @@
+from datetime import datetime
+from uuid import uuid4
+
+from sqlalchemy import String, DateTime
+from sqlalchemy.orm import Mapped, mapped_column
+
+from app.database.base import Base
+
+
+class Role(Base):
+
+    __tablename__ = "roles"
+
+
+    id: Mapped[str] = mapped_column(
+        String(36),
+        primary_key=True,
+        default=lambda: str(uuid4())
+    )
+
+
+    name: Mapped[str] = mapped_column(
+        String(100),
+        unique=True,
+        nullable=False
+    )
+
+
+    description: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True
+    )
+
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow
+    )
